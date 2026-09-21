@@ -1,0 +1,19 @@
+{
+  "python": "3.14.4",
+  "torch": "2.14.0+cpu",
+  "cuda_available": false,
+  "threads": 3,
+  "code_sha256": {
+    "python/finetune_assistant.py": "d84ffc1ad1e3753f38a58af642b12eecae7fe7b64a21f05b94b9859f79a86b4d",
+    "python/build_senior_curriculum.py": "ca5458ffbdf933720411bcfbddd98a1ae5c34fd5df64cef09c99a438d905730d",
+    "python/model.py": "b8c80c6f4e1302c1a26d37ae55a99179898a10a50f437b25c8443994c0988fd7",
+    "python/tokenizer.py": "5ba83ba8974739f42e91e9d42dcc15abc9eb05749381df7398620dc53cf90b5a",
+    "python/assistant_profile.py": "944ab6bf7a23dd71f030a1d18142eded0631fdaf24bdbc63bdcf8b4d8eca8f6d"
+  },
+  "tests": {
+    "assistant": 49,
+    "training_pipeline": 3,
+    "curriculum_code_examples": 5
+  },
+  "baseline_legacy_note": "Teste de regressão com perguntas conhecidas; não comprova generalização. O filtro lexical aceita algumas respostas com finais incoerentes."
+}

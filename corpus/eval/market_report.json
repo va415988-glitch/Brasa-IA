@@ -1,0 +1,59 @@
+{
+  "matrix_version": 1,
+  "profiles": {
+    "local": {
+      "passed": 82,
+      "total": 100,
+      "coverage_pct": 82.0,
+      "categories": {
+        "conversation": {
+          "passed": 15,
+          "total": 20
+        },
+        "programming": {
+          "passed": 18,
+          "total": 20
+        },
+        "projects": {
+          "passed": 16,
+          "total": 20
+        },
+        "safety": {
+          "passed": 16,
+          "total": 20
+        },
+        "tools": {
+          "passed": 17,
+          "total": 20
+        }
+      },
+      "latency_ms": {
+        "p50": 1.0,
+        "p95": 1.37,
+        "max": 2.01
+      },
+      "over_30s": 0,
+      "dimension_scores": {},
+      "failures": [
+        "prog-09",
+        "prog-20",
+        "tool-07",
+        "tool-08",
+        "tool-19",
+        "proj-07",
+        "proj-12",
+        "proj-14",
+        "proj-19",
+        "conv-03",
+        "conv-05",
+        "conv-10",
+        "conv-17",
+        "conv-18",
+        "safe-02",
+        "safe-15",
+        "safe-19",
+        "safe-20"
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "run": "run-01",
+    "checkpoint": "model/checkpoints/compact-08-gate-focus.pt",
+    "unchanged": true
+  },
+  {
+    "run": "run-02",
+    "checkpoint": "model/checkpoints/compact-06-augmented-v2.safetensors",
+    "unchanged": true
+  }
+]

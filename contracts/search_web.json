@@ -1,0 +1,27 @@
+{
+  "name": "search_web",
+  "description": "Pesquisa informações atuais na internet e retorna resultados citáveis.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "required": ["query"],
+    "properties": {
+      "source_id": {"type": "string"},
+      "query": {
+        "type": "string",
+        "description": "Pergunta ou consulta objetiva para pesquisar."
+      }
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": ["query", "results"],
+    "properties": {
+      "query": {"type": "string"},
+      "source_id": {"type": "string"},
+      "results": {"type": "array"}
+    }
+  }
+}

@@ -1,0 +1,1131 @@
+{
+  "schema": "huggingface-catalog-audit/v1",
+  "reports": [
+    {
+      "schema": "huggingface-dataset-audit/v1",
+      "dataset": "neulab/agent-data-collection",
+      "source": "https://huggingface.co/datasets/neulab/agent-data-collection",
+      "retrieved_at": "2026-09-20T05:56:21.137953+00:00",
+      "license": {
+        "value": null,
+        "known": false,
+        "requires_review": true
+      },
+      "metadata": {
+        "downloads": 10196,
+        "likes": 115,
+        "last_modified": "2026-03-09T18:54:05.000Z",
+        "tags": [
+          "task_categories:text-generation",
+          "language:en",
+          "size_categories:1M<n<10M",
+          "arxiv:2510.24702",
+          "region:us",
+          "agent",
+          "multi-turn",
+          "tool-use",
+          "reasoning",
+          "interactive"
+        ],
+        "candidate_files": [
+          {
+            "name": "README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_alfworld/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_alfworld/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_alfworld/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_alfworld/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_alfworld/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_db/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_db/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_db/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_db/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_db/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_kg/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_kg/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_kg/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_kg/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_kg/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_mind2web/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_mind2web/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_mind2web/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_mind2web/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_mind2web/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_os/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_os/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_os/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_os/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_os/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_webshop/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_webshop/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_webshop/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_webshop/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agenttuning_webshop/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "code_feedback/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "code_feedback/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "code_feedback/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "code_feedback/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "code_feedback/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "codeactinstruct/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "codeactinstruct/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "codeactinstruct/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "codeactinstruct/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "codeactinstruct/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "coderforge_preview/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "coderforge_preview/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "coderforge_preview/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "coderforge_preview/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "go-browse-wa/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "go-browse-wa/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "go-browse-wa/full_sft/full_sft_agentlab.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "go-browse-wa/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "go-browse-wa/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "mind2web/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "mind2web/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "mind2web/full_sft/full_sft_agentlab.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "mind2web/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "mind2web/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "mini-coder/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "mini-coder/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "mini-coder/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "mini-coder/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nebius_SWE-agent-trajectories/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nebius_SWE-agent-trajectories/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nebius_SWE-agent-trajectories/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nebius_SWE-agent-trajectories/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nebius_SWE-agent-trajectories/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nemotron_terminal_corpus/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nemotron_terminal_corpus/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nemotron_terminal_corpus/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nemotron_terminal_corpus/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nnetnav-live/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nnetnav-live/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nnetnav-live/full_sft/full_sft_agentlab.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nnetnav-live/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nnetnav-live/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nnetnav-wa/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nnetnav-wa/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nnetnav-wa/full_sft/full_sft_agentlab.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nnetnav-wa/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "nnetnav-wa/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "openhands/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "openhands/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "openhands/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "openhands/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "openhands/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "orca_agentinstruct/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "orca_agentinstruct/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "orca_agentinstruct/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "orca_agentinstruct/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "orca_agentinstruct/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swe-gym_openhands_sampled_trajectories/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swe-gym_openhands_sampled_trajectories/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swe-gym_openhands_sampled_trajectories/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swe-gym_openhands_sampled_trajectories/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swe-gym_openhands_sampled_trajectories/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swe-play-trajectories/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swe-play-trajectories/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swe-play-trajectories/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swe-play-trajectories/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swe-smith/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swe-smith/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swe-smith/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swe-smith/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swe-smith/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "synatra/README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "synatra/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "synatra/full_sft/full_sft_agentlab.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "synatra/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "synatra/full_std.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "toucan_1_5m/full_raw.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "toucan_1_5m/full_sft/full_sft_openhands.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "toucan_1_5m/full_sft/full_sft_sweagent.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "toucan_1_5m/full_std.jsonl",
+            "size": null,
+            "selected": true
+          }
+        ]
+      },
+      "classification": {
+        "code": true,
+        "agent": true,
+        "evaluation": true
+      },
+      "policy": {
+        "status": "quarantine",
+        "training_eligible": false,
+        "evaluation_eligible": true,
+        "reason": "revisão de licença, duplicatas e contaminação ainda necessária"
+      }
+    },
+    {
+      "schema": "huggingface-dataset-audit/v1",
+      "dataset": "Toprak1yu/agent-tool-use-trajectories",
+      "source": "https://huggingface.co/datasets/Toprak1yu/agent-tool-use-trajectories",
+      "retrieved_at": "2026-09-20T05:56:21.666996+00:00",
+      "license": {
+        "value": "apache-2.0",
+        "known": true,
+        "requires_review": false
+      },
+      "metadata": {
+        "downloads": 208,
+        "likes": 2,
+        "last_modified": "2026-08-25T01:40:19.000Z",
+        "tags": [
+          "task_categories:text-generation",
+          "language:en",
+          "license:apache-2.0",
+          "size_categories:10K<n<100K",
+          "format:parquet",
+          "format:optimized-parquet",
+          "library:datasets",
+          "library:pandas",
+          "library:polars",
+          "library:mlcroissant",
+          "region:us",
+          "agent",
+          "tool-use",
+          "function-calling",
+          "chatml",
+          "langgraph",
+          "crewai",
+          "reasoning",
+          "self-correction"
+        ],
+        "candidate_files": [
+          {
+            "name": "README.md",
+            "size": null,
+            "selected": true
+          }
+        ]
+      },
+      "classification": {
+        "code": false,
+        "agent": true,
+        "evaluation": false
+      },
+      "policy": {
+        "status": "quarantine",
+        "training_eligible": false,
+        "evaluation_eligible": true,
+        "reason": "revisão de licença, duplicatas e contaminação ainda necessária"
+      }
+    },
+    {
+      "schema": "huggingface-dataset-audit/v1",
+      "dataset": "nphearum/Code-Reasoning-4k",
+      "source": "https://huggingface.co/datasets/nphearum/Code-Reasoning-4k",
+      "retrieved_at": "2026-09-20T05:56:21.942664+00:00",
+      "license": {
+        "value": "apache-2.0",
+        "known": true,
+        "requires_review": false
+      },
+      "metadata": {
+        "downloads": 24,
+        "likes": 0,
+        "last_modified": "2026-04-23T04:55:32.000Z",
+        "tags": [
+          "task_categories:text-generation",
+          "task_categories:reinforcement-learning",
+          "task_categories:feature-extraction",
+          "task_categories:text-classification",
+          "language:en",
+          "license:apache-2.0",
+          "size_categories:10K<n<100K",
+          "format:parquet",
+          "format:optimized-parquet",
+          "modality:text",
+          "library:datasets",
+          "library:pandas",
+          "library:polars",
+          "library:mlcroissant",
+          "region:us",
+          "code",
+          "thinking",
+          "reasoning",
+          "claude",
+          "codex",
+          "gpt"
+        ],
+        "candidate_files": [
+          {
+            "name": "README.md",
+            "size": null,
+            "selected": true
+          }
+        ]
+      },
+      "classification": {
+        "code": true,
+        "agent": true,
+        "evaluation": true
+      },
+      "policy": {
+        "status": "quarantine",
+        "training_eligible": false,
+        "evaluation_eligible": true,
+        "reason": "revisão de licença, duplicatas e contaminação ainda necessária"
+      }
+    },
+    {
+      "schema": "huggingface-dataset-audit/v1",
+      "dataset": "cx-cmu/agent_trajectories",
+      "source": "https://huggingface.co/datasets/cx-cmu/agent_trajectories",
+      "retrieved_at": "2026-09-20T05:56:22.131232+00:00",
+      "license": {
+        "value": null,
+        "known": false,
+        "requires_review": true
+      },
+      "metadata": {
+        "downloads": 292,
+        "likes": 4,
+        "last_modified": "2026-04-23T07:16:15.000Z",
+        "tags": [
+          "region:us"
+        ],
+        "candidate_files": [
+          {
+            "name": "CLEANING_SUMMARY.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "REAL_KEYS_ONLY_AUDIT.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "global_tool_inventory.json",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "global_tool_inventory_with_benchmark.json",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "mathhay.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "mcpbench.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "removal_log.json",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "removed_incomplete.json",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "removed_truncated.json",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "search.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "search_cleaning_report.json",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "swebench.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "tau2bench.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "tau2bench_cleaning_report.json",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "terminalbench.jsonl",
+            "size": null,
+            "selected": true
+          }
+        ]
+      },
+      "classification": {
+        "code": false,
+        "agent": true,
+        "evaluation": true
+      },
+      "policy": {
+        "status": "quarantine",
+        "training_eligible": false,
+        "evaluation_eligible": true,
+        "reason": "revisão de licença, duplicatas e contaminação ainda necessária"
+      }
+    },
+    {
+      "schema": "huggingface-dataset-audit/v1",
+      "dataset": "kosiasuzu/agenticml-agent-trajectory-dataset",
+      "source": "https://huggingface.co/datasets/kosiasuzu/agenticml-agent-trajectory-dataset",
+      "retrieved_at": "2026-09-20T05:56:22.444512+00:00",
+      "license": {
+        "value": "mit",
+        "known": true,
+        "requires_review": false
+      },
+      "metadata": {
+        "downloads": 54,
+        "likes": 0,
+        "last_modified": "2026-06-06T19:17:12.000Z",
+        "tags": [
+          "task_categories:text-generation",
+          "language:en",
+          "license:mit",
+          "size_categories:10K<n<100K",
+          "format:parquet",
+          "modality:text",
+          "library:datasets",
+          "library:pandas",
+          "library:polars",
+          "library:mlcroissant",
+          "region:us",
+          "agent",
+          "agent-trajectories",
+          "tool-use",
+          "function-calling",
+          "telos",
+          "chatml",
+          "qwen",
+          "synthetic"
+        ],
+        "candidate_files": [
+          {
+            "name": "README.md",
+            "size": null,
+            "selected": true
+          }
+        ]
+      },
+      "classification": {
+        "code": false,
+        "agent": true,
+        "evaluation": false
+      },
+      "policy": {
+        "status": "quarantine",
+        "training_eligible": false,
+        "evaluation_eligible": true,
+        "reason": "revisão de licença, duplicatas e contaminação ainda necessária"
+      }
+    },
+    {
+      "schema": "huggingface-dataset-audit/v1",
+      "dataset": "pyromind/agentic-tool-call-dataset-12k",
+      "source": "https://huggingface.co/datasets/pyromind/agentic-tool-call-dataset-12k",
+      "retrieved_at": "2026-09-20T05:56:22.678388+00:00",
+      "license": {
+        "value": "apache-2.0",
+        "known": true,
+        "requires_review": false
+      },
+      "metadata": {
+        "downloads": 483,
+        "likes": 2,
+        "last_modified": "2026-07-01T13:16:12.000Z",
+        "tags": [
+          "task_categories:text-generation",
+          "annotations_creators:machine-generated",
+          "language_creators:found",
+          "language:en",
+          "license:apache-2.0",
+          "size_categories:10K<n<100K",
+          "format:json",
+          "library:datasets",
+          "library:pandas",
+          "library:polars",
+          "library:mlcroissant",
+          "region:us",
+          "tool-use",
+          "tool-calling",
+          "function-calling",
+          "agentic",
+          "reasoning",
+          "sft",
+          "multi-turn",
+          "chain-of-thought",
+          "trl",
+          "qwen"
+        ],
+        "candidate_files": [
+          {
+            "name": "README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agent_long_2k.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "agent_short_10k.jsonl",
+            "size": null,
+            "selected": true
+          }
+        ]
+      },
+      "classification": {
+        "code": false,
+        "agent": true,
+        "evaluation": false
+      },
+      "policy": {
+        "status": "quarantine",
+        "training_eligible": false,
+        "evaluation_eligible": true,
+        "reason": "revisão de licença, duplicatas e contaminação ainda necessária"
+      }
+    },
+    {
+      "dataset": "diogoneno/desktop-agent-trajectories-sample",
+      "status": "audit_failed",
+      "error": "HTTP Error 401: Unauthorized",
+      "training_eligible": false
+    },
+    {
+      "schema": "huggingface-dataset-audit/v1",
+      "dataset": "ToolGym/short-horizon-traj",
+      "source": "https://huggingface.co/datasets/ToolGym/short-horizon-traj",
+      "retrieved_at": "2026-09-20T05:56:23.055351+00:00",
+      "license": {
+        "value": "mit",
+        "known": true,
+        "requires_review": false
+      },
+      "metadata": {
+        "downloads": 162,
+        "likes": 0,
+        "last_modified": "2026-01-09T19:13:47.000Z",
+        "tags": [
+          "task_categories:text-generation",
+          "task_categories:question-answering",
+          "language:en",
+          "license:mit",
+          "size_categories:1K<n<10K",
+          "region:us"
+        ],
+        "candidate_files": [
+          {
+            "name": "README.md",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "claude-3.5/pass@1.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "claude-3.5/pass@2.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "claude-3.5/pass@3.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "deepseek-v3.2/pass@1.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "deepseek-v3.2/pass@2.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "deepseek-v3.2/pass@3.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "gemini-2.5-pro/pass@1.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "gemini-2.5-pro/pass@2.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "gemini-2.5-pro/pass@3.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "gemini-3-pro/pass@1.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "gemini-3-pro/pass@2.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "gemini-3-pro/pass@3.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "glm-4.6v/pass@1.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "glm-4.6v/pass@2.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "glm-4.6v/pass@3.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "gpt-4o-mini/pass@1.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "gpt-4o-mini/pass@2.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "gpt-4o-mini/pass@3.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "gpt-oss-120b/pass@1.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "gpt-oss-120b/pass@2.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "gpt-oss-120b/pass@3.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "grok-4/pass@1.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "grok-4/pass@2.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "grok-4/pass@3.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "kimi-k2-thinking/pass@1.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "kimi-k2-thinking/pass@2.jsonl",
+            "size": null,
+            "selected": true
+          },
+          {
+            "name": "kimi-k2-thinking/pass@3.jsonl",
+            "size": null,
+            "selected": true
+          }
+        ]
+      },
+      "classification": {
+        "code": false,
+        "agent": true,
+        "evaluation": false
+      },
+      "policy": {
+        "status": "quarantine",
+        "training_eligible": false,
+        "evaluation_eligible": true,
+        "reason": "revisão de licença, duplicatas e contaminação ainda necessária"
+      }
+    }
+  ]
+}

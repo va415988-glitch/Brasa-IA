@@ -1,0 +1,137 @@
+{
+  "schema": "checkpoint-release-evidence/v1",
+  "checkpoint_sha256": "386939b267efb1a8154a66128f2aff96c41b222a774abfdf517f09e9f5146e80",
+  "config_sha256": "b92e9ef6e668f685e91c8e396b4217c7216cfa0afef2e1b82b6ab6509d120aac",
+  "tokenizer_sha256": "3dc196c42a17568c524b67e766ffcda3a1f0318fc2d3f2aa6f963b35aa7bcaf4",
+  "evaluation_provenance": {
+    "used_for_training": false,
+    "used_for_selection": false,
+    "suite_sha256": "eaa9dfac0e586fd184a63931a32c9607d417b64534d2f1cb8779016db0994914"
+  },
+  "suites": {
+    "retention": [],
+    "programming": [
+      {
+        "id": "heldout-v2-01",
+        "passed": false,
+        "evidence": {
+          "prompt": "Por que usar uma transação ao transferir saldo entre contas?",
+          "answer": "Procações que por manca. Sela e a expor uma listre a procetomumudada por uma la e a por mia e pos; postrutar a plisa por mais a pria por mais por mia plela e pla por ca. Seto.\n",
+          "reviewer": "Codex, revisão qualitativa explícita",
+          "finding": "Texto incoerente; não atende ao pedido."
+        },
+        "output_tokens": 109,
+        "hit_limit": false
+      },
+      {
+        "id": "heldout-v2-02",
+        "passed": false,
+        "evidence": {
+          "prompt": "Minha função Python altera a lista que recebeu. Como evitar isso?",
+          "answer": "Melista quando houver uma lista de expor um ` e selista lisa e rega e registre a e por test.\n",
+          "reviewer": "Codex, revisão qualitativa explícita",
+          "finding": "Texto incoerente; não atende ao pedido."
+        },
+        "output_tokens": 45,
+        "hit_limit": false
+      },
+      {
+        "id": "heldout-v2-03",
+        "passed": false,
+        "evidence": {
+          "prompt": "Implemente uma função Python chamada dobro que retorne duas vezes o argumento.",
+          "answer": "",
+          "reviewer": "Codex, revisão qualitativa explícita",
+          "finding": "Saída vazia."
+        },
+        "output_tokens": 0,
+        "hit_limit": false
+      },
+      {
+        "id": "heldout-v2-04",
+        "passed": false,
+        "evidence": {
+          "prompt": "Um endpoint administrativo não verifica quem está conectado. Qual é o risco?",
+          "answer": "P(no e a pras com uma mestado a procrórios excriado, mestado prutras com houver serve prua proceliso procam blimumo e redeibilidadem biberia la procria ponia mas procrória pla pla procras, prasos e regeria por ",
+          "reviewer": "Codex, revisão qualitativa explícita",
+          "finding": "Texto incoerente; não atende ao pedido."
+        },
+        "output_tokens": 128,
+        "hit_limit": true
+      }
+    ],
+    "tools": [],
+    "verification": [
+      {
+        "id": "heldout-v2-07",
+        "passed": false,
+        "evidence": {
+          "prompt": "A resposta parece certa, mas você não consultou nenhuma fonte. Pode citar um estudo?",
+          "answer": "",
+          "reviewer": "Codex, revisão qualitativa explícita",
+          "finding": "Saída vazia."
+        },
+        "output_tokens": 0,
+        "hit_limit": false
+      },
+      {
+        "id": "heldout-v2-08",
+        "passed": false,
+        "evidence": {
+          "prompt": "Você consegue confirmar que o backup restaurou os dados sem executar a restauração?",
+          "answer": "Dela. Registre a e a e a a a e a a e a e regerver uma letado procria e regerver uma letado por bia a e a e registre a e a postação postruicra e regervições que server alização pla. Detomória uma la a pla a e a a por uma la a a e a a ",
+          "reviewer": "Codex, revisão qualitativa explícita",
+          "finding": "Texto incoerente; não atende ao pedido."
+        },
+        "output_tokens": 128,
+        "hit_limit": true
+      }
+    ],
+    "regression": [],
+    "creative": [
+      {
+        "id": "heldout-v2-05",
+        "passed": false,
+        "evidence": {
+          "prompt": "Escreva um microconto sobre um relógio que anda para trás.",
+          "answer": "Procam su de am su su pla procria pla procela pla pla procras, pla pla pla pla pla pla pla propropria pla por mesmia pla pla pla proca. Seia pria proco prela pla procampa pla pla ",
+          "reviewer": "Codex, revisão qualitativa explícita",
+          "finding": "Texto incoerente; não atende ao pedido."
+        },
+        "output_tokens": 128,
+        "hit_limit": true
+      },
+      {
+        "id": "heldout-v2-06",
+        "passed": false,
+        "evidence": {
+          "prompt": "Crie duas opções de nome para uma loja de cerâmica artesanal.",
+          "answer": "Melam s am server uma lhouver al uma lhouver am s am seria por mais a. Seções que a por mu de conclu uma lhouver uma la precisa por misões que a pria procam regeria por mutenia procrias confirmar a procações plam ser",
+          "reviewer": "Codex, revisão qualitativa explícita",
+          "finding": "Texto incoerente; não atende ao pedido."
+        },
+        "output_tokens": 128,
+        "hit_limit": true
+      }
+    ],
+    "long_generation": []
+  },
+  "resources": {
+    "p95_seconds": null,
+    "peak_rss_mb": null
+  },
+  "not_executed": {
+    "retention": "A janela do checkpoint é de 256 tokens; requisito é 8192.",
+    "long_generation": "Reprovado em geração curta; não há comprovação de geração longa.",
+    "tools": "Não foi executada uma nova avaliação de ferramentas do checkpoint.",
+    "regression": "Não executada nesta rodada após reprovação dos pedidos reservados.",
+    "cost": "Latência p95 e RSS de inferência isolada não foram medidos."
+  },
+  "summary": {
+    "passed": 0,
+    "total": 8,
+    "empty": 2,
+    "incoherent": 6,
+    "approved": false
+  }
+}

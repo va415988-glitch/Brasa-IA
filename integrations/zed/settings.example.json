@@ -1,0 +1,19 @@
+{
+  "agent_servers": {
+    "ia-local-do-zero": {
+      "type": "custom",
+      "command": "/home/victor/Documentos/IA Local do Zero/integrations/zed/acp_launcher.sh",
+      "args": [],
+      "env": {
+        "IA_LOCAL_RUNTIME": "http://127.0.0.1:3000"
+      }
+    }
+  },
+  "context_servers": {
+    "ia-local-do-zero": {
+      "command": "/home/victor/Documentos/IA Local do Zero/.venv/bin/python",
+      "args": ["/home/victor/Documentos/IA Local do Zero/integrations/zed/mcp_server.py"],
+      "env": {"IA_LOCAL_RUNTIME": "http://127.0.0.1:3000"}
+    }
+  }
+}

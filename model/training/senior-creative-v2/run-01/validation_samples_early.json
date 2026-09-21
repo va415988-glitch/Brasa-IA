@@ -1,0 +1,23 @@
+{
+  "step": 300,
+  "samples": [
+    {
+      "prompt": "Como alterar uma coluna usada por clientes antigos?",
+      "answer": "Proceittestrório por mudados e procelistre a e a pos. Secações que a por mais por mancessa e pos. Secrua e a por muia e mais pregeria e a e a e a e a e registre a ",
+      "tokens": 96,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Como testar um cálculo de desconto?",
+      "answer": "Prio plinhouver uma linalização e por mu ou eitu ou caminhouver um proceitos excrio por mais uma procra proplutrumutra pleitu uma lincam a pria pla por mumia ",
+      "tokens": 96,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Crie uma função que conte palavras em Python.",
+      "answer": "Meções nomam s = = n = n lista s n n = n n n n n n n n n n n n n n n n n n n n n n n n n n n n n nia lis",
+      "tokens": 96,
+      "hit_limit": true
+    }
+  ]
+}

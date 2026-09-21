@@ -1,0 +1,20 @@
+{
+  "criterion": "minimum validation loss; heldout generation is not used for selection",
+  "candidates": [
+    {
+      "run": "run-01",
+      "validation_loss": 5.345174398766943,
+      "step": 600
+    },
+    {
+      "run": "run-02",
+      "validation_loss": 4.419422964407345,
+      "step": 400
+    }
+  ],
+  "selected": {
+    "run": "run-02",
+    "validation_loss": 4.419422964407345,
+    "step": 400
+  }
+}

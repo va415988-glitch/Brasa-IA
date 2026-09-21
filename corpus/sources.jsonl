@@ -1,0 +1,5 @@
+{"id":"user-local","title":"Material local do usuário","url":"","license":"user-provided","language":"pt-BR","category":"user","status":"ready"}
+{"id":"wikimedia-dumps","title":"Wikimedia dumps","url":"https://dumps.wikimedia.org/","license":"check-per-source","language":"multilingual","category":"encyclopedic","status":"planned"}
+{"id":"gutenberg","title":"Project Gutenberg","url":"https://www.gutenberg.org/","license":"public-domain-or-site-specific","language":"multilingual","category":"literature","status":"planned"}
+{"id":"stackexchange-dump","title":"Stack Exchange Data Dump","url":"https://meta.stackexchange.com/questions/224873/announcing-the-stack-exchange-data-dump","license":"CC-BY-SA-or-version-in-record","language":"multilingual","category":"programming","status":"planned"}
+{"id":"common-crawl","title":"Common Crawl","url":"https://commoncrawl.org/get-started","license":"check-origin-site","language":"multilingual","category":"web","status":"planned"}

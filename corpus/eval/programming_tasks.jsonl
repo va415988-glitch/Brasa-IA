@@ -1,0 +1,8 @@
+{"id":"task-py-sum","language":"python","request":"Escreva uma função Python que some dois números.","checks":["def somar","return a + b"]}
+{"id":"task-py-test","language":"python","request":"Escreva um teste para somar dois números usando unittest.","checks":["unittest","assertEqual"]}
+{"id":"task-py-debug","language":"python","request":"Corrija este código Python: nomes = ['Ana', 'Bia']; print(nomes[2])","checks":["IndexError","len(nomes)"]}
+{"id":"task-rs-result","language":"rust","request":"Escreva uma função Rust que converta texto para número e retorne Result.","checks":["Result","parse"]}
+{"id":"task-rs-test","language":"rust","request":"Como testar uma função Rust?","checks":["#[test]","assert"]}
+{"id":"task-http","language":"web","request":"Escreva uma rota HTTP POST segura para receber JSON.","checks":["POST","validar","JSON"]}
+{"id":"task-review","language":"engineering","request":"Como revisar um projeto antes de alterar arquivos?","checks":["testes","backup","dependências"]}
+{"id":"task-performance","language":"performance","request":"Como investigar um endpoint lento?","checks":["medir","p95","gargalo"]}

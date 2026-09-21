@@ -1,0 +1,8 @@
+{
+  "name": "create_directory",
+  "description": "Cria uma pasta dentro do workspace autorizado.",
+  "side_effects": true,
+  "requires_approval": false,
+  "arguments": {"type":"object","required":["path"],"properties":{"path":{"type":"string"}},"additionalProperties":false},
+  "result": {"type":"object","required":["path","created"]}
+}

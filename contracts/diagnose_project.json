@@ -1,0 +1,29 @@
+{
+  "name": "diagnose_project",
+  "description": "Classifica uma falha de verificação, extrai evidências e sugere próximos passos sem alterar arquivos.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "properties": {
+      "check": {"type": "string"},
+      "passed": {"type": "boolean"},
+      "executed": {"type": "boolean"},
+      "stdout": {"type": "string"},
+      "stderr": {"type": "string"}
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": ["check", "passed", "category", "summary", "evidence", "next_steps"],
+    "properties": {
+      "check": {"type": "string"},
+      "passed": {"type": "boolean"},
+      "category": {"type": "string"},
+      "summary": {"type": "string"},
+      "evidence": {"type": "array"},
+      "next_steps": {"type": "array"}
+    }
+  }
+}

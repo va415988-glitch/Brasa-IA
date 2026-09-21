@@ -1,0 +1,62 @@
+{
+  "schema": "checkpoint-promotion-audit/v1",
+  "source": "model/training/senior-creative-v2/run-01/candidate.safetensors",
+  "evaluation_path": "model/training/senior-creative-v2/run-01/candidate.safetensors.evaluation.json",
+  "context_policy": {
+    "effective_tokens": 256,
+    "minimum_tokens": 8192,
+    "target_tokens": 16384,
+    "promotion_stage": 0,
+    "production_eligible": false,
+    "status": "experimental",
+    "reason": "checkpoint abaixo do mínimo de 8192 tokens",
+    "generation_policy": {
+      "professional_target_tokens": 4096,
+      "configured_tokens": 0,
+      "production_eligible": false,
+      "immutable_rule": "não promover sem geração longa contínua, sem truncamento e com avaliação multiarquivo"
+    }
+  },
+  "gates": {
+    "checkpoint_readable": true,
+    "context_minimum": false,
+    "generation_professional": false,
+    "has_state_dict": true,
+    "has_training_steps": true,
+    "not_partial": true,
+    "context_weights_match": true,
+    "behavioral_report_readable": true,
+    "behavioral_schema": true,
+    "evaluated_checkpoint_matches": true,
+    "evaluated_config_matches": true,
+    "evaluated_tokenizer_matches": true,
+    "reserved_evaluation": true,
+    "behavioral_retention": false,
+    "behavioral_programming": false,
+    "behavioral_tools": false,
+    "behavioral_verification": false,
+    "behavioral_regression": false,
+    "behavioral_creative": false,
+    "behavioral_long_generation": false,
+    "long_generation_observed": false,
+    "retention_observed": false,
+    "latency_budget": false,
+    "memory_measured": false
+  },
+  "promotable": false,
+  "blocked_reasons": [
+    "context_minimum",
+    "generation_professional",
+    "behavioral_retention",
+    "behavioral_programming",
+    "behavioral_tools",
+    "behavioral_verification",
+    "behavioral_regression",
+    "behavioral_creative",
+    "behavioral_long_generation",
+    "long_generation_observed",
+    "retention_observed",
+    "latency_budget",
+    "memory_measured"
+  ]
+}

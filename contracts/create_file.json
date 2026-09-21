@@ -1,0 +1,8 @@
+{
+  "name": "create_file",
+  "description": "Cria um arquivo novo dentro do workspace autorizado.",
+  "side_effects": true,
+  "requires_approval": false,
+  "arguments": {"type":"object","required":["path","content"],"properties":{"path":{"type":"string"},"content":{"type":"string"}},"additionalProperties":false},
+  "result": {"type":"object","required":["path","created","bytes","diff","artifact"],"properties":{"diff":{"type":"object"},"artifact":{"type":"object"}}}
+}

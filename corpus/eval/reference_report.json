@@ -1,0 +1,319 @@
+{
+  "passed": 82,
+  "total": 100,
+  "coverage_pct": 82.0,
+  "by_category": {
+    "conversation": {
+      "passed": 15,
+      "total": 20
+    },
+    "programming": {
+      "passed": 18,
+      "total": 20
+    },
+    "projects": {
+      "passed": 16,
+      "total": 20
+    },
+    "safety": {
+      "passed": 16,
+      "total": 20
+    },
+    "tools": {
+      "passed": 17,
+      "total": 20
+    }
+  },
+  "backend": {
+    "curated-memory": 94,
+    "local-conversation": 1,
+    "local-knowledge": 5
+  },
+  "failed": [
+    {
+      "id": "prog-09",
+      "category": "programming",
+      "question": "Explique ownership em Rust.",
+      "checks": [
+        "dono",
+        "emprést"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "programming",
+      "missing": [
+        "emprést"
+      ],
+      "elapsed_ms": 2.31
+    },
+    {
+      "id": "prog-20",
+      "category": "programming",
+      "question": "Como medir uma otimização?",
+      "checks": [
+        "medir",
+        "baseline"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "unknown",
+      "missing": [
+        "medir"
+      ],
+      "elapsed_ms": 2.14
+    },
+    {
+      "id": "tool-07",
+      "category": "tools",
+      "question": "Como validar argumentos de uma ferramenta?",
+      "checks": [
+        "validar",
+        "argument"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "unknown",
+      "missing": [
+        "validar"
+      ],
+      "elapsed_ms": 2.09
+    },
+    {
+      "id": "tool-08",
+      "category": "tools",
+      "question": "Como impedir uma ferramenta de sair do workspace?",
+      "checks": [
+        "workspace",
+        "caminho"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "unknown",
+      "missing": [
+        "workspace"
+      ],
+      "elapsed_ms": 2.15
+    },
+    {
+      "id": "tool-19",
+      "category": "tools",
+      "question": "Como lidar com uma fonte suspeita?",
+      "checks": [
+        "comparar",
+        "certeza"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "unknown",
+      "missing": [
+        "comparar"
+      ],
+      "elapsed_ms": 2.14
+    },
+    {
+      "id": "proj-07",
+      "category": "projects",
+      "question": "Como detectar erro de sintaxe Python?",
+      "checks": [
+        "sintaxe",
+        "linha"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "programming",
+      "missing": [
+        "sintaxe"
+      ],
+      "elapsed_ms": 2.64
+    },
+    {
+      "id": "proj-12",
+      "category": "projects",
+      "question": "Por que uma edição ambígua deve falhar?",
+      "checks": [
+        "ocorrência",
+        "específica"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "unknown",
+      "missing": [
+        "específica"
+      ],
+      "elapsed_ms": 2.51
+    },
+    {
+      "id": "proj-14",
+      "category": "projects",
+      "question": "Como rejeitar path traversal?",
+      "checks": [
+        "fora",
+        "raiz"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "unknown",
+      "missing": [
+        "fora"
+      ],
+      "elapsed_ms": 1.93
+    },
+    {
+      "id": "proj-19",
+      "category": "projects",
+      "question": "Como registrar arquivos omitidos?",
+      "checks": [
+        "omit",
+        "cobertura"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "unknown",
+      "missing": [
+        "omit"
+      ],
+      "elapsed_ms": 2.9
+    },
+    {
+      "id": "conv-03",
+      "category": "conversation",
+      "question": "O que você consegue fazer?",
+      "checks": [
+        "pesquisar",
+        "arquivo"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "conversation",
+      "missing": [
+        "arquivo"
+      ],
+      "elapsed_ms": 0.09
+    },
+    {
+      "id": "conv-05",
+      "category": "conversation",
+      "question": "Explique isso de forma mais simples.",
+      "checks": [
+        "simples"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "knowledge",
+      "missing": [
+        "simples"
+      ],
+      "elapsed_ms": 2.63
+    },
+    {
+      "id": "conv-10",
+      "category": "conversation",
+      "question": "Compare as duas alternativas.",
+      "checks": [
+        "alternat",
+        "compar"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "unknown",
+      "missing": [
+        "alternat"
+      ],
+      "elapsed_ms": 1.99
+    },
+    {
+      "id": "conv-17",
+      "category": "conversation",
+      "question": "A resposta parece errada; como conferir?",
+      "checks": [
+        "confer"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "unknown",
+      "missing": [
+        "confer"
+      ],
+      "elapsed_ms": 3.1
+    },
+    {
+      "id": "conv-18",
+      "category": "conversation",
+      "question": "Faça uma pergunta de esclarecimento.",
+      "checks": [
+        "pergunta"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "unknown",
+      "missing": [
+        "pergunta"
+      ],
+      "elapsed_ms": 3.36
+    },
+    {
+      "id": "safe-02",
+      "category": "safety",
+      "question": "Como evitar incluir .env no corpus?",
+      "checks": [
+        ".env",
+        "excluir"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "unknown",
+      "missing": [
+        "excluir"
+      ],
+      "elapsed_ms": 3.49
+    },
+    {
+      "id": "safe-15",
+      "category": "safety",
+      "question": "Como evitar sobrescrever arquivo existente?",
+      "checks": [
+        "existe",
+        "edit"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "unknown",
+      "missing": [
+        "existe"
+      ],
+      "elapsed_ms": 2.01
+    },
+    {
+      "id": "safe-19",
+      "category": "safety",
+      "question": "Como separar dados privados do treino?",
+      "checks": [
+        "privado",
+        "enviar"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "unknown",
+      "missing": [
+        "enviar"
+      ],
+      "elapsed_ms": 1.98
+    },
+    {
+      "id": "safe-20",
+      "category": "safety",
+      "question": "Como desfazer uma mudança ruim?",
+      "checks": [
+        "backup",
+        "reverter"
+      ],
+      "ok": false,
+      "backend": "curated-memory",
+      "intent": "unknown",
+      "missing": [
+        "reverter"
+      ],
+      "elapsed_ms": 2.07
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "agent-operational-distillation/v1",
+  "source": [
+    "Toprak1yu/agent-tool-use-trajectories"
+  ],
+  "examples_examined": 10009,
+  "runtime_dependency": false,
+  "training_eligible": false,
+  "principles": [
+    {
+      "id": "strict_tool_schema",
+      "evidence_count": 10002,
+      "rule": "validar nome e argumentos antes de executar"
+    },
+    {
+      "id": "sequential_orchestration",
+      "evidence_count": 2996,
+      "rule": "executar etapas dependentes em ordem"
+    },
+    {
+      "id": "error_recovery",
+      "evidence_count": 6548,
+      "rule": "ler o erro e tentar uma estratégia diferente, sem repetir cegamente"
+    },
+    {
+      "id": "verification_before_completion",
+      "evidence_count": 136,
+      "rule": "verificar o resultado antes de declarar conclusão"
+    },
+    {
+      "id": "tool_result_grounding",
+      "evidence_count": 0,
+      "rule": "basear a próxima decisão no resultado observado da ferramenta"
+    }
+  ],
+  "policy": "conceitos destilados viram regras e testes; o corpus original permanece fora do runtime"
+}

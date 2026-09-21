@@ -1,0 +1,9 @@
+# Uma tarefa por linha. Edite este arquivo para ensinar os comportamentos reais da sua IA.
+Analise meu projeto e explique a arquitetura antes de modificar qualquer arquivo.
+Liste os arquivos do workspace e destaque os mais relevantes para começar.
+Leia o arquivo index.html e proponha uma melhoria visual sem substituir o original.
+Busque no código onde a tela de login é montada.
+Crie uma página de login moderna em um projeto vazio e mostre a prévia.
+Transforme a tela de login existente em uma pequena vitrine de produtos.
+Revise a alteração e execute os testes disponíveis no projeto.
+Explique por que uma alteração não funcionou e indique a próxima investigação.

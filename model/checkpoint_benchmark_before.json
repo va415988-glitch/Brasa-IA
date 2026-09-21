@@ -1,0 +1,223 @@
+{
+  "count": 6,
+  "checkpoints": [
+    {
+      "checkpoint": "compact-01.pt",
+      "passed": 0,
+      "total": 4,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"variable-python\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"É o treinamento em que o modelo aprende a prevrever o pratusando apenas os tokens anteriores. Esa é a téger\"}",
+        "{\"id\": \"ownership-rust\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Quando a resposta depende de informação atual, de uma página específica ou de um fato que não posso confirmar com segurança. Para conhecimento estável\"}",
+        "{\"id\": \"china\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"```python\\n```python\\n```python\\n```python\"}",
+        "{\"id\": \"uncertainty\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Crie casos normais, limites e entradas inválidas. O teste deve verificar o resultado teste deve verificar o resulta\"}",
+        "resultado: 0/4"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-02-mixed.pt",
+      "passed": 0,
+      "total": 4,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"variable-python\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Es de de pulter|>\\n<|>\"}",
+        "{\"id\": \"ownership-rust\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\\n\\n<|>\\n<|>\"}",
+        "{\"id\": \"china\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\\n<|>\\n<|>\"}",
+        "{\"id\": \"uncertainty\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\\n<|>\\n<|>\\n<|>\"}",
+        "resultado: 0/4"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-03-validated.pt",
+      "passed": 0,
+      "total": 4,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"variable-python\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|assistant|assistant|>\\nPPa\\n\\n\\n<|>\\n\\n\\n\\n<|>\\n<|\"}",
+        "{\"id\": \"ownership-rust\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n\\n\\n\\n\\n<|>\\n\\n\\nP|>\\n<|>\\n\\n<|assistant|>\\n<\"}",
+        "{\"id\": \"china\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n\\n\\n\\n<|user|>\\n\\n\\n<|assistant|>\\n<|>\"}",
+        "{\"id\": \"uncertainty\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\nPPa\\n\\n\\n<|assistant|>\\n<|assistant|user|user|>\"}",
+        "resultado: 0/4"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-04-mixed-tokenizer.pt",
+      "passed": 0,
+      "total": 4,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"variable-python\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Er\\\",\\\"    EL AL GGGGOL GGGGGGGr\\\",\\\" AL\"}",
+        "{\"id\": \"ownership-rust\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"L AL PAL TAL GGGGOL AL    AL GGGG\"}",
+        "{\"id\": \"china\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"AL 665entdos loopnsdialdevAL ALGGGOL AL AAL G\"}",
+        "{\"id\": \"uncertainty\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Boldefinih Explique o L 6este \\\",\\\"   {\\\"messag AL Gr\\\",\\\"gra,\\\"cesvalL AL A\"}",
+        "resultado: 0/4"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-06-augmented-v2.pt",
+      "passed": 0,
+      "total": 4,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"variable-python\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"\"}",
+        "{\"id\": \"ownership-rust\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"china\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\"}",
+        "{\"id\": \"uncertainty\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"<|>\\nUma Uma Uma o de 198 de 194498 de 194983 de 19\"}",
+        "resultado: 0/4"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-06-augmented-v2.safetensors",
+      "passed": 0,
+      "total": 4,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"variable-python\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"\"}",
+        "{\"id\": \"ownership-rust\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"china\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\"}",
+        "{\"id\": \"uncertainty\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"<|>\\nUma Uma Uma o de 198 de 194498 de 194983 de 19\"}",
+        "resultado: 0/4"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    }
+  ],
+  "ranking": [
+    {
+      "checkpoint": "compact-01.pt",
+      "passed": 0,
+      "total": 4,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"variable-python\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"É o treinamento em que o modelo aprende a prevrever o pratusando apenas os tokens anteriores. Esa é a téger\"}",
+        "{\"id\": \"ownership-rust\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Quando a resposta depende de informação atual, de uma página específica ou de um fato que não posso confirmar com segurança. Para conhecimento estável\"}",
+        "{\"id\": \"china\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"```python\\n```python\\n```python\\n```python\"}",
+        "{\"id\": \"uncertainty\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Crie casos normais, limites e entradas inválidas. O teste deve verificar o resultado teste deve verificar o resulta\"}",
+        "resultado: 0/4"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-02-mixed.pt",
+      "passed": 0,
+      "total": 4,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"variable-python\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Es de de pulter|>\\n<|>\"}",
+        "{\"id\": \"ownership-rust\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\\n\\n<|>\\n<|>\"}",
+        "{\"id\": \"china\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\\n<|>\\n<|>\"}",
+        "{\"id\": \"uncertainty\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\\n<|>\\n<|>\\n<|>\"}",
+        "resultado: 0/4"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-03-validated.pt",
+      "passed": 0,
+      "total": 4,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"variable-python\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|assistant|assistant|>\\nPPa\\n\\n\\n<|>\\n\\n\\n\\n<|>\\n<|\"}",
+        "{\"id\": \"ownership-rust\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n\\n\\n\\n\\n<|>\\n\\n\\nP|>\\n<|>\\n\\n<|assistant|>\\n<\"}",
+        "{\"id\": \"china\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n\\n\\n\\n<|user|>\\n\\n\\n<|assistant|>\\n<|>\"}",
+        "{\"id\": \"uncertainty\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\nPPa\\n\\n\\n<|assistant|>\\n<|assistant|user|user|>\"}",
+        "resultado: 0/4"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-04-mixed-tokenizer.pt",
+      "passed": 0,
+      "total": 4,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"variable-python\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Er\\\",\\\"    EL AL GGGGOL GGGGGGGr\\\",\\\" AL\"}",
+        "{\"id\": \"ownership-rust\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"L AL PAL TAL GGGGOL AL    AL GGGG\"}",
+        "{\"id\": \"china\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"AL 665entdos loopnsdialdevAL ALGGGOL AL AAL G\"}",
+        "{\"id\": \"uncertainty\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Boldefinih Explique o L 6este \\\",\\\"   {\\\"messag AL Gr\\\",\\\"gra,\\\"cesvalL AL A\"}",
+        "resultado: 0/4"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-06-augmented-v2.pt",
+      "passed": 0,
+      "total": 4,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"variable-python\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"\"}",
+        "{\"id\": \"ownership-rust\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"china\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\"}",
+        "{\"id\": \"uncertainty\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"<|>\\nUma Uma Uma o de 198 de 194498 de 194983 de 19\"}",
+        "resultado: 0/4"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-06-augmented-v2.safetensors",
+      "passed": 0,
+      "total": 4,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"variable-python\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"\"}",
+        "{\"id\": \"ownership-rust\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"china\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\"}",
+        "{\"id\": \"uncertainty\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"<|>\\nUma Uma Uma o de 198 de 194498 de 194983 de 19\"}",
+        "resultado: 0/4"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "apply_repair",
+  "description": "Aplica uma correção exata já revisada e informa a verificação que deve ser executada.",
+  "side_effects": true,
+  "requires_approval": true,
+  "arguments": {
+    "type": "object",
+    "required": ["path", "old_text", "new_text", "reason"],
+    "properties": {
+      "path": {"type": "string"},
+      "old_text": {"type": "string"},
+      "new_text": {"type": "string"},
+      "reason": {"type": "string"},
+      "check": {"type": "string"}
+    },
+    "additionalProperties": false
+  },
+  "result": {"type": "object", "required": ["path", "updated", "bytes", "backup", "diff", "artifact", "repair"],"properties":{"diff":{"type":"object"},"artifact":{"type":"object"}}}
+}

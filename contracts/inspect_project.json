@@ -1,0 +1,25 @@
+{
+  "name": "inspect_project",
+  "description": "Inspeciona a estrutura do projeto, manifestos, pontos de entrada, testes e verificações disponíveis sem alterar arquivos.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "properties": {"max_depth": {"type": "integer", "minimum": 1, "maximum": 6, "default": 4}},
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": ["workspace", "summary", "manifests", "test_files", "entrypoints", "checks", "signals"],
+    "properties": {
+      "workspace": {"type": "string"},
+      "summary": {"type": "string"},
+      "manifests": {"type": "array"},
+      "test_files": {"type": "array"},
+      "entrypoints": {"type": "array"},
+      "checks": {"type": "array"},
+      "signals": {"type": "array"},
+      "elapsed_ms": {"type": "integer"}
+    }
+  }
+}

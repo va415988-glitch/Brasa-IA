@@ -1,0 +1,12 @@
+{
+  "name": "list_files",
+  "description": "Lista arquivos e diretórios dentro do workspace autorizado.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "properties": {"path": {"type": "string", "description": "Caminho relativo ao workspace; vazio lista a raiz."}},
+    "additionalProperties": false
+  },
+  "result": {"type": "object", "required": ["entries"], "properties": {"entries": {"type": "array"}}}
+}

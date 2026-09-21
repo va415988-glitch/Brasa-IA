@@ -1,0 +1,21 @@
+{
+  "name": "ia-local-do-zero",
+  "displayName": "IA Local do Zero",
+  "description": "Assistente local para explicar, revisar e testar código com o runtime Rust.",
+  "version": "0.1.0",
+  "publisher": "ia-local-do-zero",
+  "engines": {"vscode": "^1.85.0"},
+  "categories": ["Other", "Programming Languages"],
+  "activationEvents": ["onCommand:iaLocal.explicarSelecao", "onCommand:iaLocal.revisarArquivo", "onCommand:iaLocal.proporAlteracao", "onCommand:iaLocal.abrirChat"],
+  "main": "extension.js",
+  "contributes": {
+    "commands": [
+      {"command":"iaLocal.explicarSelecao","title":"IA Local: explicar seleção"},
+      {"command":"iaLocal.revisarArquivo","title":"IA Local: revisar arquivo"},
+      {"command":"iaLocal.proporAlteracao","title":"IA Local: propor alteração"},
+      {"command":"iaLocal.abrirChat","title":"IA Local: abrir chat"}
+    ],
+    "menus": {"editor/context": [{"command":"iaLocal.explicarSelecao","when":"editorHasSelection"}]}
+  },
+  "scripts": {"test": "node --check extension.js"}
+}

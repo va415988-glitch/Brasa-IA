@@ -1,0 +1,19 @@
+{
+  "name": "propose_repair",
+  "description": "Valida uma proposta de correção exata e mostra o diff sem alterar arquivos.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "required": ["path", "old_text", "new_text", "reason"],
+    "properties": {
+      "path": {"type": "string"},
+      "old_text": {"type": "string"},
+      "new_text": {"type": "string"},
+      "reason": {"type": "string"},
+      "check": {"type": "string"}
+    },
+    "additionalProperties": false
+  },
+  "result": {"type": "object", "required": ["status", "path", "reason", "old_text", "new_text", "diff", "artifact", "verification"],"properties":{"diff":{"type":"object"},"artifact":{"type":"object"}}}
+}

@@ -1,0 +1,5469 @@
+{
+  "schema": "agent-state/v1",
+  "skills": {
+    "freeCodeCamp": {
+      "topic": "freeCodeCamp",
+      "status": "partially_known",
+      "confidence": 0.46,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "modules",
+          "module",
+          "promises",
+          "async"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "freeCodeCamp",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "modules",
+                "objective": "demonstrar modules",
+                "status": "pending"
+              },
+              {
+                "id": "module",
+                "objective": "demonstrar module",
+                "status": "pending"
+              },
+              {
+                "id": "promises",
+                "objective": "demonstrar promises",
+                "status": "pending"
+              },
+              {
+                "id": "async",
+                "objective": "demonstrar async",
+                "status": "pending"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "freeCodeCamp Programming Tutorials: Python, JavaScript, Git & More",
+            "url": "https://preview.freecodecamp.org/"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/config.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/file-handler.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/lint-localized.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.test.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-setup.mjs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-certification.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/fix-seed-semicolons.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/test-challenges.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/mongo-ids.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/challenge-auditor/index.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-certification.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/pseudo-worker.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/generate/build-curriculum.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-global-setup.mjs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/daily-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/challenge-titles.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/generate-block-tests.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/sort-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schema.test.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/types.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/utils/exam-schemas.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/users/exists.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/client/i18n/schema-validation.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/meta-schema.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/challenge/exam.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/intro-schema.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/scene-assets.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/report-user.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/reset-module.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/submit-survey.ts"
+          }
+        ],
+        "independent_hosts": 2,
+        "documents": 42
+      },
+      "source_repository": "https://github.com/freeCodeCamp/freeCodeCamp.git",
+      "technologies": [
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        "SQL",
+        "C#"
+      ],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789865792.9484413,
+      "evaluation": {
+        "progress": 0.2,
+        "ready": false,
+        "criteria": {
+          "sources": true,
+          "levels": true,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 9,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      },
+      "technology_evidence": {
+        "JavaScript": {
+          "score": 100,
+          "explicit_documents": 20,
+          "strong_documents": 117,
+          "sources": [
+            "https://preview.freecodecamp.org/",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/README.md",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/config.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.test.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/file-handler.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/lint-localized.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.test.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-setup.mjs"
+          ]
+        },
+        "TypeScript": {
+          "score": 100,
+          "explicit_documents": 3,
+          "strong_documents": 72,
+          "sources": [
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/config.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/file-handler.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/lint-localized.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.test.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-certification.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/fix-seed-semicolons.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/test-challenges.js"
+          ]
+        },
+        "Node.js": {
+          "score": 100,
+          "explicit_documents": 16,
+          "strong_documents": 38,
+          "sources": [
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/config.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/file-handler.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/lint-localized.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-setup.mjs",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/fix-seed-semicolons.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/test-challenges.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/mongo-ids.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.test.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/challenge-auditor/index.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/pseudo-worker.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-global-setup.mjs",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/challenge-titles.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.test.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.test.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.test.js"
+          ]
+        },
+        "SQL": {
+          "score": 58,
+          "explicit_documents": 6,
+          "strong_documents": 13,
+          "sources": [
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/README.md",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schema.test.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/client/i18n/schema-validation.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/meta-schema.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/intro-schema.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/scene-assets.js"
+          ]
+        },
+        "C#": {
+          "score": 5,
+          "explicit_documents": 2,
+          "strong_documents": 1,
+          "sources": [
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/README.md",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/types.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/client/i18n/schema-validation.ts"
+          ]
+        }
+      },
+      "source_repositories": [
+        "https://github.com/freeCodeCamp/freeCodeCamp.git"
+      ]
+    },
+    "TypeScript": {
+      "topic": "TypeScript",
+      "status": "partially_known",
+      "confidence": 0.46,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "modules",
+          "module",
+          "promises",
+          "async",
+          "closures",
+          "closure"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "TypeScript",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "modules",
+                "objective": "demonstrar modules",
+                "status": "pending"
+              },
+              {
+                "id": "module",
+                "objective": "demonstrar module",
+                "status": "pending"
+              },
+              {
+                "id": "promises",
+                "objective": "demonstrar promises",
+                "status": "pending"
+              },
+              {
+                "id": "async",
+                "objective": "demonstrar async",
+                "status": "pending"
+              },
+              {
+                "id": "closures",
+                "objective": "demonstrar closures",
+                "status": "pending"
+              },
+              {
+                "id": "closure",
+                "objective": "demonstrar closure",
+                "status": "pending"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "freeCodeCamp Programming Tutorials: Python, JavaScript, Git & More",
+            "url": "https://preview.freecodecamp.org/"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/config.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/file-handler.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/lint-localized.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.test.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-setup.mjs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-certification.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/fix-seed-semicolons.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/test-challenges.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/mongo-ids.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/challenge-auditor/index.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-certification.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/pseudo-worker.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/generate/build-curriculum.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-global-setup.mjs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/daily-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/challenge-titles.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/generate-block-tests.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/sort-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schema.test.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/types.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/utils/exam-schemas.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/users/exists.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/client/i18n/schema-validation.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/meta-schema.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/challenge/exam.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/intro-schema.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/scene-assets.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/report-user.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/reset-module.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/submit-survey.ts"
+          },
+          {
+            "title": "TypeScript: The starting point for learning TypeScript",
+            "url": "https://www.typescriptlang.org/docs/"
+          },
+          {
+            "title": "TypeScript: Handbook - The TypeScript Handbook",
+            "url": "https://www.typescriptlang.org/docs/handbook/intro.html"
+          }
+        ],
+        "independent_hosts": 2,
+        "documents": 43
+      },
+      "source_repository": "https://github.com/freeCodeCamp/freeCodeCamp.git",
+      "technologies": [
+        "TypeScript",
+        "HTML/CSS"
+      ],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789915981.9280796,
+      "technology_evidence": {
+        "TypeScript": {
+          "score": 100,
+          "explicit_documents": 3,
+          "strong_documents": 72,
+          "sources": [
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/config.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/file-handler.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/lint-localized.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.test.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-certification.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/fix-seed-semicolons.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/test-challenges.js"
+          ]
+        },
+        "HTML/CSS": {
+          "score": 15,
+          "explicit_documents": 3,
+          "strong_documents": 3,
+          "sources": [
+            "https://www.typescriptlang.org/docs/handbook/intro.html"
+          ]
+        }
+      },
+      "evaluation": {
+        "progress": 0.2,
+        "ready": false,
+        "criteria": {
+          "sources": true,
+          "levels": true,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 11,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      },
+      "source_repositories": [
+        "https://github.com/freeCodeCamp/freeCodeCamp.git",
+        "https://www.typescriptlang.org/docs/handbook/intro.html"
+      ]
+    },
+    "C#": {
+      "topic": "C#",
+      "status": "partially_known",
+      "confidence": 0.46,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "types",
+          "classes",
+          "linq",
+          "async-await",
+          "modules",
+          "module",
+          "promises",
+          "async"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "C#",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "types",
+                "objective": "demonstrar types",
+                "status": "pending"
+              },
+              {
+                "id": "classes",
+                "objective": "demonstrar classes",
+                "status": "pending"
+              },
+              {
+                "id": "linq",
+                "objective": "demonstrar linq",
+                "status": "pending"
+              },
+              {
+                "id": "async-await",
+                "objective": "demonstrar async-await",
+                "status": "pending"
+              },
+              {
+                "id": "modules",
+                "objective": "demonstrar modules",
+                "status": "pending"
+              },
+              {
+                "id": "module",
+                "objective": "demonstrar module",
+                "status": "pending"
+              },
+              {
+                "id": "promises",
+                "objective": "demonstrar promises",
+                "status": "pending"
+              },
+              {
+                "id": "async",
+                "objective": "demonstrar async",
+                "status": "pending"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 0.9,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "freeCodeCamp Programming Tutorials: Python, JavaScript, Git & More",
+            "url": "https://preview.freecodecamp.org/"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/config.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/file-handler.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/lint-localized.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.test.ts"
+          }
+        ],
+        "independent_hosts": 2,
+        "documents": 43
+      },
+      "source_repository": "https://github.com/freeCodeCamp/freeCodeCamp.git",
+      "technologies": [
+        "C#"
+      ],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789863221.683465,
+      "technology_evidence": {
+        "C#": {
+          "score": 5,
+          "explicit_documents": 2,
+          "strong_documents": 1,
+          "sources": [
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/README.md",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/types.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/client/i18n/schema-validation.ts"
+          ]
+        }
+      },
+      "evaluation": {
+        "progress": 0.2,
+        "ready": false,
+        "criteria": {
+          "sources": true,
+          "levels": true,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 13,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      }
+    },
+    "Java": {
+      "topic": "Java",
+      "status": "partially_known",
+      "confidence": 0.26,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "Java",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": []
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "Java documentation",
+            "url": "https://example.org/java"
+          }
+        ],
+        "independent_hosts": 1,
+        "documents": 1
+      },
+      "source_repository": null,
+      "technologies": [],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789922729.0993013,
+      "evaluation": {
+        "progress": 0.0625,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": false,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 5,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      }
+    },
+    "Zig": {
+      "topic": "Zig",
+      "status": "partially_known",
+      "confidence": 0.37,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "comptime",
+          "allocators",
+          "error-unions",
+          "build-system",
+          "memory",
+          "testing"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "Zig",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "comptime",
+                "objective": "demonstrar comptime",
+                "status": "pending"
+              },
+              {
+                "id": "allocators",
+                "objective": "demonstrar allocators",
+                "status": "pending"
+              },
+              {
+                "id": "error-unions",
+                "objective": "demonstrar error-unions",
+                "status": "pending"
+              },
+              {
+                "id": "build-system",
+                "objective": "demonstrar build-system",
+                "status": "pending"
+              },
+              {
+                "id": "memory",
+                "objective": "demonstrar memory",
+                "status": "pending"
+              },
+              {
+                "id": "testing",
+                "objective": "demonstrar testing",
+                "status": "pending"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "Zig Language Reference",
+            "url": "https://ziglang.org/documentation/master/"
+          },
+          {
+            "title": "Zig reference on a wiki",
+            "url": "https://deepwiki.com/ziglang/zig/reference"
+          },
+          {
+            "title": "Learn\n      ⚡\n      Zig Programming Language",
+            "url": "https://ziglang.org/learn/"
+          }
+        ],
+        "independent_hosts": 2,
+        "documents": 2
+      },
+      "source_repository": "https://ziglang.org/learn/",
+      "technologies": [],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789922729.1291876,
+      "evaluation": {
+        "progress": 0.125,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": true,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 11,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      },
+      "source_repositories": [
+        "https://ziglang.org/learn/",
+        "https://ziglang.org/documentation/master/"
+      ]
+    },
+    "Rust": {
+      "topic": "Rust",
+      "status": "partially_known",
+      "confidence": 0.78,
+      "version": null,
+      "concepts": {
+        "covered": [
+          "ownership",
+          "borrowing",
+          "result-option",
+          "cargo",
+          "iterators",
+          "traits",
+          "pattern-matching",
+          "modules"
+        ],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "testing",
+          "async",
+          "module",
+          "component",
+          "error-handling",
+          "memory",
+          "state"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "Rust",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "ownership",
+                "objective": "demonstrar ownership",
+                "status": "covered"
+              },
+              {
+                "id": "borrowing",
+                "objective": "demonstrar borrowing",
+                "status": "covered"
+              },
+              {
+                "id": "result-option",
+                "objective": "demonstrar result-option",
+                "status": "covered"
+              },
+              {
+                "id": "cargo",
+                "objective": "demonstrar cargo",
+                "status": "covered"
+              },
+              {
+                "id": "iterators",
+                "objective": "demonstrar iterators",
+                "status": "covered"
+              },
+              {
+                "id": "traits",
+                "objective": "demonstrar traits",
+                "status": "covered"
+              },
+              {
+                "id": "pattern-matching",
+                "objective": "demonstrar pattern-matching",
+                "status": "covered"
+              },
+              {
+                "id": "modules",
+                "objective": "demonstrar modules",
+                "status": "covered"
+              },
+              {
+                "id": "testing",
+                "objective": "demonstrar testing",
+                "status": "pending"
+              },
+              {
+                "id": "async",
+                "objective": "demonstrar async",
+                "status": "pending"
+              },
+              {
+                "id": "module",
+                "objective": "demonstrar module",
+                "status": "pending"
+              },
+              {
+                "id": "component",
+                "objective": "demonstrar component",
+                "status": "pending"
+              },
+              {
+                "id": "error-handling",
+                "objective": "demonstrar error handling",
+                "status": "pending"
+              },
+              {
+                "id": "memory",
+                "objective": "demonstrar memory",
+                "status": "pending"
+              },
+              {
+                "id": "state",
+                "objective": "demonstrar state",
+                "status": "pending"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/redirects/testing.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/first-edition/src/testing.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/packages/mdbook-trpl/src/note/tests.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/packages/trpl/tests/integration/main.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/packages/mdbook-trpl/src/config/tests.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/packages/mdbook-trpl/src/figure/tests.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/packages/mdbook-trpl/src/heading/tests.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/packages/mdbook-trpl/src/listing/tests.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/packages/mdbook-trpl/tests/integration/main.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/redirects/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/packages/trpl/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/redirects/documentation.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/first-edition/src/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/packages/mdbook-trpl/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/book/main/first-edition/src/documentation.md"
+          },
+          {
+            "title": "Rust Programming Language",
+            "url": "https://rust-lang.org/"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/17_tests/tests1.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/17_tests/tests2.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/17_tests/tests3.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/17_tests/tests1.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/17_tests/tests2.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/17_tests/tests3.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/tests/test_exercises/dev/Cargo.toml"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/05_vecs/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/08_enums/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/24_async/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/15_traits/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/21_macros/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/22_clippy/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/09_strings/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/12_options/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/20_threads/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/11_hashmaps/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/14_generics/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/01_variables/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/16_lifetimes/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/23_conversions/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/06_move_semantics/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/13_error_handling/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/19_smart_pointers/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/04_primitive_types/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing/Cargo.toml"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/mod.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/tests/panic_location.rs"
+          }
+        ],
+        "independent_hosts": 2,
+        "documents": 71
+      },
+      "source_repository": "https://github.com/rust-lang/book.git",
+      "technologies": [
+        "Rust"
+      ],
+      "practice": {
+        "tasks": 12,
+        "passed": 12,
+        "failed": 0,
+        "verified": [
+          {
+            "task": "ownership",
+            "level": "foundation",
+            "evidence": "cargo test ownership; aprovado",
+            "at": 1789915951.8519938
+          },
+          {
+            "task": "borrowing",
+            "level": "foundation",
+            "evidence": "cargo test borrowing; aprovado",
+            "at": 1789915951.8620288
+          },
+          {
+            "task": "result-option",
+            "level": "practice",
+            "evidence": "cargo test result_option; aprovado",
+            "at": 1789915951.8697631
+          },
+          {
+            "task": "cargo",
+            "level": "practice",
+            "evidence": "cargo test cargo_builds; aprovado",
+            "at": 1789915951.879079
+          },
+          {
+            "task": "error-boundary",
+            "level": "practice",
+            "evidence": "cargo test error_boundary; aprovado",
+            "at": 1789915951.8853762
+          },
+          {
+            "task": "iterators",
+            "level": "practice",
+            "evidence": "cargo test iterators; aprovado",
+            "at": 1789915951.8926427
+          },
+          {
+            "task": "traits",
+            "level": "transfer",
+            "evidence": "cargo test traits; aprovado",
+            "at": 1789915951.8984458
+          },
+          {
+            "task": "pattern-matching",
+            "level": "transfer",
+            "evidence": "cargo test pattern_matching; aprovado",
+            "at": 1789915951.9033964
+          },
+          {
+            "task": "modules",
+            "level": "transfer",
+            "evidence": "cargo test modules; aprovado",
+            "at": 1789915951.9092662
+          },
+          {
+            "task": "unseen-values",
+            "level": "transfer",
+            "evidence": "cargo test unseen_values; aprovado",
+            "at": 1789915951.913828
+          },
+          {
+            "task": "integration-project",
+            "level": "integration",
+            "evidence": "cargo test integration_project; aprovado",
+            "at": 1789915951.917733
+          },
+          {
+            "task": "resource-safety",
+            "level": "integration",
+            "evidence": "cargo test resource_safety; aprovado",
+            "at": 1789915951.923632
+          }
+        ],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789915951.9238343,
+      "source_repositories": [
+        "https://github.com/rust-lang/book.git",
+        "https://github.com/rust-lang/rustlings.git",
+        "https://github.com/tokio-rs/axum.git",
+        "https://github.com/TheAlgorithms/Rust.git",
+        "https://github.com/tokio-rs/axum",
+        "https://doc.rust-lang.org/book/",
+        "https://doc.rust-lang.org/reference/"
+      ],
+      "technology_evidence": {
+        "Rust": {
+          "score": 100,
+          "explicit_documents": 44,
+          "strong_documents": 170,
+          "sources": [
+            "https://raw.githubusercontent.com/rust-lang/book/main/README.md",
+            "https://raw.githubusercontent.com/rust-lang/book/main/redirects/testing.md",
+            "https://raw.githubusercontent.com/rust-lang/book/main/first-edition/src/testing.md",
+            "https://raw.githubusercontent.com/rust-lang/book/main/packages/mdbook-trpl/src/note/tests.rs",
+            "https://raw.githubusercontent.com/rust-lang/book/main/packages/trpl/tests/integration/main.rs",
+            "https://raw.githubusercontent.com/rust-lang/book/main/packages/mdbook-trpl/src/config/tests.rs",
+            "https://raw.githubusercontent.com/rust-lang/book/main/packages/mdbook-trpl/src/figure/tests.rs",
+            "https://raw.githubusercontent.com/rust-lang/book/main/packages/mdbook-trpl/src/heading/tests.rs",
+            "https://raw.githubusercontent.com/rust-lang/book/main/packages/mdbook-trpl/src/listing/tests.rs",
+            "https://raw.githubusercontent.com/rust-lang/book/main/packages/mdbook-trpl/tests/integration/main.rs",
+            "https://raw.githubusercontent.com/rust-lang/book/main/redirects/README.md",
+            "https://raw.githubusercontent.com/rust-lang/book/main/packages/trpl/README.md",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/README.md",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/17_tests/tests1.rs",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/17_tests/tests2.rs",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/17_tests/tests3.rs",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/17_tests/tests1.rs",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/17_tests/tests2.rs",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/17_tests/tests3.rs",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/tests/test_exercises/dev/Cargo.toml",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/README.md",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/README.md",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/05_vecs/README.md",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/08_enums/README.md",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing/Cargo.toml",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/mod.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/tests/panic_location.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing/src/main.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/mod.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/nest.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/merge.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/compression/src/tests.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/fallback.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/test_client.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/get_to_head.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/handle_error.rs"
+          ]
+        }
+      },
+      "evaluation": {
+        "progress": 0.85,
+        "ready": false,
+        "criteria": {
+          "sources": true,
+          "levels": true,
+          "coverage": false,
+          "practice": true,
+          "transfer": true,
+          "integration": true
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 8,
+          "total": 20,
+          "ratio": 0.4
+        },
+        "practice": {
+          "tasks": 12,
+          "passed": 12,
+          "failed": 0,
+          "pass_rate": 1.0,
+          "transfer": 4,
+          "integration": true
+        }
+      }
+    },
+    "rustlings": {
+      "topic": "rustlings",
+      "status": "studying",
+      "confidence": 0.38,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "module",
+          "modules",
+          "async",
+          "component",
+          "ownership",
+          "borrowing",
+          "error-handling",
+          "memory",
+          "state"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "rustlings",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "module",
+                "objective": "demonstrar module",
+                "status": "pending"
+              },
+              {
+                "id": "modules",
+                "objective": "demonstrar modules",
+                "status": "pending"
+              },
+              {
+                "id": "async",
+                "objective": "demonstrar async",
+                "status": "pending"
+              },
+              {
+                "id": "component",
+                "objective": "demonstrar component",
+                "status": "pending"
+              },
+              {
+                "id": "ownership",
+                "objective": "demonstrar ownership",
+                "status": "pending"
+              },
+              {
+                "id": "borrowing",
+                "objective": "demonstrar borrowing",
+                "status": "pending"
+              },
+              {
+                "id": "error-handling",
+                "objective": "demonstrar error handling",
+                "status": "pending"
+              },
+              {
+                "id": "memory",
+                "objective": "demonstrar memory",
+                "status": "pending"
+              },
+              {
+                "id": "state",
+                "objective": "demonstrar state",
+                "status": "pending"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/17_tests/tests1.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/17_tests/tests2.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/17_tests/tests3.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/17_tests/tests1.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/17_tests/tests2.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/17_tests/tests3.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/tests/test_exercises/dev/Cargo.toml"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/05_vecs/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/08_enums/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/24_async/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/15_traits/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/21_macros/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/22_clippy/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/09_strings/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/12_options/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/20_threads/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/11_hashmaps/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/14_generics/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/01_variables/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/16_lifetimes/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/23_conversions/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/06_move_semantics/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/13_error_handling/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/19_smart_pointers/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/04_primitive_types/README.md"
+          }
+        ],
+        "independent_hosts": 1,
+        "documents": 28
+      },
+      "source_repository": "https://github.com/rust-lang/rustlings.git",
+      "technologies": [
+        "Rust"
+      ],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789913499.1860082,
+      "source_repositories": [
+        "https://github.com/rust-lang/rustlings.git"
+      ],
+      "technology_evidence": {
+        "Rust": {
+          "score": 56,
+          "explicit_documents": 28,
+          "strong_documents": 7,
+          "sources": [
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/README.md",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/17_tests/tests1.rs",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/17_tests/tests2.rs",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/17_tests/tests3.rs",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/17_tests/tests1.rs",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/17_tests/tests2.rs",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/17_tests/tests3.rs",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/tests/test_exercises/dev/Cargo.toml",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/README.md",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/solutions/README.md",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/05_vecs/README.md",
+            "https://raw.githubusercontent.com/rust-lang/rustlings/main/exercises/08_enums/README.md"
+          ]
+        }
+      },
+      "evaluation": {
+        "progress": 0.15,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": true,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 14,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      }
+    },
+    "JavaScript": {
+      "topic": "JavaScript",
+      "status": "partially_known",
+      "confidence": 0.78,
+      "version": null,
+      "concepts": {
+        "covered": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "closures",
+          "promises",
+          "modules",
+          "event-loop",
+          "async"
+        ],
+        "gaps": [
+          "module"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "JavaScript",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "covered"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "covered"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "covered"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "covered"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "covered"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "closures",
+                "objective": "demonstrar closures",
+                "status": "covered"
+              },
+              {
+                "id": "promises",
+                "objective": "demonstrar promises",
+                "status": "covered"
+              },
+              {
+                "id": "modules",
+                "objective": "demonstrar modules",
+                "status": "covered"
+              },
+              {
+                "id": "event-loop",
+                "objective": "demonstrar event-loop",
+                "status": "covered"
+              },
+              {
+                "id": "module",
+                "objective": "demonstrar module",
+                "status": "pending"
+              },
+              {
+                "id": "async",
+                "objective": "demonstrar async",
+                "status": "covered"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "freeCodeCamp Programming Tutorials: Python, JavaScript, Git & More",
+            "url": "https://preview.freecodecamp.org/"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/config.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/file-handler.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/lint-localized.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.test.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-setup.mjs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-certification.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/fix-seed-semicolons.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/test-challenges.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/mongo-ids.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/challenge-auditor/index.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-certification.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/pseudo-worker.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/generate/build-curriculum.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-global-setup.mjs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/daily-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/challenge-titles.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/generate-block-tests.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/sort-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schema.test.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/types.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/utils/exam-schemas.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/users/exists.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/client/i18n/schema-validation.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/meta-schema.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/challenge/exam.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/intro-schema.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/scene-assets.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/report-user.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/reset-module.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/submit-survey.ts"
+          },
+          {
+            "title": "JavaScript | MDN",
+            "url": "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
+          }
+        ],
+        "independent_hosts": 2,
+        "documents": 43
+      },
+      "source_repository": "https://github.com/freeCodeCamp/freeCodeCamp.git",
+      "technologies": [
+        "JavaScript"
+      ],
+      "practice": {
+        "tasks": 12,
+        "passed": 12,
+        "failed": 0,
+        "verified": [
+          {
+            "task": "foundation-control-flow",
+            "level": "foundation",
+            "evidence": "node task.js; aprovado",
+            "at": 1789865817.8451633
+          },
+          {
+            "task": "error-handling",
+            "level": "practice",
+            "evidence": "node task_errors.js; aprovado",
+            "at": 1789865817.8531938
+          },
+          {
+            "task": "module-composition",
+            "level": "practice",
+            "evidence": "node task_module.js; aprovado",
+            "at": 1789865817.8612864
+          },
+          {
+            "task": "unseen-inputs",
+            "level": "transfer",
+            "evidence": "node task_tests.js; aprovado",
+            "at": 1789865817.8685613
+          },
+          {
+            "task": "transfer-boundary-cases",
+            "level": "transfer",
+            "evidence": "node -e const f=v=>v<0?'negative':v===0?'zero':'positive'; if(f(-999)!=='negative'||f(999)!=='positive')process.exit(1); aprovado",
+            "at": 1789865817.8751233
+          },
+          {
+            "task": "closure-scope",
+            "level": "practice",
+            "evidence": "node task_closure.js; aprovado",
+            "at": 1789865817.883186
+          },
+          {
+            "task": "promise-contract",
+            "level": "practice",
+            "evidence": "node task_promise.js; aprovado",
+            "at": 1789865817.889617
+          },
+          {
+            "task": "event-loop-order",
+            "level": "transfer",
+            "evidence": "node task_event_loop.js; aprovado",
+            "at": 1789865817.8951466
+          },
+          {
+            "task": "serialization-boundary",
+            "level": "practice",
+            "evidence": "node task_serialization.js; aprovado",
+            "at": 1789865817.9005382
+          },
+          {
+            "task": "integration-project",
+            "level": "integration",
+            "evidence": "node task_integration.js; aprovado",
+            "at": 1789865817.9062257
+          },
+          {
+            "task": "async-error-boundary",
+            "level": "transfer",
+            "evidence": "node task_async_errors.js; aprovado",
+            "at": 1789865817.911515
+          },
+          {
+            "task": "module-boundary",
+            "level": "practice",
+            "evidence": "node task_module_boundary.js; aprovado",
+            "at": 1789865817.917034
+          }
+        ],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789865817.917203,
+      "source_repositories": [
+        "https://github.com/freeCodeCamp/freeCodeCamp.git"
+      ],
+      "technology_evidence": {
+        "JavaScript": {
+          "score": 100,
+          "explicit_documents": 13,
+          "strong_documents": 78,
+          "sources": [
+            "https://preview.freecodecamp.org/",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/README.md",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/config.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.test.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/file-handler.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/lint-localized.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.test.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-setup.mjs"
+          ]
+        }
+      },
+      "evaluation": {
+        "progress": 0.9773,
+        "ready": false,
+        "criteria": {
+          "sources": true,
+          "levels": true,
+          "coverage": false,
+          "practice": true,
+          "transfer": true,
+          "integration": true
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 10,
+          "total": 11,
+          "ratio": 0.9091
+        },
+        "practice": {
+          "tasks": 12,
+          "passed": 12,
+          "failed": 0,
+          "pass_rate": 1.0,
+          "transfer": 4,
+          "integration": true
+        }
+      }
+    },
+    "C++": {
+      "topic": "C++",
+      "status": "partially_known",
+      "confidence": 0.26,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "C++",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": []
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "C++ reference",
+            "url": "https://example.org/cpp"
+          }
+        ],
+        "independent_hosts": 1,
+        "documents": 1
+      },
+      "source_repository": null,
+      "technologies": [],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789922729.056695,
+      "evaluation": {
+        "progress": 0.0625,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": false,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 5,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      }
+    },
+    "Axum": {
+      "topic": "Axum",
+      "status": "partially_known",
+      "confidence": 0.38,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "routing",
+          "extractors",
+          "shared-state",
+          "middleware",
+          "error-handling",
+          "testing",
+          "async",
+          "state"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "Axum",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "routing",
+                "objective": "demonstrar routing",
+                "status": "pending"
+              },
+              {
+                "id": "extractors",
+                "objective": "demonstrar extractors",
+                "status": "pending"
+              },
+              {
+                "id": "shared-state",
+                "objective": "demonstrar shared-state",
+                "status": "pending"
+              },
+              {
+                "id": "middleware",
+                "objective": "demonstrar middleware",
+                "status": "pending"
+              },
+              {
+                "id": "error-handling",
+                "objective": "demonstrar error-handling",
+                "status": "pending"
+              },
+              {
+                "id": "testing",
+                "objective": "demonstrar testing",
+                "status": "pending"
+              },
+              {
+                "id": "async",
+                "objective": "demonstrar async",
+                "status": "pending"
+              },
+              {
+                "id": "state",
+                "objective": "demonstrar state",
+                "status": "pending"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing/Cargo.toml"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/mod.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/tests/panic_location.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing/src/main.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/mod.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/nest.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/merge.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/compression/src/tests.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/fallback.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/test_client.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/get_to_head.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/handle_error.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing-websockets/Cargo.toml"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing-websockets/src/main.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/from_ref/pass/basic.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/tracing_helpers.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/static-file-server/src/tests.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/from_request/pass/named.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/typed_path/pass/into_uri.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/from_request/pass/container.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/from_request/pass/named_via.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/from_request/pass/state_via.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/debug_handler/pass/set_state.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/typed_path/pass/tuple_struct.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/typed_path/pass/url_encoding.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/counting_cloneable_state.rs"
+          }
+        ],
+        "independent_hosts": 1,
+        "documents": 26
+      },
+      "source_repository": "https://github.com/tokio-rs/axum.git",
+      "technologies": [
+        "Axum"
+      ],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789915949.8463945,
+      "source_repositories": [
+        "https://github.com/tokio-rs/axum.git",
+        "https://github.com/tokio-rs/axum"
+      ],
+      "technology_evidence": {
+        "Axum": {
+          "score": 100,
+          "explicit_documents": 130,
+          "strong_documents": 130,
+          "sources": [
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing/Cargo.toml",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/mod.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/tests/panic_location.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing/src/main.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/mod.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/nest.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/merge.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/compression/src/tests.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/fallback.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/test_client.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/get_to_head.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/handle_error.rs"
+          ]
+        }
+      },
+      "evaluation": {
+        "progress": 0.15,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": true,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 13,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      }
+    },
+    "Node.js": {
+      "topic": "Node.js",
+      "status": "partially_known",
+      "confidence": 0.7,
+      "version": null,
+      "concepts": {
+        "covered": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "modules",
+          "promises",
+          "async"
+        ],
+        "gaps": [
+          "module"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "Node.js",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "covered"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "covered"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "covered"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "covered"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "covered"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "modules",
+                "objective": "demonstrar modules",
+                "status": "covered"
+              },
+              {
+                "id": "module",
+                "objective": "demonstrar module",
+                "status": "pending"
+              },
+              {
+                "id": "promises",
+                "objective": "demonstrar promises",
+                "status": "covered"
+              },
+              {
+                "id": "async",
+                "objective": "demonstrar async",
+                "status": "covered"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/config.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/file-handler.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/lint-localized.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.test.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-setup.mjs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-certification.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/fix-seed-semicolons.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/test-challenges.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/mongo-ids.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/challenge-auditor/index.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-certification.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/pseudo-worker.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/generate/build-curriculum.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-global-setup.mjs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/daily-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/challenge-titles.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/generate-block-tests.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/sort-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schema.test.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/types.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/utils/exam-schemas.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/users/exists.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/client/i18n/schema-validation.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/meta-schema.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/challenge/exam.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/intro-schema.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/scene-assets.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/report-user.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/reset-module.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/submit-survey.ts"
+          },
+          {
+            "title": "Introduction to Node.js | Node.js Learn",
+            "url": "https://nodejs.org/learn/getting-started/introduction-to-nodejs"
+          }
+        ],
+        "independent_hosts": 1,
+        "documents": 41
+      },
+      "source_repository": "https://github.com/freeCodeCamp/freeCodeCamp.git",
+      "technologies": [
+        "Node.js"
+      ],
+      "practice": {
+        "tasks": 15,
+        "passed": 15,
+        "failed": 0,
+        "verified": [
+          {
+            "task": "foundation-control-flow",
+            "level": "foundation",
+            "evidence": "node task.js; aprovado",
+            "at": 1789915988.0986576
+          },
+          {
+            "task": "error-handling",
+            "level": "practice",
+            "evidence": "node task_errors.js; aprovado",
+            "at": 1789915988.1044858
+          },
+          {
+            "task": "module-composition",
+            "level": "practice",
+            "evidence": "node task_module.js; aprovado",
+            "at": 1789915988.112662
+          },
+          {
+            "task": "unseen-inputs",
+            "level": "transfer",
+            "evidence": "node task_tests.js; aprovado",
+            "at": 1789915988.1169124
+          },
+          {
+            "task": "transfer-boundary-cases",
+            "level": "transfer",
+            "evidence": "node -e const f=v=>v<0?'negative':v===0?'zero':'positive'; if(f(-999)!=='negative'||f(999)!=='positive')process.exit(1); aprovado",
+            "at": 1789915988.121218
+          },
+          {
+            "task": "closure-scope",
+            "level": "practice",
+            "evidence": "node task_closure.js; aprovado",
+            "at": 1789915988.126632
+          },
+          {
+            "task": "promise-contract",
+            "level": "practice",
+            "evidence": "node task_promise.js; aprovado",
+            "at": 1789915988.133893
+          },
+          {
+            "task": "event-loop-order",
+            "level": "transfer",
+            "evidence": "node task_event_loop.js; aprovado",
+            "at": 1789915988.1386287
+          },
+          {
+            "task": "serialization-boundary",
+            "level": "practice",
+            "evidence": "node task_serialization.js; aprovado",
+            "at": 1789915988.1448245
+          },
+          {
+            "task": "integration-project",
+            "level": "integration",
+            "evidence": "node task_integration.js; aprovado",
+            "at": 1789915988.1499913
+          },
+          {
+            "task": "async-error-boundary",
+            "level": "transfer",
+            "evidence": "node task_async_errors.js; aprovado",
+            "at": 1789915988.1555035
+          },
+          {
+            "task": "module-boundary",
+            "level": "practice",
+            "evidence": "node task_module_boundary.js; aprovado",
+            "at": 1789915988.1621943
+          },
+          {
+            "task": "node-http-server",
+            "level": "practice",
+            "evidence": "node task_http_server.js; aprovado",
+            "at": 1789915988.1668308
+          },
+          {
+            "task": "node-streams",
+            "level": "transfer",
+            "evidence": "node task_streams.js; aprovado",
+            "at": 1789915988.1734905
+          },
+          {
+            "task": "node-observability",
+            "level": "integration",
+            "evidence": "node task_observability.js; aprovado",
+            "at": 1789915988.178924
+          }
+        ],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789915988.1791215,
+      "source_repositories": [
+        "https://github.com/freeCodeCamp/freeCodeCamp.git",
+        "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs"
+      ],
+      "technology_evidence": {
+        "Node.js": {
+          "score": 90,
+          "explicit_documents": 8,
+          "strong_documents": 22,
+          "sources": [
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/config.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.test.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/file-handler.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/lint-localized.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-setup.mjs",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/fix-seed-semicolons.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.test.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/test-challenges.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/mongo-ids.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.test.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.test.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/challenge-auditor/index.ts"
+          ]
+        }
+      },
+      "evaluation": {
+        "progress": 0.9222,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": true,
+          "coverage": false,
+          "practice": true,
+          "transfer": true,
+          "integration": true
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 8,
+          "total": 9,
+          "ratio": 0.8889
+        },
+        "practice": {
+          "tasks": 15,
+          "passed": 15,
+          "failed": 0,
+          "pass_rate": 1.0,
+          "transfer": 5,
+          "integration": true
+        }
+      }
+    },
+    "SQL": {
+      "topic": "SQL",
+      "status": "partially_known",
+      "confidence": 0.38,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "relational-model",
+          "joins",
+          "indexes",
+          "transactions",
+          "modules",
+          "module",
+          "promises",
+          "async"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "SQL",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "relational-model",
+                "objective": "demonstrar relational-model",
+                "status": "pending"
+              },
+              {
+                "id": "joins",
+                "objective": "demonstrar joins",
+                "status": "pending"
+              },
+              {
+                "id": "indexes",
+                "objective": "demonstrar indexes",
+                "status": "pending"
+              },
+              {
+                "id": "transactions",
+                "objective": "demonstrar transactions",
+                "status": "pending"
+              },
+              {
+                "id": "modules",
+                "objective": "demonstrar modules",
+                "status": "pending"
+              },
+              {
+                "id": "module",
+                "objective": "demonstrar module",
+                "status": "pending"
+              },
+              {
+                "id": "promises",
+                "objective": "demonstrar promises",
+                "status": "pending"
+              },
+              {
+                "id": "async",
+                "objective": "demonstrar async",
+                "status": "pending"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/config.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/filter.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/file-handler.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/lint-localized.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/super-order.test.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-setup.mjs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-certification.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/fix-seed-semicolons.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/get-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/test-challenges.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/mongo-ids.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-superblock.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/challenge-auditor/index.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-certification.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/pseudo-worker.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/generate/build-curriculum.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/vitest-global-setup.mjs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/daily-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/challenge-titles.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/generate-block-tests.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/test/utils/sort-challenges.test.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schema.test.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/types.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/utils/exam-schemas.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/users/exists.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/client/i18n/schema-validation.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/meta-schema.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/challenge/exam.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/intro-schema.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/scene-assets.js"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/report-user.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/reset-module.ts"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/api/src/schemas/user/submit-survey.ts"
+          }
+        ],
+        "independent_hosts": 1,
+        "documents": 41
+      },
+      "source_repository": "https://github.com/freeCodeCamp/freeCodeCamp.git",
+      "technologies": [
+        "SQL"
+      ],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789865817.0251086,
+      "source_repositories": [
+        "https://github.com/freeCodeCamp/freeCodeCamp.git"
+      ],
+      "technology_evidence": {
+        "SQL": {
+          "score": 14,
+          "explicit_documents": 2,
+          "strong_documents": 3,
+          "sources": [
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/README.md",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/src/build-curriculum.ts",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/meta-schema.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/intro-schema.js",
+            "https://raw.githubusercontent.com/freeCodeCamp/freeCodeCamp/main/curriculum/schema/scene-assets.js"
+          ]
+        }
+      },
+      "evaluation": {
+        "progress": 0.15,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": true,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 13,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      }
+    },
+    "Python": {
+      "topic": "Python",
+      "status": "partially_known",
+      "confidence": 0.7,
+      "version": null,
+      "concepts": {
+        "covered": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "modules",
+          "problema-novo",
+          "testing",
+          "iterators",
+          "exceptions",
+          "async"
+        ],
+        "gaps": [
+          "module"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "Python",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "covered"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "covered"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "covered"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "covered"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "covered"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "iterators",
+                "objective": "demonstrar iterators",
+                "status": "covered"
+              },
+              {
+                "id": "exceptions",
+                "objective": "demonstrar exceptions",
+                "status": "covered"
+              },
+              {
+                "id": "modules",
+                "objective": "demonstrar modules",
+                "status": "covered"
+              },
+              {
+                "id": "testing",
+                "objective": "demonstrar testing",
+                "status": "covered"
+              },
+              {
+                "id": "module",
+                "objective": "demonstrar module",
+                "status": "pending"
+              },
+              {
+                "id": "async",
+                "objective": "demonstrar async",
+                "status": "covered"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/AGENTS.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/LICENSE.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/SECURITY.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/DIRECTORY.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/pyproject.toml"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/CONTRIBUTING.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/.github/stale.yml"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/.github/dependabot.yml"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/sudoku.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/.devcontainer/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/.pre-commit-config.yaml"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/audio_filters/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/minimax.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/coloring.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/n_queens.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/power_sum.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/word_break.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/bit_manipulation/parity.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/audio_filters/iir_filter.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/knight_tour.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/rat_in_maze.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/word_ladder.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/word_search.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/bit_manipulation/is_even.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/n_queens_math.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/audio_filters/show_response.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/sum_of_subsets.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/bit_manipulation/power_of_4.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/.devcontainer/devcontainer.json"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/combination_sum.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/bit_manipulation/rotate_bits.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/.github/pull_request_template.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/all_combinations.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/all_permutations.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/all_subsequences.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/bit_manipulation/reverse_bits.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/audio_filters/loudness_curve.json"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/hamiltonian_cycle.py"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/TheAlgorithms/Python/master/bit_manipulation/binary_shifts.py"
+          }
+        ],
+        "independent_hosts": 1,
+        "documents": 40
+      },
+      "source_repository": "https://github.com/TheAlgorithms/Python.git",
+      "technologies": [
+        "Python"
+      ],
+      "practice": {
+        "tasks": 12,
+        "passed": 12,
+        "failed": 0,
+        "verified": [
+          {
+            "task": "foundation-control-flow",
+            "level": "foundation",
+            "evidence": "python3 task.py; aprovado",
+            "at": 1789866547.7104387
+          },
+          {
+            "task": "error-handling",
+            "level": "practice",
+            "evidence": "python3 task_errors.py; aprovado",
+            "at": 1789866547.712255
+          },
+          {
+            "task": "module-composition",
+            "level": "practice",
+            "evidence": "python3 task_module.py; aprovado",
+            "at": 1789866547.7150092
+          },
+          {
+            "task": "unseen-inputs",
+            "level": "transfer",
+            "evidence": "python3 task_tests.py; aprovado",
+            "at": 1789866547.716601
+          },
+          {
+            "task": "transfer-boundary-cases",
+            "level": "transfer",
+            "evidence": "python3 -c from task import classify; assert classify(-999)=='negative'; assert classify(999)=='positive'; aprovado",
+            "at": 1789866547.7182562
+          },
+          {
+            "task": "iterator-generator",
+            "level": "practice",
+            "evidence": "python3 task_iterator.py; aprovado",
+            "at": 1789866547.7198575
+          },
+          {
+            "task": "exceptions-contract",
+            "level": "practice",
+            "evidence": "python3 task_exceptions.py; aprovado",
+            "at": 1789866547.7214022
+          },
+          {
+            "task": "serialization-boundary",
+            "level": "practice",
+            "evidence": "python3 task_serialization.py; aprovado",
+            "at": 1789866547.7229187
+          },
+          {
+            "task": "async-await",
+            "level": "transfer",
+            "evidence": "python3 task_async.py; aprovado",
+            "at": 1789866547.7245903
+          },
+          {
+            "task": "integration-project",
+            "level": "integration",
+            "evidence": "python3 task_integration.py; aprovado",
+            "at": 1789866547.7261775
+          },
+          {
+            "task": "type-boundaries",
+            "level": "transfer",
+            "evidence": "python3 task_types.py; aprovado",
+            "at": 1789866547.7277412
+          },
+          {
+            "task": "resource-safety",
+            "level": "integration",
+            "evidence": "python3 task_resources.py; aprovado",
+            "at": 1789866547.7292929
+          }
+        ],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789866547.7293386,
+      "source_repositories": [
+        "https://github.com/TheAlgorithms/Python.git"
+      ],
+      "technology_evidence": {
+        "Python": {
+          "score": 100,
+          "explicit_documents": 80,
+          "strong_documents": 56,
+          "sources": [
+            "https://raw.githubusercontent.com/TheAlgorithms/Python/master/README.md",
+            "https://raw.githubusercontent.com/TheAlgorithms/Python/master/AGENTS.md",
+            "https://raw.githubusercontent.com/TheAlgorithms/Python/master/LICENSE.md",
+            "https://raw.githubusercontent.com/TheAlgorithms/Python/master/SECURITY.md",
+            "https://raw.githubusercontent.com/TheAlgorithms/Python/master/DIRECTORY.md",
+            "https://raw.githubusercontent.com/TheAlgorithms/Python/master/pyproject.toml",
+            "https://raw.githubusercontent.com/TheAlgorithms/Python/master/CONTRIBUTING.md",
+            "https://raw.githubusercontent.com/TheAlgorithms/Python/master/.github/stale.yml",
+            "https://raw.githubusercontent.com/TheAlgorithms/Python/master/.github/dependabot.yml",
+            "https://raw.githubusercontent.com/TheAlgorithms/Python/master/backtracking/sudoku.py",
+            "https://raw.githubusercontent.com/TheAlgorithms/Python/master/.devcontainer/README.md",
+            "https://raw.githubusercontent.com/TheAlgorithms/Python/master/.pre-commit-config.yaml"
+          ]
+        }
+      },
+      "evaluation": {
+        "progress": 0.9273,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": true,
+          "coverage": false,
+          "practice": true,
+          "transfer": true,
+          "integration": true
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 10,
+          "total": 11,
+          "ratio": 0.9091
+        },
+        "practice": {
+          "tasks": 12,
+          "passed": 12,
+          "failed": 0,
+          "pass_rate": 1.0,
+          "transfer": 4,
+          "integration": true
+        }
+      }
+    },
+    "CheatSheetSeries": {
+      "topic": "CheatSheetSeries",
+      "status": "partially_known",
+      "confidence": 0.38,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "testing",
+          "ownership"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "CheatSheetSeries",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "testing",
+                "objective": "demonstrar testing",
+                "status": "pending"
+              },
+              {
+                "id": "ownership",
+                "objective": "demonstrar ownership",
+                "status": "pending"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/README.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Authorization_Regression_Testing_Cheat_Sheet.md"
+          },
+          {
+            "title": "Authorization Matrix",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Authorization_Testing_Automation_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/Index.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/AGENTS.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/CLAUDE.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/LICENSE.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/Preface.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/mkdocs.yml"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/SECURITY.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/GUIDELINE.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/HelpGuide.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/IndexASVS.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/package.json"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/IndexASVS4.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/IndexMASVS.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/IndexTopTen.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/CONTRIBUTING.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/CONTRIBUTOR-V1.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/package-lock.json"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/CODE_OF_CONDUCT.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/.github/dependabot.yml"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/IndexProactiveControls.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/JAAS_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/markdown-link-check-config.json"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/.github/pull_request_template.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/OAuth2_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/GraphQL_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Laravel_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Logging_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Pinning_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Abuse_Case_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/File_Upload_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/HTTP_Headers_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/MCP_Security_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/NPM_Security_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/RAG_Security_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/AJAX_Security_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Authorization_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Java_Security_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/NodeJS_Docker_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/REST_Security_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/Ruby_on_Rails_Cheat_Sheet.md"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/OWASP/CheatSheetSeries/master/cheatsheets/SAML_Security_Cheat_Sheet.md"
+          }
+        ],
+        "independent_hosts": 1,
+        "documents": 44
+      },
+      "source_repository": "https://github.com/OWASP/CheatSheetSeries.git",
+      "technologies": [],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789866630.722499,
+      "source_repositories": [
+        "https://github.com/OWASP/CheatSheetSeries.git"
+      ],
+      "evaluation": {
+        "progress": 0.15,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": true,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 7,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      }
+    },
+    "https://ziglang.org/documentation/master/": {
+      "topic": "https://ziglang.org/documentation/master/",
+      "status": "partially_known",
+      "confidence": 0.26,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "memory",
+          "comptime",
+          "testing"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "https://ziglang.org/documentation/master/",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "memory",
+                "objective": "demonstrar memory",
+                "status": "pending"
+              },
+              {
+                "id": "comptime",
+                "objective": "demonstrar comptime",
+                "status": "pending"
+              },
+              {
+                "id": "testing",
+                "objective": "demonstrar testing",
+                "status": "pending"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "Documentation - The Zig Programming Language",
+            "url": "https://ziglang.org/documentation/master/"
+          }
+        ],
+        "independent_hosts": 1,
+        "documents": 1
+      },
+      "source_repository": "https://ziglang.org/documentation/master/",
+      "technologies": [],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789914005.9138958,
+      "source_repositories": [
+        "https://ziglang.org/documentation/master/"
+      ],
+      "evaluation": {
+        "progress": 0.0625,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": true,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 8,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      }
+    },
+    "https://www.typescriptlang.org/docs/handbook/intro.html": {
+      "topic": "https://www.typescriptlang.org/docs/handbook/intro.html",
+      "status": "partially_known",
+      "confidence": 0.26,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "closures",
+          "closure"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "https://www.typescriptlang.org/docs/handbook/intro.html",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "closures",
+                "objective": "demonstrar closures",
+                "status": "pending"
+              },
+              {
+                "id": "closure",
+                "objective": "demonstrar closure",
+                "status": "pending"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "TypeScript: Handbook - The TypeScript Handbook",
+            "url": "https://www.typescriptlang.org/docs/handbook/intro.html"
+          }
+        ],
+        "independent_hosts": 1,
+        "documents": 1
+      },
+      "source_repository": "https://www.typescriptlang.org/docs/handbook/intro.html",
+      "technologies": [
+        "HTML/CSS"
+      ],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789914008.7257147,
+      "source_repositories": [
+        "https://www.typescriptlang.org/docs/handbook/intro.html"
+      ],
+      "technology_evidence": {
+        "HTML/CSS": {
+          "score": 5,
+          "explicit_documents": 1,
+          "strong_documents": 1,
+          "sources": [
+            "https://www.typescriptlang.org/docs/handbook/intro.html"
+          ]
+        }
+      },
+      "evaluation": {
+        "progress": 0.0625,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": true,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 7,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      }
+    },
+    "HTML/CSS": {
+      "topic": "HTML/CSS",
+      "status": "partially_known",
+      "confidence": 0.32,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "semantic-html",
+          "layout",
+          "accessibility",
+          "responsive-design",
+          "closures",
+          "closure",
+          "modules",
+          "module",
+          "state"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "HTML/CSS",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "semantic-html",
+                "objective": "demonstrar semantic-html",
+                "status": "pending"
+              },
+              {
+                "id": "layout",
+                "objective": "demonstrar layout",
+                "status": "pending"
+              },
+              {
+                "id": "accessibility",
+                "objective": "demonstrar accessibility",
+                "status": "pending"
+              },
+              {
+                "id": "responsive-design",
+                "objective": "demonstrar responsive-design",
+                "status": "pending"
+              },
+              {
+                "id": "closures",
+                "objective": "demonstrar closures",
+                "status": "pending"
+              },
+              {
+                "id": "closure",
+                "objective": "demonstrar closure",
+                "status": "pending"
+              },
+              {
+                "id": "modules",
+                "objective": "demonstrar modules",
+                "status": "pending"
+              },
+              {
+                "id": "module",
+                "objective": "demonstrar module",
+                "status": "pending"
+              },
+              {
+                "id": "state",
+                "objective": "demonstrar state",
+                "status": "pending"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "TypeScript: Handbook - The TypeScript Handbook",
+            "url": "https://www.typescriptlang.org/docs/handbook/intro.html"
+          },
+          {
+            "title": "HTML: HyperText Markup Language | MDN",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTML"
+          },
+          {
+            "title": "CSS: Cascading Style Sheets | MDN",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+          }
+        ],
+        "independent_hosts": 1,
+        "documents": 3
+      },
+      "source_repository": "https://www.typescriptlang.org/docs/handbook/intro.html",
+      "technologies": [
+        "HTML/CSS"
+      ],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789915983.067626,
+      "source_repositories": [
+        "https://www.typescriptlang.org/docs/handbook/intro.html"
+      ],
+      "technology_evidence": {
+        "HTML/CSS": {
+          "score": 20,
+          "explicit_documents": 4,
+          "strong_documents": 4,
+          "sources": [
+            "https://www.typescriptlang.org/docs/handbook/intro.html"
+          ]
+        }
+      },
+      "evaluation": {
+        "progress": 0.0875,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": true,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 14,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      }
+    },
+    "axum": {
+      "topic": "axum",
+      "status": "partially_known",
+      "confidence": 0.38,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "routing",
+          "extractors",
+          "shared-state",
+          "middleware",
+          "error-handling",
+          "testing",
+          "async",
+          "state"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "axum",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "routing",
+                "objective": "demonstrar routing",
+                "status": "pending"
+              },
+              {
+                "id": "extractors",
+                "objective": "demonstrar extractors",
+                "status": "pending"
+              },
+              {
+                "id": "shared-state",
+                "objective": "demonstrar shared-state",
+                "status": "pending"
+              },
+              {
+                "id": "middleware",
+                "objective": "demonstrar middleware",
+                "status": "pending"
+              },
+              {
+                "id": "error-handling",
+                "objective": "demonstrar error-handling",
+                "status": "pending"
+              },
+              {
+                "id": "testing",
+                "objective": "demonstrar testing",
+                "status": "pending"
+              },
+              {
+                "id": "async",
+                "objective": "demonstrar async",
+                "status": "pending"
+              },
+              {
+                "id": "state",
+                "objective": "demonstrar state",
+                "status": "pending"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing/Cargo.toml"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/mod.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/tests/panic_location.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing/src/main.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/mod.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/nest.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/merge.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/compression/src/tests.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/fallback.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/test_client.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/get_to_head.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/handle_error.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing-websockets/Cargo.toml"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing-websockets/src/main.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/from_ref/pass/basic.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/tracing_helpers.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/static-file-server/src/tests.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/from_request/pass/named.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/typed_path/pass/into_uri.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/from_request/pass/container.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/from_request/pass/named_via.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/from_request/pass/state_via.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/debug_handler/pass/set_state.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/typed_path/pass/tuple_struct.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum-macros/tests/typed_path/pass/url_encoding.rs"
+          },
+          {
+            "title": "",
+            "url": "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/counting_cloneable_state.rs"
+          }
+        ],
+        "independent_hosts": 1,
+        "documents": 26
+      },
+      "source_repository": "https://github.com/tokio-rs/axum",
+      "technologies": [
+        "Rust",
+        "Axum"
+      ],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      },
+      "decisions": [],
+      "updated_at": 1789915947.278602,
+      "source_repositories": [
+        "https://github.com/tokio-rs/axum"
+      ],
+      "technology_evidence": {
+        "Rust": {
+          "score": 100,
+          "explicit_documents": 0,
+          "strong_documents": 26,
+          "sources": [
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing/Cargo.toml",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/mod.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/tests/panic_location.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing/src/main.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/mod.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/nest.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/merge.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/compression/src/tests.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/fallback.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/test_client.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/get_to_head.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/handle_error.rs"
+          ]
+        },
+        "Axum": {
+          "score": 100,
+          "explicit_documents": 26,
+          "strong_documents": 26,
+          "sources": [
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing/Cargo.toml",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/mod.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/tests/panic_location.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/testing/src/main.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/mod.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/nest.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/merge.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/examples/compression/src/tests.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/fallback.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/test_helpers/test_client.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/get_to_head.rs",
+            "https://raw.githubusercontent.com/tokio-rs/axum/main/axum/src/routing/tests/handle_error.rs"
+          ]
+        }
+      },
+      "evaluation": {
+        "progress": 0.15,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": true,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 13,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      }
+    }
+  }
+}

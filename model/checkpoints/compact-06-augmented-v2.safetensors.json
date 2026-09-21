@@ -1,0 +1,25 @@
+{
+  "config": {
+    "name": "ia-local-zero-compact-01",
+    "architecture": "decoder_transformer",
+    "vocab_size": 1024,
+    "context_length": 256,
+    "layers": 4,
+    "hidden_size": 256,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 4,
+    "language_priority": [
+      "pt-BR",
+      "code",
+      "en"
+    ],
+    "tool_call_format": "json",
+    "max_request_seconds": 30,
+    "runtime": "rust"
+  },
+  "steps": 1200,
+  "loss": 3.8084628582000732,
+  "best_val_loss": 3.9507250785827637,
+  "val_fraction": 0.1,
+  "source": "model/checkpoints/compact-06-augmented-v2.pt"
+}

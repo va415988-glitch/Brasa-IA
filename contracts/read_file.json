@@ -1,0 +1,13 @@
+{
+  "name": "read_file",
+  "description": "Lê um arquivo textual pequeno dentro do workspace autorizado.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "required": ["path"],
+    "properties": {"path": {"type": "string", "description": "Caminho relativo do arquivo."}},
+    "additionalProperties": false
+  },
+  "result": {"type": "object", "required": ["path", "content"], "properties": {"path": {"type": "string"}, "content": {"type": "string"}}}
+}

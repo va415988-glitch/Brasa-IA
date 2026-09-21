@@ -1,0 +1,18 @@
+{
+  "name": "ia-local-zero-context-8192",
+  "architecture": "decoder_transformer",
+  "vocab_size": 1024,
+  "context_length": 8192,
+  "layers": 4,
+  "hidden_size": 256,
+  "attention_heads": 4,
+  "feed_forward_multiplier": 4,
+  "language_priority": ["pt-BR", "code", "en"],
+  "tool_call_format": "json",
+  "context_policy": "production-minimum-8192",
+  "context_strategy": "chunked-memory",
+  "forward_chunk_length": 2048,
+  "generation_length": 4096,
+  "max_request_seconds": 900,
+  "runtime": "python-local"
+}

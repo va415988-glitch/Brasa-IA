@@ -1,0 +1,8 @@
+{
+  "name":"extract_document_text",
+  "description":"Extrai texto de um documento local, incluindo PDF quando pdftotext estiver disponível.",
+  "side_effects":false,
+  "requires_approval":false,
+  "arguments":{"type":"object","required":["path"],"properties":{"path":{"type":"string"}},"additionalProperties":false},
+  "result":{"type":"object","required":["path","text"]}
+}

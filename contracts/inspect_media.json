@@ -1,0 +1,8 @@
+{
+  "name":"inspect_media",
+  "description":"Inspeciona o tipo e o tamanho de uma mídia local autorizada.",
+  "side_effects":false,
+  "requires_approval":false,
+  "arguments":{"type":"object","required":["path"],"properties":{"path":{"type":"string"}},"additionalProperties":false},
+  "result":{"type":"object","required":["path","media_type","bytes"]}
+}

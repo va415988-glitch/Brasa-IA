@@ -1,0 +1,22 @@
+[
+  {
+    "checkpoint": "compact-06-augmented-v2.safetensors",
+    "all_validation_loss": 5.045009951471369,
+    "new_validation_loss": 4.8679517128484715
+  },
+  {
+    "checkpoint": "compact-07-apex.pt",
+    "all_validation_loss": 5.0982823115972415,
+    "new_validation_loss": 4.942863365557554
+  },
+  {
+    "checkpoint": "compact-08-gate-focus.pt",
+    "all_validation_loss": 30.985948944927436,
+    "new_validation_loss": 30.212543558902876
+  },
+  {
+    "checkpoint": "compact-09-local.pt",
+    "all_validation_loss": 6.00088160035383,
+    "new_validation_loss": 6.072245426315198
+  }
+]

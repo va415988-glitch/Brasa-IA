@@ -1,0 +1,13 @@
+{
+  "tests": {
+    "assistant": 49,
+    "release_evidence": 10,
+    "model_initialization": 3,
+    "finetuning_pipeline": 3
+  },
+  "original_checkpoint_unchanged": true,
+  "release_policy_weakened": false,
+  "approved": false,
+  "generated_answers_passed": 0,
+  "generated_answers_total": 8
+}

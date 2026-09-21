@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "policy": "repositorios-publicos-curados",
+  "sources": {
+    "Rust": [
+      {"title": "Rustlings", "url": "https://github.com/rust-lang/rustlings"},
+      {"title": "TheAlgorithms Rust", "url": "https://github.com/TheAlgorithms/Rust"},
+      {"title": "Axum", "url": "https://github.com/tokio-rs/axum"}
+    ],
+    "Zig": [
+      {"title": "Zig", "url": "https://github.com/ziglang/zig"},
+      {"title": "TheAlgorithms Zig", "url": "https://github.com/TheAlgorithms/Zig"}
+    ],
+    "JavaScript": [
+      {"title": "The Algorithms JavaScript", "url": "https://github.com/TheAlgorithms/JavaScript"},
+      {"title": "JavaScript.info", "url": "https://github.com/javascript-tutorial/en.javascript.info"},
+      {"title": "Node.js", "url": "https://github.com/nodejs/node"}
+    ],
+    "TypeScript": [
+      {"title": "TypeScript", "url": "https://github.com/microsoft/TypeScript"},
+      {"title": "The Algorithms TypeScript", "url": "https://github.com/TheAlgorithms/TypeScript"}
+    ],
+    "Node.js": [
+      {"title": "Node.js", "url": "https://github.com/nodejs/node"},
+      {"title": "Node.js learning guides", "url": "https://github.com/nodejs/learn"},
+      {"title": "Node Essentials", "url": "https://github.com/MicrosoftDocs/node-essentials"}
+    ],
+    "Python": [
+      {"title": "CPython", "url": "https://github.com/python/cpython"},
+      {"title": "The Algorithms Python", "url": "https://github.com/TheAlgorithms/Python"}
+    ],
+    "C#": [
+      {"title": ".NET docs", "url": "https://github.com/dotnet/docs"},
+      {"title": ".NET samples", "url": "https://github.com/dotnet/samples"},
+      {"title": "C# notebooks", "url": "https://github.com/dotnet/csharp-notebooks"}
+    ],
+    "Java": [
+      {"title": "Spring PetClinic", "url": "https://github.com/spring-projects/spring-petclinic"},
+      {"title": "The Algorithms Java", "url": "https://github.com/TheAlgorithms/Java"}
+    ],
+    "C++": [
+      {"title": "The Algorithms C++", "url": "https://github.com/TheAlgorithms/C-Plus-Plus"},
+      {"title": "C++ Core Guidelines", "url": "https://github.com/isocpp/CppCoreGuidelines"}
+    ],
+    "SQL": [
+      {"title": "SQLFluff", "url": "https://github.com/sqlfluff/sqlfluff"},
+      {"title": "PostgreSQL", "url": "https://github.com/postgres/postgres"}
+    ],
+    "HTML/CSS": [
+      {"title": "MDN content", "url": "https://github.com/mdn/content"},
+      {"title": "The Odin Project curriculum", "url": "https://github.com/TheOdinProject/curriculum"}
+    ],
+    "Machine Learning": [
+      {"title": "scikit-learn", "url": "https://github.com/scikit-learn/scikit-learn"},
+      {"title": "Dive into Deep Learning", "url": "https://github.com/d2l-ai/d2l-en"}
+    ],
+    "OWASP": [
+      {"title": "OWASP Cheat Sheet Series", "url": "https://github.com/OWASP/CheatSheetSeries"}
+    ],
+    "freeCodeCamp": [
+      {"title": "freeCodeCamp", "url": "https://github.com/freeCodeCamp/freeCodeCamp"}
+    ]
+  }
+}

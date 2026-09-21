@@ -1,0 +1,27 @@
+{
+  "name": "set_workspace",
+  "version": "1.0.0",
+  "description": "Seleciona um diretório local existente como workspace atual.",
+  "side_effects": true,
+  "requires_approval": true,
+  "capabilities": ["workspace.select"],
+  "risk": "workspace",
+  "idempotent": true,
+  "timeout_ms": 10000,
+  "preconditions": ["path_absolute", "directory_exists"],
+  "effects": ["workspace_changed"],
+  "retry_policy": "safe_only",
+  "arguments": {
+    "type": "object",
+    "required": ["path"],
+    "properties": {
+      "path": {"type": "string", "minLength": 1, "description": "Caminho absoluto para um diretório existente."}
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": ["workspace", "selected"],
+    "properties": {"workspace": {"type": "string"}, "selected": {"type": "boolean"}}
+  }
+}

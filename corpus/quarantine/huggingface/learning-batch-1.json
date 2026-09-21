@@ -1,0 +1,121 @@
+{
+  "schema": "huggingface-learning-batch/v1",
+  "max_known_gb": 0.05,
+  "reports": [
+    {
+      "dataset": "neulab/agent-data-collection",
+      "status": "skipped_size_unknown",
+      "training_eligible": false
+    },
+    {
+      "schema": "huggingface-dataset-audit/v1",
+      "dataset": "Toprak1yu/agent-tool-use-trajectories",
+      "source": "https://huggingface.co/datasets/Toprak1yu/agent-tool-use-trajectories",
+      "retrieved_at": "2026-09-20T06:05:23.174213+00:00",
+      "license": {
+        "value": "apache-2.0",
+        "known": true,
+        "requires_review": false
+      },
+      "metadata": {
+        "downloads": 208,
+        "likes": 2,
+        "last_modified": "2026-08-25T01:40:19.000Z",
+        "tags": [
+          "task_categories:text-generation",
+          "language:en",
+          "license:apache-2.0",
+          "size_categories:10K<n<100K",
+          "format:parquet",
+          "format:optimized-parquet",
+          "library:datasets",
+          "library:pandas",
+          "library:polars",
+          "library:mlcroissant",
+          "region:us",
+          "agent",
+          "tool-use",
+          "function-calling",
+          "chatml",
+          "langgraph",
+          "crewai",
+          "reasoning",
+          "self-correction"
+        ],
+        "candidate_files": [
+          {
+            "name": "README.md",
+            "size": null,
+            "selected": true
+          }
+        ]
+      },
+      "classification": {
+        "code": false,
+        "agent": true,
+        "evaluation": false
+      },
+      "policy": {
+        "status": "quarantine",
+        "training_eligible": false,
+        "evaluation_eligible": true,
+        "reason": "revisão de licença, duplicatas e contaminação ainda necessária"
+      },
+      "download": {
+        "status": "quarantine",
+        "total_bytes": 3779,
+        "files": [
+          {
+            "name": "README.md",
+            "status": "downloaded",
+            "bytes": 3779,
+            "sha256": "fcb5b9dc1852f67c9a148461eb510ab76e0cf0bb7f3302e377688ce0626ba97c",
+            "path": "corpus/quarantine/huggingface/4d26ebfd6ae8fec8/files/README.md"
+          }
+        ],
+        "training_eligible": false
+      },
+      "preparation": {
+        "status": "quarantine",
+        "examples": 9,
+        "candidates": 9,
+        "duplicates_removed": 0,
+        "path": "corpus/quarantine/huggingface/4d26ebfd6ae8fec8/prepared.jsonl",
+        "training_eligible": false,
+        "review_required": true
+      }
+    },
+    {
+      "dataset": "nphearum/Code-Reasoning-4k",
+      "status": "skipped_size_unknown",
+      "training_eligible": false
+    },
+    {
+      "dataset": "cx-cmu/agent_trajectories",
+      "status": "skipped_size_unknown",
+      "training_eligible": false
+    },
+    {
+      "dataset": "kosiasuzu/agenticml-agent-trajectory-dataset",
+      "status": "skipped_size_unknown",
+      "training_eligible": false
+    },
+    {
+      "dataset": "pyromind/agentic-tool-call-dataset-12k",
+      "status": "skipped_size_unknown",
+      "training_eligible": false
+    },
+    {
+      "dataset": "diogoneno/desktop-agent-trajectories-sample",
+      "status": "failed",
+      "error": "HTTP Error 401: Unauthorized",
+      "training_eligible": false
+    },
+    {
+      "dataset": "ToolGym/short-horizon-traj",
+      "status": "skipped_size_unknown",
+      "training_eligible": false
+    }
+  ],
+  "training_eligible": false
+}

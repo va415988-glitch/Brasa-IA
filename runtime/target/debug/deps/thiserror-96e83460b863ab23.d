@@ -1,0 +1,12 @@
+/home/victor/Documentos/IA Local do Zero/runtime/target/debug/deps/thiserror-96e83460b863ab23.d: /home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/lib.rs /home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/aserror.rs /home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/display.rs /home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/var.rs /home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/private.rs /home/victor/Documentos/IA\ Local\ do\ Zero/runtime/target/debug/build/thiserror-6c90acfd6a8cab6c/out/private.rs
+
+/home/victor/Documentos/IA Local do Zero/runtime/target/debug/deps/libthiserror-96e83460b863ab23.rmeta: /home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/lib.rs /home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/aserror.rs /home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/display.rs /home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/var.rs /home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/private.rs /home/victor/Documentos/IA\ Local\ do\ Zero/runtime/target/debug/build/thiserror-6c90acfd6a8cab6c/out/private.rs
+
+/home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/lib.rs:
+/home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/aserror.rs:
+/home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/display.rs:
+/home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/var.rs:
+/home/victor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.20/src/private.rs:
+/home/victor/Documentos/IA\ Local\ do\ Zero/runtime/target/debug/build/thiserror-6c90acfd6a8cab6c/out/private.rs:
+
+# env-dep:OUT_DIR=/home/victor/Documentos/IA Local do Zero/runtime/target/debug/build/thiserror-6c90acfd6a8cab6c/out

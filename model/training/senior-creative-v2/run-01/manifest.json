@@ -1,0 +1,68 @@
+{
+  "seed": 42,
+  "arguments": {
+    "checkpoint": "model/checkpoints/compact-06-augmented-v2.safetensors",
+    "output_dir": "model/training/senior-creative-v2/run-01",
+    "heldout": "model/training/senior-creative-v2/heldout.jsonl",
+    "steps": 1000,
+    "eval_every": 100,
+    "patience": 3,
+    "batch_size": 8,
+    "threads": 4,
+    "learning_rate": 0.0005,
+    "from_scratch": true
+  },
+  "config": {
+    "name": "ia-local-zero-compact-01",
+    "architecture": "decoder_transformer",
+    "vocab_size": 1024,
+    "context_length": 256,
+    "layers": 4,
+    "hidden_size": 256,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 4,
+    "language_priority": [
+      "pt-BR",
+      "code",
+      "en"
+    ],
+    "tool_call_format": "json",
+    "max_request_seconds": 30,
+    "runtime": "rust",
+    "initialization": "scaled-normal-v1"
+  },
+  "source_sha256": "cf4413437a16df61e348736b3ceb5d691f31f0e3dba452d1a922f05a6fbe61b2",
+  "tokenizer_sha256": "3dc196c42a17568c524b67e766ffcda3a1f0318fc2d3f2aa6f963b35aa7bcaf4",
+  "inputs": {
+    "python/data/combined.jsonl": "34e5ccefc51f1b5e4b8e9e01376918b6d5d70af10b75df590b70e2292a881038",
+    "python/data/behavior_expanded.jsonl": "c7139f62f13be193f2b5b775804110edd6aa20205d2bad65b4a834ae38e7752b",
+    "python/data/behavior_phase1.jsonl": "8403562024e78bec6ac03b7649886c4763e18f70e9214f5a017fcccedc75443e",
+    "python/data/curriculum_apex_v1.jsonl": "c98e664b531fce61690744e9654adb8fc8ea20f7038785c1c8709d9dcf0e6c5f",
+    "python/data/senior_creative_v1.jsonl": "94b11e64d21a7c4cd26e0ac338005564cb96c1eedd8184934721b04b6775d391",
+    "model/training/senior-creative-v2/heldout.jsonl": "eaa9dfac0e586fd184a63931a32c9607d417b64534d2f1cb8779016db0994914"
+  },
+  "records": {
+    "train": 227,
+    "validation": 19,
+    "heldout": 8
+  },
+  "rejected": {
+    "not_plain_pair": 2,
+    "evaluation_question": 12,
+    "duplicate_question": 22
+  },
+  "domains": {
+    "replay": 154,
+    "programming": 10,
+    "creativity": 28,
+    "general": 7,
+    "engineering": 21,
+    "reliability": 7
+  },
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

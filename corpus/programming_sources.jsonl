@@ -1,0 +1,35 @@
+{"id":"python-docs","title":"Python Documentation","url":"https://docs.python.org/3/tutorial/","license":"PSF License","language":"en","category":"programming/python","priority":1}
+{"id":"rust-book","title":"The Rust Programming Language","url":"https://doc.rust-lang.org/book/","license":"MIT/Apache-2.0","language":"en","category":"programming/rust","priority":1}
+{"id":"mdn-web","title":"MDN Learn Web Development","url":"https://developer.mozilla.org/en-US/docs/Learn_web_development","license":"CC-BY-SA-2.5","language":"en","category":"programming/web","priority":1}
+{"id":"github-docs","title":"GitHub Documentation","url":"https://docs.github.com/en/get-started","license":"GitHub Terms; verify per page","language":"en","category":"programming/tools","priority":2}
+{"id":"rust-reference","title":"Rust Reference","url":"https://doc.rust-lang.org/reference/","license":"MIT/Apache-2.0","language":"en","category":"programming/rust/reference","priority":2}
+{"id":"python-library","title":"Python Standard Library","url":"https://docs.python.org/3/library/","license":"PSF License","language":"en","category":"programming/python/reference","priority":2}
+{"id":"rustlings","title":"Rustlings exercises","url":"https://github.com/rust-lang/rustlings","license":"MIT","language":"en","category":"programming/rust/repository","priority":1}
+{"id":"algorithms-rust","title":"TheAlgorithms Rust","url":"https://github.com/TheAlgorithms/Rust","license":"MIT","language":"en","category":"programming/rust/repository","priority":2}
+{"id":"axum","title":"Axum web framework","url":"https://github.com/tokio-rs/axum","license":"MIT","language":"en","category":"programming/rust/framework","priority":1}
+{"id":"zig","title":"Zig compiler and standard library","url":"https://github.com/ziglang/zig","license":"MIT","language":"en","category":"programming/zig/repository","priority":1}
+{"id":"algorithms-zig","title":"TheAlgorithms Zig","url":"https://github.com/TheAlgorithms/Zig","license":"MIT","language":"en","category":"programming/zig/repository","priority":2}
+{"id":"typescript","title":"TypeScript compiler","url":"https://github.com/microsoft/TypeScript","license":"Apache-2.0","language":"en","category":"programming/typescript/repository","priority":1}
+{"id":"algorithms-typescript","title":"TheAlgorithms TypeScript","url":"https://github.com/TheAlgorithms/TypeScript","license":"MIT","language":"en","category":"programming/typescript/repository","priority":2}
+{"id":"javascript-algorithms","title":"TheAlgorithms JavaScript","url":"https://github.com/TheAlgorithms/JavaScript","license":"MIT","language":"en","category":"programming/javascript/repository","priority":2}
+{"id":"javascript-info","title":"JavaScript.info","url":"https://github.com/javascript-tutorial/en.javascript.info","license":"MIT","language":"en","category":"programming/javascript/repository","priority":1}
+{"id":"nodejs","title":"Node.js runtime","url":"https://github.com/nodejs/node","license":"MIT","language":"en","category":"programming/nodejs/repository","priority":1}
+{"id":"nodejs-learn","title":"Node.js learning guides","url":"https://github.com/nodejs/learn","license":"MIT","language":"en","category":"programming/nodejs/repository","priority":1}
+{"id":"node-essentials","title":"Node Essentials","url":"https://github.com/MicrosoftDocs/node-essentials","license":"MIT/CC-BY-4.0","language":"en","category":"programming/nodejs/repository","priority":2}
+{"id":"cpython","title":"CPython","url":"https://github.com/python/cpython","license":"PSF License","language":"en","category":"programming/python/repository","priority":1}
+{"id":"algorithms-python","title":"TheAlgorithms Python","url":"https://github.com/TheAlgorithms/Python","license":"MIT","language":"en","category":"programming/python/repository","priority":2}
+{"id":"dotnet-docs","title":".NET documentation","url":"https://github.com/dotnet/docs","license":"MIT/CC-BY-4.0","language":"en","category":"programming/csharp/repository","priority":1}
+{"id":"dotnet-samples","title":".NET samples","url":"https://github.com/dotnet/samples","license":"MIT/CC-BY-4.0","language":"en","category":"programming/csharp/repository","priority":2}
+{"id":"csharp-notebooks","title":"C# interactive notebooks","url":"https://github.com/dotnet/csharp-notebooks","license":"MIT","language":"en","category":"programming/csharp/repository","priority":2}
+{"id":"spring-petclinic","title":"Spring PetClinic","url":"https://github.com/spring-projects/spring-petclinic","license":"Apache-2.0","language":"en","category":"programming/java/repository","priority":1}
+{"id":"algorithms-java","title":"TheAlgorithms Java","url":"https://github.com/TheAlgorithms/Java","license":"MIT","language":"en","category":"programming/java/repository","priority":2}
+{"id":"algorithms-cpp","title":"TheAlgorithms C++","url":"https://github.com/TheAlgorithms/C-Plus-Plus","license":"MIT","language":"en","category":"programming/cpp/repository","priority":1}
+{"id":"cpp-core-guidelines","title":"C++ Core Guidelines","url":"https://github.com/isocpp/CppCoreGuidelines","license":"CC-BY-4.0","language":"en","category":"programming/cpp/repository","priority":1}
+{"id":"sqlfluff","title":"SQLFluff","url":"https://github.com/sqlfluff/sqlfluff","license":"MIT","language":"en","category":"programming/sql/repository","priority":1}
+{"id":"postgres","title":"PostgreSQL","url":"https://github.com/postgres/postgres","license":"PostgreSQL License","language":"en","category":"programming/sql/repository","priority":2}
+{"id":"mdn-content","title":"MDN Web Docs content","url":"https://github.com/mdn/content","license":"CC-BY-SA-2.5","language":"en","category":"programming/web/repository","priority":1}
+{"id":"odin-curriculum","title":"The Odin Project curriculum","url":"https://github.com/TheOdinProject/curriculum","license":"CC-BY-SA-4.0/MIT","language":"en","category":"programming/web/repository","priority":2}
+{"id":"scikit-learn","title":"scikit-learn","url":"https://github.com/scikit-learn/scikit-learn","license":"BSD-3-Clause","language":"en","category":"programming/machine-learning/repository","priority":1}
+{"id":"d2l","title":"Dive into Deep Learning","url":"https://github.com/d2l-ai/d2l-en","license":"CC-BY-SA-4.0","language":"en","category":"programming/machine-learning/repository","priority":1}
+{"id":"owasp-cheatsheets","title":"OWASP Cheat Sheet Series","url":"https://github.com/OWASP/CheatSheetSeries","license":"CC-BY-SA-4.0","language":"en","category":"programming/security/repository","priority":1}
+{"id":"freecodecamp","title":"freeCodeCamp","url":"https://github.com/freeCodeCamp/freeCodeCamp","license":"BSD-3-Clause","language":"en","category":"programming/web/repository","priority":1}

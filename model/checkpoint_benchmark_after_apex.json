@@ -1,0 +1,301 @@
+{
+  "count": 7,
+  "checkpoints": [
+    {
+      "checkpoint": "compact-01.pt",
+      "passed": 0,
+      "total": 12,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"api-errors\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Um loop `forcomo `[web-1]`, conco uma vez para cada item de `.\"}",
+        "{\"id\": \"creative-block\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Não automais, limites e entraza, como `[web-1]`, configurar timeout e trateste deve verificar o resultaresultados realmente\"}",
+        "{\"id\": \"game-ideas\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Não automas inválidar com outringa sem necessidade texto.\"}",
+        "{\"id\": \"science-evidence\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"Você pode usar uma bibibliotenformaticurnformatNameNameNameNameNameNameNameNameNameName\"}",
+        "{\"id\": \"causality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Não automas freqwestrancomparar com uma operação que tratar sem necessidade lixo. Posso us HTTP e cont\"}",
+        "{\"id\": \"decision\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Ele aprende a antes de otimizar. Identifique o gargalo, reduza trabalho repetido, use cachdeve pesquisar apenas os\"}",
+        "{\"id\": \"source-quality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Devo dizer clara, explicar o que seia antes de ooleçamento de texto.\"}",
+        "resultado: 0/12"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-02-mixed.pt",
+      "passed": 0,
+      "total": 12,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"api-errors\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\\n<|>\"}",
+        "{\"id\": \"creative-block\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\"}",
+        "{\"id\": \"game-ideas\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"science-evidence\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"causality\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"decision\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\"}",
+        "{\"id\": \"source-quality\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\"}",
+        "resultado: 0/12"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-03-validated.pt",
+      "passed": 0,
+      "total": 12,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"api-errors\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|assistant|>\\n\\n\\n\\n\\n<|>\\n\\n\\n\\n<|>\\n<|>\\n\\n<|us\"}",
+        "{\"id\": \"creative-block\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"PInter|>\\n\\n\\n<|assista de regia tem tem tem tem tem tem tem tem tem tem tem tem\"}",
+        "{\"id\": \"game-ideas\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\\n\\n<|us Lixxa tem uma l de exter|assiste\"}",
+        "{\"id\": \"science-evidence\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n\\n<|user|>\\n\\n<|>\\n\\n<|>\\n\\n<|>\\n<|\"}",
+        "{\"id\": \"causality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|user|>\\n\\n\\n<|user|>\\n\\n<|>\\n\\n<|>\"}",
+        "{\"id\": \"decision\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|assistant|>\\n\\n<|>\\n\\n<|>\\n<|>\\n\\n<|>\\n\\n<|\"}",
+        "{\"id\": \"source-quality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Programbliar |>\\n<|assistant|>\\n<|>\\n\\n<|>\\n\\n<|\"}",
+        "resultado: 0/12"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-04-mixed-tokenizer.pt",
+      "passed": 0,
+      "total": 12,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"api-errors\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"EL AL GGGGOL GGGOLGGr\\\",\\\" AL GGGr\\\",\\\"\"}",
+        "{\"id\": \"creative-block\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"Al AL GGGGr\\\",\\\"gra,\\\"csource_id\\\":\\\"web-1\\\",\\\"title\\\":\\\"Rust,{\\\"role\\\":\\\"assistant\\\",\\\"tool_call\\\":{\\\"aonl GOL AL AL A\"}",
+        "{\"id\": \"game-ideas\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Bol{\\\"messd ],\\\"expecteeúdo \\\",\\\" OL AL ythonL AL Gritma ypefontes ],\\\"tools_used\\\":[],\\\"expected_sources\\\":[]}validess\"}",
+        "{\"id\": \"science-evidence\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"EL T GGGr\\\",\\\"gra,\\\"NameErrpecnt],\\\"expecteeúdo \\\",\\\" GOL AL AL ALG\"}",
+        "{\"id\": \"causality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Bol{\\\"mess{\\\"messa a.\\\"}],\\\"tools_used\\\":[],\\\"expected_sources\\\":[]}8 AL AL GOLGr\\\",\\\" ALGGGOL AL\"}",
+        "{\"id\": \"decision\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"BRPAL AL AL   {\\\"messag Tr\\\",\\\" AL GOL AL 68\"}",
+        "{\"id\": \"source-quality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"BN 649 6este \\\",\\\"   {\\\"messag M 122216611nome ebchdos loopiito\"}",
+        "resultado: 0/12"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-06-augmented-v2.pt",
+      "passed": 0,
+      "total": 12,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"api-errors\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"creative-block\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"O que é o de 198 de Programbliz foi por do por s de 1997865\"}",
+        "{\"id\": \"game-ideas\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|assistant|>\\n<|>\\n<|user|>\\n<|>\\n<|>\\n<|>\\n<\"}",
+        "{\"id\": \"science-evidence\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"causality\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"decision\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"\"}",
+        "{\"id\": \"source-quality\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"\"}",
+        "resultado: 0/12"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-07-apex.pt",
+      "passed": 0,
+      "total": 12,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"api-errors\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Explique este conteúdo de encyc.\\nA China propro-dic.\\n<|assistant|>\"}",
+        "{\"id\": \"creative-block\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"A desencyc.\\n<|>\\nA prover proproprotura (como o de red\"}",
+        "{\"id\": \"game-ideas\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|assistant|>\\n<|>\\n<|assistant|user|>\\nA China produ\"}",
+        "{\"id\": \"science-evidence\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Explique este conteúdo de tools-dicycyc.\\n<|>\\n<|>\\n<|assistant|assistant\"}",
+        "{\"id\": \"causality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Explique este conteúdo de encycra por partiproprojunto projunto e projetos\"}",
+        "{\"id\": \"decision\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"A China propor proproprojunto projunto proter|assistant|\"}",
+        "{\"id\": \"source-quality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Explique este conteúdo de tools-diald-dicycyc.\\n<|>\\n<|>\\n<|>\\nA\"}",
+        "resultado: 0/12"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-06-augmented-v2.safetensors",
+      "passed": 0,
+      "total": 12,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"api-errors\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"creative-block\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"O que é o de 198 de Programbliz foi por do por s de 1997865\"}",
+        "{\"id\": \"game-ideas\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|assistant|>\\n<|>\\n<|user|>\\n<|>\\n<|>\\n<|>\\n<\"}",
+        "{\"id\": \"science-evidence\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"causality\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"decision\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"\"}",
+        "{\"id\": \"source-quality\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"\"}",
+        "resultado: 0/12"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    }
+  ],
+  "ranking": [
+    {
+      "checkpoint": "compact-01.pt",
+      "passed": 0,
+      "total": 12,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"api-errors\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Um loop `forcomo `[web-1]`, conco uma vez para cada item de `.\"}",
+        "{\"id\": \"creative-block\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Não automais, limites e entraza, como `[web-1]`, configurar timeout e trateste deve verificar o resultaresultados realmente\"}",
+        "{\"id\": \"game-ideas\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Não automas inválidar com outringa sem necessidade texto.\"}",
+        "{\"id\": \"science-evidence\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"Você pode usar uma bibibliotenformaticurnformatNameNameNameNameNameNameNameNameNameName\"}",
+        "{\"id\": \"causality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Não automas freqwestrancomparar com uma operação que tratar sem necessidade lixo. Posso us HTTP e cont\"}",
+        "{\"id\": \"decision\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Ele aprende a antes de otimizar. Identifique o gargalo, reduza trabalho repetido, use cachdeve pesquisar apenas os\"}",
+        "{\"id\": \"source-quality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Devo dizer clara, explicar o que seia antes de ooleçamento de texto.\"}",
+        "resultado: 0/12"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-02-mixed.pt",
+      "passed": 0,
+      "total": 12,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"api-errors\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\\n<|>\"}",
+        "{\"id\": \"creative-block\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\"}",
+        "{\"id\": \"game-ideas\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"science-evidence\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"causality\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"decision\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\"}",
+        "{\"id\": \"source-quality\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\"}",
+        "resultado: 0/12"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-03-validated.pt",
+      "passed": 0,
+      "total": 12,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"api-errors\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|assistant|>\\n\\n\\n\\n\\n<|>\\n\\n\\n\\n<|>\\n<|>\\n\\n<|us\"}",
+        "{\"id\": \"creative-block\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"PInter|>\\n\\n\\n<|assista de regia tem tem tem tem tem tem tem tem tem tem tem tem\"}",
+        "{\"id\": \"game-ideas\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|>\\n\\n<|us Lixxa tem uma l de exter|assiste\"}",
+        "{\"id\": \"science-evidence\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n\\n<|user|>\\n\\n<|>\\n\\n<|>\\n\\n<|>\\n<|\"}",
+        "{\"id\": \"causality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\\n<|user|>\\n\\n\\n<|user|>\\n\\n<|>\\n\\n<|>\"}",
+        "{\"id\": \"decision\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|assistant|>\\n\\n<|>\\n\\n<|>\\n<|>\\n\\n<|>\\n\\n<|\"}",
+        "{\"id\": \"source-quality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Programbliar |>\\n<|assistant|>\\n<|>\\n\\n<|>\\n\\n<|\"}",
+        "resultado: 0/12"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-04-mixed-tokenizer.pt",
+      "passed": 0,
+      "total": 12,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"api-errors\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"EL AL GGGGOL GGGOLGGr\\\",\\\" AL GGGr\\\",\\\"\"}",
+        "{\"id\": \"creative-block\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"Al AL GGGGr\\\",\\\"gra,\\\"csource_id\\\":\\\"web-1\\\",\\\"title\\\":\\\"Rust,{\\\"role\\\":\\\"assistant\\\",\\\"tool_call\\\":{\\\"aonl GOL AL AL A\"}",
+        "{\"id\": \"game-ideas\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Bol{\\\"messd ],\\\"expecteeúdo \\\",\\\" OL AL ythonL AL Gritma ypefontes ],\\\"tools_used\\\":[],\\\"expected_sources\\\":[]}validess\"}",
+        "{\"id\": \"science-evidence\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"EL T GGGr\\\",\\\"gra,\\\"NameErrpecnt],\\\"expecteeúdo \\\",\\\" GOL AL AL ALG\"}",
+        "{\"id\": \"causality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Bol{\\\"mess{\\\"messa a.\\\"}],\\\"tools_used\\\":[],\\\"expected_sources\\\":[]}8 AL AL GOLGr\\\",\\\" ALGGGOL AL\"}",
+        "{\"id\": \"decision\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"BRPAL AL AL   {\\\"messag Tr\\\",\\\" AL GOL AL 68\"}",
+        "{\"id\": \"source-quality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"BN 649 6este \\\",\\\"   {\\\"messag M 122216611nome ebchdos loopiito\"}",
+        "resultado: 0/12"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-06-augmented-v2.pt",
+      "passed": 0,
+      "total": 12,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"api-errors\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"creative-block\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"O que é o de 198 de Programbliz foi por do por s de 1997865\"}",
+        "{\"id\": \"game-ideas\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|assistant|>\\n<|>\\n<|user|>\\n<|>\\n<|>\\n<|>\\n<\"}",
+        "{\"id\": \"science-evidence\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"causality\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"decision\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"\"}",
+        "{\"id\": \"source-quality\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"\"}",
+        "resultado: 0/12"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-07-apex.pt",
+      "passed": 0,
+      "total": 12,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"api-errors\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Explique este conteúdo de encyc.\\nA China propro-dic.\\n<|assistant|>\"}",
+        "{\"id\": \"creative-block\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"A desencyc.\\n<|>\\nA prover proproprotura (como o de red\"}",
+        "{\"id\": \"game-ideas\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|assistant|>\\n<|>\\n<|assistant|user|>\\nA China produ\"}",
+        "{\"id\": \"science-evidence\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Explique este conteúdo de tools-dicycyc.\\n<|>\\n<|>\\n<|assistant|assistant\"}",
+        "{\"id\": \"causality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Explique este conteúdo de encycra por partiproprojunto projunto e projetos\"}",
+        "{\"id\": \"decision\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": false, \"relevant\": false}, \"answer\": \"A China propor proproprojunto projunto proter|assistant|\"}",
+        "{\"id\": \"source-quality\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"Explique este conteúdo de tools-diald-dicycyc.\\n<|>\\n<|>\\n<|>\\nA\"}",
+        "resultado: 0/12"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    },
+    {
+      "checkpoint": "compact-06-augmented-v2.safetensors",
+      "passed": 0,
+      "total": 12,
+      "pass_rate": 0.0,
+      "returncode": 1,
+      "stdout_tail": [
+        "{\"id\": \"api-errors\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"creative-block\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"O que é o de 198 de Programbliz foi por do por s de 1997865\"}",
+        "{\"id\": \"game-ideas\", \"ok\": false, \"checks\": {\"nonempty\": true, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|assistant|>\\n<|>\\n<|user|>\\n<|>\\n<|>\\n<|>\\n<\"}",
+        "{\"id\": \"science-evidence\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"causality\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": false, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"<|>\"}",
+        "{\"id\": \"decision\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"\"}",
+        "{\"id\": \"source-quality\", \"ok\": false, \"checks\": {\"nonempty\": false, \"no_control_markers\": true, \"no_obvious_repetition\": true, \"relevant\": false}, \"answer\": \"\"}",
+        "resultado: 0/12"
+      ],
+      "stderr_tail": [
+        "/home/victor/Documentos/IA Local do Zero/python/model.py:27: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True",
+        "  self.blocks = nn.TransformerEncoder(block, num_layers=layers)"
+      ]
+    }
+  ]
+}

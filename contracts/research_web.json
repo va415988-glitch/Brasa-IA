@@ -1,0 +1,34 @@
+{
+  "name": "research_web",
+  "description": "Pesquisa fontes, abre páginas selecionadas, sintetiza trechos fundamentados e opcionalmente prepara um lote local para o corpus.",
+  "side_effects": "save_to_corpus=true grava um JSONL local; caso contrário, somente a sessão é atualizada",
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "required": ["query"],
+    "properties": {
+      "query": {"type": "string"},
+      "topic": {"type": "string"},
+      "max_results": {"type": "integer", "minimum": 1, "maximum": 3, "default": 2},
+      "save_to_corpus": {"type": "boolean", "default": false},
+      "category": {"type": "string", "default": "web-research"},
+      "output": {"type": "string", "default": "corpus/raw/web_research.jsonl"}
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": ["query", "answer", "pages", "citation_ids", "grounded", "elapsed_ms"],
+    "properties": {
+      "query": {"type": "string"},
+      "answer": {"type": "string"},
+      "pages": {"type": "array"},
+      "citation_ids": {"type": "array", "items": {"type": "string"}},
+      "grounded": {"type": "boolean"},
+      "saved_to_corpus": {"type": ["string", "null"]},
+      "saved_count": {"type": "integer"},
+      "elapsed_ms": {"type": "integer"},
+      "timed_out": {"type": "boolean"}
+    }
+  }
+}

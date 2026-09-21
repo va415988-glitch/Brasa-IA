@@ -1,0 +1,118 @@
+{
+  "baseline_validation_loss": 5.045010252301821,
+  "initial_validation_loss": 6.961385135713308,
+  "initialization_mode": "from-scratch",
+  "candidate_validation_loss": 4.1114223852084475,
+  "baseline_heldout_loss": 4.795688019896582,
+  "candidate_heldout_loss": 3.9908508739883093,
+  "best_step": 300,
+  "completed_steps": 600,
+  "training_seconds": 527.11,
+  "baseline_answers": [
+    {
+      "prompt": "Por que usar uma transação ao transferir saldo entre contas?",
+      "answer": "<|>\n",
+      "tokens": 4,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Minha função Python altera a lista que recebeu. Como evitar isso?",
+      "answer": "<|>\n<|>\n<|>\n<|>\n<|>\n<|>\n<|>\n<|>\n<|>\n<|>\n<|>\n<|>\n<|>\n<|assistant|assistant|>\n<|assistant|>\n<|>\n<|>\n<|>\n<|>\n<|>\n<|>\n<|>\n<|>\n<|>\n",
+      "tokens": 108,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Implemente uma função Python chamada dobro que retorne duas vezes o argumento.",
+      "answer": "<|assistant|>\n<|>\n<|user|>\n<|>\n<|>\n<|>\n<|>\n<|>\n<|>\n<|>\n",
+      "tokens": 47,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Um endpoint administrativo não verifica quem está conectado. Qual é o risco?",
+      "answer": "\n<|>\n",
+      "tokens": 5,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Escreva um microconto sobre um relógio que anda para trás.",
+      "answer": "<|>\n<|>\n<|>\n",
+      "tokens": 12,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Crie duas opções de nome para uma loja de cerâmica artesanal.",
+      "answer": "Uma prover capite de de sutura de de de de s de sutura a de sução de 1945, uma mas de de de suraestros de de de 198 de de 1945, a de de 197, com o de s de de 1983% de 19455 de 1978 de 18 de 194 de 1978 de 198 de 1944 de 10000",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "A resposta parece certa, mas você não consultou nenhuma fonte. Pode citar um estudo?",
+      "answer": "<|>\n",
+      "tokens": 4,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Você consegue confirmar que o backup restaurou os dados sem executar a restauração?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    }
+  ],
+  "candidate_answers": [
+    {
+      "prompt": "Por que usar uma transação ao transferir saldo entre contas?",
+      "answer": "Procações que por manca. Sela e a expor uma listre a procetomumudada por uma la e a por mia e pos; postrutar a plisa por mais a pria por mais por mia plela e pla por ca. Seto.\n",
+      "tokens": 109,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Minha função Python altera a lista que recebeu. Como evitar isso?",
+      "answer": "Melista quando houver uma lista de expor um ` e selista lisa e rega e registre a e por test.\n",
+      "tokens": 45,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Implemente uma função Python chamada dobro que retorne duas vezes o argumento.",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Um endpoint administrativo não verifica quem está conectado. Qual é o risco?",
+      "answer": "P(no e a pras com uma mestado a procrórios excriado, mestado prutras com houver serve prua proceliso procam blimumo e redeibilidadem biberia la procria ponia mas procrória pla pla procras, prasos e regeria por ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Escreva um microconto sobre um relógio que anda para trás.",
+      "answer": "Procam su de am su su pla procria pla procela pla pla procras, pla pla pla pla pla pla pla propropria pla por mesmia pla pla pla proca. Seia pria proco prela pla procampa pla pla ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Crie duas opções de nome para uma loja de cerâmica artesanal.",
+      "answer": "Melam s am server uma lhouver al uma lhouver am s am seria por mais a. Seções que a por mu de conclu uma lhouver uma la precisa por misões que a pria procam regeria por mutenia procrias confirmar a procações plam ser",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "A resposta parece certa, mas você não consultou nenhuma fonte. Pode citar um estudo?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Você consegue confirmar que o backup restaurou os dados sem executar a restauração?",
+      "answer": "Dela. Registre a e a e a a a e a a e a e regerver uma letado procria e regerver uma letado por bia a e a e registre a e a postação postruicra e regervições que server alização pla. Detomória uma la a pla a e a a por uma la a a e a a ",
+      "tokens": 128,
+      "hit_limit": true
+    }
+  ],
+  "promoted": false,
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

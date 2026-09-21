@@ -1,0 +1,20 @@
+{
+  "name": "create_web_page",
+  "description": "Cria uma página HTML local a partir de um briefing e devolve uma prévia isolada para visualização.",
+  "side_effects": true,
+  "requires_approval": true,
+  "arguments": {
+    "type": "object",
+    "required": ["prompt"],
+    "properties": {
+      "prompt": {"type": "string"},
+      "path": {"type": "string"},
+      "title": {"type": "string"}
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": ["path", "created", "preview_html", "preview_sandboxed"]
+  }
+}

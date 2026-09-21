@@ -1,0 +1,14 @@
+[
+  {
+    "initialization": "legacy",
+    "embedding_std": 1.002238154411316,
+    "validation_loss_before_training": 154.86377541415663,
+    "first_two_layers_identical": true
+  },
+  {
+    "initialization": "scaled-normal-v1",
+    "embedding_std": 0.02000741846859455,
+    "validation_loss_before_training": 6.9613854699693665,
+    "first_two_layers_identical": false
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "name": "cite_sources",
+  "description": "Gera citações rastreáveis para fontes coletadas durante a sessão atual.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "required": ["source_ids"],
+    "properties": {"source_ids": {"type": "array", "items": {"type": "string"}}},
+    "additionalProperties": false
+  },
+  "result": {"type": "object", "required": ["citations"], "properties": {"citations": {"type": "array"}}}
+}

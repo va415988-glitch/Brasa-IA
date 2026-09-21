@@ -1,0 +1,50 @@
+{
+  "ranking": [
+    {
+      "label": "baseline",
+      "tool_accuracy": 0.857,
+      "answer_quality_avg": 0.31,
+      "latency_ms": {
+        "p50": 7.05,
+        "p95": 33.36,
+        "max": 33.36
+      },
+      "case_count": 7,
+      "categories": {
+        "qa": {
+          "count": 2,
+          "tool_accuracy": 1.0,
+          "answer_quality_avg": 0.583
+        },
+        "tool-routing": {
+          "count": 5,
+          "tool_accuracy": 0.8,
+          "answer_quality_avg": 0.2
+        }
+      }
+    },
+    {
+      "label": "baseline",
+      "tool_accuracy": 0.857,
+      "answer_quality_avg": 0.31,
+      "latency_ms": {
+        "p50": 7.05,
+        "p95": 33.36,
+        "max": 33.36
+      },
+      "case_count": 7,
+      "categories": {
+        "qa": {
+          "count": 2,
+          "tool_accuracy": 1.0,
+          "answer_quality_avg": 0.583
+        },
+        "tool-routing": {
+          "count": 5,
+          "tool_accuracy": 0.8,
+          "answer_quality_avg": 0.2
+        }
+      }
+    }
+  ]
+}

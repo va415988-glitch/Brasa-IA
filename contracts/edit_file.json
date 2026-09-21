@@ -1,0 +1,8 @@
+{
+  "name": "edit_file",
+  "description": "Substitui exatamente um trecho existente de um arquivo.",
+  "side_effects": true,
+  "requires_approval": false,
+  "arguments": {"type":"object","required":["path","old_text","new_text"],"properties":{"path":{"type":"string"},"old_text":{"type":"string"},"new_text":{"type":"string"}},"additionalProperties":false},
+  "result": {"type":"object","required":["path","updated","bytes","backup","diff","artifact"],"properties":{"path":{"type":"string"},"updated":{"type":"boolean"},"bytes":{"type":"integer"},"backup":{"type":"string"},"diff":{"type":"object"},"artifact":{"type":"object"}}}
+}

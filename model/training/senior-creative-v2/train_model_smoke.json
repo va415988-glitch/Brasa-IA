@@ -1,0 +1,6 @@
+{
+  "steps": 2,
+  "initialization": "scaled-normal-v1",
+  "validation_loss": 6.601513862609863,
+  "output": "/tmp/ia-local-initialization-smoke.pt"
+}

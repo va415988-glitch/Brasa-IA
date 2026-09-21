@@ -1,0 +1,7 @@
+[
+  {"id":"documents","name":"Documentos","status":"ready","formats":["pdf","txt","md","json"],"capabilities":["extrair texto","ler no workspace"],"backend":"pdftotext + runtime Rust"},
+  {"id":"vision","name":"Visão","status":"adapter","formats":["png","jpg","jpeg","webp","gif"],"capabilities":["inspecionar mídia","OCR","entender imagem"],"backend":"adapter local; OCR/modelo visual será conectado depois"},
+  {"id":"audio","name":"Áudio","status":"adapter","formats":["wav","mp3","ogg","flac","m4a"],"capabilities":["transcrever","resumir","detectar fala"],"backend":"adapter local; transcrição será conectada depois"},
+  {"id":"video","name":"Vídeo","status":"adapter","formats":["mp4","mkv","webm","mov"],"capabilities":["extrair quadros","extrair áudio","resumir cena"],"backend":"adapter local; ffmpeg/modelo visual será conectado depois"},
+  {"id":"generation","name":"Geração multimodal","status":"planned","formats":["imagem","áudio","vídeo"],"capabilities":["gerar","editar","transformar"],"backend":"planejado conforme hardware e latência"}
+]

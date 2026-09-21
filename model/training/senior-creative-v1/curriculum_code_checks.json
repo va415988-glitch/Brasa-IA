@@ -1,0 +1,10 @@
+{
+  "passed": 5,
+  "cases": [
+    "Implemente soma dos números pares em Python.",
+    "Remova duplicatas de uma lista preservando a ordem em Python.",
+    "Qual o erro de def adicionar(x, itens=[])?",
+    "Escreva uma busca binária em Python.",
+    "Crie uma função que conte palavras em Python."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "open_page",
+  "description": "Abre uma página HTTP(S), segue redirecionamentos e extrai texto para análise.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "required": ["url"],
+    "properties": {
+      "source_id": {
+        "type": "string",
+        "description": "Identificador recebido no resultado da pesquisa, quando disponível."
+      },
+      "url": {
+        "type": "string",
+        "description": "URL HTTP ou HTTPS retornada por uma pesquisa."
+      }
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": ["url", "title", "text"],
+    "properties": {
+      "source_id": {"type": "string"},
+      "url": {"type": "string"},
+      "title": {"type": "string"},
+      "text": {"type": "string"}
+    }
+  }
+}

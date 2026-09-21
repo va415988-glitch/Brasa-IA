@@ -1,0 +1,8 @@
+{
+  "name":"project_checks",
+  "description":"Lista ou executa verificações reconhecidas do projeto no workspace.",
+  "side_effects":false,
+  "requires_approval":false,
+  "arguments":{"type":"object","properties":{"check":{"type":"string","enum":["auto","list","cargo-test","npm-test","pytest","unittest"]},"path":{"type":"string","description":"arquivo alterado, usado para escolher a verificação mais relevante"}},"additionalProperties":false},
+  "result":{"type":"object","required":["passed","elapsed_ms"]}
+}

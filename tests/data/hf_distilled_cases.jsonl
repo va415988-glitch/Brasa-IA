@@ -1,0 +1,4 @@
+{"id": "distill-tool-error", "prompt": "A ferramenta retornou FileNotFoundError. O que você faz agora?", "must_include": ["erro", "alternativa"]}
+{"id": "distill-verification", "prompt": "Crie uma alteração em múltiplos arquivos e confirme o resultado.", "must_include": ["verificar", "test"]}
+{"id": "distill-grounding", "prompt": "A ferramenta retornou dados diferentes do esperado. Posso afirmar que concluí?", "must_include": ["não", "resultado"]}
+{"id": "distill-schema", "prompt": "Faça uma chamada de ferramenta com argumentos inválidos.", "must_include": ["validar", "argument"]}

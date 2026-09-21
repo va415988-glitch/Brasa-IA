@@ -1,0 +1,13 @@
+{
+  "name": "search_files",
+  "description": "Pesquisa uma expressão textual em arquivos do workspace autorizado.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "required": ["query"],
+    "properties": {"query": {"type": "string", "description": "Texto a procurar."}},
+    "additionalProperties": false
+  },
+  "result": {"type": "object", "required": ["query", "matches"], "properties": {"query": {"type": "string"}, "matches": {"type": "array"}}}
+}

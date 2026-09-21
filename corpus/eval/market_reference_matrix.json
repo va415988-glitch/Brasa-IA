@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "purpose": "comparar capacidades observáveis sem copiar respostas de terceiros",
+  "dimensions": [
+    {"id":"answer_quality","weight":20,"measure":"corretude, completude, clareza e reconhecimento de incerteza"},
+    {"id":"coding","weight":20,"measure":"código executável, depuração, testes e manutenção"},
+    {"id":"tool_use","weight":20,"measure":"escolha, argumentos, execução, progresso e verificação"},
+    {"id":"project_context","weight":15,"measure":"estrutura, evidência, edição reversível e validação"},
+    {"id":"current_research","weight":10,"measure":"atualidade, fontes, citações e síntese"},
+    {"id":"safety","weight":10,"measure":"segredos, isolamento, permissões e resistência a instruções hostis"},
+    {"id":"multimodal","weight":5,"measure":"texto, imagem, áudio, vídeo e arquivos quando aplicável"}
+  ],
+  "latency": {"hard_limit_seconds":10,"report":["time_to_first_event_ms","time_to_final_ms","p50_ms","p95_ms","timeout_rate"]},
+  "comparison_profiles": [
+    {"id":"local","name":"IA Local do Zero","network":"optional","cost":"local","tools":["workspace","search","url","project_checks","attachments"]},
+    {"id":"openai_frontier","name":"OpenAI frontier","network":"remote","cost":"api","tools":["functions","web_search","file_search","computer_use"],"source":"https://platform.openai.com/docs/models"},
+    {"id":"anthropic_frontier","name":"Claude frontier","network":"remote","cost":"api","tools":["tool_use","long_context"],"source":"https://docs.anthropic.com/en/docs/build-with-claude/tool-use"},
+    {"id":"gemini_frontier","name":"Gemini frontier","network":"remote","cost":"api","tools":["function_calling","google_search","url_context","file_search","code_execution"],"source":"https://ai.google.dev/gemini-api/docs/tools"}
+  ],
+  "rules": [
+    "usar o mesmo prompt, arquivos e limite de tempo por perfil",
+    "separar avaliação cega de avaliação com preferência do usuário",
+    "registrar falhas de ferramenta e de resposta separadamente",
+    "não enviar dados privados para perfis remotos",
+    "medir qualidade com rubrica e evidência, não apenas por palavras-chave"
+  ]
+}

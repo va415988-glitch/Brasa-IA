@@ -1,0 +1,8 @@
+{
+  "name": "list_sources",
+  "description": "Lista as fontes coletadas durante a sessão atual.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {"type": "object", "properties": {}, "additionalProperties": false},
+  "result": {"type": "object", "required": ["sources"], "properties": {"sources": {"type": "array"}}}
+}

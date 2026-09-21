@@ -1,0 +1,12 @@
+{"id":"py-001","level":"beginner","category":"python","question":"Por que uma lista muda depois que passo ela para uma função?","must_include":["mutáv","referência"]}
+{"id":"py-002","level":"intermediate","category":"python","question":"Como tratar uma exceção sem esconder erros de programação?","must_include":["capture","específica"]}
+{"id":"py-003","level":"intermediate","category":"python","question":"Qual a diferença entre cópia rasa e cópia profunda?","must_include":["rasa","profunda"]}
+{"id":"rust-001","level":"beginner","category":"rust","question":"Por que uma variável imutável não pode ser alterada em Rust?","must_include":["mut","imutável"]}
+{"id":"rust-002","level":"intermediate","category":"rust","question":"Quando devo usar referência mutável em Rust?","must_include":["mutável","empréstimo"]}
+{"id":"rust-003","level":"advanced","category":"rust","question":"Qual problema o Result resolve em Rust?","must_include":["erro","Ok","Err"]}
+{"id":"web-001","level":"beginner","category":"web","question":"O que acontece entre digitar uma URL e receber uma página?","must_include":["DNS","HTTP"]}
+{"id":"web-002","level":"intermediate","category":"web","question":"Como evitar uma vulnerabilidade de SQL injection?","must_include":["parametrizadas","concatene"]}
+{"id":"web-003","level":"intermediate","category":"web","question":"Qual a diferença entre autenticação e autorização?","must_include":["identidade","permissões"]}
+{"id":"engineering-001","level":"beginner","category":"engineering","question":"Como investigar um bug que não consigo reproduzir?","must_include":["logs","observabilidade"]}
+{"id":"engineering-002","level":"intermediate","category":"testing","question":"O que um teste de integração deve verificar?","must_include":["componentes","dependências"]}
+{"id":"engineering-003","level":"advanced","category":"performance","question":"Como decidir se uma otimização realmente funcionou?","must_include":["meça","baseline"]}

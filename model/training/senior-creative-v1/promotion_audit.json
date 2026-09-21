@@ -1,0 +1,32 @@
+{
+  "schema": "checkpoint-promotion-audit/v1",
+  "source": "model/training/senior-creative-v1/run-02/candidate.safetensors",
+  "context_policy": {
+    "effective_tokens": 256,
+    "minimum_tokens": 8192,
+    "target_tokens": 16384,
+    "promotion_stage": 0,
+    "production_eligible": false,
+    "status": "experimental",
+    "reason": "checkpoint abaixo do mínimo de 8192 tokens",
+    "generation_policy": {
+      "professional_target_tokens": 4096,
+      "configured_tokens": 0,
+      "production_eligible": false,
+      "immutable_rule": "não promover sem geração longa contínua, sem truncamento e com avaliação multiarquivo"
+    }
+  },
+  "gates": {
+    "checkpoint_readable": true,
+    "context_minimum": false,
+    "generation_professional": false,
+    "has_state_dict": true,
+    "has_training_steps": true,
+    "not_partial": true
+  },
+  "promotable": false,
+  "blocked_reasons": [
+    "context_minimum",
+    "generation_professional"
+  ]
+}

@@ -1,0 +1,3 @@
+{"profile":"openai_frontier","task_id":"prog-01","text":"resposta exportada aqui","elapsed_ms":850,"scores":{"answer_quality":4,"coding":3}}
+{"profile":"anthropic_frontier","task_id":"prog-01","text":"resposta exportada aqui","elapsed_ms":1100,"scores":{"answer_quality":4,"coding":3}}
+{"profile":"gemini_frontier","task_id":"prog-01","text":"resposta exportada aqui","elapsed_ms":900,"scores":{"answer_quality":4,"coding":3}}
