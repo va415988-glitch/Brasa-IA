@@ -1,1 +1,0 @@
-/home/victor/Documentos/IA\ Local\ do\ Zero/runtime/target/debug/local_ai_runtime: /home/victor/Documentos/IA\ Local\ do\ Zero/runtime/src/main.rs /home/victor/Documentos/IA\ Local\ do\ Zero/runtime/static/app.js /home/victor/Documentos/IA\ Local\ do\ Zero/runtime/static/chat-core.js /home/victor/Documentos/IA\ Local\ do\ Zero/runtime/static/index.html
