@@ -1,0 +1,96 @@
+{"id": "strings-count_a", "reference": "def count_a(text):\n    return text.lower().count('a')\n"}
+{"id": "strings-count_r", "reference": "def count_r(text):\n    return text.lower().count('r')\n"}
+{"id": "strings-count_s", "reference": "def count_s(text):\n    return text.lower().count('s')\n"}
+{"id": "strings-count_t", "reference": "def count_t(text):\n    return text.lower().count('t')\n"}
+{"id": "strings-saudar_ola", "reference": "def saudar_ola(nome):\n    return 'Olá, ' + nome + '!'\n"}
+{"id": "strings-saudar_oi", "reference": "def saudar_oi(nome):\n    return 'Oi, ' + nome + '!'\n"}
+{"id": "strings-saudar_bom_dia", "reference": "def saudar_bom_dia(nome):\n    return 'Bom dia, ' + nome + '!'\n"}
+{"id": "strings-saudar_boa_noite", "reference": "def saudar_boa_noite(nome):\n    return 'Boa noite, ' + nome + '!'\n"}
+{"id": "strings-repetir_2", "reference": "def repetir_2(text):\n    return '-'.join([text] * 2)\n"}
+{"id": "strings-repetir_3", "reference": "def repetir_3(text):\n    return '-'.join([text] * 3)\n"}
+{"id": "strings-repetir_4", "reference": "def repetir_4(text):\n    return '-'.join([text] * 4)\n"}
+{"id": "strings-repetir_5", "reference": "def repetir_5(text):\n    return '-'.join([text] * 5)\n"}
+{"id": "strings-comeca_com_a", "reference": "def comeca_com_a(text):\n    return text.startswith('A')\n"}
+{"id": "strings-comeca_com_br", "reference": "def comeca_com_br(text):\n    return text.startswith('Br')\n"}
+{"id": "strings-comeca_com_pre", "reference": "def comeca_com_pre(text):\n    return text.startswith('pre')\n"}
+{"id": "strings-comeca_com_un", "reference": "def comeca_com_un(text):\n    return text.startswith('un')\n"}
+{"id": "strings-primeiros_1", "reference": "def primeiros_1(text):\n    return text[:1]\n"}
+{"id": "strings-primeiros_2", "reference": "def primeiros_2(text):\n    return text[:2]\n"}
+{"id": "strings-primeiros_3", "reference": "def primeiros_3(text):\n    return text[:3]\n"}
+{"id": "strings-primeiros_5", "reference": "def primeiros_5(text):\n    return text[:5]\n"}
+{"id": "strings-envolver_colchetes", "reference": "def envolver_colchetes(text):\n    return '[' + text + ']'\n"}
+{"id": "strings-envolver_parenteses", "reference": "def envolver_parenteses(text):\n    return '(' + text + ')'\n"}
+{"id": "strings-envolver_chaves", "reference": "def envolver_chaves(text):\n    return '{' + text + '}'\n"}
+{"id": "strings-envolver_angulos", "reference": "def envolver_angulos(text):\n    return '<' + text + '>'\n"}
+{"id": "lists-soma_multiplos_2", "reference": "def soma_multiplos_2(nums):\n    return sum(x for x in nums if x % 2 == 0)\n"}
+{"id": "lists-soma_multiplos_3", "reference": "def soma_multiplos_3(nums):\n    return sum(x for x in nums if x % 3 == 0)\n"}
+{"id": "lists-soma_multiplos_5", "reference": "def soma_multiplos_5(nums):\n    return sum(x for x in nums if x % 5 == 0)\n"}
+{"id": "lists-soma_multiplos_7", "reference": "def soma_multiplos_7(nums):\n    return sum(x for x in nums if x % 7 == 0)\n"}
+{"id": "lists-pegar_1", "reference": "def pegar_1(items):\n    return items[:1]\n"}
+{"id": "lists-pegar_2", "reference": "def pegar_2(items):\n    return items[:2]\n"}
+{"id": "lists-pegar_3", "reference": "def pegar_3(items):\n    return items[:3]\n"}
+{"id": "lists-pegar_4", "reference": "def pegar_4(items):\n    return items[:4]\n"}
+{"id": "lists-contar_maiores_0", "reference": "def contar_maiores_0(nums):\n    return sum(1 for x in nums if x > 0)\n"}
+{"id": "lists-contar_maiores_5", "reference": "def contar_maiores_5(nums):\n    return sum(1 for x in nums if x > 5)\n"}
+{"id": "lists-contar_maiores_10", "reference": "def contar_maiores_10(nums):\n    return sum(1 for x in nums if x > 10)\n"}
+{"id": "lists-contar_maiores_100", "reference": "def contar_maiores_100(nums):\n    return sum(1 for x in nums if x > 100)\n"}
+{"id": "lists-escalar_2", "reference": "def escalar_2(nums):\n    return [x * (2) for x in nums]\n"}
+{"id": "lists-escalar_3", "reference": "def escalar_3(nums):\n    return [x * (3) for x in nums]\n"}
+{"id": "lists-escalar_10", "reference": "def escalar_10(nums):\n    return [x * (10) for x in nums]\n"}
+{"id": "lists-escalar_menos_1", "reference": "def escalar_menos_1(nums):\n    return [x * (-1) for x in nums]\n"}
+{"id": "lists-manter_acima_0", "reference": "def manter_acima_0(nums):\n    return [x for x in nums if x > 0]\n"}
+{"id": "lists-manter_acima_3", "reference": "def manter_acima_3(nums):\n    return [x for x in nums if x > 3]\n"}
+{"id": "lists-manter_acima_10", "reference": "def manter_acima_10(nums):\n    return [x for x in nums if x > 10]\n"}
+{"id": "lists-manter_acima_50", "reference": "def manter_acima_50(nums):\n    return [x for x in nums if x > 50]\n"}
+{"id": "lists-ultimos_1", "reference": "def ultimos_1(items):\n    return items[-1:]\n"}
+{"id": "lists-ultimos_2", "reference": "def ultimos_2(items):\n    return items[-2:]\n"}
+{"id": "lists-ultimos_3", "reference": "def ultimos_3(items):\n    return items[-3:]\n"}
+{"id": "lists-ultimos_4", "reference": "def ultimos_4(items):\n    return items[-4:]\n"}
+{"id": "numbers-somar_3", "reference": "def somar_3(x):\n    return x + 3\n"}
+{"id": "numbers-somar_7", "reference": "def somar_7(x):\n    return x + 7\n"}
+{"id": "numbers-somar_10", "reference": "def somar_10(x):\n    return x + 10\n"}
+{"id": "numbers-somar_25", "reference": "def somar_25(x):\n    return x + 25\n"}
+{"id": "numbers-multiplo_de_2", "reference": "def multiplo_de_2(n):\n    return n % 2 == 0\n"}
+{"id": "numbers-multiplo_de_3", "reference": "def multiplo_de_3(n):\n    return n % 3 == 0\n"}
+{"id": "numbers-multiplo_de_4", "reference": "def multiplo_de_4(n):\n    return n % 4 == 0\n"}
+{"id": "numbers-multiplo_de_9", "reference": "def multiplo_de_9(n):\n    return n % 9 == 0\n"}
+{"id": "numbers-quadrado_mais_1", "reference": "def quadrado_mais_1(x):\n    return x * x + 1\n"}
+{"id": "numbers-quadrado_mais_5", "reference": "def quadrado_mais_5(x):\n    return x * x + 5\n"}
+{"id": "numbers-quadrado_mais_10", "reference": "def quadrado_mais_10(x):\n    return x * x + 10\n"}
+{"id": "numbers-quadrado_mais_100", "reference": "def quadrado_mais_100(x):\n    return x * x + 100\n"}
+{"id": "numbers-desconto_10", "reference": "def desconto_10(preco):\n    return preco * (100 - 10) / 100\n"}
+{"id": "numbers-desconto_20", "reference": "def desconto_20(preco):\n    return preco * (100 - 20) / 100\n"}
+{"id": "numbers-desconto_25", "reference": "def desconto_25(preco):\n    return preco * (100 - 25) / 100\n"}
+{"id": "numbers-desconto_50", "reference": "def desconto_50(preco):\n    return preco * (100 - 50) / 100\n"}
+{"id": "numbers-limitar_a_10", "reference": "def limitar_a_10(x):\n    return min(x, 10)\n"}
+{"id": "numbers-limitar_a_50", "reference": "def limitar_a_50(x):\n    return min(x, 50)\n"}
+{"id": "numbers-limitar_a_100", "reference": "def limitar_a_100(x):\n    return min(x, 100)\n"}
+{"id": "numbers-limitar_a_255", "reference": "def limitar_a_255(x):\n    return min(x, 255)\n"}
+{"id": "numbers-entre_1_5", "reference": "def entre_1_5(x):\n    return 1 <= x <= 5\n"}
+{"id": "numbers-entre_0_10", "reference": "def entre_0_10(x):\n    return 0 <= x <= 10\n"}
+{"id": "numbers-entre_m5_5", "reference": "def entre_m5_5(x):\n    return -5 <= x <= 5\n"}
+{"id": "numbers-entre_10_20", "reference": "def entre_10_20(x):\n    return 10 <= x <= 20\n"}
+{"id": "records-campo_name", "reference": "def campo_name(registro):\n    return registro.get('name')\n"}
+{"id": "records-campo_age", "reference": "def campo_age(registro):\n    return registro.get('age')\n"}
+{"id": "records-campo_city", "reference": "def campo_city(registro):\n    return registro.get('city')\n"}
+{"id": "records-campo_email", "reference": "def campo_email(registro):\n    return registro.get('email')\n"}
+{"id": "records-somar_price", "reference": "def somar_price(rows):\n    return sum(r['price'] for r in rows)\n"}
+{"id": "records-somar_qty", "reference": "def somar_qty(rows):\n    return sum(r['qty'] for r in rows)\n"}
+{"id": "records-somar_score", "reference": "def somar_score(rows):\n    return sum(r['score'] for r in rows)\n"}
+{"id": "records-somar_total", "reference": "def somar_total(rows):\n    return sum(r['total'] for r in rows)\n"}
+{"id": "records-nomes_acima_18", "reference": "def nomes_acima_18(pessoas):\n    return [p['name'] for p in pessoas if p['age'] > 18]\n"}
+{"id": "records-nomes_acima_30", "reference": "def nomes_acima_30(pessoas):\n    return [p['name'] for p in pessoas if p['age'] > 30]\n"}
+{"id": "records-nomes_acima_40", "reference": "def nomes_acima_40(pessoas):\n    return [p['name'] for p in pessoas if p['age'] > 40]\n"}
+{"id": "records-nomes_acima_65", "reference": "def nomes_acima_65(pessoas):\n    return [p['name'] for p in pessoas if p['age'] > 65]\n"}
+{"id": "records-tem_id", "reference": "def tem_id(rows):\n    return sum(1 for r in rows if 'id' in r)\n"}
+{"id": "records-tem_slug", "reference": "def tem_slug(rows):\n    return sum(1 for r in rows if 'slug' in r)\n"}
+{"id": "records-tem_code", "reference": "def tem_code(rows):\n    return sum(1 for r in rows if 'code' in r)\n"}
+{"id": "records-tem_uid", "reference": "def tem_uid(rows):\n    return sum(1 for r in rows if 'uid' in r)\n"}
+{"id": "records-com_padrao_name", "reference": "def com_padrao_name(registro):\n    return {'name': 'anon', **registro}\n"}
+{"id": "records-com_padrao_city", "reference": "def com_padrao_city(registro):\n    return {'city': 'n/a', **registro}\n"}
+{"id": "records-com_padrao_lang", "reference": "def com_padrao_lang(registro):\n    return {'lang': 'pt', **registro}\n"}
+{"id": "records-com_padrao_role", "reference": "def com_padrao_role(registro):\n    return {'role': 'user', **registro}\n"}
+{"id": "records-sem_a", "reference": "def sem_a(registro):\n    return {k: v for k, v in registro.items() if k != 'a'}\n"}
+{"id": "records-sem_b", "reference": "def sem_b(registro):\n    return {k: v for k, v in registro.items() if k != 'b'}\n"}
+{"id": "records-sem_c", "reference": "def sem_c(registro):\n    return {k: v for k, v in registro.items() if k != 'c'}\n"}
+{"id": "records-sem_d", "reference": "def sem_d(registro):\n    return {k: v for k, v in registro.items() if k != 'd'}\n"}

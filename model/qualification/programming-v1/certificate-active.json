@@ -1,0 +1,96 @@
+{
+  "schema": "programming-core-evidence/v1",
+  "scope": "python-function-deliverables/v1",
+  "generator": {
+    "backend": "checkpoint",
+    "checkpoint": "model/godmode/context-32768-v1/candidate.safetensors",
+    "endpoint": null,
+    "model": null
+  },
+  "protocol_sha256": "857b3aa2914e7bd12a8220d2dac29a3d12562550b721f4be829415c9ed84561c",
+  "catalog_sha256": "49f0ee57e9e73a4e639af68c7eb861a38b7261817e4f8170b76741f55225efba",
+  "suites": [
+    {
+      "name": "reserved",
+      "report": "model/qualification/programming-v1/active-reserved.json",
+      "report_sha256": "acc910d7e7b967f6eca36ee28d61a8aa5ddd77b4650c3cde1a26516e2514a957"
+    },
+    {
+      "name": "regression",
+      "report": "model/qualification/programming-v1/active-regression.json",
+      "report_sha256": "c27a2621de29d55159f5bdab176beb2e8266b0e6fcba916b19a98646e789649a"
+    }
+  ],
+  "measurements": {
+    "reserved": {
+      "passed": 0,
+      "total": 96,
+      "rate": 0.0,
+      "unsafe": 0,
+      "contract_valid": 0,
+      "per_domain": {
+        "strings": {
+          "passed": 0,
+          "total": 24,
+          "rate": 0.0
+        },
+        "lists": {
+          "passed": 0,
+          "total": 24,
+          "rate": 0.0
+        },
+        "numbers": {
+          "passed": 0,
+          "total": 24,
+          "rate": 0.0
+        },
+        "records": {
+          "passed": 0,
+          "total": 24,
+          "rate": 0.0
+        }
+      },
+      "meets_catalog_thresholds": false
+    },
+    "regression": {
+      "passed": 0,
+      "total": 96,
+      "rate": 0.0,
+      "unsafe": 0,
+      "contract_valid": 0,
+      "per_domain": {
+        "strings": {
+          "passed": 0,
+          "total": 24,
+          "rate": 0.0
+        },
+        "lists": {
+          "passed": 0,
+          "total": 24,
+          "rate": 0.0
+        },
+        "numbers": {
+          "passed": 0,
+          "total": 24,
+          "rate": 0.0
+        },
+        "records": {
+          "passed": 0,
+          "total": 24,
+          "rate": 0.0
+        }
+      },
+      "meets_catalog_thresholds": false
+    }
+  },
+  "status": "failed",
+  "registry_eligible": false,
+  "integration_proven": false,
+  "promoted": false,
+  "limits": [
+    "Function-level Python tasks only; integration into an existing project is not measured.",
+    "Hidden tests run in a resource-limited subprocess, not a network- or filesystem-isolated sandbox.",
+    "Regression tasks reuse the small parametric shapes of the training data and cannot prove transfer.",
+    "A pass here does not satisfy the full executed-tests-and-unseen-integration proof of the catalog."
+  ]
+}

@@ -43,6 +43,11 @@ A V4 permanece experimental e reprovada; sua análise não executa ferramentas.
 O tokenizer original do chat foi recuperado pelo hash exato do treino. Veja
 [a ativação, a recuperação e os testes ao vivo](ATIVACAO_MODELO_2026-10-01.md).
 
+O núcleo de programação ganhou um avaliador de entrega: 192 tarefas Python com
+testes ocultos executados em subprocesso limitado. O checkpoint ativo reprovou
+(0/96 no reservado e 0/96 na regressão; o modelo encerra a geração sem produzir
+código). Veja [a bancada, os controles e os limites](QUALIFICACAO_PROGRAMACAO_2026-10-02.md).
+
 ## Arquitetura inicial
 
 - `runtime/`: executor de ferramentas em Rust;

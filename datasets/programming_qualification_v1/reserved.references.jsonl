@@ -1,0 +1,96 @@
+{"id": "strings-count_vowels", "reference": "def count_vowels(text):\n    return sum(1 for c in text.lower() if c in 'aeiou')\n"}
+{"id": "strings-is_palindrome", "reference": "def is_palindrome(text):\n    s = [c.lower() for c in text if c.isalnum()]\n    return s == s[::-1]\n"}
+{"id": "strings-reverse_words", "reference": "def reverse_words(text):\n    return ' '.join(reversed(text.split()))\n"}
+{"id": "strings-capitalize_words", "reference": "def capitalize_words(text):\n    return ' '.join(w[:1].upper() + w[1:].lower() for w in text.split())\n"}
+{"id": "strings-snake_to_camel", "reference": "def snake_to_camel(name):\n    parts = [p for p in name.split('_') if p]\n    if not parts:\n        return ''\n    return parts[0].lower() + ''.join(p[:1].upper() + p[1:].lower() for p in parts[1:])\n"}
+{"id": "strings-camel_to_snake", "reference": "def camel_to_snake(name):\n    out = ''\n    for i, c in enumerate(name):\n        if c.isupper() and i > 0:\n            out += '_'\n        out += c.lower()\n    return out\n"}
+{"id": "strings-truncate", "reference": "def truncate(text, limit):\n    if limit < 3:\n        raise ValueError('limit')\n    if len(text) <= limit:\n        return text\n    return text[:limit - 3] + '...'\n"}
+{"id": "strings-char_frequency", "reference": "def char_frequency(text):\n    out = {}\n    for c in text:\n        if c != ' ':\n            out[c] = out.get(c, 0) + 1\n    return out\n"}
+{"id": "strings-longest_word", "reference": "def longest_word(text):\n    best = ''\n    for w in text.split():\n        if len(w) > len(best):\n            best = w\n    return best\n"}
+{"id": "strings-unique_chars", "reference": "def unique_chars(text):\n    seen = set()\n    out = []\n    for c in text:\n        if c not in seen:\n            seen.add(c)\n            out.append(c)\n    return ''.join(out)\n"}
+{"id": "strings-is_anagram", "reference": "def is_anagram(a, b):\n    f = lambda s: sorted(s.replace(' ', '').lower())\n    return f(a) == f(b)\n"}
+{"id": "strings-caesar", "reference": "def caesar(text, shift):\n    out = []\n    for c in text:\n        if 'a' <= c <= 'z':\n            out.append(chr((ord(c) - 97 + shift) % 26 + 97))\n        elif 'A' <= c <= 'Z':\n            out.append(chr((ord(c) - 65 + shift) % 26 + 65))\n        else:\n            out.append(c)\n    return ''.join(out)\n"}
+{"id": "strings-run_length", "reference": "def run_length(text):\n    out = []\n    i = 0\n    while i < len(text):\n        j = i\n        while j < len(text) and text[j] == text[i]:\n            j += 1\n        out.append(text[i] + str(j - i))\n        i = j\n    return ''.join(out)\n"}
+{"id": "strings-slugify", "reference": "import re\n\n\ndef slugify(text):\n    s = re.sub(r'[^a-z0-9 ]', '', text.lower())\n    return '-'.join(s.split())\n"}
+{"id": "strings-count_words", "reference": "def count_words(text):\n    return len(text.split())\n"}
+{"id": "strings-is_balanced", "reference": "def is_balanced(text):\n    pairs = {')': '(', ']': '[', '}': '{'}\n    stack = []\n    for c in text:\n        if c in '([{':\n            stack.append(c)\n        elif c in pairs:\n            if not stack or stack.pop() != pairs[c]:\n                return False\n    return not stack\n"}
+{"id": "strings-first_unique_char", "reference": "def first_unique_char(text):\n    for c in text:\n        if text.count(c) == 1:\n            return c\n    return None\n"}
+{"id": "strings-center_text", "reference": "def center_text(text, width, fill):\n    total = width - len(text)\n    if total <= 0:\n        return text\n    left = total // 2\n    return fill * left + text + fill * (total - left)\n"}
+{"id": "strings-mask_digits", "reference": "def mask_digits(text):\n    return ''.join('#' if '0' <= c <= '9' else c for c in text)\n"}
+{"id": "strings-only_digits", "reference": "def only_digits(text):\n    return ''.join(c for c in text if '0' <= c <= '9')\n"}
+{"id": "strings-swap_case_text", "reference": "def swap_case_text(text):\n    return ''.join(c.lower() if c.isupper() else c.upper() for c in text)\n"}
+{"id": "strings-wrap_lines", "reference": "def wrap_lines(text, width):\n    if width < 1:\n        raise ValueError('width')\n    lines = []\n    current = ''\n    for w in text.split():\n        if not current:\n            current = w\n        elif len(current) + 1 + len(w) <= width:\n            current += ' ' + w\n        else:\n            lines.append(current)\n            current = w\n    if current:\n        lines.append(current)\n    return lines\n"}
+{"id": "strings-count_substring", "reference": "def count_substring(text, sub):\n    if not sub:\n        raise ValueError('sub')\n    return text.count(sub)\n"}
+{"id": "strings-common_prefix", "reference": "def common_prefix(words):\n    if not words:\n        return ''\n    prefix = words[0]\n    for w in words[1:]:\n        while not w.startswith(prefix):\n            prefix = prefix[:-1]\n    return prefix\n"}
+{"id": "lists-second_largest", "reference": "def second_largest(nums):\n    vals = sorted(set(nums), reverse=True)\n    return vals[1] if len(vals) > 1 else None\n"}
+{"id": "lists-flatten", "reference": "def flatten(nested):\n    out = []\n    for x in nested:\n        if isinstance(x, list):\n            out.extend(flatten(x))\n        else:\n            out.append(x)\n    return out\n"}
+{"id": "lists-chunk", "reference": "def chunk(items, size):\n    if size < 1:\n        raise ValueError('size')\n    return [items[i:i + size] for i in range(0, len(items), size)]\n"}
+{"id": "lists-rotate_left", "reference": "def rotate_left(items, k):\n    if not items:\n        return []\n    k %= len(items)\n    return items[k:] + items[:k]\n"}
+{"id": "lists-moving_sum", "reference": "def moving_sum(nums, window):\n    if window < 1:\n        raise ValueError('window')\n    return [sum(nums[i:i + window]) for i in range(len(nums) - window + 1)]\n"}
+{"id": "lists-unique_ordered", "reference": "def unique_ordered(items):\n    out = []\n    for x in items:\n        if x not in out:\n            out.append(x)\n    return out\n"}
+{"id": "lists-merge_sorted", "reference": "def merge_sorted(a, b):\n    out = []\n    i = j = 0\n    while i < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            out.append(a[i])\n            i += 1\n        else:\n            out.append(b[j])\n            j += 1\n    return out + a[i:] + b[j:]\n"}
+{"id": "lists-running_max", "reference": "def running_max(nums):\n    out = []\n    for x in nums:\n        out.append(x if not out or x > out[-1] else out[-1])\n    return out\n"}
+{"id": "lists-pair_sum", "reference": "def pair_sum(nums, target):\n    return [[nums[i], nums[j]] for i in range(len(nums)) for j in range(i + 1, len(nums)) if nums[i] + nums[j] == target]\n"}
+{"id": "lists-intersect", "reference": "def intersect(a, b):\n    out = []\n    for x in a:\n        if x in b and x not in out:\n            out.append(x)\n    return out\n"}
+{"id": "lists-partition_by", "reference": "def partition_by(nums, pivot):\n    return [[x for x in nums if x < pivot], [x for x in nums if x == pivot], [x for x in nums if x > pivot]]\n"}
+{"id": "lists-mode", "reference": "def mode(nums):\n    if not nums:\n        raise ValueError('vazia')\n    counts = {}\n    for x in nums:\n        counts[x] = counts.get(x, 0) + 1\n    best = max(counts.values())\n    return min(k for k, v in counts.items() if v == best)\n"}
+{"id": "lists-median", "reference": "def median(nums):\n    if not nums:\n        raise ValueError('vazia')\n    s = sorted(nums)\n    n = len(s)\n    if n % 2:\n        return float(s[n // 2])\n    return (s[n // 2 - 1] + s[n // 2]) / 2\n"}
+{"id": "lists-zip_fill", "reference": "def zip_fill(a, b, fill):\n    n = max(len(a), len(b))\n    return [[a[i] if i < len(a) else fill, b[i] if i < len(b) else fill] for i in range(n)]\n"}
+{"id": "lists-count_inversions", "reference": "def count_inversions(nums):\n    return sum(1 for i in range(len(nums)) for j in range(i + 1, len(nums)) if nums[i] > nums[j])\n"}
+{"id": "lists-remove_value", "reference": "def remove_value(items, value):\n    return [x for x in items if x != value]\n"}
+{"id": "lists-index_of_max", "reference": "def index_of_max(nums):\n    if not nums:\n        raise ValueError('vazia')\n    return nums.index(max(nums))\n"}
+{"id": "lists-sliding_max", "reference": "def sliding_max(nums, k):\n    if k < 1:\n        raise ValueError('k')\n    return [max(nums[i:i + k]) for i in range(len(nums) - k + 1)]\n"}
+{"id": "lists-dedupe_adjacent", "reference": "def dedupe_adjacent(items):\n    out = []\n    for x in items:\n        if not out or out[-1] != x:\n            out.append(x)\n    return out\n"}
+{"id": "lists-interleave", "reference": "def interleave(a, b):\n    out = []\n    for i in range(max(len(a), len(b))):\n        if i < len(a):\n            out.append(a[i])\n        if i < len(b):\n            out.append(b[i])\n    return out\n"}
+{"id": "lists-prefix_sums", "reference": "def prefix_sums(nums):\n    out = [0]\n    for x in nums:\n        out.append(out[-1] + x)\n    return out\n"}
+{"id": "lists-split_on", "reference": "def split_on(items, sep):\n    out = [[]]\n    for x in items:\n        if x == sep:\n            out.append([])\n        else:\n            out[-1].append(x)\n    return out\n"}
+{"id": "lists-longest_run", "reference": "def longest_run(items):\n    best = cur = 0\n    prev = object()\n    for x in items:\n        cur = cur + 1 if x == prev else 1\n        prev = x\n        best = max(best, cur)\n    return best\n"}
+{"id": "lists-missing_numbers", "reference": "def missing_numbers(nums, n):\n    present = set(nums)\n    return [i for i in range(1, n + 1) if i not in present]\n"}
+{"id": "numbers-is_prime", "reference": "def is_prime(n):\n    if n < 2:\n        return False\n    i = 2\n    while i * i <= n:\n        if n % i == 0:\n            return False\n        i += 1\n    return True\n"}
+{"id": "numbers-gcd_list", "reference": "from math import gcd\n\n\ndef gcd_list(nums):\n    if not nums:\n        raise ValueError('vazia')\n    r = nums[0]\n    for x in nums[1:]:\n        r = gcd(r, x)\n    return r\n"}
+{"id": "numbers-fibonacci", "reference": "def fibonacci(n):\n    if n < 0:\n        raise ValueError('n')\n    a, b = 0, 1\n    for _ in range(n):\n        a, b = b, a + b\n    return a\n"}
+{"id": "numbers-digit_sum", "reference": "def digit_sum(n):\n    return sum(int(c) for c in str(abs(n)))\n"}
+{"id": "numbers-factorial", "reference": "def factorial(n):\n    if n < 0:\n        raise ValueError('n')\n    r = 1\n    for i in range(2, n + 1):\n        r *= i\n    return r\n"}
+{"id": "numbers-collatz_steps", "reference": "def collatz_steps(n):\n    if n < 1:\n        raise ValueError('n')\n    steps = 0\n    while n != 1:\n        n = n // 2 if n % 2 == 0 else 3 * n + 1\n        steps += 1\n    return steps\n"}
+{"id": "numbers-to_roman", "reference": "def to_roman(n):\n    if not 1 <= n <= 3999:\n        raise ValueError('n')\n    table = [(1000, 'M'), (900, 'CM'), (500, 'D'), (400, 'CD'), (100, 'C'), (90, 'XC'), (50, 'L'), (40, 'XL'), (10, 'X'), (9, 'IX'), (5, 'V'), (4, 'IV'), (1, 'I')]\n    out = ''\n    for value, symbol in table:\n        while n >= value:\n            out += symbol\n            n -= value\n    return out\n"}
+{"id": "numbers-from_roman", "reference": "def from_roman(text):\n    v = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}\n    total = 0\n    for i, c in enumerate(text):\n        if i + 1 < len(text) and v[c] < v[text[i + 1]]:\n            total -= v[c]\n        else:\n            total += v[c]\n    return total\n"}
+{"id": "numbers-is_perfect", "reference": "def is_perfect(n):\n    if n < 2:\n        return False\n    return sum(i for i in range(1, n) if n % i == 0) == n\n"}
+{"id": "numbers-count_divisors", "reference": "def count_divisors(n):\n    if n < 1:\n        raise ValueError('n')\n    return sum(1 for i in range(1, n + 1) if n % i == 0)\n"}
+{"id": "numbers-to_binary", "reference": "def to_binary(n):\n    if n < 0:\n        raise ValueError('n')\n    return bin(n)[2:]\n"}
+{"id": "numbers-clamp", "reference": "def clamp(x, lo, hi):\n    if lo > hi:\n        raise ValueError('intervalo')\n    return max(lo, min(x, hi))\n"}
+{"id": "numbers-percentage", "reference": "def percentage(part, total):\n    if total == 0:\n        raise ValueError('total')\n    return round(part / total * 100, 2)\n"}
+{"id": "numbers-lcm", "reference": "from math import gcd\n\n\ndef lcm(a, b):\n    return a * b // gcd(a, b)\n"}
+{"id": "numbers-prime_factors", "reference": "def prime_factors(n):\n    out = []\n    p = 2\n    while n >= 2 and p * p <= n:\n        while n % p == 0:\n            out.append(p)\n            n //= p\n        p += 1\n    if n >= 2:\n        out.append(n)\n    return out\n"}
+{"id": "numbers-sum_of_squares", "reference": "def sum_of_squares(n):\n    if n < 0:\n        raise ValueError('n')\n    return sum(i * i for i in range(1, n + 1))\n"}
+{"id": "numbers-is_power_of_two", "reference": "def is_power_of_two(n):\n    return n > 0 and n & (n - 1) == 0\n"}
+{"id": "numbers-next_prime", "reference": "def next_prime(n):\n    def prime(k):\n        if k < 2:\n            return False\n        i = 2\n        while i * i <= k:\n            if k % i == 0:\n                return False\n            i += 1\n        return True\n    n += 1\n    while not prime(n):\n        n += 1\n    return n\n"}
+{"id": "numbers-trailing_zeros", "reference": "def trailing_zeros(n):\n    if n < 0:\n        raise ValueError('n')\n    count = 0\n    while n:\n        n //= 5\n        count += n\n    return count\n"}
+{"id": "numbers-round_half_up", "reference": "import math\n\n\ndef round_half_up(x):\n    return math.floor(x + 0.5)\n"}
+{"id": "numbers-reverse_digits", "reference": "def reverse_digits(n):\n    if n < 0:\n        raise ValueError('n')\n    return int(str(n)[::-1])\n"}
+{"id": "numbers-parse_base", "reference": "def parse_base(text, base):\n    if not 2 <= base <= 16 or not text:\n        raise ValueError('base')\n    total = 0\n    for c in text.lower():\n        d = '0123456789abcdef'.find(c)\n        if d < 0 or d >= base:\n            raise ValueError('digito')\n        total = total * base + d\n    return total\n"}
+{"id": "numbers-triangle_type", "reference": "def triangle_type(a, b, c):\n    s = sorted([a, b, c])\n    if s[0] <= 0 or s[0] + s[1] <= s[2]:\n        return 'invalido'\n    if a == b == c:\n        return 'equilatero'\n    if a == b or b == c or a == c:\n        return 'isosceles'\n    return 'escaleno'\n"}
+{"id": "numbers-sum_between", "reference": "def sum_between(a, b):\n    lo, hi = min(a, b), max(a, b)\n    return sum(range(lo, hi + 1))\n"}
+{"id": "records-group_by_key", "reference": "def group_by_key(rows, key):\n    out = {}\n    for r in rows:\n        out.setdefault(r[key], []).append(r)\n    return out\n"}
+{"id": "records-total_by_category", "reference": "def total_by_category(items):\n    out = {}\n    for it in items:\n        out[it['category']] = out.get(it['category'], 0) + it['amount']\n    return out\n"}
+{"id": "records-merge_dicts", "reference": "def merge_dicts(a, b):\n    out = dict(a)\n    out.update(b)\n    return out\n"}
+{"id": "records-invert_dict", "reference": "def invert_dict(mapping):\n    out = {}\n    for k, v in mapping.items():\n        if v in out:\n            raise ValueError('valor repetido')\n        out[v] = k\n    return out\n"}
+{"id": "records-pick_keys", "reference": "def pick_keys(mapping, keys):\n    return {k: mapping[k] for k in keys if k in mapping}\n"}
+{"id": "records-omit_keys", "reference": "def omit_keys(mapping, keys):\n    return {k: v for k, v in mapping.items() if k not in keys}\n"}
+{"id": "records-count_by", "reference": "def count_by(rows, key):\n    out = {}\n    for r in rows:\n        out[r[key]] = out.get(r[key], 0) + 1\n    return out\n"}
+{"id": "records-sort_records", "reference": "def sort_records(rows, key, descending):\n    return sorted(rows, key=lambda r: r[key], reverse=descending)\n"}
+{"id": "records-find_by_id", "reference": "def find_by_id(rows, target):\n    for r in rows:\n        if r.get('id') == target:\n            return r\n    return None\n"}
+{"id": "records-set_nested", "reference": "import copy\n\n\ndef set_nested(data, path, value):\n    if not path:\n        raise ValueError('path')\n    out = copy.deepcopy(data)\n    cur = out\n    for k in path[:-1]:\n        if not isinstance(cur.get(k), dict):\n            cur[k] = {}\n        cur = cur[k]\n    cur[path[-1]] = value\n    return out\n"}
+{"id": "records-get_nested", "reference": "def get_nested(data, path, default):\n    cur = data\n    for k in path:\n        if not isinstance(cur, dict) or k not in cur:\n            return default\n        cur = cur[k]\n    return cur\n"}
+{"id": "records-filter_by", "reference": "def filter_by(rows, key, value):\n    return [r for r in rows if r.get(key) == value]\n"}
+{"id": "records-average_by", "reference": "def average_by(rows, group_key, value_key):\n    sums = {}\n    counts = {}\n    for r in rows:\n        g = r[group_key]\n        sums[g] = sums.get(g, 0) + r[value_key]\n        counts[g] = counts.get(g, 0) + 1\n    return {g: sums[g] / counts[g] for g in sums}\n"}
+{"id": "records-top_n", "reference": "def top_n(rows, key, n):\n    if n <= 0:\n        return []\n    return sorted(rows, key=lambda r: r[key], reverse=True)[:n]\n"}
+{"id": "records-rename_keys", "reference": "def rename_keys(mapping, renames):\n    return {renames.get(k, k): v for k, v in mapping.items()}\n"}
+{"id": "records-deep_merge", "reference": "def deep_merge(a, b):\n    out = dict(a)\n    for k, v in b.items():\n        if isinstance(v, dict) and isinstance(out.get(k), dict):\n            out[k] = deep_merge(out[k], v)\n        else:\n            out[k] = v\n    return out\n"}
+{"id": "records-flatten_dict", "reference": "def flatten_dict(data):\n    out = {}\n    for k, v in data.items():\n        if isinstance(v, dict):\n            for kk, vv in flatten_dict(v).items():\n                out[k + '.' + kk] = vv\n        else:\n            out[k] = v\n    return out\n"}
+{"id": "records-dict_diff", "reference": "def dict_diff(old, new):\n    return {'added': sorted(k for k in new if k not in old), 'removed': sorted(k for k in old if k not in new),\n            'changed': sorted(k for k in old if k in new and old[k] != new[k])}\n"}
+{"id": "records-fill_defaults", "reference": "def fill_defaults(rows, defaults):\n    return [{**defaults, **r} for r in rows]\n"}
+{"id": "records-dedupe_by", "reference": "def dedupe_by(rows, key):\n    seen = set()\n    out = []\n    for r in rows:\n        if r[key] not in seen:\n            seen.add(r[key])\n            out.append(r)\n    return out\n"}
+{"id": "records-pluck", "reference": "def pluck(rows, key):\n    return [r[key] for r in rows if key in r]\n"}
+{"id": "records-sum_field", "reference": "def sum_field(rows, key):\n    return sum(r[key] for r in rows if key in r)\n"}
+{"id": "records-index_by", "reference": "def index_by(rows, key):\n    return {r[key]: r for r in rows}\n"}
+{"id": "records-missing_fields", "reference": "def missing_fields(record, required):\n    return sorted(k for k in required if record.get(k) is None)\n"}

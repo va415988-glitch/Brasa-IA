@@ -1,0 +1,96 @@
+{"id": "strings-count_a", "function": "count_a", "cases": [{"args": ["Arara"], "expect": 3}, {"args": [""], "expect": 0}, {"args": ["xyz"], "expect": 0}, {"args": ["RASTREAR"], "expect": 2}]}
+{"id": "strings-count_r", "function": "count_r", "cases": [{"args": ["Arara"], "expect": 2}, {"args": [""], "expect": 0}, {"args": ["xyz"], "expect": 0}, {"args": ["RASTREAR"], "expect": 3}]}
+{"id": "strings-count_s", "function": "count_s", "cases": [{"args": ["Arara"], "expect": 0}, {"args": [""], "expect": 0}, {"args": ["xyz"], "expect": 0}, {"args": ["RASTREAR"], "expect": 1}]}
+{"id": "strings-count_t", "function": "count_t", "cases": [{"args": ["Arara"], "expect": 0}, {"args": [""], "expect": 0}, {"args": ["xyz"], "expect": 0}, {"args": ["RASTREAR"], "expect": 1}]}
+{"id": "strings-saudar_ola", "function": "saudar_ola", "cases": [{"args": ["Ana"], "expect": "Olá, Ana!"}, {"args": [""], "expect": "Olá, !"}, {"args": ["João Silva"], "expect": "Olá, João Silva!"}]}
+{"id": "strings-saudar_oi", "function": "saudar_oi", "cases": [{"args": ["Ana"], "expect": "Oi, Ana!"}, {"args": [""], "expect": "Oi, !"}, {"args": ["João Silva"], "expect": "Oi, João Silva!"}]}
+{"id": "strings-saudar_bom_dia", "function": "saudar_bom_dia", "cases": [{"args": ["Ana"], "expect": "Bom dia, Ana!"}, {"args": [""], "expect": "Bom dia, !"}, {"args": ["João Silva"], "expect": "Bom dia, João Silva!"}]}
+{"id": "strings-saudar_boa_noite", "function": "saudar_boa_noite", "cases": [{"args": ["Ana"], "expect": "Boa noite, Ana!"}, {"args": [""], "expect": "Boa noite, !"}, {"args": ["João Silva"], "expect": "Boa noite, João Silva!"}]}
+{"id": "strings-repetir_2", "function": "repetir_2", "cases": [{"args": ["ab"], "expect": "ab-ab"}, {"args": [""], "expect": "-"}, {"args": ["x"], "expect": "x-x"}]}
+{"id": "strings-repetir_3", "function": "repetir_3", "cases": [{"args": ["ab"], "expect": "ab-ab-ab"}, {"args": [""], "expect": "--"}, {"args": ["x"], "expect": "x-x-x"}]}
+{"id": "strings-repetir_4", "function": "repetir_4", "cases": [{"args": ["ab"], "expect": "ab-ab-ab-ab"}, {"args": [""], "expect": "---"}, {"args": ["x"], "expect": "x-x-x-x"}]}
+{"id": "strings-repetir_5", "function": "repetir_5", "cases": [{"args": ["ab"], "expect": "ab-ab-ab-ab-ab"}, {"args": [""], "expect": "----"}, {"args": ["x"], "expect": "x-x-x-x-x"}]}
+{"id": "strings-comeca_com_a", "function": "comeca_com_a", "cases": [{"args": ["Axyz"], "expect": true}, {"args": ["xyz"], "expect": false}, {"args": [""], "expect": false}, {"args": ["aq"], "expect": false}]}
+{"id": "strings-comeca_com_br", "function": "comeca_com_br", "cases": [{"args": ["Brxyz"], "expect": true}, {"args": ["xyz"], "expect": false}, {"args": [""], "expect": false}, {"args": ["bRq"], "expect": false}]}
+{"id": "strings-comeca_com_pre", "function": "comeca_com_pre", "cases": [{"args": ["prexyz"], "expect": true}, {"args": ["xyz"], "expect": false}, {"args": [""], "expect": false}, {"args": ["PREq"], "expect": false}]}
+{"id": "strings-comeca_com_un", "function": "comeca_com_un", "cases": [{"args": ["unxyz"], "expect": true}, {"args": ["xyz"], "expect": false}, {"args": [""], "expect": false}, {"args": ["UNq"], "expect": false}]}
+{"id": "strings-primeiros_1", "function": "primeiros_1", "cases": [{"args": ["abcdefgh"], "expect": "a"}, {"args": ["a"], "expect": "a"}, {"args": [""], "expect": ""}]}
+{"id": "strings-primeiros_2", "function": "primeiros_2", "cases": [{"args": ["abcdefgh"], "expect": "ab"}, {"args": ["a"], "expect": "a"}, {"args": [""], "expect": ""}]}
+{"id": "strings-primeiros_3", "function": "primeiros_3", "cases": [{"args": ["abcdefgh"], "expect": "abc"}, {"args": ["a"], "expect": "a"}, {"args": [""], "expect": ""}]}
+{"id": "strings-primeiros_5", "function": "primeiros_5", "cases": [{"args": ["abcdefgh"], "expect": "abcde"}, {"args": ["a"], "expect": "a"}, {"args": [""], "expect": ""}]}
+{"id": "strings-envolver_colchetes", "function": "envolver_colchetes", "cases": [{"args": ["x"], "expect": "[x]"}, {"args": [""], "expect": "[]"}, {"args": ["a b"], "expect": "[a b]"}]}
+{"id": "strings-envolver_parenteses", "function": "envolver_parenteses", "cases": [{"args": ["x"], "expect": "(x)"}, {"args": [""], "expect": "()"}, {"args": ["a b"], "expect": "(a b)"}]}
+{"id": "strings-envolver_chaves", "function": "envolver_chaves", "cases": [{"args": ["x"], "expect": "{x}"}, {"args": [""], "expect": "{}"}, {"args": ["a b"], "expect": "{a b}"}]}
+{"id": "strings-envolver_angulos", "function": "envolver_angulos", "cases": [{"args": ["x"], "expect": "<x>"}, {"args": [""], "expect": "<>"}, {"args": ["a b"], "expect": "<a b>"}]}
+{"id": "lists-soma_multiplos_2", "function": "soma_multiplos_2", "cases": [{"args": [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]], "expect": 240}, {"args": [[]], "expect": 0}, {"args": [[1, -2, 4]], "expect": 2}]}
+{"id": "lists-soma_multiplos_3", "function": "soma_multiplos_3", "cases": [{"args": [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]], "expect": 165}, {"args": [[]], "expect": 0}, {"args": [[1, -3, 6]], "expect": 3}]}
+{"id": "lists-soma_multiplos_5", "function": "soma_multiplos_5", "cases": [{"args": [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]], "expect": 105}, {"args": [[]], "expect": 0}, {"args": [[1, -5, 10]], "expect": 5}]}
+{"id": "lists-soma_multiplos_7", "function": "soma_multiplos_7", "cases": [{"args": [[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]], "expect": 70}, {"args": [[]], "expect": 0}, {"args": [[1, -7, 14]], "expect": 7}]}
+{"id": "lists-pegar_1", "function": "pegar_1", "cases": [{"args": [[1, 2, 3, 4, 5, 6]], "expect": [1]}, {"args": [[9]], "expect": [9]}, {"args": [[]], "expect": []}]}
+{"id": "lists-pegar_2", "function": "pegar_2", "cases": [{"args": [[1, 2, 3, 4, 5, 6]], "expect": [1, 2]}, {"args": [[9]], "expect": [9]}, {"args": [[]], "expect": []}]}
+{"id": "lists-pegar_3", "function": "pegar_3", "cases": [{"args": [[1, 2, 3, 4, 5, 6]], "expect": [1, 2, 3]}, {"args": [[9]], "expect": [9]}, {"args": [[]], "expect": []}]}
+{"id": "lists-pegar_4", "function": "pegar_4", "cases": [{"args": [[1, 2, 3, 4, 5, 6]], "expect": [1, 2, 3, 4]}, {"args": [[9]], "expect": [9]}, {"args": [[]], "expect": []}]}
+{"id": "lists-contar_maiores_0", "function": "contar_maiores_0", "cases": [{"args": [[-1, 0, 1, 50]], "expect": 2}, {"args": [[]], "expect": 0}, {"args": [[0]], "expect": 0}]}
+{"id": "lists-contar_maiores_5", "function": "contar_maiores_5", "cases": [{"args": [[4, 5, 6, 55]], "expect": 2}, {"args": [[]], "expect": 0}, {"args": [[5]], "expect": 0}]}
+{"id": "lists-contar_maiores_10", "function": "contar_maiores_10", "cases": [{"args": [[9, 10, 11, 60]], "expect": 2}, {"args": [[]], "expect": 0}, {"args": [[10]], "expect": 0}]}
+{"id": "lists-contar_maiores_100", "function": "contar_maiores_100", "cases": [{"args": [[99, 100, 101, 150]], "expect": 2}, {"args": [[]], "expect": 0}, {"args": [[100]], "expect": 0}]}
+{"id": "lists-escalar_2", "function": "escalar_2", "cases": [{"args": [[1, 2, 3]], "expect": [2, 4, 6]}, {"args": [[]], "expect": []}, {"args": [[0]], "expect": [0]}]}
+{"id": "lists-escalar_3", "function": "escalar_3", "cases": [{"args": [[1, 2, 3]], "expect": [3, 6, 9]}, {"args": [[]], "expect": []}, {"args": [[0]], "expect": [0]}]}
+{"id": "lists-escalar_10", "function": "escalar_10", "cases": [{"args": [[1, 2, 3]], "expect": [10, 20, 30]}, {"args": [[]], "expect": []}, {"args": [[0]], "expect": [0]}]}
+{"id": "lists-escalar_menos_1", "function": "escalar_menos_1", "cases": [{"args": [[1, 2, 3]], "expect": [-1, -2, -3]}, {"args": [[]], "expect": []}, {"args": [[0]], "expect": [0]}]}
+{"id": "lists-manter_acima_0", "function": "manter_acima_0", "cases": [{"args": [[2, -1, 0, 7]], "expect": [2, 7]}, {"args": [[]], "expect": []}, {"args": [[0]], "expect": []}]}
+{"id": "lists-manter_acima_3", "function": "manter_acima_3", "cases": [{"args": [[5, 2, 3, 10]], "expect": [5, 10]}, {"args": [[]], "expect": []}, {"args": [[3]], "expect": []}]}
+{"id": "lists-manter_acima_10", "function": "manter_acima_10", "cases": [{"args": [[12, 9, 10, 17]], "expect": [12, 17]}, {"args": [[]], "expect": []}, {"args": [[10]], "expect": []}]}
+{"id": "lists-manter_acima_50", "function": "manter_acima_50", "cases": [{"args": [[52, 49, 50, 57]], "expect": [52, 57]}, {"args": [[]], "expect": []}, {"args": [[50]], "expect": []}]}
+{"id": "lists-ultimos_1", "function": "ultimos_1", "cases": [{"args": [[1, 2, 3, 4, 5, 6]], "expect": [6]}, {"args": [[9]], "expect": [9]}, {"args": [[]], "expect": []}]}
+{"id": "lists-ultimos_2", "function": "ultimos_2", "cases": [{"args": [[1, 2, 3, 4, 5, 6]], "expect": [5, 6]}, {"args": [[9]], "expect": [9]}, {"args": [[]], "expect": []}]}
+{"id": "lists-ultimos_3", "function": "ultimos_3", "cases": [{"args": [[1, 2, 3, 4, 5, 6]], "expect": [4, 5, 6]}, {"args": [[9]], "expect": [9]}, {"args": [[]], "expect": []}]}
+{"id": "lists-ultimos_4", "function": "ultimos_4", "cases": [{"args": [[1, 2, 3, 4, 5, 6]], "expect": [3, 4, 5, 6]}, {"args": [[9]], "expect": [9]}, {"args": [[]], "expect": []}]}
+{"id": "numbers-somar_3", "function": "somar_3", "cases": [{"args": [0], "expect": 3}, {"args": [5], "expect": 8}, {"args": [-3], "expect": 0}]}
+{"id": "numbers-somar_7", "function": "somar_7", "cases": [{"args": [0], "expect": 7}, {"args": [5], "expect": 12}, {"args": [-7], "expect": 0}]}
+{"id": "numbers-somar_10", "function": "somar_10", "cases": [{"args": [0], "expect": 10}, {"args": [5], "expect": 15}, {"args": [-10], "expect": 0}]}
+{"id": "numbers-somar_25", "function": "somar_25", "cases": [{"args": [0], "expect": 25}, {"args": [5], "expect": 30}, {"args": [-25], "expect": 0}]}
+{"id": "numbers-multiplo_de_2", "function": "multiplo_de_2", "cases": [{"args": [10], "expect": true}, {"args": [11], "expect": false}, {"args": [0], "expect": true}, {"args": [-2], "expect": true}]}
+{"id": "numbers-multiplo_de_3", "function": "multiplo_de_3", "cases": [{"args": [15], "expect": true}, {"args": [16], "expect": false}, {"args": [0], "expect": true}, {"args": [-3], "expect": true}]}
+{"id": "numbers-multiplo_de_4", "function": "multiplo_de_4", "cases": [{"args": [20], "expect": true}, {"args": [21], "expect": false}, {"args": [0], "expect": true}, {"args": [-4], "expect": true}]}
+{"id": "numbers-multiplo_de_9", "function": "multiplo_de_9", "cases": [{"args": [45], "expect": true}, {"args": [46], "expect": false}, {"args": [0], "expect": true}, {"args": [-9], "expect": true}]}
+{"id": "numbers-quadrado_mais_1", "function": "quadrado_mais_1", "cases": [{"args": [0], "expect": 1}, {"args": [3], "expect": 10}, {"args": [-2], "expect": 5}]}
+{"id": "numbers-quadrado_mais_5", "function": "quadrado_mais_5", "cases": [{"args": [0], "expect": 5}, {"args": [3], "expect": 14}, {"args": [-2], "expect": 9}]}
+{"id": "numbers-quadrado_mais_10", "function": "quadrado_mais_10", "cases": [{"args": [0], "expect": 10}, {"args": [3], "expect": 19}, {"args": [-2], "expect": 14}]}
+{"id": "numbers-quadrado_mais_100", "function": "quadrado_mais_100", "cases": [{"args": [0], "expect": 100}, {"args": [3], "expect": 109}, {"args": [-2], "expect": 104}]}
+{"id": "numbers-desconto_10", "function": "desconto_10", "cases": [{"args": [200], "expect": 180.0}, {"args": [0], "expect": 0.0}, {"args": [80], "expect": 72.0}]}
+{"id": "numbers-desconto_20", "function": "desconto_20", "cases": [{"args": [200], "expect": 160.0}, {"args": [0], "expect": 0.0}, {"args": [80], "expect": 64.0}]}
+{"id": "numbers-desconto_25", "function": "desconto_25", "cases": [{"args": [200], "expect": 150.0}, {"args": [0], "expect": 0.0}, {"args": [80], "expect": 60.0}]}
+{"id": "numbers-desconto_50", "function": "desconto_50", "cases": [{"args": [200], "expect": 100.0}, {"args": [0], "expect": 0.0}, {"args": [80], "expect": 40.0}]}
+{"id": "numbers-limitar_a_10", "function": "limitar_a_10", "cases": [{"args": [11], "expect": 10}, {"args": [10], "expect": 10}, {"args": [-5], "expect": -5}]}
+{"id": "numbers-limitar_a_50", "function": "limitar_a_50", "cases": [{"args": [51], "expect": 50}, {"args": [50], "expect": 50}, {"args": [-5], "expect": -5}]}
+{"id": "numbers-limitar_a_100", "function": "limitar_a_100", "cases": [{"args": [101], "expect": 100}, {"args": [100], "expect": 100}, {"args": [-5], "expect": -5}]}
+{"id": "numbers-limitar_a_255", "function": "limitar_a_255", "cases": [{"args": [256], "expect": 255}, {"args": [255], "expect": 255}, {"args": [-5], "expect": -5}]}
+{"id": "numbers-entre_1_5", "function": "entre_1_5", "cases": [{"args": [1], "expect": true}, {"args": [5], "expect": true}, {"args": [6], "expect": false}, {"args": [0], "expect": false}]}
+{"id": "numbers-entre_0_10", "function": "entre_0_10", "cases": [{"args": [0], "expect": true}, {"args": [10], "expect": true}, {"args": [11], "expect": false}, {"args": [-1], "expect": false}]}
+{"id": "numbers-entre_m5_5", "function": "entre_m5_5", "cases": [{"args": [-5], "expect": true}, {"args": [5], "expect": true}, {"args": [6], "expect": false}, {"args": [-6], "expect": false}]}
+{"id": "numbers-entre_10_20", "function": "entre_10_20", "cases": [{"args": [10], "expect": true}, {"args": [20], "expect": true}, {"args": [21], "expect": false}, {"args": [9], "expect": false}]}
+{"id": "records-campo_name", "function": "campo_name", "cases": [{"args": [{"name": "v"}], "expect": "v"}, {"args": [{}], "expect": null}, {"args": [{"outro": 1}], "expect": null}]}
+{"id": "records-campo_age", "function": "campo_age", "cases": [{"args": [{"age": "v"}], "expect": "v"}, {"args": [{}], "expect": null}, {"args": [{"outro": 1}], "expect": null}]}
+{"id": "records-campo_city", "function": "campo_city", "cases": [{"args": [{"city": "v"}], "expect": "v"}, {"args": [{}], "expect": null}, {"args": [{"outro": 1}], "expect": null}]}
+{"id": "records-campo_email", "function": "campo_email", "cases": [{"args": [{"email": "v"}], "expect": "v"}, {"args": [{}], "expect": null}, {"args": [{"outro": 1}], "expect": null}]}
+{"id": "records-somar_price", "function": "somar_price", "cases": [{"args": [[{"price": 1}, {"price": 2}, {"price": 3}]], "expect": 6}, {"args": [[]], "expect": 0}, {"args": [[{"price": 10}]], "expect": 10}]}
+{"id": "records-somar_qty", "function": "somar_qty", "cases": [{"args": [[{"qty": 1}, {"qty": 2}, {"qty": 3}]], "expect": 6}, {"args": [[]], "expect": 0}, {"args": [[{"qty": 10}]], "expect": 10}]}
+{"id": "records-somar_score", "function": "somar_score", "cases": [{"args": [[{"score": 1}, {"score": 2}, {"score": 3}]], "expect": 6}, {"args": [[]], "expect": 0}, {"args": [[{"score": 10}]], "expect": 10}]}
+{"id": "records-somar_total", "function": "somar_total", "cases": [{"args": [[{"total": 1}, {"total": 2}, {"total": 3}]], "expect": 6}, {"args": [[]], "expect": 0}, {"args": [[{"total": 10}]], "expect": 10}]}
+{"id": "records-nomes_acima_18", "function": "nomes_acima_18", "cases": [{"args": [[{"name": "a", "age": 19}, {"name": "b", "age": 18}, {"name": "c", "age": 38}]], "expect": ["a", "c"]}, {"args": [[]], "expect": []}, {"args": [[{"name": "z", "age": 18}]], "expect": []}]}
+{"id": "records-nomes_acima_30", "function": "nomes_acima_30", "cases": [{"args": [[{"name": "a", "age": 31}, {"name": "b", "age": 30}, {"name": "c", "age": 50}]], "expect": ["a", "c"]}, {"args": [[]], "expect": []}, {"args": [[{"name": "z", "age": 30}]], "expect": []}]}
+{"id": "records-nomes_acima_40", "function": "nomes_acima_40", "cases": [{"args": [[{"name": "a", "age": 41}, {"name": "b", "age": 40}, {"name": "c", "age": 60}]], "expect": ["a", "c"]}, {"args": [[]], "expect": []}, {"args": [[{"name": "z", "age": 40}]], "expect": []}]}
+{"id": "records-nomes_acima_65", "function": "nomes_acima_65", "cases": [{"args": [[{"name": "a", "age": 66}, {"name": "b", "age": 65}, {"name": "c", "age": 85}]], "expect": ["a", "c"]}, {"args": [[]], "expect": []}, {"args": [[{"name": "z", "age": 65}]], "expect": []}]}
+{"id": "records-tem_id", "function": "tem_id", "cases": [{"args": [[{"id": 1}, {"x": 1}, {"id": null}]], "expect": 2}, {"args": [[]], "expect": 0}, {"args": [[{"x": 1}]], "expect": 0}]}
+{"id": "records-tem_slug", "function": "tem_slug", "cases": [{"args": [[{"slug": 1}, {"x": 1}, {"slug": null}]], "expect": 2}, {"args": [[]], "expect": 0}, {"args": [[{"x": 1}]], "expect": 0}]}
+{"id": "records-tem_code", "function": "tem_code", "cases": [{"args": [[{"code": 1}, {"x": 1}, {"code": null}]], "expect": 2}, {"args": [[]], "expect": 0}, {"args": [[{"x": 1}]], "expect": 0}]}
+{"id": "records-tem_uid", "function": "tem_uid", "cases": [{"args": [[{"uid": 1}, {"x": 1}, {"uid": null}]], "expect": 2}, {"args": [[]], "expect": 0}, {"args": [[{"x": 1}]], "expect": 0}]}
+{"id": "records-com_padrao_name", "function": "com_padrao_name", "cases": [{"args": [{}], "expect": {"name": "anon"}}, {"args": [{"name": "x"}], "expect": {"name": "x"}}, {"args": [{"k": 1}], "expect": {"name": "anon", "k": 1}}]}
+{"id": "records-com_padrao_city", "function": "com_padrao_city", "cases": [{"args": [{}], "expect": {"city": "n/a"}}, {"args": [{"city": "x"}], "expect": {"city": "x"}}, {"args": [{"k": 1}], "expect": {"city": "n/a", "k": 1}}]}
+{"id": "records-com_padrao_lang", "function": "com_padrao_lang", "cases": [{"args": [{}], "expect": {"lang": "pt"}}, {"args": [{"lang": "x"}], "expect": {"lang": "x"}}, {"args": [{"k": 1}], "expect": {"lang": "pt", "k": 1}}]}
+{"id": "records-com_padrao_role", "function": "com_padrao_role", "cases": [{"args": [{}], "expect": {"role": "user"}}, {"args": [{"role": "x"}], "expect": {"role": "x"}}, {"args": [{"k": 1}], "expect": {"role": "user", "k": 1}}]}
+{"id": "records-sem_a", "function": "sem_a", "cases": [{"args": [{"a": 1, "b": 2, "c": 3, "d": 4}], "expect": {"b": 2, "c": 3, "d": 4}}, {"args": [{}], "expect": {}}, {"args": [{"z": 0}], "expect": {"z": 0}}]}
+{"id": "records-sem_b", "function": "sem_b", "cases": [{"args": [{"a": 1, "b": 2, "c": 3, "d": 4}], "expect": {"a": 1, "c": 3, "d": 4}}, {"args": [{}], "expect": {}}, {"args": [{"z": 0}], "expect": {"z": 0}}]}
+{"id": "records-sem_c", "function": "sem_c", "cases": [{"args": [{"a": 1, "b": 2, "c": 3, "d": 4}], "expect": {"a": 1, "b": 2, "d": 4}}, {"args": [{}], "expect": {}}, {"args": [{"z": 0}], "expect": {"z": 0}}]}
+{"id": "records-sem_d", "function": "sem_d", "cases": [{"args": [{"a": 1, "b": 2, "c": 3, "d": 4}], "expect": {"a": 1, "b": 2, "c": 3}}, {"args": [{}], "expect": {}}, {"args": [{"z": 0}], "expect": {"z": 0}}]}

@@ -1,0 +1,55 @@
+{
+  "schema": "programming-qualification-protocol/v1",
+  "scope": "python-function-deliverables/v1",
+  "suites": {
+    "reserved": {
+      "cases": 96,
+      "per_domain": {
+        "strings": 24,
+        "lists": 24,
+        "numbers": 24,
+        "records": 24
+      },
+      "inputs_sha256": "f4a021e75f4b816d10a6d33879a54c36f541570a64c5474f0c735cb12da20dc3",
+      "oracle_sha256": "0d548e410504d06405f9f3f793def847ca0830a975a090eb3d718d16116933d5",
+      "references_sha256": "12b8a7bd3f9a0ab875ef19496d4a64c6582e7aa75983c25a5dac47a1ff5cebd0"
+    },
+    "regression": {
+      "cases": 96,
+      "per_domain": {
+        "strings": 24,
+        "lists": 24,
+        "numbers": 24,
+        "records": 24
+      },
+      "inputs_sha256": "6922e7a40e5b45519762bec2aa2c281eeee58c7562110a9df0e3aab03e9c50b9",
+      "oracle_sha256": "8c34268a853ed9f5ca983679c0e76c7660218da49546b224d056e70fefe93daf",
+      "references_sha256": "4d74f2c38938a1607bfe08d884fce0a0ce6cb6937305071dbe6c8a154b990fbb"
+    }
+  },
+  "self_check": {
+    "reserved": {
+      "references_passing": 96
+    },
+    "regression": {
+      "references_passing": 96
+    }
+  },
+  "domains": [
+    "strings",
+    "lists",
+    "numbers",
+    "records"
+  ],
+  "source_sha256": {
+    "python/programming_qualification.py": "79cd8c69a8821386340d05ca1312eed4b6859785447acc2f1202627751849a62",
+    "python/programming_qualification_tasks.py": "053820711446dc237c7e16c37926e84fc53570a49fffe8595b29c6991a6365e8",
+    "scripts/prepare_programming_qualification.py": "30838ff3f2985281beb4bba5c7c3f6e5491e5ead6ce9b5e9c1e762c00ad75750"
+  },
+  "limits": [
+    "Function-level Python tasks only; integration into an existing project is not measured.",
+    "Hidden tests run in a resource-limited subprocess, not a network- or filesystem-isolated sandbox.",
+    "Regression tasks reuse the small parametric shapes of the training data and cannot prove transfer.",
+    "A pass here does not satisfy the full executed-tests-and-unseen-integration proof of the catalog."
+  ]
+}
