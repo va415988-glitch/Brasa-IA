@@ -1,0 +1,15 @@
+{
+  "schema": "context-window-runtime-verification/v1",
+  "checkpoint": "model/training/neural-context-2048-v1/run-01/candidate.safetensors",
+  "checkpoint_sha256": "bcc568b16f45f4db68e97cb3f83b42eca5ce3ddd746f4677f0f0262d316106a5",
+  "requested_context_tokens": 32768,
+  "prompt_tokens": 32764,
+  "generated_tokens": 4,
+  "total_tokens_exercised": 32768,
+  "target_fully_exercised": true,
+  "output_logits_finite": true,
+  "elapsed_seconds": 26.112,
+  "peak_rss_mb": 720.2,
+  "trained_context_tokens": 2048,
+  "semantic_quality_evaluated": false
+}

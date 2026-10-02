@@ -1,0 +1,58 @@
+{
+  "config": {
+    "name": "ia-local-zero-godmode-v1",
+    "architecture": "decoder_transformer",
+    "vocab_size": 8192,
+    "context_length": 32768,
+    "layers": 2,
+    "hidden_size": 128,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 4,
+    "language_priority": [
+      "pt-BR",
+      "code",
+      "en"
+    ],
+    "tool_call_format": "json",
+    "max_request_seconds": 60,
+    "runtime": "python-local",
+    "generation_length": 4096,
+    "training_context_length": 2048,
+    "tokenizer_path": "model/godmode/godmode-tokenizer-v1.json",
+    "training_policy": {
+      "method": "local-sft-continued-context-curriculum-v1",
+      "external_llm": false,
+      "ollama": false,
+      "gpu_required": false,
+      "training_context": 2048,
+      "production_context": 16384
+    },
+    "initialization": "scaled-normal-v1",
+    "runtime_context_tokens": 32768,
+    "context_extension": {
+      "method": "linear-interpolation-trained-position-span-v1",
+      "source_checkpoint": "model/godmode/training-neural-v1/candidate.safetensors",
+      "source_sha256": "272cd9b3eb7a974a13fb25d6abbae508afebd7b949dabfaf64d3ca8b5a7346a7",
+      "source_native_context_tokens": 16384,
+      "source_trained_context_tokens": 512,
+      "target_context_tokens": 32768,
+      "fine_tuned_at_target": false,
+      "claim": "execução em 32768 tokens verificada após ajuste; treino supervisionado cobriu sequências até 2048 e qualidade semântica em 32768 não foi avaliada",
+      "continued_training_context_tokens": 2048
+    },
+    "runtime_context_verified_tokens": 32768
+  },
+  "steps": 200,
+  "source": "model/godmode/context-32768-v1/candidate.safetensors",
+  "best_val_loss": 8.129000116382125,
+  "status": "experimental",
+  "training_method": "assistant-only-sft",
+  "tokenizer_sha256": "d515c157fa3d8158b051eec9c3b7525a4bd222bbd650043d15a747f083f28c3d",
+  "context_verification": {
+    "report": "model/training/neural-context-2048-v1/run-01/context_verification_32768.json",
+    "runtime_context_tokens": 32768,
+    "elapsed_seconds": 26.112,
+    "peak_rss_mb": 720.2,
+    "semantic_quality_evaluated": false
+  }
+}

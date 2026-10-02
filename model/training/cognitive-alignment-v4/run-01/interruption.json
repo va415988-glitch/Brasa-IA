@@ -1,0 +1,9 @@
+{
+  "status": "interrupted_for_equivalent_backward_optimization",
+  "exit_code": 130,
+  "planned_steps": 1600,
+  "last_saved_steps": 400,
+  "unsaved_steps": "unknown; discarded",
+  "resume_checkpoint": "model/training/cognitive-alignment-v4/run-01/snapshots/step-0400.safetensors",
+  "optimizer_state_saved": false
+}

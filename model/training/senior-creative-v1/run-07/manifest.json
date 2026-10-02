@@ -1,0 +1,76 @@
+{
+  "seed": 42,
+  "arguments": {
+    "checkpoint": "model/training/senior-creative-v1/run-06/candidate.safetensors",
+    "output_dir": "model/training/senior-creative-v1/run-07",
+    "heldout": "model/training/senior-creative-v1/agent-harness-heldout-v1.jsonl",
+    "steps": 400,
+    "eval_every": 50,
+    "patience": 6,
+    "batch_size": 8,
+    "threads": 3,
+    "learning_rate": 8e-05,
+    "from_scratch": false
+  },
+  "config": {
+    "name": "ia-local-zero-compact-01",
+    "architecture": "decoder_transformer",
+    "vocab_size": 1024,
+    "context_length": 256,
+    "layers": 4,
+    "hidden_size": 256,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 4,
+    "language_priority": [
+      "pt-BR",
+      "code",
+      "en"
+    ],
+    "tool_call_format": "json",
+    "max_request_seconds": 30,
+    "runtime": "rust"
+  },
+  "source_sha256": "9f0df6056ce28c841fd6ab22769a5154ffa1c24995cf444fb348718e168b85e9",
+  "tokenizer_sha256": "3dc196c42a17568c524b67e766ffcda3a1f0318fc2d3f2aa6f963b35aa7bcaf4",
+  "inputs": {
+    "python/data/combined.jsonl": "34e5ccefc51f1b5e4b8e9e01376918b6d5d70af10b75df590b70e2292a881038",
+    "python/data/behavior_expanded.jsonl": "c7139f62f13be193f2b5b775804110edd6aa20205d2bad65b4a834ae38e7752b",
+    "python/data/behavior_phase1.jsonl": "8403562024e78bec6ac03b7649886c4763e18f70e9214f5a017fcccedc75443e",
+    "python/data/curriculum_apex_v1.jsonl": "c98e664b531fce61690744e9654adb8fc8ea20f7038785c1c8709d9dcf0e6c5f",
+    "python/data/senior_creative_v1.jsonl": "94b11e64d21a7c4cd26e0ac338005564cb96c1eedd8184934721b04b6775d391",
+    "python/data/agentic_curriculum_v1.jsonl": "0a04be8f75986418f25a9d3edaf87678518338e5beb309e6ce8c43eb04787ece",
+    "python/data/open_programming_curriculum_v1.jsonl": "f5d032012eb4a535ef40d47b6f18cf71690c605c5bb97e4bdfc0a381b704e34d",
+    "python/data/agent_harness_curriculum_v1.jsonl": "cb8143cf44a168ec5a54bc8ebbc2d633ac7898dfc9def421957a9fe97dd6bf1a",
+    "model/training/senior-creative-v1/agent-harness-heldout-v1.jsonl": "9808f0ab6817855cabf4c77e03184c5ef6cd45cd4e162e7f1fc95bbc95cc40e6"
+  },
+  "records": {
+    "train": 257,
+    "validation": 20,
+    "heldout": 6
+  },
+  "rejected": {
+    "not_plain_pair": 2,
+    "evaluation_question": 14,
+    "duplicate_question": 22
+  },
+  "domains": {
+    "replay": 154,
+    "programming": 18,
+    "creativity": 28,
+    "general": 7,
+    "engineering": 23,
+    "reliability": 7,
+    "behavior": 2,
+    "reasoning": 1,
+    "tools": 2,
+    "evaluation": 2,
+    "agent-engineering": 10,
+    "deep-learning": 3
+  },
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

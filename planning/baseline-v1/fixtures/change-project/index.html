@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reading Shelf</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>Reading Shelf</h1>
+    <form id="book-form">
+      <label for="book-title">Book title</label>
+      <input id="book-title" required maxlength="120">
+      <button>Add book</button>
+    </form>
+    <p id="empty-state">No books yet.</p>
+    <ul id="book-list"></ul>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

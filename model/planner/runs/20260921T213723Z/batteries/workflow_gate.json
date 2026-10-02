@@ -1,0 +1,288 @@
+{
+  "version": "workflow-gate/v1",
+  "passed": 12,
+  "total": 12,
+  "pass_rate": 1.0,
+  "latency_ms": {
+    "avg": 17.62,
+    "p95": 32.8
+  },
+  "cases": [
+    {
+      "id": "variable-python",
+      "prompt": "O que é uma variável em Python?",
+      "backend": "curated-memory",
+      "workflow": {
+        "version": "workflow/v2",
+        "phase": "answer",
+        "strategy": "curated-memory",
+        "stages": [
+          "understand",
+          "retrieve",
+          "answer"
+        ],
+        "next": "answer"
+      },
+      "actual_tool": null,
+      "expected_tool": null,
+      "term_hits": 2,
+      "term_total": 2,
+      "tool_ok": true,
+      "ok": true,
+      "elapsed_ms": 32.8
+    },
+    {
+      "id": "ownership-rust",
+      "prompt": "O que é ownership em Rust?",
+      "backend": "curated-memory",
+      "workflow": {
+        "version": "workflow/v2",
+        "phase": "answer",
+        "strategy": "curated-memory",
+        "stages": [
+          "understand",
+          "retrieve",
+          "answer"
+        ],
+        "next": "answer"
+      },
+      "actual_tool": null,
+      "expected_tool": null,
+      "term_hits": 2,
+      "term_total": 2,
+      "tool_ok": true,
+      "ok": true,
+      "elapsed_ms": 17.68
+    },
+    {
+      "id": "china",
+      "prompt": "Explique o que é a China.",
+      "backend": "curated-memory",
+      "workflow": {
+        "version": "workflow/v2",
+        "phase": "answer",
+        "strategy": "curated-memory",
+        "stages": [
+          "understand",
+          "retrieve",
+          "answer"
+        ],
+        "next": "answer"
+      },
+      "actual_tool": null,
+      "expected_tool": null,
+      "term_hits": 1,
+      "term_total": 1,
+      "tool_ok": true,
+      "ok": true,
+      "elapsed_ms": 17.61
+    },
+    {
+      "id": "uncertainty",
+      "prompt": "Como devo agir quando não sei uma resposta?",
+      "backend": "curated-memory",
+      "workflow": {
+        "version": "workflow/v2",
+        "phase": "answer",
+        "strategy": "curated-memory",
+        "stages": [
+          "understand",
+          "retrieve",
+          "answer"
+        ],
+        "next": "answer"
+      },
+      "actual_tool": null,
+      "expected_tool": null,
+      "term_hits": 2,
+      "term_total": 2,
+      "tool_ok": true,
+      "ok": true,
+      "elapsed_ms": 18.36
+    },
+    {
+      "id": "function-design",
+      "prompt": "Como projetar uma função Python fácil de testar?",
+      "backend": "curated-memory",
+      "workflow": {
+        "version": "workflow/v2",
+        "phase": "answer",
+        "strategy": "curated-memory",
+        "stages": [
+          "understand",
+          "retrieve",
+          "answer"
+        ],
+        "next": "answer"
+      },
+      "actual_tool": null,
+      "expected_tool": null,
+      "term_hits": 2,
+      "term_total": 2,
+      "tool_ok": true,
+      "ok": true,
+      "elapsed_ms": 19.16
+    },
+    {
+      "id": "api-errors",
+      "prompt": "Como tratar erros em uma API?",
+      "backend": "curated-memory",
+      "workflow": {
+        "version": "workflow/v2",
+        "phase": "answer",
+        "strategy": "curated-memory",
+        "stages": [
+          "understand",
+          "retrieve",
+          "answer"
+        ],
+        "next": "answer"
+      },
+      "actual_tool": null,
+      "expected_tool": null,
+      "term_hits": 2,
+      "term_total": 2,
+      "tool_ok": true,
+      "ok": true,
+      "elapsed_ms": 6.78
+    },
+    {
+      "id": "creative-block",
+      "prompt": "Como sair de um bloqueio criativo?",
+      "backend": "curated-memory",
+      "workflow": {
+        "version": "workflow/v2",
+        "phase": "answer",
+        "strategy": "curated-memory",
+        "stages": [
+          "understand",
+          "retrieve",
+          "answer"
+        ],
+        "next": "answer"
+      },
+      "actual_tool": null,
+      "expected_tool": null,
+      "term_hits": 2,
+      "term_total": 2,
+      "tool_ok": true,
+      "ok": true,
+      "elapsed_ms": 14.75
+    },
+    {
+      "id": "game-ideas",
+      "prompt": "Crie três conceitos de jogo com uma mecânica incomum.",
+      "backend": "curated-memory",
+      "workflow": {
+        "version": "workflow/v2",
+        "phase": "answer",
+        "strategy": "curated-memory",
+        "stages": [
+          "understand",
+          "retrieve",
+          "answer"
+        ],
+        "next": "answer"
+      },
+      "actual_tool": null,
+      "expected_tool": null,
+      "term_hits": 2,
+      "term_total": 2,
+      "tool_ok": true,
+      "ok": true,
+      "elapsed_ms": 20.42
+    },
+    {
+      "id": "science-evidence",
+      "prompt": "Como avaliar se uma afirmação científica é confiável?",
+      "backend": "curated-memory",
+      "workflow": {
+        "version": "workflow/v2",
+        "phase": "answer",
+        "strategy": "curated-memory",
+        "stages": [
+          "understand",
+          "retrieve",
+          "answer"
+        ],
+        "next": "answer"
+      },
+      "actual_tool": null,
+      "expected_tool": null,
+      "term_hits": 2,
+      "term_total": 2,
+      "tool_ok": true,
+      "ok": true,
+      "elapsed_ms": 15.19
+    },
+    {
+      "id": "causality",
+      "prompt": "Explique correlação e causalidade.",
+      "backend": "curated-memory",
+      "workflow": {
+        "version": "workflow/v2",
+        "phase": "answer",
+        "strategy": "curated-memory",
+        "stages": [
+          "understand",
+          "retrieve",
+          "answer"
+        ],
+        "next": "answer"
+      },
+      "actual_tool": null,
+      "expected_tool": null,
+      "term_hits": 2,
+      "term_total": 2,
+      "tool_ok": true,
+      "ok": true,
+      "elapsed_ms": 15.41
+    },
+    {
+      "id": "decision",
+      "prompt": "Como tomar uma decisão com informação incompleta?",
+      "backend": "curated-memory",
+      "workflow": {
+        "version": "workflow/v2",
+        "phase": "answer",
+        "strategy": "curated-memory",
+        "stages": [
+          "understand",
+          "retrieve",
+          "answer"
+        ],
+        "next": "answer"
+      },
+      "actual_tool": null,
+      "expected_tool": null,
+      "term_hits": 2,
+      "term_total": 2,
+      "tool_ok": true,
+      "ok": true,
+      "elapsed_ms": 16.44
+    },
+    {
+      "id": "source-quality",
+      "prompt": "Como saber se uma fonte é primária?",
+      "backend": "curated-memory",
+      "workflow": {
+        "version": "workflow/v2",
+        "phase": "answer",
+        "strategy": "curated-memory",
+        "stages": [
+          "understand",
+          "retrieve",
+          "answer"
+        ],
+        "next": "answer"
+      },
+      "actual_tool": null,
+      "expected_tool": null,
+      "term_hits": 2,
+      "term_total": 2,
+      "tool_ok": true,
+      "ok": true,
+      "elapsed_ms": 16.84
+    }
+  ]
+}

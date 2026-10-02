@@ -1,0 +1,19 @@
+{
+  "schema": "brasa-implementation-validation-split/v2",
+  "validation_ids": [
+    "last_word",
+    "palindrome",
+    "rectangle_area",
+    "vowel_count"
+  ],
+  "counts": {
+    "train": 17,
+    "validation": 4,
+    "heldout": 2
+  },
+  "sha256": {
+    "train": "16fb7e5010ea0ecd07e0ba580e4d52a6463529385a8cf6142c40213f7b2e7085",
+    "validation": "a25444911e5f72520efddeb23c20756c5fcb566598f0c2d91ae51a3f7315c212",
+    "heldout": "429c46d07159eba9bf6380f3427660a536eaaeb3dde9d020d50f9f36424c3f18"
+  }
+}

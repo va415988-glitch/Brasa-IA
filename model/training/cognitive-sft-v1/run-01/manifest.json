@@ -1,0 +1,95 @@
+{
+  "seed": 42,
+  "arguments": {
+    "checkpoint": "model/godmode/context-32768-v1/candidate.safetensors",
+    "config_path": "config/cognitive_sft_v1.json",
+    "tokenizer_path": "datasets/cognitive_sft_v1/tokenizer.json",
+    "output_dir": "model/training/cognitive-sft-v1/run-01",
+    "heldout": "datasets/cognitive_sft_v1/heldout.jsonl",
+    "steps": 600,
+    "max_answer_tokens": 192,
+    "multi_turn_repeat": 1,
+    "additional_jsonl": [],
+    "only_jsonl": [
+      "datasets/cognitive_sft_v1/train.jsonl"
+    ],
+    "validation_jsonl": "datasets/cognitive_sft_v1/validation.jsonl",
+    "sample_tokens": 0,
+    "snapshot_every_eval": true,
+    "eval_every": 200,
+    "patience": 4,
+    "batch_size": 12,
+    "threads": 4,
+    "learning_rate": 0.0015,
+    "without_profile": true,
+    "preserve_prompt": false,
+    "from_scratch": true
+  },
+  "config": {
+    "name": "own-cognitive-decisions-v1",
+    "architecture": "decoder_transformer",
+    "vocab_size": 768,
+    "context_length": 256,
+    "layers": 2,
+    "hidden_size": 128,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 3,
+    "language_priority": [
+      "pt-BR",
+      "code",
+      "en"
+    ],
+    "tool_call_format": "json",
+    "max_request_seconds": 60,
+    "runtime": "python-local",
+    "generation_length": 192,
+    "training_context_length": 256,
+    "tokenizer_path": "datasets/cognitive_sft_v1/tokenizer.json",
+    "training_policy": {
+      "method": "local-sft-from-scratch",
+      "external_llm": false,
+      "ollama": false,
+      "gpu_required": false,
+      "training_context": 256,
+      "production_context": 256
+    },
+    "initialization": "scaled-normal-v1",
+    "runtime_context_tokens": 256,
+    "forward_chunk_length": 256,
+    "system_prompt_trained": false,
+    "cognitive_prompt_style": "compact-v1"
+  },
+  "source_sha256": "0aeafd6f3966c8c59548ca1bb386c87483c62eafe21e95d1cb89260741d1fee3",
+  "tokenizer_sha256": "cc1c09d550412fc8e9567e2cf656edd506a5b41717e53ac7f9f8c7f0f9a6350f",
+  "inputs": {
+    "datasets/cognitive_sft_v1/train.jsonl": "2614a90be3af241d3f35bccdf159a0edd272acd8394bc7fb5dd04920f1152063",
+    "datasets/cognitive_sft_v1/heldout.jsonl": "a2a85b5e41cdc4f599d9eef979106c11ec977480fa283513b3df51debf6d6062",
+    "datasets/cognitive_sft_v1/validation.jsonl": "bd3b4964c2ed83cb55f967b95ee0c47e5e7b772d9978e7c91dd6ca6a910020ae"
+  },
+  "records": {
+    "train": 1056,
+    "training_views": 1056,
+    "validation": 132,
+    "heldout": 264
+  },
+  "rejected": {},
+  "domains": {
+    "observed": 96,
+    "failed": 96,
+    "empty": 96,
+    "unrelated": 96,
+    "conflict": 96,
+    "revision": 96,
+    "injection": 96,
+    "consult": 96,
+    "recover": 96,
+    "supports": 96,
+    "rejects": 96
+  },
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

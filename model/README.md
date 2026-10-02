@@ -64,3 +64,27 @@ será construída no próprio sistema com decomposição de tarefas, planner loc
 contratos de ferramentas, memória explícita, corpus, traces avaliados,
 verificação e recuperação. Os checkpoints próprios continuam separados do
 runtime até passarem pela avaliação de coerência.
+
+## Política oficial de geração do runtime
+
+O orçamento padrão de saída é **2.048 tokens por rodada** quando o checkpoint
+não define `generation_length`. Esse orçamento é independente da janela de
+atenção: ultrapassada a janela nativa, o runtime conserva somente o trecho
+recente para a próxima etapa de geração. `IA_LOCAL_NUM_PREDICT` pode ajustar o
+orçamento, sempre limitado pelo teto configurado no checkpoint e pelo limite do
+runtime.
+
+EOS permanece disponível para encerrar a resposta; os marcadores de protocolo
+continuam bloqueados. A resposta também pode parar antes do orçamento quando o
+modelo emite EOS ou quando o quality gate detecta uma continuação degenerada.
+Portanto, **1.024 é um teto operacional, não uma garantia de produzir 1.024
+tokens úteis**.
+
+Esse padrão não promove contexto nem checkpoint. O checkpoint ativo
+`compact-08-gate-focus.pt` continua com janela nativa de 256 tokens e status
+experimental. A promoção do modelo segue exigindo os gates de contexto e a
+evidência de geração longa definidos em
+[`POLITICA_JANELA_CONTEXTO.md`](../Documentacoes/POLITICA_JANELA_CONTEXTO.md).
+Os candidatos de ajuste fino para respostas longas avaliados em 25/09/2026 não
+foram promovidos: um encerrou os prompts longos sem resposta e a rodada
+seguinte regrediu um caso da bateria neural.

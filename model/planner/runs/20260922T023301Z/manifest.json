@@ -1,0 +1,148 @@
+{
+  "schema": "agent-learning-run/v1",
+  "run_id": "20260922T023301Z",
+  "started_at": "2026-09-22T02:33:01.594709+00:00",
+  "trace": {
+    "path": "/home/victor/Documentos/IA Local do Zero/logs/agent_traces.jsonl",
+    "traces": 17459,
+    "complete": 148,
+    "accepted": 148,
+    "missing_start": 0,
+    "missing_plan": 10362,
+    "missing_result": 0,
+    "failed_result": 0,
+    "unfinished": 6949,
+    "export": "/home/victor/Documentos/IA Local do Zero/model/planner/runs/20260922T023301Z/verified_traces.jsonl"
+  },
+  "datasets": [
+    {
+      "path": "/home/victor/Documentos/IA Local do Zero/corpus/training/dataset_deepseek_code.jsonl",
+      "exists": true,
+      "sha256": "8b71b521a1450dc61b0827947752ad5f3bffa0c8db161b9e1c9c5eef01cdd692",
+      "examples": 15,
+      "invalid": 0
+    },
+    {
+      "path": "/home/victor/Documentos/IA Local do Zero/corpus/training/dataset_sintetico.jsonl",
+      "exists": true,
+      "sha256": "ded7cf12f11cff4c504f747784b76527252377d35ddaf59bdaaace9cf65d5b3c",
+      "examples": 16,
+      "invalid": 0
+    },
+    {
+      "path": "/home/victor/Documentos/IA Local do Zero/corpus/training/planner_corrections.jsonl",
+      "exists": true,
+      "sha256": "0fd5ec3d7286233ea9aa08cbb723e953b341a9c632a1c0db91ed84e16c9fa4db",
+      "examples": 22,
+      "invalid": 0
+    },
+    {
+      "path": "/home/victor/Documentos/IA Local do Zero/corpus/training/planner_sft.jsonl",
+      "exists": true,
+      "sha256": "a5b68096866aedca3b32c8b3fb613e56bdb9f78690c0c9fb40ae1195ed671c80",
+      "examples": 5,
+      "invalid": 0
+    },
+    {
+      "path": "/home/victor/Documentos/IA Local do Zero/corpus/training/teacher_plans_qwen3_30b.jsonl",
+      "exists": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "examples": 0,
+      "invalid": 0
+    }
+  ],
+  "data": {
+    "unique_examples": 68,
+    "training_examples": 55,
+    "validation_examples": 13,
+    "validation_ratio": 0.2
+  },
+  "quality": {
+    "status": "needs-attention",
+    "raw_examples": 203,
+    "unique_examples": 68,
+    "duplicates_removed": 135,
+    "corpus_examples": 55,
+    "verified_trace_examples": 148,
+    "trace_count": 17459,
+    "accepted_trace_rate": 0.0085,
+    "completion_rate": 0.0085,
+    "invalid_dataset_rows": 0,
+    "warnings": [
+      "a maioria dos traces não virou supervisão positiva",
+      "há traces sem plano selecionado",
+      "há traces interrompidos ou sem conclusão verificável",
+      "a diversidade supervisionada ainda é pequena"
+    ],
+    "recommendations": [
+      "registrar plan_selected e turn_completed em toda tarefa executada",
+      "corrigir a instrumentação do planejador antes de coletar mais dados",
+      "classificar bloqueios e registrar uma conclusão explícita, inclusive em falhas",
+      "coletar tarefas inéditas por ferramenta e por domínio antes de promover"
+    ],
+    "promotion_policy": "advisory; gates de validação e baterias continuam obrigatórios"
+  },
+  "preflight": {
+    "schema": "agent-learning-preflight/v1",
+    "status": "ready",
+    "errors": [],
+    "warnings": [],
+    "checks": {
+      "root": {
+        "path": "/home/victor/Documentos/IA Local do Zero",
+        "exists": true
+      },
+      "python": {
+        "path": "/home/victor/Documentos/IA Local do Zero/.venv/bin/python",
+        "exists": true,
+        "executable": true
+      },
+      "pipeline": {
+        "path": "/home/victor/Documentos/IA Local do Zero/python/agent_learning_pipeline.py",
+        "exists": true
+      },
+      "trace": {
+        "path": "/home/victor/Documentos/IA Local do Zero/logs/agent_traces.jsonl",
+        "exists": true
+      },
+      "corpus": {
+        "path": "/home/victor/Documentos/IA Local do Zero/corpus/training",
+        "exists": true,
+        "datasets": 5
+      },
+      "active_index": {
+        "path": "/home/victor/Documentos/IA Local do Zero/model/planner/planner_index.json",
+        "exists": true
+      },
+      "write_targets": {
+        "runs": {
+          "path": "/home/victor/Documentos/IA Local do Zero/model/planner/runs",
+          "parent": "/home/victor/Documentos/IA Local do Zero/model/planner/runs",
+          "parent_exists": true,
+          "writable": true
+        },
+        "report": {
+          "path": "/home/victor/Documentos/IA Local do Zero/model/planner/last_run.json",
+          "parent": "/home/victor/Documentos/IA Local do Zero/model/planner",
+          "parent_exists": true,
+          "writable": true
+        }
+      },
+      "batteries": {
+        "required": true,
+        "missing": [],
+        "available": true
+      }
+    },
+    "next": "run"
+  },
+  "active_index_before": {
+    "path": "/home/victor/Documentos/IA Local do Zero/model/planner/planner_index.json",
+    "sha256": "0a9c4f0d83fc2b6c4244dc8ae8a70cdd082f0f778a9b2c3c6b6d33592db19535"
+  },
+  "promotion": {
+    "requested": false,
+    "promoted": false,
+    "eligible": false
+  }
+}

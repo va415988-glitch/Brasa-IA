@@ -1,0 +1,16 @@
+{
+  "schema": "cognitive-interruption-audit/v1",
+  "initial_record": {
+    "path": "run-01/interruption.json",
+    "sha256": "065e350dcd9c8722de806b6c67711fa11890faf3baecb21109468e9f233bda2b"
+  },
+  "correction": "An additional step-0800 snapshot exists in run-01. The initial last_saved_steps=400 did not describe all artifacts found at final audit. The resumed selected trajectory uses run-01 step-0400 only.",
+  "preserved_extra_checkpoint": {
+    "path": "model/training/cognitive-alignment-v4/run-01/snapshots/step-0800.safetensors",
+    "checkpoint_sha256": "4441d49876af4db8611a80abbede2ca16bbd16fe15627120705af3913c81d16a",
+    "metadata_sha256": "0a58e1c3241668805fa54089eed4e2323c3d60de8b833cdb8bdacf591af3ce6f",
+    "tokenizer_sha256": "e58fe3e652e62f3028b63810fd90b39745829ed80723bf7daec2e0b4662aa4e1"
+  },
+  "used_for_resume_or_selection": false,
+  "process_check": "Unsandboxed ps query after regression evaluation returned no active Python process whose command was scripts/train_cognitive_alignment.py. This does not establish an immediate stop at the earlier interrupt."
+}

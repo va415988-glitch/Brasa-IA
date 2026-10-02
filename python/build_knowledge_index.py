@@ -45,6 +45,13 @@ def usable_row(row: dict) -> bool:
     topic = str(row.get("search_query") or "")
     if not topic:
         return False  # registros antigos sem tema verificável ficam no corpus bruto
+    # Consultas genéricas (por exemplo, "explique") geram páginas de
+    # dicionário que não são evidência sobre o assunto perguntado. Mantê-las
+    # no índice cria exatamente o falso casamento lexical que polui respostas.
+    generic = {"explique", "explica", "defina", "o que", "como", "sobre", "aprenda"}
+    topic_terms = set(subject_tokens(topic))
+    if not topic_terms or topic_terms <= generic:
+        return False
     title = str(row.get("text") or "").split("\n", 1)[0]
     return topic_matches(topic, title, str(row.get("url") or ""), require_all=False)
 

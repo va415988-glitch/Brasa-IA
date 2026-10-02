@@ -1,0 +1,22 @@
+{
+  "schema": "model-activation-state/v1",
+  "status": "active-experimental",
+  "checked_at": "2026-10-01T17:36:42.247083+00:00",
+  "interface": "http://127.0.0.1:3000",
+  "launcher_pid": 83069,
+  "general_checkpoint": "model/godmode/context-32768-v1/candidate.safetensors",
+  "general_checkpoint_sha256": "0aeafd6f3966c8c59548ca1bb386c87483c62eafe21e95d1cb89260741d1fee3",
+  "general_state_sha256": "12e780fd617fbd529bf2d6f80593f6330e734a5a58b96f02db5c9a6ed971534b",
+  "experimental_checkpoint": "model/training/cognitive-alignment-v4/run-02/snapshots/step-1600.safetensors",
+  "experimental_checkpoint_sha256": "eb3298fa15e7079ff6a28715aeb1f2b243d0a5fd0983fd6d185ad3f4a8493fb9",
+  "experimental_loaded": true,
+  "competence_qualified": false,
+  "certificate": "model/cognitive-cores/v1/evidence-activation-03.json",
+  "live_check": "model/cognitive-cores/v1/activation-health-fix-check.json",
+  "log": "logs/activation-20261001-health-fix.log",
+  "health_seconds": 0.002,
+  "notes": [
+    "Availability and isolation verified; both known numeric examples failed semantically.",
+    "Explicit core dispatch remains blocked; experimental inference cannot execute tools."
+  ]
+}

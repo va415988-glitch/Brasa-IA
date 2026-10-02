@@ -1,0 +1,111 @@
+[
+  {
+    "step": 0,
+    "validation_loss": 9.043701602113204
+  },
+  {
+    "step": 100,
+    "train_loss": 5.4375762939453125,
+    "validation_loss": 5.451004864351369,
+    "best_step": 100,
+    "elapsed_seconds": 26.92
+  },
+  {
+    "step": 200,
+    "train_loss": 4.898336410522461,
+    "validation_loss": 5.047041365291323,
+    "best_step": 200,
+    "elapsed_seconds": 52.09
+  },
+  {
+    "step": 300,
+    "train_loss": 4.6271867752075195,
+    "validation_loss": 4.699311935683926,
+    "best_step": 300,
+    "elapsed_seconds": 77.29
+  },
+  {
+    "step": 400,
+    "train_loss": 4.131202220916748,
+    "validation_loss": 4.465534829894765,
+    "best_step": 400,
+    "elapsed_seconds": 103.24
+  },
+  {
+    "step": 500,
+    "train_loss": 4.097476005554199,
+    "validation_loss": 4.304097858540182,
+    "best_step": 500,
+    "elapsed_seconds": 128.8
+  },
+  {
+    "step": 600,
+    "train_loss": 3.833669424057007,
+    "validation_loss": 4.199464005333076,
+    "best_step": 600,
+    "elapsed_seconds": 156.19
+  },
+  {
+    "step": 700,
+    "train_loss": 4.08982515335083,
+    "validation_loss": 4.116849978128254,
+    "best_step": 700,
+    "elapsed_seconds": 183.49
+  },
+  {
+    "step": 800,
+    "train_loss": 3.7559187412261963,
+    "validation_loss": 4.054978849489847,
+    "best_step": 800,
+    "elapsed_seconds": 209.84
+  },
+  {
+    "step": 900,
+    "train_loss": 4.006402492523193,
+    "validation_loss": 4.0135492571116025,
+    "best_step": 900,
+    "elapsed_seconds": 245.16
+  },
+  {
+    "step": 1000,
+    "train_loss": 3.7009341716766357,
+    "validation_loss": 3.9854037582167674,
+    "best_step": 1000,
+    "elapsed_seconds": 272.36
+  },
+  {
+    "step": 1100,
+    "train_loss": 3.5995044708251953,
+    "validation_loss": 3.960459779142302,
+    "best_step": 1100,
+    "elapsed_seconds": 300.26
+  },
+  {
+    "step": 1200,
+    "train_loss": 3.5916812419891357,
+    "validation_loss": 3.93870642703911,
+    "best_step": 1200,
+    "elapsed_seconds": 332.25
+  },
+  {
+    "step": 1300,
+    "train_loss": 3.6126301288604736,
+    "validation_loss": 3.918960566399992,
+    "best_step": 1300,
+    "elapsed_seconds": 361.09
+  },
+  {
+    "step": 1400,
+    "train_loss": 3.6669952869415283,
+    "validation_loss": 3.9089667391448555,
+    "best_step": 1400,
+    "elapsed_seconds": 389.02
+  },
+  {
+    "step": 1500,
+    "train_loss": 3.313534736633301,
+    "validation_loss": 3.9019025016083084,
+    "best_step": 1500,
+    "elapsed_seconds": 421.42
+  }
+]

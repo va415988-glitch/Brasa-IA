@@ -1,0 +1,68 @@
+{
+  "schema": "brasa-implementation-repair-sft/v1",
+  "source_shards": [
+    "data-00000-of-00030.arrow",
+    "data-00001-of-00030.arrow",
+    "data-00002-of-00030.arrow",
+    "data-00003-of-00030.arrow",
+    "data-00004-of-00030.arrow",
+    "data-00005-of-00030.arrow",
+    "data-00006-of-00030.arrow",
+    "data-00007-of-00030.arrow",
+    "data-00008-of-00030.arrow",
+    "data-00009-of-00030.arrow",
+    "data-00010-of-00030.arrow",
+    "data-00011-of-00030.arrow",
+    "data-00012-of-00030.arrow",
+    "data-00013-of-00030.arrow",
+    "data-00014-of-00030.arrow",
+    "data-00015-of-00030.arrow",
+    "data-00016-of-00030.arrow",
+    "data-00017-of-00030.arrow",
+    "data-00018-of-00030.arrow",
+    "data-00019-of-00030.arrow",
+    "data-00020-of-00030.arrow",
+    "data-00021-of-00030.arrow",
+    "data-00022-of-00030.arrow",
+    "data-00023-of-00030.arrow",
+    "data-00024-of-00030.arrow",
+    "data-00025-of-00030.arrow",
+    "data-00026-of-00030.arrow",
+    "data-00027-of-00030.arrow",
+    "data-00028-of-00030.arrow",
+    "data-00029-of-00030.arrow"
+  ],
+  "counts": {
+    "trajectories": 69895,
+    "accepted": 2058,
+    "no_confirmed_test": 379,
+    "unsupported_patch": 5271,
+    "multiple_or_ambiguous_patches": 61418,
+    "over_training_context": 23,
+    "patch_not_confirmed": 746,
+    "group_cap_dropped": 1148
+  },
+  "splits": {
+    "train": 753,
+    "validation": 72,
+    "heldout": 85
+  },
+  "groups": {
+    "train": 291,
+    "validation": 45,
+    "heldout": 38
+  },
+  "max_per_group": 20,
+  "max_prompt_plus_answer_tokens": 2048,
+  "sha256": {
+    "train": "f82b34c645cb402a828f37404e808722797abdd42e2203cf0dedd3fe94bbebbb",
+    "validation": "eb6c7dbc2609669d43c5c0bf74fe5ff503b0ae1322a9cf6e6eeea90e7d385ec6",
+    "heldout": "e51bffe952ed3acb65d0100b1065bd4635feaea2f35966c35437fecb318d72fd"
+  },
+  "limits": [
+    "Critério de teste vem da trajetória; a verificação não foi reproduzida no repositório original.",
+    "Trechos de entrada são reconstruídos do patch e não substituem observações reais do workspace.",
+    "Grupos são inferidos do caminho do arquivo; projetos com layouts distintos ainda podem atravessar partições.",
+    "Conjunto experimental de reparos; não demonstra criação de projetos do zero."
+  ]
+}

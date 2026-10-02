@@ -15,6 +15,7 @@ for candidate in (str(ROOT), str(ROOT / "python")):
     if candidate not in sys.path:
         sys.path.insert(0, candidate)
 from model_server import ModelService
+from active_checkpoint import selected_checkpoint
 from tests.model_assessment import category_summary
 
 
@@ -87,12 +88,26 @@ def summarize(rows):
 
 def main():
     parser = argparse.ArgumentParser(description="Bateria de benchmark para assistente local")
+    parser.add_argument(
+        "--checkpoint",
+        type=Path,
+        default=selected_checkpoint(),
+        help="checkpoint real usado pelo serviço; a memória continua sendo medida separadamente",
+    )
     parser.add_argument("--report", type=Path, default=ROOT / "model" / "eval_suite_report.json")
     args = parser.parse_args()
 
-    service = ModelService("benchmark-suite")
+    service = ModelService(args.checkpoint, trace_path=None)
     rows = assess(service)
     report = summarize(rows)
+    report["model"] = {
+        "checkpoint": str(args.checkpoint),
+        "local_model_loaded": service.local_model is not None,
+        "local_model_error": service.local_model_error,
+        "context_length": (service.local_config or {}).get("context_length"),
+        "memory_entries": len(service.memory),
+        "mode": "workflow-with-fallbacks",
+    }
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(json.dumps(report, ensure_ascii=False, indent=2))

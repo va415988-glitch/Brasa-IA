@@ -1,0 +1,2326 @@
+{
+  "schema": "operational-smoke/v1",
+  "results": [
+    {
+      "case": "research",
+      "passed": true,
+      "seconds": 4.38,
+      "status": "completed",
+      "final_text": "Trechos relevantes obtidos nas fontes; esta entrega é uma extração, não uma explicação validada pelo modelo.\n\nCom base nas fontes consultadas:\n\n- The asyncio components that enable structured concurrency, like asyncio.TaskGroup and asyncio.timeout() , are implemented using cancellation internally and might misbehave if a coroutine swallows asyncio.CancelledError . [web-1]\n- Nota asyncio.TaskGroup.create_task() é uma nova alternativa que aproveita a concorrência estruturada e permite aguardar um grupo de tarefas relacionadas, com fortes garantias de segurança. [web-2]\n- Note asyncio.TaskGroup.create_task() is a new alternative leveraging structural concurrency; it allows for waiting for a group of related tasks with strong safety guarantees. [web-1]\n- Nota A new alternative to create and run tasks concurrently and wait for their completion is asyncio.TaskGroup . [web-2]\n\nFontes consultadas:\n- Coroutines and tasks — Python 3.14.7 documentation: https://docs.python.org/3/library/asyncio-task.html\n- Coroutines and tasks — Documentação Python 3.13.15: https://docs.python.org/pt-br/3.13/library/asyncio-task.html\n- Corrotinas e Tarefas — Documentação Python 3.12.14: https://docs.python.org/pt-br/3.12/library/asyncio-task.html",
+      "error": null,
+      "verification": null,
+      "events": [
+        {
+          "seq": 1,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "observe",
+          "status": "running",
+          "kind": "task.started",
+          "title": "Tarefa iniciada",
+          "detail": "Pesquise na documentação oficial do Python como funciona asyncio.TaskGroup."
+        },
+        {
+          "seq": 2,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "plan",
+          "status": "running",
+          "kind": "objective.selected",
+          "title": "Objetivo operacional selecionado",
+          "detail": "research",
+          "payload": {
+            "objective": "research",
+            "requestedObjective": "auto"
+          }
+        },
+        {
+          "seq": 3,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "plan",
+          "status": "running",
+          "kind": "cognition.summary",
+          "title": "Thinking: rota e próximo passo",
+          "detail": "A rota foi escolhida pelo objetivo classificado e seguirá as restrições e lacunas detectadas no pedido. Próxima etapa: Consultar fontes externas relevantes e separar evidências de inferências.",
+          "payload": {
+            "route": "web_research",
+            "personalityMode": "research",
+            "uncertainties": [
+              "resultado esperado"
+            ],
+            "confidence": 0.86,
+            "confidenceBasis": "derived"
+          }
+        },
+        {
+          "seq": 4,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "learn",
+          "status": "completed",
+          "kind": "workflow.dataset.checked",
+          "title": "Precedentes procedurais consultados",
+          "detail": "Nenhum precedente revisado compatível; usando política operacional padrão.",
+          "payload": {
+            "trustedRecords": 0,
+            "rejectedRecords": 0,
+            "matchedRecords": []
+          }
+        },
+        {
+          "seq": 5,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "plan",
+          "status": "completed",
+          "kind": "operational.policy.selected",
+          "title": "Política de execução definida",
+          "detail": "Reunir ao menos uma fonte com URL e trecho de evidência.",
+          "payload": {
+            "mode": "read_only",
+            "allowedTools": [
+              "search_web",
+              "open_page",
+              "list_sources",
+              "cite_sources",
+              "research_web"
+            ],
+            "maxActions": 12
+          }
+        },
+        {
+          "seq": 6,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "observe",
+          "status": "completed",
+          "kind": "requirements.analyzed",
+          "title": "Requisitos analisados",
+          "detail": "Ambiguidade 0.24",
+          "payload": {
+            "questions": [],
+            "missing": [
+              "resultado esperado"
+            ],
+            "ambiguityScore": 0.24
+          }
+        },
+        {
+          "seq": 7,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "observe",
+          "status": "completed",
+          "kind": "runtime.capabilities.observed",
+          "title": "Ferramentas do runtime observadas",
+          "detail": "34 ferramenta(s) registrada(s) e disponíveis para esta tarefa.",
+          "payload": {
+            "availableTools": [
+              "inspect_code",
+              "search_web",
+              "open_page",
+              "research_web",
+              "list_tools",
+              "apply_batch",
+              "undo_batch",
+              "list_sources",
+              "cite_sources",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "search_files",
+              "inspect_project",
+              "diagnose_project",
+              "propose_repair",
+              "apply_repair",
+              "project_checks",
+              "terminal_run",
+              "process_start",
+              "process_status",
+              "process_stop",
+              "set_workspace",
+              "create_workspace",
+              "create_directory",
+              "create_file",
+              "create_web_page",
+              "edit_file",
+              "inspect_media",
+              "extract_document_text"
+            ],
+            "allowedTools": [
+              "search_web",
+              "open_page",
+              "research_web",
+              "list_sources",
+              "cite_sources"
+            ]
+          }
+        },
+        {
+          "seq": 8,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "plan",
+          "status": "running",
+          "kind": "plan.created",
+          "title": "Plano criado",
+          "detail": "2 etapa(s)"
+        },
+        {
+          "seq": 9,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "plan",
+          "status": "completed",
+          "kind": "objective.action.selected",
+          "title": "Próxima ação escolhida pelo núcleo",
+          "detail": "research_web",
+          "payload": {
+            "tool": "research_web",
+            "objective": "research",
+            "reason": "Buscar fontes verificáveis para a pesquisa solicitada."
+          }
+        },
+        {
+          "seq": 10,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "plan",
+          "status": "running",
+          "kind": "action.resuming",
+          "title": "Retomando a ação planejada",
+          "detail": "research_web",
+          "payload": {
+            "tool": "research_web"
+          }
+        },
+        {
+          "seq": 11,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "plan",
+          "status": "running",
+          "kind": "brain.action.validated",
+          "title": "Próxima ação validada pelo núcleo",
+          "detail": "Buscar fontes verificáveis para a pesquisa solicitada.",
+          "payload": {
+            "planId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a-plan-1",
+            "actionId": "action-2b3f03a8-4373-49b1-bef4-c60677406a7d",
+            "state": "planning",
+            "capability": "research_web",
+            "group": "research",
+            "effect": "network_read",
+            "retryStrategy": "safe_read",
+            "risk": "low",
+            "reversible": true
+          }
+        },
+        {
+          "seq": 12,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "act",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Executando ferramenta local",
+          "detail": "Executando a ação autorizada.",
+          "payload": {
+            "planId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a-plan-1",
+            "actionId": "action-2b3f03a8-4373-49b1-bef4-c60677406a7d",
+            "tool": "research_web",
+            "attempt": 1,
+            "expectedEffect": "Buscar fontes verificáveis para a pesquisa solicitada.",
+            "state": "executing",
+            "transition": {
+              "from": "planning",
+              "to": "executing"
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "verify",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Conferindo resultado da ferramenta",
+          "detail": "Resultado bruto recebido; iniciando verificação.",
+          "payload": {
+            "planId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a-plan-1",
+            "actionId": "action-2b3f03a8-4373-49b1-bef4-c60677406a7d",
+            "tool": "research_web",
+            "ok": true,
+            "summary": "Com base nas fontes consultadas:\n\n- The asyncio components that enable structured concurrency, like asyncio.TaskGroup and asyncio.timeout() , are implemented using cancellation internally and might misbehave if a coroutine swallows asyncio.CancelledError . [web-1]\n- Nota asyncio.TaskGroup.create_task() é uma nova alternativa que aproveita a concorrência estruturada e permite aguardar um grupo de tarefas relacionadas, com fortes garantias de segurança. [web-2]\n- Note asyncio.TaskGroup.create_task() is a new alternative leveraging structural concurrency; it allows for waiting for a group of related tasks with strong safety guarantees. [web-1]\n- Nota A new alternative to create and run tasks concurrently and wait for their completion is asyncio.TaskGroup . [web-2]",
+            "evidence": [
+              "research_web: Com base nas fontes consultadas:\n\n- The asyncio components that enable structured concurrency, like asyncio.TaskGroup and asyncio.timeout() , are implemented using cancellation internally and might misbehave if a coroutine swallows asyncio.CancelledError . [web-1]\n- Nota asyncio.TaskGroup.create_task() é uma nova alternativa que aproveita a concorrência estruturada e permite aguardar um grupo de tarefas relacionadas, com fortes garantias de segurança. [web-2]\n- Note asyncio.TaskGroup.create_task() is a new alternative leveraging structural concurrency; it allows for waiting for a group of related tasks with strong safety guarantees. [web-1]\n- Nota A new alternative to create and run tasks concurrently and wait for their completion is asyncio.TaskGroup . [web-2]"
+            ],
+            "state": "verifying",
+            "transition": {
+              "from": "executing",
+              "to": "verifying"
+            }
+          }
+        },
+        {
+          "seq": 14,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "plan",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Planejando próxima ação",
+          "detail": "A ação foi verificada; o núcleo decidirá o próximo passo da tarefa.",
+          "payload": {
+            "planId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a-plan-1",
+            "state": "planning",
+            "transition": {
+              "from": "verifying",
+              "to": "planning"
+            }
+          }
+        },
+        {
+          "seq": 15,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.requested",
+          "title": "Consultando o planejador local",
+          "detail": "Ciclo 2 de 12.",
+          "payload": {
+            "step": 2,
+            "limit": 12
+          }
+        },
+        {
+          "seq": 18,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.finished",
+          "title": "Planejador encerrou o ciclo",
+          "detail": "Trechos relevantes obtidos nas fontes; esta entrega é uma extração, não uma explicação validada pelo modelo.\n\nCom base nas fontes consultadas:\n\n- The asyncio components that enable structured concurrency, like asyncio.TaskGroup and asyncio.timeout() , are implemented using cancellation internally and might misbehave if a coroutine swallows asyncio.CancelledError . [web-1]\n- Nota asyncio.TaskGroup.create_task() é uma nova alternativa que aproveita a concorrência estruturada e permite aguardar um grupo de tarefas relacionadas, com fortes garantias de segurança. [web-2]\n- Note asyncio.TaskGroup.create_task() is a new alternative leveraging structural concurrency; it allows for waiting for a group of related tasks with strong safety guarantees. [web-1]\n- Nota A new alternative to create and run tasks concurrently and wait for their completion is asyncio.TaskGroup . [web-2]\n\nFontes consultadas:\n- Coroutines and tasks — Python 3.14.7 documentation: https://docs.python.org/3/library/asyncio-task.html\n- Coroutines and tasks — Documentação Python 3.13.15: https://docs.python.org/pt-br/3.13/library/asyncio-task.html\n- Corrotinas e Tarefas — Documentação Python 3.12.14: https://docs.python.org/pt-br/3.12/library/asyncio-task.html",
+          "payload": {
+            "backend": "research-evidence",
+            "traceId": "trace-795f6906cb0647f290d1cef07103bd87"
+          }
+        },
+        {
+          "seq": 19,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "verify",
+          "status": "completed",
+          "kind": "acceptance.evaluated",
+          "title": "Critérios de aceite satisfeitos",
+          "detail": "✓ delivery.summary: A tarefa precisa de uma síntese final baseada nos resultados observados.\n✓ research.sources: A pesquisa precisa conter ao menos uma fonte HTTP(S) com trecho de evidência.",
+          "payload": {
+            "checks": [
+              {
+                "id": "delivery.summary",
+                "passed": true,
+                "detail": "A tarefa precisa de uma síntese final baseada nos resultados observados."
+              },
+              {
+                "id": "research.sources",
+                "passed": true,
+                "detail": "A pesquisa precisa conter ao menos uma fonte HTTP(S) com trecho de evidência."
+              }
+            ]
+          }
+        },
+        {
+          "seq": 20,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "complete",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Preparando resposta",
+          "detail": "Critérios verificados; preparando a entrega.",
+          "payload": {
+            "state": "delivering",
+            "transition": {
+              "from": "planning",
+              "to": "delivering"
+            }
+          }
+        },
+        {
+          "seq": 21,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "complete",
+          "status": "completed",
+          "kind": "brain.state",
+          "title": "Etapa concluída",
+          "detail": "Tarefa concluída com evidência.",
+          "payload": {
+            "state": "completed",
+            "transition": {
+              "from": "delivering",
+              "to": "completed"
+            }
+          }
+        },
+        {
+          "seq": 22,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "learn",
+          "status": "completed",
+          "kind": "workflow.local.procedure.saved",
+          "title": "Trilha operacional registrada",
+          "detail": "Somente objetivo, sequência de ferramentas e estado de conclusão foram retidos."
+        },
+        {
+          "seq": 23,
+          "taskId": "task-60084e13-927c-4071-b1ff-3d7b1f3d9c2a",
+          "phase": "complete",
+          "status": "completed",
+          "kind": "task.completed",
+          "title": "Tarefa concluída"
+        }
+      ]
+    },
+    {
+      "case": "capabilities",
+      "passed": true,
+      "seconds": 0.16,
+      "status": "completed",
+      "final_text": "Ferramentas disponíveis nesta sessão, conferidas no runtime:\n\n- `inspect_code`: Inspecionar definições de código e imports no workspace.\n- `search_web`: Pesquisar informações atuais na internet.\n- `open_page`: Abrir uma página HTTP(S) e extrair seu texto.\n- `research_web`: Consultar fontes públicas na web.\n- `list_tools`: Listar ferramentas que o runtime local disponibiliza.\n- `apply_batch`: Aplicar um lote de operações locais no workspace.\n- `undo_batch`: Reverter uma transação local identificada.\n- `list_sources`: Listar fontes coletadas na sessão atual.\n- `cite_sources`: Gerar citações para fontes coletadas na sessão atual.\n- `list_files`: Listar arquivos em um caminho do workspace.\n- `path_info`: Consultar existência, tipo e tamanho de um caminho.\n- `find_paths`: Encontrar caminhos por padrão de nome dentro do workspace.\n- `list_tree`: Listar uma árvore local com limites de profundidade e tamanho.\n- `compare_files`: Comparar dois arquivos textuais do workspace.\n- `git_diff`: Ler o diff Git não preparado do workspace.\n- `read_file`: Ler conteúdo de um arquivo do workspace.\n- `search_files`: Pesquisar termos ou símbolos nos arquivos do workspace.\n- `inspect_project`: Inventariar estrutura, manifestos, entradas e testes do projeto.\n- `diagnose_project`: Classificar a saída de uma verificação e sugerir próximos passos.\n- `propose_repair`: Validar e propor uma alteração localizada antes de aplicá-la.\n- `apply_repair`: Aplicar uma correção localizada previamente validada.\n- `project_checks`: Descobrir ou executar verificações reconhecidas do projeto.\n- `terminal_run`: Executar uma operação de terminal permitida pelo runtime.\n- `process_start`: Iniciar o perfil de processo local permitido.\n- `process_status`: Observar o estado e as saídas de um processo local.\n- `process_stop`: Parar um processo local identificado.\n- `set_workspace`: Selecionar a raiz autorizada do workspace.\n- `create_workspace`: Criar e selecionar um novo diretório de projeto.\n- `create_directory`: Criar um diretório no workspace.\n- `create_file`: Criar um arquivo no workspace.\n- `create_web_page`: Criar uma página HTML local a partir de um briefing.\n- `edit_file`: Alterar um trecho correspondente em arquivo do workspace.\n- `inspect_media`: Identificar tipo, extensão e tamanho de uma mídia local.\n- `extract_document_text`: Extrair texto de um documento local.\n\nPosso inspecionar o workspace, ler código e executar verificações disponíveis. Também posso propor criações e edições quando o planejador local produz uma alteração validável.\n\nA geração de código novo depende da capacidade do checkpoint ativo; se ela falhar, a tarefa fica pendente e nenhum arquivo é alterado. Consigo usar arquivos completos fornecidos no pedido ou receitas locais compatíveis. Toda escrita proposta passa por aprovação antes de chegar ao runtime. Nesta resposta, não alterei arquivos.",
+      "error": null,
+      "verification": null,
+      "events": [
+        {
+          "seq": 1,
+          "taskId": "task-5e723a71-aaa0-46c7-bc72-38027296af87",
+          "phase": "observe",
+          "status": "running",
+          "kind": "task.started",
+          "title": "Tarefa iniciada",
+          "detail": "Quais habilidades você pode usar para pesquisar e testar um projeto?"
+        },
+        {
+          "seq": 2,
+          "taskId": "task-5e723a71-aaa0-46c7-bc72-38027296af87",
+          "phase": "plan",
+          "status": "running",
+          "kind": "objective.selected",
+          "title": "Objetivo operacional selecionado",
+          "detail": "conversation",
+          "payload": {
+            "objective": "conversation",
+            "requestedObjective": "auto"
+          }
+        },
+        {
+          "seq": 3,
+          "taskId": "task-5e723a71-aaa0-46c7-bc72-38027296af87",
+          "phase": "plan",
+          "status": "running",
+          "kind": "cognition.summary",
+          "title": "Thinking: rota e próximo passo",
+          "detail": "O pedido é conversacional; consultas podem apoiar a resposta sem autorizar alterações ou processos. Próxima etapa: Responder diretamente se houver informação suficiente; consultar fontes permitidas para esclarecer lacunas.",
+          "payload": {
+            "route": "conversation",
+            "personalityMode": "conversation",
+            "uncertainties": [],
+            "confidence": 0.86,
+            "confidenceBasis": "derived"
+          }
+        },
+        {
+          "seq": 4,
+          "taskId": "task-5e723a71-aaa0-46c7-bc72-38027296af87",
+          "phase": "learn",
+          "status": "completed",
+          "kind": "workflow.dataset.checked",
+          "title": "Precedentes procedurais consultados",
+          "detail": "Nenhum precedente revisado compatível; usando política operacional padrão.",
+          "payload": {
+            "trustedRecords": 0,
+            "rejectedRecords": 0,
+            "matchedRecords": []
+          }
+        },
+        {
+          "seq": 5,
+          "taskId": "task-5e723a71-aaa0-46c7-bc72-38027296af87",
+          "phase": "plan",
+          "status": "completed",
+          "kind": "operational.policy.selected",
+          "title": "Política de execução definida",
+          "detail": "Responder ao turno atual com evidências quando necessário; distinguir fatos e incertezas.",
+          "payload": {
+            "mode": "conversation",
+            "allowedTools": [
+              "search_web",
+              "open_page",
+              "list_sources",
+              "cite_sources",
+              "research_web"
+            ],
+            "maxActions": 6
+          }
+        },
+        {
+          "seq": 6,
+          "taskId": "task-5e723a71-aaa0-46c7-bc72-38027296af87",
+          "phase": "observe",
+          "status": "completed",
+          "kind": "requirements.analyzed",
+          "title": "Requisitos analisados",
+          "detail": "Ambiguidade 0.00",
+          "payload": {
+            "questions": [],
+            "missing": [],
+            "ambiguityScore": 0
+          }
+        },
+        {
+          "seq": 7,
+          "taskId": "task-5e723a71-aaa0-46c7-bc72-38027296af87",
+          "phase": "plan",
+          "status": "running",
+          "kind": "plan.created",
+          "title": "Plano criado",
+          "detail": "Avaliar se a resposta precisa de evidências adicionais."
+        },
+        {
+          "seq": 8,
+          "taskId": "task-5e723a71-aaa0-46c7-bc72-38027296af87",
+          "phase": "plan",
+          "status": "completed",
+          "kind": "capability.answered",
+          "title": "Capacidade de implementação confirmada",
+          "detail": "Resposta baseada nas ferramentas locais de inspeção, criação/edição de arquivos e verificação do projeto.",
+          "payload": {
+            "capabilities": [
+              "workspace inspection",
+              "create_directory",
+              "create_file",
+              "edit_file",
+              "apply_batch",
+              "project_checks"
+            ]
+          }
+        },
+        {
+          "seq": 9,
+          "taskId": "task-5e723a71-aaa0-46c7-bc72-38027296af87",
+          "phase": "complete",
+          "status": "completed",
+          "kind": "brain.state",
+          "title": "Preparando resposta",
+          "detail": "Resposta de capacidade pronta para entrega.",
+          "payload": {
+            "state": "delivering",
+            "transition": {
+              "from": "planning",
+              "to": "delivering"
+            }
+          }
+        },
+        {
+          "seq": 10,
+          "taskId": "task-5e723a71-aaa0-46c7-bc72-38027296af87",
+          "phase": "complete",
+          "status": "completed",
+          "kind": "brain.state",
+          "title": "Etapa concluída",
+          "detail": "Resposta de capacidade entregue.",
+          "payload": {
+            "state": "completed",
+            "transition": {
+              "from": "delivering",
+              "to": "completed"
+            }
+          }
+        },
+        {
+          "seq": 11,
+          "taskId": "task-5e723a71-aaa0-46c7-bc72-38027296af87",
+          "phase": "complete",
+          "status": "completed",
+          "kind": "task.completed",
+          "title": "Resposta entregue",
+          "detail": "Pergunta respondida sem chamar ferramentas de workspace."
+        }
+      ]
+    },
+    {
+      "case": "resolved-file",
+      "passed": true,
+      "seconds": 0.3,
+      "status": "completed",
+      "final_text": "Li `nested/config.json`. Campos observados no JSON:\n\n- `version`: `\"smoke-42\"`\n- `description`: `\"ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 \"`",
+      "error": null,
+      "verification": null,
+      "events": [
+        {
+          "seq": 1,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "observe",
+          "status": "running",
+          "kind": "task.started",
+          "title": "Tarefa iniciada",
+          "detail": "Leia config.json e diga qual é a versão."
+        },
+        {
+          "seq": 2,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "plan",
+          "status": "running",
+          "kind": "objective.selected",
+          "title": "Objetivo operacional selecionado",
+          "detail": "analyze",
+          "payload": {
+            "objective": "analyze",
+            "requestedObjective": "auto"
+          }
+        },
+        {
+          "seq": 3,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "plan",
+          "status": "running",
+          "kind": "cognition.summary",
+          "title": "Thinking: rota e próximo passo",
+          "detail": "A rota foi escolhida pelo objetivo classificado e seguirá as restrições e lacunas detectadas no pedido. Próxima etapa: Inspecionar o workspace e apoiar a resposta em evidências observadas.",
+          "payload": {
+            "route": "workspace_read",
+            "personalityMode": "analysis",
+            "uncertainties": [],
+            "confidence": 0.86,
+            "confidenceBasis": "derived"
+          }
+        },
+        {
+          "seq": 4,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "learn",
+          "status": "completed",
+          "kind": "workflow.dataset.checked",
+          "title": "Precedentes procedurais consultados",
+          "detail": "Nenhum precedente revisado compatível; usando política operacional padrão.",
+          "payload": {
+            "trustedRecords": 0,
+            "rejectedRecords": 0,
+            "matchedRecords": []
+          }
+        },
+        {
+          "seq": 5,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "plan",
+          "status": "completed",
+          "kind": "operational.policy.selected",
+          "title": "Política de execução definida",
+          "detail": "Ler ao menos um arquivo selecionado e citar o caminho na síntese.",
+          "payload": {
+            "mode": "read_only",
+            "allowedTools": [
+              "inspect_project",
+              "inspect_code",
+              "list_tools",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "extract_document_text",
+              "inspect_media",
+              "search_files",
+              "diagnose_project"
+            ],
+            "maxActions": 12
+          }
+        },
+        {
+          "seq": 6,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "observe",
+          "status": "completed",
+          "kind": "requirements.analyzed",
+          "title": "Requisitos analisados",
+          "detail": "Ambiguidade 0.00",
+          "payload": {
+            "questions": [],
+            "missing": [],
+            "ambiguityScore": 0
+          }
+        },
+        {
+          "seq": 7,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "observe",
+          "status": "completed",
+          "kind": "runtime.capabilities.observed",
+          "title": "Ferramentas do runtime observadas",
+          "detail": "34 ferramenta(s) registrada(s) e disponíveis para esta tarefa.",
+          "payload": {
+            "availableTools": [
+              "inspect_code",
+              "search_web",
+              "open_page",
+              "research_web",
+              "list_tools",
+              "apply_batch",
+              "undo_batch",
+              "list_sources",
+              "cite_sources",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "search_files",
+              "inspect_project",
+              "diagnose_project",
+              "propose_repair",
+              "apply_repair",
+              "project_checks",
+              "terminal_run",
+              "process_start",
+              "process_status",
+              "process_stop",
+              "set_workspace",
+              "create_workspace",
+              "create_directory",
+              "create_file",
+              "create_web_page",
+              "edit_file",
+              "inspect_media",
+              "extract_document_text"
+            ],
+            "allowedTools": [
+              "inspect_code",
+              "list_tools",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "search_files",
+              "inspect_project",
+              "diagnose_project",
+              "inspect_media",
+              "extract_document_text"
+            ]
+          }
+        },
+        {
+          "seq": 8,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "observe",
+          "status": "running",
+          "kind": "workspace.selected",
+          "title": "Workspace selecionado",
+          "detail": "/tmp/ia-smoke-zmoxcbnh"
+        },
+        {
+          "seq": 9,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "observe",
+          "status": "running",
+          "kind": "memory.updated",
+          "title": "Workspace registrado na memória",
+          "detail": "/tmp/ia-smoke-zmoxcbnh"
+        },
+        {
+          "seq": 10,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "observe",
+          "status": "running",
+          "kind": "workspace.inspected",
+          "title": "Estrutura inspecionada",
+          "detail": "Base existente detectada.",
+          "payload": {
+            "workspace": "/tmp/ia-smoke-zmoxcbnh",
+            "initialProject": false
+          }
+        },
+        {
+          "seq": 11,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "plan",
+          "status": "running",
+          "kind": "plan.created",
+          "title": "Plano criado",
+          "detail": "4 etapa(s)"
+        },
+        {
+          "seq": 12,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "plan",
+          "status": "running",
+          "kind": "analysis.scope.selected",
+          "title": "Selecionando arquivos centrais",
+          "detail": "1 arquivo(s) candidato(s); leitura limitada a 120 linhas e 8 KiB por arquivo.",
+          "payload": {
+            "files": [
+              "nested/config.json"
+            ],
+            "maxFiles": 4,
+            "maxLines": 120,
+            "maxBytes": 8192
+          }
+        },
+        {
+          "seq": 13,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "plan",
+          "status": "completed",
+          "kind": "objective.action.selected",
+          "title": "Próxima ação escolhida pelo núcleo",
+          "detail": "read_file",
+          "payload": {
+            "tool": "read_file",
+            "objective": "analyze",
+            "reason": "Ler arquivo central selecionado na inspeção antes de sintetizar a análise."
+          }
+        },
+        {
+          "seq": 14,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "plan",
+          "status": "running",
+          "kind": "action.resuming",
+          "title": "Retomando a ação planejada",
+          "detail": "read_file",
+          "payload": {
+            "tool": "read_file"
+          }
+        },
+        {
+          "seq": 15,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "act",
+          "status": "running",
+          "kind": "analysis.file.read",
+          "title": "Lendo trecho relevante",
+          "detail": "nested/config.json",
+          "payload": {
+            "path": "nested/config.json",
+            "tool": "read_file",
+            "startLine": 1,
+            "endLine": 120,
+            "maxBytes": 8192
+          }
+        },
+        {
+          "seq": 16,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "plan",
+          "status": "running",
+          "kind": "brain.action.validated",
+          "title": "Próxima ação validada pelo núcleo",
+          "detail": "Ler arquivo central selecionado na inspeção antes de sintetizar a análise.",
+          "payload": {
+            "planId": "task-975fe295-3c62-4975-afce-801bedc8c677-plan-1",
+            "actionId": "action-76927ebe-bb67-42fa-929c-19e8da534886",
+            "state": "planning",
+            "capability": "read_file",
+            "group": "read",
+            "effect": "none",
+            "retryStrategy": "safe_read",
+            "risk": "low",
+            "reversible": true
+          }
+        },
+        {
+          "seq": 17,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "act",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Executando ferramenta local",
+          "detail": "Executando a ação autorizada.",
+          "payload": {
+            "planId": "task-975fe295-3c62-4975-afce-801bedc8c677-plan-1",
+            "actionId": "action-76927ebe-bb67-42fa-929c-19e8da534886",
+            "tool": "read_file",
+            "attempt": 1,
+            "expectedEffect": "Ler arquivo central selecionado na inspeção antes de sintetizar a análise.",
+            "state": "executing",
+            "transition": {
+              "from": "planning",
+              "to": "executing"
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "verify",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Conferindo resultado da ferramenta",
+          "detail": "Resultado bruto recebido; iniciando verificação.",
+          "payload": {
+            "planId": "task-975fe295-3c62-4975-afce-801bedc8c677-plan-1",
+            "actionId": "action-76927ebe-bb67-42fa-929c-19e8da534886",
+            "tool": "read_file",
+            "ok": true,
+            "summary": "nested/config.json",
+            "evidence": [
+              "read_file: nested/config.json"
+            ],
+            "state": "verifying",
+            "transition": {
+              "from": "executing",
+              "to": "verifying"
+            }
+          }
+        },
+        {
+          "seq": 19,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "plan",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Planejando próxima ação",
+          "detail": "A ação foi verificada; o núcleo decidirá o próximo passo da tarefa.",
+          "payload": {
+            "planId": "task-975fe295-3c62-4975-afce-801bedc8c677-plan-1",
+            "state": "planning",
+            "transition": {
+              "from": "verifying",
+              "to": "planning"
+            }
+          }
+        },
+        {
+          "seq": 20,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.requested",
+          "title": "Consultando o planejador local",
+          "detail": "Ciclo 2 de 12.",
+          "payload": {
+            "step": 2,
+            "limit": 12
+          }
+        },
+        {
+          "seq": 21,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.finished",
+          "title": "Planejador encerrou o ciclo",
+          "detail": "Li `nested/config.json`. Campos observados no JSON:\n\n- `version`: `\"smoke-42\"`\n- `description`: `\"ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 \"`",
+          "payload": {
+            "backend": "workspace-evidence-analysis",
+            "traceId": "trace-8ab4f11e9b394441bdbf76276d16300a"
+          }
+        },
+        {
+          "seq": 22,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "verify",
+          "status": "completed",
+          "kind": "acceptance.evaluated",
+          "title": "Critérios de aceite satisfeitos",
+          "detail": "✓ delivery.summary: A tarefa precisa de uma síntese final baseada nos resultados observados.\n✓ analysis.answer: A análise precisa entregar uma conclusão, não apenas repetir que está pendente.\n✓ analysis.read: A análise precisa ler pelo menos um arquivo pertinente do workspace.\n✓ analysis.references: A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido.\n✓ analysis.coverage: Todos os arquivos centrais selecionados foram lidos.",
+          "payload": {
+            "checks": [
+              {
+                "id": "delivery.summary",
+                "passed": true,
+                "detail": "A tarefa precisa de uma síntese final baseada nos resultados observados."
+              },
+              {
+                "id": "analysis.answer",
+                "passed": true,
+                "detail": "A análise precisa entregar uma conclusão, não apenas repetir que está pendente."
+              },
+              {
+                "id": "analysis.read",
+                "passed": true,
+                "detail": "A análise precisa ler pelo menos um arquivo pertinente do workspace."
+              },
+              {
+                "id": "analysis.references",
+                "passed": true,
+                "detail": "A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido."
+              },
+              {
+                "id": "analysis.coverage",
+                "passed": true,
+                "detail": "Todos os arquivos centrais selecionados foram lidos."
+              }
+            ]
+          }
+        },
+        {
+          "seq": 23,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "complete",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Preparando resposta",
+          "detail": "Critérios verificados; preparando a entrega.",
+          "payload": {
+            "state": "delivering",
+            "transition": {
+              "from": "planning",
+              "to": "delivering"
+            }
+          }
+        },
+        {
+          "seq": 24,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "complete",
+          "status": "completed",
+          "kind": "brain.state",
+          "title": "Etapa concluída",
+          "detail": "Tarefa concluída com evidência.",
+          "payload": {
+            "state": "completed",
+            "transition": {
+              "from": "delivering",
+              "to": "completed"
+            }
+          }
+        },
+        {
+          "seq": 25,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "learn",
+          "status": "completed",
+          "kind": "workflow.local.procedure.saved",
+          "title": "Trilha operacional registrada",
+          "detail": "Somente objetivo, sequência de ferramentas e estado de conclusão foram retidos."
+        },
+        {
+          "seq": 26,
+          "taskId": "task-975fe295-3c62-4975-afce-801bedc8c677",
+          "phase": "complete",
+          "status": "completed",
+          "kind": "task.completed",
+          "title": "Tarefa concluída"
+        }
+      ]
+    },
+    {
+      "case": "file-recovery",
+      "passed": true,
+      "seconds": 0.36,
+      "status": "completed",
+      "final_text": "Trechos obtidos da fonte consultada:\n\n> {\"version\": \"smoke-42\", \"description\": \"ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 \"}\n\nFontes consultadas: nested/config.json",
+      "error": null,
+      "verification": null,
+      "events": [
+        {
+          "seq": 1,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "observe",
+          "status": "running",
+          "kind": "task.started",
+          "title": "Tarefa iniciada",
+          "detail": "Consulte config.json e diga qual é a versão."
+        },
+        {
+          "seq": 2,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "objective.selected",
+          "title": "Objetivo operacional selecionado",
+          "detail": "conversation",
+          "payload": {
+            "objective": "conversation",
+            "requestedObjective": "conversation"
+          }
+        },
+        {
+          "seq": 3,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "cognition.summary",
+          "title": "Thinking: rota e próximo passo",
+          "detail": "O pedido é conversacional; consultas podem apoiar a resposta sem autorizar alterações ou processos. Próxima etapa: Responder diretamente se houver informação suficiente; consultar fontes permitidas para esclarecer lacunas.",
+          "payload": {
+            "route": "conversation",
+            "personalityMode": "conversation",
+            "uncertainties": [],
+            "confidence": 0.86,
+            "confidenceBasis": "derived"
+          }
+        },
+        {
+          "seq": 4,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "learn",
+          "status": "completed",
+          "kind": "workflow.dataset.checked",
+          "title": "Precedentes procedurais consultados",
+          "detail": "Nenhum precedente revisado compatível; usando política operacional padrão.",
+          "payload": {
+            "trustedRecords": 0,
+            "rejectedRecords": 0,
+            "matchedRecords": []
+          }
+        },
+        {
+          "seq": 5,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "completed",
+          "kind": "operational.policy.selected",
+          "title": "Política de execução definida",
+          "detail": "Responder ao turno atual com evidências quando necessário; distinguir fatos e incertezas.",
+          "payload": {
+            "mode": "conversation",
+            "allowedTools": [
+              "inspect_project",
+              "inspect_code",
+              "list_tools",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "extract_document_text",
+              "inspect_media",
+              "search_files",
+              "diagnose_project",
+              "search_web",
+              "open_page",
+              "list_sources",
+              "cite_sources",
+              "research_web"
+            ],
+            "maxActions": 6
+          }
+        },
+        {
+          "seq": 6,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "observe",
+          "status": "completed",
+          "kind": "requirements.analyzed",
+          "title": "Requisitos analisados",
+          "detail": "Ambiguidade 0.00",
+          "payload": {
+            "questions": [],
+            "missing": [],
+            "ambiguityScore": 0
+          }
+        },
+        {
+          "seq": 7,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "plan.created",
+          "title": "Plano criado",
+          "detail": "Avaliar se a resposta precisa de evidências adicionais."
+        },
+        {
+          "seq": 8,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.requested",
+          "title": "Consultando o planejador local",
+          "detail": "Ciclo 1 de 6.",
+          "payload": {
+            "step": 1,
+            "limit": 6
+          }
+        },
+        {
+          "seq": 9,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.proposed",
+          "title": "Próxima ferramenta proposta",
+          "detail": "Vou conferir o conteúdo de config.json.",
+          "payload": {
+            "tool": "read_file",
+            "backend": "cognitive-router",
+            "traceId": "trace-329cd499b5904cc8b2b217490f83bb70"
+          }
+        },
+        {
+          "seq": 11,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "brain.action.validated",
+          "title": "Próxima ação validada pelo núcleo",
+          "detail": "Obter a informação registrada no arquivo solicitado.",
+          "payload": {
+            "planId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5-plan-1",
+            "actionId": "call-0116431afb6f4ed68761a27679207f22",
+            "state": "planning",
+            "capability": "read_file",
+            "group": "read",
+            "effect": "none",
+            "retryStrategy": "safe_read",
+            "risk": "low",
+            "reversible": true
+          }
+        },
+        {
+          "seq": 12,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "act",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Executando ferramenta local",
+          "detail": "Executando a ação autorizada.",
+          "payload": {
+            "planId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5-plan-1",
+            "actionId": "call-0116431afb6f4ed68761a27679207f22",
+            "tool": "read_file",
+            "attempt": 1,
+            "expectedEffect": "Obter a informação registrada no arquivo solicitado.",
+            "state": "executing",
+            "transition": {
+              "from": "planning",
+              "to": "executing"
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "verify",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Conferindo resultado da ferramenta",
+          "detail": "A ferramenta devolveu falha.",
+          "payload": {
+            "planId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5-plan-1",
+            "actionId": "call-0116431afb6f4ed68761a27679207f22",
+            "tool": "read_file",
+            "ok": false,
+            "summary": "falha no workspace: No such file or directory (os error 2)",
+            "evidence": [],
+            "error": "falha no workspace: No such file or directory (os error 2)",
+            "state": "verifying",
+            "transition": {
+              "from": "executing",
+              "to": "verifying"
+            }
+          }
+        },
+        {
+          "seq": 14,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "complete",
+          "status": "blocked",
+          "kind": "brain.state",
+          "title": "Etapa pausada",
+          "detail": "A ação não foi verificada com sucesso.",
+          "payload": {
+            "planId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5-plan-1",
+            "actionId": "call-0116431afb6f4ed68761a27679207f22",
+            "tool": "read_file",
+            "error": "falha no workspace: No such file or directory (os error 2)",
+            "state": "abstaining",
+            "transition": {
+              "from": "verifying",
+              "to": "abstaining"
+            }
+          }
+        },
+        {
+          "seq": 15,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "observe",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Atualizando estado do agente",
+          "detail": "A ação anterior terminou; observando antes de continuar.",
+          "payload": {
+            "planId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5-plan-2",
+            "state": "observing",
+            "transition": {
+              "from": "abstaining",
+              "to": "observing"
+            }
+          }
+        },
+        {
+          "seq": 16,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Planejando próxima ação",
+          "detail": "Observação disponível; escolhendo a próxima ação.",
+          "payload": {
+            "planId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5-plan-2",
+            "state": "planning",
+            "transition": {
+              "from": "observing",
+              "to": "planning"
+            }
+          }
+        },
+        {
+          "seq": 17,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.requested",
+          "title": "Consultando o planejador local",
+          "detail": "Ciclo 2 de 6.",
+          "payload": {
+            "step": 2,
+            "limit": 6
+          }
+        },
+        {
+          "seq": 18,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.proposed",
+          "title": "Próxima ferramenta proposta",
+          "detail": "Vou localizar o arquivo solicitado no workspace antes de tentar outra leitura.",
+          "payload": {
+            "tool": "find_paths",
+            "backend": "cognitive-router-evidence",
+            "traceId": "trace-b5a1816fb7f0485c99e269c811a9a74d"
+          }
+        },
+        {
+          "seq": 20,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "brain.action.validated",
+          "title": "Próxima ação validada pelo núcleo",
+          "detail": "Vou localizar o arquivo solicitado no workspace antes de tentar outra leitura.",
+          "payload": {
+            "planId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5-plan-2",
+            "actionId": "call-f4e8c6804e37425bb3efc67116a0c9ae",
+            "state": "planning",
+            "capability": "find_paths",
+            "group": "read",
+            "effect": "none",
+            "retryStrategy": "safe_read",
+            "risk": "low",
+            "reversible": true
+          }
+        },
+        {
+          "seq": 21,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "act",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Executando ferramenta local",
+          "detail": "Executando a ação autorizada.",
+          "payload": {
+            "planId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5-plan-2",
+            "actionId": "call-f4e8c6804e37425bb3efc67116a0c9ae",
+            "tool": "find_paths",
+            "attempt": 1,
+            "expectedEffect": "Vou localizar o arquivo solicitado no workspace antes de tentar outra leitura.",
+            "state": "executing",
+            "transition": {
+              "from": "planning",
+              "to": "executing"
+            }
+          }
+        },
+        {
+          "seq": 22,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "verify",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Conferindo resultado da ferramenta",
+          "detail": "Resultado bruto recebido; iniciando verificação.",
+          "payload": {
+            "planId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5-plan-2",
+            "actionId": "call-f4e8c6804e37425bb3efc67116a0c9ae",
+            "tool": "find_paths",
+            "ok": true,
+            "summary": "",
+            "evidence": [
+              "find_paths: "
+            ],
+            "state": "verifying",
+            "transition": {
+              "from": "executing",
+              "to": "verifying"
+            }
+          }
+        },
+        {
+          "seq": 23,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Planejando próxima ação",
+          "detail": "A ação foi verificada; o núcleo decidirá o próximo passo da tarefa.",
+          "payload": {
+            "planId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5-plan-2",
+            "state": "planning",
+            "transition": {
+              "from": "verifying",
+              "to": "planning"
+            }
+          }
+        },
+        {
+          "seq": 24,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.requested",
+          "title": "Consultando o planejador local",
+          "detail": "Ciclo 3 de 6.",
+          "payload": {
+            "step": 3,
+            "limit": 6
+          }
+        },
+        {
+          "seq": 25,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.proposed",
+          "title": "Próxima ferramenta proposta",
+          "detail": "Localizei um único arquivo correspondente; vou conferir seu conteúdo.",
+          "payload": {
+            "tool": "read_file",
+            "backend": "cognitive-router-evidence",
+            "traceId": "trace-2e7369741b5148739c10c7d227d710f1"
+          }
+        },
+        {
+          "seq": 27,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "brain.action.validated",
+          "title": "Próxima ação validada pelo núcleo",
+          "detail": "Localizei um único arquivo correspondente; vou conferir seu conteúdo.",
+          "payload": {
+            "planId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5-plan-3",
+            "actionId": "call-af1e0908c6ba4d4a9c776046bcd662ad",
+            "state": "planning",
+            "capability": "read_file",
+            "group": "read",
+            "effect": "none",
+            "retryStrategy": "safe_read",
+            "risk": "low",
+            "reversible": true
+          }
+        },
+        {
+          "seq": 28,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "act",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Executando ferramenta local",
+          "detail": "Executando a ação autorizada.",
+          "payload": {
+            "planId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5-plan-3",
+            "actionId": "call-af1e0908c6ba4d4a9c776046bcd662ad",
+            "tool": "read_file",
+            "attempt": 1,
+            "expectedEffect": "Localizei um único arquivo correspondente; vou conferir seu conteúdo.",
+            "state": "executing",
+            "transition": {
+              "from": "planning",
+              "to": "executing"
+            }
+          }
+        },
+        {
+          "seq": 29,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "verify",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Conferindo resultado da ferramenta",
+          "detail": "Resultado bruto recebido; iniciando verificação.",
+          "payload": {
+            "planId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5-plan-3",
+            "actionId": "call-af1e0908c6ba4d4a9c776046bcd662ad",
+            "tool": "read_file",
+            "ok": true,
+            "summary": "nested/config.json",
+            "evidence": [
+              "read_file: nested/config.json"
+            ],
+            "state": "verifying",
+            "transition": {
+              "from": "executing",
+              "to": "verifying"
+            }
+          }
+        },
+        {
+          "seq": 30,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Planejando próxima ação",
+          "detail": "A ação foi verificada; o núcleo decidirá o próximo passo da tarefa.",
+          "payload": {
+            "planId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5-plan-3",
+            "state": "planning",
+            "transition": {
+              "from": "verifying",
+              "to": "planning"
+            }
+          }
+        },
+        {
+          "seq": 31,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.requested",
+          "title": "Consultando o planejador local",
+          "detail": "Ciclo 4 de 6.",
+          "payload": {
+            "step": 4,
+            "limit": 6
+          }
+        },
+        {
+          "seq": 37,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.finished",
+          "title": "Planejador encerrou o ciclo",
+          "detail": "Trechos obtidos da fonte consultada:\n\n> {\"version\": \"smoke-42\", \"description\": \"ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 ação 🚀 \"}\n\nFontes consultadas: nested/config.json",
+          "payload": {
+            "backend": "cognitive-router-evidence",
+            "traceId": "trace-b1a6ab8a613c47e68970a0ee17dcb3a0"
+          }
+        },
+        {
+          "seq": 38,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "verify",
+          "status": "completed",
+          "kind": "acceptance.evaluated",
+          "title": "Critérios de aceite satisfeitos",
+          "detail": "✓ conversation.response: A resposta ao turno precisa conter texto.\n✓ conversation.no_pending_action: Uma chamada proposta precisa ser resolvida antes da resposta final.",
+          "payload": {
+            "checks": [
+              {
+                "id": "conversation.response",
+                "passed": true,
+                "detail": "A resposta ao turno precisa conter texto."
+              },
+              {
+                "id": "conversation.no_pending_action",
+                "passed": true,
+                "detail": "Uma chamada proposta precisa ser resolvida antes da resposta final."
+              }
+            ]
+          }
+        },
+        {
+          "seq": 39,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "complete",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Preparando resposta",
+          "detail": "Critérios verificados; preparando a entrega.",
+          "payload": {
+            "state": "delivering",
+            "transition": {
+              "from": "planning",
+              "to": "delivering"
+            }
+          }
+        },
+        {
+          "seq": 40,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "complete",
+          "status": "completed",
+          "kind": "brain.state",
+          "title": "Etapa concluída",
+          "detail": "Tarefa concluída com evidência.",
+          "payload": {
+            "state": "completed",
+            "transition": {
+              "from": "delivering",
+              "to": "completed"
+            }
+          }
+        },
+        {
+          "seq": 41,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "learn",
+          "status": "completed",
+          "kind": "workflow.local.procedure.saved",
+          "title": "Trilha operacional registrada",
+          "detail": "Somente objetivo, sequência de ferramentas e estado de conclusão foram retidos."
+        },
+        {
+          "seq": 42,
+          "taskId": "task-4e90aa35-8d86-4eaa-b2b1-b8f8754176b5",
+          "phase": "complete",
+          "status": "completed",
+          "kind": "task.completed",
+          "title": "Tarefa concluída"
+        }
+      ]
+    },
+    {
+      "case": "project-tests",
+      "passed": true,
+      "seconds": 0.66,
+      "status": "completed",
+      "final_text": "Executei as verificações do projeto.\n\nVerificação: passou (`unittest`; `python3 -m unittest discover -s tests -p test*.py -v`) — código de saída 0 — 101 ms.\nEvidência observada: `test_addition (test_smoke.Smoke.test_addition) ... ok` · `Ran 1 test in 0.000s` · `OK`\nArquivos criados ou alterados: nenhuma escrita bem-sucedida foi registrada nesta execução.",
+      "error": null,
+      "verification": {
+        "passed": true,
+        "executed": true,
+        "check": "unittest",
+        "stdout": "",
+        "stderr": "test_addition (test_smoke.Smoke.test_addition) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+        "summary": "Verificação aprovada.",
+        "evidence": []
+      },
+      "events": [
+        {
+          "seq": 1,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "observe",
+          "status": "running",
+          "kind": "task.started",
+          "title": "Tarefa iniciada",
+          "detail": "Execute os testes do projeto."
+        },
+        {
+          "seq": 2,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "plan",
+          "status": "running",
+          "kind": "objective.selected",
+          "title": "Objetivo operacional selecionado",
+          "detail": "testing",
+          "payload": {
+            "objective": "testing",
+            "requestedObjective": "auto"
+          }
+        },
+        {
+          "seq": 3,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "plan",
+          "status": "running",
+          "kind": "cognition.summary",
+          "title": "Thinking: rota e próximo passo",
+          "detail": "A rota foi escolhida pelo objetivo classificado e seguirá as restrições e lacunas detectadas no pedido. Próxima etapa: Inspecionar o workspace e apoiar a resposta em evidências observadas.",
+          "payload": {
+            "route": "workspace_read",
+            "personalityMode": "analysis",
+            "uncertainties": [],
+            "confidence": 0.86,
+            "confidenceBasis": "derived"
+          }
+        },
+        {
+          "seq": 4,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "learn",
+          "status": "completed",
+          "kind": "workflow.dataset.checked",
+          "title": "Precedentes procedurais consultados",
+          "detail": "Nenhum precedente revisado compatível; usando política operacional padrão.",
+          "payload": {
+            "trustedRecords": 0,
+            "rejectedRecords": 0,
+            "matchedRecords": []
+          }
+        },
+        {
+          "seq": 5,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "plan",
+          "status": "completed",
+          "kind": "operational.policy.selected",
+          "title": "Política de execução definida",
+          "detail": "Executar um check do projeto e observar seu resultado.",
+          "payload": {
+            "mode": "read_only",
+            "allowedTools": [
+              "inspect_project",
+              "inspect_code",
+              "list_tools",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "extract_document_text",
+              "inspect_media",
+              "search_files",
+              "diagnose_project",
+              "project_checks",
+              "terminal_run"
+            ],
+            "maxActions": 12
+          }
+        },
+        {
+          "seq": 6,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "observe",
+          "status": "completed",
+          "kind": "requirements.analyzed",
+          "title": "Requisitos analisados",
+          "detail": "Ambiguidade 0.00",
+          "payload": {
+            "questions": [],
+            "missing": [],
+            "ambiguityScore": 0
+          }
+        },
+        {
+          "seq": 7,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "observe",
+          "status": "completed",
+          "kind": "runtime.capabilities.observed",
+          "title": "Ferramentas do runtime observadas",
+          "detail": "34 ferramenta(s) registrada(s) e disponíveis para esta tarefa.",
+          "payload": {
+            "availableTools": [
+              "inspect_code",
+              "search_web",
+              "open_page",
+              "research_web",
+              "list_tools",
+              "apply_batch",
+              "undo_batch",
+              "list_sources",
+              "cite_sources",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "search_files",
+              "inspect_project",
+              "diagnose_project",
+              "propose_repair",
+              "apply_repair",
+              "project_checks",
+              "terminal_run",
+              "process_start",
+              "process_status",
+              "process_stop",
+              "set_workspace",
+              "create_workspace",
+              "create_directory",
+              "create_file",
+              "create_web_page",
+              "edit_file",
+              "inspect_media",
+              "extract_document_text"
+            ],
+            "allowedTools": [
+              "inspect_code",
+              "list_tools",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "search_files",
+              "inspect_project",
+              "diagnose_project",
+              "project_checks",
+              "terminal_run",
+              "inspect_media",
+              "extract_document_text"
+            ]
+          }
+        },
+        {
+          "seq": 8,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "observe",
+          "status": "running",
+          "kind": "workspace.selected",
+          "title": "Workspace selecionado",
+          "detail": "/tmp/ia-smoke-zmoxcbnh"
+        },
+        {
+          "seq": 9,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "observe",
+          "status": "running",
+          "kind": "memory.updated",
+          "title": "Workspace registrado na memória",
+          "detail": "/tmp/ia-smoke-zmoxcbnh"
+        },
+        {
+          "seq": 10,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "observe",
+          "status": "running",
+          "kind": "workspace.inspected",
+          "title": "Estrutura inspecionada",
+          "detail": "Base existente detectada.",
+          "payload": {
+            "workspace": "/tmp/ia-smoke-zmoxcbnh",
+            "initialProject": false
+          }
+        },
+        {
+          "seq": 11,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "plan",
+          "status": "running",
+          "kind": "plan.created",
+          "title": "Plano criado",
+          "detail": "4 etapa(s)"
+        },
+        {
+          "seq": 12,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "plan",
+          "status": "completed",
+          "kind": "objective.action.selected",
+          "title": "Próxima ação escolhida pelo núcleo",
+          "detail": "project_checks",
+          "payload": {
+            "tool": "project_checks",
+            "objective": "testing",
+            "reason": "Executar os checks reconhecidos do projeto e observar o resultado."
+          }
+        },
+        {
+          "seq": 13,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "plan",
+          "status": "running",
+          "kind": "action.resuming",
+          "title": "Retomando a ação planejada",
+          "detail": "project_checks",
+          "payload": {
+            "tool": "project_checks"
+          }
+        },
+        {
+          "seq": 14,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "plan",
+          "status": "running",
+          "kind": "brain.action.validated",
+          "title": "Próxima ação validada pelo núcleo",
+          "detail": "Executar os checks reconhecidos do projeto e observar o resultado.",
+          "payload": {
+            "planId": "task-d9d37128-ea29-474f-9bed-452234bd35c1-plan-1",
+            "actionId": "action-7dc5a54e-0370-4033-8931-e8b765927684",
+            "state": "planning",
+            "capability": "project_checks",
+            "group": "checks",
+            "effect": "process_control",
+            "retryStrategy": "inspect_before_retry",
+            "risk": "medium",
+            "reversible": false
+          }
+        },
+        {
+          "seq": 15,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "act",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Executando ferramenta local",
+          "detail": "Executando a ação autorizada.",
+          "payload": {
+            "planId": "task-d9d37128-ea29-474f-9bed-452234bd35c1-plan-1",
+            "actionId": "action-7dc5a54e-0370-4033-8931-e8b765927684",
+            "tool": "project_checks",
+            "attempt": 1,
+            "expectedEffect": "Executar os checks reconhecidos do projeto e observar o resultado.",
+            "state": "executing",
+            "transition": {
+              "from": "planning",
+              "to": "executing"
+            }
+          }
+        },
+        {
+          "seq": 16,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "verify",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Conferindo resultado da ferramenta",
+          "detail": "Resultado bruto recebido; iniciando verificação.",
+          "payload": {
+            "planId": "task-d9d37128-ea29-474f-9bed-452234bd35c1-plan-1",
+            "actionId": "action-7dc5a54e-0370-4033-8931-e8b765927684",
+            "tool": "project_checks",
+            "ok": true,
+            "summary": "Ferramenta concluída.",
+            "evidence": [
+              "project_checks: Ferramenta concluída."
+            ],
+            "state": "verifying",
+            "transition": {
+              "from": "executing",
+              "to": "verifying"
+            }
+          }
+        },
+        {
+          "seq": 17,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "plan",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Planejando próxima ação",
+          "detail": "A ação foi verificada; o núcleo decidirá o próximo passo da tarefa.",
+          "payload": {
+            "planId": "task-d9d37128-ea29-474f-9bed-452234bd35c1-plan-1",
+            "state": "planning",
+            "transition": {
+              "from": "verifying",
+              "to": "planning"
+            }
+          }
+        },
+        {
+          "seq": 18,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.requested",
+          "title": "Consultando o planejador local",
+          "detail": "Ciclo 2 de 12.",
+          "payload": {
+            "step": 2,
+            "limit": 12
+          }
+        },
+        {
+          "seq": 19,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.finished",
+          "title": "Planejador encerrou o ciclo",
+          "detail": "Executei as verificações do projeto.\n\nVerificação: passou (`unittest`; `python3 -m unittest discover -s tests -p test*.py -v`) — código de saída 0 — 101 ms.\nEvidência observada: `test_addition (test_smoke.Smoke.test_addition) ... ok` · `Ran 1 test in 0.000s` · `OK`\nArquivos criados ou alterados: nenhuma escrita bem-sucedida foi registrada nesta execução.",
+          "payload": {
+            "backend": "agent-loop",
+            "traceId": "trace-a24a195708d442ee857f013dbb538454"
+          }
+        },
+        {
+          "seq": 20,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "verify",
+          "status": "completed",
+          "kind": "acceptance.evaluated",
+          "title": "Critérios de aceite satisfeitos",
+          "detail": "✓ delivery.summary: A tarefa precisa de uma síntese final baseada nos resultados observados.\n✓ testing.execution: É necessário executar um check e observar seu resultado.",
+          "payload": {
+            "checks": [
+              {
+                "id": "delivery.summary",
+                "passed": true,
+                "detail": "A tarefa precisa de uma síntese final baseada nos resultados observados."
+              },
+              {
+                "id": "testing.execution",
+                "passed": true,
+                "detail": "É necessário executar um check e observar seu resultado."
+              }
+            ]
+          }
+        },
+        {
+          "seq": 21,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "complete",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Preparando resposta",
+          "detail": "Critérios verificados; preparando a entrega.",
+          "payload": {
+            "state": "delivering",
+            "transition": {
+              "from": "planning",
+              "to": "delivering"
+            }
+          }
+        },
+        {
+          "seq": 22,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "complete",
+          "status": "completed",
+          "kind": "brain.state",
+          "title": "Etapa concluída",
+          "detail": "Tarefa concluída com evidência.",
+          "payload": {
+            "state": "completed",
+            "transition": {
+              "from": "delivering",
+              "to": "completed"
+            }
+          }
+        },
+        {
+          "seq": 23,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "learn",
+          "status": "completed",
+          "kind": "workflow.local.procedure.saved",
+          "title": "Trilha operacional registrada",
+          "detail": "Somente objetivo, sequência de ferramentas e estado de conclusão foram retidos."
+        },
+        {
+          "seq": 24,
+          "taskId": "task-d9d37128-ea29-474f-9bed-452234bd35c1",
+          "phase": "complete",
+          "status": "completed",
+          "kind": "task.completed",
+          "title": "Tarefa concluída"
+        }
+      ]
+    },
+    {
+      "case": "page",
+      "passed": true,
+      "seconds": 0.62,
+      "status": "completed",
+      "final_text": "Trechos obtidos da fonte consultada:\n\n> This domain is for use in documentation examples without needing permission. This is not a service, avoid relying on it for testing and monitoring purposes. Learn more\n\nFontes consultadas: https://example.com/",
+      "error": null,
+      "verification": null,
+      "events": [
+        {
+          "seq": 1,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "observe",
+          "status": "running",
+          "kind": "task.started",
+          "title": "Tarefa iniciada",
+          "detail": "Consulte https://example.com e diga o que encontrou."
+        },
+        {
+          "seq": 2,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "plan",
+          "status": "running",
+          "kind": "objective.selected",
+          "title": "Objetivo operacional selecionado",
+          "detail": "conversation",
+          "payload": {
+            "objective": "conversation",
+            "requestedObjective": "conversation"
+          }
+        },
+        {
+          "seq": 3,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "plan",
+          "status": "running",
+          "kind": "cognition.summary",
+          "title": "Thinking: rota e próximo passo",
+          "detail": "O pedido é conversacional; consultas podem apoiar a resposta sem autorizar alterações ou processos. Próxima etapa: Responder diretamente se houver informação suficiente; consultar fontes permitidas para esclarecer lacunas.",
+          "payload": {
+            "route": "conversation",
+            "personalityMode": "conversation",
+            "uncertainties": [],
+            "confidence": 0.86,
+            "confidenceBasis": "derived"
+          }
+        },
+        {
+          "seq": 4,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "learn",
+          "status": "completed",
+          "kind": "workflow.dataset.checked",
+          "title": "Precedentes procedurais consultados",
+          "detail": "Nenhum precedente revisado compatível; usando política operacional padrão.",
+          "payload": {
+            "trustedRecords": 0,
+            "rejectedRecords": 0,
+            "matchedRecords": []
+          }
+        },
+        {
+          "seq": 5,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "plan",
+          "status": "completed",
+          "kind": "operational.policy.selected",
+          "title": "Política de execução definida",
+          "detail": "Responder ao turno atual com evidências quando necessário; distinguir fatos e incertezas.",
+          "payload": {
+            "mode": "conversation",
+            "allowedTools": [
+              "search_web",
+              "open_page",
+              "list_sources",
+              "cite_sources",
+              "research_web"
+            ],
+            "maxActions": 6
+          }
+        },
+        {
+          "seq": 6,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "observe",
+          "status": "completed",
+          "kind": "requirements.analyzed",
+          "title": "Requisitos analisados",
+          "detail": "Ambiguidade 0.00",
+          "payload": {
+            "questions": [],
+            "missing": [],
+            "ambiguityScore": 0
+          }
+        },
+        {
+          "seq": 7,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "plan",
+          "status": "running",
+          "kind": "plan.created",
+          "title": "Plano criado",
+          "detail": "Avaliar se a resposta precisa de evidências adicionais."
+        },
+        {
+          "seq": 8,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.requested",
+          "title": "Consultando o planejador local",
+          "detail": "Ciclo 1 de 6.",
+          "payload": {
+            "step": 1,
+            "limit": 6
+          }
+        },
+        {
+          "seq": 9,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.proposed",
+          "title": "Próxima ferramenta proposta",
+          "detail": "Vou consultar uma fonte para responder.",
+          "payload": {
+            "tool": "open_page",
+            "backend": "cognitive-router",
+            "traceId": "trace-1d0229706be04592b13130bfccb3c27e"
+          }
+        },
+        {
+          "seq": 11,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "plan",
+          "status": "running",
+          "kind": "brain.action.validated",
+          "title": "Próxima ação validada pelo núcleo",
+          "detail": "Obter informação atual ou documentação externa.",
+          "payload": {
+            "planId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0-plan-1",
+            "actionId": "call-b2975fac03d24364bf687d6bd10638f5",
+            "state": "planning",
+            "capability": "open_page",
+            "group": "research",
+            "effect": "network_read",
+            "retryStrategy": "safe_read",
+            "risk": "low",
+            "reversible": true
+          }
+        },
+        {
+          "seq": 12,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "act",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Executando ferramenta local",
+          "detail": "Executando a ação autorizada.",
+          "payload": {
+            "planId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0-plan-1",
+            "actionId": "call-b2975fac03d24364bf687d6bd10638f5",
+            "tool": "open_page",
+            "attempt": 1,
+            "expectedEffect": "Obter informação atual ou documentação externa.",
+            "state": "executing",
+            "transition": {
+              "from": "planning",
+              "to": "executing"
+            }
+          }
+        },
+        {
+          "seq": 13,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "verify",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Conferindo resultado da ferramenta",
+          "detail": "Resultado bruto recebido; iniciando verificação.",
+          "payload": {
+            "planId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0-plan-1",
+            "actionId": "call-b2975fac03d24364bf687d6bd10638f5",
+            "tool": "open_page",
+            "ok": true,
+            "summary": "Ferramenta concluída.",
+            "evidence": [
+              "open_page: Ferramenta concluída."
+            ],
+            "state": "verifying",
+            "transition": {
+              "from": "executing",
+              "to": "verifying"
+            }
+          }
+        },
+        {
+          "seq": 14,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "plan",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Planejando próxima ação",
+          "detail": "A ação foi verificada; o núcleo decidirá o próximo passo da tarefa.",
+          "payload": {
+            "planId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0-plan-1",
+            "state": "planning",
+            "transition": {
+              "from": "verifying",
+              "to": "planning"
+            }
+          }
+        },
+        {
+          "seq": 15,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.requested",
+          "title": "Consultando o planejador local",
+          "detail": "Ciclo 2 de 6.",
+          "payload": {
+            "step": 2,
+            "limit": 6
+          }
+        },
+        {
+          "seq": 19,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "plan",
+          "status": "running",
+          "kind": "planner.finished",
+          "title": "Planejador encerrou o ciclo",
+          "detail": "Trechos obtidos da fonte consultada:\n\n> This domain is for use in documentation examples without needing permission. This is not a service, avoid relying on it for testing and monitoring purposes. Learn more\n\nFontes consultadas: https://example.com/",
+          "payload": {
+            "backend": "cognitive-router-evidence",
+            "traceId": "trace-6901f2c1278844ceaeb05e19dd64c6cf"
+          }
+        },
+        {
+          "seq": 20,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "verify",
+          "status": "completed",
+          "kind": "acceptance.evaluated",
+          "title": "Critérios de aceite satisfeitos",
+          "detail": "✓ conversation.response: A resposta ao turno precisa conter texto.\n✓ conversation.no_pending_action: Uma chamada proposta precisa ser resolvida antes da resposta final.",
+          "payload": {
+            "checks": [
+              {
+                "id": "conversation.response",
+                "passed": true,
+                "detail": "A resposta ao turno precisa conter texto."
+              },
+              {
+                "id": "conversation.no_pending_action",
+                "passed": true,
+                "detail": "Uma chamada proposta precisa ser resolvida antes da resposta final."
+              }
+            ]
+          }
+        },
+        {
+          "seq": 21,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "complete",
+          "status": "running",
+          "kind": "brain.state",
+          "title": "Preparando resposta",
+          "detail": "Critérios verificados; preparando a entrega.",
+          "payload": {
+            "state": "delivering",
+            "transition": {
+              "from": "planning",
+              "to": "delivering"
+            }
+          }
+        },
+        {
+          "seq": 22,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "complete",
+          "status": "completed",
+          "kind": "brain.state",
+          "title": "Etapa concluída",
+          "detail": "Tarefa concluída com evidência.",
+          "payload": {
+            "state": "completed",
+            "transition": {
+              "from": "delivering",
+              "to": "completed"
+            }
+          }
+        },
+        {
+          "seq": 23,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "learn",
+          "status": "completed",
+          "kind": "workflow.local.procedure.saved",
+          "title": "Trilha operacional registrada",
+          "detail": "Somente objetivo, sequência de ferramentas e estado de conclusão foram retidos."
+        },
+        {
+          "seq": 24,
+          "taskId": "task-073926f3-9ec6-467a-a236-ec5c4c5811b0",
+          "phase": "complete",
+          "status": "completed",
+          "kind": "task.completed",
+          "title": "Tarefa concluída"
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

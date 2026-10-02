@@ -1,0 +1,192 @@
+{
+  "schema": "brasa-baseline/v1",
+  "date": "2026-09-29",
+  "commit": "272b3d45f30f3bd2483ab46f8c68a0a25708d52d",
+  "working_tree_dirty": true,
+  "identity_limit": "Commit e hashes de componentes; o working tree completo não foi congelado.",
+  "sha256": {
+    "model/godmode/context-32768-v1/candidate.safetensors": "0aeafd6f3966c8c59548ca1bb386c87483c62eafe21e95d1cb89260741d1fee3",
+    "python/model_server.py": "5a53fd4b38aeaf49bf7db884eeccab6b4356fad4e4ad937f2ce3413c9270a89c",
+    "python/agent_planner.py": "f94352916348dd3388a0a80cff30327ac03c1e0fb07be0b3bf224a01dee99bf0",
+    "agent-core/src/agent.ts": "33719f4ff41c5cf8f575de877ad498826c9afb0b636cd669d80bdd1180e390ba",
+    "agent-core/src/task-acceptance.ts": "256e1defe385d985cb2f38efe902efa86a4b07f37eaca5410b1916f8a1246b1a",
+    "runtime/src/main.rs": "e44bd0526d094dd80d02b8eccb88a3b6eafaa9632293aa6940d287cbe84096c4"
+  },
+  "service": "http://127.0.0.1:3000/api/v1/agent/pursue",
+  "runs": [
+    {
+      "case": "budget-analysis",
+      "task_id": "task-de74ba1c-c4fc-4148-a337-af2d0b9be849",
+      "status": "completed",
+      "awaiting_approval": false,
+      "criteria": {
+        "purpose": true,
+        "source_files": true,
+        "usage_commands": true,
+        "documented_check": true
+      },
+      "passed": true,
+      "first_blocker": null,
+      "event_counts": {
+        "task.started": 1,
+        "objective.selected": 1,
+        "cognition.summary": 1,
+        "workflow.dataset.checked": 1,
+        "operational.policy.selected": 1,
+        "requirements.analyzed": 1,
+        "runtime.capabilities.observed": 1,
+        "workspace.selected": 1,
+        "memory.updated": 1,
+        "workspace.inspected": 1,
+        "plan.created": 1,
+        "analysis.scope.selected": 1,
+        "objective.action.selected": 1,
+        "action.resuming": 3,
+        "analysis.file.read": 3,
+        "brain.action.validated": 3,
+        "brain.state": 11,
+        "analysis.read.queued": 2,
+        "planner.requested": 1,
+        "planner.finished": 1,
+        "acceptance.evaluated": 1,
+        "workflow.local.procedure.saved": 1,
+        "task.completed": 1
+      },
+      "final_text": "Conclusão provisória sobre **budget**: A documentação do projeto o descreve como: “A tiny local command-line helper for recording expenses in `expenses.json` and reporting the total. Requires Python 3 and has no third-party dependencies.”.\n\nInventário observado: 3 arquivo(s), 0 manifesto(s) e 0 ponto(s) de entrada reconhecido(s).\n\nArquivos cujo conteúdo foi lido: `README.md`, `tests/test_expense_app.py`, `expense_app.py`.\n\nStack indicada pelos manifestos e extensões: Python.\n\nNão encontrei manifesto de dependências reconhecido; isso, isoladamente, não indica falha — projetos que usam apenas a biblioteca padrão podem não precisar dele.\n\nComandos de uso da aplicação documentados:\n- `README.md:5: python3 expense_app.py add \"Lunch\" 12.50`\n- `README.md:5: python3 expense_app.py total`\n\nVerificações documentadas (os comandos abaixo são referências; só foram executados se houver evidência explícita):\n- `README.md:5: python3 -m unittest discover -s tests`\n\nEvidências observadas:\n- `tests/test_expense_app.py:9: class ExpenseAppTests(unittest.TestCase):`\n- `expense_app.py:25: def main():`\n\nInventário observado no workspace:\n\nPastas encontradas (1):\n- `tests/`\n\nArquivos encontrados (3):\n- `expense_app.py`\n- `README.md`\n- `tests/test_expense_app.py`\n\nPastas ocultas são listadas pelo nome, mas não percorridas; caches, dependências e diretórios de build são filtrados.",
+      "workspace_files_after": [
+        "README.md",
+        "expense_app.py",
+        "tests/test_expense_app.py"
+      ]
+    },
+    {
+      "case": "water-build",
+      "task_id": "task-df8145a2-e9f7-40fa-87dc-ecce2d20eb5e",
+      "status": "blocked",
+      "awaiting_approval": false,
+      "criteria": {
+        "changed_files": false,
+        "verification_passed": false
+      },
+      "passed": false,
+      "first_blocker": "proposal_generation",
+      "event_counts": {
+        "task.started": 1,
+        "objective.selected": 1,
+        "cognition.summary": 1,
+        "workflow.dataset.checked": 1,
+        "operational.policy.selected": 1,
+        "requirements.analyzed": 1,
+        "runtime.capabilities.observed": 1,
+        "workspace.selected": 1,
+        "memory.updated": 1,
+        "workspace.inspected": 1,
+        "plan.created": 1,
+        "engineering.preparation.selected": 1,
+        "planner.requested": 2,
+        "planner.finished": 2,
+        "planner.recovery.requested": 1,
+        "brain.state": 3,
+        "acceptance.evaluated": 1,
+        "acceptance.failed": 1
+      },
+      "final_text": "O gerador local não produziu uma proposta estruturada. Não há receita determinística compatível com este pedido. Nenhum arquivo foi alterado. Se você já tiver o código, envie dois ou mais arquivos como títulos `### caminho` seguidos de blocos de código; o agente poderá propor a criação desses arquivos para aprovação e depois verificar o projeto.",
+      "workspace_files_after": []
+    },
+    {
+      "case": "reading-analysis",
+      "task_id": "task-3aff3193-5b0c-431a-b898-60f48cae7b51",
+      "status": "completed",
+      "awaiting_approval": false,
+      "criteria": {
+        "storage_key": true,
+        "load": true,
+        "save": true,
+        "read_state": true
+      },
+      "passed": true,
+      "first_blocker": null,
+      "event_counts": {
+        "task.started": 1,
+        "objective.selected": 1,
+        "cognition.summary": 1,
+        "workflow.dataset.checked": 1,
+        "operational.policy.selected": 1,
+        "requirements.analyzed": 1,
+        "runtime.capabilities.observed": 1,
+        "workspace.selected": 1,
+        "memory.updated": 1,
+        "workspace.inspected": 1,
+        "plan.created": 1,
+        "analysis.scope.selected": 1,
+        "objective.action.selected": 1,
+        "action.resuming": 2,
+        "analysis.file.read": 2,
+        "brain.action.validated": 2,
+        "brain.state": 8,
+        "analysis.read.queued": 1,
+        "planner.requested": 1,
+        "planner.finished": 1,
+        "acceptance.evaluated": 1,
+        "workflow.local.procedure.saved": 1,
+        "task.completed": 1
+      },
+      "final_text": "Conclusão provisória sobre **reading**: A documentação do projeto o descreve como: “A tiny browser reading list. Open `index.html` directly. The page stores book titles and read status in localStorage. There are no dependencies. This project currently has no automated test suite.”.\n\nInventário observado: 4 arquivo(s), 0 manifesto(s) e 0 ponto(s) de entrada reconhecido(s).\n\nArquivos cujo conteúdo foi lido: `README.md`, `app.js`.\n\nNão encontrei manifesto de dependências reconhecido; isso, isoladamente, não indica falha — projetos que usam apenas a biblioteca padrão podem não precisar dele.\n\nPersistência e estado observados no código: `localStorage.getItem` lê os dados e `localStorage.setItem` os grava quando essas chamadas aparecem abaixo. As linhas de atribuição mostram quais campos são alterados; a execução no navegador não foi testada nesta análise.\n- `app.js:1: const STORAGE_KEY = \"reading-shelf-books\";`\n- `app.js:6: let books = JSON.parse(localStorage.getItem(STORAGE_KEY) || \"[]\");`\n- `app.js:9: localStorage.setItem(STORAGE_KEY, JSON.stringify(books));`\n- `app.js:24: book.read = read.checked;`\n\nEvidências observadas:\n- `app.js:12: function render() {`\n- `app.js:38: render();`\n\nNão encontrei arquivos de teste na inspeção estrutural; não executei o projeto nesta análise.\n\nInventário observado no workspace:\n\nPastas encontradas (0):\n- (nenhum encontrado)\n\nArquivos encontrados (4):\n- `app.js`\n- `index.html`\n- `README.md`\n- `styles.css`\n\nPastas ocultas são listadas pelo nome, mas não percorridas; caches, dependências e diretórios de build são filtrados.",
+      "workspace_files_after": [
+        "README.md",
+        "app.js",
+        "index.html",
+        "styles.css"
+      ]
+    },
+    {
+      "case": "reading-build",
+      "task_id": "task-8119fe94-3427-46a9-abf5-f31ecc0b6393",
+      "status": "blocked",
+      "awaiting_approval": false,
+      "criteria": {
+        "changed_files": false,
+        "verification_passed": false
+      },
+      "passed": false,
+      "first_blocker": "proposal_generation",
+      "event_counts": {
+        "task.started": 1,
+        "objective.selected": 1,
+        "cognition.summary": 1,
+        "workflow.dataset.checked": 1,
+        "operational.policy.selected": 1,
+        "requirements.analyzed": 1,
+        "runtime.capabilities.observed": 1,
+        "workspace.selected": 1,
+        "memory.updated": 1,
+        "workspace.inspected": 1,
+        "plan.created": 1,
+        "engineering.preparation.selected": 1,
+        "objective.action.selected": 1,
+        "brain.state": 10,
+        "action.resuming": 2,
+        "brain.action.validated": 2,
+        "engineering.context.observed": 2,
+        "planner.requested": 2,
+        "planner.finished": 2,
+        "planner.recovery.requested": 1,
+        "acceptance.evaluated": 1,
+        "acceptance.failed": 1
+      },
+      "final_text": "O gerador local não produziu uma proposta estruturada. Não há receita determinística compatível com este pedido. Nenhum arquivo foi alterado. Se você já tiver o código, envie dois ou mais arquivos como títulos `### caminho` seguidos de blocos de código; o agente poderá propor a criação desses arquivos para aprovação e depois verificar o projeto.",
+      "workspace_files_after": [
+        "README.md",
+        "app.js",
+        "index.html",
+        "styles.css"
+      ]
+    }
+  ],
+  "diagnostic_analysis_passed": 2,
+  "diagnostic_analysis_total": 2,
+  "build_passed": 0,
+  "build_total": 2,
+  "product_tasks_passed": 1,
+  "product_tasks_total": 3
+}

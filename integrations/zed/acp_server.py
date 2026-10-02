@@ -271,8 +271,8 @@ class AcpServer:
                 "sessionId": session.session_id,
                 "toolCall": {
                     "toolCallId": tool_call_id,
-                    "title": f"Alterar arquivos com {tool}",
-                    "kind": "edit",
+                    "title": f"Autorizar ação do AgentCore: {tool}",
+                    "kind": self.tool_kind(tool),
                     "status": "pending",
                     "rawInput": arguments,
                 },
@@ -437,41 +437,8 @@ class AcpServer:
             })
             return failure, {"tool": tool, "ok": False, "error": str(exc)}
 
-    def continue_agent(self, session: Session, request_id: Any, message_id: str, tool_result: dict[str, Any], depth: int = 0) -> None:
-        """Feed a structured tool result back into the same agent session."""
-        if depth >= 6:
-            return
-        with self.state_lock:
-            session.history.append({"role": "tool", "content": json.dumps(tool_result, ensure_ascii=False)})
-            history = list(session.history)
-        data = self.call_chat(history, session.cancel_event)
-        requested = data.get("tool_call") or {}
-        if requested.get("tool"):
-            next_tool = requested["tool"]
-            answer, raw_result = self.run_workspace_tool(session, next_tool, requested.get("arguments") or {}, message_id)
-            if data.get("trace_id"):
-                raw_result["trace_id"] = data["trace_id"]
-            with self.state_lock:
-                session.history.append({"role": "assistant", "content": answer})
-            self.update(session.session_id, {
-                "sessionUpdate": "agent_message_chunk",
-                "messageId": message_id,
-                "content": {"type": "text", "text": answer},
-            })
-            self.continue_agent(session, request_id, message_id, raw_result, depth + 1)
-            return
-        answer = str(data.get("text") or data.get("error") or "A etapa foi concluída.")
-        with self.state_lock:
-            session.history.append({"role": "assistant", "content": answer})
-        self.update(session.session_id, {
-            "sessionUpdate": "agent_message_chunk",
-            "messageId": message_id,
-            "content": {"type": "text", "text": answer},
-        })
-
     def process_prompt(self, session: Session, request_id: Any, prompt: list[Any]) -> None:
         message = self.prompt_text(prompt, session.cwd)
-        direct_text = self.direct_text_blocks(prompt)
         if not message:
             self.error(request_id, -32602, "a mensagem precisa conter texto ou contexto legível")
             return
@@ -488,54 +455,79 @@ class AcpServer:
         })
 
         try:
-            self.call_tool("set_workspace", {"path": session.cwd})
             with self.state_lock:
-                session.history.append({"role": "user", "content": message})
                 history = list(session.history)
-            # O Zed pode anexar o diretório/projeto como resource_link. O texto
-            # digitado precisa ser roteado isoladamente, sem o rótulo do anexo.
-            detected = next((self.detect_tool(text) for text in direct_text if self.detect_tool(text)), None)
-            if detected:
-                tool, arguments = detected
-                answer, raw_result = self.run_workspace_tool(session, tool, arguments, message_id)
-                with self.state_lock:
-                    session.history.append({"role": "assistant", "content": answer})
-                self.update(session.session_id, {
-                    "sessionUpdate": "agent_message_chunk",
-                    "messageId": message_id,
-                    "content": {"type": "text", "text": answer},
-                })
-                self.update(session.session_id, {
-                    "sessionUpdate": "plan",
-                    "entries": [{"content": "Executar a ferramenta solicitada no workspace", "priority": "high", "status": "completed"}],
-                })
-                self.continue_agent(session, request_id, message_id, raw_result)
-                self.response(request_id, {"stopReason": "end_turn"})
-                return
-            data = self.call_chat(history, session.cancel_event)
-            if session.cancel_event.is_set():
-                self.response(request_id, {"stopReason": "cancelled"})
-                return
-            if (data.get("tool_call") or {}).get("tool"):
-                requested = data["tool_call"]
-                answer, raw_result = self.run_workspace_tool(session, requested["tool"], requested.get("arguments") or {}, message_id)
-                if data.get("trace_id"):
-                    raw_result["trace_id"] = data["trace_id"]
-                with self.state_lock:
-                    session.history.append({"role": "assistant", "content": answer})
-                self.update(session.session_id, {
-                    "sessionUpdate": "agent_message_chunk",
-                    "messageId": message_id,
-                    "content": {"type": "text", "text": answer},
-                })
-                self.update(session.session_id, {
-                    "sessionUpdate": "plan",
-                    "entries": [{"content": "Interpretar a intenção e executar a ferramenta escolhida", "priority": "high", "status": "completed"}],
-                })
-                self.continue_agent(session, request_id, message_id, raw_result)
-                self.response(request_id, {"stopReason": "end_turn"})
-                return
-            answer = str(data.get("text") or data.get("error") or "Não consegui obter uma resposta do runtime local.")
+                session.history.append({"role": "user", "content": message})
+            operation_id = f"agent-core-zed-{uuid.uuid4().hex}"
+            approved = False
+            pending_tool_call_id: str | None = None
+            pending_diff_content: list[dict[str, Any]] = []
+            answer = ""
+            final_status = "blocked"
+            for _ in range(12):
+                data = self.call_agent(message, session.cwd, history, approved, operation_id, session.cancel_event)
+                if session.cancel_event.is_set():
+                    self.response(request_id, {"stopReason": "cancelled"})
+                    return
+                report = data.get("report") or {}
+                approval = next((event for event in reversed(report.get("events") or [])
+                                 if event.get("kind") == "approval.required"), None)
+                if data.get("awaitingApproval") is True and report.get("status") == "blocked" and approval:
+                    if pending_tool_call_id:
+                        self.update(session.session_id, {
+                            "sessionUpdate": "tool_call_update", "toolCallId": pending_tool_call_id,
+                            "status": "completed",
+                            "content": [*pending_diff_content, {"type": "content", "content": {
+                                "type": "text", "text": "A ação aprovada foi observada pelo AgentCore; a tarefa avançou para a próxima autorização.",
+                            }}],
+                        })
+                    payload = approval.get("payload") or {}
+                    tool = str(payload.get("tool") or "ação")
+                    pending_tool_call_id = f"agent-call-{uuid.uuid4().hex}"
+                    self.update(session.session_id, {
+                        "sessionUpdate": "tool_call",
+                        "toolCallId": pending_tool_call_id,
+                        "title": f"AgentCore solicita {tool}",
+                        "kind": self.tool_kind(tool),
+                        "status": "pending",
+                        "rawInput": payload,
+                    })
+                    pending_diff_content = self.agent_approval_diff(session, payload)
+                    if pending_diff_content:
+                        self.update(session.session_id, {
+                            "sessionUpdate": "tool_call_update",
+                            "toolCallId": pending_tool_call_id,
+                            "content": pending_diff_content,
+                        })
+                    if not self.request_permission(session, pending_tool_call_id, tool, payload):
+                        answer = "A ação foi recusada; nenhum efeito pendente foi executado."
+                        self.update(session.session_id, {
+                            "sessionUpdate": "tool_call_update", "toolCallId": pending_tool_call_id,
+                            "status": "failed", "content": [{"type": "content", "content": {"type": "text", "text": answer}}],
+                        })
+                        break
+                    self.update(session.session_id, {
+                        "sessionUpdate": "tool_call_update", "toolCallId": pending_tool_call_id,
+                        "status": "in_progress",
+                    })
+                    approved = True
+                    continue
+                answer = self.format_agent_report(report)
+                final_status = str(report.get("status") or "blocked")
+                if pending_tool_call_id:
+                    action_completed = any(
+                        event.get("kind") == "mutation.effect.observed"
+                        for event in report.get("events") or []
+                    )
+                    self.update(session.session_id, {
+                        "sessionUpdate": "tool_call_update", "toolCallId": pending_tool_call_id,
+                        "status": "completed" if action_completed else "failed",
+                        "content": [*pending_diff_content, {"type": "content", "content": {"type": "text", "text": answer}}],
+                    })
+                self.emit_agent_tool_events(session, report, pending_tool_call_id)
+                break
+            if not answer:
+                answer = "O AgentCore atingiu o limite de aprovações encadeadas sem produzir uma entrega."
             with self.state_lock:
                 session.history.append({"role": "assistant", "content": answer})
             self.update(session.session_id, {
@@ -545,7 +537,7 @@ class AcpServer:
             })
             self.update(session.session_id, {
                 "sessionUpdate": "plan",
-                "entries": [{"content": "Consultar o runtime local e preparar a resposta", "priority": "high", "status": "completed"}],
+                "entries": [{"content": "Executar pelo AgentCore e validar a entrega", "priority": "high", "status": "completed" if final_status == "completed" else "failed"}],
             })
             self.response(request_id, {"stopReason": "end_turn"})
         except Exception as exc:  # O Zed deve receber uma resposta legível mesmo quando o runtime cai.
@@ -562,20 +554,67 @@ class AcpServer:
                 })
                 self.response(request_id, {"stopReason": "end_turn"})
 
-    def call_chat(self, messages: list[dict[str, str]], cancel_event: threading.Event) -> dict[str, Any]:
+    @staticmethod
+    def format_agent_report(report: dict[str, Any]) -> str:
+        text = str(report.get("finalText") or report.get("error") or "").strip()
+        if text:
+            return text
+        status = str(report.get("status") or "blocked")
+        return f"O AgentCore encerrou com estado `{status}` sem uma síntese final."
+
+    @staticmethod
+    def agent_approval_diff(session: Session, payload: dict[str, Any]) -> list[dict[str, Any]]:
+        rows: list[dict[str, Any]] = []
+        direct = payload.get("fileDiff")
+        if isinstance(direct, dict):
+            rows.append({"type": "diff", "path": str((Path(session.cwd) / str(direct.get("path") or "")).resolve()),
+                         "oldText": direct.get("oldText"), "newText": str(direct.get("newText") or "")})
+        repair = payload.get("repairDiff")
+        if isinstance(repair, dict):
+            rows.append({"type": "diff", "path": str((Path(session.cwd) / str(repair.get("path") or "")).resolve()),
+                         "oldText": str(repair.get("oldText") or ""), "newText": str(repair.get("newText") or "")})
+        for operation in payload.get("batchPreview") or []:
+            if not isinstance(operation, dict):
+                continue
+            arguments = operation.get("arguments") or {}
+            path = str(arguments.get("path") or "")
+            if not path:
+                continue
+            rows.append({"type": "diff", "path": str((Path(session.cwd) / path).resolve()),
+                         "oldText": None if operation.get("tool") == "create_file" else str(arguments.get("old_text") or ""),
+                         "newText": str(arguments.get("content") if operation.get("tool") == "create_file" else arguments.get("new_text") or "")})
+        return rows
+
+    def emit_agent_tool_events(self, session: Session, report: dict[str, Any], excluded_call_id: str | None) -> None:
+        for event in report.get("events") or []:
+            if event.get("kind") != "objective.action.selected":
+                continue
+            payload = event.get("payload") or {}
+            tool = str(payload.get("tool") or event.get("detail") or "ferramenta")
+            call_id = f"agent-event-{uuid.uuid4().hex}"
+            if call_id == excluded_call_id:
+                continue
+            self.update(session.session_id, {"sessionUpdate": "tool_call", "toolCallId": call_id,
+                "title": f"AgentCore executou {tool}", "kind": self.tool_kind(tool), "status": "in_progress", "rawInput": {"tool": tool}})
+            self.update(session.session_id, {"sessionUpdate": "tool_call_update", "toolCallId": call_id,
+                "status": "completed", "content": [{"type": "content", "content": {"type": "text", "text": str(event.get("detail") or event.get("title") or tool)}}]})
+
+    def call_agent(self, prompt: str, workspace: str, history: list[dict[str, str]], approved: bool,
+                   operation_id: str, cancel_event: threading.Event) -> dict[str, Any]:
         if cancel_event.is_set():
             raise RuntimeError("requisição cancelada")
-        payload = json.dumps({"request_id": f"acp-{uuid.uuid4().hex}", "messages": messages}).encode()
+        payload = json.dumps({"prompt": prompt, "objective": "auto", "workspaceRoot": workspace,
+                              "history": history[-32:], "approved": approved, "operationId": operation_id}).encode()
         request = urllib.request.Request(
-            f"{RUNTIME}/api/chat",
+            f"{RUNTIME}/api/v1/agent/pursue",
             data=payload,
             headers={"content-type": "application/json"},
             method="POST",
         )
-        with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT) as response:
+        with urllib.request.urlopen(request, timeout=900) as response:
             data = json.loads(response.read().decode())
         if not data.get("ok"):
-            raise RuntimeError(data.get("error") or "runtime local recusou a mensagem")
+            raise RuntimeError(data.get("error") or "AgentCore recusou a mensagem")
         return data
 
     def call_tool(self, tool: str, arguments: dict[str, Any]) -> dict[str, Any]:

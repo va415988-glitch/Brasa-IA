@@ -16,10 +16,11 @@ from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 from build_knowledge_index import tokens, usable_row, topic_matches, subject_tokens
-from source_evidence import assess_sources, source_priority
+from source_evidence import assess_sources, source_priority, topic_context_matches
 from agent_state import AgentState, canonical_topic as state_canonical_topic
 from skill_lab import run as run_skill_lab
 from curriculum import build as build_curriculum, gaps as curriculum_gaps
+from competency import learning_contract
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -219,7 +220,7 @@ def update(job_id: str, progress: int, message: str, **fields) -> None:
         job["logs"].append({"at": round(time.time()), "message": message})
 
 
-def start(topic: str) -> dict:
+def start(topic: str, *, budget: dict | object | None = None) -> dict:
     source_url = source_url_from_topic(topic)
     topic = canonical_topic(topic)
     if not 1 <= len(topic) <= 100 or any(ch in topic for ch in "\r\n\0"):
@@ -231,13 +232,13 @@ def start(topic: str) -> dict:
                         "source_url": source_url,
                         "sources": [], "documents_added": 0}
     AGENT_STATE.learning_started(topic)
-    threading.Thread(target=_run, args=(job_id, topic, source_url), daemon=True).start()
+    threading.Thread(target=_run, args=(job_id, topic, source_url, budget), daemon=True).start()
     return snapshot(job_id)
 
 
-def _research(query: str, topic: str, source_url: str | None = None) -> dict:
+def _research(query: str, topic: str, source_url: str | None = None, *, max_results: int = 3) -> dict:
     body = json.dumps({"query": query, "topic": topic, "source_url": source_url,
-                       "max_results": 3, "save_to_corpus": False}).encode()
+                       "max_results": max(1, min(12, int(max_results))), "save_to_corpus": False}).encode()
     request = Request("http://127.0.0.1:3000/api/v1/research", data=body,
                       headers={"Content-Type": "application/json"}, method="POST")
     with urlopen(request, timeout=45) as response:
@@ -268,6 +269,49 @@ def _rebuild_index(rows: list[dict]) -> None:
     temporary.replace(INDEX)
 
 
+
+def register_research_result(topic: str, pages: list[dict], *, search_query: str | None = None,
+                             source_repository: str | None = None,
+                             max_practice_tasks: int | None = None) -> dict:
+    """Converte pesquisa concluída em evidência e prática, sem autoaprovação.
+
+    Esta função é usada tanto pelo botão de aprendizado quanto pelo chat. O
+    histórico da ferramenta deixa de ser apenas uma citação: fontes válidas
+    atualizam a competência, o laboratório executa o que puder ser executado e
+    o restante fica como contrato de prática revisável.
+    """
+    topic = canonical_topic(topic)
+    evidence = assess_sources(topic, pages)
+    allowed = {item.get("url") for item in evidence.get("sources", [])}
+    accepted = [page for page in pages if isinstance(page, dict) and page.get("url") in allowed]
+    if not accepted:
+        return {"status": evidence.get("status", "unverified"), "topic": topic,
+                "evidence": evidence, "skill": None, "laboratory": None}
+    sources = [{"title": page.get("title"), "url": page.get("url")} for page in accepted]
+    curriculum = build_curriculum(topic, accepted)
+    contract = learning_contract(topic, search_query or topic, accepted)
+    skill = AGENT_STATE.record_research(
+        topic, sources=sources, independent_hosts=evidence["independent_hosts"],
+        documents=len(accepted), status=evidence["status"],
+        gaps=curriculum_gaps(curriculum), curriculum=curriculum,
+        learning_plan=contract, source_repository=source_repository,
+    )
+    if max_practice_tasks is None:
+        laboratory = run_skill_lab(topic, curriculum=curriculum)
+    else:
+        laboratory = run_skill_lab(topic, curriculum=curriculum,
+                                   max_tasks=max(1, int(max_practice_tasks)))
+    for task in laboratory.get("tasks", []):
+        if "passed" not in task:
+            continue
+        skill = AGENT_STATE.record_lab_check(
+            topic, task=task.get("name", "practice"), passed=bool(task.get("passed")),
+            evidence=f"{' '.join(task.get('command', []))}; {task.get('diagnosis', '')}",
+            level=task.get("level"),
+        )
+    return {"status": evidence.get("status"), "topic": topic, "evidence": evidence,
+            "skill": AGENT_STATE.get(topic), "laboratory": laboratory}
+
 def persist_pages(pages: list[dict], topic: str, category: str = "proactive-learning", search_query: str | None = None) -> int:
     """Persiste páginas já coletadas e reconstrói o índice de forma atômica."""
     query = search_query or topic
@@ -287,7 +331,8 @@ def persist_pages(pages: list[dict], topic: str, category: str = "proactive-lear
             if allowed is not None and (url not in allowed or url in warned):
                 continue
             title = str(page.get("title") or topic)[:200]
-            if not topic_matches(query, title, url, require_all=False):
+            if (not topic_matches(query, title, url, require_all=False)
+                    or not topic_context_matches(query, title, content)):
                 continue
             if not (set(subject_tokens(query)) & set(subject_tokens(content))):
                 continue
@@ -318,13 +363,35 @@ def persist_pages(pages: list[dict], topic: str, category: str = "proactive-lear
         return len(fresh)
 
 
-def _run(job_id: str, topic: str, source_url: str | None = None) -> None:
+def _run(job_id: str, topic: str, source_url: str | None = None,
+         budget: dict | object | None = None) -> None:
     try:
         pages = []
         errors = []
-        search_plan = (f"{topic} official documentation", None, f"{topic} official project site documentation",
-                       f"{topic} reference guide {topic.lower().replace(' ', '-')}.org")
+        budgeted = budget is not None
+
+        def budget_value(name: str, fallback: int) -> int:
+            if isinstance(budget, dict):
+                value = budget.get(name, fallback)
+            else:
+                value = getattr(budget, name, fallback) if budget is not None else fallback
+            try:
+                return max(1, int(value))
+            except (TypeError, ValueError):
+                return fallback
+
+        max_source_pages = budget_value("max_source_pages", 6)
+        max_new_documents = budget_value("max_new_documents", 6)
+        max_practice_tasks = budget_value("max_practice_tasks", 16)
+        max_tool_steps = budget_value("max_tool_steps", 24)
+        max_research_calls = max(1, max_tool_steps // 6)
+        base_search_plan = (f"{topic} official documentation", None,
+                            f"{topic} official project site documentation",
+                            f"{topic} reference guide {topic.lower().replace(' ', '-')}.org")
+        max_searches = min(len(base_search_plan), max_research_calls, max_source_pages) if budgeted else len(base_search_plan)
+        search_plan = base_search_plan[:max(1, max_searches)]
         total_searches = len(search_plan)
+        research_calls = 0
         catalog_repositories = [] if source_url else curated_repository_urls(topic)
         for number, query in enumerate(search_plan, 1):
             progress = min(70, 10 + round(number * 60 / total_searches))
@@ -341,8 +408,20 @@ def _run(job_id: str, topic: str, source_url: str | None = None) -> None:
                 # documentação e fontes independentes.
                 repository = catalog_repositories[0] if number == 1 and catalog_repositories else None
                 selected_source = source_url or repository
-                result = _research(query, topic, selected_source) if selected_source else _research(query, topic)
-                pages.extend(page for page in result.get("pages", []) if page.get("text"))
+                remaining_pages = max_source_pages - len(pages) if budgeted else None
+                if budgeted and remaining_pages <= 0:
+                    update(job_id, progress, "Orçamento de páginas atingido; encerrando coleta.")
+                    break
+                if budgeted:
+                    research_calls += 1
+                    result = (_research(query, topic, selected_source, max_results=min(3, remaining_pages))
+                              if selected_source else _research(query, topic, max_results=min(3, remaining_pages)))
+                else:
+                    result = _research(query, topic, selected_source) if selected_source else _research(query, topic)
+                new_pages = [page for page in result.get("pages", []) if page.get("text")]
+                if budgeted:
+                    new_pages = new_pages[:remaining_pages]
+                pages.extend(new_pages)
                 update(job_id, progress, f"Pesquisa {number}/{total_searches}: {len(result.get('pages', []))} página(s) abertas; {len(result.get('search_results', []))} resultado(s) encontrados.")
                 for attempt in (result.get('attempts') or [])[:8]:
                     target = str(attempt.get('url') or attempt.get('query') or '')[:150]
@@ -352,6 +431,22 @@ def _run(job_id: str, topic: str, source_url: str | None = None) -> None:
             except Exception as error:
                 errors.append(str(error))
                 update(job_id, progress, f"Pesquisa {number}/{total_searches} falhou: {error}")
+        if budgeted:
+            # A aproximação conservadora de quatro caracteres por token impede
+            # que o ciclo carregue um contexto maior do que o previsto.
+            context_chars = max(4096, budget_value("max_context_tokens", 24000) * 4)
+            bounded_pages = []
+            used_chars = 0
+            for page in pages:
+                remaining_chars = context_chars - used_chars
+                if remaining_chars <= 0:
+                    break
+                bounded = dict(page)
+                bounded["text"] = str(page.get("text") or "")[:remaining_chars]
+                bounded_pages.append(bounded)
+                used_chars += len(bounded["text"])
+            pages = bounded_pages
+            update(job_id, 74, f"Contexto limitado ao orçamento do ciclo: aproximadamente {used_chars // 4} token(s).")
         update(job_id, 75, "Validando conteúdo, origem e removendo duplicatas.")
         preliminary = assess_sources(topic, pages)
         allowed = {item['url'] for item in preliminary['sources']}
@@ -363,7 +458,8 @@ def _run(job_id: str, topic: str, source_url: str | None = None) -> None:
             if url in allowed and url not in warned and url not in seen_urls:
                 reviewed.append(page)
                 seen_urls.add(url)
-        reviewed = reviewed[:48] if source_url else reviewed[:6]
+        review_limit = max_source_pages if budgeted else (48 if source_url else 6)
+        reviewed = reviewed[:review_limit]
         evidence = assess_sources(topic, reviewed)
         update(job_id, 82, f"{len(reviewed)} fonte(s) passaram na validação; {evidence['independent_hosts']} origem(ns) distinta(s).")
         with LOCK:
@@ -378,7 +474,7 @@ def _run(job_id: str, topic: str, source_url: str | None = None) -> None:
                 if len(content) < 300 or not url.startswith(("https://", "http://")):
                     continue
                 title = str(page.get("title") or topic)[:200]
-                if not topic_matches(topic, title, url):
+                if not topic_matches(topic, title, url) or not topic_context_matches(topic, title, content):
                     continue
                 accepted.append(page)
                 text = f"{title}\n\n{content}"
@@ -387,6 +483,8 @@ def _run(job_id: str, topic: str, source_url: str | None = None) -> None:
                     continue
                 known.add(digest)
                 known_urls.add(url)
+                if budgeted and len(fresh) >= max_new_documents:
+                    break
                 fresh.append({"id": f"doc-{digest[:16]}", "text": text, "source": url,
                               "url": url, "license": "unknown-review-required", "language": "und",
                               "category": f"learned/{topic}", "topic": topic, "sha256": digest,
@@ -413,11 +511,13 @@ def _run(job_id: str, topic: str, source_url: str | None = None) -> None:
         confidence = 'fontes independentes' if evidence['status'] == 'corroborated' else 'evidência provisória; confirme a origem antes de usar'
         detected_evidence = technology_evidence(reviewed) if source_url else {}
         detected = list(detected_evidence)
+        curriculum = build_curriculum(topic, reviewed)
+        contract = learning_contract(topic, topic, reviewed)
         skill = AGENT_STATE.record_research(
             topic, sources=sources, independent_hosts=evidence['independent_hosts'],
             documents=len(accepted), status=evidence['status'],
-            gaps=curriculum_gaps(curriculum := build_curriculum(topic, reviewed)),
-            curriculum=curriculum, source_repository=source_url,
+            gaps=curriculum_gaps(curriculum), curriculum=curriculum,
+            learning_plan=contract, source_repository=source_url,
             technologies=detected,
             technology_evidence=detected_evidence,
         )
@@ -426,9 +526,24 @@ def _run(job_id: str, topic: str, source_url: str | None = None) -> None:
         if source_url and detected:
             update(job_id, 85, f"Ampliando a pesquisa com documentação oficial para {len(detected)} tecnologia(s) detectada(s).")
             for technology in detected:
+                if budgeted and research_calls >= max_research_calls:
+                    update(job_id, 86, "Orçamento de chamadas atingido; documentação derivada ficará para outro ciclo.")
+                    break
                 try:
-                    official = _research(f"{technology} official documentation", technology).get('pages', [])
+                    if budgeted:
+                        remaining_pages = max_source_pages - len(pages)
+                        if remaining_pages <= 0:
+                            break
+                        research_calls += 1
+                        official_result = _research(f"{technology} official documentation", technology,
+                                                    max_results=min(3, remaining_pages))
+                    else:
+                        official_result = _research(f"{technology} official documentation", technology)
+                    official = official_result.get('pages', [])
                     official = [page for page in official if page.get('text')]
+                    if budgeted:
+                        official = official[:remaining_pages]
+                        pages.extend(official)
                     if official:
                         technology_pages[technology].extend(official)
                         persist_pages(official, technology, category=f"learned/{technology}",
@@ -460,17 +575,27 @@ def _run(job_id: str, topic: str, source_url: str | None = None) -> None:
         update(job_id, 90, "Iniciando laboratório prático isolado; nenhum código baixado será executado.")
         practice_topics = detected or [topic]
         laboratories = {}
+        remaining_practice_tasks = max_practice_tasks
         for practice_topic in practice_topics:
+            if budgeted and remaining_practice_tasks <= 0:
+                update(job_id, 98, "Orçamento de práticas atingido; lacunas restantes serão retomadas depois.")
+                break
             practice_curriculum = curriculum if practice_topic == topic else technology_curricula.get(
                 practice_topic, build_curriculum(practice_topic, technology_pages.get(practice_topic, reviewed)))
-            current_lab = run_skill_lab(practice_topic, curriculum=practice_curriculum)
+            if budgeted:
+                current_lab = run_skill_lab(practice_topic, curriculum=practice_curriculum,
+                                            max_tasks=remaining_practice_tasks)
+            else:
+                current_lab = run_skill_lab(practice_topic, curriculum=practice_curriculum)
             laboratories[practice_topic] = current_lab
+            if budgeted:
+                remaining_practice_tasks = max(0, remaining_practice_tasks - int(current_lab.get('total', 0)))
             for task in current_lab.get('tasks', []):
                 if task.get('recovery_scheduled'):
                     update(job_id, 94, f"{practice_topic}: falha classificada em {task['name']}; recuperação agendada.")
                 elif task.get('recovery_attempt'):
                     update(job_id, 97, f"{practice_topic}: executando recuperação de {task['name']}.")
-                updated_skill = AGENT_STATE.record_practice(
+                updated_skill = AGENT_STATE.record_lab_check(
                     practice_topic, task=task['name'], passed=bool(task.get('passed')),
                     evidence=f"{' '.join(task.get('command', []))}; {task.get('diagnosis', '')}",
                     level=task.get('level'))
@@ -492,6 +617,6 @@ def _run(job_id: str, topic: str, source_url: str | None = None) -> None:
             gaps = list(dict.fromkeys(gaps + ['executor local seguro para prática']))
         update(job_id, 100, f"Pesquisa e avaliação concluídas; competência registrada como {skill['status']} (não dominada).",
                status="completed", sources=sources, documents_added=len(fresh), evidence=evidence,
-               skill=skill, laboratory=lab, gaps=gaps)
+               skill=skill, learning_contract=contract, laboratory=lab, gaps=gaps)
     except Exception as error:
         update(job_id, 100, f"Falha ao atualizar o acervo: {error}", status="failed", error=str(error))

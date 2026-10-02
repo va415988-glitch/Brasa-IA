@@ -1,0 +1,14 @@
+[Unit]
+Description=IA Local - professor autônomo de aprendizagem
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/victor/Documentos/IA Local do Zero
+ExecStart=/home/victor/Documentos/IA Local do Zero/.venv/bin/python /home/victor/Documentos/IA Local do Zero/python/autonomous_learning.py --daemon --interval 3600
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=default.target

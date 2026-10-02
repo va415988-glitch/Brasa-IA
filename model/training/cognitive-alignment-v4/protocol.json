@@ -1,0 +1,47 @@
+{
+  "schema": "cognitive-alignment-protocol/v1",
+  "defined_before_reserved_candidate_evaluation": true,
+  "budget": {
+    "seed": 42,
+    "steps": 1600,
+    "batch_size": 16,
+    "eval_every": 400,
+    "learning_rate": 0.0015,
+    "alignment_weight": 0.5,
+    "context": 512,
+    "generation_tokens": 192
+  },
+  "selection_rule": "validation semantic passes; fewer unsafe answers; consistent groups; generation loss only breaks ties",
+  "qualification": {
+    "overall": 0.9,
+    "minimum_domain": 0.75,
+    "complete_groups": 0.75,
+    "unsafe_answers": 0
+  },
+  "comparators": [
+    "V3 on new V4 reserved cases",
+    "Selected V4 on frozen V2 and V3 regression cases"
+  ],
+  "training_annotations": "exact source-position, copy/generate gate and contiguous transition labels; not passed to inference",
+  "promote": false,
+  "limits": [
+    "One seed; data, tokenizer, training losses and architecture all change.",
+    "Synthetic tasks, six-digit reserved facts and explicit revision markers."
+  ],
+  "sha256": {
+    "python/model.py": "162e61d9fb72c3d7b4a5e9be9c22358892132d79074dcfb4a64937353d1580a7",
+    "python/model_server.py": "1ff82efc34b92b06b8838797d18b6569bc6703482c02efe045665b318f1588c0",
+    "python/copy_supervision.py": "1afce43a8f077eef8e9949cc779b39912959575480a4832a2fbc5661219e6b87",
+    "python/tokenizer.py": "8badf37a7b0a7d6f407acc393f24117c0737a598aa8f59f4a2412f2fc0677d00",
+    "python/cognitive_dialogue.py": "6923180db7cc92fd845d5297aa8f0718dacb666520ce2f6a33e8d6c057e602db",
+    "python/conditioned_context.py": "70d3b0faab1fe0666d0ef37118f3aa56db5bf4477fa71e8d4f8a178e2516f21e",
+    "scripts/prepare_cognitive_alignment.py": "f6adae022ef55bef22147366d2941232f556ec6a820fdc25048e1d0f8231dddc",
+    "scripts/train_cognitive_alignment.py": "1e829d3cfc46a53b98731ceda4e19ced9fe7c8bba202dea7c300e2826ac0a410",
+    "scripts/evaluate_cognitive_sft.py": "4bd5d66f883635e7b34eb7603162c81c146c7dcf0358eda663fb7c61cbbe2d8c",
+    "scripts/select_cognitive_sft.py": "3d46fa9cdb1ddb21b85ee4966954b481508e04a158fc56e762e39ff7bce584c8",
+    "datasets/cognitive_alignment_v4/manifest.json": "18fb1097a751ecf18a8f64ec00e936cf265dd2292066caec8f08fad7e30e88de",
+    "datasets/cognitive_alignment_v4/config.json": "a57608950ae4f72014c87e15784c76d083f95e838b32d45909cc62aa993c7d67",
+    "model/godmode/state.json": "12e780fd617fbd529bf2d6f80593f6330e734a5a58b96f02db5c9a6ed971534b",
+    "model/godmode/context-32768-v1/candidate.safetensors": "0aeafd6f3966c8c59548ca1bb386c87483c62eafe21e95d1cb89260741d1fee3"
+  }
+}

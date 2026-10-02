@@ -1,0 +1,22 @@
+{"instruction":"Crie uma página de login moderna em HTML","output":"create_web_page","tool":"create_web_page","source":"curated-routing-v1"}
+{"instruction":"Construa uma interface de vitrine com cadastro de produtos","output":"create_web_page","tool":"create_web_page","source":"curated-routing-v1"}
+{"instruction":"Crie uma tela de login e uma vitrine de produtos","output":"create_web_page","tool":"create_web_page","source":"curated-routing-v1"}
+{"instruction":"Crie uma interface básica utilizável para uma vitrine","output":"create_web_page","tool":"create_web_page","source":"curated-routing-v1"}
+{"instruction":"Analise os arquivos HTML do diretório antes de melhorá-los","output":"list_files","tool":"list_files","source":"curated-routing-v1"}
+{"instruction":"Liste os arquivos HTML do projeto para encontrar as páginas","output":"list_files","tool":"list_files","source":"curated-routing-v1"}
+{"instruction":"Abra este repositório para estudá-lo: https://github.com/freeCodeCamp/freeCodeCamp.git","output":"open_page","tool":"open_page","source":"curated-routing-v1"}
+{"instruction":"Aprenda profundamente o conteúdo deste repositório: https://github.com/freeCodeCamp/freeCodeCamp.git","output":"open_page","tool":"open_page","source":"curated-routing-v1"}
+{"instruction":"Crie o arquivo app.py com o conteúdo fornecido no pedido","output":"create_file","tool":"create_file","source":"curated-routing-v1"}
+{"instruction":"Gere os arquivos do projeto a partir dos blocos de código fornecidos","output":"create_file","tool":"create_file","source":"curated-routing-v1"}
+{"instruction":"Crie estes arquivos a partir dos blocos de código e testes fornecidos","output":"create_file","tool":"create_file","source":"curated-routing-v1"}
+{"instruction":"Gere app.py e tests/test_app.py com o conteúdo abaixo","output":"create_file","tool":"create_file","source":"curated-routing-v1"}
+{"instruction":"Crie os arquivos do exemplo, incluindo o arquivo de testes","output":"create_file","tool":"create_file","source":"curated-routing-v1"}
+{"instruction":"Diagnostique por que os testes do projeto estão falhando","output":"diagnose_project","tool":"diagnose_project","source":"curated-routing-v1"}
+{"instruction":"Rode os testes do projeto e confirme o resultado","output":"project_checks","tool":"project_checks","source":"curated-routing-v1"}
+{"instruction":"Rode os testes do projeto","output":"project_checks","tool":"project_checks","source":"curated-routing-v1"}
+{"instruction":"Execute os testes automatizados e informe o resultado","output":"project_checks","tool":"project_checks","source":"curated-routing-v1"}
+{"instruction":"Verifique o projeto rodando os testes","output":"project_checks","tool":"project_checks","source":"curated-routing-v1"}
+{"instruction":"Confirme que os testes passaram","output":"project_checks","tool":"project_checks","source":"curated-routing-v1"}
+{"instruction":"Leia o script ensinar_ia.sh antes de propor melhorias","output":"read_file","tool":"read_file","source":"curated-routing-v1"}
+{"instruction":"Analise o arquivo ensinar_ia.sh e sugira uma melhoria","output":"read_file","tool":"read_file","source":"curated-routing-v1"}
+{"instruction":"Revise o script de treinamento ensinar_ia.sh","output":"read_file","tool":"read_file","source":"curated-routing-v1"}

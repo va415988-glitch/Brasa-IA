@@ -1,0 +1,88 @@
+{
+  "seed": 42,
+  "arguments": {
+    "checkpoint": "model/godmode/context-32768-v1/candidate.safetensors",
+    "config_path": "datasets/implementation_sft_v1/training_config_2048.json",
+    "tokenizer_path": "model/godmode/godmode-tokenizer-v1.json",
+    "output_dir": "model/training/implementation-sft-v1/run-01",
+    "heldout": "datasets/implementation_sft_v1/heldout.jsonl",
+    "steps": 30,
+    "max_answer_tokens": 512,
+    "multi_turn_repeat": 1,
+    "additional_jsonl": [],
+    "only_jsonl": [
+      "datasets/implementation_sft_v1/train.jsonl"
+    ],
+    "validation_jsonl": "datasets/implementation_sft_v1/validation.jsonl",
+    "sample_tokens": 0,
+    "eval_every": 10,
+    "patience": 4,
+    "batch_size": 1,
+    "threads": 4,
+    "learning_rate": 0.0001,
+    "without_profile": true,
+    "from_scratch": false
+  },
+  "config": {
+    "name": "ia-local-zero-godmode-v1",
+    "architecture": "decoder_transformer",
+    "vocab_size": 8192,
+    "context_length": 32768,
+    "layers": 2,
+    "hidden_size": 128,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 4,
+    "language_priority": [
+      "pt-BR",
+      "code",
+      "en"
+    ],
+    "tool_call_format": "json",
+    "max_request_seconds": 60,
+    "runtime": "python-local",
+    "generation_length": 4096,
+    "training_context_length": 2048,
+    "tokenizer_path": "model/godmode/godmode-tokenizer-v1.json",
+    "training_policy": {
+      "method": "isolated-implementation-sft-probe",
+      "training_context": 2048,
+      "promotion": "manual-after-heldout-evaluation"
+    },
+    "initialization": "scaled-normal-v1",
+    "runtime_context_tokens": 32768,
+    "context_extension": {
+      "method": "linear-interpolation-trained-position-span-v1",
+      "source_checkpoint": "model/godmode/training-neural-v1/candidate.safetensors",
+      "source_sha256": "272cd9b3eb7a974a13fb25d6abbae508afebd7b949dabfaf64d3ca8b5a7346a7",
+      "source_native_context_tokens": 16384,
+      "source_trained_context_tokens": 512,
+      "target_context_tokens": 32768,
+      "fine_tuned_at_target": false,
+      "claim": "execução ampliada; não é evidência de treino semântico no contexto alvo"
+    },
+    "runtime_context_verified_tokens": 32768
+  },
+  "source_sha256": "0aeafd6f3966c8c59548ca1bb386c87483c62eafe21e95d1cb89260741d1fee3",
+  "tokenizer_sha256": "d515c157fa3d8158b051eec9c3b7525a4bd222bbd650043d15a747f083f28c3d",
+  "inputs": {
+    "datasets/implementation_sft_v1/train.jsonl": "021d52f87833f4199cb84a7023c314013015669cee1c7c23b2512a3dc7563356",
+    "datasets/implementation_sft_v1/heldout.jsonl": "5ef9dfef00bf330d28f9ce43cda069904bdc6b52d462ba7ed7a7dcda807724f1",
+    "datasets/implementation_sft_v1/validation.jsonl": "aab261d85eff69ba15a3a61b78e6d2a64e2540ff630ddb7a41d54249f494be1f"
+  },
+  "records": {
+    "train": 4,
+    "training_views": 4,
+    "validation": 1,
+    "heldout": 2
+  },
+  "rejected": {},
+  "domains": {
+    "replay": 4
+  },
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meu dia · Tarefas</title>
+<style>
+:root { font-family: system-ui, sans-serif; color: #24372e; background: #f3f1e9; }
+* { box-sizing: border-box; } body { margin: 0; } main { width: min(760px, calc(100% - 32px)); margin: 60px auto; }
+header { display: flex; align-items: end; justify-content: space-between; gap: 20px; padding-bottom: 26px; border-bottom: 1px solid #ccd2c4; }
+h1 { font: 48px Georgia, serif; margin: 8px 0; } header p { margin: 0; color: #657163; } .eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: .15em; }
+form { margin: 30px 0 14px; display: flex; gap: 10px; } label { flex: 1; } label span { display: block; margin-bottom: 7px; font-size: 13px; }
+input[type=text] { width: 100%; padding: 14px; background: #fff; border: 1px solid #b9c4b2; border-radius: 9px; font: inherit; }
+button { cursor: pointer; border-radius: 9px; padding: 12px 16px; border: 1px solid #b9c4b2; background: #fff; color: inherit; font: inherit; }
+form button { align-self: end; background: #2e5742; color: white; border-color: #2e5742; min-height: 49px; } button:disabled { opacity: .5; cursor: wait; }
+button:focus-visible, input:focus-visible { outline: 3px solid #bc733e; outline-offset: 3px; }
+#status { min-height: 25px; color: #586958; font-size: 14px; } #status.error { color: #9c3324; }
+ul { list-style: none; margin: 0; padding: 0; } li { display: flex; align-items: center; gap: 14px; padding: 18px 0; border-bottom: 1px solid #d9ddcf; }
+li input { width: 20px; height: 20px; accent-color: #2e5742; flex-shrink: 0; } li span { flex: 1; overflow-wrap: anywhere; } li.done span { text-decoration: line-through; color: #728171; }
+li button { font-size: 13px; padding: 7px 10px; background: transparent; } .empty { padding: 34px 0; color: #728171; text-align: center; }
+footer { margin-top: 32px; font-size: 12px; color: #728171; } @media(max-width: 500px) { main { margin-top: 28px; } header { align-items: start; flex-direction: column; } form { flex-direction: column; } form button { width: 100%; } }
+</style>
+</head>
+<body><main>
+<header><div><span class="eyebrow">Um passo de cada vez</span><h1>Meu dia</h1><p>Espaço para o que você quer fazer.</p></div><span id="count">Carregando…</span></header>
+<form id="task-form"><label><span>Nova tarefa</span><input id="title" type="text" maxlength="500" placeholder="O que vem a seguir?" required autocomplete="off"></label><button type="submit">Adicionar</button></form>
+<p id="status" role="status" aria-live="polite"></p><ul id="tasks" aria-label="Tarefas"></ul><p class="empty" id="empty" hidden>Nenhuma tarefa por aqui. Adicione a primeira acima.</p>
+<footer>Seus dados ficam neste computador.</footer>
+</main><script>
+const form = document.querySelector('#task-form'), title = document.querySelector('#title');
+const list = document.querySelector('#tasks'), status = document.querySelector('#status');
+let busy = false;
+async function api(path, method = 'GET', data) {
+  const response = await fetch(path, {method, headers: {'Content-Type': 'application/json'}, body: data === undefined ? undefined : JSON.stringify(data)});
+  const value = await response.json();
+  if (!response.ok) throw new Error(value.error || 'Não foi possível concluir a operação.');
+  return value;
+}
+async function refresh() {
+  const tasks = await api('/api/tasks');
+  list.replaceChildren();
+  document.querySelector('#empty').hidden = tasks.length > 0;
+  document.querySelector('#count').textContent = tasks.filter(task => !task.completed).length + ' pendente(s)';
+  for (const task of tasks) {
+    const row = document.createElement('li'); row.classList.toggle('done', task.completed);
+    const check = document.createElement('input'); check.type = 'checkbox'; check.checked = task.completed;
+    check.setAttribute('aria-label', (task.completed ? 'Reabrir: ' : 'Concluir: ') + task.title);
+    check.onchange = () => perform(() => api('/api/tasks/' + task.id, 'PATCH', {completed: check.checked}));
+    const text = document.createElement('span'); text.textContent = task.title;
+    const remove = document.createElement('button'); remove.textContent = 'Excluir'; remove.type = 'button';
+    remove.setAttribute('aria-label', 'Excluir: ' + task.title);
+    remove.onclick = () => perform(() => api('/api/tasks/' + task.id, 'DELETE'));
+    row.append(check, text, remove); list.append(row);
+  }
+}
+async function perform(operation) {
+  if (busy) return;
+  busy = true; status.textContent = 'Salvando…'; status.classList.remove('error');
+  document.querySelectorAll('button, input').forEach(element => element.disabled = true);
+  try { await operation(); await refresh(); status.textContent = 'Salvo.'; }
+  catch (error) { status.textContent = error.message; status.classList.add('error'); }
+  finally { busy = false; document.querySelectorAll('button, input').forEach(element => element.disabled = false); }
+}
+form.onsubmit = event => {
+  event.preventDefault();
+  if (!title.value.trim()) { status.textContent = 'Digite um título para a tarefa.'; status.classList.add('error'); title.focus(); return; }
+  perform(async () => { await api('/api/tasks', 'POST', {title: title.value}); title.value = ''; });
+};
+refresh().catch(error => { status.textContent = error.message; status.classList.add('error'); document.querySelector('#count').textContent = 'Indisponível'; });
+</script></body></html>

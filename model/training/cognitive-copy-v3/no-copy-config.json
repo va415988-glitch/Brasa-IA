@@ -1,0 +1,23 @@
+{
+  "name": "own-cognitive-v3-no-copy-control",
+  "vocab_size": 768,
+  "context_length": 384,
+  "training_context_length": 384,
+  "runtime_context_tokens": 384,
+  "forward_chunk_length": 384,
+  "layers": 2,
+  "hidden_size": 128,
+  "attention_heads": 4,
+  "feed_forward_multiplier": 3,
+  "system_prompt_trained": false,
+  "cognitive_prompt_style": "compact-v1",
+  "generation_length": 192,
+  "training_policy": {
+    "method": "local-sft-from-scratch",
+    "external_llm": false,
+    "ollama": false,
+    "gpu_required": false,
+    "training_context": 384,
+    "production_context": 384
+  }
+}

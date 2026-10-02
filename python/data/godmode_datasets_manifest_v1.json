@@ -1,0 +1,51 @@
+{
+  "schema": "godmode-datasets/v1",
+  "generated_at": "2026-09-22T22:07:07.548794+00:00",
+  "provenance": "autoria local determinística; sem LLM, Ollama ou serviço externo",
+  "training": {
+    "knowledge": {
+      "path": "python/data/godmode_knowledge_v1.jsonl",
+      "examples": 60,
+      "sha256": "c5beae25fa29037301b17bfeb976b432b7cbe9b4bf17a9c1248c57df696a0736"
+    },
+    "procedures": {
+      "path": "python/data/godmode_procedures_v1.jsonl",
+      "examples": 31,
+      "sha256": "9d272d64706227bc39aea63c2b322c0d0fb0356ca91ce820b009328f23a118eb"
+    }
+  },
+  "heldout": {
+    "path": "model/training/godmode-heldout-v1.jsonl",
+    "examples": 30,
+    "sha256": "7f443fbb9ca86084f1e197b563928377565f24111ac894e3a9c1345c1617e996"
+  },
+  "evaluation": {
+    "path": "corpus/eval/godmode_heldout_tasks_v1.jsonl",
+    "examples": 30,
+    "sha256": "10479c42beca6ec4cee3164ed5580c65e30df45a7ea01aae174ce2a5c539f550"
+  },
+  "counts_by_domain": {
+    "requirements": 10,
+    "software": 10,
+    "reasoning": 10,
+    "reliability": 10,
+    "autonomy": 10,
+    "multimodal": 10,
+    "procedure": 31
+  },
+  "heldout_by_domain": {
+    "requirements": 6,
+    "software": 6,
+    "reliability": 4,
+    "multimodal": 4,
+    "creative": 4,
+    "autonomy": 3,
+    "reasoning": 3
+  },
+  "split_policy": "perguntas normalizadas únicas; nenhuma pergunta held-out aparece no treino",
+  "limitations": [
+    "Conhecimento textual não cria percepção visual; multimodalidade exige ferramenta e casos com mídia real.",
+    "Exemplos supervisionam comportamento, mas não substituem avaliação inédita.",
+    "A janela e o tokenizer do checkpoint continuam gates independentes."
+  ]
+}

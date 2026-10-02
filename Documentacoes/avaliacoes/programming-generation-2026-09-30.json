@@ -1,0 +1,40 @@
+{
+  "schema": "own-programming-generation-audit/v1",
+  "checkpoint": "/home/victor/Documentos/IA Local do Zero/model/godmode/context-32768-v1/candidate.safetensors",
+  "model_config": {
+    "hidden_size": 128,
+    "d_model": null,
+    "layers": 2,
+    "heads": null,
+    "vocab_size": 8192,
+    "context_length": 32768,
+    "training_context_length": 512
+  },
+  "parameters": 5639680,
+  "passed": 0,
+  "total": 2,
+  "cases": [
+    {
+      "id": "minutes",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 37,
+      "quality_reason": "structured-plan-too-short",
+      "quality_stop_reason": null,
+      "answer_excerpt": ""
+    },
+    {
+      "id": "initials",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 22,
+      "quality_reason": "structured-plan-too-short",
+      "quality_stop_reason": null,
+      "answer_excerpt": ""
+    }
+  ],
+  "recipes_used": false,
+  "model_weights_changed": false
+}

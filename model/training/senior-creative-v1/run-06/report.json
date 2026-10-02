@@ -1,0 +1,70 @@
+{
+  "baseline_validation_loss": 4.341498543696148,
+  "initial_validation_loss": 4.341498543696148,
+  "initialization_mode": "continue-weights",
+  "candidate_validation_loss": 4.315336941691583,
+  "baseline_heldout_loss": 4.34836408466312,
+  "candidate_heldout_loss": 4.249981299867021,
+  "best_step": 250,
+  "completed_steps": 300,
+  "training_seconds": 203.79,
+  "baseline_answers": [
+    {
+      "prompt": "Implemente uma função que remova duplicatas preservando a ordem e inclua testes.",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Como testar uma rota HTTP que chama um banco de dados?",
+      "answer": "Parquia e stro e uma lhouver repetidência e registre a e registrutrutestes.\n",
+      "tokens": 42,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Como decidir se uma alteração de desempenho funcionou?",
+      "answer": "PPI, precura e a e uma lha proceitar o e a e relha e a precista de valia e a e regendas e registre a e a e a e relissudas e registra projeleite a primeia e uma la projeive relinal.\n",
+      "tokens": 102,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Mostre como validar um argumento de ferramenta antes de executá-la.",
+      "answer": "Meleite relistre a e uma lhouver e manho e a e releceça precista de valia e regregistre a e registre a e a e a e relha primeivolvolvive releite a prio e a e rela projeive relinal.\n",
+      "tokens": 103,
+      "hit_limit": false
+    }
+  ],
+  "candidate_answers": [
+    {
+      "prompt": "Implemente uma função que remova duplicatas preservando a ordem e inclua testes.",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Como testar uma rota HTTP que chama um banco de dados?",
+      "answer": "Proco caparto co que esco e testes. Deça e uma referências e suteste do capare sórimeiver testes que es. Se a e estadocutar a e uma leite a e referências e apare a e manca. Mecabilidadeco cam sucablio.\n",
+      "tokens": 109,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Como decidir se uma alteração de desempenho funcionou?",
+      "answer": "Programudada preciss de esmutra e referência e a projegra procaçõesma protenam mas e rega e a e registências e registre as e a e a e mestados e procações que registre a e registre as e mas e muto e relisa sumuteste este udadas e a e registr",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Mostre como validar um argumento de ferramenta antes de executá-la.",
+      "answer": "Mecao e relistro e mutrutestescolhouver cam caça precisolvações, ados, manicas, procasecaçà proproprocam a e a e mesperados e a a e mescolcoloriver regrelhouver registrudados e relise sudas e a e a e uma linalização e ",
+      "tokens": 128,
+      "hit_limit": true
+    }
+  ],
+  "promoted": false,
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "task-continuity-smoke/v1",
+  "checks": [
+    {
+      "id": "persist_before_effect",
+      "passed": true
+    },
+    {
+      "id": "goal_survives_restart",
+      "passed": true
+    },
+    {
+      "id": "same_task_without_client_history",
+      "passed": true
+    },
+    {
+      "id": "verified_source_delivered",
+      "passed": true
+    },
+    {
+      "id": "receipt_persisted",
+      "passed": true
+    }
+  ],
+  "task_id": "task-5dbe509e-afa1-47c9-b938-9834242b87ed",
+  "restart_process_id": 38234,
+  "status": "completed",
+  "final_text": "Trechos obtidos da fonte consultada:\n\n> The verified marker is CONTINUITY-42.\n\nFontes consultadas: http://127.0.0.1:40251/document",
+  "error": null,
+  "passed": true
+}

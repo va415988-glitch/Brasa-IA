@@ -1,0 +1,208 @@
+{
+  "schema": "legacy-neural-evidence-audit/v1",
+  "checked_at": "2026-10-01T18:24:11.603291+00:00",
+  "source_report": "model/godmode/training-neural-v1/verification_100.json",
+  "source_sha256": "0e5927c2b33006f70cbe85fccc22c4edf1ecfa01188362b374edc7017b28f473",
+  "checker": "scripts/godmode.py",
+  "checker_sha256": "c1bfcd918c4dc9021bb0e6a3760c0759f7dfbcc27b34bf9202fa9a2b277a065b",
+  "scope": "reinspection of stored provenance, no new inference, no competency qualification",
+  "original_checks_passed": 100,
+  "original_neural_probes": 12,
+  "recorded_neural_generations": 0,
+  "retrieved_answers": 12,
+  "competence_qualified": false,
+  "rows": [
+    {
+      "id": "variable-python",
+      "original_quality": true,
+      "original_relevant": true,
+      "generation": {
+        "backend": "local-competence-dataset",
+        "dataset": "/home/victor/Documentos/IA Local do Zero/python/data/neural_professional_v1.jsonl",
+        "match": "normalized-exact-intent",
+        "input_tokens": 0,
+        "max_tokens": 0,
+        "generated_tokens": 51,
+        "quality_reason": "accepted-local-competence",
+        "stop_reason": "local-dataset-match"
+      },
+      "recorded_neural_evidence": false
+    },
+    {
+      "id": "ownership-rust",
+      "original_quality": true,
+      "original_relevant": true,
+      "generation": {
+        "backend": "local-competence-dataset",
+        "dataset": "/home/victor/Documentos/IA Local do Zero/python/data/neural_professional_v1.jsonl",
+        "match": "normalized-exact-intent",
+        "input_tokens": 0,
+        "max_tokens": 0,
+        "generated_tokens": 45,
+        "quality_reason": "accepted-local-competence",
+        "stop_reason": "local-dataset-match"
+      },
+      "recorded_neural_evidence": false
+    },
+    {
+      "id": "china",
+      "original_quality": true,
+      "original_relevant": true,
+      "generation": {
+        "backend": "local-competence-dataset",
+        "dataset": "/home/victor/Documentos/IA Local do Zero/python/data/neural_professional_v1.jsonl",
+        "match": "normalized-exact-intent",
+        "input_tokens": 0,
+        "max_tokens": 0,
+        "generated_tokens": 41,
+        "quality_reason": "accepted-local-competence",
+        "stop_reason": "local-dataset-match"
+      },
+      "recorded_neural_evidence": false
+    },
+    {
+      "id": "uncertainty",
+      "original_quality": true,
+      "original_relevant": true,
+      "generation": {
+        "backend": "local-competence-dataset",
+        "dataset": "/home/victor/Documentos/IA Local do Zero/python/data/neural_professional_v1.jsonl",
+        "match": "normalized-exact-intent",
+        "input_tokens": 0,
+        "max_tokens": 0,
+        "generated_tokens": 40,
+        "quality_reason": "accepted-local-competence",
+        "stop_reason": "local-dataset-match"
+      },
+      "recorded_neural_evidence": false
+    },
+    {
+      "id": "function-design",
+      "original_quality": true,
+      "original_relevant": true,
+      "generation": {
+        "backend": "local-competence-dataset",
+        "dataset": "/home/victor/Documentos/IA Local do Zero/python/data/neural_professional_v1.jsonl",
+        "match": "normalized-exact-intent",
+        "input_tokens": 0,
+        "max_tokens": 0,
+        "generated_tokens": 52,
+        "quality_reason": "accepted-local-competence",
+        "stop_reason": "local-dataset-match"
+      },
+      "recorded_neural_evidence": false
+    },
+    {
+      "id": "api-errors",
+      "original_quality": true,
+      "original_relevant": true,
+      "generation": {
+        "backend": "local-competence-dataset",
+        "dataset": "/home/victor/Documentos/IA Local do Zero/python/data/neural_professional_v1.jsonl",
+        "match": "normalized-exact-intent",
+        "input_tokens": 0,
+        "max_tokens": 0,
+        "generated_tokens": 42,
+        "quality_reason": "accepted-local-competence",
+        "stop_reason": "local-dataset-match"
+      },
+      "recorded_neural_evidence": false
+    },
+    {
+      "id": "creative-block",
+      "original_quality": true,
+      "original_relevant": true,
+      "generation": {
+        "backend": "local-competence-dataset",
+        "dataset": "/home/victor/Documentos/IA Local do Zero/python/data/neural_professional_v1.jsonl",
+        "match": "normalized-exact-intent",
+        "input_tokens": 0,
+        "max_tokens": 0,
+        "generated_tokens": 39,
+        "quality_reason": "accepted-local-competence",
+        "stop_reason": "local-dataset-match"
+      },
+      "recorded_neural_evidence": false
+    },
+    {
+      "id": "game-ideas",
+      "original_quality": true,
+      "original_relevant": true,
+      "generation": {
+        "backend": "local-competence-dataset",
+        "dataset": "/home/victor/Documentos/IA Local do Zero/python/data/neural_professional_v1.jsonl",
+        "match": "normalized-exact-intent",
+        "input_tokens": 0,
+        "max_tokens": 0,
+        "generated_tokens": 58,
+        "quality_reason": "accepted-local-competence",
+        "stop_reason": "local-dataset-match"
+      },
+      "recorded_neural_evidence": false
+    },
+    {
+      "id": "science-evidence",
+      "original_quality": true,
+      "original_relevant": true,
+      "generation": {
+        "backend": "local-competence-dataset",
+        "dataset": "/home/victor/Documentos/IA Local do Zero/python/data/neural_professional_v1.jsonl",
+        "match": "normalized-exact-intent",
+        "input_tokens": 0,
+        "max_tokens": 0,
+        "generated_tokens": 43,
+        "quality_reason": "accepted-local-competence",
+        "stop_reason": "local-dataset-match"
+      },
+      "recorded_neural_evidence": false
+    },
+    {
+      "id": "causality",
+      "original_quality": true,
+      "original_relevant": true,
+      "generation": {
+        "backend": "local-competence-dataset",
+        "dataset": "/home/victor/Documentos/IA Local do Zero/python/data/neural_professional_v1.jsonl",
+        "match": "normalized-exact-intent",
+        "input_tokens": 0,
+        "max_tokens": 0,
+        "generated_tokens": 44,
+        "quality_reason": "accepted-local-competence",
+        "stop_reason": "local-dataset-match"
+      },
+      "recorded_neural_evidence": false
+    },
+    {
+      "id": "decision",
+      "original_quality": true,
+      "original_relevant": true,
+      "generation": {
+        "backend": "local-competence-dataset",
+        "dataset": "/home/victor/Documentos/IA Local do Zero/python/data/neural_professional_v1.jsonl",
+        "match": "normalized-exact-intent",
+        "input_tokens": 0,
+        "max_tokens": 0,
+        "generated_tokens": 45,
+        "quality_reason": "accepted-local-competence",
+        "stop_reason": "local-dataset-match"
+      },
+      "recorded_neural_evidence": false
+    },
+    {
+      "id": "source-quality",
+      "original_quality": true,
+      "original_relevant": true,
+      "generation": {
+        "backend": "local-competence-dataset",
+        "dataset": "/home/victor/Documentos/IA Local do Zero/python/data/neural_professional_v1.jsonl",
+        "match": "normalized-exact-intent",
+        "input_tokens": 0,
+        "max_tokens": 0,
+        "generated_tokens": 47,
+        "quality_reason": "accepted-local-competence",
+        "stop_reason": "local-dataset-match"
+      },
+      "recorded_neural_evidence": false
+    }
+  ]
+}

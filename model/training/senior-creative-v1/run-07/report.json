@@ -1,0 +1,94 @@
+{
+  "baseline_validation_loss": 4.315336941691583,
+  "initial_validation_loss": 4.315336941691583,
+  "initialization_mode": "continue-weights",
+  "candidate_validation_loss": 4.315336941691583,
+  "baseline_heldout_loss": 4.359660182806706,
+  "candidate_heldout_loss": 4.359660182806706,
+  "best_step": 0,
+  "completed_steps": 300,
+  "training_seconds": 210.35,
+  "baseline_answers": [
+    {
+      "prompt": "Qual é a sequência correta para uma alteração segura em um repositório?",
+      "answer": "Mação, a a a a o e a e a o e a procise a a projetos precise a projetado precisar a a projeivação, proprecise regerver complação e a e regixa proproprojetado primeiver e relinal.\n",
+      "tokens": 99,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Que informações um relatório de execução autônoma precisa deixar?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Quando uma saída JSON do agente deve ser rejeitada?",
+      "answer": "Ponta produza e a e a e a e a e a e repetos e a a e a e releleprecista produzir o pleixa e reletado, produza proplinha e a propla procabilidade estamira e a produzir apreserve a e a por uma leia e a e a e uma lefla e a e a procasos ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Como transformar uma falha repetida em melhoria do agente?",
+      "answer": "Procas, mantes por execução e subilidade e a e a uma ssuterva procas, quando quando quando quando precissível, precisa e e a projelisprimeivolvoluprocabilidade es.\n",
+      "tokens": 81,
+      "hit_limit": false
+    },
+    {
+      "prompt": "O treino melhorou, mas o resultado fora da amostra piorou. Como interpretar?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Por que uma GPU ajuda no treino de redes neurais?",
+      "answer": "Mamponal, procaminhampos e regerver mantes da e servidada a procações, não é uma linhipório e a a proprocações da e a a procabilidade co e mesmudados e regrelhouver relas procações da e uma lível, não sudas e a e a produzir apó",
+      "tokens": 128,
+      "hit_limit": true
+    }
+  ],
+  "candidate_answers": [
+    {
+      "prompt": "Qual é a sequência correta para uma alteração segura em um repositório?",
+      "answer": "Mação, a a a a o e a e a o e a procise a a projetos precise a projetado precisar a a projeivação, proprecise regerver complação e a e regixa proproprojetado primeiver e relinal.\n",
+      "tokens": 99,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Que informações um relatório de execução autônoma precisa deixar?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Quando uma saída JSON do agente deve ser rejeitada?",
+      "answer": "Ponta produza e a e a e a e a e a e repetos e a a e a e releleprecista produzir o pleixa e reletado, produza proplinha e a propla procabilidade estamira e a produzir apreserve a e a por uma leia e a e a e uma lefla e a e a procasos ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Como transformar uma falha repetida em melhoria do agente?",
+      "answer": "Procas, mantes por execução e subilidade e a e a uma ssuterva procas, quando quando quando quando precissível, precisa e e a projelisprimeivolvoluprocabilidade es.\n",
+      "tokens": 81,
+      "hit_limit": false
+    },
+    {
+      "prompt": "O treino melhorou, mas o resultado fora da amostra piorou. Como interpretar?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Por que uma GPU ajuda no treino de redes neurais?",
+      "answer": "Mamponal, procaminhampos e regerver mantes da e servidada a procações, não é uma linhipório e a a proprocações da e a a procabilidade co e mesmudados e regrelhouver relas procações da e uma lível, não sudas e a e a produzir apó",
+      "tokens": 128,
+      "hit_limit": true
+    }
+  ],
+  "promoted": false,
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

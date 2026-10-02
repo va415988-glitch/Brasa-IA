@@ -1,0 +1,367 @@
+{
+  "schema": "agent-learning-run/v1",
+  "run_id": "20260923T181810Z",
+  "started_at": "2026-09-23T18:18:10.733451+00:00",
+  "trace": {
+    "path": "/home/victor/Documentos/IA Local do Zero/logs/agent_traces.jsonl",
+    "traces": 20555,
+    "complete": 187,
+    "accepted": 0,
+    "no_tool_turns": 10566,
+    "missing_start": 0,
+    "missing_plan": 1784,
+    "missing_result": 0,
+    "failed_result": 0,
+    "unreviewed": 187,
+    "unfinished": 8018,
+    "export": "/home/victor/Documentos/IA Local do Zero/model/planner/runs/20260923T181810Z/verified_traces.jsonl"
+  },
+  "datasets": [
+    {
+      "path": "/home/victor/Documentos/IA Local do Zero/corpus/training/dataset_deepseek_code.jsonl",
+      "exists": true,
+      "sha256": "8b71b521a1450dc61b0827947752ad5f3bffa0c8db161b9e1c9c5eef01cdd692",
+      "examples": 15,
+      "invalid": 0
+    },
+    {
+      "path": "/home/victor/Documentos/IA Local do Zero/corpus/training/dataset_sintetico.jsonl",
+      "exists": true,
+      "sha256": "ded7cf12f11cff4c504f747784b76527252377d35ddaf59bdaaace9cf65d5b3c",
+      "examples": 16,
+      "invalid": 0
+    },
+    {
+      "path": "/home/victor/Documentos/IA Local do Zero/corpus/training/planner_corrections.jsonl",
+      "exists": true,
+      "sha256": "0fd5ec3d7286233ea9aa08cbb723e953b341a9c632a1c0db91ed84e16c9fa4db",
+      "examples": 22,
+      "invalid": 0
+    },
+    {
+      "path": "/home/victor/Documentos/IA Local do Zero/corpus/training/planner_sft.jsonl",
+      "exists": true,
+      "sha256": "a5b68096866aedca3b32c8b3fb613e56bdb9f78690c0c9fb40ae1195ed671c80",
+      "examples": 5,
+      "invalid": 0
+    },
+    {
+      "path": "/home/victor/Documentos/IA Local do Zero/corpus/training/teacher_plans_qwen3_30b.jsonl",
+      "exists": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "examples": 0,
+      "invalid": 0
+    },
+    {
+      "path": "/home/victor/Documentos/IA Local do Zero/corpus/raw/workflow_planner_candidates.jsonl",
+      "exists": true,
+      "sha256": "c6ab28124099642a5d2732d28e0ccd9d62558098caba2e1331f4574ab5395601",
+      "examples": 0,
+      "invalid": 0
+    }
+  ],
+  "data": {
+    "unique_examples": 55,
+    "training_examples": 44,
+    "validation_examples": 11,
+    "training_groups": 44,
+    "validation_groups": 11,
+    "validation_unit": "whole-trajectory-or-identical-prompt",
+    "validation_ratio": 0.2
+  },
+  "quality": {
+    "status": "needs-attention",
+    "raw_examples": 55,
+    "unique_examples": 55,
+    "duplicates_removed": 0,
+    "corpus_examples": 55,
+    "verified_trace_examples": 0,
+    "unreviewed_traces": 187,
+    "trace_count": 20555,
+    "non_tool_turns": 10566,
+    "tool_related_traces": 9989,
+    "trace_diagnostics": {
+      "missing_plan": 1784,
+      "missing_result": 0,
+      "failed_result": 0,
+      "unfinished": 8018
+    },
+    "accepted_trace_rate": 0.0,
+    "completion_rate": 0.0187,
+    "invalid_dataset_rows": 0,
+    "warnings": [
+      "a diversidade supervisionada ainda é pequena"
+    ],
+    "recommendations": [
+      "revisar manualmente 187 trace(s) pendente(s); nenhum deles entrou no treino",
+      "corrigir a instrumentação do planejador antes de coletar mais dados",
+      "classificar bloqueios e registrar uma conclusão explícita, inclusive em falhas",
+      "coletar tarefas inéditas por ferramenta e por domínio antes de promover"
+    ],
+    "promotion_policy": "blocking; quality needs-attention impede elegibilidade"
+  },
+  "preflight": {
+    "schema": "agent-learning-preflight/v1",
+    "status": "ready",
+    "errors": [],
+    "warnings": [],
+    "checks": {
+      "root": {
+        "path": "/home/victor/Documentos/IA Local do Zero",
+        "exists": true
+      },
+      "python": {
+        "path": "/usr/bin/python3",
+        "exists": true,
+        "executable": true
+      },
+      "pipeline": {
+        "path": "/home/victor/Documentos/IA Local do Zero/python/agent_learning_pipeline.py",
+        "exists": true
+      },
+      "trace": {
+        "path": "/home/victor/Documentos/IA Local do Zero/logs/agent_traces.jsonl",
+        "exists": true
+      },
+      "corpus": {
+        "path": "/home/victor/Documentos/IA Local do Zero/corpus/training",
+        "exists": true,
+        "datasets": 6
+      },
+      "active_index": {
+        "path": "/home/victor/Documentos/IA Local do Zero/model/planner/planner_index.json",
+        "exists": true
+      },
+      "write_targets": {
+        "runs": {
+          "path": "/home/victor/Documentos/IA Local do Zero/model/planner/runs",
+          "parent": "/home/victor/Documentos/IA Local do Zero/model/planner/runs",
+          "parent_exists": true,
+          "writable": true
+        },
+        "report": {
+          "path": "/tmp/ia-local-planner-evaluation.json",
+          "parent": "/tmp",
+          "parent_exists": true,
+          "writable": true
+        }
+      },
+      "batteries": {
+        "required": false,
+        "missing": [],
+        "available": true
+      }
+    },
+    "next": "run"
+  },
+  "active_index_before": {
+    "path": "/home/victor/Documentos/IA Local do Zero/model/planner/planner_index.json",
+    "sha256": "0a9c4f0d83fc2b6c4244dc8ae8a70cdd082f0f778a9b2c3c6b6d33592db19535"
+  },
+  "promotion": {
+    "requested": false,
+    "promoted": false,
+    "eligible": false
+  },
+  "training": {
+    "examples": 44,
+    "tools": 8,
+    "features": 2737
+  },
+  "candidate": {
+    "path": "/home/victor/Documentos/IA Local do Zero/model/planner/runs/20260923T181810Z/planner_index.json",
+    "sha256": "733573056dfc41316953c44d6624019c6915c4739475343240952df9616e579e",
+    "valid": true,
+    "validation": "ok"
+  },
+  "evaluation": {
+    "candidate": {
+      "scope": "learned-feature-reranker-only",
+      "examples": 11,
+      "correct": 8,
+      "accuracy": 0.7273,
+      "cases": [
+        {
+          "question": "Explique em detalhes avançados e forneça um guia completo com código funcional sobre: Uso de Unsafe Rust: quando é justificável, como criar abstrações seguras em volta de código unsafe e evitar Undefined Behavior.",
+          "expected_tool": "knowledge_base",
+          "predicted_tool": "knowledge_base",
+          "correct": true,
+          "score": 0.75
+        },
+        {
+          "question": "Explique em detalhes avançados e forneça um guia completo com código funcional sobre: Macros em Rust: a diferença entre declarative macros (macro_rules!) e procedural macros (derive, attribute, function-like).",
+          "expected_tool": "knowledge_base",
+          "predicted_tool": "knowledge_base",
+          "correct": true,
+          "score": 0.75
+        },
+        {
+          "question": "Explique em detalhes avançados e forneça um guia completo com código funcional sobre: Interoperabilidade Python e Rust: criando extensões nativas de alta velocidade para Python utilizando PyO3.",
+          "expected_tool": "knowledge_base",
+          "predicted_tool": "knowledge_base",
+          "correct": true,
+          "score": 0.75
+        },
+        {
+          "question": "Explique em detalhes avançados e forneça um guia completo com código funcional sobre: Sistemas de Roteamento e Classificação Local: como construir um indexador de intenções vetorial de ultra-baixa latência em Rust.",
+          "expected_tool": "knowledge_base",
+          "predicted_tool": "knowledge_base",
+          "correct": true,
+          "score": 0.75
+        },
+        {
+          "question": "Considere um algoritmo que processa uma lista de n elementos, realizando uma operação de busca binária seguida por uma operação de inserção ordenada. Analise criticamente a complexidade de tempo deste algoritmo, considerando o melhor, o pior e o caso médio. Em seguida, proponha uma otimização que possa reduzir a complexidade de tempo no caso médio, sem comprometer a eficiência nos outros casos. Justifique sua proposta.",
+          "expected_tool": "knowledge_base",
+          "predicted_tool": "knowledge_base",
+          "correct": true,
+          "score": 0.75
+        },
+        {
+          "question": "Cenário: Sua empresa está migrando para uma arquitetura Cloud Native e deseja implementar um pipeline de CI/CD automatizado para uma aplicação composta por vários microserviços. Esses microserviços serão implantados em um cluster Kubernetes gerenciado, utilizando Istio para gerenciar o tráfego e a segurança, e Terraform para a infraestrutura como código (IaC). Além disso, a equipe deseja criar um operador personalizado para automatizar a gestão de um recurso específico, utilizando Custom Resource Definitions (CRDs). Desenhe e implemente um pipeline de CI/CD que atenda a esses requisitos, incluindo a configuração do operador personalizado.",
+          "expected_tool": "knowledge_base",
+          "predicted_tool": "knowledge_base",
+          "correct": true,
+          "score": 0.75
+        },
+        {
+          "question": "Crie uma página de login moderna em HTML",
+          "expected_tool": "create_web_page",
+          "predicted_tool": "knowledge_base",
+          "correct": false,
+          "score": 0.35000000000000003
+        },
+        {
+          "question": "Aprenda profundamente o conteúdo deste repositório: https://github.com/freeCodeCamp/freeCodeCamp.git",
+          "expected_tool": "open_page",
+          "predicted_tool": "knowledge_base",
+          "correct": false,
+          "score": 0.75
+        },
+        {
+          "question": "Crie os arquivos do exemplo, incluindo o arquivo de testes",
+          "expected_tool": "create_file",
+          "predicted_tool": "create_file",
+          "correct": true,
+          "score": 0.75
+        },
+        {
+          "question": "Verifique o projeto rodando os testes",
+          "expected_tool": "project_checks",
+          "predicted_tool": "diagnose_project",
+          "correct": false,
+          "score": 0.5
+        },
+        {
+          "question": "Confirme que os testes passaram",
+          "expected_tool": "project_checks",
+          "predicted_tool": "project_checks",
+          "correct": true,
+          "score": 0.55
+        }
+      ]
+    },
+    "baseline": {
+      "scope": "learned-feature-reranker-only",
+      "examples": 11,
+      "correct": 6,
+      "accuracy": 0.5455,
+      "cases": [
+        {
+          "question": "Explique em detalhes avançados e forneça um guia completo com código funcional sobre: Uso de Unsafe Rust: quando é justificável, como criar abstrações seguras em volta de código unsafe e evitar Undefined Behavior.",
+          "expected_tool": "knowledge_base",
+          "predicted_tool": "knowledge_base",
+          "correct": true,
+          "score": 0.75
+        },
+        {
+          "question": "Explique em detalhes avançados e forneça um guia completo com código funcional sobre: Macros em Rust: a diferença entre declarative macros (macro_rules!) e procedural macros (derive, attribute, function-like).",
+          "expected_tool": "knowledge_base",
+          "predicted_tool": "knowledge_base",
+          "correct": true,
+          "score": 0.75
+        },
+        {
+          "question": "Explique em detalhes avançados e forneça um guia completo com código funcional sobre: Interoperabilidade Python e Rust: criando extensões nativas de alta velocidade para Python utilizando PyO3.",
+          "expected_tool": "knowledge_base",
+          "predicted_tool": "create_web_page",
+          "correct": false,
+          "score": 0.75
+        },
+        {
+          "question": "Explique em detalhes avançados e forneça um guia completo com código funcional sobre: Sistemas de Roteamento e Classificação Local: como construir um indexador de intenções vetorial de ultra-baixa latência em Rust.",
+          "expected_tool": "knowledge_base",
+          "predicted_tool": "create_web_page",
+          "correct": false,
+          "score": 0.75
+        },
+        {
+          "question": "Considere um algoritmo que processa uma lista de n elementos, realizando uma operação de busca binária seguida por uma operação de inserção ordenada. Analise criticamente a complexidade de tempo deste algoritmo, considerando o melhor, o pior e o caso médio. Em seguida, proponha uma otimização que possa reduzir a complexidade de tempo no caso médio, sem comprometer a eficiência nos outros casos. Justifique sua proposta.",
+          "expected_tool": "knowledge_base",
+          "predicted_tool": "create_web_page",
+          "correct": false,
+          "score": 0.75
+        },
+        {
+          "question": "Cenário: Sua empresa está migrando para uma arquitetura Cloud Native e deseja implementar um pipeline de CI/CD automatizado para uma aplicação composta por vários microserviços. Esses microserviços serão implantados em um cluster Kubernetes gerenciado, utilizando Istio para gerenciar o tráfego e a segurança, e Terraform para a infraestrutura como código (IaC). Além disso, a equipe deseja criar um operador personalizado para automatizar a gestão de um recurso específico, utilizando Custom Resource Definitions (CRDs). Desenhe e implemente um pipeline de CI/CD que atenda a esses requisitos, incluindo a configuração do operador personalizado.",
+          "expected_tool": "knowledge_base",
+          "predicted_tool": "create_file",
+          "correct": false,
+          "score": 0.75
+        },
+        {
+          "question": "Crie uma página de login moderna em HTML",
+          "expected_tool": "create_web_page",
+          "predicted_tool": "create_web_page",
+          "correct": true,
+          "score": 0.75
+        },
+        {
+          "question": "Aprenda profundamente o conteúdo deste repositório: https://github.com/freeCodeCamp/freeCodeCamp.git",
+          "expected_tool": "open_page",
+          "predicted_tool": "knowledge_base",
+          "correct": false,
+          "score": 0.75
+        },
+        {
+          "question": "Crie os arquivos do exemplo, incluindo o arquivo de testes",
+          "expected_tool": "create_file",
+          "predicted_tool": "create_file",
+          "correct": true,
+          "score": 0.75
+        },
+        {
+          "question": "Verifique o projeto rodando os testes",
+          "expected_tool": "project_checks",
+          "predicted_tool": "project_checks",
+          "correct": true,
+          "score": 0.75
+        },
+        {
+          "question": "Confirme que os testes passaram",
+          "expected_tool": "project_checks",
+          "predicted_tool": "project_checks",
+          "correct": true,
+          "score": 0.75
+        }
+      ]
+    }
+  },
+  "batteries": [
+    {
+      "name": "batteries",
+      "status": null,
+      "passed": null,
+      "skipped": true
+    }
+  ],
+  "gates": {
+    "training_data": true,
+    "training_quality": false,
+    "candidate_integrity": true,
+    "validation_nonempty": true,
+    "validation_no_regression": true,
+    "batteries": false
+  },
+  "status": "candidate-blocked",
+  "finished_at": "2026-09-23T18:18:10.762171+00:00"
+}

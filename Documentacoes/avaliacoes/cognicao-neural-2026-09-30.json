@@ -1,0 +1,310 @@
+{
+  "mode": "neural-decisions-with-simulated-observations",
+  "checkpoint": "/home/victor/Documentos/IA Local do Zero/model/godmode/context-32768-v1/candidate.safetensors",
+  "checkpoint_sha256": "0aeafd6f3966c8c59548ca1bb386c87483c62eafe21e95d1cb89260741d1fee3",
+  "generation_token_budget": 384,
+  "limitations": [
+    "No live tool execution",
+    "Synthetic observations; no external facts verified",
+    "Protocol checks and narrow answer checks do not prove general comprehension"
+  ],
+  "passed": 0,
+  "total": 4,
+  "cases": [
+    {
+      "id": "direct",
+      "expected": "answer",
+      "passed": false,
+      "valid_decision": false,
+      "elapsed_seconds": 0.155,
+      "response": {
+        "text": "Não consegui decidir com segurança como responder ou consultar as informações necessárias. O checkpoint não produziu uma decisão cognitiva válida.",
+        "backend": "quality-gate",
+        "intent": "conversation",
+        "generation": {
+          "input_tokens": 838,
+          "max_tokens": 384,
+          "budget_mode": "override-bounded",
+          "system_prompt_included": false,
+          "context": {
+            "native_context_tokens": 32768,
+            "trained_context_tokens": 512,
+            "runtime_context_tokens": 32768,
+            "forward_context_tokens": 32768,
+            "effective_source_history_tokens": 64768,
+            "context_extension": true,
+            "context_policy": "configured-runtime-verified-extension",
+            "strategy": {
+              "mode": "chunked-attention",
+              "effective_context": 32768,
+              "forward_chunk": 32768,
+              "attention_chunk": 512,
+              "estimated_peak_mb": 3712.0,
+              "safe": true,
+              "mechanism": "causal-query-blocks"
+            }
+          },
+          "context_compaction": {
+            "schema": "conversation-compaction/v1",
+            "source_messages": 1,
+            "source_token_upper_bound": 2568,
+            "summarized_messages": 0,
+            "summary_items": 0,
+            "summary_tokens": 0,
+            "recent_messages_kept": 1,
+            "prompt_token_upper_bound": 838,
+            "token_count_mode": "bpe-exact",
+            "prompt_budget_tokens": 32384,
+            "source_context_multiplier": 2,
+            "effective_source_history_tokens": 64768,
+            "compression_ratio_upper_bound": 3.06,
+            "bounded": true
+          },
+          "quality_stop_reason": "repeated-fragment",
+          "generated_tokens": 15,
+          "generation_elapsed_ms": 89.02,
+          "tokens_per_second": 168.5,
+          "stop_reason": "quality-prefix-stop",
+          "decoding": "greedy",
+          "repetition_penalty": 1.08,
+          "quality_reason": "A decisão deve conter o envelope cognitivo completo.",
+          "quality_gate_result": "rejected"
+        },
+        "cognition": {
+          "decision": "blocked",
+          "gap": "O checkpoint não produziu uma decisão cognitiva válida.",
+          "evidence_ids": []
+        },
+        "agent": {
+          "status": "blocked",
+          "phase": "plan",
+          "steps": 0,
+          "stop_reason": "cognitive_decision_unavailable",
+          "retryable": false,
+          "verified": false
+        }
+      }
+    },
+    {
+      "id": "external_gap",
+      "expected": "consult",
+      "passed": false,
+      "valid_decision": false,
+      "elapsed_seconds": 0.15,
+      "response": {
+        "text": "Não consegui decidir com segurança como responder ou consultar as informações necessárias. O checkpoint não produziu uma decisão cognitiva válida.",
+        "backend": "quality-gate",
+        "intent": "conversation",
+        "generation": {
+          "input_tokens": 846,
+          "max_tokens": 384,
+          "budget_mode": "override-bounded",
+          "system_prompt_included": false,
+          "context": {
+            "native_context_tokens": 32768,
+            "trained_context_tokens": 512,
+            "runtime_context_tokens": 32768,
+            "forward_context_tokens": 32768,
+            "effective_source_history_tokens": 64768,
+            "context_extension": true,
+            "context_policy": "configured-runtime-verified-extension",
+            "strategy": {
+              "mode": "chunked-attention",
+              "effective_context": 32768,
+              "forward_chunk": 32768,
+              "attention_chunk": 512,
+              "estimated_peak_mb": 3712.0,
+              "safe": true,
+              "mechanism": "causal-query-blocks"
+            }
+          },
+          "context_compaction": {
+            "schema": "conversation-compaction/v1",
+            "source_messages": 1,
+            "source_token_upper_bound": 2654,
+            "summarized_messages": 0,
+            "summary_items": 0,
+            "summary_tokens": 0,
+            "recent_messages_kept": 1,
+            "prompt_token_upper_bound": 846,
+            "token_count_mode": "bpe-exact",
+            "prompt_budget_tokens": 32384,
+            "source_context_multiplier": 2,
+            "effective_source_history_tokens": 64768,
+            "compression_ratio_upper_bound": 3.14,
+            "bounded": true
+          },
+          "quality_stop_reason": "repeated-fragment",
+          "generated_tokens": 15,
+          "generation_elapsed_ms": 88.22,
+          "tokens_per_second": 170.03,
+          "stop_reason": "quality-prefix-stop",
+          "decoding": "greedy",
+          "repetition_penalty": 1.08,
+          "quality_reason": "A decisão deve conter o envelope cognitivo completo.",
+          "quality_gate_result": "rejected"
+        },
+        "cognition": {
+          "decision": "blocked",
+          "gap": "O checkpoint não produziu uma decisão cognitiva válida.",
+          "evidence_ids": []
+        },
+        "agent": {
+          "status": "blocked",
+          "phase": "plan",
+          "steps": 0,
+          "stop_reason": "cognitive_decision_unavailable",
+          "retryable": false,
+          "verified": false
+        }
+      }
+    },
+    {
+      "id": "observed_requirement",
+      "expected": "answer",
+      "passed": false,
+      "valid_decision": false,
+      "elapsed_seconds": 0.189,
+      "response": {
+        "text": "Não consegui decidir com segurança como responder ou consultar as informações necessárias. O checkpoint não produziu uma decisão cognitiva válida.",
+        "backend": "quality-gate",
+        "intent": "conversation",
+        "generation": {
+          "input_tokens": 936,
+          "max_tokens": 384,
+          "budget_mode": "override-bounded",
+          "system_prompt_included": false,
+          "context": {
+            "native_context_tokens": 32768,
+            "trained_context_tokens": 512,
+            "runtime_context_tokens": 32768,
+            "forward_context_tokens": 32768,
+            "effective_source_history_tokens": 64768,
+            "context_extension": true,
+            "context_policy": "configured-runtime-verified-extension",
+            "strategy": {
+              "mode": "chunked-attention",
+              "effective_context": 32768,
+              "forward_chunk": 32768,
+              "attention_chunk": 512,
+              "estimated_peak_mb": 3712.0,
+              "safe": true,
+              "mechanism": "causal-query-blocks"
+            }
+          },
+          "context_compaction": {
+            "schema": "conversation-compaction/v1",
+            "source_messages": 1,
+            "source_token_upper_bound": 2787,
+            "summarized_messages": 0,
+            "summary_items": 0,
+            "summary_tokens": 0,
+            "recent_messages_kept": 1,
+            "prompt_token_upper_bound": 936,
+            "token_count_mode": "bpe-exact",
+            "prompt_budget_tokens": 32384,
+            "source_context_multiplier": 2,
+            "effective_source_history_tokens": 64768,
+            "compression_ratio_upper_bound": 2.98,
+            "bounded": true
+          },
+          "quality_stop_reason": "repeated-fragment",
+          "generated_tokens": 31,
+          "generation_elapsed_ms": 126.1,
+          "tokens_per_second": 245.84,
+          "stop_reason": "quality-prefix-stop",
+          "decoding": "greedy",
+          "repetition_penalty": 1.08,
+          "quality_reason": "A decisão deve conter o envelope cognitivo completo.",
+          "quality_gate_result": "rejected"
+        },
+        "cognition": {
+          "decision": "blocked",
+          "gap": "O checkpoint não produziu uma decisão cognitiva válida.",
+          "evidence_ids": []
+        },
+        "agent": {
+          "status": "blocked",
+          "phase": "plan",
+          "steps": 1,
+          "stop_reason": "cognitive_decision_unavailable",
+          "retryable": false,
+          "verified": false
+        }
+      }
+    },
+    {
+      "id": "failed_source",
+      "expected": "consult_or_blocked",
+      "passed": false,
+      "valid_decision": false,
+      "elapsed_seconds": 0.148,
+      "response": {
+        "text": "Não consegui decidir com segurança como responder ou consultar as informações necessárias. O checkpoint não produziu uma decisão cognitiva válida.",
+        "backend": "quality-gate",
+        "intent": "conversation",
+        "generation": {
+          "input_tokens": 883,
+          "max_tokens": 384,
+          "budget_mode": "override-bounded",
+          "system_prompt_included": false,
+          "context": {
+            "native_context_tokens": 32768,
+            "trained_context_tokens": 512,
+            "runtime_context_tokens": 32768,
+            "forward_context_tokens": 32768,
+            "effective_source_history_tokens": 64768,
+            "context_extension": true,
+            "context_policy": "configured-runtime-verified-extension",
+            "strategy": {
+              "mode": "chunked-attention",
+              "effective_context": 32768,
+              "forward_chunk": 32768,
+              "attention_chunk": 512,
+              "estimated_peak_mb": 3712.0,
+              "safe": true,
+              "mechanism": "causal-query-blocks"
+            }
+          },
+          "context_compaction": {
+            "schema": "conversation-compaction/v1",
+            "source_messages": 1,
+            "source_token_upper_bound": 2722,
+            "summarized_messages": 0,
+            "summary_items": 0,
+            "summary_tokens": 0,
+            "recent_messages_kept": 1,
+            "prompt_token_upper_bound": 883,
+            "token_count_mode": "bpe-exact",
+            "prompt_budget_tokens": 32384,
+            "source_context_multiplier": 2,
+            "effective_source_history_tokens": 64768,
+            "compression_ratio_upper_bound": 3.08,
+            "bounded": true
+          },
+          "generated_tokens": 12,
+          "generation_elapsed_ms": 85.94,
+          "tokens_per_second": 139.63,
+          "stop_reason": "low-entropy-cycle",
+          "decoding": "greedy",
+          "repetition_penalty": 1.08,
+          "quality_reason": "A decisão deve conter o envelope cognitivo completo.",
+          "quality_gate_result": "rejected"
+        },
+        "cognition": {
+          "decision": "blocked",
+          "gap": "O checkpoint não produziu uma decisão cognitiva válida.",
+          "evidence_ids": []
+        },
+        "agent": {
+          "status": "blocked",
+          "phase": "plan",
+          "steps": 1,
+          "stop_reason": "cognitive_decision_unavailable",
+          "retryable": false,
+          "verified": false
+        }
+      }
+    }
+  ]
+}

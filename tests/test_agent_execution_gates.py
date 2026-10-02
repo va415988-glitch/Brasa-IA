@@ -45,6 +45,6 @@ class ExecutionGatesTests(unittest.TestCase):
         self.assertEqual(response['agent']['status'], 'failed')
 
     def test_budget_stops_even_successful_tools(self):
-        messages = [{'role': 'tool', 'content': json.dumps({'tool': 'read_file', 'ok': True, 'data': {}})}] * 12
+        messages = [{'role': 'tool', 'content': json.dumps({'tool': 'read_file', 'ok': True, 'data': {}})}] * 32
         response = self.service.continue_after_tool(messages, 'Leia o projeto')
         self.assertEqual(response['agent']['stop_reason'], 'step_budget')

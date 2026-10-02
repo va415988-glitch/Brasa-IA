@@ -67,6 +67,26 @@ def _organization(host: str) -> str:
     return '.'.join(parts[-2:])
 
 
+_AMBIGUOUS_TOPIC_CONTEXT: dict[str, tuple[str, ...]] = {
+    "go": (r"\b(?:programming language|language|compiler|goroutine|goroutines|golang|go\.mod|package main)\b",),
+    "r": (r"\b(?:programming language|statistics|statistical|data frame|ggplot|cran|rstudio)\b",),
+    "c": (r"\b(?:programming language|compiler|pointer|memory|gcc|clang|stdlib)\b",),
+    "java": (r"\b(?:programming language|jvm|bytecode|javac|jdk|spring|classes?)\b",),
+    "dart": (r"\b(?:programming language|flutter|dart sdk|pubspec|isolate)\b",),
+    "swift": (r"\b(?:programming language|xcode|ios|macos|swiftui|swift package)\b",),
+}
+
+
+def topic_context_matches(topic: str, title: str, body: str = "") -> bool:
+    """Rejects lexical collisions for short language names (Go, C, R...)."""
+    key = "".join(subject_tokens(topic))
+    patterns = _AMBIGUOUS_TOPIC_CONTEXT.get(key)
+    if not patterns:
+        return True
+    material = f"{title} {body}"
+    return any(re.search(pattern, material, re.I) for pattern in patterns)
+
+
 def source_priority(topic: str, page: dict) -> int:
     """Rank likely project publishers before secondary summaries.
 
@@ -112,7 +132,9 @@ not proof that the subject itself is fictional.
         url = str(page.get("url") or "")
         body = str(page.get("text") or "")
         host = _host(url)
-        if not host or url in seen_urls or len(body.strip()) < 300 or not topic_matches(topic, title, url):
+        if (not host or url in seen_urls or len(body.strip()) < 300
+                or not topic_matches(topic, title, url)
+                or not topic_context_matches(topic, title, body)):
             continue
         focus = set(subject_tokens(topic))
         # Arquivos internos de um repositório podem não repetir o nome do

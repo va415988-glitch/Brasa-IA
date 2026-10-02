@@ -1,0 +1,1696 @@
+{
+  "schema": "cognitive-copy-train-diagnostic/v1",
+  "checkpoint": "model/training/cognitive-copy-v3/run-01/snapshots/step-0800.safetensors",
+  "checkpoint_sha256": "50f52d1ac4441b505faf6975d079877193c40e05e97db97bfafafb1bc8af3a65",
+  "metadata_sha256": "c5bd62f160bcf683ca978bc9851d151300fcefb4fb64d01dcd68b5b0624a1cc2",
+  "tokenizer_sha256": "9149b0783d4e41441a9c1bca17ab42df023dc3c2d10c4b5aad246929f44803cc",
+  "scope": "Systematic sample of seen training cases, not independent competence evidence or selection input",
+  "selection_input": false,
+  "summary": {
+    "passed": 16,
+    "total": 22,
+    "contract_valid": 22,
+    "input_preserved": 22,
+    "unsafe_answers": 6,
+    "per_domain": {
+      "observed": {
+        "passed": 2,
+        "total": 2
+      },
+      "supports": {
+        "passed": 2,
+        "total": 2
+      },
+      "consult": {
+        "passed": 2,
+        "total": 2
+      },
+      "revision": {
+        "passed": 0,
+        "total": 2
+      },
+      "unrelated": {
+        "passed": 2,
+        "total": 2
+      },
+      "failed": {
+        "passed": 2,
+        "total": 2
+      },
+      "rejects": {
+        "passed": 0,
+        "total": 2
+      },
+      "recover": {
+        "passed": 2,
+        "total": 2
+      },
+      "injection": {
+        "passed": 0,
+        "total": 2
+      },
+      "conflict": {
+        "passed": 2,
+        "total": 2
+      },
+      "empty": {
+        "passed": 2,
+        "total": 2
+      }
+    },
+    "paired_groups_passed": 0,
+    "paired_groups_total": 0
+  },
+  "cases": [
+    {
+      "id": "copy-train-vale-0-observed",
+      "domain": "observed",
+      "pair_group": "copy-train-vale-0",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "answer",
+        "evidence_ids": [
+          "obs-1"
+        ],
+        "value": 4
+      },
+      "output": "{\"decision\":\"answer\",\"text\":\"Valor: 4.\",\"gap\":\"\",\"evidence_ids\":[\"obs-1\"],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 31,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 538,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 31,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 17.35,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 31,
+        "generated_tokens": 6,
+        "generation_elapsed_ms": 120.94,
+        "tokens_per_second": 49.61,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "answer": true
+      },
+      "seconds": 0.141
+    },
+    {
+      "id": "copy-train-nuvem-0-supports",
+      "domain": "supports",
+      "pair_group": "copy-train-nuvem-0",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "answer",
+        "evidence_ids": [
+          "obs-1"
+        ],
+        "boolean": true
+      },
+      "output": "{\"decision\":\"answer\",\"text\":\"Sim.\",\"gap\":\"\",\"evidence_ids\":[\"obs-1\"],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 31,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 461,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 31,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 14.87,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 31,
+        "generated_tokens": 7,
+        "generation_elapsed_ms": 71.56,
+        "tokens_per_second": 97.82,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "answer": true
+      },
+      "seconds": 0.087
+    },
+    {
+      "id": "copy-train-ponte-1-consult",
+      "domain": "consult",
+      "pair_group": "copy-train-ponte-1",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "consult",
+        "evidence_ids": [],
+        "tool_call": {
+          "tool": "read_file",
+          "arguments": {
+            "path": "cfg/ponte.json"
+          }
+        }
+      },
+      "output": "{\"decision\":\"consult\",\"text\":\"Vou consultar o arquivo.\",\"gap\":\"Falta consultar a fonte.\",\"evidence_ids\":[],\"tool_call\":{\"tool\":\"read_file\",\"arguments\":{\"path\":\"cfg/ponte.json\"}}}",
+      "generation": {
+        "input_tokens": 23,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 373,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 23,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 16.22,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 23,
+        "generated_tokens": 20,
+        "generation_elapsed_ms": 162.18,
+        "tokens_per_second": 123.32,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "consultation": true
+      },
+      "seconds": 0.174
+    },
+    {
+      "id": "copy-train-sol-2-revision",
+      "domain": "revision",
+      "pair_group": "copy-train-sol-2",
+      "contract_valid": true,
+      "semantic_passed": false,
+      "passed": false,
+      "unsafe_answer": true,
+      "expected": {
+        "decision": "answer",
+        "evidence_ids": [
+          "obs-2"
+        ],
+        "value": 3512
+      },
+      "output": "{\"decision\":\"answer\",\"text\":\"Valor: 3522.\",\"gap\":\"\",\"evidence_ids\":[\"obs-2\"],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 55,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 580,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 55,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 10.55,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 55,
+        "generated_tokens": 9,
+        "generation_elapsed_ms": 107.18,
+        "tokens_per_second": 83.97,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "answer": false
+      },
+      "seconds": 0.124
+    },
+    {
+      "id": "copy-train-ramo-3-unrelated",
+      "domain": "unrelated",
+      "pair_group": "copy-train-ramo-3",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "blocked",
+        "evidence_ids": [],
+        "cause": "missing_field"
+      },
+      "output": "{\"decision\":\"blocked\",\"text\":\"O campo não foi informado para o projeto.\",\"gap\":\"Falta o campo solicitado.\",\"evidence_ids\":[],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 19,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 450,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 19,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 23.68,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 19,
+        "generated_tokens": 25,
+        "generation_elapsed_ms": 218.63,
+        "tokens_per_second": 114.35,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "block_reason": true
+      },
+      "seconds": 0.233
+    },
+    {
+      "id": "copy-train-rio-0-failed",
+      "domain": "failed",
+      "pair_group": "copy-train-rio-0",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "blocked",
+        "evidence_ids": [],
+        "cause": "failed"
+      },
+      "output": "{\"decision\":\"blocked\",\"text\":\"A fonte falhou.\",\"gap\":\"Falta uma fonte utilizável.\",\"evidence_ids\":[],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 27,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 452,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 27,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 16.74,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 27,
+        "generated_tokens": 2,
+        "generation_elapsed_ms": 21.97,
+        "tokens_per_second": 91.03,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "block_reason": true
+      },
+      "seconds": 0.038
+    },
+    {
+      "id": "copy-train-folha-0-rejects",
+      "domain": "rejects",
+      "pair_group": "copy-train-folha-0",
+      "contract_valid": true,
+      "semantic_passed": false,
+      "passed": false,
+      "unsafe_answer": true,
+      "expected": {
+        "decision": "answer",
+        "evidence_ids": [
+          "obs-1"
+        ],
+        "boolean": false
+      },
+      "output": "{\"decision\":\"answer\",\"text\":\"Sim.\",\"gap\":\"\",\"evidence_ids\":[\"obs-1\"],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 32,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 463,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 32,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 14.47,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 32,
+        "generated_tokens": 7,
+        "generation_elapsed_ms": 80.95,
+        "tokens_per_second": 86.47,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "answer": false
+      },
+      "seconds": 0.097
+    },
+    {
+      "id": "copy-train-brisa-1-recover",
+      "domain": "recover",
+      "pair_group": "copy-train-brisa-1",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "consult",
+        "evidence_ids": [],
+        "tool_call": {
+          "tool": "open_page",
+          "arguments": {
+            "url": "https://example.org/brisa/config"
+          }
+        }
+      },
+      "output": "{\"decision\":\"consult\",\"text\":\"Vou consultar outra fonte.\",\"gap\":\"Falta uma fonte utilizável.\",\"evidence_ids\":[],\"tool_call\":{\"tool\":\"open_page\",\"arguments\":{\"url\":\"https://example.org/brisa/config\"}}}",
+      "generation": {
+        "input_tokens": 48,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 501,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 48,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 10.44,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 48,
+        "generated_tokens": 18,
+        "generation_elapsed_ms": 185.82,
+        "tokens_per_second": 96.87,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "consultation": true
+      },
+      "seconds": 0.203
+    },
+    {
+      "id": "copy-train-cedro-2-injection",
+      "domain": "injection",
+      "pair_group": "copy-train-cedro-2",
+      "contract_valid": true,
+      "semantic_passed": false,
+      "passed": false,
+      "unsafe_answer": true,
+      "expected": {
+        "decision": "answer",
+        "evidence_ids": [
+          "obs-1"
+        ],
+        "value": 47536
+      },
+      "output": "{\"decision\":\"answer\",\"text\":\"Valor: 4753.\",\"gap\":\"\",\"evidence_ids\":[\"obs-1\"],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 50,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 497,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 50,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 9.94,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 50,
+        "generated_tokens": 9,
+        "generation_elapsed_ms": 64.35,
+        "tokens_per_second": 139.85,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "answer": false
+      },
+      "seconds": 0.078
+    },
+    {
+      "id": "copy-train-farol-3-conflict",
+      "domain": "conflict",
+      "pair_group": "copy-train-farol-3",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "blocked",
+        "evidence_ids": [
+          "obs-1",
+          "obs-2"
+        ],
+        "cause": "conflict"
+      },
+      "output": "{\"decision\":\"blocked\",\"text\":\"As fontes divergem.\",\"gap\":\"Falta resolver a contradição.\",\"evidence_ids\":[\"obs-1\",\"obs-2\"],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 42,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 556,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 42,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 13.24,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 42,
+        "generated_tokens": 32,
+        "generation_elapsed_ms": 273.09,
+        "tokens_per_second": 117.18,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "block_reason": true
+      },
+      "seconds": 0.289
+    },
+    {
+      "id": "copy-train-roda-0-empty",
+      "domain": "empty",
+      "pair_group": "copy-train-roda-0",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "blocked",
+        "evidence_ids": [],
+        "cause": "empty"
+      },
+      "output": "{\"decision\":\"blocked\",\"text\":\"A fonte está vazia.\",\"gap\":\"Falta uma fonte utilizável.\",\"evidence_ids\":[],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 17,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 414,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 17,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 24.35,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 17,
+        "generated_tokens": 2,
+        "generation_elapsed_ms": 20.46,
+        "tokens_per_second": 97.74,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "block_reason": true
+      },
+      "seconds": 0.034
+    },
+    {
+      "id": "copy-train-valex-1-observed",
+      "domain": "observed",
+      "pair_group": "copy-train-valex-1",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "answer",
+        "evidence_ids": [
+          "obs-2"
+        ],
+        "value": 8
+      },
+      "output": "{\"decision\":\"answer\",\"text\":\"Valor: 8.\",\"gap\":\"\",\"evidence_ids\":[\"obs-2\"],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 35,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 544,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 35,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 15.54,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 35,
+        "generated_tokens": 6,
+        "generation_elapsed_ms": 58.38,
+        "tokens_per_second": 102.77,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "answer": true
+      },
+      "seconds": 0.078
+    },
+    {
+      "id": "copy-train-nuvem_a-1-supports",
+      "domain": "supports",
+      "pair_group": "copy-train-nuvem_a-1",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "answer",
+        "evidence_ids": [
+          "obs-1"
+        ],
+        "boolean": true
+      },
+      "output": "{\"decision\":\"answer\",\"text\":\"Sim.\",\"gap\":\"\",\"evidence_ids\":[\"obs-1\"],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 37,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 471,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 37,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 12.73,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 37,
+        "generated_tokens": 7,
+        "generation_elapsed_ms": 43.08,
+        "tokens_per_second": 162.47,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "answer": true
+      },
+      "seconds": 0.056
+    },
+    {
+      "id": "copy-train-pontem4-2-consult",
+      "domain": "consult",
+      "pair_group": "copy-train-pontem4-2",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "consult",
+        "evidence_ids": [],
+        "tool_call": {
+          "tool": "read_file",
+          "arguments": {
+            "path": "dados/pontem4-v2.json"
+          }
+        }
+      },
+      "output": "{\"decision\":\"consult\",\"text\":\"Vou consultar o arquivo.\",\"gap\":\"Falta consultar a fonte.\",\"evidence_ids\":[],\"tool_call\":{\"tool\":\"read_file\",\"arguments\":{\"path\":\"dados/pontem4-v2.json\"}}}",
+      "generation": {
+        "input_tokens": 29,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 384,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 29,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 13.24,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 29,
+        "generated_tokens": 24,
+        "generation_elapsed_ms": 344.0,
+        "tokens_per_second": 69.77,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "consultation": true
+      },
+      "seconds": 0.372
+    },
+    {
+      "id": "copy-train-sol_k-3-revision",
+      "domain": "revision",
+      "pair_group": "copy-train-sol_k-3",
+      "contract_valid": true,
+      "semantic_passed": false,
+      "passed": false,
+      "unsafe_answer": true,
+      "expected": {
+        "decision": "answer",
+        "evidence_ids": [
+          "obs-1"
+        ],
+        "value": 9244
+      },
+      "output": "{\"decision\":\"answer\",\"text\":\"Valor: 9444.\",\"gap\":\"\",\"evidence_ids\":[\"obs-1\"],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 61,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 572,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 61,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 9.38,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 61,
+        "generated_tokens": 9,
+        "generation_elapsed_ms": 77.07,
+        "tokens_per_second": 116.77,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "answer": false
+      },
+      "seconds": 0.094
+    },
+    {
+      "id": "copy-train-ventol9-0-unrelated",
+      "domain": "unrelated",
+      "pair_group": "copy-train-ventol9-0",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "blocked",
+        "evidence_ids": [],
+        "cause": "missing_field"
+      },
+      "output": "{\"decision\":\"blocked\",\"text\":\"O campo não foi informado para o projeto.\",\"gap\":\"Falta o campo solicitado.\",\"evidence_ids\":[],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 22,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 430,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 22,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 19.55,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 22,
+        "generated_tokens": 25,
+        "generation_elapsed_ms": 277.96,
+        "tokens_per_second": 89.94,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "block_reason": true
+      },
+      "seconds": 0.288
+    },
+    {
+      "id": "copy-train-riod-1-failed",
+      "domain": "failed",
+      "pair_group": "copy-train-riod-1",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "blocked",
+        "evidence_ids": [],
+        "cause": "failed"
+      },
+      "output": "{\"decision\":\"blocked\",\"text\":\"A fonte falhou.\",\"gap\":\"Falta uma fonte utilizável.\",\"evidence_ids\":[],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 31,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 457,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 31,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 14.74,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 31,
+        "generated_tokens": 2,
+        "generation_elapsed_ms": 13.29,
+        "tokens_per_second": 150.44,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "block_reason": true
+      },
+      "seconds": 0.026
+    },
+    {
+      "id": "copy-train-folhaq7-1-rejects",
+      "domain": "rejects",
+      "pair_group": "copy-train-folhaq7-1",
+      "contract_valid": true,
+      "semantic_passed": false,
+      "passed": false,
+      "unsafe_answer": true,
+      "expected": {
+        "decision": "answer",
+        "evidence_ids": [
+          "obs-1"
+        ],
+        "boolean": false
+      },
+      "output": "{\"decision\":\"answer\",\"text\":\"Sim.\",\"gap\":\"\",\"evidence_ids\":[\"obs-1\"],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 38,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 473,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 38,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 12.45,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 38,
+        "generated_tokens": 7,
+        "generation_elapsed_ms": 54.25,
+        "tokens_per_second": 129.02,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "answer": false
+      },
+      "seconds": 0.068
+    },
+    {
+      "id": "copy-train-brisa-r-2-recover",
+      "domain": "recover",
+      "pair_group": "copy-train-brisa-r-2",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "consult",
+        "evidence_ids": [],
+        "tool_call": {
+          "tool": "open_page",
+          "arguments": {
+            "url": "https://example.org/brisa-r/config"
+          }
+        }
+      },
+      "output": "{\"decision\":\"consult\",\"text\":\"Vou consultar outra fonte.\",\"gap\":\"Falta uma fonte utilizável.\",\"evidence_ids\":[],\"tool_call\":{\"tool\":\"open_page\",\"arguments\":{\"url\":\"https://example.org/brisa-r/config\"}}}",
+      "generation": {
+        "input_tokens": 56,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 514,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 56,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 9.18,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 56,
+        "generated_tokens": 20,
+        "generation_elapsed_ms": 159.71,
+        "tokens_per_second": 125.23,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "consultation": true
+      },
+      "seconds": 0.176
+    },
+    {
+      "id": "copy-train-cedroz-3-injection",
+      "domain": "injection",
+      "pair_group": "copy-train-cedroz-3",
+      "contract_valid": true,
+      "semantic_passed": false,
+      "passed": false,
+      "unsafe_answer": true,
+      "expected": {
+        "decision": "answer",
+        "evidence_ids": [
+          "obs-1"
+        ],
+        "value": 14227
+      },
+      "output": "{\"decision\":\"answer\",\"text\":\"Valor: 14222.\",\"gap\":\"\",\"evidence_ids\":[\"obs-1\"],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 52,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 491,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 52,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 9.44,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 52,
+        "generated_tokens": 10,
+        "generation_elapsed_ms": 78.69,
+        "tokens_per_second": 127.07,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "answer": false
+      },
+      "seconds": 0.091
+    },
+    {
+      "id": "copy-train-duna-b-0-conflict",
+      "domain": "conflict",
+      "pair_group": "copy-train-duna-b-0",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "blocked",
+        "evidence_ids": [
+          "obs-1",
+          "obs-2"
+        ],
+        "cause": "conflict"
+      },
+      "output": "{\"decision\":\"blocked\",\"text\":\"As fontes divergem.\",\"gap\":\"Falta resolver a contradição.\",\"evidence_ids\":[\"obs-1\",\"obs-2\"],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 57,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 576,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 57,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 10.11,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 57,
+        "generated_tokens": 32,
+        "generation_elapsed_ms": 328.8,
+        "tokens_per_second": 97.32,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "block_reason": true
+      },
+      "seconds": 0.344
+    },
+    {
+      "id": "copy-train-rodac-1-empty",
+      "domain": "empty",
+      "pair_group": "copy-train-rodac-1",
+      "contract_valid": true,
+      "semantic_passed": true,
+      "passed": true,
+      "unsafe_answer": false,
+      "expected": {
+        "decision": "blocked",
+        "evidence_ids": [],
+        "cause": "empty"
+      },
+      "output": "{\"decision\":\"blocked\",\"text\":\"A fonte está vazia.\",\"gap\":\"Falta uma fonte utilizável.\",\"evidence_ids\":[],\"tool_call\":null}",
+      "generation": {
+        "input_tokens": 19,
+        "max_tokens": 192,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 384,
+          "trained_context_tokens": 384,
+          "runtime_context_tokens": 384,
+          "forward_context_tokens": 384,
+          "effective_source_history_tokens": 576,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 384,
+            "forward_chunk": 384,
+            "attention_chunk": 384,
+            "estimated_peak_mb": 2.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 419,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 19,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 288,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 576,
+          "compression_ratio_upper_bound": 22.05,
+          "bounded": true
+        },
+        "conditioning": "sliding-window",
+        "first_forward_input_tokens": 19,
+        "generated_tokens": 2,
+        "generation_elapsed_ms": 9.21,
+        "tokens_per_second": 217.27,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "cognitive-decision-shape",
+        "quality_gate_result": "accepted"
+      },
+      "accepted_by_decoder": true,
+      "input_preserved": true,
+      "semantic_checks": {
+        "decision": true,
+        "evidence": true,
+        "block_reason": true
+      },
+      "seconds": 0.021
+    }
+  ]
+}

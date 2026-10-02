@@ -1,0 +1,867 @@
+{
+  "version": "neural-generation/v1",
+  "mode": "neural-only",
+  "source": "local-checkpoint-weights",
+  "checkpoint": "model/checkpoints/compact-09-local.pt",
+  "local_model_loaded": true,
+  "local_model_error": null,
+  "context_length": 128,
+  "memory_entries_loaded_but_not_used": 393,
+  "passed": 0,
+  "total": 12,
+  "pass_rate": 0.0,
+  "cases": [
+    {
+      "id": "variable-python",
+      "prompt": "O que é uma variável em Python?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "O que é uma variável em Python?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "too-short",
+      "generation": {
+        "input_tokens": 8,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 128,
+          "trained_context_tokens": 128,
+          "runtime_context_tokens": 128,
+          "forward_context_tokens": 128,
+          "effective_source_history_tokens": 32,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 128,
+            "forward_chunk": 128,
+            "attention_chunk": 128,
+            "estimated_peak_mb": 0.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 9,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 0,
+          "prompt_token_upper_bound": 8,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 16,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 32,
+          "compression_ratio_upper_bound": 1.12,
+          "bounded": true
+        },
+        "generated_tokens": 1,
+        "generation_elapsed_ms": 10.8,
+        "tokens_per_second": 92.57,
+        "stop_reason": "eos",
+        "quality_reason": "too-short",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 29.79,
+      "ok": false
+    },
+    {
+      "id": "ownership-rust",
+      "prompt": "O que é ownership em Rust?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "O que é ownership em Rust?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "too-short",
+      "generation": {
+        "input_tokens": 8,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 128,
+          "trained_context_tokens": 128,
+          "runtime_context_tokens": 128,
+          "forward_context_tokens": 128,
+          "effective_source_history_tokens": 32,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 128,
+            "forward_chunk": 128,
+            "attention_chunk": 128,
+            "estimated_peak_mb": 0.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 9,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 0,
+          "prompt_token_upper_bound": 8,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 16,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 32,
+          "compression_ratio_upper_bound": 1.12,
+          "bounded": true
+        },
+        "generated_tokens": 1,
+        "generation_elapsed_ms": 5.98,
+        "tokens_per_second": 167.19,
+        "stop_reason": "eos",
+        "quality_reason": "too-short",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 18.58,
+      "ok": false
+    },
+    {
+      "id": "china",
+      "prompt": "Explique o que é a China.",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Explique o que é a China."
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "too-short",
+      "generation": {
+        "input_tokens": 8,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 128,
+          "trained_context_tokens": 128,
+          "runtime_context_tokens": 128,
+          "forward_context_tokens": 128,
+          "effective_source_history_tokens": 32,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 128,
+            "forward_chunk": 128,
+            "attention_chunk": 128,
+            "estimated_peak_mb": 0.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 11,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 0,
+          "prompt_token_upper_bound": 8,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 16,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 32,
+          "compression_ratio_upper_bound": 1.38,
+          "bounded": true
+        },
+        "generated_tokens": 1,
+        "generation_elapsed_ms": 10.98,
+        "tokens_per_second": 91.1,
+        "stop_reason": "eos",
+        "quality_reason": "too-short",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 16.57,
+      "ok": false
+    },
+    {
+      "id": "uncertainty",
+      "prompt": "Como devo agir quando não sei uma resposta?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Como devo agir quando não sei uma resposta?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "too-short",
+      "generation": {
+        "input_tokens": 8,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 128,
+          "trained_context_tokens": 128,
+          "runtime_context_tokens": 128,
+          "forward_context_tokens": 128,
+          "effective_source_history_tokens": 32,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 128,
+            "forward_chunk": 128,
+            "attention_chunk": 128,
+            "estimated_peak_mb": 0.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 5,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 0,
+          "prompt_token_upper_bound": 8,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 16,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 32,
+          "compression_ratio_upper_bound": 0.62,
+          "bounded": true
+        },
+        "generated_tokens": 1,
+        "generation_elapsed_ms": 10.98,
+        "tokens_per_second": 91.04,
+        "stop_reason": "eos",
+        "quality_reason": "too-short",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 16.89,
+      "ok": false
+    },
+    {
+      "id": "function-design",
+      "prompt": "Como projetar uma função Python fácil de testar?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Como projetar uma função Python fácil de testar?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "too-short",
+      "generation": {
+        "input_tokens": 8,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 128,
+          "trained_context_tokens": 128,
+          "runtime_context_tokens": 128,
+          "forward_context_tokens": 128,
+          "effective_source_history_tokens": 32,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 128,
+            "forward_chunk": 128,
+            "attention_chunk": 128,
+            "estimated_peak_mb": 0.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 5,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 0,
+          "prompt_token_upper_bound": 8,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 16,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 32,
+          "compression_ratio_upper_bound": 0.62,
+          "bounded": true
+        },
+        "generated_tokens": 1,
+        "generation_elapsed_ms": 12.79,
+        "tokens_per_second": 78.17,
+        "stop_reason": "eos",
+        "quality_reason": "too-short",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 19.15,
+      "ok": false
+    },
+    {
+      "id": "api-errors",
+      "prompt": "Como tratar erros em uma API?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Como tratar erros em uma API?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "too-short",
+      "generation": {
+        "input_tokens": 8,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 128,
+          "trained_context_tokens": 128,
+          "runtime_context_tokens": 128,
+          "forward_context_tokens": 128,
+          "effective_source_history_tokens": 32,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 128,
+            "forward_chunk": 128,
+            "attention_chunk": 128,
+            "estimated_peak_mb": 0.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 5,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 0,
+          "prompt_token_upper_bound": 8,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 16,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 32,
+          "compression_ratio_upper_bound": 0.62,
+          "bounded": true
+        },
+        "generated_tokens": 1,
+        "generation_elapsed_ms": 6.19,
+        "tokens_per_second": 161.56,
+        "stop_reason": "eos",
+        "quality_reason": "too-short",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 13.11,
+      "ok": false
+    },
+    {
+      "id": "creative-block",
+      "prompt": "Como sair de um bloqueio criativo?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Como sair de um bloqueio criativo?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "too-short",
+      "generation": {
+        "input_tokens": 8,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 128,
+          "trained_context_tokens": 128,
+          "runtime_context_tokens": 128,
+          "forward_context_tokens": 128,
+          "effective_source_history_tokens": 32,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 128,
+            "forward_chunk": 128,
+            "attention_chunk": 128,
+            "estimated_peak_mb": 0.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 5,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 0,
+          "prompt_token_upper_bound": 8,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 16,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 32,
+          "compression_ratio_upper_bound": 0.62,
+          "bounded": true
+        },
+        "generated_tokens": 1,
+        "generation_elapsed_ms": 14.07,
+        "tokens_per_second": 71.08,
+        "stop_reason": "eos",
+        "quality_reason": "too-short",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 19.81,
+      "ok": false
+    },
+    {
+      "id": "game-ideas",
+      "prompt": "Crie três conceitos de jogo com uma mecânica incomum.",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Crie três conceitos de jogo com uma mecânica incomum."
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "too-short",
+      "generation": {
+        "input_tokens": 8,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 128,
+          "trained_context_tokens": 128,
+          "runtime_context_tokens": 128,
+          "forward_context_tokens": 128,
+          "effective_source_history_tokens": 32,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 128,
+            "forward_chunk": 128,
+            "attention_chunk": 128,
+            "estimated_peak_mb": 0.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 1,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 0,
+          "prompt_token_upper_bound": 8,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 16,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 32,
+          "compression_ratio_upper_bound": 0.12,
+          "bounded": true
+        },
+        "generated_tokens": 1,
+        "generation_elapsed_ms": 13.74,
+        "tokens_per_second": 72.8,
+        "stop_reason": "eos",
+        "quality_reason": "too-short",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 31.87,
+      "ok": false
+    },
+    {
+      "id": "science-evidence",
+      "prompt": "Como avaliar se uma afirmação científica é confiável?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Como avaliar se uma afirmação científica é confiável?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "too-short",
+      "generation": {
+        "input_tokens": 8,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 128,
+          "trained_context_tokens": 128,
+          "runtime_context_tokens": 128,
+          "forward_context_tokens": 128,
+          "effective_source_history_tokens": 32,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 128,
+            "forward_chunk": 128,
+            "attention_chunk": 128,
+            "estimated_peak_mb": 0.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 5,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 0,
+          "prompt_token_upper_bound": 8,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 16,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 32,
+          "compression_ratio_upper_bound": 0.62,
+          "bounded": true
+        },
+        "generated_tokens": 1,
+        "generation_elapsed_ms": 21.15,
+        "tokens_per_second": 47.29,
+        "stop_reason": "eos",
+        "quality_reason": "too-short",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 41.04,
+      "ok": false
+    },
+    {
+      "id": "causality",
+      "prompt": "Explique correlação e causalidade.",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Explique correlação e causalidade."
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "too-short",
+      "generation": {
+        "input_tokens": 8,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 128,
+          "trained_context_tokens": 128,
+          "runtime_context_tokens": 128,
+          "forward_context_tokens": 128,
+          "effective_source_history_tokens": 32,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 128,
+            "forward_chunk": 128,
+            "attention_chunk": 128,
+            "estimated_peak_mb": 0.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 9,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 0,
+          "prompt_token_upper_bound": 8,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 16,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 32,
+          "compression_ratio_upper_bound": 1.12,
+          "bounded": true
+        },
+        "generated_tokens": 1,
+        "generation_elapsed_ms": 7.53,
+        "tokens_per_second": 132.77,
+        "stop_reason": "eos",
+        "quality_reason": "too-short",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 28.64,
+      "ok": false
+    },
+    {
+      "id": "decision",
+      "prompt": "Como tomar uma decisão com informação incompleta?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Como tomar uma decisão com informação incompleta?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "too-short",
+      "generation": {
+        "input_tokens": 8,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 128,
+          "trained_context_tokens": 128,
+          "runtime_context_tokens": 128,
+          "forward_context_tokens": 128,
+          "effective_source_history_tokens": 32,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 128,
+            "forward_chunk": 128,
+            "attention_chunk": 128,
+            "estimated_peak_mb": 0.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 5,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 0,
+          "prompt_token_upper_bound": 8,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 16,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 32,
+          "compression_ratio_upper_bound": 0.62,
+          "bounded": true
+        },
+        "generated_tokens": 1,
+        "generation_elapsed_ms": 15.34,
+        "tokens_per_second": 65.18,
+        "stop_reason": "eos",
+        "quality_reason": "too-short",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 34.51,
+      "ok": false
+    },
+    {
+      "id": "source-quality",
+      "prompt": "Como saber se uma fonte é primária?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Como saber se uma fonte é primária?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "too-short",
+      "generation": {
+        "input_tokens": 8,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 128,
+          "trained_context_tokens": 128,
+          "runtime_context_tokens": 128,
+          "forward_context_tokens": 128,
+          "effective_source_history_tokens": 32,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 128,
+            "forward_chunk": 128,
+            "attention_chunk": 128,
+            "estimated_peak_mb": 0.2,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 5,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 0,
+          "prompt_token_upper_bound": 8,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 16,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 32,
+          "compression_ratio_upper_bound": 0.62,
+          "bounded": true
+        },
+        "generated_tokens": 1,
+        "generation_elapsed_ms": 19.05,
+        "tokens_per_second": 52.48,
+        "stop_reason": "eos",
+        "quality_reason": "too-short",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 39.92,
+      "ok": false
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "schema": "cognitive-alignment-training/v1",
+  "seed": 42,
+  "config": {
+    "name": "own-cognitive-alignment-v4",
+    "vocab_size": 768,
+    "context_length": 512,
+    "training_context_length": 512,
+    "runtime_context_tokens": 512,
+    "forward_chunk_length": 512,
+    "layers": 2,
+    "hidden_size": 128,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 3,
+    "system_prompt_trained": false,
+    "cognitive_prompt_style": "compact-v1",
+    "generation_length": 192,
+    "copy_attention_size": 64,
+    "copy_boundary_ids": [
+      426
+    ],
+    "copy_transition": true,
+    "initialization": "scaled-normal-v1",
+    "training_policy": {
+      "method": "local-sft-copy-alignment-from-scratch",
+      "external_llm": false,
+      "gpu_required": false,
+      "actual_max_sequence_tokens": 431
+    },
+    "tokenizer_path": "/home/victor/Documentos/IA Local do Zero/datasets/cognitive_alignment_v4/tokenizer.json"
+  },
+  "arguments": {
+    "data_dir": "/home/victor/Documentos/IA Local do Zero/datasets/cognitive_alignment_v4",
+    "output_dir": "model/training/cognitive-alignment-v4/run-02",
+    "steps": 1200,
+    "eval_every": 400,
+    "batch_size": 16,
+    "threads": 4,
+    "learning_rate": 0.0015,
+    "alignment_weight": 0.5,
+    "checkpoint": "model/training/cognitive-alignment-v4/run-01/snapshots/step-0400.safetensors",
+    "schedule_steps": 0
+  },
+  "records": {
+    "train": 2304,
+    "validation": 144
+  },
+  "inputs": {
+    "/home/victor/Documentos/IA Local do Zero/datasets/cognitive_alignment_v4/train.jsonl": "b62d716442f38e24c9b7ab901a6193d2d957c81ebb5093084dbf548cc04969b8",
+    "/home/victor/Documentos/IA Local do Zero/datasets/cognitive_alignment_v4/validation.jsonl": "192b251eb012a5e06b81a81117ddedf8b502c4dd1808b042e0bb4bd8184d1d9d",
+    "/home/victor/Documentos/IA Local do Zero/datasets/cognitive_alignment_v4/heldout.jsonl": "d6058c93efb94787ee52ae7ec2cf234441184e31088a45f4b2122875a5c0b41a",
+    "/home/victor/Documentos/IA Local do Zero/datasets/cognitive_alignment_v4/config.json": "a57608950ae4f72014c87e15784c76d083f95e838b32d45909cc62aa993c7d67"
+  },
+  "tokenizer_sha256": "e58fe3e652e62f3028b63810fd90b39745829ed80723bf7daec2e0b4662aa4e1",
+  "parameters": 511490,
+  "resume": {
+    "checkpoint": "model/training/cognitive-alignment-v4/run-01/snapshots/step-0400.safetensors",
+    "checkpoint_sha256": "40e5c4450bd7cbc8166a5c4c52c41bdcc2247dc5a589431654e894222ec53772",
+    "metadata_sha256": "8c530ab552891a217d5bef2f18004015ce646a74ba390967b8f8fd44b2a6d1b2",
+    "source_steps": 400,
+    "optimizer_restarted": true
+  },
+  "source_sha256": {
+    "scripts/train_cognitive_alignment.py": "85fadf2d91a47c2aa5d9064bac1b354ef4a44743115145cb42eb221ecc4c7696",
+    "python/copy_supervision.py": "1afce43a8f077eef8e9949cc779b39912959575480a4832a2fbc5661219e6b87",
+    "python/model.py": "42bcd4959583fe3ffce9c043b55e4b9fd83466e8b32b32b4e0bfc959284e9327"
+  },
+  "limits": [
+    "From scratch on authored synthetic tasks; no external generator.",
+    "Gold source positions are training-only; inference has prompt tokens only.",
+    "Reserved data does not choose training steps or checkpoints.",
+    "Trailing ignored padding is removed; full evidence and responses remain intact."
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "version": "requirements-benchmark/v1",
+  "mode": "agent-with-fallbacks",
+  "checkpoint": "model/godmode/context-32768-v1/candidate.safetensors",
+  "local_model_loaded": true,
+  "local_model_error": null,
+  "memory_entries": 393,
+  "passed": 7,
+  "total": 7,
+  "pass_rate": 1.0,
+  "cases": [
+    {
+      "id": "requirements-ambiguous-app",
+      "category": "requirements",
+      "backend": "requirements-gate",
+      "criteria": {
+        "asks_clarification": true,
+        "does_not_claim_completion": true
+      },
+      "passed": true,
+      "text": "Posso estruturar isso. Qual é o objetivo principal, quem vai usar e em qual plataforma (web, celular ou desktop)? Com essas respostas, defino o primeiro fluxo e uma entrega verificável.",
+      "intent": "planning",
+      "tool": null,
+      "elapsed_ms": 15.56
+    },
+    {
+      "id": "requirements-ambiguous-crud",
+      "category": "requirements",
+      "backend": "requirements-gate",
+      "criteria": {
+        "asks_clarification": true,
+        "does_not_claim_completion": true
+      },
+      "passed": true,
+      "text": "Qual entidade será cadastrada, quem poderá acessar os registros e quais operações são necessárias? Também preciso saber se já existe um projeto e qual banco ou linguagem devemos usar.",
+      "intent": "planning",
+      "tool": null,
+      "elapsed_ms": 7.05
+    },
+    {
+      "id": "requirements-explicit-function",
+      "category": "software",
+      "backend": "local-task",
+      "criteria": {
+        "mentions_language": true,
+        "mentions_tests": true,
+        "has_actionable_delivery": true
+      },
+      "passed": true,
+      "text": "Em Python, uma implementação direta é:\n\n```python\ndef somar(a: int | float, b: int | float) -> int | float:\n    if isinstance(a, bool) or isinstance(b, bool) or not isinstance(a, (int, float)) or not isinstance(b, (int, float)):\n        raise TypeError('a e b devem ser números')\n    return a + b\n```\n\nTestes com a biblioteca padrão:\n\n```python\nimport unittest\n\nclass TestSomar(unittest.TestCase):\n    def test_caso_normal(self):\n        self.assertEqual(somar(2, 3), 5)\n\n    def test_limite_zero(self):\n        self.assertEqual(somar(0, 0), 0)\n\n    def test_entrada_invalida(self):\n        with self.assertRaises(TypeError):\n            somar('2', 3)\n```\n\nExecute com `python -m unittest` após salvar a função e os testes no mesmo módulo.",
+      "intent": "programming",
+      "tool": null,
+      "elapsed_ms": 4.36
+    },
+    {
+      "id": "requirements-production-quality",
+      "category": "software",
+      "backend": "local-task",
+      "criteria": {
+        "mentions_error_handling": true,
+        "mentions_tests": true,
+        "has_actionable_delivery": true
+      },
+      "passed": true,
+      "text": "Falta o comportamento esperado da função. Como exemplo provisório em Python, uso uma função que valida e normaliza um nome; substitua essa regra pela regra do projeto:\n\n```python\ndef normalizar_nome(nome: str) -> str:\n    if not isinstance(nome, str):\n        raise TypeError('nome deve ser texto')\n    resultado = nome.strip()\n    if not resultado:\n        raise ValueError('nome vazio')\n    return resultado\n\nimport unittest\n\nclass TestNormalizarNome(unittest.TestCase):\n    def test_caso_normal(self):\n        self.assertEqual(normalizar_nome(' Ana '), 'Ana')\n\n    def test_limite_vazio(self):\n        with self.assertRaises(ValueError):\n            normalizar_nome('   ')\n```\n\nOs dois testes cobrem caso normal e erro de validação; diga qual regra real devo implementar.",
+      "intent": "programming",
+      "tool": null,
+      "elapsed_ms": 9.64
+    },
+    {
+      "id": "requirements-constraint-memory",
+      "category": "continuity",
+      "backend": "local-task",
+      "criteria": {
+        "preserves_constraints": true,
+        "has_actionable_delivery": true
+      },
+      "passed": true,
+      "text": "Para a API em Python 3.12, sem bibliotecas externas, comece com `http.server` e módulos da biblioteca padrão. Defina `GET /health` e os recursos do domínio, valide JSON e métodos, separe roteamento, regras de negócio e persistência, e cubra resposta normal, entrada inválida e erro de armazenamento com `unittest`. Preciso conhecer os recursos do projeto para detalhar os endpoints.",
+      "intent": "conversation",
+      "tool": null,
+      "elapsed_ms": 1.45
+    },
+    {
+      "id": "requirements-unknown-framework",
+      "category": "uncertainty",
+      "backend": "proactive-learning",
+      "criteria": {
+        "does_not_invent": true,
+        "asks_or_researches": true
+      },
+      "passed": true,
+      "text": "Ainda não tenho evidência local suficiente. Vou investigar fontes relacionadas à tarefa antes de responder ou executar, e usarei o resultado para continuar.",
+      "intent": "web-research",
+      "tool": "research_web",
+      "elapsed_ms": 70.69
+    },
+    {
+      "id": "requirements-creative-diversity",
+      "category": "creative",
+      "backend": "local-task",
+      "criteria": {
+        "has_actionable_delivery": true,
+        "not_blocked": true,
+        "has_multiple_options": true
+      },
+      "passed": true,
+      "text": "Três caminhos de campanha para uma marca de café:\n\n1. **Origem e processo** — mostre como uma marca de café chega ao consumidor. Faça uma série curta com pessoas, bastidores e uma peça que explique o diferencial.\n2. **Ritual cotidiano** — associe uma marca de café a um momento recorrente do público. Crie vídeos de 15 segundos e peça ao público para mostrar seu próprio ritual.\n3. **Descoberta coletiva** — convide pessoas a experimentar e comparar versões de uma marca de café. Use uma ação presencial, relatos reais e uma página com as opções.\n\nValide os três conceitos com públicos pequenos antes de investir na produção completa.",
+      "intent": "creative",
+      "tool": null,
+      "elapsed_ms": 1.09
+    }
+  ]
+}

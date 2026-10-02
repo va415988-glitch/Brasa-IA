@@ -1,0 +1,135 @@
+{
+  "schema": "agent-tool-eval-top5/v1",
+  "purpose": "evaluation_only",
+  "training_eligible": false,
+  "description": "Bateria smoke adaptada ao AgentCore. Casos são autorais e inspirados nos perfis das fontes; não são linhas brutas dos datasets.",
+  "dataset_sources": [
+    {
+      "id": "diogoneno/desktop-agent-trajectories-sample",
+      "revision": null,
+      "license": null,
+      "availability": "inaccessible_401_without_auth",
+      "use": "operações observáveis de interface/desktop adaptadas para inventário local somente leitura"
+    },
+    {
+      "id": "ToolGym/short-horizon-traj",
+      "revision": "af8a069b088405a5bba0a39274b29aeedcba9d8c",
+      "license": "MIT",
+      "availability": "public_files_schema_inconsistent",
+      "use": "seleção de ação curta e leitura de arquivo; rows endpoint falha por schema heterogêneo"
+    },
+    {
+      "id": "Toprak1yu/agent-tool-use-trajectories",
+      "revision": "8fd6df44f797fad16c8fa6dc774fee6e32704553",
+      "license": "Apache-2.0",
+      "availability": "public_samples",
+      "use": "roteamento e recuperação quando caminho pedido não existe"
+    },
+    {
+      "id": "nphearum/grpo-4k-reasoning-tools",
+      "revision": "7ac8e2f51cc242658e41e576c23d1f2d42a5e5f0",
+      "license": "Apache-2.0",
+      "availability": "public_samples",
+      "use": "raciocínio aritmético sem uso indevido de ferramentas de workspace"
+    },
+    {
+      "id": "nphearum/Code-Reasoning-4k",
+      "revision": "15bda65764afedf0a2bc961285716ce1fd26d462",
+      "license": "Apache-2.0",
+      "availability": "public_samples",
+      "use": "explicação e execução mental de código simples"
+    }
+  ],
+  "cases": [
+    {
+      "id": "desktop-workspace-inventory",
+      "source_dataset": "diogoneno/desktop-agent-trajectories-sample",
+      "origin": "human-authored-adaptation",
+      "objective": "analyze",
+      "read_only": true,
+      "prompt": "Inspecione o workspace ativo e descreva a estrutura observada. Separe pastas, arquivos, manifestos, pontos de entrada e testes; não infira conteúdo que não leu.",
+      "expect": {
+        "status": "completed",
+        "tools_called_any": ["inspect_project"],
+        "text_all": [
+          "Pastas encontradas",
+          "Arquivos encontrados"
+        ],
+        "inspection": [
+          "files",
+          "directories"
+        ]
+      }
+    },
+    {
+      "id": "toolgym-exact-file-read",
+      "source_dataset": "ToolGym/short-horizon-traj",
+      "origin": "human-authored-adaptation",
+      "objective": "analyze",
+      "read_only": true,
+      "prompt": "Leia agent-core/src/planner.ts e explique como o planejador escolhe a próxima ferramenta. Cite o caminho lido e limite a resposta ao que o arquivo demonstra.",
+      "expect": {
+        "status": "completed",
+        "tools_called_any": ["read_file"],
+        "read_paths_all": [
+          "agent-core/src/planner.ts"
+        ],
+        "text_all": [
+          "agent-core/src/planner.ts",
+          "LocalPlannerHttp",
+          "/generate",
+          "não faz o ranqueamento"
+        ]
+      }
+    },
+    {
+      "id": "toprak-missing-file-recovery",
+      "source_dataset": "Toprak1yu/agent-tool-use-trajectories",
+      "origin": "human-authored-adaptation",
+      "objective": "analyze",
+      "read_only": true,
+      "prompt": "Leia config/agent-planner.yaml para explicar o catálogo de datasets. Se esse caminho não existir, reavalie: encontre na mesma pasta o arquivo existente mais relacionado, leia-o e diga qual substituto usou.",
+      "expect": {
+        "status": "completed",
+        "tools_called_all": ["read_file"],
+        "read_paths_all": [
+          "config/huggingface_catalog.json"
+        ],
+        "text_all": [
+          "config/huggingface_catalog.json",
+          "conjuntos",
+          "elegível para treino: não"
+        ],
+        "read_paths_none": [
+          "config/agent-planner.yaml"
+        ]
+      }
+    },
+    {
+      "id": "grpo-arithmetic-reasoning",
+      "source_dataset": "nphearum/grpo-4k-reasoning-tools",
+      "origin": "human-authored-adaptation",
+      "objective": "conversation",
+      "read_only": true,
+      "prompt": "Calcule sem consultar o workspace: quanto é 19 × 23? Mostre uma conta curta para justificar o resultado.",
+      "expect": {
+        "status": "completed",
+        "tools_called_none": ["inspect_project", "list_files", "read_file", "research_web"],
+        "text_regex": "(?s)(?:19\\s*[×x*]\\s*23\\s*=\\s*437|437)"
+      }
+    },
+    {
+      "id": "code-reasoning-factorial",
+      "source_dataset": "nphearum/Code-Reasoning-4k",
+      "origin": "human-authored-adaptation",
+      "objective": "conversation",
+      "read_only": true,
+      "prompt": "Escreva uma função factorial em Python para n=5, explique em uma frase como ela funciona e informe o resultado.",
+      "expect": {
+        "status": "completed",
+        "tools_called_none": ["inspect_project", "list_files", "read_file", "research_web"],
+        "text_regex": "(?s)(?:factorial|fatorial).*(?:120)|(?:120).*(?:factorial|fatorial)"
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "brasa-episode-review-registry/v1",
+  "candidate_file_sha256": "f1819016c77a907df6e17207d060cd2bf6e08c329dbda97a3ea1147bec5a6271",
+  "decisions": [
+    {
+      "source_task_id": "task-6d7d1bfe-aaea-450b-9598-7644dd1e5ec8",
+      "candidate_record_sha256": "bba9a3c5c0ef5e96a0b27b73ea9c51a69aa3cc5274092f8ae583175b6daa54bb",
+      "decision": "exclude",
+      "reason": "O exercício de corrigir add(left, right) se sobrepõe semanticamente a corpus/eval/programming_tasks.jsonl:task-py-sum e task-py-test."
+    },
+    {
+      "source_task_id": "task-84d54d9a-a92b-4c8f-aaac-51be64baea69",
+      "candidate_record_sha256": "e56b565dc0a989c78b564d7d41cbb76048ddc85fb1612242b0786924453b788e",
+      "decision": "retain_for_human_review",
+      "reason": "Código da CLI e quatro testes revisados tecnicamente; escrita e execução do unittest observadas; sem correspondência temática específica no conjunto reservado. Retido para revisão humana antes de qualquer uso no treino."
+    },
+    {
+      "source_task_id": "task-c7df8328-654f-4a73-a535-dd8c3b674932",
+      "candidate_record_sha256": "91010b738f698dede7731be00c43c396b4bea3453c01e5273c21cd44c5f944fc",
+      "decision": "exclude",
+      "reason": "O exercício de implementar e testar uma soma se sobrepõe semanticamente a corpus/eval/programming_tasks.jsonl:task-py-sum e task-py-test."
+    }
+  ]
+}

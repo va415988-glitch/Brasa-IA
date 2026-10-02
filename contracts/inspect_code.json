@@ -1,0 +1,43 @@
+{
+  "name": "inspect_code",
+  "description": "Inspeciona arquivos ou pastas com AST para Python/JavaScript/TypeScript e navegação lexical para outras linguagens; mostra símbolos, chamadas, retornos e erros de parsing sem executar o código.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "Arquivo ou pasta relativa ao workspace; padrão raiz."
+      }
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": [
+      "workspace",
+      "path",
+      "symbols",
+      "imports",
+      "truncated"
+    ],
+    "properties": {
+      "workspace": {
+        "type": "string"
+      },
+      "path": {
+        "type": "string"
+      },
+      "symbols": {
+        "type": "array"
+      },
+      "imports": {
+        "type": "array"
+      },
+      "truncated": {
+        "type": "boolean"
+      }
+    }
+  }
+}

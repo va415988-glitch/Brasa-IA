@@ -1,0 +1,69 @@
+{
+  "schema": "local-media-smoke/v1",
+  "results": [
+    {
+      "case": "docx",
+      "passed": true,
+      "status": "completed",
+      "final_text": "Evidências recebidas dos anexos:\n\nnota.docx:\n\n> Documento MEDIA-42.\n\nFontes consultadas: nota.docx",
+      "error": null
+    },
+    {
+      "case": "pdf",
+      "passed": true,
+      "status": "completed",
+      "final_text": "Evidências recebidas dos anexos:\n\npagina.pdf:\n\n> PDF-MEDIA-42\n\nFontes consultadas: pagina.pdf",
+      "error": null
+    },
+    {
+      "case": "ocr",
+      "passed": true,
+      "status": "completed",
+      "final_text": "Evidências recebidas dos anexos:\n\nimagem.png:\n\n> 42 731\n\nLimites da leitura: OCR próprio experimental: texto impresso sem rotação; □ indica caractere incerto.; Objetos e relações da cena não foram interpretados por um modelo visual.\n\nFontes consultadas: imagem.png",
+      "error": null
+    },
+    {
+      "case": "csv",
+      "passed": true,
+      "status": "completed",
+      "final_text": "Estatísticas calculadas localmente:\n\ngastos.csv:\n2 linhas observadas.\nvalor: soma 31.00; média 15.5000; 2 valores numéricos.\n\nFontes consultadas: gastos.csv",
+      "error": null
+    },
+    {
+      "case": "audio",
+      "passed": true,
+      "status": "completed",
+      "final_text": "audio.wav: duração de 0.25 segundos.\n\nFontes consultadas: audio.wav",
+      "error": null
+    },
+    {
+      "case": "video",
+      "passed": true,
+      "status": "completed",
+      "final_text": "video.mp4: duração de 2.5 segundos.\n\nFontes consultadas: video.mp4",
+      "error": null
+    },
+    {
+      "case": "speech-limit",
+      "passed": true,
+      "status": "blocked",
+      "final_text": "O áudio foi recebido e seus metadados foram lidos. Não há um modelo próprio de transcrição conectado; não posso afirmar quais palavras foram faladas.",
+      "error": "O áudio foi recebido e seus metadados foram lidos. Não há um modelo próprio de transcrição conectado; não posso afirmar quais palavras foram faladas."
+    },
+    {
+      "case": "comparison",
+      "passed": true,
+      "status": "completed",
+      "final_text": "Comparação literal dos trechos observados (sem inferir o restante do arquivo):\n\n```diff\n--- anterior.txt\n+++ atual.txt\n@@ -1 +1 @@\n-valor=10\n+valor=20\n```\n\nFontes consultadas: anterior.txt, atual.txt",
+      "error": null
+    },
+    {
+      "case": "combined",
+      "passed": true,
+      "status": "completed",
+      "final_text": "Evidências recebidas dos anexos:\n\nnota.docx:\n\n> Documento MEDIA-42.\n\npagina.pdf:\n\n> PDF-MEDIA-42\n\nFontes consultadas: nota.docx, pagina.pdf",
+      "error": null
+    }
+  ],
+  "passed": true
+}

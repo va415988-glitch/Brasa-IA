@@ -1,0 +1,27 @@
+[
+  {
+    "step": 0,
+    "validation_loss": 6.32126613963734
+  },
+  {
+    "step": 400,
+    "train_loss": 0.07770154625177383,
+    "validation_loss": 0.49174928665161133,
+    "best_step": 400,
+    "elapsed_seconds": 237.67
+  },
+  {
+    "step": 800,
+    "train_loss": 0.11615132540464401,
+    "validation_loss": 0.5625029260461981,
+    "best_step": 400,
+    "elapsed_seconds": 511.67
+  },
+  {
+    "step": 1200,
+    "train_loss": 0.013895565643906593,
+    "validation_loss": 0.5107535904104059,
+    "best_step": 400,
+    "elapsed_seconds": 788.93
+  }
+]

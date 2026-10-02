@@ -1,0 +1,38 @@
+{
+  "schema": "brasa-code-agent-data-audit/v1",
+  "shards": [
+    "data-00000-of-00030.arrow"
+  ],
+  "counts": {
+    "trajectories": 2330,
+    "patch": 2330,
+    "update_file": 2321,
+    "add_file": 191,
+    "nonempty_add": 0,
+    "relative_nonempty_add": 0,
+    "test_command_after_patch": 2210,
+    "explicit_pass_after_patch": 1893,
+    "multi_patch": 1883
+  },
+  "sample_ids_for_review": {
+    "nonempty_add": [],
+    "relative_nonempty_add": [],
+    "update_with_explicit_pass": [
+      "Code_Agent_000001",
+      "Code_Agent_000003",
+      "Code_Agent_000004",
+      "Code_Agent_000005",
+      "Code_Agent_000006",
+      "Code_Agent_000008",
+      "Code_Agent_000009",
+      "Code_Agent_000010",
+      "Code_Agent_000011",
+      "Code_Agent_000014"
+    ]
+  },
+  "limits": [
+    "Contagens indicam candidatos, não exemplos aprovados para treino.",
+    "Saída de teste posterior não prova que valida exatamente o último patch.",
+    "Nenhum conteúdo do corpus é copiado por este relatório."
+  ]
+}

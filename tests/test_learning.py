@@ -9,7 +9,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "python"))
 import learning
 from build_knowledge_index import subject_tokens, topic_matches
-from source_evidence import assess_sources, source_priority, topic_from_question
+from source_evidence import assess_sources, source_priority, topic_context_matches, topic_from_question
 
 
 class LearningTests(unittest.TestCase):
@@ -92,6 +92,22 @@ class LearningTests(unittest.TestCase):
         self.assertEqual(topic_from_question('Implemente uma API em ZirconFable999'), 'ZirconFable999')
         self.assertIsNone(topic_from_question('Cria uma tela de login com animações legais'))
 
+    def test_ambiguous_language_name_requires_language_context(self):
+        app = {
+            'title': 'Google Go',
+            'url': 'https://play.google.com/store/apps/details?id=com.google.android.apps.searchlite',
+            'text': 'Google Go is an application for searching the web and reading results. ' * 20,
+        }
+        self.assertFalse(topic_context_matches('Go', app['title'], app['text']))
+        self.assertEqual(assess_sources('Go', [app])['status'], 'unverified')
+        language = {
+            'title': 'Go programming language',
+            'url': 'https://go.dev/doc/',
+            'text': 'Go is an open source programming language with a compiler, packages and goroutines. ' * 20,
+        }
+        self.assertTrue(topic_context_matches('Go', language['title'], language['text']))
+        self.assertEqual(assess_sources('Go', [language])['status'], 'provisional')
+
     def test_evidence_never_treats_one_matching_page_as_proof(self):
         page = {'title': 'ZirconFable999 docs', 'url': 'https://docs.alpha.test/zircon',
                 'text': 'ZirconFable999 describes handlers and routes. ' * 12}
@@ -165,6 +181,24 @@ class LearningTests(unittest.TestCase):
                 index = json.loads((root / "index.json").read_text())
                 self.assertEqual(index["documents"][0]["topic"], "Java")
                 self.assertIn("inheritance", index["postings"])
+
+    def test_chat_research_registers_general_competency_and_practice_contract(self):
+        pages = [
+            {'title': 'Planejamento de projetos — guia', 'url': 'https://plan.example.org/guide',
+             'text': 'Planejamento de projetos define objetivo, escopo, etapas, riscos e verificação. ' * 12},
+            {'title': 'Planejamento de projetos — estudo', 'url': 'https://research.example.net/study',
+             'text': 'Planejamento de projetos pode ser avaliado por marcos, recursos, alternativas e critérios. ' * 12},
+        ]
+        with tempfile.TemporaryDirectory() as directory:
+            state = learning.AgentState(Path(directory) / 'skills.json')
+            with patch.object(learning, 'AGENT_STATE', state), \
+                 patch.object(learning, 'run_skill_lab', return_value={'status': 'practice_unavailable', 'tasks': []}):
+                result = learning.register_research_result(
+                    'planejamento de projetos', pages, search_query='planejamento de projetos reliable frameworks')
+            self.assertEqual(result['skill']['learning_contract']['domain'], 'planning')
+            self.assertEqual(result['skill']['practice']['passed'], 0)
+            self.assertEqual(result['laboratory']['status'], 'practice_unavailable')
+            self.assertFalse(result['skill']['evaluation']['ready'])
 
     def test_topic_research_updates_index_and_deduplicates(self):
         with tempfile.TemporaryDirectory() as directory:

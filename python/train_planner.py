@@ -38,6 +38,15 @@ def _rows(path: Path):
             row = json.loads(raw)
         except json.JSONDecodeError:
             continue
+
+        metadata = row.get("metadata")
+        metadata = metadata if isinstance(metadata, dict) else {}
+        review_status = metadata.get("review_status", row.get("review_status"))
+        requires_review = bool(metadata.get("requires_human_review", row.get("requires_human_review", False)))
+        # Raw workflow candidates are never training data until a person has
+        # reviewed the trajectory and explicitly marked it approved.
+        if review_status not in {None, "approved"} or (requires_review and review_status != "approved"):
+            continue
         
         # 1. Suporte a Datasets de Instrução/Conhecimento Sintético (ex: dataset_sintetico.jsonl)
         question = row.get("instruction") or row.get("prompt") or row.get("user")
@@ -51,7 +60,7 @@ def _rows(path: Path):
         question = next((item.get("content", "") for item in messages if item.get("role") == "user"), "")
         call = next((item.get("tool_call") for item in messages if item.get("role") == "assistant" and item.get("tool_call")), None)
         if call and call.get("name") and question:
-            yield question, str(call["name"]), row.get("metadata", {}).get("source", path.name)
+            yield question, str(call["name"]), metadata.get("source", path.name)
             continue
         
         # 3. Aceita os traces legados usados no corpus inicial

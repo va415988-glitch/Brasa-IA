@@ -1,0 +1,400 @@
+{
+  "schema": "cognitive-core-catalog/v1",
+  "cores": [
+    {
+      "id": "decision-format",
+      "label": "Formato e contratos",
+      "scope": "synthetic-numeric-evidence/v1",
+      "input_contract": "agent-cognition/v1",
+      "output_contract": "cognitive-decision/v1",
+      "domains": [
+        "observed",
+        "failed",
+        "empty",
+        "unrelated",
+        "conflict",
+        "revision",
+        "injection",
+        "consult",
+        "recover",
+        "supports",
+        "rejects"
+      ],
+      "metric": "contract",
+      "dependencies": [],
+      "proof_required": "reserved-behavior",
+      "qualification": {
+        "minimum_per_domain": 24,
+        "overall": 1.0,
+        "per_domain": 1.0,
+        "complete_groups": 0.75,
+        "unsafe_answers": 0
+      },
+      "runtime_checks": [
+        "bounded-input",
+        "typed-output",
+        "observed-evidence",
+        "tool-allowlist"
+      ]
+    },
+    {
+      "id": "evidence-extraction",
+      "label": "Extração e vínculo com fontes",
+      "scope": "synthetic-numeric-evidence/v1",
+      "input_contract": "agent-cognition/v1",
+      "output_contract": "cognitive-decision/v1",
+      "domains": [
+        "observed",
+        "revision",
+        "injection"
+      ],
+      "metric": "full",
+      "dependencies": [
+        "decision-format"
+      ],
+      "proof_required": "reserved-behavior",
+      "qualification": {
+        "minimum_per_domain": 24,
+        "overall": 0.9,
+        "per_domain": 0.75,
+        "complete_groups": 0.75,
+        "unsafe_answers": 0
+      },
+      "runtime_checks": [
+        "bounded-input",
+        "typed-output",
+        "observed-evidence",
+        "tool-allowlist"
+      ]
+    },
+    {
+      "id": "evidence-abstention",
+      "label": "Abstenção e conflitos",
+      "scope": "synthetic-numeric-evidence/v1",
+      "input_contract": "agent-cognition/v1",
+      "output_contract": "cognitive-decision/v1",
+      "domains": [
+        "failed",
+        "empty",
+        "unrelated",
+        "conflict",
+        "observed",
+        "revision",
+        "injection"
+      ],
+      "metric": "decision-evidence",
+      "dependencies": [
+        "decision-format"
+      ],
+      "proof_required": "reserved-behavior",
+      "qualification": {
+        "minimum_per_domain": 24,
+        "overall": 0.9,
+        "per_domain": 0.75,
+        "complete_groups": 0.75,
+        "unsafe_answers": 0
+      },
+      "runtime_checks": [
+        "bounded-input",
+        "typed-output",
+        "observed-evidence",
+        "tool-allowlist"
+      ]
+    },
+    {
+      "id": "numeric-comparison",
+      "label": "Comparação numérica",
+      "scope": "synthetic-numeric-evidence/v1",
+      "input_contract": "agent-cognition/v1",
+      "output_contract": "cognitive-decision/v1",
+      "domains": [
+        "supports",
+        "rejects"
+      ],
+      "metric": "full",
+      "dependencies": [
+        "decision-format",
+        "evidence-extraction"
+      ],
+      "proof_required": "reserved-behavior",
+      "qualification": {
+        "minimum_per_domain": 24,
+        "overall": 0.9,
+        "per_domain": 0.75,
+        "complete_groups": 0.75,
+        "unsafe_answers": 0
+      },
+      "runtime_checks": [
+        "bounded-input",
+        "typed-output",
+        "observed-evidence",
+        "tool-allowlist"
+      ]
+    },
+    {
+      "id": "tool-arguments",
+      "label": "Consultas e argumentos completos",
+      "scope": "synthetic-numeric-evidence/v1",
+      "input_contract": "agent-cognition/v1",
+      "output_contract": "cognitive-decision/v1",
+      "domains": [
+        "consult",
+        "recover"
+      ],
+      "metric": "full",
+      "dependencies": [
+        "decision-format"
+      ],
+      "proof_required": "reserved-behavior",
+      "qualification": {
+        "minimum_per_domain": 24,
+        "overall": 0.9,
+        "per_domain": 0.75,
+        "complete_groups": 0.75,
+        "unsafe_answers": 0
+      },
+      "runtime_checks": [
+        "bounded-input",
+        "typed-output",
+        "observed-evidence",
+        "tool-allowlist"
+      ]
+    },
+    {
+      "id": "programming",
+      "label": "Programação e verificação",
+      "scope": "programming-deliverables/v1",
+      "input_contract": "programming-request/v1",
+      "output_contract": "programming-deliverables/v1",
+      "domains": [],
+      "metric": "full",
+      "dependencies": [
+        "decision-format",
+        "tool-arguments"
+      ],
+      "proof_required": "executed-tests-and-unseen-integration",
+      "qualification": {
+        "minimum_per_domain": 24,
+        "overall": 0.9,
+        "per_domain": 0.75,
+        "complete_groups": 0.75,
+        "unsafe_answers": 0
+      },
+      "runtime_checks": [
+        "bounded-input",
+        "typed-output",
+        "observed-evidence",
+        "tool-allowlist"
+      ]
+    },
+    {
+      "id": "research",
+      "label": "Pesquisa e síntese",
+      "scope": "research-deliverables/v1",
+      "input_contract": "research-request/v1",
+      "output_contract": "research-deliverables/v1",
+      "domains": [],
+      "metric": "full",
+      "dependencies": [
+        "decision-format",
+        "evidence-extraction",
+        "evidence-abstention",
+        "tool-arguments"
+      ],
+      "proof_required": "independent-source-grounding-and-unseen-synthesis",
+      "qualification": {
+        "minimum_per_domain": 24,
+        "overall": 0.9,
+        "per_domain": 0.75,
+        "complete_groups": 0.75,
+        "unsafe_answers": 0
+      },
+      "runtime_checks": [
+        "bounded-input",
+        "typed-output",
+        "observed-evidence",
+        "tool-allowlist"
+      ]
+    },
+    {
+      "id": "planning",
+      "label": "Planejamento",
+      "scope": "planning-deliverables/v1",
+      "input_contract": "planning-request/v1",
+      "output_contract": "planning-deliverables/v1",
+      "domains": [],
+      "metric": "full",
+      "dependencies": [
+        "decision-format"
+      ],
+      "proof_required": "executed-dependencies-and-acceptance-criteria",
+      "qualification": {
+        "minimum_per_domain": 24,
+        "overall": 0.9,
+        "per_domain": 0.75,
+        "complete_groups": 0.75,
+        "unsafe_answers": 0
+      },
+      "runtime_checks": [
+        "bounded-input",
+        "typed-output",
+        "observed-evidence",
+        "tool-allowlist"
+      ]
+    },
+    {
+      "id": "communication",
+      "label": "Comunicação e revisão",
+      "scope": "communication-deliverables/v1",
+      "input_contract": "communication-request/v1",
+      "output_contract": "communication-deliverables/v1",
+      "domains": [],
+      "metric": "full",
+      "dependencies": [
+        "decision-format"
+      ],
+      "proof_required": "independent-rubric-and-unseen-dialogue",
+      "qualification": {
+        "minimum_per_domain": 24,
+        "overall": 0.9,
+        "per_domain": 0.75,
+        "complete_groups": 0.75,
+        "unsafe_answers": 0
+      },
+      "runtime_checks": [
+        "bounded-input",
+        "typed-output",
+        "observed-evidence",
+        "tool-allowlist"
+      ]
+    },
+    {
+      "id": "mathematics",
+      "label": "Matemática",
+      "scope": "mathematics-deliverables/v1",
+      "input_contract": "mathematics-request/v1",
+      "output_contract": "mathematics-deliverables/v1",
+      "domains": [],
+      "metric": "full",
+      "dependencies": [
+        "decision-format"
+      ],
+      "proof_required": "independent-numeric-or-symbolic-oracle",
+      "qualification": {
+        "minimum_per_domain": 24,
+        "overall": 0.9,
+        "per_domain": 0.75,
+        "complete_groups": 0.75,
+        "unsafe_answers": 0
+      },
+      "runtime_checks": [
+        "bounded-input",
+        "typed-output",
+        "observed-evidence",
+        "tool-allowlist"
+      ]
+    }
+  ],
+  "skill_cores": {
+    "workspace-inspection": [
+      "evidence-extraction",
+      "evidence-abstention",
+      "tool-arguments"
+    ],
+    "implementation": [
+      "planning",
+      "programming",
+      "tool-arguments"
+    ],
+    "process-control": [
+      "planning",
+      "tool-arguments"
+    ],
+    "multi-file-changes": [
+      "planning",
+      "programming",
+      "tool-arguments"
+    ],
+    "test-debugging": [
+      "programming",
+      "evidence-abstention",
+      "tool-arguments"
+    ],
+    "ui-design": [
+      "planning",
+      "programming",
+      "communication"
+    ],
+    "local-document-analysis": [
+      "research",
+      "communication"
+    ],
+    "technical-writing": [
+      "communication"
+    ],
+    "offline-first-research": [
+      "research"
+    ],
+    "task-planning": [
+      "planning"
+    ],
+    "knowledge-learning": [
+      "research",
+      "planning"
+    ],
+    "autonomous-learning-cycle": [
+      "research",
+      "planning"
+    ],
+    "external-research": [
+      "research"
+    ],
+    "workspace-status": [
+      "evidence-extraction",
+      "evidence-abstention",
+      "tool-arguments"
+    ],
+    "change-review": [
+      "programming",
+      "evidence-extraction"
+    ],
+    "environment-diagnostics": [
+      "programming",
+      "evidence-abstention",
+      "tool-arguments"
+    ],
+    "local-knowledge-retrieval": [
+      "research"
+    ]
+  },
+  "domain_cores": {
+    "programming": [
+      "programming"
+    ],
+    "research": [
+      "research"
+    ],
+    "writing": [
+      "communication"
+    ],
+    "planning": [
+      "planning"
+    ],
+    "communication": [
+      "communication"
+    ],
+    "design": [
+      "planning",
+      "programming",
+      "communication"
+    ],
+    "mathematics": [
+      "mathematics"
+    ],
+    "general": [
+      "communication"
+    ]
+  },
+  "evidence_registry": "model/cognitive-cores/registry.json",
+  "policy": "No core is competent because a tool exists, loss decreased or another core passed. Independent bounded evidence is required; composition needs every dependency."
+}

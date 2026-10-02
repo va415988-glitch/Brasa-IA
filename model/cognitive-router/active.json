@@ -1,0 +1,15 @@
+{
+  "schema": "cognitive-router/v1",
+  "architecture": "char-ngram-router/v1",
+  "buckets": 8192,
+  "labels": ["direct", "web", "local", "clarify"],
+  "threshold": 0.8,
+  "weights": "model/cognitive-router/character-01/candidate.safetensors",
+  "sha256": "e3911c2e8c3848888f40e9b2ed1aa0a587048dee6c1519621473826bead23b7c",
+  "training_rows": 595,
+  "validation_rows": 16,
+  "selection": "minimum validation loss",
+  "validation_loss": 0.02543921396136284,
+  "scope": "learned short-request action selection, not semantic language generation",
+  "dataset_sha256": "2d50d63813f0f30f8ac538b25f65ce221311bb583d818087177cf2bad1af5463"
+}

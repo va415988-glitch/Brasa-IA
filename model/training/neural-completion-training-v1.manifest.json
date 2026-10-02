@@ -1,0 +1,19 @@
+{
+  "schema": "neural-completion-training/v1",
+  "positive_examples": 6,
+  "negative_examples": 8,
+  "total_rows": 14,
+  "failure_modes": [
+    "repeated-words",
+    "too-short"
+  ],
+  "primary_targets": [
+    "avoid-repeated-fragments",
+    "avoid-too-short-outcomes",
+    "keep-answer-relevant-and-complete"
+  ],
+  "inputs": {
+    "positive_dataset": "model/training/neural-positive-examples-v1.jsonl",
+    "negative_dataset": "model/training/neural-failure-counterexamples-v1.jsonl"
+  }
+}

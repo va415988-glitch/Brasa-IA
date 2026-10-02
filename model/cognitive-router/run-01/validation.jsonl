@@ -1,0 +1,16 @@
+{"goal": "Defina encapsulamento.", "label": "direct"}
+{"goal": "Descreva como funciona uma tabela hash.", "label": "direct"}
+{"goal": "Me explique herança com um exemplo.", "label": "direct"}
+{"goal": "Explique o que é uma constante.", "label": "direct"}
+{"goal": "Qual foi a última versão publicada do Svelte?", "label": "web"}
+{"goal": "Confira nas fontes oficiais o suporte atual ao Flask.", "label": "web"}
+{"goal": "Pesquise o lançamento mais novo do Debian.", "label": "web"}
+{"goal": "Quanto custa o serviço Azure atualmente?", "label": "web"}
+{"goal": "Veja em dependencias.txt qual runtime utilizamos.", "label": "local"}
+{"goal": "Me diga o conteúdo de notas.md.", "label": "local"}
+{"goal": "Abra projeto.json e confira a versão.", "label": "local"}
+{"goal": "O que consta em build.toml?", "label": "local"}
+{"goal": "E essa outra?", "label": "clarify"}
+{"goal": "Isso está certo?", "label": "clarify"}
+{"goal": "Qual das duas opções?", "label": "clarify"}
+{"goal": "Aquela versão funciona?", "label": "clarify"}

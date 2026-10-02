@@ -20,10 +20,45 @@ class SkillLabTests(unittest.TestCase):
         ids = {item['id'] for level in curriculum['levels'] for item in level['concepts']}
         self.assertTrue({'components', 'modules', 'async', 'error-handling'} <= ids)
         self.assertIn('components', gaps(curriculum))
+    @unittest.skipUnless(skill_lab.shutil.which('node'), 'node não instalado')
+    def test_practice_budget_limits_the_initial_task_queue(self):
+        result = skill_lab.run("TypeScript", max_tasks=2)
+        self.assertLessEqual(result["total"], 2)
+        self.assertLessEqual(len(result["tasks"]), 2)
+
     def test_unsupported_domain_is_explicitly_not_mastered(self):
         result = skill_lab.run('NovaFlux')
         self.assertEqual(result['status'], 'practice_unavailable')
         self.assertEqual(result['tasks'], [])
+
+    def test_unsupported_domain_exposes_a_reviewable_practice_plan(self):
+        result = skill_lab.run('planejamento de projetos')
+        self.assertEqual(result['status'], 'practice_unavailable')
+        self.assertEqual(result['tasks'], [])
+        self.assertTrue(result['practice_plan'])
+        self.assertTrue(result['learning_contract']['practice']['requires_unseen_task'])
+
+    @unittest.skipUnless(skill_lab.shutil.which('bash'), 'bash não instalado')
+    def test_bash_task_is_executed_in_isolated_lab(self):
+        result = skill_lab.run('Bash')
+        self.assertEqual(result['status'], 'verified', result)
+        self.assertGreaterEqual(result['total'], 12)
+        self.assertEqual(result['passed'], result['total'])
+        self.assertIn('shellcheck', {item['name'] for item in result['tasks']})
+
+    @unittest.skipUnless(skill_lab.shutil.which('go'), 'go não instalado')
+    def test_go_task_is_executed_in_isolated_lab(self):
+        result = skill_lab.run('Go')
+        self.assertEqual(result['status'], 'verified', result)
+        self.assertGreaterEqual(result['total'], 12)
+        self.assertEqual(result['passed'], result['total'])
+
+    @unittest.skipUnless(skill_lab.shutil.which('node'), 'node não instalado')
+    def test_typescript_task_is_executed_in_isolated_lab(self):
+        result = skill_lab.run('TypeScript')
+        self.assertEqual(result['status'], 'verified', result)
+        self.assertEqual(result['passed'], result['total'])
+        self.assertGreaterEqual(result['total'], 12)
 
     @unittest.skipUnless(skill_lab.shutil.which('node'), 'node não instalado')
     def test_javascript_task_is_executed_in_isolated_lab(self):
@@ -31,6 +66,14 @@ class SkillLabTests(unittest.TestCase):
         self.assertEqual(result['status'], 'verified', result)
         self.assertGreaterEqual(result['total'], 5)
         self.assertEqual(result['passed'], result['total'])
+
+    def test_practice_budget_also_covers_recovery_attempts(self):
+        task = {"name": "bounded-check", "level": "practice", "command": ["synthetic"]}
+        with patch.object(skill_lab, "tasks_for", return_value=[task]), \
+             patch.object(skill_lab, "_run", return_value={"passed": False, "returncode": 1, "stderr": "AssertionError"}):
+            result = skill_lab.run("Synthetic", max_tasks=1)
+        self.assertEqual(result["total"], 1)
+        self.assertFalse(result["tasks"][0].get("recovery_scheduled"))
 
     def test_command_failure_is_recorded(self):
         with patch.object(skill_lab, '_run', return_value={'passed': False, 'returncode': 1}):

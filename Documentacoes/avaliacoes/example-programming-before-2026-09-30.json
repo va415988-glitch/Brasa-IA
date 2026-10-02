@@ -1,0 +1,21 @@
+{
+  "schema": "example-programming-audit/v1",
+  "passed": false,
+  "successful": 0,
+  "total": 1,
+  "cases": [
+    {
+      "case": "converter",
+      "passed": false,
+      "status": "blocked",
+      "approvals": 0,
+      "baseline": [],
+      "verification": {},
+      "test_oracle_unchanged": false,
+      "files": {},
+      "independent": [],
+      "final_text": "O gerador local não produziu uma proposta estruturada. Não há receita determinística compatível com este pedido. Nenhum arquivo foi alterado. Se você já tiver o código, envie dois ou mais arquivos como títulos `### caminho` seguidos de blocos de código; o agente poderá propor a criação desses arquivos para aprovação e depois verificar o projeto.",
+      "error": "build.change: A implementação precisa confirmar um efeito de escrita em arquivo, não apenas criar uma pasta. build.verification: A implementação precisa passar por uma verificação executada e aprovada."
+    }
+  ]
+}

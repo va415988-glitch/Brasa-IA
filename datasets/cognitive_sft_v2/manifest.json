@@ -1,0 +1,74 @@
+{
+  "schema": "cognitive-sft-data/v1",
+  "version": 2,
+  "splits": {
+    "train": {
+      "rows": 1584,
+      "max_prompt_tokens": 82,
+      "max_sequence_tokens": 105,
+      "domains": {
+        "observed": 144,
+        "failed": 144,
+        "empty": 144,
+        "unrelated": 144,
+        "conflict": 144,
+        "revision": 144,
+        "injection": 144,
+        "consult": 144,
+        "recover": 144,
+        "supports": 144,
+        "rejects": 144
+      }
+    },
+    "validation": {
+      "rows": 132,
+      "max_prompt_tokens": 62,
+      "max_sequence_tokens": 85,
+      "domains": {
+        "observed": 12,
+        "failed": 12,
+        "empty": 12,
+        "unrelated": 12,
+        "conflict": 12,
+        "revision": 12,
+        "injection": 12,
+        "consult": 12,
+        "recover": 12,
+        "supports": 12,
+        "rejects": 12
+      }
+    },
+    "heldout": {
+      "rows": 264,
+      "max_prompt_tokens": 64,
+      "max_sequence_tokens": 87,
+      "domains": {
+        "observed": 24,
+        "failed": 24,
+        "empty": 24,
+        "unrelated": 24,
+        "conflict": 24,
+        "revision": 24,
+        "injection": 24,
+        "consult": 24,
+        "recover": 24,
+        "supports": 24,
+        "rejects": 24
+      }
+    }
+  },
+  "split_policy": "disjoint entities; paired evidence states remain within their split",
+  "tokenizer_training": "train-only; parameter fragments separated",
+  "generator_sha256": "338ce3f448e9d424e0ec21352f2c638e4f260c96e6815ca296a064d584958d46",
+  "sha256": {
+    "heldout.jsonl": "7a8d2ee932c021dd837bad2911d7b93389569d08c2294740372c65c2a8bf24c4",
+    "validation.jsonl": "bd3b4964c2ed83cb55f967b95ee0c47e5e7b772d9978e7c91dd6ca6a910020ae",
+    "tokenizer.json": "2c8fb4e66d51d531108a597b9a475d93d5b5122aaa2124c72840c4499627c877",
+    "train.jsonl": "928e009652a0353537d0e2ff16d78c99d1b9cb7677297b7bccf031bed42aee3b"
+  },
+  "limits": [
+    "Synthetic Portuguese numeric facts and two read tools.",
+    "Reserved numbers and entities; decision families appear in training.",
+    "Does not demonstrate general reasoning, external truth or code generation."
+  ]
+}

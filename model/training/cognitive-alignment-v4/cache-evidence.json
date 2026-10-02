@@ -1,0 +1,67 @@
+{
+  "checkpoint": "model/training/cognitive-alignment-v4/run-02/snapshots/step-0800.safetensors",
+  "scope": "Three actual-checkpoint greedy generations; independent unit tests cover per-token logits, boundaries and batches.",
+  "all_outputs_identical": true,
+  "cases": [
+    {
+      "domain": "observed",
+      "identical_output": true,
+      "runs": [
+        {
+          "cached": false,
+          "seconds": 3.0956608790002065,
+          "accepted": false,
+          "output": "{\"decision\":\"answer\",\",\"text\":\"Valor: 610007.\"gap\":\"\"evidence_ids\":[\"obs-1\"],\"],\"tool_call\":null}",
+          "generated_tokens": 58
+        },
+        {
+          "cached": true,
+          "seconds": 0.33360093599912943,
+          "accepted": false,
+          "output": "{\"decision\":\"answer\",\",\"text\":\"Valor: 610007.\"gap\":\"\"evidence_ids\":[\"obs-1\"],\"],\"tool_call\":null}",
+          "generated_tokens": 58
+        }
+      ]
+    },
+    {
+      "domain": "revision",
+      "identical_output": true,
+      "runs": [
+        {
+          "cached": false,
+          "seconds": 2.2239482149998366,
+          "accepted": false,
+          "output": "{\"decision\":\"answer\"text\":\"Não.\"gap\":\",\",\"evidence_ids\":[\"obs-1\"tool_call\":null}",
+          "generated_tokens": 43
+        },
+        {
+          "cached": true,
+          "seconds": 0.27252702499936277,
+          "accepted": false,
+          "output": "{\"decision\":\"answer\"text\":\"Não.\"gap\":\",\",\"evidence_ids\":[\"obs-1\"tool_call\":null}",
+          "generated_tokens": 43
+        }
+      ]
+    },
+    {
+      "domain": "consult",
+      "identical_output": true,
+      "runs": [
+        {
+          "cached": false,
+          "seconds": 3.258934257000874,
+          "accepted": false,
+          "output": "{\"decision\":\"consult\"text\":\"Vou consultar arquivo.\"gap\":\"Falta consultar consultar fonte.\"evidence_ids\":[],\"tool_call\":{\"tool\"tool\"read_file\"arguments\":{\"cfg/casteloj.json\"}}}}}}}}}}}",
+          "generated_tokens": 84
+        },
+        {
+          "cached": true,
+          "seconds": 0.505609239999103,
+          "accepted": false,
+          "output": "{\"decision\":\"consult\"text\":\"Vou consultar arquivo.\"gap\":\"Falta consultar consultar fonte.\"evidence_ids\":[],\"tool_call\":{\"tool\"tool\"read_file\"arguments\":{\"cfg/casteloj.json\"}}}}}}}}}}}",
+          "generated_tokens": 84
+        }
+      ]
+    }
+  ]
+}

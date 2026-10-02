@@ -14,6 +14,8 @@ import re
 from pathlib import Path
 from typing import Any
 
+from competency import learning_contract
+
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_PATH = ROOT / "corpus" / "agent" / "skills.json"
@@ -54,6 +56,8 @@ def _empty(topic: str) -> dict[str, Any]:
         "source_repository": None,
         "technologies": [],
         "practice": {"tasks": 0, "passed": 0, "failed": 0, "verified": []},
+        "laboratory_checks": {"tasks": 0, "passed": 0, "failed": 0, "verified": [], "failed_tasks": []},
+        "learning_contract": None,
         "decisions": [],
         "updated_at": None,
     }
@@ -192,19 +196,97 @@ class AgentState:
 
     @staticmethod
     def _normalize_practice(skill: dict[str, Any]) -> dict[str, Any]:
-        """Consolida repetições: repetir um laboratório reforça a prova, mas
-        não fabrica novas tarefas para inflar a proficiência."""
+        """Separa desempenho do agente de exercícios fixos executados pelo laboratório."""
         practice = skill.setdefault("practice", {"tasks": 0, "passed": 0, "failed": 0, "verified": []})
-        unique = {}
-        for item in practice.get("verified") or []:
+        checks = skill.setdefault("laboratory_checks", {
+            "tasks": 0, "passed": 0, "failed": 0, "verified": [], "failed_tasks": []
+        })
+        agent_verified = {}
+        lab_verified = {}
+        unclassified = {}
+        migrated_reference_lab = False
+        for item in practice.get("unclassified_legacy") or []:
+            if not isinstance(item, dict):
+                continue
             key = (str(item.get("task") or ""), str(item.get("level") or "practice"))
-            unique.setdefault(key, item)
-        practice["verified"] = list(unique.values())
+            unclassified.setdefault(key, item)
+        for item in checks.get("verified") or []:
+            if not isinstance(item, dict):
+                continue
+            key = (str(item.get("task") or ""), str(item.get("level") or "practice"))
+            lab_verified.setdefault(key, item)
+        for item in practice.get("verified") or []:
+            if not isinstance(item, dict):
+                continue
+            key = (str(item.get("task") or ""), str(item.get("level") or "practice"))
+            provenance = str(item.get("provenance") or "")
+            if provenance == "agent_attempt":
+                agent_verified.setdefault(key, item)
+            elif provenance == "reference_lab" or (not provenance and "; aprovado" in str(item.get("evidence") or "")):
+                item["provenance"] = "reference_lab"
+                lab_verified.setdefault(key, item)
+                migrated_reference_lab = True
+            else:
+                item.setdefault("provenance", "unclassified_legacy")
+                unclassified.setdefault(key, item)
+
+        migration_version = int(practice.get("provenance_migration_version", 0) or 0)
         failed_tasks = set(str(item) for item in practice.get("failed_tasks") or [])
+        lab_failed_tasks = set(str(item) for item in checks.get("failed_tasks") or [])
+        if migration_version < 1:
+            # Antes da separação, o learning flow gravava resultados do
+            # laboratório como se fossem prática aprovada pelo agente.
+            lab_failed_tasks.update(failed_tasks)
+            failed_tasks.clear()
+            old_counts = {
+                "tasks": max(0, int(practice.get("tasks", 0) or 0)),
+                "passed": max(0, int(practice.get("passed", 0) or 0)),
+                "failed": max(0, int(practice.get("failed", 0) or 0)),
+            }
+            accounted_passed = len(agent_verified) + len(lab_verified)
+            accounted_failed = len(failed_tasks) + len(lab_failed_tasks)
+            unaccounted = {
+                "tasks": max(0, old_counts["tasks"] - accounted_passed - accounted_failed),
+                "passed": max(0, old_counts["passed"] - accounted_passed),
+                "failed": max(0, old_counts["failed"] - accounted_failed),
+            }
+            if any(unaccounted.values()):
+                practice["legacy_unclassified_counts"] = unaccounted
+            if migrated_reference_lab:
+                concepts = skill.setdefault("concepts", {"covered": [], "gaps": []})
+                legacy_covered = [
+                    str(concept.get("id"))
+                    for level in (skill.get("curriculum") or {}).get("levels", [])
+                    for concept in level.get("concepts", [])
+                    if concept.get("status") == "covered" and concept.get("id")
+                ]
+                if legacy_covered:
+                    concepts["legacy_reference_lab_coverage"] = list(dict.fromkeys(
+                        list(concepts.get("legacy_reference_lab_coverage") or []) + legacy_covered
+                    ))
+                    concepts["covered"] = [
+                        item for item in concepts.get("covered", []) if item not in set(legacy_covered)
+                    ]
+                    concepts["gaps"] = list(dict.fromkeys(
+                        list(concepts.get("gaps") or []) + legacy_covered
+                    ))
+                    for level in (skill.get("curriculum") or {}).get("levels", []):
+                        for concept in level.get("concepts", []):
+                            if concept.get("id") in set(legacy_covered):
+                                concept["status"] = "pending"
+            practice["provenance_migration_version"] = 1
+
+        practice["verified"] = list(agent_verified.values())
+        practice["unclassified_legacy"] = list(unclassified.values())
         practice["failed_tasks"] = sorted(failed_tasks)
         practice["passed"] = len(practice["verified"])
-        practice["failed"] = max(len(failed_tasks), int(practice.get("failed", 0) or 0))
+        practice["failed"] = len(failed_tasks)
         practice["tasks"] = practice["passed"] + practice["failed"]
+        checks["verified"] = list(lab_verified.values())
+        checks["failed_tasks"] = sorted(lab_failed_tasks)
+        checks["passed"] = len(checks["verified"])
+        checks["failed"] = len(lab_failed_tasks)
+        checks["tasks"] = checks["passed"] + checks["failed"]
         return practice
 
     @staticmethod
@@ -219,6 +301,8 @@ class AgentState:
         tasks = int(practice.get("tasks", 0) or 0)
         passed = int(practice.get("passed", 0) or 0)
         practice_score = min(0.32, (passed / tasks) * 0.32) if tasks else 0.0
+        if not skill.get("learning_contract"):
+            skill["learning_contract"] = learning_contract(str(skill.get("topic") or ""))
         skill["evaluation"] = AgentState._evaluation(skill)
         if skill["evaluation"]["ready"]:
             skill["status"] = "mastered"
@@ -254,6 +338,7 @@ class AgentState:
     def record_research(self, topic: str, *, sources: list[dict], independent_hosts: int,
                         documents: int, status: str, gaps: list[str] | None = None,
                         curriculum: dict[str, Any] | None = None,
+                        learning_plan: dict[str, Any] | None = None,
                         source_repository: str | None = None,
                         technologies: list[str] | None = None,
                         technology_evidence: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -275,6 +360,9 @@ class AgentState:
             skill["evidence"] = {"sources": merged_sources[:48],
                                   "independent_hosts": max(existing_hosts, independent_hosts),
                                   "documents": merged_documents}
+            if learning_plan:
+                # O plano é uma pendência executável, nunca uma aprovação.
+                skill["learning_contract"] = json.loads(json.dumps(learning_plan, ensure_ascii=False))
             if curriculum:
                 skill["curriculum"] = self._merge_curriculum(skill.get("curriculum"), curriculum)
                 skill["concepts"]["covered"] = [item.get("id") for level in skill["curriculum"].get("levels", [])
@@ -313,6 +401,7 @@ class AgentState:
 
     def record_practice(self, topic: str, *, task: str, passed: bool, evidence: str = "",
                         level: str | None = None) -> dict[str, Any]:
+        """Record a task the agent itself attempted and an evaluator approved."""
         topic = canonical_topic(topic)
         with LOCK:
             data = self._load()
@@ -325,7 +414,8 @@ class AgentState:
             failed_tasks = set(str(item) for item in practice.get("failed_tasks") or [])
             if passed:
                 verified[key] = {"task": task[:300], "level": level,
-                                 "evidence": evidence[:500], "at": time.time()}
+                                 "evidence": evidence[:500], "at": time.time(),
+                                 "provenance": "agent_attempt"}
                 failed_tasks.discard(f"{key[0]}|{key[1]}")
                 practice["verified"] = list(verified.values())
             else:
@@ -336,7 +426,7 @@ class AgentState:
                 concept_map = {
                     "foundation-control-flow": ["fundamentos", "dados-e-controle"],
                     "error-handling": "erros-e-testes",
-                    "module-composition": ["composicao", "modules"],
+                    "module-composition": ["composicao", "modules", "module"],
                     "unseen-inputs": ["problema-novo", "testing"],
                     "transfer-boundary-cases": "problema-novo",
                     "iterator-generator": "iterators",
@@ -344,11 +434,17 @@ class AgentState:
                     "exceptions-contract": "exceptions",
                     "serialization-boundary": "serialization",
                     "async-await": "async",
-                    "closure-scope": "closures",
+                    "closure-scope": ["closures", "closure"],
                     "promise-contract": "promises",
                     "event-loop-order": "event-loop",
                     "async-error-boundary": "async",
                     "module-boundary": "modules",
+                    "generic-contract": "types",
+                    "type-boundaries": "types",
+                    "union-narrowing": "types",
+                    "integration-project": ["integracao", "integration"],
+                    "resource-safety": "resources",
+                    "unseen-type-contract": "problema-novo",
                     "node-http-server": "http-server",
                     "node-streams": "streams",
                     "node-observability": "observability",
@@ -359,6 +455,19 @@ class AgentState:
                     "traits": "traits",
                     "pattern-matching": "pattern-matching",
                     "modules": "modules",
+                    "quoting": "quoting",
+                    "processes": "processes",
+                    "pipelines": "pipelines",
+                    "permissions": "permissions",
+                    "trap-cleanup": "erros-e-testes",
+                    "shellcheck": "shellcheck",
+                    "syntax-check": "erros-e-testes",
+                    "goroutines": "goroutines",
+                    "channels": "channels",
+                    "interfaces": "interfaces",
+                    "errors": "errors",
+                    "unseen-values": "problema-novo",
+                    "type-boundaries": "types",
                 }
                 covered = concept_map.get(task)
                 if covered:
@@ -371,6 +480,7 @@ class AgentState:
                                 skill["concepts"]["covered"] = list(dict.fromkeys(skill["concepts"]["covered"]))
                                 skill["concepts"]["gaps"] = [gap for gap in skill["concepts"].get("gaps", []) if gap != concept.get("id")]
             evaluation = self._evaluation(skill)
+            skill["evaluation"] = evaluation
             if evaluation["ready"]:
                 skill["status"] = "mastered"
                 skill["confidence"] = min(0.95, 0.65 + practice["passed"] * 0.05)
@@ -378,6 +488,36 @@ class AgentState:
                 skill["status"] = "partially_known"
                 self._refresh_metrics(skill)
             skill["updated_at"] = time.time()
+            self._save(data)
+            return json.loads(json.dumps(skill, ensure_ascii=False))
+
+    def record_lab_check(self, topic: str, *, task: str, passed: bool, evidence: str = "",
+                         level: str | None = None) -> dict[str, Any]:
+        """Record a fixed reference exercise without treating it as agent performance."""
+        topic = canonical_topic(topic)
+        with LOCK:
+            data = self._load()
+            skill = data.setdefault("skills", {}).setdefault(topic, _empty(topic))
+            self._normalize_practice(skill)
+            checks = skill.setdefault("laboratory_checks", {
+                "tasks": 0, "passed": 0, "failed": 0, "verified": [], "failed_tasks": []
+            })
+            level = level or "practice"
+            key = (task[:300], level)
+            verified = {(str(item.get("task") or ""), str(item.get("level") or "practice")): item
+                        for item in checks.get("verified") or []}
+            failed_tasks = set(str(item) for item in checks.get("failed_tasks") or [])
+            if passed:
+                verified[key] = {"task": task[:300], "level": level,
+                                 "evidence": evidence[:500], "at": time.time(),
+                                 "provenance": "reference_lab"}
+                failed_tasks.discard(f"{key[0]}|{key[1]}")
+                checks["verified"] = list(verified.values())
+            else:
+                failed_tasks.add(f"{key[0]}|{key[1]}")
+            checks["failed_tasks"] = sorted(failed_tasks)
+            skill["updated_at"] = time.time()
+            self._refresh_metrics(skill)
             self._save(data)
             return json.loads(json.dumps(skill, ensure_ascii=False))
 

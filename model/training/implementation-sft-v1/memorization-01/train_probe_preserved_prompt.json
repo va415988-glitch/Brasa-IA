@@ -1,0 +1,90 @@
+{
+  "schema": "brasa-implementation-heldout/v1",
+  "cases": 4,
+  "max_tokens": 384,
+  "baseline": [
+    {
+      "id": "clamp",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 13,
+      "quality_reason": "structured-plan-too-short",
+      "quality_stop_reason": null,
+      "answer_excerpt": ""
+    },
+    {
+      "id": "word_count",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 13,
+      "quality_reason": "structured-plan-too-short",
+      "quality_stop_reason": null,
+      "answer_excerpt": ""
+    },
+    {
+      "id": "deduplicate",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 13,
+      "quality_reason": "structured-plan-too-short",
+      "quality_stop_reason": null,
+      "answer_excerpt": ""
+    },
+    {
+      "id": "temperature",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 31,
+      "quality_reason": "structured-plan-too-short",
+      "quality_stop_reason": "repeated-fragment",
+      "answer_excerpt": ""
+    }
+  ],
+  "candidate": [
+    {
+      "id": "clamp",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 47,
+      "quality_reason": "repeated-words",
+      "quality_stop_reason": "repeated-words",
+      "answer_excerpt": ""
+    },
+    {
+      "id": "word_count",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 384,
+      "quality_reason": "structured-plan-invalid-json",
+      "quality_stop_reason": null,
+      "answer_excerpt": ""
+    },
+    {
+      "id": "deduplicate",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 384,
+      "quality_reason": "structured-plan-invalid-json",
+      "quality_stop_reason": null,
+      "answer_excerpt": ""
+    },
+    {
+      "id": "temperature",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 384,
+      "quality_reason": "structured-plan-invalid-json",
+      "quality_stop_reason": null,
+      "answer_excerpt": ""
+    }
+  ],
+  "promoted": false
+}

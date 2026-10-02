@@ -1,0 +1,155 @@
+{
+  "schema": "brasa-implementation-sft/v1",
+  "prompt_style": "compact",
+  "cases": [
+    {
+      "id": "clamp",
+      "split": "train",
+      "prompt_tokens": 187,
+      "answer_tokens": 181
+    },
+    {
+      "id": "word_count",
+      "split": "train",
+      "prompt_tokens": 185,
+      "answer_tokens": 128
+    },
+    {
+      "id": "deduplicate",
+      "split": "train",
+      "prompt_tokens": 185,
+      "answer_tokens": 146
+    },
+    {
+      "id": "temperature",
+      "split": "train",
+      "prompt_tokens": 200,
+      "answer_tokens": 154
+    },
+    {
+      "id": "palindrome",
+      "split": "validation",
+      "prompt_tokens": 185,
+      "answer_tokens": 153
+    },
+    {
+      "id": "minutes",
+      "split": "heldout",
+      "prompt_tokens": 193,
+      "answer_tokens": 153
+    },
+    {
+      "id": "initials",
+      "split": "heldout",
+      "prompt_tokens": 192,
+      "answer_tokens": 140
+    },
+    {
+      "id": "double",
+      "split": "train",
+      "prompt_tokens": 183,
+      "answer_tokens": 111
+    },
+    {
+      "id": "square",
+      "split": "train",
+      "prompt_tokens": 181,
+      "answer_tokens": 106
+    },
+    {
+      "id": "rectangle_area",
+      "split": "train",
+      "prompt_tokens": 194,
+      "answer_tokens": 135
+    },
+    {
+      "id": "hours_to_seconds",
+      "split": "train",
+      "prompt_tokens": 190,
+      "answer_tokens": 139
+    },
+    {
+      "id": "average",
+      "split": "train",
+      "prompt_tokens": 185,
+      "answer_tokens": 141
+    },
+    {
+      "id": "sum_positive",
+      "split": "train",
+      "prompt_tokens": 186,
+      "answer_tokens": 124
+    },
+    {
+      "id": "even_numbers",
+      "split": "train",
+      "prompt_tokens": 188,
+      "answer_tokens": 140
+    },
+    {
+      "id": "reverse_words",
+      "split": "train",
+      "prompt_tokens": 182,
+      "answer_tokens": 136
+    },
+    {
+      "id": "capitalize_words",
+      "split": "train",
+      "prompt_tokens": 188,
+      "answer_tokens": 144
+    },
+    {
+      "id": "last_word",
+      "split": "train",
+      "prompt_tokens": 185,
+      "answer_tokens": 141
+    },
+    {
+      "id": "vowel_count",
+      "split": "train",
+      "prompt_tokens": 189,
+      "answer_tokens": 138
+    },
+    {
+      "id": "remove_empty",
+      "split": "train",
+      "prompt_tokens": 184,
+      "answer_tokens": 137
+    },
+    {
+      "id": "within_range",
+      "split": "train",
+      "prompt_tokens": 189,
+      "answer_tokens": 140
+    },
+    {
+      "id": "first_word",
+      "split": "train",
+      "prompt_tokens": 184,
+      "answer_tokens": 137
+    },
+    {
+      "id": "absolute_difference",
+      "split": "train",
+      "prompt_tokens": 187,
+      "answer_tokens": 124
+    },
+    {
+      "id": "join_words",
+      "split": "train",
+      "prompt_tokens": 190,
+      "answer_tokens": 147
+    }
+  ],
+  "splits": {
+    "train": 20,
+    "validation": 1,
+    "heldout": 2
+  },
+  "files": {
+    "train": "bead0b52340d6d03615a7096cfbc7b75785183e913d5d669cbbe1433fd6fe67a",
+    "validation": "2544575babe9329378a854506f0ceefa7342073b92a91ff6037c3dc53965e52c",
+    "heldout": "429c46d07159eba9bf6380f3427660a536eaaeb3dde9d020d50f9f36424c3f18"
+  },
+  "scope": "single-function two-file protocol smoke test; no claim of full-project generalization"
+}

@@ -1,0 +1,262 @@
+{
+  "schema": "cognitive-copy-comparison/v1",
+  "cases_sha256": "d88ee76d8d84cf325ac9bf8b70c2c461a77017df769f1e924646dbc95a7212c0",
+  "protocol_sha256": "44ba8c597b06e6ce291b69a030a73617db8a79c87d24e627b54184bd9346a9f4",
+  "variants": {
+    "v2": {
+      "passed": 67,
+      "total": 264,
+      "contract_valid": 224,
+      "input_preserved": 264,
+      "unsafe_answers": 123,
+      "per_domain": {
+        "observed": {
+          "passed": 0,
+          "total": 24
+        },
+        "failed": {
+          "passed": 22,
+          "total": 24
+        },
+        "empty": {
+          "passed": 16,
+          "total": 24
+        },
+        "unrelated": {
+          "passed": 0,
+          "total": 24
+        },
+        "conflict": {
+          "passed": 9,
+          "total": 24
+        },
+        "revision": {
+          "passed": 0,
+          "total": 24
+        },
+        "injection": {
+          "passed": 0,
+          "total": 24
+        },
+        "consult": {
+          "passed": 0,
+          "total": 24
+        },
+        "recover": {
+          "passed": 0,
+          "total": 24
+        },
+        "supports": {
+          "passed": 2,
+          "total": 24
+        },
+        "rejects": {
+          "passed": 18,
+          "total": 24
+        }
+      },
+      "paired_groups_passed": 0,
+      "paired_groups_total": 24
+    },
+    "v3_no_copy": {
+      "passed": 98,
+      "total": 264,
+      "contract_valid": 232,
+      "input_preserved": 264,
+      "unsafe_answers": 118,
+      "per_domain": {
+        "observed": {
+          "passed": 0,
+          "total": 24
+        },
+        "failed": {
+          "passed": 21,
+          "total": 24
+        },
+        "empty": {
+          "passed": 24,
+          "total": 24
+        },
+        "unrelated": {
+          "passed": 24,
+          "total": 24
+        },
+        "conflict": {
+          "passed": 13,
+          "total": 24
+        },
+        "revision": {
+          "passed": 0,
+          "total": 24
+        },
+        "injection": {
+          "passed": 0,
+          "total": 24
+        },
+        "consult": {
+          "passed": 0,
+          "total": 24
+        },
+        "recover": {
+          "passed": 0,
+          "total": 24
+        },
+        "supports": {
+          "passed": 16,
+          "total": 24
+        },
+        "rejects": {
+          "passed": 0,
+          "total": 24
+        }
+      },
+      "paired_groups_passed": 0,
+      "paired_groups_total": 24
+    },
+    "v3_copy": {
+      "passed": 122,
+      "total": 264,
+      "contract_valid": 244,
+      "input_preserved": 264,
+      "unsafe_answers": 79,
+      "per_domain": {
+        "observed": {
+          "passed": 1,
+          "total": 24
+        },
+        "failed": {
+          "passed": 24,
+          "total": 24
+        },
+        "empty": {
+          "passed": 24,
+          "total": 24
+        },
+        "unrelated": {
+          "passed": 23,
+          "total": 24
+        },
+        "conflict": {
+          "passed": 15,
+          "total": 24
+        },
+        "revision": {
+          "passed": 5,
+          "total": 24
+        },
+        "injection": {
+          "passed": 7,
+          "total": 24
+        },
+        "consult": {
+          "passed": 1,
+          "total": 24
+        },
+        "recover": {
+          "passed": 0,
+          "total": 24
+        },
+        "supports": {
+          "passed": 16,
+          "total": 24
+        },
+        "rejects": {
+          "passed": 6,
+          "total": 24
+        }
+      },
+      "paired_groups_passed": 0,
+      "paired_groups_total": 24
+    }
+  },
+  "selected_checkpoints": {
+    "v2": "model/training/cognitive-sft-v2/run-01/snapshots/step-0800.safetensors",
+    "v3_no_copy": "model/training/cognitive-copy-v3/run-no-copy-01/snapshots/step-0800.safetensors",
+    "v3_copy": "model/training/cognitive-copy-v3/run-01/snapshots/step-1200.safetensors"
+  },
+  "head_to_head": {
+    "copy_vs_v2": {
+      "copy_only_passed": 72,
+      "comparator_only_passed": 17,
+      "both_passed": 50,
+      "both_failed": 125
+    },
+    "copy_vs_v3_no_copy": {
+      "copy_only_passed": 34,
+      "comparator_only_passed": 10,
+      "both_passed": 88,
+      "both_failed": 132
+    }
+  },
+  "promoted": false,
+  "limits": [
+    "Same reserved cases, but V2 changes data/tokenizer/architecture/budget.",
+    "One seed per V3 variant; additional module construction changes base initialization RNG.",
+    "All families appear in training; results do not prove general cognition."
+  ],
+  "report_sha256": {
+    "run-01/semantic-selection.json": "a8c4bb4819a8e7d18cb3f4aa65176cd7d929b707ad7184102c0976152cd20f76",
+    "run-no-copy-01/semantic-selection.json": "0851853e2904ddcfb65f1ffc794edb4499198e16e516fb3f1f94d52f8abda521",
+    "baseline-v2-heldout.json": "0de86f97f32c0a7713e109c6f3c15cdbd3fcfefe9fc3212d1d3fcd794434e072"
+  },
+  "regression_on_v2_cases": {
+    "summary": {
+      "passed": 115,
+      "total": 264,
+      "contract_valid": 220,
+      "input_preserved": 264,
+      "unsafe_answers": 58,
+      "per_domain": {
+        "observed": {
+          "passed": 0,
+          "total": 24
+        },
+        "failed": {
+          "passed": 24,
+          "total": 24
+        },
+        "empty": {
+          "passed": 24,
+          "total": 24
+        },
+        "unrelated": {
+          "passed": 1,
+          "total": 24
+        },
+        "conflict": {
+          "passed": 16,
+          "total": 24
+        },
+        "revision": {
+          "passed": 14,
+          "total": 24
+        },
+        "injection": {
+          "passed": 14,
+          "total": 24
+        },
+        "consult": {
+          "passed": 0,
+          "total": 24
+        },
+        "recover": {
+          "passed": 0,
+          "total": 24
+        },
+        "supports": {
+          "passed": 10,
+          "total": 24
+        },
+        "rejects": {
+          "passed": 12,
+          "total": 24
+        }
+      },
+      "paired_groups_passed": 0,
+      "paired_groups_total": 24
+    },
+    "report": "model/training/cognitive-copy-v3/regression-copy-on-v2-heldout.json",
+    "report_sha256": "b1238df0dffe2ad1e8dbd34ae5315266b9d7196a3d70eee0359d8af681b5bc32",
+    "used_for_selection": false
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "schema": "cognitive-alignment-data/v1",
+  "seed": "71001/71002/71003",
+  "splits": {
+    "train": {
+      "rows": 2304,
+      "max_sequence_tokens": 431,
+      "copy_tokens": 10507,
+      "domains": {
+        "observed": 192,
+        "failed": 192,
+        "empty": 192,
+        "unrelated": 384,
+        "conflict": 192,
+        "revision": 192,
+        "injection": 192,
+        "consult": 192,
+        "recover": 192,
+        "supports": 192,
+        "rejects": 192
+      }
+    },
+    "validation": {
+      "rows": 144,
+      "max_sequence_tokens": 428,
+      "copy_tokens": 800,
+      "domains": {
+        "observed": 12,
+        "failed": 12,
+        "empty": 12,
+        "unrelated": 24,
+        "conflict": 12,
+        "revision": 12,
+        "injection": 12,
+        "consult": 12,
+        "recover": 12,
+        "supports": 12,
+        "rejects": 12
+      }
+    },
+    "heldout": {
+      "rows": 288,
+      "max_sequence_tokens": 433,
+      "copy_tokens": 1576,
+      "domains": {
+        "observed": 24,
+        "failed": 24,
+        "empty": 24,
+        "unrelated": 48,
+        "conflict": 24,
+        "revision": 24,
+        "injection": 24,
+        "consult": 24,
+        "recover": 24,
+        "supports": 24,
+        "rejects": 24
+      }
+    }
+  },
+  "source_sha256": "f6adae022ef55bef22147366d2941232f556ec6a820fdc25048e1d0f8231dddc",
+  "sha256": {
+    "heldout.jsonl": "d6058c93efb94787ee52ae7ec2cf234441184e31088a45f4b2122875a5c0b41a",
+    "validation.jsonl": "192b251eb012a5e06b81a81117ddedf8b502c4dd1808b042e0bb4bd8184d1d9d",
+    "tokenizer.json": "e58fe3e652e62f3028b63810fd90b39745829ed80723bf7daec2e0b4662aa4e1",
+    "train.jsonl": "b62d716442f38e24c9b7ab901a6193d2d957c81ebb5093084dbf548cc04969b8",
+    "config.json": "a57608950ae4f72014c87e15784c76d083f95e838b32d45909cc62aa993c7d67"
+  },
+  "scope": "Authored copy spans are training labels only. New reserved entities/ranges; mixed absence variants.",
+  "limits": [
+    "Synthetic numeric tasks; all decision families appear in train.",
+    "The reserved facts have six digits; training has one to six.",
+    "No general cognition, live tool use or active-model promotion."
+  ]
+}

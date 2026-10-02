@@ -1,0 +1,54 @@
+{
+  "name": "list_tree",
+  "description": "Lista a árvore de arquivos e pastas de forma limitada e ordenada.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "required": [],
+    "properties": {
+      "path": {
+        "type": "string"
+      },
+      "max_depth": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 6
+      },
+      "max_entries": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 500
+      },
+      "include_hidden": {
+        "type": "boolean"
+      }
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": [
+      "path",
+      "entries",
+      "truncated",
+      "scanned"
+    ],
+    "properties": {
+      "path": {
+        "type": "string"
+      },
+      "entries": {
+        "type": "array"
+      },
+      "truncated": {
+        "type": "boolean"
+      },
+      "scanned": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 20000
+      }
+    }
+  }
+}

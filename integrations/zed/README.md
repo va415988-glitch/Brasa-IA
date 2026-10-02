@@ -1,14 +1,20 @@
 # Integração com Zed
 
-O Zed é o editor prioritário. O runtime agora expõe uma API compatível com
-OpenAI em:
+O Zed é o editor prioritário. Para conversa e tarefas de workspace, use o
+agente ACP descrito abaixo: ele encaminha toda mensagem ao AgentCore em
+`/api/v1/agent/pursue`, que é a autoridade única de classificação, execução e
+aceite.
+
+O runtime também conserva uma API compatível com OpenAI em:
 
 ```text
 http://127.0.0.1:3000/v1/chat/completions
 ```
 
 Ela aceita `POST` com `model` e `messages` e devolve `chat.completion`, além de
-metadados locais como backend e intenção. Nenhum modelo externo é chamado.
+metadados locais como backend e intenção. Esse endpoint é compatibilidade de
+modelo/conversa e não deve ser usado como segundo orquestrador de ferramentas.
+Nenhum modelo externo é chamado.
 
 ## Configuração
 
@@ -42,8 +48,9 @@ O arquivo `acp_server.py` implementa o Agent Client Protocol (ACP) em stdio. O
 `acp_launcher.sh` fixa a raiz do projeto e inicia o adaptador com o ambiente
 virtual correto. Com o bloco `agent_servers.ia-local-do-zero` de `settings.example.json`, o
 Zed inicia o processo como um agente externo chamado **IA Local do Zero**.
-Esse agente mantém a conversa no runtime local, sincroniza o workspace da
-sessão e envia atualizações `session/update` enquanto processa a mensagem.
+Esse agente mantém a conversa no AgentCore, envia o workspace da sessão e
+traduz os eventos canônicos para `session/update`, incluindo diffs e pedidos
+de permissão. Ele não classifica nem encadeia ferramentas por conta própria.
 
 O runtime também possui a ferramenta composta `research_web`: ela pesquisa,
 remove redirecionamentos do buscador, abre até três fontes dentro do limite de
@@ -74,13 +81,14 @@ escolha **IA Local do Zero**. Se ele não aparecer imediatamente, execute
 `agent: open settings` ou reinicie o Zed. Para depurar o processo ACP, use o
 comando `dev: open acp logs` do Zed.
 
-O agente ACP não inicia Ollama nem depende de um modelo externo: ele apenas
-encaminha a conversa para `127.0.0.1:3000`, respeitando o limite local de 10 s.
+O agente ACP não inicia Ollama nem depende de um modelo externo: ele encaminha
+a conversa para o AgentCore por `127.0.0.1:3000`.
 
 ## Limites atuais
 
-- a API conversa com o backend local curado e o acervo;
-- a conversa nativa do Zed usa o endpoint compatível com OpenAI;
+- o AgentCore é a entrada recomendada para conversa e tarefas no agente ACP;
+- o endpoint compatível com OpenAI permanece somente para superfícies de modelo
+  que não executam tarefas de workspace;
 - o MCP expõe ferramentas, e o agente ACP já mostra diffs e pede permissão
   antes de alterar arquivos;
 - o runtime mantém allowlist, workspace, backup e limite de 10 segundos;

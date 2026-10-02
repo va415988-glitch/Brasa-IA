@@ -73,7 +73,7 @@ def main():
     parser.add_argument("--checkpoint-dir", type=Path, default=ROOT / "model" / "checkpoints")
     parser.add_argument("--eval", type=Path, default=ROOT / "model" / "eval_generation.jsonl")
     parser.add_argument("--tokenizer", type=Path, default=ROOT / "model" / "tokenizer.json")
-    parser.add_argument("--tokens", type=int, default=32)
+    parser.add_argument("--tokens", type=int, default=1024)
     parser.add_argument("--output", type=Path, default=ROOT / "model" / "checkpoint_benchmark.json")
     args = parser.parse_args()
 

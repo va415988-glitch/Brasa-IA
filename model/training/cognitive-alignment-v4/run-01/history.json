@@ -1,0 +1,44 @@
+[
+  {
+    "step": 0,
+    "validation": {
+      "generation": 4.144109955514017,
+      "alignment": 5.4747236680984495,
+      "gate": 0.7315248184981354,
+      "transition": 0.6927279287696292
+    },
+    "elapsed_seconds": 3.87
+  },
+  {
+    "step": 400,
+    "train": {
+      "generation": 0.8221919536590576,
+      "alignment": 0.18669231235980988,
+      "gate": 0.7607622146606445,
+      "transition": 0.07820835709571838
+    },
+    "validation": {
+      "generation": 0.9541279445605132,
+      "alignment": 0.8158416773378849,
+      "gate": 0.705217035228019,
+      "transition": 0.056027099100855376
+    },
+    "elapsed_seconds": 1033.61
+  },
+  {
+    "step": 800,
+    "train": {
+      "generation": 0.41732844710350037,
+      "alignment": 0.043240856379270554,
+      "gate": 0.6612989902496338,
+      "transition": 0.04538155347108841
+    },
+    "validation": {
+      "generation": 0.443555420800649,
+      "alignment": 0.5662458651512862,
+      "gate": 0.6003839066975856,
+      "transition": 0.027298782612129497
+    },
+    "elapsed_seconds": 2557.12
+  }
+]

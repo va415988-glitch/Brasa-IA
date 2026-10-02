@@ -1,0 +1,59 @@
+{
+  "schema": "brasa-implementation-sft/v1",
+  "prompt_style": "compact",
+  "cases": [
+    {
+      "id": "clamp",
+      "split": "train",
+      "prompt_tokens": 187,
+      "answer_tokens": 181
+    },
+    {
+      "id": "word_count",
+      "split": "train",
+      "prompt_tokens": 185,
+      "answer_tokens": 128
+    },
+    {
+      "id": "deduplicate",
+      "split": "train",
+      "prompt_tokens": 185,
+      "answer_tokens": 146
+    },
+    {
+      "id": "temperature",
+      "split": "train",
+      "prompt_tokens": 200,
+      "answer_tokens": 154
+    },
+    {
+      "id": "palindrome",
+      "split": "validation",
+      "prompt_tokens": 185,
+      "answer_tokens": 153
+    },
+    {
+      "id": "minutes",
+      "split": "heldout",
+      "prompt_tokens": 193,
+      "answer_tokens": 153
+    },
+    {
+      "id": "initials",
+      "split": "heldout",
+      "prompt_tokens": 192,
+      "answer_tokens": 140
+    }
+  ],
+  "splits": {
+    "train": 4,
+    "validation": 1,
+    "heldout": 2
+  },
+  "files": {
+    "train": "9938363cb804b43a98eb91253ceb1bed3dd0efb81ae73d2d21da9c4158a5816b",
+    "validation": "2544575babe9329378a854506f0ceefa7342073b92a91ff6037c3dc53965e52c",
+    "heldout": "429c46d07159eba9bf6380f3427660a536eaaeb3dde9d020d50f9f36424c3f18"
+  },
+  "scope": "single-function two-file protocol smoke test; no claim of full-project generalization"
+}

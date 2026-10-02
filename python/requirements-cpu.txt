@@ -2,3 +2,4 @@
 torch
 numpy
 safetensors
+Pillow>=12.0,<13

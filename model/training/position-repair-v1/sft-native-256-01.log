@@ -1,0 +1,33 @@
+{"encoding_rows": 500, "total_rows": 660}
+{"encoding_rows": 660, "total_rows": 660}
+{"encoding_rows": 35, "total_rows": 35}
+/home/victor/Documentos/IA Local do Zero/python/model.py:54: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.blocks = nn.TransformerEncoder(block, num_layers=layers)
+{"records": {"train": 436, "training_views": 660, "validation": 35, "heldout": 20}, "training_windows": 660, "parameters": 1510912}
+{"step": 0, "validation_loss": 8.139336737770932}
+{"step": 100, "train_loss": 6.315253734588623, "validation_loss": 8.2533291464086, "best_step": 0, "elapsed_seconds": 65.62}
+{"step": 200, "train_loss": 5.34656286239624, "validation_loss": 8.173663528212836, "best_step": 0, "elapsed_seconds": 131.23}
+{"step": 300, "train_loss": 5.926568031311035, "validation_loss": 8.224258048328632, "best_step": 0, "elapsed_seconds": 195.6}
+Traceback (most recent call last):
+  File "/home/victor/Documentos/IA Local do Zero/python/finetune_assistant.py", line 346, in <module>
+    main()
+    ~~~~^^
+  File "/home/victor/Documentos/IA Local do Zero/python/finetune_assistant.py", line 297, in main
+    logits = model(x)
+  File "/home/victor/Documentos/IA Local do Zero/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/victor/Documentos/IA Local do Zero/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/victor/Documentos/IA Local do Zero/python/model.py", line 121, in forward
+    return self.lm_head(self.norm(hidden))
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/victor/Documentos/IA Local do Zero/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/victor/Documentos/IA Local do Zero/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/victor/Documentos/IA Local do Zero/.venv/lib/python3.14/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+           ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

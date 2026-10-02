@@ -1,0 +1,70 @@
+{
+  "seed": 42,
+  "arguments": {
+    "checkpoint": "model/checkpoints/compact-08-gate-focus.pt",
+    "config_path": "",
+    "tokenizer_path": "model/tokenizer.json",
+    "output_dir": "model/training/neural-completion-finetune-v6",
+    "heldout": "model/training/neural-completion-heldout-v3.jsonl",
+    "steps": 220,
+    "max_answer_tokens": 0,
+    "multi_turn_repeat": 1,
+    "additional_jsonl": [],
+    "only_jsonl": [
+      "model/training/neural-completion-training-v2.messages.jsonl"
+    ],
+    "validation_jsonl": "",
+    "sample_tokens": 64,
+    "snapshot_every_eval": false,
+    "eval_every": 40,
+    "patience": 3,
+    "batch_size": 4,
+    "threads": 4,
+    "learning_rate": 0.0001,
+    "without_profile": false,
+    "preserve_prompt": false,
+    "from_scratch": false
+  },
+  "config": {
+    "name": "ia-local-zero-compact-01",
+    "architecture": "decoder_transformer",
+    "vocab_size": 1024,
+    "context_length": 256,
+    "layers": 4,
+    "hidden_size": 256,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 4,
+    "language_priority": [
+      "pt-BR",
+      "code",
+      "en"
+    ],
+    "tool_call_format": "json",
+    "max_request_seconds": 30,
+    "runtime": "rust",
+    "tokenizer_path": "model/tokenizer.json",
+    "runtime_context_tokens": 256
+  },
+  "source_sha256": "f2565bf74b6cd738c2fb3a611a6c551065f413f702e7a669ec8b4ed7de4aca88",
+  "tokenizer_sha256": "3dc196c42a17568c524b67e766ffcda3a1f0318fc2d3f2aa6f963b35aa7bcaf4",
+  "inputs": {
+    "model/training/neural-completion-training-v2.messages.jsonl": "3f5b1227531eb60ff6a9cc5be6e7ae3606e5be4f8aeedc015c37b5a4d4166178",
+    "model/training/neural-completion-heldout-v3.jsonl": "7a1e8a9bc92e76b3f35182330ebf6a377a0ad5218b6b48d1adcfceb7ff1d129b"
+  },
+  "records": {
+    "train": 16,
+    "training_views": 16,
+    "validation": 2,
+    "heldout": 2
+  },
+  "rejected": {},
+  "domains": {
+    "replay": 16
+  },
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

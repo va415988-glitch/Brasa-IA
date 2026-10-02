@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import heapq
 import json
 from pathlib import Path
 
@@ -12,6 +13,9 @@ class ByteBPETokenizer:
         self.vocab = vocab or {}
         self.merges = merges or []
         self._merge_map = {(left, right): new for left, right, new in self.merges}
+        self._merge_rank_map = None
+        self._byte_id_map = None
+        self._bytes_by_id = None
 
     @classmethod
     def train(cls, texts, vocab_size=8192, min_frequency=2):
@@ -71,7 +75,83 @@ class ByteBPETokenizer:
             tokens.append(self.special_tokens["<eos>"])
         return tokens
 
+    def encode_fast(self, text, add_bos=False, add_eos=False):
+        """Encode with ranked adjacent merges instead of rescanning for every rule."""
+        if self._byte_id_map is None:
+            self._byte_id_map = {
+                bytes.fromhex(encoded)[0]: token_id
+                for encoded, token_id in self.vocab.items()
+                if len(bytes.fromhex(encoded)) == 1
+            }
+        if self._merge_rank_map is None or len(self._merge_rank_map) != len(self.merges):
+            self._merge_rank_map = {
+                (left, right): rank
+                for rank, (left, right, _) in enumerate(self.merges)
+            }
+
+        raw = text.encode("utf-8")
+        tokens = [self._byte_id_map[byte] for byte in raw]
+        count = len(tokens)
+        if count > 1 and self.merges:
+            previous = [index - 1 for index in range(count)]
+            following = [index + 1 for index in range(count)]
+            following[-1] = -1
+            alive = bytearray([1]) * count
+            candidates = []
+
+            def enqueue(left_index):
+                if left_index < 0 or not alive[left_index]:
+                    return
+                right_index = following[left_index]
+                if right_index < 0:
+                    return
+                rank = self._merge_rank_map.get((tokens[left_index], tokens[right_index]))
+                if rank is not None:
+                    heapq.heappush(candidates, (rank, left_index))
+
+            for index in range(count - 1):
+                enqueue(index)
+
+            while candidates:
+                rank, left_index = heapq.heappop(candidates)
+                if not alive[left_index]:
+                    continue
+                right_index = following[left_index]
+                if right_index < 0 or not alive[right_index]:
+                    continue
+                pair = (tokens[left_index], tokens[right_index])
+                if self._merge_rank_map.get(pair) != rank:
+                    continue
+
+                tokens[left_index] = self.merges[rank][2]
+                alive[right_index] = 0
+                after = following[right_index]
+                following[left_index] = after
+                if after >= 0:
+                    previous[after] = left_index
+                following[right_index] = -1
+                enqueue(previous[left_index])
+                enqueue(left_index)
+
+            result = []
+            index = 0
+            while index != -1:
+                if alive[index]:
+                    result.append(tokens[index])
+                index = following[index]
+            tokens = result
+        if add_bos:
+            tokens.insert(0, self.special_tokens["<bos>"])
+        if add_eos:
+            tokens.append(self.special_tokens["<eos>"])
+        return tokens
+
     def decode(self, token_ids):
+        if self._bytes_by_id is None:
+            self._bytes_by_id = {
+                token_id: bytes.fromhex(encoded)
+                for encoded, token_id in self.vocab.items()
+            }
         special_by_id = {value: key for key, value in self.special_tokens.items()}
         chunks = []
         raw = bytearray()
@@ -86,7 +166,7 @@ class ByteBPETokenizer:
                 flush_raw()
                 chunks.append(special_by_id[token_id])
             else:
-                raw.extend(self._bytes_for_id(token_id))
+                raw.extend(self._bytes_by_id[token_id])
         flush_raw()
         return "".join(chunks)
 

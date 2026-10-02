@@ -1,0 +1,94 @@
+{
+  "baseline_validation_loss": 4.315336941691583,
+  "initial_validation_loss": 4.315336941691583,
+  "initialization_mode": "continue-weights",
+  "candidate_validation_loss": 4.2762424798659335,
+  "baseline_heldout_loss": 4.331641421729312,
+  "candidate_heldout_loss": 4.219392505281177,
+  "best_step": 250,
+  "completed_steps": 300,
+  "training_seconds": 224.46,
+  "baseline_answers": [
+    {
+      "prompt": "Tenho um JSONL enorme e pouca memória. Qual estratégia de leitura devo escolher?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Como evitar que o teste contamine a escolha dos hiperparâmetros?",
+      "answer": "Uma precise uma lhouver sutestes procaça e registre a a produzir o precura e a e referência e e a e a projelinha e a proprocesso e relise produzir mesmesma esmumutestes ação.\n",
+      "tokens": 93,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Uma transformação mudou a ordem e ficou lenta. O que devo investigar?",
+      "answer": "Comeia e releção e server um bia e registas e referências e regiruprecissuteri sumutar o e pleprimeirudados e registre a precis.\n",
+      "tokens": 74,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Como validar um lote antes de entregá-lo ao DataLoader?",
+      "answer": "Produradados e sutervidência e regerificas, projegistre a a produzir o por pos. Reibilidade cecações procas, produza e a procabilidade cas.\n",
+      "tokens": 81,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Quais metadados devo guardar ao criar um dataset de código?",
+      "answer": "def s sutestes registrudise a e registos e mudiscam suterve uma mutestes que eções que elecam server e a e a e mesmudados e regover mutestes.\n",
+      "tokens": 85,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Como processar exemplos em paralelo sem duplicar registros?",
+      "answer": "Mamplo lo etadocutestrutestes, procecações que registró sservos e registências e testes que a e sudados e ssimplablimesma a procabém am s.\n",
+      "tokens": 79,
+      "hit_limit": false
+    }
+  ],
+  "candidate_answers": [
+    {
+      "prompt": "Tenho um JSONL enorme e pouca memória. Qual estratégia de leitura devo escolher?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Como evitar que o teste contamine a escolha dos hiperparâmetros?",
+      "answer": "Uma bandos e a e relefinha procaça e registre a e a a produzir a produzir mblimblimesperada de sterados e a produzir a e a e a e e releite a produzir mesperada proprocação.\n",
+      "tokens": 92,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Uma transformação mudou a ordem e ficou lenta. O que devo investigar?",
+      "answer": "Comeia processo e uma inha a e a e ssuradentra a produzir o por regregistros e registrutro e a proproduzir mua e a procaminalização e a procenvo e a por uma linhouvo e a e a e a e a e a e a e uma relinaltra e uma dadas.\n",
+      "tokens": 118,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Como validar um lote antes de entregá-lo ao DataLoader?",
+      "answer": "Um sua a e a e a e a e a e a e a o e a e a a e registas registre a e regregrepelo eia e a produza e a a a e a proceitar o proproduza e e a e a o e a a procrio e a e repelo eito e a e a a a a e a e a a e a proprocrimeia e a uma regrasos e a e a ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Quais metadados devo guardar ao criar um dataset de código?",
+      "answer": "Uma bia e a e a e registrudada a e a e a a proproce. Use regregistra e a projeça a a e a procablicora e a e a e e a e a precista de mestamespermite a proco e a e a a e a e a e a e a e a e uma rela e a e a e uma linha prição e a a priproc",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Como processar exemplos em paralelo sem duplicar registros?",
+      "answer": "Uma Uma precura a a produza por repetões da mesma forfortestes que referência projefinda mantantantantantenva e a produzir mos. Use `projuda, registre a precisssída mesmesma a e registra procaseta.\n",
+      "tokens": 99,
+      "hit_limit": false
+    }
+  ],
+  "promoted": false,
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

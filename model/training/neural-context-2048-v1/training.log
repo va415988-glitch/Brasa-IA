@@ -1,0 +1,11 @@
+{"encoding_rows": 500, "total_rows": 500}
+{"encoding_rows": 46, "total_rows": 46}
+/home/victor/Documentos/IA Local do Zero/python/model.py:54: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.blocks = nn.TransformerEncoder(block, num_layers=layers)
+{"records": {"train": 500, "validation": 46, "heldout": 8}, "training_windows": 1000, "parameters": 5639680}
+{"step": 0, "validation_loss": 9.259335803421292}
+{"step": 50, "train_loss": 8.544384002685547, "validation_loss": 8.40196549229368, "best_step": 50, "elapsed_seconds": 95.35}
+{"step": 100, "train_loss": 8.48647403717041, "validation_loss": 8.254549211581077, "best_step": 100, "elapsed_seconds": 190.23}
+{"step": 150, "train_loss": 8.405633926391602, "validation_loss": 8.172055895652997, "best_step": 150, "elapsed_seconds": 287.12}
+{"step": 200, "train_loss": 8.169830322265625, "validation_loss": 8.129000116382125, "best_step": 200, "elapsed_seconds": 387.1}
+{"baseline_validation_loss": 9.259335803421292, "initial_validation_loss": 9.259335803421292, "initialization_mode": "continue-weights", "candidate_validation_loss": 8.129000116382125, "baseline_heldout_loss": 9.181264178353066, "candidate_heldout_loss": 7.600575322690218, "best_step": 200, "completed_steps": 200, "training_seconds": 612.67, "promoted": false, "limits": ["Validação do replay pode ter sido vista no treino original.", "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.", "Loss não comprova competência sênior; geração exige revisão.", "Checkpoint mantém janela original e não é promovido automaticamente."]}

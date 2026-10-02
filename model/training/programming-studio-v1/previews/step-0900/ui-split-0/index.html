@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ideias</title><style>*{box-sizing:border-box}body{margin:0;padding:clamp(24px,6vw,72px)}main{margin:auto}button{font:inherit;padding:14px 20px;min-height:44px;cursor:pointer}button:focus-visible{outline:3px solid currentColor;outline-offset:4px}set:4px}section{display:flex;gap:12px;flex-wrap:wrap}@media(prefers-reduced-motion:reduce){*{animation:none;transition:none}}body{background:#152956;color:#f3f0e8;font-family:Arial,sans-serif}main{max-width:1100px;display:grid;grid-template-columns:1fr 1fr;gap:32px}h1{font-size:clamp(3rem,7vw,6rem)}output{display:block;grid-column:2;font-size:clamp(5rem,14vw,11rem);color:#ffb076}section{grid-column:1/-1}button{background:#ffb076;color:#152956;border:0;border-radius:6px}@media(max-width:640px){main{display:block}}</style>
+<main><header><p>SEU RITMO, SEU ESPAÇO</p><h1>Meu progresso</h1><p>Registre um item por vez. O progresso fica neste navegador.</p></header>
+<output id="value" aria-live="polite" aria-label="Total de itens">0</output><section aria-label="Ações">
+<button id="add" type="button">Adicionar</button><button id="remove" type="button">Remover</button><button id="reset" type="button">Zerar</button></section><p id="status" role="status"></p></main>
+<script>
+let count=0;
+try{const saved=Number(localStorage.getItem('counter'));if(Number.isSafeInteger(saved)&&saved>=0)count=saved;}catch{}
+function render(){document.getElementById('value').textContent=String(count);document.getElementById('remove').disabled=count===0;}
+function update(delta){count=Math.max(0,count+delta);render();try{localStorage.setItem('counter',String(count));document.getElementById('status').textContent='Salvo neste navegador';}catch{document.getElementById('status').textContent='Armazenamento indisponível; progresso apenas nesta sessão';}}
+document.getElementById('add').addEventListener('click',()=>update(1));
+document.getElementById('remove').addEventListener('click',()=>update(-1));
+document.getElementById('reset').addEventListener('click',()=>update(-count));render();
+</script></html>

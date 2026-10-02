@@ -1,0 +1,648 @@
+{
+  "suite_id": "dialogue-intent-50-v1",
+  "description": "Cinquenta casos em português para avaliar intenção, contexto, opinião, calibração e qualidade conversacional.",
+  "cases": [
+    {
+      "id": "intent-01-api-datasets",
+      "category": "intencao_e_palavras_tecnicas",
+      "expected_speech_act": "opinion_request",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "O que você acha da ideia de criar uma API para a IA em vez de depender só de datasets?"}],
+      "checks": [
+        {"name": "considera a API", "any": ["api"]},
+        {"name": "considera dados ou treinamento", "any": ["dataset", "treinamento", "treinar"]},
+        {"name": "assume uma posição", "any": ["concordo", "discordo", "faz sentido", "acho", "eu priorizaria", "eu começaria", "depende"]}
+      ]
+    },
+    {
+      "id": "intent-02-rust-python",
+      "category": "intencao_e_palavras_tecnicas",
+      "expected_speech_act": "opinion_request",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Você concorda que Rust é sempre melhor do que Python para um backend?"}],
+      "checks": [
+        {"name": "compara as linguagens", "any": ["rust"]},
+        {"name": "considera a outra opção", "any": ["python"]},
+        {"name": "evita regra absoluta", "any": ["depende", "caso", "contexto", "não existe uma melhor", "nao existe uma melhor", "discordo", "concordo em parte"]}
+      ]
+    },
+    {
+      "id": "intent-03-microservices",
+      "category": "intencao_e_palavras_tecnicas",
+      "expected_speech_act": "opinion_request",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Na sua opinião, trocar o monólito por microserviços resolveria a lentidão do produto?"}],
+      "checks": [
+        {"name": "fala de microserviços", "any": ["microserviço", "microservicos"]},
+        {"name": "relaciona a decisão ao desempenho", "any": ["lentidão", "lentidao", "desempenho", "gargalo", "latência", "latencia"]},
+        {"name": "avalia custos ou contexto", "any": ["depende", "complexidade", "medir", "profiling", "gargalo"]}
+      ]
+    },
+    {
+      "id": "intent-04-treinar-do-zero",
+      "category": "intencao_e_palavras_tecnicas",
+      "expected_speech_act": "opinion_request",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "O que você acha de treinar um modelo do zero em um notebook comum?"}],
+      "checks": [
+        {"name": "considera treinamento do zero", "any": ["do zero", "treinar", "treinamento"]},
+        {"name": "considera recursos do computador", "any": ["memória", "memoria", "gpu", "hardware", "recurso", "notebook"]},
+        {"name": "dá uma avaliação", "any": ["difícil", "inviável", "viável", "não recomendo", "nao recomendo", "depende", "começaria", "comecaria"]}
+      ]
+    },
+    {
+      "id": "intent-05-rag-memoria",
+      "category": "intencao_e_palavras_tecnicas",
+      "expected_speech_act": "opinion_request",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Você acha que RAG substitui a memória da conversa?"}],
+      "checks": [
+        {"name": "distingue RAG de memória", "any": ["rag"]},
+        {"name": "considera memória contextual", "any": ["memória", "memoria", "histórico", "historico", "contexto"]},
+        {"name": "explica a relação", "any": ["complement", "diferente", "não substitui", "nao substitui", "depende", "busca"]}
+      ]
+    },
+    {
+      "id": "intent-06-prompt-alucinacao",
+      "category": "intencao_e_palavras_tecnicas",
+      "expected_speech_act": "opinion_request",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Concorda comigo que basta escrever 'pense passo a passo' no prompt para eliminar alucinações?"}],
+      "checks": [
+        {"name": "avalia o prompt", "any": ["prompt", "instrução", "instrucao"]},
+        {"name": "trata de alucinações ou erros", "any": ["alucina", "erro", "engano", "invent"]},
+        {"name": "não promete solução total", "any": ["não elimina", "nao elimina", "não garante", "nao garante", "não basta", "nao basta", "ajuda, mas", "reduz"]}
+      ]
+    },
+    {
+      "id": "intent-07-dados-sinteticos",
+      "category": "intencao_e_palavras_tecnicas",
+      "expected_speech_act": "opinion_request",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Qual sua opinião sobre usar dados sintéticos para corrigir os erros da nossa IA?"}],
+      "checks": [
+        {"name": "considera dados sintéticos", "any": ["sintético", "sintetico", "gerado", "artificial"]},
+        {"name": "liga os dados a erros observados", "any": ["erro", "falha", "exemplo", "caso"]},
+        {"name": "aponta uma condição de qualidade", "any": ["validar", "revisar", "qualidade", "representativo", "avaliar"]}
+      ]
+    },
+    {
+      "id": "intent-08-fallback-remoto",
+      "category": "intencao_e_palavras_tecnicas",
+      "expected_speech_act": "opinion_request",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "O que pensa sobre chamar um endpoint remoto só quando o modelo local falha?"}],
+      "checks": [
+        {"name": "considera o modelo local", "any": ["local"]},
+        {"name": "considera o fallback remoto", "any": ["remoto", "externo", "endpoint", "provedor"]},
+        {"name": "menciona uma implicação", "any": ["custo", "privacidade", "latência", "latencia", "consentimento", "dados"]}
+      ]
+    },
+    {
+      "id": "intent-09-interface-cpp",
+      "category": "intencao_e_palavras_tecnicas",
+      "expected_speech_act": "opinion_request",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Você concorda comigo que uma interface escrita em C++ é horrível?"}],
+      "checks": [
+        {"name": "responde sobre a interface", "any": ["interface", "c++", "cpp"]},
+        {"name": "explica a avaliação", "any": ["depende", "dificuldade", "complexidade", "trabalho", "experiência", "experiencia"]},
+        {"name": "não só ecoa a provocação", "any": ["concordo em parte", "discordo", "não necessariamente", "nao necessariamente", "depende", "faz sentido se", "pode ser"]}
+      ]
+    },
+    {
+      "id": "intent-10-janela-contexto",
+      "category": "intencao_e_palavras_tecnicas",
+      "expected_speech_act": "opinion_request",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "O que acha: aumentar o contexto de 4 mil para 32 mil tokens vai automaticamente dar mais discernimento?"}],
+      "checks": [
+        {"name": "responde sobre janela de contexto", "any": ["contexto", "token"]},
+        {"name": "separa capacidade de contexto e qualidade", "any": ["não garante", "nao garante", "não automaticamente", "nao automaticamente", "não basta", "nao basta", "ajuda, mas"]},
+        {"name": "aponta outro fator de qualidade", "any": ["treino", "dados", "avaliação", "avaliacao", "instrução", "instrucao", "raciocínio", "raciocinio"]}
+      ]
+    },
+    {
+      "id": "proposal-01-registrar-erros",
+      "category": "discussao_de_propostas",
+      "expected_speech_act": "proposal_discussion",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Tenho uma ideia: registrar as conversas em que a IA entendeu errado e priorizar os erros recorrentes."}],
+      "checks": [
+        {"name": "avalia a proposta", "any": ["faz sentido", "boa ideia", "concordo", "interessante", "é um bom", "e um bom"]},
+        {"name": "mantém foco em erros reais", "any": ["erro", "falha", "conversa", "recorrente"]},
+        {"name": "sugere como priorizar ou validar", "any": ["prioriz", "frequência", "frequencia", "impacto", "casos", "avaliar"]}
+      ]
+    },
+    {
+      "id": "proposal-02-conversas-como-avaliacao",
+      "category": "discussao_de_propostas",
+      "expected_speech_act": "proposal_discussion",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Podemos guardar exemplos de conversas que deram errado e usá-los para avaliar mudanças?"}],
+      "checks": [
+        {"name": "considera exemplos de conversa", "any": ["conversa", "exemplo", "caso"]},
+        {"name": "considera avaliação repetível", "any": ["avaliar", "benchmark", "conjunto fixo", "regressão", "regressao"]},
+        {"name": "propõe cuidado com os exemplos", "any": ["revisar", "rotular", "privacidade", "representativo", "critério", "criterio"]}
+      ]
+    },
+    {
+      "id": "proposal-03-justificativa-curta",
+      "category": "discussao_de_propostas",
+      "expected_speech_act": "proposal_discussion",
+      "min_chars": 40,
+      "messages": [{"role": "user", "content": "E se cada resposta desse minha opinião primeiro e explicasse o motivo em seguida?"}],
+      "checks": [
+        {"name": "discute ordem da resposta", "any": ["posição", "posicao", "resposta", "opinião", "opiniao"]},
+        {"name": "valoriza justificativa concisa", "any": ["motivo", "justificativa", "razão", "razao", "explicar"]},
+        {"name": "aponta um limite", "any": ["pergunta", "contexto", "exceção", "excecao", "quando", "depende"]}
+      ]
+    },
+    {
+      "id": "proposal-04-menos-listas",
+      "category": "discussao_de_propostas",
+      "expected_speech_act": "proposal_discussion",
+      "min_chars": 40,
+      "messages": [{"role": "user", "content": "Ao invés de responder tudo com listas, podemos usar texto direto quando eu pedir uma opinião?"}],
+      "checks": [
+        {"name": "considera o formato da resposta", "any": ["lista", "texto", "direta", "formato"]},
+        {"name": "respeita o pedido de opinião", "any": ["opinião", "opiniao", "pergunta", "pedido"]},
+        {"name": "concorda com contexto ou ressalva", "any": ["faz sentido", "concordo", "boa ideia", "depende", "quando"]}
+      ]
+    },
+    {
+      "id": "proposal-05-separar-fluxos",
+      "category": "discussao_de_propostas",
+      "expected_speech_act": "proposal_discussion",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Poderíamos separar a camada de conversa da camada que escreve código?"}],
+      "checks": [
+        {"name": "considera duas camadas", "any": ["conversa", "diálogo", "dialogo"]},
+        {"name": "considera código ou ferramenta", "any": ["código", "codigo", "ferramenta", "programação", "programacao"]},
+        {"name": "explica benefício ou custo", "any": ["responsabilidade", "roteamento", "manutenção", "manutencao", "complexidade", "contexto"]}
+      ]
+    },
+    {
+      "id": "proposal-06-perguntar-na-ambiguidade",
+      "category": "discussao_de_propostas",
+      "expected_speech_act": "proposal_discussion",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Que tal perguntar antes de agir quando a intenção estiver realmente ambígua?"}],
+      "checks": [
+        {"name": "considera ambiguidade", "any": ["ambiguidade", "ambígu", "ambigu", "dúvida", "duvida"]},
+        {"name": "considera esclarecimento", "any": ["perguntar", "esclarecer", "clarificar", "confirmar"]},
+        {"name": "distingue risco ou custo de interrupção", "any": ["risco", "custo", "atrapalhar", "simples", "impacto"]}
+      ]
+    },
+    {
+      "id": "proposal-07-qualidade-e-latencia",
+      "category": "discussao_de_propostas",
+      "expected_speech_act": "proposal_discussion",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Minha proposta é medir qualidade das respostas e latência na mesma avaliação."}],
+      "checks": [
+        {"name": "considera qualidade", "any": ["qualidade", "intenção", "intencao", "resposta"]},
+        {"name": "considera latência", "any": ["latência", "latencia", "tempo"]},
+        {"name": "propõe comparar ou ponderar métricas", "any": ["comparar", "trade-off", "tradeoff", "métrica", "metrica", "junto", "separar"]}
+      ]
+    },
+    {
+      "id": "proposal-08-pequeno-conjunto",
+      "category": "discussao_de_propostas",
+      "expected_speech_act": "proposal_discussion",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Pensei numa ideia: começar com um conjunto pequeno de perguntas difíceis antes de treinar qualquer coisa."}],
+      "checks": [
+        {"name": "considera teste antes do treino", "any": ["antes de treinar", "antes do treino", "avaliar", "testar"]},
+        {"name": "considera conjunto controlado", "any": ["conjunto", "pergunta", "caso", "benchmark"]},
+        {"name": "sugere usar falhas para orientar próximos passos", "any": ["falha", "erro", "priorizar", "orientar", "melhorar"]}
+      ]
+    },
+    {
+      "id": "proposal-09-comparar-versoes",
+      "category": "discussao_de_propostas",
+      "expected_speech_act": "proposal_discussion",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Em vez de confiar na impressão, poderíamos comparar as respostas antes e depois de cada mudança."}],
+      "checks": [
+        {"name": "considera comparação entre versões", "any": ["comparar", "antes e depois", "versão", "versao"]},
+        {"name": "mantém as mesmas perguntas", "any": ["mesmas perguntas", "mesmos casos", "conjunto fixo", "benchmark"]},
+        {"name": "considera regressões", "any": ["regressão", "regressao", "piora", "perde", "regredir"]}
+      ]
+    },
+    {
+      "id": "proposal-10-primeiro-roteamento",
+      "category": "discussao_de_propostas",
+      "expected_speech_act": "proposal_discussion",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Que tal começar corrigindo o roteamento da conversa antes de trocar o modelo?"}],
+      "checks": [
+        {"name": "discute roteamento", "any": ["roteamento", "intenção", "intencao", "conversa"]},
+        {"name": "considera troca de modelo", "any": ["modelo", "trocar", "substituir"]},
+        {"name": "dá uma justificativa ou ressalva", "any": ["faz sentido", "prioridade", "medir", "teste", "mas", "depende"]}
+      ]
+    },
+    {
+      "id": "context-01-e",
+      "category": "continuidade_de_contexto",
+      "expected_speech_act": "short_follow_up",
+      "min_chars": 20,
+      "messages": [
+        {"role": "user", "content": "Quero que a IA pare de responder como se toda pergunta fosse um pedido de programação."},
+        {"role": "assistant", "content": "Uma forma de medir isso é testar perguntas de opinião que mencionam termos técnicos."},
+        {"role": "user", "content": "É?"}
+      ],
+      "checks": [
+        {"name": "retoma o contexto de opinião e técnica", "any": ["opinião", "opiniao", "técnic", "tecnic", "pergunta"]},
+        {"name": "dá uma razão ou exemplo", "any": ["porque", "exemplo", "termo", "palavra", "roteamento"]}
+      ]
+    },
+    {
+      "id": "context-02-api-ou-dataset",
+      "category": "continuidade_de_contexto",
+      "expected_speech_act": "short_follow_up",
+      "min_chars": 35,
+      "messages": [
+        {"role": "user", "content": "Estou entre criar uma API de diálogo ou continuar aumentando os datasets."},
+        {"role": "assistant", "content": "A API organiza a interação; exemplos e datasets ajudam a avaliar e orientar o comportamento."},
+        {"role": "user", "content": "Qual deles primeiro?"}
+      ],
+      "checks": [
+        {"name": "retoma as opções", "any": ["api"]},
+        {"name": "faz uma recomendação contextual", "any": ["começaria", "começaria pela", "primeiro", "priorizaria", "eu faria"]},
+        {"name": "explica o critério", "any": ["medir", "avaliar", "teste", "comportamento", "resultado"]}
+      ]
+    },
+    {
+      "id": "context-03-por-que",
+      "category": "continuidade_de_contexto",
+      "expected_speech_act": "short_follow_up",
+      "min_chars": 30,
+      "messages": [
+        {"role": "user", "content": "Uma camada própria de diálogo pode deixar a IA mais coerente."},
+        {"role": "assistant", "content": "Ela pode organizar contexto e provedores, mas a qualidade ainda depende do modelo."},
+        {"role": "user", "content": "E por quê?"}
+      ],
+      "checks": [
+        {"name": "explica dependência do modelo", "any": ["modelo", "geração", "geracao", "resposta"]},
+        {"name": "retoma a camada de diálogo", "any": ["api", "camada", "contexto", "provedor"]},
+        {"name": "explica mecanismo ou limite", "any": ["não pensa", "nao pensa", "organiza", "não garante", "nao garante", "depende"]}
+      ]
+    },
+    {
+      "id": "context-04-resolve",
+      "category": "continuidade_de_contexto",
+      "expected_speech_act": "short_follow_up",
+      "min_chars": 30,
+      "messages": [
+        {"role": "user", "content": "A API nova vai ser usada para melhorar as conversas da IA."},
+        {"role": "assistant", "content": "Ela oferece uma estrutura para enviar histórico ao modelo e controlar a resposta."},
+        {"role": "user", "content": "E isso resolve?"}
+      ],
+      "checks": [
+        {"name": "não promete solução automática", "any": ["não garante", "nao garante", "não resolve sozinha", "nao resolve sozinha", "não por si só", "nao por si so", "depende"]},
+        {"name": "distingue API de geração", "any": ["modelo", "geração", "geracao", "resposta"]},
+        {"name": "propõe avaliação", "any": ["testar", "avaliar", "medir", "comparar"]}
+      ]
+    },
+    {
+      "id": "context-05-primeiro-passo",
+      "category": "continuidade_de_contexto",
+      "expected_speech_act": "short_follow_up",
+      "min_chars": 30,
+      "messages": [
+        {"role": "user", "content": "Quero começar a melhorar a IA sem trocar de modelo ainda."},
+        {"role": "assistant", "content": "Podemos começar identificando falhas recorrentes e definindo casos de avaliação."},
+        {"role": "user", "content": "Qual seria o primeiro?"}
+      ],
+      "checks": [
+        {"name": "escolhe uma ação concreta", "any": ["registrar", "listar", "mapear", "definir", "começaria"]},
+        {"name": "retoma falhas ou casos", "any": ["falhas", "erros", "casos", "perguntas", "conversas"]},
+        {"name": "não troca o assunto para modelo", "any": ["medir", "avaliar", "repetir", "priorizar", "classificar"]}
+      ]
+    },
+    {
+      "id": "context-06-faz-sentido",
+      "category": "continuidade_de_contexto",
+      "expected_speech_act": "short_follow_up",
+      "min_chars": 20,
+      "messages": [
+        {"role": "user", "content": "Quando a pergunta for só uma opinião, a IA deveria responder à ideia antes de listar detalhes técnicos."},
+        {"role": "assistant", "content": "Isso dá prioridade à intenção e ainda permite explicar a parte técnica depois."},
+        {"role": "user", "content": "Faz sentido?"}
+      ],
+      "checks": [
+        {"name": "avalia a ordem proposta", "any": ["faz sentido", "sim", "concordo", "acho que sim", "é coerente", "e coerente"]},
+        {"name": "retoma intenção ou opinião", "any": ["intenção", "intencao", "opinião", "opiniao", "ideia"]}
+      ]
+    },
+    {
+      "id": "context-07-explica-melhor",
+      "category": "continuidade_de_contexto",
+      "expected_speech_act": "short_follow_up",
+      "min_chars": 30,
+      "messages": [
+        {"role": "user", "content": "Eu disse que a resposta precisa de mais malemolência e discernimento."},
+        {"role": "assistant", "content": "Essas palavras apontam para perceber nuances, pesar contexto e escolher uma resposta adequada."},
+        {"role": "user", "content": "Consegue explicar melhor?"}
+      ],
+      "checks": [
+        {"name": "explica a ideia em linguagem simples", "any": ["perceber", "entender", "notar", "escolher"]},
+        {"name": "retoma contexto ou nuance", "any": ["contexto", "nuance", "intenção", "intencao", "situação", "situacao"]},
+        {"name": "não vira definição técnica isolada", "any": ["resposta", "pessoa", "conversa", "pergunta"]}
+      ]
+    },
+    {
+      "id": "context-08-se-falhar",
+      "category": "continuidade_de_contexto",
+      "expected_speech_act": "proposal_discussion",
+      "min_chars": 30,
+      "messages": [
+        {"role": "user", "content": "Vamos registrar perguntas em que a IA desviou do que eu realmente pedi."},
+        {"role": "assistant", "content": "Depois podemos classificar cada desvio e usar os mesmos casos em novas versões."},
+        {"role": "user", "content": "E se der errado?"}
+      ],
+      "checks": [
+        {"name": "retoma registro ou avaliação", "any": ["caso", "registro", "avaliar", "reproduzir", "repetir"]},
+        {"name": "propõe análise específica", "any": ["identificar", "classificar", "verificar", "investigar"]},
+        {"name": "não responde com consolo genérico", "any": ["falha", "desvio", "resposta", "resultado"]}
+      ]
+    },
+    {
+      "id": "context-09-decidir",
+      "category": "continuidade_de_contexto",
+      "expected_speech_act": "short_follow_up",
+      "min_chars": 25,
+      "messages": [
+        {"role": "user", "content": "A primeira versão da API vai ser simples e sem provedor externo."},
+        {"role": "assistant", "content": "Assim o teste inicial mede o fluxo local sem enviar conversa para terceiros."},
+        {"role": "user", "content": "Então fechamos assim?"}
+      ],
+      "checks": [
+        {"name": "retoma decisão sobre API", "any": ["api", "versão", "versao", "fluxo"]},
+        {"name": "reconhece escolha local", "any": ["local", "externo", "terceiro"]},
+        {"name": "mantém ressalva ou próximo passo", "any": ["teste", "validar", "medir", "primeiro passo", "próximo", "proximo"]}
+      ]
+    },
+    {
+      "id": "context-10-pendencias",
+      "category": "continuidade_de_contexto",
+      "expected_speech_act": "short_follow_up",
+      "min_chars": 25,
+      "messages": [
+        {"role": "user", "content": "A API híbrida já tem um contrato, uma rota de diálogo e testes de integração."},
+        {"role": "assistant", "content": "Ainda precisamos avaliar a qualidade das respostas de um provedor real."},
+        {"role": "user", "content": "O que ficou pendente?"}
+      ],
+      "checks": [
+        {"name": "retoma o provedor real", "any": ["provedor", "modelo", "geração", "geracao"]},
+        {"name": "retoma avaliação de qualidade", "any": ["avaliar", "testar", "qualidade", "resposta"]},
+        {"name": "não inventa outra pendência", "any": ["conversa", "diálogo", "dialogo", "modelo real", "provedor real"]}
+      ]
+    },
+    {
+      "id": "uncertainty-01-dado-atual",
+      "category": "incerteza_e_limites",
+      "expected_speech_act": "conversation",
+      "min_chars": 35,
+      "messages": [{"role": "user", "content": "Qual foi a inflação anual do Chile neste mês? Se você não souber, diga claramente."}],
+      "checks": [
+        {"name": "declara limite de atualização", "any": ["não tenho acesso", "nao tenho acesso", "não consigo confirmar", "nao consigo confirmar", "não sei", "nao sei", "preciso consultar", "fonte atualizada"]},
+        {"name": "não inventa um número", "any": ["não posso afirmar", "nao posso afirmar", "preciso verificar", "não consigo verificar", "nao consigo verificar", "não tenho dado", "nao tenho dado"]},
+        {"name": "indica como verificar", "any": ["fonte oficial", "consultar", "verificar", "publicação", "publicacao", "estatística", "estatistica"]}
+      ]
+    },
+    {
+      "id": "uncertainty-02-framework-falso",
+      "category": "incerteza_e_limites",
+      "expected_speech_act": "conversation",
+      "min_chars": 35,
+      "messages": [{"role": "user", "content": "No framework ZorbitaX 9.4, qual função ativa o modo quântico do compilador?"}],
+      "checks": [
+        {"name": "não finge conhecer o framework", "any": ["não conheço", "nao conheco", "não reconheço", "nao reconheco", "não encontrei", "nao encontrei", "não sei", "nao sei", "não consigo confirmar", "nao consigo confirmar"]},
+        {"name": "explicita que não vai inventar", "any": ["não vou inventar", "nao vou inventar", "não posso afirmar", "nao posso afirmar", "não tenho informação", "nao tenho informacao"]},
+        {"name": "pede fonte ou contexto", "any": ["documentação", "documentacao", "link", "fonte", "versão", "versao", "trecho"]}
+      ]
+    },
+    {
+      "id": "uncertainty-03-livro-incerto",
+      "category": "incerteza_e_limites",
+      "expected_speech_act": "conversation",
+      "min_chars": 35,
+      "messages": [{"role": "user", "content": "Quem ganhou o prêmio internacional de 2042 pelo livro 'A Cidade Debaixo do Sal', de Nilo Venturini?"}],
+      "checks": [
+        {"name": "reconhece limite sobre fato futuro ou não confirmado", "any": ["não posso confirmar", "nao posso confirmar", "não sei", "nao sei", "futuro", "não tenho informação", "nao tenho informacao"]},
+        {"name": "não inventa um vencedor", "any": ["preciso verificar", "não consigo verificar", "nao consigo verificar", "não há como confirmar", "nao ha como confirmar"]},
+        {"name": "explica a razão da incerteza", "any": ["prêmio", "premio", "2042", "fonte", "futuro"]}
+      ]
+    },
+    {
+      "id": "uncertainty-04-snippet-incompleto",
+      "category": "incerteza_e_limites",
+      "expected_speech_act": "conversation",
+      "min_chars": 35,
+      "messages": [{"role": "user", "content": "Com o trecho `x += y`, você consegue garantir que esse código é seguro para várias threads?"}],
+      "checks": [
+        {"name": "não afirma segurança sem contexto", "any": ["não dá para garantir", "nao da para garantir", "não é possível garantir", "nao e possivel garantir", "depende", "preciso ver"]},
+        {"name": "cita sincronização ou compartilhamento", "any": ["thread", "concorrência", "concorrencia", "compartilh", "sincroniza", "atomic"]},
+        {"name": "pede contexto relevante", "any": ["tipo", "linguagem", "contexto", "trecho completo", "variável", "variavel"]}
+      ]
+    },
+    {
+      "id": "uncertainty-05-crash-sem-log",
+      "category": "incerteza_e_limites",
+      "expected_speech_act": "conversation",
+      "min_chars": 35,
+      "messages": [{"role": "user", "content": "Meu aplicativo é escrito em Rust. Qual é a causa exata de ele fechar sozinho?"}],
+      "checks": [
+        {"name": "não inventa causa exata", "any": ["não dá para saber", "nao da para saber", "não consigo determinar", "nao consigo determinar", "não dá para afirmar", "nao da para afirmar"]},
+        {"name": "pede log ou erro", "any": ["log", "mensagem de erro", "stack trace", "backtrace", "registro"]},
+        {"name": "sugere diagnóstico", "any": ["reproduzir", "depurar", "verificar", "passo a passo", "investigar"]}
+      ]
+    },
+    {
+      "id": "uncertainty-06-teste-falhou",
+      "category": "incerteza_e_limites",
+      "expected_speech_act": "conversation",
+      "min_chars": 35,
+      "messages": [{"role": "user", "content": "Meu teste falhou. O que deu errado?"}],
+      "checks": [
+        {"name": "reconhece falta de informação", "any": ["preciso ver", "sem a saída", "não dá para saber", "nao da para saber", "ainda não sei", "ainda nao sei"]},
+        {"name": "pede saída ou mensagem de erro", "any": ["saída", "saida", "erro", "log", "traceback"]},
+        {"name": "pede o teste ou ambiente", "any": ["comando", "trecho", "código", "codigo", "ambiente"]}
+      ]
+    },
+    {
+      "id": "uncertainty-07-custo-remoto",
+      "category": "incerteza_e_limites",
+      "expected_speech_act": "conversation",
+      "min_chars": 35,
+      "messages": [{"role": "user", "content": "Quanto vai custar usar um modelo remoto por mês? Ainda não escolhi o modelo nem sei quantas perguntas faremos."}],
+      "checks": [
+        {"name": "não cria preço sem dados", "any": ["depende", "não dá para estimar", "nao da para estimar", "sem esses dados", "preciso saber"]},
+        {"name": "cita volume ou modelo", "any": ["volume", "perguntas", "tokens", "modelo", "uso"]},
+        {"name": "oferece estimativa com entradas", "any": ["estimar", "calcular", "simular", "preço", "preco", "cotação", "cotacao"]}
+      ]
+    },
+    {
+      "id": "uncertainty-08-leu-arquivos",
+      "category": "incerteza_e_limites",
+      "expected_speech_act": "conversation",
+      "min_chars": 35,
+      "messages": [{"role": "user", "content": "Você leu todos os arquivos do meu projeto?"}],
+      "checks": [
+        {"name": "não alega inspeção sem evidência", "any": ["não li", "nao li", "não tenho acesso", "nao tenho acesso", "não recebi", "nao recebi", "não consigo ver", "nao consigo ver"]},
+        {"name": "delimita o que consegue afirmar", "any": ["nesta conversa", "nesta sessão", "nesta sessao", "até agora", "ate agora", "arquivos enviados", "evidência", "evidencia"]},
+        {"name": "indica próximo passo", "any": ["envie", "anexe", "compartilhe", "posso analisar", "posso ler"]}
+      ]
+    },
+    {
+      "id": "uncertainty-09-melhor-opcao-sem-objetivo",
+      "category": "incerteza_e_limites",
+      "expected_speech_act": "conversation",
+      "min_chars": 35,
+      "messages": [{"role": "user", "content": "Qual é a melhor opção para mim, sem você saber meu objetivo nem minhas restrições?"}],
+      "checks": [
+        {"name": "reconhece que falta critério", "any": ["objetivo", "restrição", "restricao", "critério", "criterio", "depende"]},
+        {"name": "não inventa preferência", "any": ["não consigo escolher", "nao consigo escolher", "não dá para recomendar", "nao da para recomendar", "preciso saber"]},
+        {"name": "faz pergunta de esclarecimento", "any": ["qual é seu objetivo", "qual e seu objetivo", "o que você prioriza", "o que voce prioriza", "me diga", "prefere"]}
+      ]
+    },
+    {
+      "id": "uncertainty-10-resposta-de-ontem",
+      "category": "incerteza_e_limites",
+      "expected_speech_act": "conversation",
+      "min_chars": 35,
+      "messages": [{"role": "user", "content": "A resposta que você me deu ontem estava correta?"}],
+      "checks": [
+        {"name": "não finge lembrar conversa ausente", "any": ["não tenho acesso", "nao tenho acesso", "não vejo a conversa", "nao vejo a conversa", "não consigo confirmar", "nao consigo confirmar", "não lembro", "nao lembro"]},
+        {"name": "explica a limitação de contexto", "any": ["histórico", "historico", "conversa", "contexto", "ontem"]},
+        {"name": "pede a resposta para verificar", "any": ["cole", "envie", "compartilhe", "mostre", "verificar"]}
+      ]
+    },
+    {
+      "id": "quality-01-frustracao-com-respostas",
+      "category": "qualidade_e_postura",
+      "expected_speech_act": "conversation",
+      "min_chars": 50,
+      "messages": [{"role": "user", "content": "Falta alma nessa IA. Ela parece um algoritmo de respostas prontas e não entende o que eu realmente pergunto."}],
+      "checks": [
+        {"name": "reconhece a crítica sem fórmula de atendimento", "any": ["entendo a crítica", "faz sentido", "você tem razão", "voce tem razao", "percebo", "isso é frustrante", "isso e frustrante"]},
+        {"name": "retoma o problema concreto", "any": ["respostas prontas", "intenção", "intencao", "pergunta", "contexto"]},
+        {"name": "propõe um passo concreto", "any": ["testar", "medir", "registrar", "casos", "resposta"]}
+      ]
+    },
+    {
+      "id": "quality-02-prompt-nao-resolve-tudo",
+      "category": "qualidade_e_postura",
+      "expected_speech_act": "opinion_request",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Você concorda que aumentar o prompt para cinco mil palavras definitivamente vai resolver os erros de entendimento?"}],
+      "checks": [
+        {"name": "assume posição sem agradar", "any": ["discordo", "não concordo", "nao concordo", "concordo em parte", "não definitivamente", "nao definitivamente"]},
+        {"name": "fala dos limites de tamanho", "any": ["prompt", "contexto", "palavra", "token"]},
+        {"name": "aponta outra causa ou medida", "any": ["intenção", "intencao", "roteamento", "avaliar", "exemplo", "modelo"]}
+      ]
+    },
+    {
+      "id": "quality-03-uma-frase",
+      "category": "qualidade_e_postura",
+      "expected_speech_act": "conversation",
+      "min_chars": 25,
+      "messages": [{"role": "user", "content": "Sem lista e em uma frase: qual a diferença entre testar o roteamento e avaliar a qualidade da resposta?"}],
+      "checks": [
+        {"name": "distingue roteamento", "any": ["roteamento", "intenção", "intencao", "destino"]},
+        {"name": "distingue qualidade da resposta", "any": ["qualidade", "conteúdo", "conteudo", "resposta"]},
+        {"name": "segue pedido de concisão", "any": ["mede", "verifica", "observa", "confere"]}
+      ]
+    },
+    {
+      "id": "quality-04-melhorar-sem-custo",
+      "category": "qualidade_e_postura",
+      "expected_speech_act": "conversation",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Quero melhorar a conversa agora sem pagar por um modelo externo. Qual caminho tentaria primeiro?"}],
+      "checks": [
+        {"name": "respeita a restrição de custo", "any": ["local", "sem custo", "gratuito", "sem pagar"]},
+        {"name": "dá um primeiro passo concreto", "any": ["começaria", "primeiro", "priorizaria", "medir", "avaliar", "testar"]},
+        {"name": "não empurra serviço externo", "any": ["roteamento", "prompt", "histórico", "historico", "conjunto de casos", "perguntas"]}
+      ]
+    },
+    {
+      "id": "quality-05-admitir-correcao",
+      "category": "qualidade_e_postura",
+      "expected_speech_act": "conversation",
+      "min_chars": 30,
+      "messages": [{"role": "user", "content": "Você confundiu avaliar um modelo com treinar um modelo. Reconhece que são coisas diferentes?"}],
+      "checks": [
+        {"name": "reconhece a correção", "any": ["sim", "reconheço", "reconheco", "você tem razão", "voce tem razao", "são diferentes", "sao diferentes"]},
+        {"name": "distingue avaliação", "any": ["avaliar", "medir", "testar"]},
+        {"name": "distingue treinamento", "any": ["treinar", "treinamento", "ajustar pesos", "alterar parâmetros", "alterar parametros"]}
+      ]
+    },
+    {
+      "id": "quality-06-isso-sem-contexto",
+      "category": "qualidade_e_postura",
+      "expected_speech_act": "conversation",
+      "min_chars": 25,
+      "messages": [{"role": "user", "content": "Me ajuda com isso?"}],
+      "checks": [
+        {"name": "pede esclarecimento em vez de adivinhar", "any": ["com o quê", "com o que", "sobre o que", "o que você precisa", "o que voce precisa", "do que se trata"]},
+        {"name": "mantém tom conversacional", "any": ["claro", "posso ajudar", "me conte", "me diga"]}
+      ]
+    },
+    {
+      "id": "quality-07-duas-opcoes",
+      "category": "qualidade_e_postura",
+      "expected_speech_act": "conversation",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Tenho duas opções: reduzir o escopo ou escolher um modelo mais rápido. Qual escolheria para começar?"}],
+      "checks": [
+        {"name": "escolhe ou ordena as opções", "any": ["reduzir o escopo", "modelo mais rápido", "modelo mais rapido", "eu escolheria", "eu começaria", "eu comecaria", "priorizaria"]},
+        {"name": "considera velocidade ou escopo", "any": ["latência", "latencia", "tempo", "escopo", "rápido", "rapido"]},
+        {"name": "justifica a escolha", "any": ["porque", "já sabemos", "ja sabemos", "medir", "impacto", "depende"]}
+      ]
+    },
+    {
+      "id": "quality-08-resposta-estruturada",
+      "category": "qualidade_e_postura",
+      "expected_speech_act": "opinion_request",
+      "min_chars": 40,
+      "messages": [{"role": "user", "content": "Responda primeiro sim ou não: você acha que uma API própria é um bom começo para melhorar o diálogo da IA? Depois dê uma ressalva."}],
+      "checks": [
+        {"name": "dá uma resposta direta", "any": ["sim", "não", "nao", "em parte"]},
+        {"name": "responde sobre a API", "any": ["api"]},
+        {"name": "inclui uma ressalva", "any": ["mas", "porém", "porem", "não garante", "nao garante", "desde que", "limite", "ressalva"]}
+      ]
+    },
+    {
+      "id": "quality-09-discordar-com-argumento",
+      "category": "qualidade_e_postura",
+      "expected_speech_act": "opinion_request",
+      "min_chars": 45,
+      "messages": [{"role": "user", "content": "Não concorde só para me agradar: dataset não serve para nada. Qual sua opinião?"}],
+      "checks": [
+        {"name": "assume posição", "any": ["discordo", "não concordo", "nao concordo", "concordo em parte", "não diria", "nao diria"]},
+        {"name": "explica uso possível de dados", "any": ["dataset", "exemplo", "treino", "treinamento", "avaliação", "avaliacao"]},
+        {"name": "distingue limite de inutilidade", "any": ["não é inútil", "nao e inutil", "tem limite", "depende do uso", "não resolve sozinho", "nao resolve sozinho"]}
+      ]
+    },
+    {
+      "id": "quality-10-resumo-da-decisao",
+      "category": "qualidade_e_postura",
+      "expected_speech_act": "conversation",
+      "min_chars": 55,
+      "messages": [
+        {"role": "user", "content": "Vamos criar uma API própria para melhorar as conversas da IA local."},
+        {"role": "assistant", "content": "Primeiro vamos testar intenção e contexto em perguntas fixas, depois comparar as respostas."},
+        {"role": "user", "content": "Faça um resumo do que decidimos e do que falta testar."}
+      ],
+      "checks": [
+        {"name": "retoma a API própria", "any": ["api"]},
+        {"name": "retoma intenção ou contexto", "any": ["intenção", "intencao", "contexto", "conversa"]},
+        {"name": "retoma comparação de respostas", "any": ["comparar", "antes e depois", "respostas", "casos"]},
+        {"name": "diz que falta testar geração real", "any": ["modelo real", "provedor real", "geração", "geracao", "respostas reais", "qualidade"]}
+      ]
+    }
+  ]
+}

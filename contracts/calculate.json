@@ -1,0 +1,13 @@
+{
+  "name":"calculate","version":"1.0.0",
+  "description":"Calcula expressões novas com variáveis JSON em um interpretador AST limitado. Aceita aritmética, listas, condições e agregações; não usa eval/exec, arquivos ou rede.",
+  "side_effects":false,"requires_approval":false,"risk":"read","idempotent":true,
+  "capabilities":["computation.expression"],"timeout_ms":5000,
+  "arguments":{"type":"object","required":["expression"],"properties":{
+    "expression":{"type":"string","minLength":1,"maxLength":8192},
+    "variables":{"type":"object"}},"additionalProperties":false},
+  "result":{"type":"object","required":["schema","engine","request","executed","passed","result","error","steps"],"properties":{
+    "schema":{"const":"execution-engine/v1"},"engine":{"type":"string"},"request":{"type":"object"},
+    "executed":{"type":"boolean"},"passed":{"type":"boolean"},"result":{},
+    "error":{"type":["object","null"]},"steps":{"type":"integer"}}}
+}

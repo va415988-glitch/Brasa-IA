@@ -1,0 +1,45 @@
+{
+  "name": "path_info",
+  "description": "Consulta tipo, tamanho e existência de um caminho dentro do workspace sem seguir links para fora.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "required": [
+      "path"
+    ],
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "Caminho relativo; vazio consulta a raiz."
+      }
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": [
+      "path",
+      "exists"
+    ],
+    "properties": {
+      "path": {
+        "type": "string"
+      },
+      "exists": {
+        "type": "boolean"
+      },
+      "kind": {
+        "type": "string"
+      },
+      "bytes": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 9223372036854775807
+      },
+      "readonly": {
+        "type": "boolean"
+      }
+    }
+  }
+}

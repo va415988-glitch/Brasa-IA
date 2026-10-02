@@ -1,0 +1,11 @@
+{
+  "schema": "experimental-model/v1",
+  "enabled": true,
+  "label": "V4 · experimental",
+  "checkpoint": "model/training/cognitive-alignment-v4/run-02/snapshots/step-1600.safetensors",
+  "checkpoint_sha256": "eb3298fa15e7079ff6a28715aeb1f2b243d0a5fd0983fd6d185ad3f4a8493fb9",
+  "metadata_sha256": "7e1ca5746f9b92308067964d46495f7c27167eb0c647e5d5ca51c928c467fe84",
+  "tokenizer_sha256": "e58fe3e652e62f3028b63810fd90b39745829ed80723bf7daec2e0b4662aa4e1",
+  "context_tokens": 512,
+  "qualified": false
+}

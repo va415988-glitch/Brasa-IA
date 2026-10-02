@@ -1,0 +1,28 @@
+{
+  "schema": "cognitive-alignment-resume-protocol/v1",
+  "reason": "Equivalent backward optimization; the first phase was interrupted after saving step 400.",
+  "source_steps": 400,
+  "additional_steps": 1200,
+  "trajectory_steps": 1600,
+  "optimizer_restarted": true,
+  "validation_snapshots_total_steps": [
+    400,
+    800,
+    1200,
+    1600
+  ],
+  "reserved_selection_used": false,
+  "selection_and_qualification": "Unchanged from protocol.json",
+  "sha256": {
+    "python/model.py": "42bcd4959583fe3ffce9c043b55e4b9fd83466e8b32b32b4e0bfc959284e9327",
+    "scripts/train_cognitive_alignment.py": "85fadf2d91a47c2aa5d9064bac1b354ef4a44743115145cb42eb221ecc4c7696",
+    "python/copy_supervision.py": "1afce43a8f077eef8e9949cc779b39912959575480a4832a2fbc5661219e6b87",
+    "scripts/evaluate_cognitive_sft.py": "4bd5d66f883635e7b34eb7603162c81c146c7dcf0358eda663fb7c61cbbe2d8c",
+    "scripts/select_cognitive_sft.py": "3d46fa9cdb1ddb21b85ee4966954b481508e04a158fc56e762e39ff7bce584c8",
+    "datasets/cognitive_alignment_v4/manifest.json": "18fb1097a751ecf18a8f64ec00e936cf265dd2292066caec8f08fad7e30e88de",
+    "model/godmode/state.json": "12e780fd617fbd529bf2d6f80593f6330e734a5a58b96f02db5c9a6ed971534b",
+    "model/godmode/context-32768-v1/candidate.safetensors": "0aeafd6f3966c8c59548ca1bb386c87483c62eafe21e95d1cb89260741d1fee3",
+    "model/training/cognitive-alignment-v4/run-01/snapshots/step-0400.safetensors": "40e5c4450bd7cbc8166a5c4c52c41bdcc2247dc5a589431654e894222ec53772",
+    "model/training/cognitive-alignment-v4/run-01/snapshots/step-0400.safetensors.json": "8c530ab552891a217d5bef2f18004015ce646a74ba390967b8f8fd44b2a6d1b2"
+  }
+}

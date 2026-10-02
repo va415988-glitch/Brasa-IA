@@ -4,6 +4,8 @@ from __future__ import annotations
 
 import re
 
+from competency import domain_concepts, infer_domain
+
 
 BASE = [
     ("fundamentos", "identificar conceitos fundamentais e a sintaxe básica"),
@@ -36,7 +38,12 @@ COMPLETION = {
 def build(topic: str, documents: list[dict] | None = None) -> dict:
     text = " ".join(str(item.get("text") or "") for item in (documents or []))[:30000].lower()
     concepts = []
-    for key, label in BASE:
+    domain = infer_domain(topic, topic, documents)
+    base = BASE if domain == "programming" else [
+        (key, f"demonstrar {key.replace('-', ' ')}")
+        for key in domain_concepts(domain, topic)[:5]
+    ]
+    for key, label in base:
         concepts.append({"id": key, "objective": label, "status": "pending"})
     optional = {
         "rust": ["ownership", "borrowing", "result-option", "cargo", "iterators", "traits", "pattern-matching", "modules"],
@@ -47,6 +54,22 @@ def build(topic: str, documents: list[dict] | None = None) -> dict:
         "nodejs": ["http-server", "streams", "modules", "observability"],
         "sql": ["relational-model", "joins", "indexes", "transactions"],
         "c#": ["types", "classes", "linq", "async-await"],
+        "java": ["classes", "generics", "exceptions", "concurrency", "jvm"],
+        "c": ["pointers", "memory", "structs", "compilation", "undefined-behavior"],
+        "c++": ["raii", "templates", "stl", "move-semantics", "concurrency"],
+        "go": ["goroutines", "channels", "interfaces", "errors", "modules"],
+        "php": ["types", "http", "composer", "security", "testing"],
+        "kotlin": ["null-safety", "data-classes", "coroutines", "extensions", "jvm"],
+        "swift": ["optionals", "protocols", "value-semantics", "async-await", "memory"],
+        "dart": ["null-safety", "classes", "futures", "isolates", "packages"],
+        "ruby": ["blocks", "objects", "metaprogramming", "gems", "testing"],
+        "r": ["vectors", "data-frames", "statistics", "visualization", "packages"],
+        "bash": ["quoting", "processes", "pipelines", "permissions", "shellcheck"],
+        "shell": ["quoting", "processes", "pipelines", "permissions", "shellcheck"],
+        "lua": ["tables", "metatables", "coroutines", "modules", "embedding"],
+        "elixir": ["pattern-matching", "processes", "supervision", "otp", "beam"],
+        "julia": ["multiple-dispatch", "types", "broadcasting", "parallelism", "packages"],
+        "matlab": ["matrices", "vectorization", "plots", "toolboxes", "testing"],
         "html/css": ["semantic-html", "layout", "accessibility", "responsive-design"],
         "machinelearning": ["datasets", "features", "training", "evaluation", "overfitting"],
         "computerscience": ["algorithms", "data-structures", "complexity", "systems"],

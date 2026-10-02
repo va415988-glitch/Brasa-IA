@@ -1,0 +1,1995 @@
+{
+  "schema": "execution-engines-audit/v1",
+  "cases": [
+    {
+      "case": "runtime-catalog",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "tool": "list_tools",
+        "data": {
+          "tools": [
+            {
+              "name": "calculate",
+              "description": "Calcular expressões e agregações com variáveis JSON em motor AST limitado.",
+              "arguments": {
+                "expression": "expressão obrigatória",
+                "variables": "objeto JSON opcional"
+              }
+            },
+            {
+              "name": "evaluate_function",
+              "description": "Interpretar função Python pura local com entradas novas; não executar o módulo.",
+              "arguments": {
+                "path": "arquivo .py relativo",
+                "function": "nome",
+                "args": "array opcional",
+                "kwargs": "objeto opcional"
+              }
+            },
+            {
+              "name": "inspect_code",
+              "description": "Inspeciona definições de funções, classes, structs e imports no workspace.",
+              "arguments": {
+                "path": "caminho relativo opcional"
+              }
+            },
+            {
+              "name": "search_web",
+              "description": "Pesquisa informações atuais na internet.",
+              "arguments": {
+                "query": "string obrigatório",
+                "freshness": "pd (último dia), pw (última semana), pm (último mês) ou py (último ano), opcional"
+              }
+            },
+            {
+              "name": "open_page",
+              "description": "Abre uma página HTTP(S) e extrai seu texto.",
+              "arguments": {
+                "url": "string obrigatório",
+                "source_id": "string opcional"
+              }
+            },
+            {
+              "name": "research_web",
+              "description": "Pesquisa, abre fontes selecionadas, extrai conteúdo e opcionalmente grava um lote auditável no corpus.",
+              "arguments": {
+                "query": "string obrigatório",
+                "topic": "tema técnico opcional para validar resultados",
+                "freshness": "pd (último dia), pw (última semana), pm (último mês) ou py (último ano), opcional",
+                "max_results": "1 a 3, padrão 2",
+                "save_to_corpus": "booleano opcional",
+                "category": "string opcional",
+                "output": "caminho relativo opcional"
+              }
+            },
+            {
+              "name": "list_tools",
+              "description": "Lista as ferramentas disponíveis.",
+              "arguments": {}
+            },
+            {
+              "name": "apply_batch",
+              "description": "Aplica até 32 mudanças de arquivo como uma unidade aprovada, mostra diff por arquivo e cria um identificador para desfazer sem sobrescrever mudanças posteriores.",
+              "arguments": {
+                "operations": "lista de {tool, arguments}; permitido create_file, edit_file e create_directory"
+              }
+            },
+            {
+              "name": "undo_batch",
+              "description": "Desfaz um lote local somente se os arquivos ainda tiverem o conteúdo aplicado pelo lote; preserva alterações posteriores e exige aprovação.",
+              "arguments": {
+                "transaction_id": "identificador batch devolvido por apply_batch"
+              }
+            },
+            {
+              "name": "list_sources",
+              "description": "Lista as fontes coletadas nesta sessão.",
+              "arguments": {}
+            },
+            {
+              "name": "cite_sources",
+              "description": "Gera citações para fontes coletadas nesta sessão.",
+              "arguments": {
+                "source_ids": "array de strings obrigatório"
+              }
+            },
+            {
+              "name": "list_files",
+              "description": "Lista arquivos e diretórios dentro do workspace autorizado.",
+              "arguments": {
+                "path": "string opcional",
+                "include_hidden": "booleano opcional",
+                "max_entries": "1 a 1000, padrão 200"
+              }
+            },
+            {
+              "name": "path_info",
+              "description": "Consulta existência, tipo e tamanho de um caminho no workspace.",
+              "arguments": {
+                "path": "caminho relativo obrigatório; vazio consulta a raiz"
+              }
+            },
+            {
+              "name": "find_paths",
+              "description": "Encontra nomes de arquivos e pastas por padrão com * e ? na árvore local.",
+              "arguments": {
+                "pattern": "padrão obrigatório",
+                "path": "pasta inicial opcional",
+                "include_hidden": "booleano opcional",
+                "max_results": "1 a 200"
+              }
+            },
+            {
+              "name": "list_tree",
+              "description": "Lista a árvore local com profundidade e número de itens limitados.",
+              "arguments": {
+                "path": "pasta inicial opcional",
+                "max_depth": "1 a 6",
+                "max_entries": "1 a 500",
+                "include_hidden": "booleano opcional"
+              }
+            },
+            {
+              "name": "compare_files",
+              "description": "Compara dois arquivos textuais locais e aponta a primeira linha diferente.",
+              "arguments": {
+                "left": "primeiro arquivo",
+                "right": "segundo arquivo"
+              }
+            },
+            {
+              "name": "git_diff",
+              "description": "Mostra o diff Git não preparado, com saída e tempo limitados.",
+              "arguments": {}
+            },
+            {
+              "name": "read_file",
+              "description": "Lê linhas específicas de um arquivo do workspace; use a posição da busca para abrir somente o trecho relevante.",
+              "arguments": {
+                "path": "string obrigatório",
+                "start_line": "linha inicial inclusiva opcional",
+                "end_line": "linha final inclusiva opcional",
+                "max_bytes": "limite opcional"
+              }
+            },
+            {
+              "name": "search_files",
+              "description": "Pesquisa texto ou símbolo e devolve ocorrências compactas com caminho e linha.",
+              "arguments": {
+                "query": "string obrigatório",
+                "path": "pasta inicial opcional",
+                "max_results": "máximo opcional entre 1 e 100",
+                "context_lines": "linhas ao redor entre 0 e 5"
+              }
+            },
+            {
+              "name": "inspect_project",
+              "description": "Inspeciona a estrutura do projeto, manifestos, entradas, testes e verificações disponíveis sem alterar arquivos.",
+              "arguments": {
+                "max_depth": "profundidade opcional entre 1 e 6"
+              }
+            },
+            {
+              "name": "diagnose_project",
+              "description": "Classifica uma falha de verificação, extrai evidências e sugere próximos passos sem alterar arquivos.",
+              "arguments": {
+                "check": "nome da verificação",
+                "passed": "booleano",
+                "stdout": "saída padrão opcional",
+                "stderr": "erro padrão opcional",
+                "executed": "booleano opcional"
+              }
+            },
+            {
+              "name": "propose_repair",
+              "description": "Valida uma proposta de correção exata e mostra o diff sem alterar arquivos.",
+              "arguments": {
+                "path": "caminho obrigatório",
+                "old_text": "trecho atual",
+                "new_text": "trecho proposto",
+                "reason": "motivo obrigatório",
+                "check": "verificação opcional"
+              }
+            },
+            {
+              "name": "apply_repair",
+              "description": "Aplica uma correção exata já revisada e informa a verificação que deve ser executada.",
+              "arguments": {
+                "path": "caminho obrigatório",
+                "old_text": "trecho atual",
+                "new_text": "novo trecho",
+                "reason": "motivo obrigatório",
+                "check": "verificação opcional"
+              }
+            },
+            {
+              "name": "project_checks",
+              "description": "Lista ou executa verificações locais limitadas para Python, Node, Rust, Go, C/C++ e shell. Distingue sintaxe, build e testes; zero testes não comprova comportamento.",
+              "arguments": {
+                "check": "auto, all, list, cargo-test, npm-test, npm-check, npm-build, pytest, unittest, node-test, go-test, python-syntax, node-syntax, cpp-syntax, c-syntax ou shell-syntax",
+                "path": "arquivo alterado opcional para escolher a verificação mais relevante"
+              }
+            },
+            {
+              "name": "terminal_run",
+              "description": "Executa somente perfis aprovados: git status, resumo do diff ou verificação reconhecida do projeto; sem shell e sem executável/argumentos livres.",
+              "arguments": {
+                "operation": "git_status, git_diff_stat ou project_check",
+                "check": "perfil fixo reconhecido pelo catálogo project_checks"
+              }
+            },
+            {
+              "name": "process_start",
+              "description": "Inicia um servidor do projeto pelo perfil auto-dev, usando um script declarado no package.json ou cargo run; execução exige aprovação.",
+              "arguments": {
+                "profile": "auto-dev"
+              }
+            },
+            {
+              "name": "process_status",
+              "description": "Consulta estado, prontidão local e saída incremental de um processo iniciado pelo runtime.",
+              "arguments": {
+                "process_id": "identificador opcional; padrão latest",
+                "stdout_cursor": "cursor opcional",
+                "stderr_cursor": "cursor opcional",
+                "wait_ms": "espera opcional até 1500 ms"
+              }
+            },
+            {
+              "name": "process_stop",
+              "description": "Encerra um processo iniciado pelo runtime e seu grupo de filhos; exige aprovação.",
+              "arguments": {
+                "process_id": "identificador opcional; padrão latest"
+              }
+            },
+            {
+              "name": "set_workspace",
+              "description": "Seleciona um diretório local existente como workspace atual.",
+              "arguments": {
+                "path": "caminho absoluto obrigatório"
+              }
+            },
+            {
+              "name": "create_workspace",
+              "description": "Cria um novo diretório de projeto e o seleciona como workspace atual.",
+              "arguments": {
+                "path": "caminho absoluto obrigatório"
+              }
+            },
+            {
+              "name": "create_directory",
+              "description": "Cria uma pasta dentro do workspace autorizado.",
+              "arguments": {
+                "path": "caminho relativo obrigatório"
+              }
+            },
+            {
+              "name": "create_file",
+              "description": "Cria um arquivo novo dentro do workspace autorizado.",
+              "arguments": {
+                "path": "caminho relativo obrigatório",
+                "content": "conteúdo obrigatório"
+              }
+            },
+            {
+              "name": "create_web_page",
+              "description": "Cria uma página HTML local a partir de um briefing e devolve uma prévia isolada para visualização.",
+              "arguments": {
+                "prompt": "briefing obrigatório",
+                "path": "caminho relativo opcional",
+                "title": "título opcional"
+              }
+            },
+            {
+              "name": "edit_file",
+              "description": "Substitui exatamente um trecho existente de um arquivo.",
+              "arguments": {
+                "path": "caminho obrigatório",
+                "old_text": "trecho atual",
+                "new_text": "novo trecho"
+              }
+            },
+            {
+              "name": "inspect_media",
+              "description": "Lê documentos, tenta OCR próprio experimental e inspeciona metadados WAV/MP4; não transcreve fala nem interpreta cenas.",
+              "arguments": {
+                "path": "caminho obrigatório"
+              }
+            },
+            {
+              "name": "extract_document_text",
+              "description": "Extrai texto local de PDF, texto, planilhas, documentos, apresentações, e-books, notebooks e e-mails. Formatos legados e OCR usam utilitários locais opcionais.",
+              "arguments": {
+                "path": "caminho relativo obrigatório",
+                "max_chars": "limite opcional de 1 a 200000 caracteres"
+              }
+            }
+          ]
+        },
+        "error": null,
+        "elapsed_ms": 0,
+        "target_ms": 10000,
+        "max_ms": 10000,
+        "performance": "within_target"
+      },
+      "seconds": 0.003
+    },
+    {
+      "case": "expression-with-new-variables",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "tool": "calculate",
+        "data": {
+          "schema": "execution-engine/v1",
+          "engine": "bounded-python-ast/v1",
+          "tool": "calculate",
+          "request": {
+            "expression": "(income-cost)/len(items)",
+            "variables": {
+              "income": 1937,
+              "cost": 221,
+              "items": [
+                1,
+                2,
+                3,
+                4
+              ]
+            }
+          },
+          "executed": true,
+          "passed": true,
+          "top_level_executed": false,
+          "general_python_execution": false,
+          "result": 429.0,
+          "error": null,
+          "limits": {
+            "max_steps": 20000,
+            "max_seconds": 1,
+            "max_items": 1000,
+            "max_call_depth": 24
+          },
+          "result_type": "float",
+          "encoding": "json-with-tagged-large-integers",
+          "steps": 6,
+          "calls": [],
+          "elapsed_ms": 0.15
+        },
+        "error": null,
+        "elapsed_ms": 62,
+        "target_ms": 10000,
+        "max_ms": 10000,
+        "performance": "within_target"
+      },
+      "seconds": 0.064
+    },
+    {
+      "case": "generator-short-circuit",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "tool": "calculate",
+        "data": {
+          "schema": "execution-engine/v1",
+          "engine": "bounded-python-ast/v1",
+          "tool": "calculate",
+          "request": {
+            "expression": "any(x==1 or 1/0 for x in [1,0])"
+          },
+          "executed": true,
+          "passed": true,
+          "top_level_executed": false,
+          "general_python_execution": false,
+          "result": true,
+          "error": null,
+          "limits": {
+            "max_steps": 20000,
+            "max_seconds": 1,
+            "max_items": 1000,
+            "max_call_depth": 24
+          },
+          "result_type": "bool",
+          "encoding": "json-with-tagged-large-integers",
+          "steps": 12,
+          "calls": [],
+          "elapsed_ms": 0.15
+        },
+        "error": null,
+        "elapsed_ms": 41,
+        "target_ms": 10000,
+        "max_ms": 10000,
+        "performance": "within_target"
+      },
+      "seconds": 0.042
+    },
+    {
+      "case": "exact-large-integer",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "tool": "calculate",
+        "data": {
+          "schema": "execution-engine/v1",
+          "engine": "bounded-python-ast/v1",
+          "tool": "calculate",
+          "request": {
+            "expression": "2**200+17"
+          },
+          "executed": true,
+          "passed": true,
+          "top_level_executed": false,
+          "general_python_execution": false,
+          "result": {
+            "integer_decimal": "1606938044258990275541962092341162602522202993782792835301393"
+          },
+          "error": null,
+          "limits": {
+            "max_steps": 20000,
+            "max_seconds": 1,
+            "max_items": 1000,
+            "max_call_depth": 24
+          },
+          "result_type": "int",
+          "encoding": "json-with-tagged-large-integers",
+          "steps": 5,
+          "calls": [],
+          "elapsed_ms": 0.17
+        },
+        "error": null,
+        "elapsed_ms": 63,
+        "target_ms": 10000,
+        "max_ms": 10000,
+        "performance": "within_target"
+      },
+      "seconds": 0.065
+    },
+    {
+      "case": "source-function-with-new-inputs",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "tool": "evaluate_function",
+        "data": {
+          "schema": "execution-engine/v1",
+          "engine": "bounded-python-ast/v1",
+          "tool": "evaluate_function",
+          "request": {
+            "path": "logic.py",
+            "function": "merge_segments",
+            "args": [
+              [
+                [
+                  9,
+                  12
+                ],
+                [
+                  -2,
+                  3
+                ],
+                [
+                  2,
+                  7
+                ],
+                [
+                  7,
+                  10
+                ]
+              ]
+            ]
+          },
+          "executed": true,
+          "passed": true,
+          "top_level_executed": false,
+          "general_python_execution": false,
+          "result": [
+            [
+              -2,
+              12
+            ]
+          ],
+          "error": null,
+          "limits": {
+            "max_steps": 20000,
+            "max_seconds": 1,
+            "max_items": 1000,
+            "max_call_depth": 24
+          },
+          "path": "logic.py",
+          "function": "merge_segments",
+          "source_sha256": "3b93172ea026dda0d8555ea67cb27ae02a1bd1c6b3eb1a3dbfd1114a94f34f3e",
+          "source_line": 3,
+          "result_type": "list",
+          "encoding": "json-with-tagged-large-integers",
+          "steps": 129,
+          "calls": [
+            {
+              "function": "merge_segments",
+              "line": 3
+            }
+          ],
+          "elapsed_ms": 0.71
+        },
+        "error": null,
+        "elapsed_ms": 52,
+        "target_ms": 10000,
+        "max_ms": 10000,
+        "performance": "within_target"
+      },
+      "seconds": 0.054
+    },
+    {
+      "case": "helper-arguments-and-keywords",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "tool": "evaluate_function",
+        "data": {
+          "schema": "execution-engine/v1",
+          "engine": "bounded-python-ast/v1",
+          "tool": "evaluate_function",
+          "request": {
+            "path": "logic.py",
+            "function": "weighted",
+            "args": [
+              [
+                [
+                  3,
+                  9
+                ],
+                [
+                  4,
+                  7
+                ],
+                [
+                  8,
+                  2
+                ]
+              ]
+            ],
+            "kwargs": {
+              "bonus": 11
+            }
+          },
+          "executed": true,
+          "passed": true,
+          "top_level_executed": false,
+          "general_python_execution": false,
+          "result": 82,
+          "error": null,
+          "limits": {
+            "max_steps": 20000,
+            "max_seconds": 1,
+            "max_items": 1000,
+            "max_call_depth": 24
+          },
+          "path": "logic.py",
+          "function": "weighted",
+          "source_sha256": "3b93172ea026dda0d8555ea67cb27ae02a1bd1c6b3eb1a3dbfd1114a94f34f3e",
+          "source_line": 9,
+          "result_type": "int",
+          "encoding": "json-with-tagged-large-integers",
+          "steps": 37,
+          "calls": [
+            {
+              "function": "weighted",
+              "line": 9
+            }
+          ],
+          "elapsed_ms": 0.6
+        },
+        "error": null,
+        "elapsed_ms": 58,
+        "target_ms": 10000,
+        "max_ms": 10000,
+        "performance": "within_target"
+      },
+      "seconds": 0.06
+    },
+    {
+      "case": "new-arguments-change-result",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "tool": "evaluate_function",
+        "data": {
+          "schema": "execution-engine/v1",
+          "engine": "bounded-python-ast/v1",
+          "tool": "evaluate_function",
+          "request": {
+            "path": "logic.py",
+            "function": "weighted",
+            "args": [
+              [
+                [
+                  2,
+                  5
+                ],
+                [
+                  7,
+                  8
+                ]
+              ]
+            ],
+            "kwargs": {
+              "bonus": 3
+            }
+          },
+          "executed": true,
+          "passed": true,
+          "top_level_executed": false,
+          "general_python_execution": false,
+          "result": 69,
+          "error": null,
+          "limits": {
+            "max_steps": 20000,
+            "max_seconds": 1,
+            "max_items": 1000,
+            "max_call_depth": 24
+          },
+          "path": "logic.py",
+          "function": "weighted",
+          "source_sha256": "3b93172ea026dda0d8555ea67cb27ae02a1bd1c6b3eb1a3dbfd1114a94f34f3e",
+          "source_line": 9,
+          "result_type": "int",
+          "encoding": "json-with-tagged-large-integers",
+          "steps": 27,
+          "calls": [
+            {
+              "function": "weighted",
+              "line": 9
+            }
+          ],
+          "elapsed_ms": 0.95
+        },
+        "error": null,
+        "elapsed_ms": 66,
+        "target_ms": 10000,
+        "max_ms": 10000,
+        "performance": "within_target"
+      },
+      "seconds": 0.068
+    },
+    {
+      "case": "host-access-rejected",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "tool": "calculate",
+        "data": {
+          "schema": "execution-engine/v1",
+          "engine": "bounded-python-ast/v1",
+          "tool": "calculate",
+          "request": {
+            "expression": "__import__('os').getcwd()"
+          },
+          "executed": true,
+          "passed": false,
+          "top_level_executed": false,
+          "general_python_execution": false,
+          "result": null,
+          "error": {
+            "type": "UnsupportedSyntax",
+            "message": "Função não permitida: __import__",
+            "line": 1
+          },
+          "limits": {
+            "max_steps": 20000,
+            "max_seconds": 1,
+            "max_items": 1000,
+            "max_call_depth": 24
+          },
+          "steps": 3,
+          "calls": [],
+          "elapsed_ms": 0.1
+        },
+        "error": null,
+        "elapsed_ms": 50,
+        "target_ms": 10000,
+        "max_ms": 10000,
+        "performance": "within_target"
+      },
+      "seconds": 0.052
+    },
+    {
+      "case": "imports-rejected-with-specific-error",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "tool": "evaluate_function",
+        "data": {
+          "schema": "execution-engine/v1",
+          "engine": "bounded-python-ast/v1",
+          "tool": "evaluate_function",
+          "request": {
+            "path": "logic.py",
+            "function": "restricted"
+          },
+          "executed": true,
+          "passed": false,
+          "top_level_executed": false,
+          "general_python_execution": false,
+          "result": null,
+          "error": {
+            "type": "UnsupportedSyntax",
+            "message": "Instrução não suportada: Import",
+            "line": 12
+          },
+          "limits": {
+            "max_steps": 20000,
+            "max_seconds": 1,
+            "max_items": 1000,
+            "max_call_depth": 24
+          },
+          "path": "logic.py",
+          "function": "restricted",
+          "source_sha256": "3b93172ea026dda0d8555ea67cb27ae02a1bd1c6b3eb1a3dbfd1114a94f34f3e",
+          "source_line": 11,
+          "steps": 2,
+          "calls": [
+            {
+              "function": "restricted",
+              "line": 11
+            }
+          ],
+          "elapsed_ms": 0.44
+        },
+        "error": null,
+        "elapsed_ms": 54,
+        "target_ms": 10000,
+        "max_ms": 10000,
+        "performance": "within_target"
+      },
+      "seconds": 0.057
+    },
+    {
+      "case": "endless-loop-interrupted",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "tool": "evaluate_function",
+        "data": {
+          "schema": "execution-engine/v1",
+          "engine": "bounded-python-ast/v1",
+          "tool": "evaluate_function",
+          "request": {
+            "path": "logic.py",
+            "function": "spin"
+          },
+          "executed": true,
+          "passed": false,
+          "top_level_executed": false,
+          "general_python_execution": false,
+          "result": null,
+          "error": {
+            "type": "LimitExceeded",
+            "message": "Orçamento de 20000 operações ou 1 segundo esgotado.",
+            "line": 15
+          },
+          "limits": {
+            "max_steps": 20000,
+            "max_seconds": 1,
+            "max_items": 1000,
+            "max_call_depth": 24
+          },
+          "path": "logic.py",
+          "function": "spin",
+          "source_sha256": "3b93172ea026dda0d8555ea67cb27ae02a1bd1c6b3eb1a3dbfd1114a94f34f3e",
+          "source_line": 14,
+          "steps": 20001,
+          "calls": [
+            {
+              "function": "spin",
+              "line": 14
+            }
+          ],
+          "elapsed_ms": 6.6
+        },
+        "error": null,
+        "elapsed_ms": 55,
+        "target_ms": 10000,
+        "max_ms": 10000,
+        "performance": "within_target"
+      },
+      "seconds": 0.057
+    },
+    {
+      "case": "oversized-allocation-rejected",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "tool": "calculate",
+        "data": {
+          "schema": "execution-engine/v1",
+          "engine": "bounded-python-ast/v1",
+          "tool": "calculate",
+          "request": {
+            "expression": "'x'*1000000000"
+          },
+          "executed": true,
+          "passed": false,
+          "top_level_executed": false,
+          "general_python_execution": false,
+          "result": null,
+          "error": {
+            "type": "LimitExceeded",
+            "message": "Repetição excederia o limite da coleção.",
+            "line": 1
+          },
+          "limits": {
+            "max_steps": 20000,
+            "max_seconds": 1,
+            "max_items": 1000,
+            "max_call_depth": 24
+          },
+          "steps": 3,
+          "calls": [],
+          "elapsed_ms": 0.09
+        },
+        "error": null,
+        "elapsed_ms": 61,
+        "target_ms": 10000,
+        "max_ms": 10000,
+        "performance": "within_target"
+      },
+      "seconds": 0.063
+    },
+    {
+      "case": "chat-computes-composed-expression",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "report": {
+          "schema": "agent-report/v2",
+          "taskId": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+          "status": "completed",
+          "requirements": {
+            "prompt": "Calcule (1275 * 3 + 18) / 7",
+            "objective": "conversation",
+            "summary": "Calcule (1275 * 3 + 18) / 7",
+            "interpretations": [
+              {
+                "id": "interpretation-primary",
+                "summary": "Calcule (1275 * 3 + 18) / 7",
+                "assumptions": [],
+                "missing": [],
+                "plausibility": 0.9
+              }
+            ],
+            "constraints": [],
+            "acceptanceCriteria": [
+              {
+                "id": "acceptance-clarity",
+                "text": "A entrega deve responder ao objetivo declarado sem inventar premissas.",
+                "verifiable": true,
+                "source": "derived"
+              }
+            ],
+            "missingInformation": [],
+            "questions": [],
+            "ambiguityScore": 0,
+            "requiresClarification": false,
+            "confidence": {
+              "score": 0.86,
+              "basis": "derived",
+              "reasons": [
+                "O pedido contém intenção e contexto suficientes para iniciar um plano."
+              ],
+              "calibrated": false
+            }
+          },
+          "plan": {
+            "objective": "Calcule (1275 * 3 + 18) / 7",
+            "steps": [
+              {
+                "id": "respond",
+                "phase": "plan",
+                "description": "Responder ao turno, consultando evidências quando necessário.",
+                "requiresApproval": false
+              }
+            ]
+          },
+          "evidence": [],
+          "artifacts": [],
+          "events": [
+            {
+              "seq": 1,
+              "taskId": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+              "phase": "observe",
+              "status": "running",
+              "kind": "task.started",
+              "title": "Tarefa iniciada",
+              "detail": "Calcule (1275 * 3 + 18) / 7"
+            },
+            {
+              "seq": 2,
+              "taskId": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+              "phase": "plan",
+              "status": "running",
+              "kind": "objective.selected",
+              "title": "Objetivo operacional selecionado",
+              "detail": "conversation",
+              "payload": {
+                "objective": "conversation",
+                "requestedObjective": "auto"
+              }
+            },
+            {
+              "seq": 3,
+              "taskId": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+              "phase": "plan",
+              "status": "running",
+              "kind": "cognition.summary",
+              "title": "Thinking: rota e próximo passo",
+              "detail": "O pedido é conversacional; consultas podem apoiar a resposta sem autorizar alterações ou processos. Próxima etapa: Responder diretamente se houver informação suficiente; consultar fontes permitidas para esclarecer lacunas.",
+              "payload": {
+                "route": "conversation",
+                "personalityMode": "conversation",
+                "uncertainties": [],
+                "confidence": 0.86,
+                "confidenceBasis": "derived"
+              }
+            },
+            {
+              "seq": 4,
+              "taskId": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+              "phase": "learn",
+              "status": "completed",
+              "kind": "workflow.dataset.checked",
+              "title": "Precedentes procedurais consultados",
+              "detail": "0 fluxo(s) revisado(s), 1 trilha(s) local(is) observada(s).",
+              "payload": {
+                "trustedRecords": 0,
+                "rejectedRecords": 0,
+                "matchedRecords": []
+              }
+            },
+            {
+              "seq": 5,
+              "taskId": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+              "phase": "plan",
+              "status": "completed",
+              "kind": "operational.policy.selected",
+              "title": "Política de execução definida",
+              "detail": "Responder ao turno atual com evidências quando necessário; distinguir fatos e incertezas.",
+              "payload": {
+                "mode": "conversation",
+                "allowedTools": [
+                  "calculate",
+                  "search_web",
+                  "open_page",
+                  "list_sources",
+                  "cite_sources",
+                  "research_web"
+                ],
+                "maxActions": 6
+              }
+            },
+            {
+              "seq": 6,
+              "taskId": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+              "phase": "observe",
+              "status": "completed",
+              "kind": "requirements.analyzed",
+              "title": "Requisitos analisados",
+              "detail": "Ambiguidade 0.00",
+              "payload": {
+                "questions": [],
+                "missing": [],
+                "ambiguityScore": 0
+              }
+            },
+            {
+              "seq": 7,
+              "taskId": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+              "phase": "plan",
+              "status": "running",
+              "kind": "plan.created",
+              "title": "Plano criado",
+              "detail": "Avaliar se a resposta precisa de evidências adicionais."
+            },
+            {
+              "seq": 8,
+              "taskId": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.requested",
+              "title": "Consultando o planejador local",
+              "detail": "Ciclo 1 de 6.",
+              "payload": {
+                "step": 1,
+                "limit": 6
+              }
+            },
+            {
+              "seq": 9,
+              "taskId": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.finished",
+              "title": "Planejador encerrou o ciclo",
+              "detail": "Resultado: `549.0`.\n\nExpressão calculada no motor local: `(1275 * 3 + 18) / 7`.",
+              "payload": {
+                "backend": "execution-engine",
+                "traceId": "trace-353af96404274bbfa59b7ab55203537c"
+              }
+            },
+            {
+              "seq": 10,
+              "taskId": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+              "phase": "verify",
+              "status": "completed",
+              "kind": "acceptance.evaluated",
+              "title": "Critérios de aceite satisfeitos",
+              "detail": "✓ conversation.response: A resposta ao turno precisa conter texto.\n✓ conversation.no_pending_action: Uma chamada proposta precisa ser resolvida antes da resposta final.",
+              "payload": {
+                "checks": [
+                  {
+                    "id": "conversation.response",
+                    "passed": true,
+                    "detail": "A resposta ao turno precisa conter texto."
+                  },
+                  {
+                    "id": "conversation.no_pending_action",
+                    "passed": true,
+                    "detail": "Uma chamada proposta precisa ser resolvida antes da resposta final."
+                  }
+                ]
+              }
+            },
+            {
+              "seq": 11,
+              "taskId": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+              "phase": "complete",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Preparando resposta",
+              "detail": "Critérios verificados; preparando a entrega.",
+              "payload": {
+                "state": "delivering",
+                "transition": {
+                  "from": "planning",
+                  "to": "delivering"
+                }
+              }
+            },
+            {
+              "seq": 12,
+              "taskId": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+              "phase": "complete",
+              "status": "completed",
+              "kind": "brain.state",
+              "title": "Etapa concluída",
+              "detail": "Tarefa concluída com evidência.",
+              "payload": {
+                "state": "completed",
+                "transition": {
+                  "from": "delivering",
+                  "to": "completed"
+                }
+              }
+            },
+            {
+              "seq": 13,
+              "taskId": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+              "phase": "complete",
+              "status": "completed",
+              "kind": "task.completed",
+              "title": "Tarefa concluída"
+            }
+          ],
+          "finalText": "Resultado: `549.0`.\n\nExpressão calculada no motor local: `(1275 * 3 + 18) / 7`."
+        },
+        "cognition": {
+          "schema": "agent-understanding/v1",
+          "task_id": "task-6464610f-4ad8-47b9-9d94-f00c958c33ef",
+          "preparation_id": "prep-dfed6a1c-553b-4c0d-8753-badd11c8bf72",
+          "status": "ready",
+          "objective": "conversation",
+          "interpretation": "Calcule (1275 * 3 + 18) / 7",
+          "personality": {
+            "mode": "conversation",
+            "version": "local-personality/v1"
+          },
+          "assumptions": [],
+          "constraints": [],
+          "acceptance_criteria": [
+            "A entrega deve responder ao objetivo declarado sem inventar premissas."
+          ],
+          "questions": [],
+          "next_step": "Responder diretamente se houver informação suficiente; consultar fontes permitidas para esclarecer lacunas.",
+          "capabilities": {
+            "available": [
+              "calculate",
+              "search_web",
+              "open_page",
+              "list_sources",
+              "cite_sources",
+              "research_web"
+            ],
+            "approval_required_for_writes": true
+          },
+          "context": {
+            "schema": "agent-context/v2",
+            "memory_items": 0,
+            "skills": 0,
+            "evidence": 0
+          }
+        },
+        "taskStorage": {
+          "saved": true,
+          "directory": "/home/victor/Documentos/IA Local do Zero/.agent-state/tasks"
+        },
+        "preparation": {
+          "id": "prep-dfed6a1c-553b-4c0d-8753-badd11c8bf72",
+          "reused": false
+        },
+        "awaitingApproval": false
+      },
+      "seconds": 0.215
+    },
+    {
+      "case": "chat-respects-question-inside-string",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "report": {
+          "schema": "agent-report/v2",
+          "taskId": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+          "status": "completed",
+          "requirements": {
+            "prompt": "Calcule len('a?b')?",
+            "objective": "conversation",
+            "summary": "Calcule len('a?b')?",
+            "interpretations": [
+              {
+                "id": "interpretation-primary",
+                "summary": "Calcule len('a?b')?",
+                "assumptions": [],
+                "missing": [],
+                "plausibility": 0.9
+              }
+            ],
+            "constraints": [],
+            "acceptanceCriteria": [
+              {
+                "id": "acceptance-clarity",
+                "text": "A entrega deve responder ao objetivo declarado sem inventar premissas.",
+                "verifiable": true,
+                "source": "derived"
+              }
+            ],
+            "missingInformation": [],
+            "questions": [],
+            "ambiguityScore": 0,
+            "requiresClarification": false,
+            "confidence": {
+              "score": 0.86,
+              "basis": "derived",
+              "reasons": [
+                "O pedido contém intenção e contexto suficientes para iniciar um plano."
+              ],
+              "calibrated": false
+            }
+          },
+          "plan": {
+            "objective": "Calcule len('a?b')?",
+            "steps": [
+              {
+                "id": "respond",
+                "phase": "plan",
+                "description": "Responder ao turno, consultando evidências quando necessário.",
+                "requiresApproval": false
+              }
+            ]
+          },
+          "evidence": [],
+          "artifacts": [],
+          "events": [
+            {
+              "seq": 1,
+              "taskId": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+              "phase": "observe",
+              "status": "running",
+              "kind": "task.started",
+              "title": "Tarefa iniciada",
+              "detail": "Calcule len('a?b')?"
+            },
+            {
+              "seq": 2,
+              "taskId": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+              "phase": "plan",
+              "status": "running",
+              "kind": "objective.selected",
+              "title": "Objetivo operacional selecionado",
+              "detail": "conversation",
+              "payload": {
+                "objective": "conversation",
+                "requestedObjective": "auto"
+              }
+            },
+            {
+              "seq": 3,
+              "taskId": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+              "phase": "plan",
+              "status": "running",
+              "kind": "cognition.summary",
+              "title": "Thinking: rota e próximo passo",
+              "detail": "O pedido é conversacional; consultas podem apoiar a resposta sem autorizar alterações ou processos. Próxima etapa: Responder diretamente se houver informação suficiente; consultar fontes permitidas para esclarecer lacunas.",
+              "payload": {
+                "route": "conversation",
+                "personalityMode": "conversation",
+                "uncertainties": [],
+                "confidence": 0.86,
+                "confidenceBasis": "derived"
+              }
+            },
+            {
+              "seq": 4,
+              "taskId": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+              "phase": "learn",
+              "status": "completed",
+              "kind": "workflow.dataset.checked",
+              "title": "Precedentes procedurais consultados",
+              "detail": "0 fluxo(s) revisado(s), 1 trilha(s) local(is) observada(s).",
+              "payload": {
+                "trustedRecords": 0,
+                "rejectedRecords": 0,
+                "matchedRecords": []
+              }
+            },
+            {
+              "seq": 5,
+              "taskId": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+              "phase": "plan",
+              "status": "completed",
+              "kind": "operational.policy.selected",
+              "title": "Política de execução definida",
+              "detail": "Responder ao turno atual com evidências quando necessário; distinguir fatos e incertezas.",
+              "payload": {
+                "mode": "conversation",
+                "allowedTools": [
+                  "calculate",
+                  "search_web",
+                  "open_page",
+                  "list_sources",
+                  "cite_sources",
+                  "research_web"
+                ],
+                "maxActions": 6
+              }
+            },
+            {
+              "seq": 6,
+              "taskId": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+              "phase": "observe",
+              "status": "completed",
+              "kind": "requirements.analyzed",
+              "title": "Requisitos analisados",
+              "detail": "Ambiguidade 0.00",
+              "payload": {
+                "questions": [],
+                "missing": [],
+                "ambiguityScore": 0
+              }
+            },
+            {
+              "seq": 7,
+              "taskId": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+              "phase": "plan",
+              "status": "running",
+              "kind": "plan.created",
+              "title": "Plano criado",
+              "detail": "Avaliar se a resposta precisa de evidências adicionais."
+            },
+            {
+              "seq": 8,
+              "taskId": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.requested",
+              "title": "Consultando o planejador local",
+              "detail": "Ciclo 1 de 6.",
+              "payload": {
+                "step": 1,
+                "limit": 6
+              }
+            },
+            {
+              "seq": 9,
+              "taskId": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.finished",
+              "title": "Planejador encerrou o ciclo",
+              "detail": "Resultado: `3`.\n\nExpressão calculada no motor local: `len('a?b')`.",
+              "payload": {
+                "backend": "execution-engine",
+                "traceId": "trace-99e4559eec5740109e181cf3c2898e91"
+              }
+            },
+            {
+              "seq": 10,
+              "taskId": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+              "phase": "verify",
+              "status": "completed",
+              "kind": "acceptance.evaluated",
+              "title": "Critérios de aceite satisfeitos",
+              "detail": "✓ conversation.response: A resposta ao turno precisa conter texto.\n✓ conversation.no_pending_action: Uma chamada proposta precisa ser resolvida antes da resposta final.",
+              "payload": {
+                "checks": [
+                  {
+                    "id": "conversation.response",
+                    "passed": true,
+                    "detail": "A resposta ao turno precisa conter texto."
+                  },
+                  {
+                    "id": "conversation.no_pending_action",
+                    "passed": true,
+                    "detail": "Uma chamada proposta precisa ser resolvida antes da resposta final."
+                  }
+                ]
+              }
+            },
+            {
+              "seq": 11,
+              "taskId": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+              "phase": "complete",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Preparando resposta",
+              "detail": "Critérios verificados; preparando a entrega.",
+              "payload": {
+                "state": "delivering",
+                "transition": {
+                  "from": "planning",
+                  "to": "delivering"
+                }
+              }
+            },
+            {
+              "seq": 12,
+              "taskId": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+              "phase": "complete",
+              "status": "completed",
+              "kind": "brain.state",
+              "title": "Etapa concluída",
+              "detail": "Tarefa concluída com evidência.",
+              "payload": {
+                "state": "completed",
+                "transition": {
+                  "from": "delivering",
+                  "to": "completed"
+                }
+              }
+            },
+            {
+              "seq": 13,
+              "taskId": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+              "phase": "complete",
+              "status": "completed",
+              "kind": "task.completed",
+              "title": "Tarefa concluída"
+            }
+          ],
+          "finalText": "Resultado: `3`.\n\nExpressão calculada no motor local: `len('a?b')`."
+        },
+        "cognition": {
+          "schema": "agent-understanding/v1",
+          "task_id": "task-21c9d5e5-943d-40c1-80c6-cdbdbfec892e",
+          "preparation_id": "prep-0f3e1ba4-ec52-49f0-ab41-47b3effc13b5",
+          "status": "ready",
+          "objective": "conversation",
+          "interpretation": "Calcule len('a?b')?",
+          "personality": {
+            "mode": "conversation",
+            "version": "local-personality/v1"
+          },
+          "assumptions": [],
+          "constraints": [],
+          "acceptance_criteria": [
+            "A entrega deve responder ao objetivo declarado sem inventar premissas."
+          ],
+          "questions": [],
+          "next_step": "Responder diretamente se houver informação suficiente; consultar fontes permitidas para esclarecer lacunas.",
+          "capabilities": {
+            "available": [
+              "calculate",
+              "search_web",
+              "open_page",
+              "list_sources",
+              "cite_sources",
+              "research_web"
+            ],
+            "approval_required_for_writes": true
+          },
+          "context": {
+            "schema": "agent-context/v2",
+            "memory_items": 0,
+            "skills": 0,
+            "evidence": 0
+          }
+        },
+        "taskStorage": {
+          "saved": true,
+          "directory": "/home/victor/Documentos/IA Local do Zero/.agent-state/tasks"
+        },
+        "preparation": {
+          "id": "prep-0f3e1ba4-ec52-49f0-ab41-47b3effc13b5",
+          "reused": false
+        },
+        "awaitingApproval": false
+      },
+      "seconds": 0.135
+    },
+    {
+      "case": "chat-calls-function-engine-and-synthesizes",
+      "passed": false,
+      "observed": {
+        "ok": true,
+        "awaitingClarification": true,
+        "understanding": {
+          "schema": "agent-understanding/v1",
+          "task_id": "task-78b37586-8ee5-45bc-b4de-0297b9701767",
+          "preparation_id": "prep-b1079fdf-495a-4c00-ad4f-c5bd1ca1c382",
+          "status": "clarifying",
+          "objective": "operate",
+          "interpretation": "Execute merge_segments([[9, 12], [-2, 3], [2, 7], [7, 10]]) em logic.py",
+          "personality": {
+            "mode": "conversation",
+            "version": "local-personality/v1"
+          },
+          "assumptions": [
+            {
+              "key": "assumption-1",
+              "value": "Ainda não definido: escopo ou usuário.",
+              "source": "inferred"
+            },
+            {
+              "key": "assumption-2",
+              "value": "Ainda não definido: ambiente técnico.",
+              "source": "inferred"
+            },
+            {
+              "key": "assumption-3",
+              "value": "Ainda não definido: resultado esperado.",
+              "source": "inferred"
+            }
+          ],
+          "constraints": [],
+          "acceptance_criteria": [
+            "A entrega deve responder ao objetivo declarado sem inventar premissas."
+          ],
+          "questions": [
+            "Qual resultado observável deve estar pronto para considerarmos a tarefa concluída?",
+            "Qual linguagem, versão e ambiente devo respeitar?",
+            "Quem usará isso e qual é o menor escopo útil da primeira versão?"
+          ],
+          "next_step": "Verificar escopo, risco e autorização antes de executar a ação externa.",
+          "workspace": {
+            "root": "/tmp/ia-execution-engine-audit-2a5ixani",
+            "manifests": [],
+            "test_files": [],
+            "truncated": false
+          },
+          "capabilities": {
+            "available": [
+              "inspect_project",
+              "inspect_code",
+              "evaluate_function",
+              "list_tools",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "extract_document_text",
+              "inspect_media",
+              "search_files",
+              "diagnose_project",
+              "calculate",
+              "project_checks",
+              "terminal_run",
+              "process_start",
+              "process_status",
+              "process_stop"
+            ],
+            "approval_required_for_writes": true
+          },
+          "context": {
+            "schema": "agent-context/v2",
+            "memory_items": 0,
+            "skills": 0,
+            "evidence": 0
+          }
+        },
+        "preparation": {
+          "id": "prep-b1079fdf-495a-4c00-ad4f-c5bd1ca1c382",
+          "reused": false
+        }
+      },
+      "seconds": 0.23
+    },
+    {
+      "case": "chat-with-different-function-arguments",
+      "passed": false,
+      "observed": {
+        "ok": true,
+        "awaitingClarification": true,
+        "understanding": {
+          "schema": "agent-understanding/v1",
+          "task_id": "task-d4ebe06c-e978-458f-9d7e-cc4daa54f0c6",
+          "preparation_id": "prep-81fad224-5bc3-49a1-b60c-c8399c6a3a2f",
+          "status": "clarifying",
+          "objective": "operate",
+          "interpretation": "Execute weighted([[2, 5], [7, 8]], bonus=3) em logic.py",
+          "personality": {
+            "mode": "conversation",
+            "version": "local-personality/v1"
+          },
+          "assumptions": [
+            {
+              "key": "assumption-1",
+              "value": "Ainda não definido: escopo ou usuário.",
+              "source": "inferred"
+            },
+            {
+              "key": "assumption-2",
+              "value": "Ainda não definido: ambiente técnico.",
+              "source": "inferred"
+            },
+            {
+              "key": "assumption-3",
+              "value": "Ainda não definido: resultado esperado.",
+              "source": "inferred"
+            }
+          ],
+          "constraints": [],
+          "acceptance_criteria": [
+            "A entrega deve responder ao objetivo declarado sem inventar premissas."
+          ],
+          "questions": [
+            "Qual resultado observável deve estar pronto para considerarmos a tarefa concluída?",
+            "Qual linguagem, versão e ambiente devo respeitar?",
+            "Quem usará isso e qual é o menor escopo útil da primeira versão?"
+          ],
+          "next_step": "Verificar escopo, risco e autorização antes de executar a ação externa.",
+          "workspace": {
+            "root": "/tmp/ia-execution-engine-audit-2a5ixani",
+            "manifests": [],
+            "test_files": [],
+            "truncated": false
+          },
+          "capabilities": {
+            "available": [
+              "inspect_project",
+              "inspect_code",
+              "evaluate_function",
+              "list_tools",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "extract_document_text",
+              "inspect_media",
+              "search_files",
+              "diagnose_project",
+              "calculate",
+              "project_checks",
+              "terminal_run",
+              "process_start",
+              "process_status",
+              "process_stop"
+            ],
+            "approval_required_for_writes": true
+          },
+          "context": {
+            "schema": "agent-context/v2",
+            "memory_items": 0,
+            "skills": 0,
+            "evidence": 0
+          }
+        },
+        "preparation": {
+          "id": "prep-81fad224-5bc3-49a1-b60c-c8399c6a3a2f",
+          "reused": false
+        }
+      },
+      "seconds": 0.135
+    },
+    {
+      "case": "chat-does-not-claim-division-by-zero-success",
+      "passed": false,
+      "observed": {
+        "ok": true,
+        "report": {
+          "schema": "agent-report/v2",
+          "taskId": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+          "status": "completed",
+          "requirements": {
+            "prompt": "Calcule 8 / 0",
+            "objective": "conversation",
+            "summary": "Calcule 8 / 0",
+            "interpretations": [
+              {
+                "id": "interpretation-primary",
+                "summary": "Calcule 8 / 0",
+                "assumptions": [],
+                "missing": [],
+                "plausibility": 0.9
+              }
+            ],
+            "constraints": [],
+            "acceptanceCriteria": [
+              {
+                "id": "acceptance-clarity",
+                "text": "A entrega deve responder ao objetivo declarado sem inventar premissas.",
+                "verifiable": true,
+                "source": "derived"
+              }
+            ],
+            "missingInformation": [],
+            "questions": [],
+            "ambiguityScore": 0,
+            "requiresClarification": false,
+            "confidence": {
+              "score": 0.86,
+              "basis": "derived",
+              "reasons": [
+                "O pedido contém intenção e contexto suficientes para iniciar um plano."
+              ],
+              "calibrated": false
+            }
+          },
+          "plan": {
+            "objective": "Calcule 8 / 0",
+            "steps": [
+              {
+                "id": "respond",
+                "phase": "plan",
+                "description": "Responder ao turno, consultando evidências quando necessário.",
+                "requiresApproval": false
+              }
+            ]
+          },
+          "evidence": [],
+          "artifacts": [],
+          "events": [
+            {
+              "seq": 1,
+              "taskId": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+              "phase": "observe",
+              "status": "running",
+              "kind": "task.started",
+              "title": "Tarefa iniciada",
+              "detail": "Calcule 8 / 0"
+            },
+            {
+              "seq": 2,
+              "taskId": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+              "phase": "plan",
+              "status": "running",
+              "kind": "objective.selected",
+              "title": "Objetivo operacional selecionado",
+              "detail": "conversation",
+              "payload": {
+                "objective": "conversation",
+                "requestedObjective": "auto"
+              }
+            },
+            {
+              "seq": 3,
+              "taskId": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+              "phase": "plan",
+              "status": "running",
+              "kind": "cognition.summary",
+              "title": "Thinking: rota e próximo passo",
+              "detail": "O pedido é conversacional; consultas podem apoiar a resposta sem autorizar alterações ou processos. Próxima etapa: Responder diretamente se houver informação suficiente; consultar fontes permitidas para esclarecer lacunas.",
+              "payload": {
+                "route": "conversation",
+                "personalityMode": "conversation",
+                "uncertainties": [],
+                "confidence": 0.86,
+                "confidenceBasis": "derived"
+              }
+            },
+            {
+              "seq": 4,
+              "taskId": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+              "phase": "learn",
+              "status": "completed",
+              "kind": "workflow.dataset.checked",
+              "title": "Precedentes procedurais consultados",
+              "detail": "0 fluxo(s) revisado(s), 1 trilha(s) local(is) observada(s).",
+              "payload": {
+                "trustedRecords": 0,
+                "rejectedRecords": 0,
+                "matchedRecords": []
+              }
+            },
+            {
+              "seq": 5,
+              "taskId": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+              "phase": "plan",
+              "status": "completed",
+              "kind": "operational.policy.selected",
+              "title": "Política de execução definida",
+              "detail": "Responder ao turno atual com evidências quando necessário; distinguir fatos e incertezas.",
+              "payload": {
+                "mode": "conversation",
+                "allowedTools": [
+                  "calculate",
+                  "search_web",
+                  "open_page",
+                  "list_sources",
+                  "cite_sources",
+                  "research_web"
+                ],
+                "maxActions": 6
+              }
+            },
+            {
+              "seq": 6,
+              "taskId": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+              "phase": "observe",
+              "status": "completed",
+              "kind": "requirements.analyzed",
+              "title": "Requisitos analisados",
+              "detail": "Ambiguidade 0.00",
+              "payload": {
+                "questions": [],
+                "missing": [],
+                "ambiguityScore": 0
+              }
+            },
+            {
+              "seq": 7,
+              "taskId": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+              "phase": "plan",
+              "status": "running",
+              "kind": "plan.created",
+              "title": "Plano criado",
+              "detail": "Avaliar se a resposta precisa de evidências adicionais."
+            },
+            {
+              "seq": 8,
+              "taskId": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.requested",
+              "title": "Consultando o planejador local",
+              "detail": "Ciclo 1 de 6.",
+              "payload": {
+                "step": 1,
+                "limit": 6
+              }
+            },
+            {
+              "seq": 9,
+              "taskId": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.finished",
+              "title": "Planejador encerrou o ciclo",
+              "detail": "A avaliação não foi concluída: division by zero",
+              "payload": {
+                "backend": "execution-engine",
+                "traceId": "trace-4bfc358821684b059f1053eb92bcbafe"
+              }
+            },
+            {
+              "seq": 10,
+              "taskId": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+              "phase": "verify",
+              "status": "completed",
+              "kind": "acceptance.evaluated",
+              "title": "Critérios de aceite satisfeitos",
+              "detail": "✓ conversation.response: A resposta ao turno precisa conter texto.\n✓ conversation.no_pending_action: Uma chamada proposta precisa ser resolvida antes da resposta final.",
+              "payload": {
+                "checks": [
+                  {
+                    "id": "conversation.response",
+                    "passed": true,
+                    "detail": "A resposta ao turno precisa conter texto."
+                  },
+                  {
+                    "id": "conversation.no_pending_action",
+                    "passed": true,
+                    "detail": "Uma chamada proposta precisa ser resolvida antes da resposta final."
+                  }
+                ]
+              }
+            },
+            {
+              "seq": 11,
+              "taskId": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+              "phase": "complete",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Preparando resposta",
+              "detail": "Critérios verificados; preparando a entrega.",
+              "payload": {
+                "state": "delivering",
+                "transition": {
+                  "from": "planning",
+                  "to": "delivering"
+                }
+              }
+            },
+            {
+              "seq": 12,
+              "taskId": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+              "phase": "complete",
+              "status": "completed",
+              "kind": "brain.state",
+              "title": "Etapa concluída",
+              "detail": "Tarefa concluída com evidência.",
+              "payload": {
+                "state": "completed",
+                "transition": {
+                  "from": "delivering",
+                  "to": "completed"
+                }
+              }
+            },
+            {
+              "seq": 13,
+              "taskId": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+              "phase": "complete",
+              "status": "completed",
+              "kind": "task.completed",
+              "title": "Tarefa concluída"
+            }
+          ],
+          "finalText": "A avaliação não foi concluída: division by zero"
+        },
+        "cognition": {
+          "schema": "agent-understanding/v1",
+          "task_id": "task-79b5b771-fc3d-4cb5-ac48-cc31e5adaaf8",
+          "preparation_id": "prep-25e0801b-5dd9-4fd7-a7a2-9debfc75bc74",
+          "status": "ready",
+          "objective": "conversation",
+          "interpretation": "Calcule 8 / 0",
+          "personality": {
+            "mode": "conversation",
+            "version": "local-personality/v1"
+          },
+          "assumptions": [],
+          "constraints": [],
+          "acceptance_criteria": [
+            "A entrega deve responder ao objetivo declarado sem inventar premissas."
+          ],
+          "questions": [],
+          "next_step": "Responder diretamente se houver informação suficiente; consultar fontes permitidas para esclarecer lacunas.",
+          "capabilities": {
+            "available": [
+              "calculate",
+              "search_web",
+              "open_page",
+              "list_sources",
+              "cite_sources",
+              "research_web"
+            ],
+            "approval_required_for_writes": true
+          },
+          "context": {
+            "schema": "agent-context/v2",
+            "memory_items": 0,
+            "skills": 0,
+            "evidence": 0
+          }
+        },
+        "taskStorage": {
+          "saved": true,
+          "directory": "/home/victor/Documentos/IA Local do Zero/.agent-state/tasks"
+        },
+        "preparation": {
+          "id": "prep-25e0801b-5dd9-4fd7-a7a2-9debfc75bc74",
+          "reused": false
+        },
+        "awaitingApproval": false
+      },
+      "seconds": 0.09
+    },
+    {
+      "case": "chat-reports-unsupported-source-specifically",
+      "passed": false,
+      "observed": {
+        "ok": true,
+        "awaitingClarification": true,
+        "understanding": {
+          "schema": "agent-understanding/v1",
+          "task_id": "task-18e17332-8582-4738-a56a-1e3d74c9613c",
+          "preparation_id": "prep-e6fbc8ba-c19e-4028-abfc-b4761d4ba3a4",
+          "status": "clarifying",
+          "objective": "operate",
+          "interpretation": "Execute restricted() em logic.py",
+          "personality": {
+            "mode": "conversation",
+            "version": "local-personality/v1"
+          },
+          "assumptions": [
+            {
+              "key": "assumption-1",
+              "value": "Ainda não definido: escopo ou usuário.",
+              "source": "inferred"
+            },
+            {
+              "key": "assumption-2",
+              "value": "Ainda não definido: ambiente técnico.",
+              "source": "inferred"
+            },
+            {
+              "key": "assumption-3",
+              "value": "Ainda não definido: resultado esperado.",
+              "source": "inferred"
+            }
+          ],
+          "constraints": [],
+          "acceptance_criteria": [
+            "A entrega deve responder ao objetivo declarado sem inventar premissas."
+          ],
+          "questions": [
+            "Qual resultado observável deve estar pronto para considerarmos a tarefa concluída?",
+            "Qual linguagem, versão e ambiente devo respeitar?",
+            "Quem usará isso e qual é o menor escopo útil da primeira versão?"
+          ],
+          "next_step": "Verificar escopo, risco e autorização antes de executar a ação externa.",
+          "workspace": {
+            "root": "/tmp/ia-execution-engine-audit-2a5ixani",
+            "manifests": [],
+            "test_files": [],
+            "truncated": false
+          },
+          "capabilities": {
+            "available": [
+              "inspect_project",
+              "inspect_code",
+              "evaluate_function",
+              "list_tools",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "extract_document_text",
+              "inspect_media",
+              "search_files",
+              "diagnose_project",
+              "calculate",
+              "project_checks",
+              "terminal_run",
+              "process_start",
+              "process_status",
+              "process_stop"
+            ],
+            "approval_required_for_writes": true
+          },
+          "context": {
+            "schema": "agent-context/v2",
+            "memory_items": 0,
+            "skills": 0,
+            "evidence": 0
+          }
+        },
+        "preparation": {
+          "id": "prep-e6fbc8ba-c19e-4028-abfc-b4761d4ba3a4",
+          "reused": false
+        }
+      },
+      "seconds": 0.213
+    }
+  ],
+  "passed": 13,
+  "total": 17,
+  "fixture_origin": "audit-authored-source-not-neural-generation",
+  "general_programming_mastery": false,
+  "general_python_execution": false
+}

@@ -6,3 +6,5 @@ src/main.rs:
 src/../static/index.html:
 src/../static/app.js:
 src/../static/chat-core.js:
+
+# env-dep:CARGO_MANIFEST_DIR=/home/victor/Documentos/IA Local do Zero/runtime

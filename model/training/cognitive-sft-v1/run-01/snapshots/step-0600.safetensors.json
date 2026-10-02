@@ -1,0 +1,41 @@
+{
+  "config": {
+    "name": "own-cognitive-decisions-v1",
+    "architecture": "decoder_transformer",
+    "vocab_size": 768,
+    "context_length": 256,
+    "layers": 2,
+    "hidden_size": 128,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 3,
+    "language_priority": [
+      "pt-BR",
+      "code",
+      "en"
+    ],
+    "tool_call_format": "json",
+    "max_request_seconds": 60,
+    "runtime": "python-local",
+    "generation_length": 192,
+    "training_context_length": 256,
+    "tokenizer_path": "datasets/cognitive_sft_v1/tokenizer.json",
+    "training_policy": {
+      "method": "local-sft-from-scratch",
+      "external_llm": false,
+      "ollama": false,
+      "gpu_required": false,
+      "training_context": 256,
+      "production_context": 256
+    },
+    "initialization": "scaled-normal-v1",
+    "runtime_context_tokens": 256,
+    "forward_chunk_length": 256,
+    "system_prompt_trained": false,
+    "cognitive_prompt_style": "compact-v1"
+  },
+  "steps": 600,
+  "source": "model/godmode/context-32768-v1/candidate.safetensors",
+  "validation_loss": 0.8238542796848537,
+  "status": "experimental-validation-snapshot",
+  "tokenizer_sha256": "cc1c09d550412fc8e9567e2cf656edd506a5b41717e53ac7f9f8c7f0f9a6350f"
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "god-mode-state/v1",
+  "mode": "god-mode",
+  "status": "active",
+  "updated_at": "2026-09-22T23:17:57.205468+00:00",
+  "report": "model/godmode/training-neural-v1/verification_100.json",
+  "checkpoint": "model/godmode/training-neural-v1/candidate.safetensors",
+  "reason": null,
+  "bounded_scope": [
+    "workspace autorizado",
+    "ferramentas com contrato",
+    "pesquisa com evidência",
+    "aprovação para efeitos externos"
+  ],
+  "claims": {
+    "omnipotent": false,
+    "omniscient": false,
+    "human_level_neural": false,
+    "local_neurosymbolic_profile": true,
+    "multimodal_semantic_understanding": false,
+    "multimodal_bounded_semantic_analysis": true,
+    "interpretation": "God Mode é um perfil operacional auditado; não é onipotência literal nem prova de um modelo neural humano."
+  }
+}

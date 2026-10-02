@@ -1,0 +1,23 @@
+{
+  "name": "undo_batch",
+  "version": "1.0.0",
+  "description": "Desfaz um lote aplicado anteriormente, desde que os arquivos não tenham sido alterados desde então.",
+  "side_effects": "Restaura arquivos editados e remove arquivos/pastas criados pelo lote. Compara hashes antes de começar e preserva alterações posteriores.",
+  "requires_approval": true,
+  "risk": "high",
+  "capabilities": ["workspace.batch.undo", "workspace.file.edit", "workspace.file.create", "workspace.directory.create"],
+  "idempotent": false,
+  "timeout_ms": 30000,
+  "arguments": {
+    "type": "object",
+    "required": [],
+    "properties": {"transaction_id": {"type": "string", "pattern": "^batch-[a-fA-F0-9]{24}$"}},
+    "additionalProperties": false
+  },
+  "preconditions": ["transaction_id criado por apply_batch; se omitido, usa o lote aplicado mais recente", "arquivos ainda correspondem aos hashes aplicados", "pastas criadas pelo lote não contêm arquivos posteriores"],
+  "effects": ["restaura versões anteriores e remove itens criados pelo lote", "recusa desfazer qualquer arquivo que tenha mudado depois da aplicação"],
+  "rollback": null,
+  "retry_policy": "never_after_ambiguous_timeout",
+  "limits": {"shell_execution": false, "preserve_post_batch_changes": true},
+  "result": {"type": "object", "required": ["transaction_id", "status", "already_undone", "count"]}
+}

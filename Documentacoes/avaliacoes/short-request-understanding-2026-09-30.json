@@ -1,0 +1,14 @@
+{
+  "schema": "short-request-understanding/v1",
+  "status": "ready",
+  "objective": "build",
+  "assumptions": [
+    {
+      "key": "assumption-1",
+      "value": "Inspecionar o workspace e reutilizar sua stack; se estiver vazio, propor uma primeira versão local e reversível com escolhas explícitas.",
+      "source": "inferred"
+    }
+  ],
+  "questions": [],
+  "passed": true
+}

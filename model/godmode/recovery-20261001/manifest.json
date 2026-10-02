@@ -1,0 +1,50 @@
+{
+  "schema": "tokenizer-recovery/v1",
+  "created_at": "2026-10-01T16:25:33.879977+00:00",
+  "status": "exact-training-tokenizer-restored",
+  "target": "model/godmode/godmode-tokenizer-v1.json",
+  "before_sha256": "d515c157fa3d8158b051eec9c3b7525a4bd222bbd650043d15a747f083f28c3d",
+  "restored_sha256": "79b3f86851c97d39f8405e3f263eb463e447b542d73e817bc18193150c61550d",
+  "backup": "model/godmode/recovery-20261001/godmode-tokenizer-before-activation.json",
+  "backup_sha256": "d515c157fa3d8158b051eec9c3b7525a4bd222bbd650043d15a747f083f28c3d",
+  "reconstructed": "model/godmode/recovery-20261001/godmode-tokenizer-reconstructed-verified.json",
+  "reconstructed_sha256": "79b3f86851c97d39f8405e3f263eb463e447b542d73e817bc18193150c61550d",
+  "provenance": {
+    "script": "scripts/prepare_godmode_neural.py",
+    "script_sha256": "a4b197b4ae27762be44768335a488a943e4a5423ff521cb4455582ea83996e95",
+    "function": "expand_tokenizer(8192)",
+    "base_tokenizer": "model/tokenizer.json",
+    "base_tokenizer_sha256": "3dc196c42a17568c524b67e766ffcda3a1f0318fc2d3f2aa6f963b35aa7bcaf4",
+    "base_merges": 764,
+    "reserved_ids": 7168,
+    "expected_hash_sources": [
+      "model/godmode/training-neural-v1/manifest.json",
+      "model/godmode/training-neural-v1/candidate.safetensors.json",
+      "model/godmode/context-32768-v1/candidate.safetensors.json"
+    ]
+  },
+  "exact_match_verified_before_atomic_replace": true,
+  "weights_metadata_state_unchanged": true,
+  "preserved_artifact_sha256": {
+    "model/godmode/context-32768-v1/candidate.safetensors": "0aeafd6f3966c8c59548ca1bb386c87483c62eafe21e95d1cb89260741d1fee3",
+    "model/godmode/context-32768-v1/candidate.safetensors.json": "60db9830acc7e2f303d5a34873c0ad038353742fd1ba1ef6e9d05b06e54beff6",
+    "model/godmode/state.json": "12e780fd617fbd529bf2d6f80593f6330e734a5a58b96f02db5c9a6ed971534b",
+    "model/godmode/training-neural-v1/candidate.safetensors": "272cd9b3eb7a974a13fb25d6abbae508afebd7b949dabfaf64d3ca8b5a7346a7",
+    "model/godmode/training-neural-v1/candidate.safetensors.json": "23e2b2bc6401f53f11b8b6a3e1d58fbeffb8245a010bdd5b05ae0707eda354bb"
+  },
+  "services_started_or_stopped": false,
+  "preflight": {
+    "passed": true,
+    "checkpoint": "model/godmode/context-32768-v1/candidate.safetensors",
+    "source": "start.sh:CHECKPOINT_CONTEXT_INFO",
+    "startup_sha256": "287e5f351cc5f23401df4591969b064a017a3f37ba2d3790d7b9d2700e0488a1",
+    "checks": [
+      "real-runtime-model-loader",
+      "declared-tokenizer-hash",
+      "byte-token-coverage",
+      "embedding-vocabulary",
+      "finite-forward"
+    ],
+    "services_started_or_stopped": false
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "brasa-implementation-heldout/v1",
+  "cases": 2,
+  "max_tokens": 384,
+  "format": "markdown",
+  "baseline": [
+    {
+      "id": "minutes",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 140,
+      "quality_reason": "accepted",
+      "quality_stop_reason": null,
+      "answer_excerpt": "a sutrutrututute pchjín sutrutrutrutrutrutrutrutruts vicopchcioncauscopchjínas alsute alsutrute alsutruts va\",\"content\":\"õicsuduras alsutrutrcocopum mutrutrutrutrutrutrutruduras truduro.",
+      "parse_error": "esperados exatamente dois blocos de arquivo completos"
+    },
+    {
+      "id": "initials",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 384,
+      "quality_reason": "accepted",
+      "quality_stop_reason": null,
+      "answer_excerpt": "sututrutrututututrutrutrutrutrutrutrutrutrutrutrutrutrutrutrutrutrutrutrute alsutruts va\",\"content\":\"õicp,\"\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"content\":\"õicsutrutruts va\",\"content\":\"õicpchje\",\"contRe\",\"contReigdir rutrutrcoe alstutrutru pch\",\"contReos mu es os pchcioncauscopch\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"contRelifa tru trcopchpchcioncauscopchpchca\",\"content\":\"õicpchcioncauscopchcioncauscococopluma sutrutrcopchje\",\"contRegdir e uma copchcioncauscopchcioncau",
+      "parse_error": "esperados exatamente dois blocos de arquivo completos"
+    }
+  ],
+  "candidate": [
+    {
+      "id": "minutes",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 142,
+      "quality_reason": "accepted",
+      "quality_stop_reason": null,
+      "answer_excerpt": "## app.py\n```python\ndef unittest\n```python\nimport unittest\n```python\nimport unittest\n```python\nimport unittest\nfrom app s(le(unittest.TestCase):\n    def test_behavior(self):\n        self.assertEqual(unittest\nfrom app import unittest\nfrom app import count_range(unittest.TestCase):\n    def test_behavior(self):\n        self.assertEqual(s(unittest.TestCase):\n    def test_behours(unittest.TestCase):\n    def test_behavior(self):\n        self.assertEqual(s(0)\n        self.assertEqual(celast_count_to_nu",
+      "parse_error": "esperados exatamente dois blocos de arquivo completos"
+    },
+    {
+      "id": "initials",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 61,
+      "quality_reason": "accepted",
+      "quality_stop_reason": null,
+      "answer_excerpt": "## app.py\n```python\ndef values):\n    return values):\n    return ' import unittest\n```python\nimport unittest\n```python\nimport unittest\nfrom app import unittest\n```python\nimport unittest\nfrom app import unittest\nfrom app import unittest\nfrom app import unittest\nfrom app import ds(unittest.TestCase):",
+      "parse_error": "esperados exatamente dois blocos de arquivo completos"
+    }
+  ],
+  "promoted": false
+}

@@ -1,0 +1,28 @@
+{
+  "config": {
+    "name": "ia-local-zero-compact-01",
+    "architecture": "decoder_transformer",
+    "vocab_size": 1024,
+    "context_length": 256,
+    "layers": 4,
+    "hidden_size": 256,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 4,
+    "language_priority": [
+      "pt-BR",
+      "code",
+      "en"
+    ],
+    "tool_call_format": "json",
+    "max_request_seconds": 30,
+    "runtime": "rust",
+    "tokenizer_path": "model/tokenizer.json",
+    "runtime_context_tokens": 256
+  },
+  "steps": 60,
+  "source": "model/checkpoints/compact-08-gate-focus.pt",
+  "best_val_loss": 9.012280163464245,
+  "status": "experimental",
+  "training_method": "assistant-only-sft",
+  "tokenizer_sha256": "3dc196c42a17568c524b67e766ffcda3a1f0318fc2d3f2aa6f963b35aa7bcaf4"
+}

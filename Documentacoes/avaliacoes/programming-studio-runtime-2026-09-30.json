@@ -1,0 +1,1650 @@
+{
+  "schema": "programming-workflows-audit/v1",
+  "cases": [
+    {
+      "case": "inspect-python-file",
+      "passed": true,
+      "observed": {
+        "schema": "local-code-observations/v1",
+        "workspace": "/tmp/ia-programming-audit-rfffx2sj/python",
+        "path": "logic.py",
+        "files_scanned": 1,
+        "symbols": [
+          {
+            "name": "carregar",
+            "qualified_name": "carregar",
+            "kind": "function",
+            "path": "logic.py",
+            "line": 3,
+            "end_line": 4,
+            "signature": "async def carregar(valor):",
+            "docstring": "",
+            "async": true,
+            "parameters": [
+              "valor"
+            ],
+            "returns": [
+              "math.ceil(valor)"
+            ],
+            "calls": [
+              "math.ceil"
+            ]
+          },
+          {
+            "name": "Caixa",
+            "qualified_name": "Caixa",
+            "kind": "class",
+            "path": "logic.py",
+            "line": 6,
+            "end_line": 8,
+            "signature": "class Caixa:",
+            "docstring": ""
+          },
+          {
+            "name": "total",
+            "qualified_name": "Caixa.total",
+            "kind": "function",
+            "path": "logic.py",
+            "line": 7,
+            "end_line": 8,
+            "signature": "def total(self, valores):",
+            "docstring": "",
+            "async": false,
+            "parameters": [
+              "self",
+              "valores"
+            ],
+            "returns": [
+              "sum(valores)"
+            ],
+            "calls": [
+              "sum"
+            ]
+          }
+        ],
+        "imports": [
+          {
+            "path": "logic.py",
+            "line": 1,
+            "text": "import math"
+          }
+        ],
+        "diagnostics": [],
+        "parsers": {
+          "logic.py": "python-ast"
+        },
+        "truncated": false,
+        "executed_workspace_code": false,
+        "limitations": [
+          "Análise estática; chamadas e expressões não comprovam comportamento em execução.",
+          "Linguagens sem parser conectado usam somente navegação lexical."
+        ],
+        "symbol_count": 3,
+        "import_count": 1
+      },
+      "seconds": 0.054
+    },
+    {
+      "case": "agent-explains-python-file",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "report": {
+          "schema": "agent-report/v2",
+          "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+          "status": "completed",
+          "requirements": {
+            "prompt": "Leia logic.py e explique as funções existentes, sem alterar arquivos.",
+            "objective": "analyze",
+            "summary": "Leia logic.py e explique as funções existentes, sem alterar arquivos.",
+            "interpretations": [
+              {
+                "id": "interpretation-primary",
+                "summary": "Leia logic.py e explique as funções existentes, sem alterar arquivos.",
+                "assumptions": [],
+                "missing": [],
+                "plausibility": 0.9
+              }
+            ],
+            "constraints": [],
+            "acceptanceCriteria": [
+              {
+                "id": "acceptance-clarity",
+                "text": "A entrega deve responder ao objetivo declarado sem inventar premissas.",
+                "verifiable": true,
+                "source": "derived"
+              },
+              {
+                "id": "acceptance-project-evidence",
+                "text": "A explicação do projeto deve citar arquivos lidos e separar fatos observados de inferências.",
+                "verifiable": true,
+                "source": "derived"
+              }
+            ],
+            "missingInformation": [],
+            "questions": [],
+            "ambiguityScore": 0,
+            "requiresClarification": false,
+            "confidence": {
+              "score": 0.86,
+              "basis": "derived",
+              "reasons": [
+                "O pedido contém intenção e contexto suficientes para iniciar um plano."
+              ],
+              "calibrated": false
+            }
+          },
+          "inspection": {
+            "workspace": "/tmp/ia-programming-audit-rfffx2sj/python",
+            "files": [
+              "logic.py",
+              "test_logic.py"
+            ],
+            "directories": [],
+            "truncated": false,
+            "manifests": [],
+            "testFiles": [
+              "test_logic.py"
+            ],
+            "entrypoints": []
+          },
+          "plan": {
+            "objective": "Leia logic.py e explique as funções existentes, sem alterar arquivos.",
+            "steps": [
+              {
+                "id": "select-workspace",
+                "phase": "observe",
+                "description": "Selecionar e delimitar o workspace autorizado.",
+                "requiresApproval": false
+              },
+              {
+                "id": "inspect-project",
+                "phase": "observe",
+                "description": "Inspecionar manifestos, entradas e testes antes de decidir.",
+                "requiresApproval": false
+              },
+              {
+                "id": "local-planner-loop",
+                "phase": "plan",
+                "description": "Propor uma ação local, validá-la e observar o resultado.",
+                "requiresApproval": false
+              },
+              {
+                "id": "verify",
+                "phase": "verify",
+                "description": "Conferir se a conclusão está sustentada pelos arquivos lidos e separar fatos de inferências.",
+                "requiresApproval": false
+              }
+            ]
+          },
+          "evidence": [],
+          "artifacts": [],
+          "events": [
+            {
+              "seq": 1,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "observe",
+              "status": "running",
+              "kind": "task.started",
+              "title": "Tarefa iniciada",
+              "detail": "Leia logic.py e explique as funções existentes, sem alterar arquivos."
+            },
+            {
+              "seq": 2,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "plan",
+              "status": "running",
+              "kind": "objective.selected",
+              "title": "Objetivo operacional selecionado",
+              "detail": "analyze",
+              "payload": {
+                "objective": "analyze",
+                "requestedObjective": "analyze"
+              }
+            },
+            {
+              "seq": 3,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "plan",
+              "status": "running",
+              "kind": "cognition.summary",
+              "title": "Thinking: rota e próximo passo",
+              "detail": "A rota foi escolhida pelo objetivo classificado e seguirá as restrições e lacunas detectadas no pedido. Próxima etapa: Inspecionar o workspace e apoiar a resposta em evidências observadas.",
+              "payload": {
+                "route": "workspace_read",
+                "personalityMode": "analysis",
+                "uncertainties": [],
+                "confidence": 0.86,
+                "confidenceBasis": "derived"
+              }
+            },
+            {
+              "seq": 4,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "learn",
+              "status": "completed",
+              "kind": "workflow.dataset.checked",
+              "title": "Precedentes procedurais consultados",
+              "detail": "Nenhum precedente revisado compatível; usando política operacional padrão.",
+              "payload": {
+                "trustedRecords": 0,
+                "rejectedRecords": 0,
+                "matchedRecords": []
+              }
+            },
+            {
+              "seq": 5,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "plan",
+              "status": "completed",
+              "kind": "operational.policy.selected",
+              "title": "Política de execução definida",
+              "detail": "Ler ao menos um arquivo selecionado e citar o caminho na síntese.",
+              "payload": {
+                "mode": "read_only",
+                "allowedTools": [
+                  "inspect_project",
+                  "inspect_code",
+                  "list_tools",
+                  "list_files",
+                  "path_info",
+                  "find_paths",
+                  "list_tree",
+                  "compare_files",
+                  "git_diff",
+                  "read_file",
+                  "extract_document_text",
+                  "inspect_media",
+                  "search_files",
+                  "diagnose_project"
+                ],
+                "maxActions": 12
+              }
+            },
+            {
+              "seq": 6,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "observe",
+              "status": "completed",
+              "kind": "requirements.analyzed",
+              "title": "Requisitos analisados",
+              "detail": "Ambiguidade 0.00",
+              "payload": {
+                "questions": [],
+                "missing": [],
+                "ambiguityScore": 0
+              }
+            },
+            {
+              "seq": 7,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "observe",
+              "status": "completed",
+              "kind": "runtime.capabilities.observed",
+              "title": "Ferramentas do runtime observadas",
+              "detail": "34 ferramenta(s) registrada(s) e disponíveis para esta tarefa.",
+              "payload": {
+                "availableTools": [
+                  "inspect_code",
+                  "search_web",
+                  "open_page",
+                  "research_web",
+                  "list_tools",
+                  "apply_batch",
+                  "undo_batch",
+                  "list_sources",
+                  "cite_sources",
+                  "list_files",
+                  "path_info",
+                  "find_paths",
+                  "list_tree",
+                  "compare_files",
+                  "git_diff",
+                  "read_file",
+                  "search_files",
+                  "inspect_project",
+                  "diagnose_project",
+                  "propose_repair",
+                  "apply_repair",
+                  "project_checks",
+                  "terminal_run",
+                  "process_start",
+                  "process_status",
+                  "process_stop",
+                  "set_workspace",
+                  "create_workspace",
+                  "create_directory",
+                  "create_file",
+                  "create_web_page",
+                  "edit_file",
+                  "inspect_media",
+                  "extract_document_text"
+                ],
+                "allowedTools": [
+                  "inspect_code",
+                  "list_tools",
+                  "list_files",
+                  "path_info",
+                  "find_paths",
+                  "list_tree",
+                  "compare_files",
+                  "git_diff",
+                  "read_file",
+                  "search_files",
+                  "inspect_project",
+                  "diagnose_project",
+                  "inspect_media",
+                  "extract_document_text"
+                ]
+              }
+            },
+            {
+              "seq": 8,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "observe",
+              "status": "running",
+              "kind": "workspace.selected",
+              "title": "Workspace selecionado",
+              "detail": "/tmp/ia-programming-audit-rfffx2sj/python"
+            },
+            {
+              "seq": 9,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "observe",
+              "status": "running",
+              "kind": "memory.updated",
+              "title": "Workspace registrado na memória",
+              "detail": "/tmp/ia-programming-audit-rfffx2sj/python"
+            },
+            {
+              "seq": 10,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "observe",
+              "status": "running",
+              "kind": "workspace.inspected",
+              "title": "Estrutura inspecionada",
+              "detail": "Base existente detectada.",
+              "payload": {
+                "workspace": "/tmp/ia-programming-audit-rfffx2sj/python",
+                "initialProject": false
+              }
+            },
+            {
+              "seq": 11,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "plan",
+              "status": "running",
+              "kind": "plan.created",
+              "title": "Plano criado",
+              "detail": "4 etapa(s)"
+            },
+            {
+              "seq": 12,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "plan",
+              "status": "running",
+              "kind": "analysis.scope.selected",
+              "title": "Selecionando arquivos centrais",
+              "detail": "1 arquivo(s) candidato(s); leitura limitada a 120 linhas e 8 KiB por arquivo.",
+              "payload": {
+                "files": [
+                  "logic.py"
+                ],
+                "maxFiles": 4,
+                "maxLines": 120,
+                "maxBytes": 8192
+              }
+            },
+            {
+              "seq": 13,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "plan",
+              "status": "completed",
+              "kind": "objective.action.selected",
+              "title": "Próxima ação escolhida pelo núcleo",
+              "detail": "inspect_code",
+              "payload": {
+                "tool": "inspect_code",
+                "objective": "analyze",
+                "reason": "Ler arquivo central selecionado na inspeção antes de sintetizar a análise."
+              }
+            },
+            {
+              "seq": 14,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "plan",
+              "status": "running",
+              "kind": "action.resuming",
+              "title": "Retomando a ação planejada",
+              "detail": "inspect_code",
+              "payload": {
+                "tool": "inspect_code"
+              }
+            },
+            {
+              "seq": 15,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "plan",
+              "status": "running",
+              "kind": "brain.action.validated",
+              "title": "Próxima ação validada pelo núcleo",
+              "detail": "Ler arquivo central selecionado na inspeção antes de sintetizar a análise.",
+              "payload": {
+                "planId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed-plan-1",
+                "actionId": "action-98768709-c8d2-42d2-bc9a-c062b744819b",
+                "state": "planning",
+                "capability": "inspect_code",
+                "group": "read",
+                "effect": "none",
+                "retryStrategy": "safe_read",
+                "risk": "low",
+                "reversible": true
+              }
+            },
+            {
+              "seq": 16,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "act",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Executando ferramenta local",
+              "detail": "Executando a ação autorizada.",
+              "payload": {
+                "planId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed-plan-1",
+                "actionId": "action-98768709-c8d2-42d2-bc9a-c062b744819b",
+                "tool": "inspect_code",
+                "attempt": 1,
+                "expectedEffect": "Ler arquivo central selecionado na inspeção antes de sintetizar a análise.",
+                "state": "executing",
+                "transition": {
+                  "from": "planning",
+                  "to": "executing"
+                }
+              }
+            },
+            {
+              "seq": 17,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "verify",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Conferindo resultado da ferramenta",
+              "detail": "Resultado bruto recebido; iniciando verificação.",
+              "payload": {
+                "planId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed-plan-1",
+                "actionId": "action-98768709-c8d2-42d2-bc9a-c062b744819b",
+                "tool": "inspect_code",
+                "ok": true,
+                "summary": "logic.py",
+                "evidence": [
+                  "inspect_code: logic.py"
+                ],
+                "state": "verifying",
+                "transition": {
+                  "from": "executing",
+                  "to": "verifying"
+                }
+              }
+            },
+            {
+              "seq": 18,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "plan",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Planejando próxima ação",
+              "detail": "A ação foi verificada; o núcleo decidirá o próximo passo da tarefa.",
+              "payload": {
+                "planId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed-plan-1",
+                "state": "planning",
+                "transition": {
+                  "from": "verifying",
+                  "to": "planning"
+                }
+              }
+            },
+            {
+              "seq": 19,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.requested",
+              "title": "Consultando o planejador local",
+              "detail": "Ciclo 2 de 12.",
+              "payload": {
+                "step": 2,
+                "limit": 12
+              }
+            },
+            {
+              "seq": 20,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.finished",
+              "title": "Planejador encerrou o ciclo",
+              "detail": "Inspecionei 1 arquivo(s) por análise estática.\n- **carregar** — `logic.py:3`: `async def carregar(valor):`; expressões de retorno: `math.ceil(valor)`; chamadas observadas: `math.ceil`.\n- **Caixa** — `logic.py:6`: `class Caixa:`.\n- **Caixa.total** — `logic.py:7`: `def total(self, valores):`; expressões de retorno: `sum(valores)`; chamadas observadas: `sum`.\nImports: `logic.py:1`: `import math`.\nEssas observações não executam o código nem comprovam seu comportamento.",
+              "payload": {
+                "backend": "agent-loop",
+                "traceId": "trace-b6a0d0f9064446e099c4f89382f1cb2f"
+              }
+            },
+            {
+              "seq": 21,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "verify",
+              "status": "completed",
+              "kind": "acceptance.evaluated",
+              "title": "Critérios de aceite satisfeitos",
+              "detail": "✓ delivery.summary: A tarefa precisa de uma síntese final baseada nos resultados observados.\n✓ analysis.answer: A análise precisa entregar uma conclusão, não apenas repetir que está pendente.\n✓ analysis.read: A análise precisa ler pelo menos um arquivo pertinente do workspace.\n✓ analysis.references: A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido.\n✓ analysis.coverage: Todos os arquivos centrais selecionados foram lidos.",
+              "payload": {
+                "checks": [
+                  {
+                    "id": "delivery.summary",
+                    "passed": true,
+                    "detail": "A tarefa precisa de uma síntese final baseada nos resultados observados."
+                  },
+                  {
+                    "id": "analysis.answer",
+                    "passed": true,
+                    "detail": "A análise precisa entregar uma conclusão, não apenas repetir que está pendente."
+                  },
+                  {
+                    "id": "analysis.read",
+                    "passed": true,
+                    "detail": "A análise precisa ler pelo menos um arquivo pertinente do workspace."
+                  },
+                  {
+                    "id": "analysis.references",
+                    "passed": true,
+                    "detail": "A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido."
+                  },
+                  {
+                    "id": "analysis.coverage",
+                    "passed": true,
+                    "detail": "Todos os arquivos centrais selecionados foram lidos."
+                  }
+                ]
+              }
+            },
+            {
+              "seq": 22,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "complete",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Preparando resposta",
+              "detail": "Critérios verificados; preparando a entrega.",
+              "payload": {
+                "state": "delivering",
+                "transition": {
+                  "from": "planning",
+                  "to": "delivering"
+                }
+              }
+            },
+            {
+              "seq": 23,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "complete",
+              "status": "completed",
+              "kind": "brain.state",
+              "title": "Etapa concluída",
+              "detail": "Tarefa concluída com evidência.",
+              "payload": {
+                "state": "completed",
+                "transition": {
+                  "from": "delivering",
+                  "to": "completed"
+                }
+              }
+            },
+            {
+              "seq": 24,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "learn",
+              "status": "completed",
+              "kind": "workflow.local.procedure.saved",
+              "title": "Trilha operacional registrada",
+              "detail": "Somente objetivo, sequência de ferramentas e estado de conclusão foram retidos."
+            },
+            {
+              "seq": 25,
+              "taskId": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+              "phase": "complete",
+              "status": "completed",
+              "kind": "task.completed",
+              "title": "Tarefa concluída"
+            }
+          ],
+          "finalText": "Inspecionei 1 arquivo(s) por análise estática.\n- **carregar** — `logic.py:3`: `async def carregar(valor):`; expressões de retorno: `math.ceil(valor)`; chamadas observadas: `math.ceil`.\n- **Caixa** — `logic.py:6`: `class Caixa:`.\n- **Caixa.total** — `logic.py:7`: `def total(self, valores):`; expressões de retorno: `sum(valores)`; chamadas observadas: `sum`.\nImports: `logic.py:1`: `import math`.\nEssas observações não executam o código nem comprovam seu comportamento."
+        },
+        "cognition": {
+          "schema": "agent-understanding/v1",
+          "task_id": "task-aa313bbf-9643-45c7-b93b-22e453bcf4ed",
+          "preparation_id": "prep-c9260b57-062a-482a-9abc-83b76a11134f",
+          "status": "ready",
+          "objective": "analyze",
+          "interpretation": "Leia logic.py e explique as funções existentes, sem alterar arquivos.",
+          "personality": {
+            "mode": "analysis",
+            "version": "local-personality/v1"
+          },
+          "assumptions": [],
+          "constraints": [],
+          "acceptance_criteria": [
+            "A entrega deve responder ao objetivo declarado sem inventar premissas.",
+            "A explicação do projeto deve citar arquivos lidos e separar fatos observados de inferências."
+          ],
+          "questions": [],
+          "next_step": "Inspecionar o workspace e apoiar a resposta em evidências observadas.",
+          "workspace": {
+            "root": "/tmp/ia-programming-audit-rfffx2sj/python",
+            "manifests": [],
+            "test_files": [
+              "test_logic.py"
+            ],
+            "truncated": false
+          },
+          "capabilities": {
+            "available": [
+              "inspect_project",
+              "inspect_code",
+              "list_tools",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "extract_document_text",
+              "inspect_media",
+              "search_files",
+              "diagnose_project"
+            ],
+            "approval_required_for_writes": true
+          },
+          "context": {
+            "schema": "agent-context/v2",
+            "memory_items": 0,
+            "skills": 0,
+            "evidence": 0
+          }
+        },
+        "taskStorage": {
+          "saved": true,
+          "directory": "/home/victor/Documentos/IA Local do Zero/.agent-state/tasks"
+        },
+        "preparation": {
+          "id": "prep-c9260b57-062a-482a-9abc-83b76a11134f",
+          "reused": false
+        },
+        "awaitingApproval": false
+      },
+      "seconds": 0.562
+    },
+    {
+      "case": "inspect-typescript-declarations",
+      "passed": true,
+      "observed": {
+        "schema": "local-code-observations/v1",
+        "workspace": "/tmp/ia-programming-audit-rfffx2sj/typescript",
+        "path": "logic.ts",
+        "files_scanned": 1,
+        "symbols": [
+          {
+            "path": "logic.ts",
+            "name": "juntar",
+            "qualified_name": "juntar",
+            "kind": "function",
+            "line": 1,
+            "end_line": 1,
+            "signature": "export function juntar(a: string, b: string): string { return a + b; }",
+            "parameters": [
+              "a",
+              "b"
+            ],
+            "calls": [],
+            "returns": [
+              "a + b"
+            ]
+          },
+          {
+            "path": "logic.ts",
+            "name": "dobro",
+            "qualified_name": "dobro",
+            "kind": "function",
+            "line": 2,
+            "end_line": 2,
+            "signature": "dobro = (n: number): number => n * 2",
+            "parameters": [
+              "n"
+            ],
+            "calls": [],
+            "returns": [
+              "n * 2"
+            ]
+          },
+          {
+            "path": "logic.ts",
+            "name": "Fila",
+            "qualified_name": "Fila",
+            "kind": "class",
+            "line": 3,
+            "end_line": 3,
+            "signature": "export class Fila { tamanho(): number { return 0; } }",
+            "parameters": [],
+            "calls": [],
+            "returns": []
+          },
+          {
+            "path": "logic.ts",
+            "name": "tamanho",
+            "qualified_name": "Fila.tamanho",
+            "kind": "function",
+            "line": 3,
+            "end_line": 3,
+            "signature": "tamanho(): number { return 0; }",
+            "parameters": [],
+            "calls": [],
+            "returns": [
+              "0"
+            ]
+          }
+        ],
+        "imports": [],
+        "diagnostics": [],
+        "parsers": {
+          "logic.ts": "typescript-ast"
+        },
+        "truncated": false,
+        "executed_workspace_code": false,
+        "limitations": [
+          "Análise estática; chamadas e expressões não comprovam comportamento em execução.",
+          "Linguagens sem parser conectado usam somente navegação lexical."
+        ],
+        "symbol_count": 4,
+        "import_count": 0
+      },
+      "seconds": 0.264
+    },
+    {
+      "case": "node-tests-without-manifest",
+      "passed": true,
+      "observed": {
+        "available": [
+          "node-test",
+          "node-syntax"
+        ],
+        "locations": {
+          "node-test": [
+            "."
+          ],
+          "node-syntax": [
+            "."
+          ]
+        },
+        "workspace": "/tmp/ia-programming-audit-rfffx2sj/node-tests",
+        "changed_path": "",
+        "check": "node-test",
+        "verification_kind": "test",
+        "project_path": ".",
+        "executed": true,
+        "passed": true,
+        "command": "node --test --test-reporter=tap tests/app.test.cjs",
+        "stdout": "TAP version 13\n# Subtest: total\nok 1 - total\n  ---\n  duration_ms: 0.741833\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 63.798776\n",
+        "stderr": "",
+        "truncated": false,
+        "timed_out": false,
+        "elapsed_ms": 116,
+        "tests_executed": 1,
+        "behavior_verification_executed": true,
+        "summary": "Verificação aprovada.",
+        "evidence": [
+          "node --test --test-reporter=tap tests/app.test.cjs",
+          "Verificação aprovada."
+        ]
+      },
+      "seconds": 0.197
+    },
+    {
+      "case": "zero-tests-is-not-success",
+      "passed": true,
+      "observed": {
+        "available": [
+          "unittest",
+          "python-syntax"
+        ],
+        "locations": {
+          "unittest": [
+            "."
+          ],
+          "python-syntax": [
+            "."
+          ]
+        },
+        "workspace": "/tmp/ia-programming-audit-rfffx2sj/empty-tests",
+        "changed_path": "",
+        "check": "unittest",
+        "verification_kind": "test",
+        "project_path": ".",
+        "executed": true,
+        "passed": false,
+        "command": "/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s tests -p test*.py -v",
+        "stdout": "",
+        "stderr": "\n----------------------------------------------------------------------\nRan 0 tests in 0.000s\n\nNO TESTS RAN\n",
+        "truncated": false,
+        "timed_out": false,
+        "elapsed_ms": 68,
+        "tests_executed": 0,
+        "behavior_verification_executed": false,
+        "summary": "A suíte executou zero testes; isso não comprova o comportamento do código.",
+        "evidence": [
+          "/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s tests -p test*.py -v",
+          "A suíte executou zero testes; isso não comprova o comportamento do código."
+        ]
+      },
+      "seconds": 0.189
+    },
+    {
+      "case": "large-output-does-not-deadlock",
+      "passed": true,
+      "observed": {
+        "available": [
+          "unittest",
+          "python-syntax"
+        ],
+        "locations": {
+          "unittest": [
+            "."
+          ],
+          "python-syntax": [
+            "."
+          ]
+        },
+        "workspace": "/tmp/ia-programming-audit-rfffx2sj/large-output",
+        "changed_path": "",
+        "check": "unittest",
+        "verification_kind": "test",
+        "project_path": ".",
+        "executed": true,
+        "passed": true,
+        "command": "/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s . -p test*.py -v",
+        "stdout": "",
+        "stderr": "_stream) ... xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n[output truncated; tail preserved]\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n",
+        "truncated": true,
+        "timed_out": false,
+        "elapsed_ms": 117,
+        "tests_executed": 1,
+        "behavior_verification_executed": true,
+        "summary": "Verificação aprovada.",
+        "evidence": [
+          "/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s . -p test*.py -v",
+          "Verificação aprovada."
+        ]
+      },
+      "seconds": 0.2
+    },
+    {
+      "case": "go-tests",
+      "passed": true,
+      "observed": {
+        "available": [
+          "go-test"
+        ],
+        "locations": {
+          "go-test": [
+            "."
+          ]
+        },
+        "workspace": "/tmp/ia-programming-audit-rfffx2sj/go",
+        "changed_path": "sum.go",
+        "check": "go-test",
+        "verification_kind": "test",
+        "project_path": ".",
+        "executed": true,
+        "passed": true,
+        "command": "go test -v ./...",
+        "stdout": "=== RUN   TestSum\n--- PASS: TestSum (0.00s)\nPASS\nok  \tlocal/audit\t0.002s\n",
+        "stderr": "",
+        "truncated": false,
+        "timed_out": false,
+        "elapsed_ms": 270,
+        "tests_executed": 1,
+        "behavior_verification_executed": true,
+        "summary": "Verificação aprovada.",
+        "evidence": [
+          "go test -v ./...",
+          "Verificação aprovada."
+        ]
+      },
+      "seconds": 0.405
+    },
+    {
+      "case": "cpp-compiler-check",
+      "passed": true,
+      "observed": {
+        "available": [
+          "cpp-syntax"
+        ],
+        "locations": {
+          "cpp-syntax": [
+            "."
+          ]
+        },
+        "workspace": "/tmp/ia-programming-audit-rfffx2sj/cpp",
+        "changed_path": "calculation.cpp",
+        "check": "cpp-syntax",
+        "verification_kind": "syntax",
+        "project_path": ".",
+        "executed": true,
+        "passed": true,
+        "command": "g++ -fsyntax-only /tmp/ia-programming-audit-rfffx2sj/cpp/calculation.cpp",
+        "stdout": "",
+        "stderr": "",
+        "truncated": false,
+        "timed_out": false,
+        "elapsed_ms": 18,
+        "tests_executed": null,
+        "behavior_verification_executed": false,
+        "summary": "Verificação aprovada. Escopo: sintaxe/compilação; testes de comportamento não foram executados.",
+        "evidence": [
+          "g++ -fsyntax-only /tmp/ia-programming-audit-rfffx2sj/cpp/calculation.cpp",
+          "Verificação aprovada. Escopo: sintaxe/compilação; testes de comportamento não foram executados."
+        ]
+      },
+      "seconds": 0.098
+    },
+    {
+      "case": "novel-python-implementation",
+      "passed": false,
+      "observed": {
+        "ok": true,
+        "report": {
+          "schema": "agent-report/v2",
+          "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+          "status": "blocked",
+          "requirements": {
+            "prompt": "Implemente em Python uma função interval_union que una intervalos fechados sobrepostos e escreva testes para entradas vazias, disjuntas, negativas e embaralhadas. Use apenas a biblioteca padrão. Execute os testes.",
+            "objective": "build",
+            "summary": "Implemente em Python uma função interval_union que una intervalos fechados sobrepostos e escreva testes para entradas vazias, disjuntas, negativas e embaralhadas. Use apenas a biblioteca padrão. Execute os testes.",
+            "interpretations": [
+              {
+                "id": "interpretation-primary",
+                "summary": "Implemente em Python uma função interval_union que una intervalos fechados sobrepostos e escreva testes para entradas vazias, disjuntas, negativas e embaralhadas. Use apenas a biblioteca padrão. Execute os testes.",
+                "assumptions": [],
+                "missing": [],
+                "plausibility": 0.9
+              }
+            ],
+            "constraints": [
+              {
+                "id": "constraint-1",
+                "text": "respeitar as tecnologias declaradas e suas restrições (trechos do pedido: Python)",
+                "source": "user",
+                "mandatory": true,
+                "confidence": {
+                  "score": 0.9,
+                  "basis": "user_confirmed",
+                  "reasons": [
+                    "A restrição foi declarada no pedido."
+                  ],
+                  "calibrated": false
+                }
+              },
+              {
+                "id": "constraint-2",
+                "text": "respeitar o escopo restritivo declarado (trechos do pedido: apenas)",
+                "source": "user",
+                "mandatory": true,
+                "confidence": {
+                  "score": 0.9,
+                  "basis": "user_confirmed",
+                  "reasons": [
+                    "A restrição foi declarada no pedido."
+                  ],
+                  "calibrated": false
+                }
+              }
+            ],
+            "acceptanceCriteria": [
+              {
+                "id": "acceptance-clarity",
+                "text": "A entrega deve responder ao objetivo declarado sem inventar premissas.",
+                "verifiable": true,
+                "source": "derived"
+              },
+              {
+                "id": "acceptance-executable",
+                "text": "A alteração deve ser executável ou ter a impossibilidade explicitamente demonstrada.",
+                "verifiable": true,
+                "source": "derived"
+              },
+              {
+                "id": "acceptance-tests",
+                "text": "O resultado deve possuir verificação e pelo menos um caso de borda.",
+                "verifiable": true,
+                "source": "derived"
+              }
+            ],
+            "missingInformation": [],
+            "questions": [],
+            "ambiguityScore": 0,
+            "requiresClarification": false,
+            "confidence": {
+              "score": 0.86,
+              "basis": "derived",
+              "reasons": [
+                "O pedido contém intenção e contexto suficientes para iniciar um plano."
+              ],
+              "calibrated": false
+            }
+          },
+          "inspection": {
+            "workspace": "/tmp/ia-programming-audit-rfffx2sj/new-algorithm",
+            "files": [],
+            "directories": [],
+            "truncated": false,
+            "manifests": [],
+            "testFiles": [],
+            "entrypoints": []
+          },
+          "plan": {
+            "objective": "Implemente em Python uma função interval_union que una intervalos fechados sobrepostos e escreva testes para entradas vazias, disjuntas, negativas e embaralhadas. Use apenas a biblioteca padrão. Execute os testes.",
+            "steps": [
+              {
+                "id": "select-workspace",
+                "phase": "observe",
+                "description": "Selecionar e delimitar o workspace autorizado.",
+                "requiresApproval": false
+              },
+              {
+                "id": "inspect-project",
+                "phase": "observe",
+                "description": "Inspecionar manifestos, entradas e testes antes de decidir.",
+                "requiresApproval": false
+              },
+              {
+                "id": "local-planner-loop",
+                "phase": "plan",
+                "description": "Propor uma ação local, validá-la e observar o resultado.",
+                "requiresApproval": false
+              },
+              {
+                "id": "verify",
+                "phase": "verify",
+                "description": "Executar verificações e registrar evidências.",
+                "requiresApproval": false
+              }
+            ]
+          },
+          "evidence": [],
+          "artifacts": [],
+          "events": [
+            {
+              "seq": 1,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "observe",
+              "status": "running",
+              "kind": "task.started",
+              "title": "Tarefa iniciada",
+              "detail": "Implemente em Python uma função interval_union que una intervalos fechados sobrepostos e escreva testes para entradas vazias, disjuntas, negativas e embaralhadas. Use apenas a biblioteca padrão. Execute os testes."
+            },
+            {
+              "seq": 2,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "plan",
+              "status": "running",
+              "kind": "objective.selected",
+              "title": "Objetivo operacional selecionado",
+              "detail": "build",
+              "payload": {
+                "objective": "build",
+                "requestedObjective": "build"
+              }
+            },
+            {
+              "seq": 3,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "plan",
+              "status": "running",
+              "kind": "cognition.summary",
+              "title": "Thinking: rota e próximo passo",
+              "detail": "A rota foi escolhida pelo objetivo classificado e seguirá as restrições e lacunas detectadas no pedido. Próxima etapa: Inspecionar o workspace, preparar uma proposta de alteração e validar o resultado.",
+              "payload": {
+                "route": "workspace_write",
+                "personalityMode": "engineering",
+                "uncertainties": [],
+                "confidence": 0.86,
+                "confidenceBasis": "derived"
+              }
+            },
+            {
+              "seq": 4,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "learn",
+              "status": "completed",
+              "kind": "workflow.dataset.checked",
+              "title": "Precedentes procedurais consultados",
+              "detail": "Nenhum precedente revisado compatível; usando política operacional padrão.",
+              "payload": {
+                "trustedRecords": 0,
+                "rejectedRecords": 0,
+                "matchedRecords": []
+              }
+            },
+            {
+              "seq": 5,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "plan",
+              "status": "completed",
+              "kind": "operational.policy.selected",
+              "title": "Política de execução definida",
+              "detail": "Realizar alteração observável e executar uma verificação aprovada.",
+              "payload": {
+                "mode": "mutating",
+                "allowedTools": [
+                  "inspect_project",
+                  "inspect_code",
+                  "list_tools",
+                  "list_files",
+                  "path_info",
+                  "find_paths",
+                  "list_tree",
+                  "compare_files",
+                  "git_diff",
+                  "read_file",
+                  "extract_document_text",
+                  "inspect_media",
+                  "search_files",
+                  "diagnose_project",
+                  "search_web",
+                  "open_page",
+                  "list_sources",
+                  "cite_sources",
+                  "research_web",
+                  "project_checks",
+                  "terminal_run",
+                  "process_start",
+                  "process_status",
+                  "process_stop",
+                  "create_workspace",
+                  "apply_batch",
+                  "undo_batch",
+                  "create_file",
+                  "create_web_page",
+                  "edit_file",
+                  "propose_repair",
+                  "apply_repair",
+                  "create_directory"
+                ],
+                "maxActions": 12
+              }
+            },
+            {
+              "seq": 6,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "observe",
+              "status": "completed",
+              "kind": "requirements.analyzed",
+              "title": "Requisitos analisados",
+              "detail": "Ambiguidade 0.00",
+              "payload": {
+                "questions": [],
+                "missing": [],
+                "ambiguityScore": 0
+              }
+            },
+            {
+              "seq": 7,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "observe",
+              "status": "completed",
+              "kind": "runtime.capabilities.observed",
+              "title": "Ferramentas do runtime observadas",
+              "detail": "34 ferramenta(s) registrada(s) e disponíveis para esta tarefa.",
+              "payload": {
+                "availableTools": [
+                  "inspect_code",
+                  "search_web",
+                  "open_page",
+                  "research_web",
+                  "list_tools",
+                  "apply_batch",
+                  "undo_batch",
+                  "list_sources",
+                  "cite_sources",
+                  "list_files",
+                  "path_info",
+                  "find_paths",
+                  "list_tree",
+                  "compare_files",
+                  "git_diff",
+                  "read_file",
+                  "search_files",
+                  "inspect_project",
+                  "diagnose_project",
+                  "propose_repair",
+                  "apply_repair",
+                  "project_checks",
+                  "terminal_run",
+                  "process_start",
+                  "process_status",
+                  "process_stop",
+                  "set_workspace",
+                  "create_workspace",
+                  "create_directory",
+                  "create_file",
+                  "create_web_page",
+                  "edit_file",
+                  "inspect_media",
+                  "extract_document_text"
+                ],
+                "allowedTools": [
+                  "inspect_code",
+                  "search_web",
+                  "open_page",
+                  "research_web",
+                  "list_tools",
+                  "apply_batch",
+                  "undo_batch",
+                  "list_sources",
+                  "cite_sources",
+                  "list_files",
+                  "path_info",
+                  "find_paths",
+                  "list_tree",
+                  "compare_files",
+                  "git_diff",
+                  "read_file",
+                  "search_files",
+                  "inspect_project",
+                  "diagnose_project",
+                  "propose_repair",
+                  "apply_repair",
+                  "project_checks",
+                  "terminal_run",
+                  "process_start",
+                  "process_status",
+                  "process_stop",
+                  "create_workspace",
+                  "create_directory",
+                  "create_file",
+                  "create_web_page",
+                  "edit_file",
+                  "inspect_media",
+                  "extract_document_text"
+                ]
+              }
+            },
+            {
+              "seq": 8,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "observe",
+              "status": "running",
+              "kind": "workspace.selected",
+              "title": "Workspace selecionado",
+              "detail": "/tmp/ia-programming-audit-rfffx2sj/new-algorithm"
+            },
+            {
+              "seq": 9,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "observe",
+              "status": "running",
+              "kind": "memory.updated",
+              "title": "Workspace registrado na memória",
+              "detail": "/tmp/ia-programming-audit-rfffx2sj/new-algorithm"
+            },
+            {
+              "seq": 10,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "observe",
+              "status": "running",
+              "kind": "workspace.inspected",
+              "title": "Estrutura inspecionada",
+              "detail": "Nenhuma base reconhecida; projeto inicial detectado.",
+              "payload": {
+                "workspace": "/tmp/ia-programming-audit-rfffx2sj/new-algorithm",
+                "initialProject": true
+              }
+            },
+            {
+              "seq": 11,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "plan",
+              "status": "running",
+              "kind": "plan.created",
+              "title": "Plano criado",
+              "detail": "4 etapa(s)"
+            },
+            {
+              "seq": 12,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "plan",
+              "status": "completed",
+              "kind": "engineering.preparation.selected",
+              "title": "Preparação de implementação definida",
+              "detail": "Sem leituras preparatórias disponíveis; explicitar as hipóteses antes de implementar.",
+              "payload": {
+                "objective": "Implemente em Python uma função interval_union que una intervalos fechados sobrepostos e escreva testes para entradas vazias, disjuntas, negativas e embaralhadas. Use apenas a biblioteca padrão. Execute os testes.",
+                "contextFiles": [],
+                "stages": [
+                  "Ler o contexto existente",
+                  "Definir a menor mudança coerente",
+                  "Implementar respeitando os contratos",
+                  "Verificar a alteração e relatar limitações"
+                ],
+                "constraints": [
+                  "Distinguir fatos lidos, hipóteses e decisões propostas.",
+                  "Explicar arquivos afetados, interfaces, dependências e critério observável de conclusão antes da escrita.",
+                  "Reutilizar a arquitetura e as dependências existentes; justificar qualquer nova dependência.",
+                  "Para novos sistemas, definir componentes, fluxo de dados, tratamento de erros e uma primeira entrega pequena.",
+                  "Leituras podem estar truncadas: consultar trechos adicionais relevantes antes de editar.",
+                  "Uma falha de leitura não comprova que o arquivo esteja vazio ou possa ser sobrescrito.",
+                  "Só afirmar que uma mudança foi validada quando houver resultado de verificação da versão atual."
+                ]
+              }
+            },
+            {
+              "seq": 13,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.requested",
+              "title": "Consultando o planejador local",
+              "detail": "Ciclo 1 de 12.",
+              "payload": {
+                "step": 1,
+                "limit": 12
+              }
+            },
+            {
+              "seq": 14,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.proposed",
+              "title": "Próxima ferramenta proposta",
+              "detail": "Workspace inspecionado. Vou localizar “interval_union” no código e abrir apenas o trecho encontrado.",
+              "payload": {
+                "tool": "search_files",
+                "backend": "agent-loop",
+                "traceId": "trace-f1b394c2786041fd85133df6ef9dc172"
+              }
+            },
+            {
+              "seq": 16,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "plan",
+              "status": "running",
+              "kind": "brain.action.validated",
+              "title": "Próxima ação validada pelo núcleo",
+              "detail": "Localizar ocorrências relacionadas ao pedido antes de ler arquivos.",
+              "payload": {
+                "planId": "task-ece39383-5c71-4846-871b-4ff32130506c-plan-1",
+                "actionId": "call-15da6632c5d64965994997566067345f",
+                "state": "planning",
+                "capability": "search_files",
+                "group": "read",
+                "effect": "none",
+                "retryStrategy": "safe_read",
+                "risk": "low",
+                "reversible": true
+              }
+            },
+            {
+              "seq": 17,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "act",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Executando ferramenta local",
+              "detail": "Executando a ação autorizada.",
+              "payload": {
+                "planId": "task-ece39383-5c71-4846-871b-4ff32130506c-plan-1",
+                "actionId": "call-15da6632c5d64965994997566067345f",
+                "tool": "search_files",
+                "attempt": 1,
+                "expectedEffect": "Localizar ocorrências relacionadas ao pedido antes de ler arquivos.",
+                "state": "executing",
+                "transition": {
+                  "from": "planning",
+                  "to": "executing"
+                }
+              }
+            },
+            {
+              "seq": 18,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "verify",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Conferindo resultado da ferramenta",
+              "detail": "Resultado bruto recebido; iniciando verificação.",
+              "payload": {
+                "planId": "task-ece39383-5c71-4846-871b-4ff32130506c-plan-1",
+                "actionId": "call-15da6632c5d64965994997566067345f",
+                "tool": "search_files",
+                "ok": true,
+                "summary": "Ferramenta concluída.",
+                "evidence": [
+                  "search_files: Ferramenta concluída."
+                ],
+                "state": "verifying",
+                "transition": {
+                  "from": "executing",
+                  "to": "verifying"
+                }
+              }
+            },
+            {
+              "seq": 19,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "plan",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Planejando próxima ação",
+              "detail": "A ação foi verificada; o núcleo decidirá o próximo passo da tarefa.",
+              "payload": {
+                "planId": "task-ece39383-5c71-4846-871b-4ff32130506c-plan-1",
+                "state": "planning",
+                "transition": {
+                  "from": "verifying",
+                  "to": "planning"
+                }
+              }
+            },
+            {
+              "seq": 20,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.requested",
+              "title": "Consultando o planejador local",
+              "detail": "Ciclo 2 de 12.",
+              "payload": {
+                "step": 2,
+                "limit": 12
+              }
+            },
+            {
+              "seq": 21,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.finished",
+              "title": "Planejador encerrou o ciclo",
+              "detail": "O gerador local não produziu uma proposta estruturada. Não há receita determinística compatível com este pedido. Nenhum arquivo foi alterado. Se você já tiver o código, envie dois ou mais arquivos como títulos `### caminho` seguidos de blocos de código; o agente poderá propor a criação desses arquivos para aprovação e depois verificar o projeto.",
+              "payload": {
+                "backend": "agent-loop",
+                "traceId": "trace-1bb200bacf2e40578a1508b93ccfe7d3"
+              }
+            },
+            {
+              "seq": 22,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "verify",
+              "status": "blocked",
+              "kind": "acceptance.evaluated",
+              "title": "Critérios de aceite pendentes",
+              "detail": "✓ delivery.summary: A tarefa precisa de uma síntese final baseada nos resultados observados.\n• build.change: A implementação precisa confirmar um efeito de escrita em arquivo, não apenas criar uma pasta.\n• build.verification: A implementação precisa passar por uma verificação executada e aprovada.",
+              "payload": {
+                "checks": [
+                  {
+                    "id": "delivery.summary",
+                    "passed": true,
+                    "detail": "A tarefa precisa de uma síntese final baseada nos resultados observados."
+                  },
+                  {
+                    "id": "build.change",
+                    "passed": false,
+                    "detail": "A implementação precisa confirmar um efeito de escrita em arquivo, não apenas criar uma pasta."
+                  },
+                  {
+                    "id": "build.verification",
+                    "passed": false,
+                    "detail": "A implementação precisa passar por uma verificação executada e aprovada."
+                  }
+                ]
+              }
+            },
+            {
+              "seq": 23,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "complete",
+              "status": "blocked",
+              "kind": "brain.state",
+              "title": "Etapa pausada",
+              "detail": "build.change: A implementação precisa confirmar um efeito de escrita em arquivo, não apenas criar uma pasta. build.verification: A implementação precisa passar por uma verificação executada e aprovada.",
+              "payload": {
+                "error": "build.change: A implementação precisa confirmar um efeito de escrita em arquivo, não apenas criar uma pasta. build.verification: A implementação precisa passar por uma verificação executada e aprovada.",
+                "state": "abstaining",
+                "transition": {
+                  "from": "planning",
+                  "to": "abstaining"
+                }
+              }
+            },
+            {
+              "seq": 24,
+              "taskId": "task-ece39383-5c71-4846-871b-4ff32130506c",
+              "phase": "complete",
+              "status": "blocked",
+              "kind": "acceptance.failed",
+              "title": "Tarefa pendente",
+              "detail": "build.change: A implementação precisa confirmar um efeito de escrita em arquivo, não apenas criar uma pasta. build.verification: A implementação precisa passar por uma verificação executada e aprovada.",
+              "payload": {
+                "pendingCriteria": [
+                  "build.change",
+                  "build.verification"
+                ]
+              }
+            }
+          ],
+          "finalText": "O gerador local não produziu uma proposta estruturada. Não há receita determinística compatível com este pedido. Nenhum arquivo foi alterado. Se você já tiver o código, envie dois ou mais arquivos como títulos `### caminho` seguidos de blocos de código; o agente poderá propor a criação desses arquivos para aprovação e depois verificar o projeto.",
+          "error": "build.change: A implementação precisa confirmar um efeito de escrita em arquivo, não apenas criar uma pasta. build.verification: A implementação precisa passar por uma verificação executada e aprovada."
+        },
+        "cognition": {
+          "schema": "agent-understanding/v1",
+          "task_id": "task-ece39383-5c71-4846-871b-4ff32130506c",
+          "preparation_id": "prep-4a860cfa-0e4e-47be-b802-a8b3d1877f91",
+          "status": "ready",
+          "objective": "build",
+          "interpretation": "Implemente em Python uma função interval_union que una intervalos fechados sobrepostos e escreva testes para entradas vazias, disjuntas, negativas e embaralhadas. Use apenas a biblioteca padrão. Execute os testes.",
+          "personality": {
+            "mode": "engineering",
+            "version": "local-personality/v1"
+          },
+          "assumptions": [],
+          "constraints": [
+            {
+              "text": "respeitar as tecnologias declaradas e suas restrições (trechos do pedido: Python)",
+              "source": "user",
+              "mandatory": true
+            },
+            {
+              "text": "respeitar o escopo restritivo declarado (trechos do pedido: apenas)",
+              "source": "user",
+              "mandatory": true
+            }
+          ],
+          "acceptance_criteria": [
+            "A entrega deve responder ao objetivo declarado sem inventar premissas.",
+            "A alteração deve ser executável ou ter a impossibilidade explicitamente demonstrada.",
+            "O resultado deve possuir verificação e pelo menos um caso de borda."
+          ],
+          "questions": [],
+          "next_step": "Inspecionar o workspace, preparar uma proposta de alteração e validar o resultado.",
+          "workspace": {
+            "root": "/tmp/ia-programming-audit-rfffx2sj/new-algorithm",
+            "manifests": [],
+            "test_files": [],
+            "truncated": false
+          },
+          "capabilities": {
+            "available": [
+              "inspect_project",
+              "inspect_code",
+              "list_tools",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "extract_document_text",
+              "inspect_media",
+              "search_files",
+              "diagnose_project",
+              "search_web",
+              "open_page",
+              "list_sources",
+              "cite_sources",
+              "research_web",
+              "project_checks",
+              "terminal_run",
+              "process_start",
+              "process_status",
+              "process_stop",
+              "create_workspace",
+              "apply_batch",
+              "undo_batch",
+              "create_file",
+              "create_web_page",
+              "edit_file",
+              "propose_repair",
+              "apply_repair",
+              "create_directory"
+            ],
+            "approval_required_for_writes": true
+          },
+          "context": {
+            "schema": "agent-context/v2",
+            "memory_items": 0,
+            "skills": 1,
+            "evidence": 0
+          }
+        },
+        "taskStorage": {
+          "saved": true,
+          "directory": "/home/victor/Documentos/IA Local do Zero/.agent-state/tasks"
+        },
+        "preparation": {
+          "id": "prep-4a860cfa-0e4e-47be-b802-a8b3d1877f91",
+          "reused": false
+        },
+        "awaitingApproval": false
+      },
+      "seconds": 0.963
+    }
+  ],
+  "passed": 8,
+  "total": 9,
+  "general_programming_mastery": false,
+  "limitations": [
+    "Ferramentas e geração são avaliadas separadamente; os casos não cobrem qualquer cenário.",
+    "A implementação nova é confrontada com cinco casos funcionais independentes."
+  ]
+}

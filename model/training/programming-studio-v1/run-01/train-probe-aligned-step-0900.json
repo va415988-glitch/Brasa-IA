@@ -1,0 +1,366 @@
+{
+  "schema": "own-programming-studio-eval/v1",
+  "checkpoint": "model/training/programming-studio-v1/run-01/snapshots/step-0900.safetensors",
+  "cases_source": "/tmp/own-programming-training-probe.jsonl",
+  "passed": 2,
+  "total": 4,
+  "cases": [
+    {
+      "id": "add",
+      "domain": "function",
+      "accepted_by_decoder": true,
+      "contract_valid": true,
+      "behavior_passed": true,
+      "generated_tests_passed": true,
+      "generation": {
+        "input_tokens": 45,
+        "max_tokens": 2048,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 512,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 512,
+          "forward_context_tokens": 512,
+          "effective_source_history_tokens": 768,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 512,
+            "forward_chunk": 512,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 4.0,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conditioned-prompt/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 786,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 45,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 384,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 768,
+          "compression_ratio_upper_bound": 17.47,
+          "bounded": true,
+          "mode": "prompt-anchor-v1",
+          "bounded_by": "decoder-anchor"
+        },
+        "conditioning": "prompt-anchor-v1",
+        "first_forward_input_tokens": 45,
+        "generated_tokens": 78,
+        "generation_elapsed_ms": 99.38,
+        "tokens_per_second": 784.87,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "accepted",
+        "quality_gate_result": "accepted"
+      },
+      "answer_preview": "{\"assumptions\":[],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"app.py\",\"content\":\"def add(left, right):\\n    return left + right\\n\"}},{\"tool\":\"create_file\",\"arguments\":{\"path\":\"test_app.py\",\"content\":\"import unittest\\nfrom app import add\\n\\nclass Behavior(unittest.TestCase):\\n    def test_result(self):\\n        self.assertEqual(add(*(3, 4)), 7)\\n\"}}]}",
+      "verification_excerpt": "----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+      "passed": true,
+      "seconds": 0.35
+    },
+    {
+      "id": "minimum",
+      "domain": "function",
+      "accepted_by_decoder": true,
+      "contract_valid": true,
+      "behavior_passed": true,
+      "generated_tests_passed": true,
+      "generation": {
+        "input_tokens": 49,
+        "max_tokens": 2048,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 512,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 512,
+          "forward_context_tokens": 512,
+          "effective_source_history_tokens": 768,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 512,
+            "forward_chunk": 512,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 4.0,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conditioned-prompt/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 791,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 49,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 384,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 768,
+          "compression_ratio_upper_bound": 16.14,
+          "bounded": true,
+          "mode": "prompt-anchor-v1",
+          "bounded_by": "decoder-anchor"
+        },
+        "conditioning": "prompt-anchor-v1",
+        "first_forward_input_tokens": 49,
+        "generated_tokens": 92,
+        "generation_elapsed_ms": 141.99,
+        "tokens_per_second": 647.92,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "accepted",
+        "quality_gate_result": "accepted"
+      },
+      "answer_preview": "{\"assumptions\":[],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"app.py\",\"content\":\"def minimum(left, right):\\n    return min(left, right)\\n\"}},{\"tool\":\"create_file\",\"arguments\":{\"path\":\"test_app.py\",\"content\":\"import unittest\\nfrom app import minimum\\n\\nclass Behavior(unittest.TestCase):\\n    def test_result(self):\\n        self.assertEqual(minimum(*(9, 2)), 2)\\n\"}}]}",
+      "verification_excerpt": "----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+      "passed": true,
+      "seconds": 0.39
+    },
+    {
+      "id": "ui-editorial-0",
+      "domain": "interface",
+      "accepted_by_decoder": true,
+      "contract_valid": true,
+      "behavior_passed": false,
+      "generated_tests_passed": false,
+      "generation": {
+        "input_tokens": 197,
+        "max_tokens": 2048,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 512,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 512,
+          "forward_context_tokens": 512,
+          "effective_source_history_tokens": 768,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 512,
+            "forward_chunk": 512,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 4.0,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conditioned-prompt/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 966,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 197,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 384,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 768,
+          "compression_ratio_upper_bound": 4.9,
+          "bounded": true,
+          "mode": "prompt-anchor-v1",
+          "bounded_by": "decoder-anchor"
+        },
+        "conditioning": "prompt-anchor-v1",
+        "first_forward_input_tokens": 170,
+        "generated_tokens": 1279,
+        "generation_elapsed_ms": 2338.98,
+        "tokens_per_second": 546.82,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "accepted",
+        "quality_gate_result": "accepted"
+      },
+      "answer_preview": "{\"assumptions\":[\"Direção visual: serifa, preto e creme, composição editorial, sem cartões.\"],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"index.html\",\"content\":\"<!doctype html>\\n<html lang=\\\"pt-BR\\\"><meta charset=\\\"utf-8\\\"><meta name=\\\"viewport\\\" content=\\\"width=device-width,initial-scale=1\\\">\\n<title>Meituras</title><style>*{box-sizing:border-box}body{margin:0;padding:clamp(24px,6vw,72px)}main{margin:auto}button{font:inherit;padding:14px 20px;min-height:44px;cursor:pointer}button:focus-visible{outline:3px solid currentColor;outline-offset:4px}set:4px}section{display:12px;flex-wrap",
+      "interface": {
+        "checks": {
+          "html": true,
+          "language": true,
+          "viewport": true,
+          "semantic_buttons": true,
+          "announced_output": true,
+          "focus_style": true,
+          "responsive_css": true,
+          "local_scripts": false
+        },
+        "scope": "counter-interactions-in-simulated-dom",
+        "rendered_in_browser": false,
+        "visual_quality_confirmed": false,
+        "css_fingerprint": {
+          "grid": false,
+          "serif": false,
+          "monospace": false,
+          "lined_paper": false,
+          "colors": [
+            "#101916",
+            "#abecb0"
+          ]
+        },
+        "behavior": {
+          "passed": false,
+          "executed": false,
+          "missing_script_paths": []
+        },
+        "passed": false
+      },
+      "passed": false,
+      "seconds": 2.36
+    },
+    {
+      "id": "ui-split-0",
+      "domain": "interface",
+      "accepted_by_decoder": true,
+      "contract_valid": true,
+      "behavior_passed": false,
+      "generated_tests_passed": false,
+      "generation": {
+        "input_tokens": 212,
+        "max_tokens": 2048,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 512,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 512,
+          "forward_context_tokens": 512,
+          "effective_source_history_tokens": 768,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 512,
+            "forward_chunk": 512,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 4.0,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conditioned-prompt/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 979,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 212,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 384,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 768,
+          "compression_ratio_upper_bound": 4.62,
+          "bounded": true,
+          "mode": "prompt-anchor-v1",
+          "bounded_by": "decoder-anchor"
+        },
+        "conditioning": "prompt-anchor-v1",
+        "first_forward_input_tokens": 170,
+        "generated_tokens": 1416,
+        "generation_elapsed_ms": 2451.15,
+        "tokens_per_second": 577.69,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "accepted",
+        "quality_gate_result": "accepted"
+      },
+      "answer_preview": "{\"assumptions\":[\"Direção visual: tipografia sem serifa, azul e laranja, painel dividido, números grandes.\"],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"index.html\",\"content\":\"<!doctype html>\\n<html lang=\\\"pt-BR\\\"><meta charset=\\\"utf-8\\\"><meta name=\\\"viewport\\\" content=\\\"width=device-width,initial-scale=1\\\">\\n<title>Ideias</title><style>*{box-sizing:border-box}body{margin:0;padding:clamp(24px,6vw,72px)}main{margin:auto}button{font:inherit;padding:14px 20px;min-height:44px;cursor:pointer}button:focus-visible{outline:3px solid currentColor;outline-offset:4px}set:4px}section{display:f",
+      "interface": {
+        "checks": {
+          "html": true,
+          "language": true,
+          "viewport": true,
+          "semantic_buttons": true,
+          "announced_output": true,
+          "focus_style": true,
+          "responsive_css": true,
+          "local_scripts": true
+        },
+        "scope": "counter-interactions-in-simulated-dom",
+        "rendered_in_browser": false,
+        "visual_quality_confirmed": false,
+        "css_fingerprint": {
+          "grid": false,
+          "serif": false,
+          "monospace": false,
+          "lined_paper": false,
+          "colors": [
+            "#152956",
+            "#f3f0e8",
+            "#ffb076"
+          ]
+        },
+        "behavior": {
+          "executed": true,
+          "passed": false,
+          "tests": [
+            {
+              "name": "restores saved count",
+              "passed": true,
+              "expected": 3,
+              "actual": 3
+            },
+            {
+              "name": "adds",
+              "passed": true,
+              "expected": 4,
+              "actual": 4
+            },
+            {
+              "name": "removes",
+              "passed": false,
+              "expected": 3,
+              "actual": 4
+            },
+            {
+              "name": "resets",
+              "passed": true,
+              "expected": 0,
+              "actual": 0
+            },
+            {
+              "name": "nonnegative",
+              "passed": true,
+              "expected": 0,
+              "actual": 0
+            },
+            {
+              "name": "storage error preserves usable state",
+              "passed": true,
+              "expected": 1,
+              "actual": 1
+            },
+            {
+              "name": "storage error is reported",
+              "passed": true
+            }
+          ]
+        },
+        "passed": false
+      },
+      "passed": false,
+      "seconds": 2.56
+    }
+  ],
+  "runtime_recipes_used": false,
+  "general_programming_mastery": false,
+  "browser_visual_quality_confirmed": false
+}

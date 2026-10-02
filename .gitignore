@@ -1,0 +1,10 @@
+.agent-state/
+/.env
+**/brasa-colab.env
+/.brasa-env-*
+/.env.example
+
+# Local Hugging Face corpus archives and extracted dataset (keep out of Git).
+/datasets/UltraData zipado/
+/datasets/UltraData-Code-Agent/
+/datasets/UltraData-SFT-Agent-2609/

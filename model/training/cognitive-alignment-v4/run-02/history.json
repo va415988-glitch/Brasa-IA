@@ -1,0 +1,60 @@
+[
+  {
+    "step": 400,
+    "validation": {
+      "generation": 0.9541279445605132,
+      "alignment": 0.8158416773378849,
+      "gate": 0.705217035228019,
+      "transition": 0.056027099100855376
+    },
+    "elapsed_seconds": 7.69
+  },
+  {
+    "step": 800,
+    "train": {
+      "generation": 0.3752952218055725,
+      "alignment": 0.005701157264411449,
+      "gate": 0.7017848491668701,
+      "transition": 0.023959288373589516
+    },
+    "validation": {
+      "generation": 0.44870604865450214,
+      "alignment": 0.3187138957763091,
+      "gate": 0.6238356572723002,
+      "transition": 0.019848592703236245
+    },
+    "elapsed_seconds": 839.19
+  },
+  {
+    "step": 1200,
+    "train": {
+      "generation": 0.10292470455169678,
+      "alignment": 0.007053126581013203,
+      "gate": 0.24137894809246063,
+      "transition": 0.02926136925816536
+    },
+    "validation": {
+      "generation": 0.12686357562399186,
+      "alignment": 0.21857003518380225,
+      "gate": 0.21269556590181757,
+      "transition": 0.016202369048502727
+    },
+    "elapsed_seconds": 1471.92
+  },
+  {
+    "step": 1600,
+    "train": {
+      "generation": 0.03802090883255005,
+      "alignment": 0.0004514589090831578,
+      "gate": 0.08240558952093124,
+      "transition": 0.006735207978636026
+    },
+    "validation": {
+      "generation": 0.09150605986370403,
+      "alignment": 0.5202701828069984,
+      "gate": 0.09280233584379381,
+      "transition": 0.0178031455131425
+    },
+    "elapsed_seconds": 1966.04
+  }
+]

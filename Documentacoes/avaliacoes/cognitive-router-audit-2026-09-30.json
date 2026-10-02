@@ -1,0 +1,476 @@
+{
+  "mode": "supervised-action-selection",
+  "passed": 32,
+  "total": 32,
+  "accepted": 31,
+  "confident_errors": 0,
+  "per_label": {
+    "direct": 1.0,
+    "web": 1.0,
+    "local": 1.0,
+    "clarify": 1.0
+  },
+  "gates": {
+    "accuracy_at_least_90pct": true,
+    "every_label_at_least_75pct": true,
+    "accepted_coverage_at_least_75pct": true,
+    "no_confident_errors": true
+  },
+  "eligible": true,
+  "cases": [
+    {
+      "goal": "Explique a ideia de imutabilidade.",
+      "label": "direct",
+      "score": 0.9520251750946045,
+      "accepted": true,
+      "scores": {
+        "direct": 0.9520251750946045,
+        "web": 0.023906460031867027,
+        "local": 0.014425764791667461,
+        "clarify": 0.009642555378377438
+      },
+      "expected": "direct",
+      "passed": true
+    },
+    {
+      "goal": "O que significa uma closure?",
+      "label": "direct",
+      "score": 0.9983397722244263,
+      "accepted": true,
+      "scores": {
+        "direct": 0.9983397722244263,
+        "web": 0.00040459795854985714,
+        "local": 0.0008956248057074845,
+        "clarify": 0.0003598674957174808
+      },
+      "expected": "direct",
+      "passed": true
+    },
+    {
+      "goal": "Me ensine os fundamentos de uma máquina de estados.",
+      "label": "direct",
+      "score": 0.995848536491394,
+      "accepted": true,
+      "scores": {
+        "direct": 0.995848536491394,
+        "web": 0.0012305821292102337,
+        "local": 0.002183459931984544,
+        "clarify": 0.0007372807594947517
+      },
+      "expected": "direct",
+      "passed": true
+    },
+    {
+      "goal": "Descreva o conceito de injeção de dependências.",
+      "label": "direct",
+      "score": 0.9149743914604187,
+      "accepted": true,
+      "scores": {
+        "direct": 0.9149743914604187,
+        "web": 0.06179323047399521,
+        "local": 0.0115590151399374,
+        "clarify": 0.011673206463456154
+      },
+      "expected": "direct",
+      "passed": true
+    },
+    {
+      "goal": "Dê um exemplo de uma operação assíncrona.",
+      "label": "direct",
+      "score": 0.9845114946365356,
+      "accepted": true,
+      "scores": {
+        "direct": 0.9845114946365356,
+        "web": 0.01011064276099205,
+        "local": 0.002225886331871152,
+        "clarify": 0.003151898505166173
+      },
+      "expected": "direct",
+      "passed": true
+    },
+    {
+      "goal": "Defina serialização.",
+      "label": "direct",
+      "score": 0.8931949138641357,
+      "accepted": true,
+      "scores": {
+        "direct": 0.8931949138641357,
+        "web": 0.03497907519340515,
+        "local": 0.029630379751324654,
+        "clarify": 0.0421956442296505
+      },
+      "expected": "direct",
+      "passed": true
+    },
+    {
+      "goal": "Qual a diferença entre um conjunto e uma lista?",
+      "label": "direct",
+      "score": 0.9984086155891418,
+      "accepted": true,
+      "scores": {
+        "direct": 0.9984086155891418,
+        "web": 0.0005215550190769136,
+        "local": 0.000746218953281641,
+        "clarify": 0.00032361887861043215
+      },
+      "expected": "direct",
+      "passed": true
+    },
+    {
+      "goal": "Como funciona um iterador?",
+      "label": "direct",
+      "score": 0.9682672023773193,
+      "accepted": true,
+      "scores": {
+        "direct": 0.9682672023773193,
+        "web": 0.001544145867228508,
+        "local": 0.004069885239005089,
+        "clarify": 0.026118723675608635
+      },
+      "expected": "direct",
+      "passed": true
+    },
+    {
+      "goal": "Confirme a versão atual do Hypercorn na documentação oficial.",
+      "label": "web",
+      "score": 0.9986231327056885,
+      "accepted": true,
+      "scores": {
+        "direct": 0.00029196887044236064,
+        "web": 0.9986231327056885,
+        "local": 0.0007976202177815139,
+        "clarify": 0.0002872732584364712
+      },
+      "expected": "web",
+      "passed": true
+    },
+    {
+      "goal": "Qual foi o lançamento estável mais novo do Gleam?",
+      "label": "web",
+      "score": 0.9979204535484314,
+      "accepted": true,
+      "scores": {
+        "direct": 0.0003428165218792856,
+        "web": 0.9979204535484314,
+        "local": 0.0009756215149536729,
+        "clarify": 0.0007611539913341403
+      },
+      "expected": "web",
+      "passed": true
+    },
+    {
+      "goal": "Busque informações de hoje sobre o preço do Wasabi.",
+      "label": "web",
+      "score": 0.9985345602035522,
+      "accepted": true,
+      "scores": {
+        "direct": 0.0008146789041347802,
+        "web": 0.9985345602035522,
+        "local": 0.00043495147838257253,
+        "clarify": 0.0002158112038159743
+      },
+      "expected": "web",
+      "passed": true
+    },
+    {
+      "goal": "Preciso das novidades recentes do Astro.",
+      "label": "web",
+      "score": 0.9970441460609436,
+      "accepted": true,
+      "scores": {
+        "direct": 0.0004378943413030356,
+        "web": 0.9970441460609436,
+        "local": 0.0008431820315308869,
+        "clarify": 0.0016748275374993682
+      },
+      "expected": "web",
+      "passed": true
+    },
+    {
+      "goal": "Encontre fontes confiáveis sobre o suporte atual do Alpine Linux.",
+      "label": "web",
+      "score": 0.999257504940033,
+      "accepted": true,
+      "scores": {
+        "direct": 0.00035331735853105783,
+        "web": 0.999257504940033,
+        "local": 0.00019151529704686254,
+        "clarify": 0.00019761253497563303
+      },
+      "expected": "web",
+      "passed": true
+    },
+    {
+      "goal": "O que mudou no SolidJS nesta semana?",
+      "label": "web",
+      "score": 0.9927954077720642,
+      "accepted": true,
+      "scores": {
+        "direct": 0.0019169115694239736,
+        "web": 0.9927954077720642,
+        "local": 0.003927826881408691,
+        "clarify": 0.001359804649837315
+      },
+      "expected": "web",
+      "passed": true
+    },
+    {
+      "goal": "Verifique na internet a versão estável do NATS.",
+      "label": "web",
+      "score": 0.9867621064186096,
+      "accepted": true,
+      "scores": {
+        "direct": 0.0012505798367783427,
+        "web": 0.9867621064186096,
+        "local": 0.010394525714218616,
+        "clarify": 0.0015928433276712894
+      },
+      "expected": "web",
+      "passed": true
+    },
+    {
+      "goal": "Consulte https://example.org/manual e confira a versão suportada.",
+      "label": "web",
+      "score": 0.5181043148040771,
+      "accepted": false,
+      "scores": {
+        "direct": 0.005990833044052124,
+        "web": 0.5181043148040771,
+        "local": 0.46847790479660034,
+        "clarify": 0.007426907308399677
+      },
+      "expected": "web",
+      "passed": true
+    },
+    {
+      "goal": "Veja o valor definido em porta-servico.txt.",
+      "label": "local",
+      "score": 0.9946401715278625,
+      "accepted": true,
+      "scores": {
+        "direct": 0.0026047308929264545,
+        "web": 0.0012500608572736382,
+        "local": 0.9946401715278625,
+        "clarify": 0.001505028223618865
+      },
+      "expected": "local",
+      "passed": true
+    },
+    {
+      "goal": "Abra requisitos-locais.json para conferir a versão exigida.",
+      "label": "local",
+      "score": 0.923266589641571,
+      "accepted": true,
+      "scores": {
+        "direct": 0.026707159355282784,
+        "web": 0.035577211529016495,
+        "local": 0.923266589641571,
+        "clarify": 0.014449096284806728
+      },
+      "expected": "local",
+      "passed": true
+    },
+    {
+      "goal": "Informe o runtime registrado no arquivo infraestrutura.toml.",
+      "label": "local",
+      "score": 0.9981583952903748,
+      "accepted": true,
+      "scores": {
+        "direct": 0.0007869758410379291,
+        "web": 0.0008158268756233156,
+        "local": 0.9981583952903748,
+        "clarify": 0.0002388106076978147
+      },
+      "expected": "local",
+      "passed": true
+    },
+    {
+      "goal": "Leia o arquivo manual-interno.md e diga quais requisitos ele registra.",
+      "label": "local",
+      "score": 0.9970154762268066,
+      "accepted": true,
+      "scores": {
+        "direct": 0.0010460740886628628,
+        "web": 0.001263091922737658,
+        "local": 0.9970154762268066,
+        "clarify": 0.0006753472262062132
+      },
+      "expected": "local",
+      "passed": true
+    },
+    {
+      "goal": "Sem acessar a internet, confira compatibilidade-local.txt.",
+      "label": "local",
+      "score": 0.9050657153129578,
+      "accepted": true,
+      "scores": {
+        "direct": 0.013540188781917095,
+        "web": 0.012965078465640545,
+        "local": 0.9050657153129578,
+        "clarify": 0.06842902302742004
+      },
+      "expected": "local",
+      "passed": true
+    },
+    {
+      "goal": "O que está configurado em staging.yaml neste workspace?",
+      "label": "local",
+      "score": 0.9985186457633972,
+      "accepted": true,
+      "scores": {
+        "direct": 0.0006883052992634475,
+        "web": 0.0005535358213819563,
+        "local": 0.9985186457633972,
+        "clarify": 0.00023945243447087705
+      },
+      "expected": "local",
+      "passed": true
+    },
+    {
+      "goal": "Qual valor foi salvo no arquivo ambiente-teste.json?",
+      "label": "local",
+      "score": 0.9989620447158813,
+      "accepted": true,
+      "scores": {
+        "direct": 9.773689089342952e-05,
+        "web": 0.0005631016683764756,
+        "local": 0.9989620447158813,
+        "clarify": 0.0003770920156966895
+      },
+      "expected": "local",
+      "passed": true
+    },
+    {
+      "goal": "Quero consultar o conteúdo de instrucoes.txt.",
+      "label": "local",
+      "score": 0.9764209389686584,
+      "accepted": true,
+      "scores": {
+        "direct": 0.00747327134013176,
+        "web": 0.012609756551682949,
+        "local": 0.9764209389686584,
+        "clarify": 0.003495998913422227
+      },
+      "expected": "local",
+      "passed": true
+    },
+    {
+      "goal": "Qual dessas alternativas funciona?",
+      "label": "clarify",
+      "score": 0.936510443687439,
+      "accepted": true,
+      "scores": {
+        "direct": 0.0526370070874691,
+        "web": 0.00926955696195364,
+        "local": 0.0015829376643523574,
+        "clarify": 0.936510443687439
+      },
+      "expected": "clarify",
+      "passed": true
+    },
+    {
+      "goal": "Essa é a opção adequada?",
+      "label": "clarify",
+      "score": 0.9978912472724915,
+      "accepted": true,
+      "scores": {
+        "direct": 0.0005824023392051458,
+        "web": 0.0009855864336714149,
+        "local": 0.0005408189026638865,
+        "clarify": 0.9978912472724915
+      },
+      "expected": "clarify",
+      "passed": true
+    },
+    {
+      "goal": "E aquele outro?",
+      "label": "clarify",
+      "score": 0.9614613652229309,
+      "accepted": true,
+      "scores": {
+        "direct": 0.007481572683900595,
+        "web": 0.021802928298711777,
+        "local": 0.009254196658730507,
+        "clarify": 0.9614613652229309
+      },
+      "expected": "clarify",
+      "passed": true
+    },
+    {
+      "goal": "Você pode explicar isso?",
+      "label": "clarify",
+      "score": 0.9987840056419373,
+      "accepted": true,
+      "scores": {
+        "direct": 0.00043768546311184764,
+        "web": 0.0004906341200694442,
+        "local": 0.00028771793586201966,
+        "clarify": 0.9987840056419373
+      },
+      "expected": "clarify",
+      "passed": true
+    },
+    {
+      "goal": "Dá para usar aquilo?",
+      "label": "clarify",
+      "score": 0.9874598979949951,
+      "accepted": true,
+      "scores": {
+        "direct": 0.0036902371793985367,
+        "web": 0.000821451423689723,
+        "local": 0.008028457872569561,
+        "clarify": 0.9874598979949951
+      },
+      "expected": "clarify",
+      "passed": true
+    },
+    {
+      "goal": "Qual destas opções você escolheria?",
+      "label": "clarify",
+      "score": 0.9942276477813721,
+      "accepted": true,
+      "scores": {
+        "direct": 0.0008550766506232321,
+        "web": 0.003169639967381954,
+        "local": 0.0017475791973993182,
+        "clarify": 0.9942276477813721
+      },
+      "expected": "clarify",
+      "passed": true
+    },
+    {
+      "goal": "Ela serve para o que preciso?",
+      "label": "clarify",
+      "score": 0.9879170060157776,
+      "accepted": true,
+      "scores": {
+        "direct": 0.007995456457138062,
+        "web": 0.002913589356467128,
+        "local": 0.0011739017209038138,
+        "clarify": 0.9879170060157776
+      },
+      "expected": "clarify",
+      "passed": true
+    },
+    {
+      "goal": "Esse é compatível com aquilo?",
+      "label": "clarify",
+      "score": 0.9995508790016174,
+      "accepted": true,
+      "scores": {
+        "direct": 0.00027238138136453927,
+        "web": 9.536524885334074e-05,
+        "local": 8.13563383417204e-05,
+        "clarify": 0.9995508790016174
+      },
+      "expected": "clarify",
+      "passed": true
+    }
+  ],
+  "candidate_sha256": "e3911c2e8c3848888f40e9b2ed1aa0a587048dee6c1519621473826bead23b7c",
+  "evaluation_sha256": "dcc3709b4b9a0460f6366d40a0d0aed2e06ddc44432e4f917259d4c59912a623",
+  "limitations": [
+    "Does not evaluate free-form reasoning or answer generation",
+    "Portuguese, short requests; synthetic evaluation authored locally"
+  ]
+}

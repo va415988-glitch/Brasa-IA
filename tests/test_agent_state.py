@@ -53,6 +53,21 @@ class AgentStateTests(unittest.TestCase):
             self.assertEqual(skill['source_repository'], 'https://github.com/example/repo')
             self.assertEqual(skill['technologies'], ['JavaScript'])
 
+    def test_research_persists_learning_contract_without_approving_skill(self):
+        with tempfile.TemporaryDirectory() as directory:
+            state = AgentState(Path(directory) / 'skills.json')
+            contract = {
+                'schema': 'learning-contract/v1', 'domain': 'writing',
+                'practice': {'tasks': [{'id': 'unseen-transfer', 'mode': 'model-review'}]},
+            }
+            skill = state.record_research(
+                'redação', sources=[{'url': 'https://example.org/guide'}],
+                independent_hosts=1, documents=1, status='provisional',
+                learning_plan=contract)
+            self.assertEqual(skill['learning_contract']['domain'], 'writing')
+            self.assertEqual(skill['status'], 'partially_known')
+            self.assertEqual(skill['practice']['passed'], 0)
+
     def test_practice_approval_closes_matching_curriculum_gap(self):
         with tempfile.TemporaryDirectory() as directory:
             state = AgentState(Path(directory) / 'skills.json')

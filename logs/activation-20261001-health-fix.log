@@ -1,0 +1,17 @@
+Compilando o runtime Rust...
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.18s
+/home/victor/Documentos/IA Local do Zero/python/model.py:57: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.blocks = nn.TransformerEncoder(block, num_layers=layers)
+Iniciando IA Local do Zero em http://127.0.0.1:3000
+Node do AgentCore: /home/victor/.nvm/versions/node/v24.21.0/bin/node
+Checkpoint próprio: /home/victor/Documentos/IA Local do Zero/model/godmode/context-32768-v1/candidate.safetensors · contexto: execução 32768 tokens; treino 512 tokens; pesos, tokenizer e forward verificados · elegibilidade semântica exige avaliação separada
+Busca web: Brave LLM Context habilitada (trechos transitórios; chave mantida no runtime)
+Acervo Brave: armazenamento desabilitado (padrão seguro)
+Pressione Ctrl+C para encerrar o runtime e o worker do modelo.
+Encerrando serviço anterior da IA Local na porta 3000 (PID 79741).
+Interface local: http://127.0.0.1:3000
+Assistente local iniciado em http://127.0.0.1:3101 (análise e acervo)
+/home/victor/Documentos/IA Local do Zero/python/model.py:57: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.blocks = nn.TransformerEncoder(block, num_layers=layers)
+AgentCore TypeScript iniciado em http://127.0.0.1:3200
+AgentCore TypeScript em http://127.0.0.1:3200

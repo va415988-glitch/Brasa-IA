@@ -6,7 +6,8 @@ import hashlib
 def chunk_text(text: str, tokenizer, chunk_tokens: int = 2048) -> list[dict]:
     if chunk_tokens < 128:
         raise ValueError("chunk_tokens deve ser pelo menos 128")
-    ids = tokenizer.encode(str(text))
+    encode = getattr(tokenizer, "encode_fast", tokenizer.encode)
+    ids = encode(str(text))
     chunks = []
     for index in range(0, len(ids), chunk_tokens):
         part = ids[index:index + chunk_tokens]

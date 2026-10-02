@@ -1,0 +1,46 @@
+{
+  "baseline_validation_loss": 30.4021216040259,
+  "initial_validation_loss": 30.4021216040259,
+  "initialization_mode": "continue-weights",
+  "candidate_validation_loss": 9.012280163464245,
+  "baseline_heldout_loss": 29.49802310909845,
+  "candidate_heldout_loss": 9.100901375829647,
+  "best_step": 60,
+  "completed_steps": 150,
+  "training_seconds": 108.02,
+  "baseline_answers": [
+    {
+      "prompt": "<|user|>\nQual a diferença entre lista e tupla em Python?\n<|assistant|>\n",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nComo validar uma idade em Python?\n<|assistant|>\n",
+      "answer": "Uma variável é um nome associado a um valor. Em Python, a atribuição define essa associação e o tipo vem do valor armazenado; por exemplo, idade = 30.\n",
+      "tokens": 52,
+      "hit_limit": false
+    }
+  ],
+  "candidate_answers": [
+    {
+      "prompt": "<|user|>\nQual a diferença entre lista e tupla em Python?\n<|assistant|>\n",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nComo validar uma idade em Python?\n<|assistant|>\n",
+      "answer": "Sefo aga um valorMMMo.\n",
+      "tokens": 13,
+      "hit_limit": false
+    }
+  ],
+  "promoted": false,
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

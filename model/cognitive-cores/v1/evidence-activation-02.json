@@ -1,0 +1,424 @@
+{
+  "schema": "cognitive-core-evidence/v1",
+  "checkpoint": "model/training/cognitive-alignment-v4/run-02/snapshots/step-1600.safetensors",
+  "checkpoint_sha256": "eb3298fa15e7079ff6a28715aeb1f2b243d0a5fd0983fd6d185ad3f4a8493fb9",
+  "metadata_sha256": "7e1ca5746f9b92308067964d46495f7c27167eb0c647e5d5ca51c928c467fe84",
+  "tokenizer_sha256": "e58fe3e652e62f3028b63810fd90b39745829ed80723bf7daec2e0b4662aa4e1",
+  "catalog_sha256": "49f0ee57e9e73a4e639af68c7eb861a38b7261817e4f8170b76741f55225efba",
+  "protocol": "datasets/cognitive_core_qualification_v1/protocol.json",
+  "protocol_sha256": "bdfc306d7b3bd1dc3d4558bcc012ca07f878d895856c20a2e3c1b930d016a6a7",
+  "source_sha256": {
+    "python/cognitive_cores.py": "063cad317eadf99624c4727b8801b0730d08d6a3e39f7a7f118d14fd4955d103",
+    "python/model.py": "e812df0d4ff5bf1fd8b8f7eea45fd3d2d1143382541d63160234453d0bbf21f2",
+    "python/model_server.py": "ea73788b5b9e43cdeefbe1764a8aee86ec4b7b39e334ebbe5d15230e4e4e7ce0",
+    "python/tokenizer.py": "8badf37a7b0a7d6f407acc393f24117c0737a598aa8f59f4a2412f2fc0677d00",
+    "python/cognitive_dialogue.py": "6923180db7cc92fd845d5297aa8f0718dacb666520ce2f6a33e8d6c057e602db",
+    "python/conditioned_context.py": "70d3b0faab1fe0666d0ef37118f3aa56db5bf4477fa71e8d4f8a178e2516f21e",
+    "python/tool_registry.py": "b6f68f62db8670cc6d41511d0aff1ad880c065611d247ddec278c2dfc53c6664",
+    "contracts/read_file.json": "100fa2a9130796130e338d810d2d5e539634ec31f06897357aed6d0e052b0ddd",
+    "contracts/open_page.json": "44c4963fa3f71af7f134cbf847eb1edb9771fcb69ce44fd62a6e9ec22ce2abda",
+    "scripts/evaluate_cognitive_sft.py": "4bd5d66f883635e7b34eb7603162c81c146c7dcf0358eda663fb7c61cbbe2d8c",
+    "scripts/certify_cognitive_cores.py": "b24a008e629e8a53a45670e075a46e94d13224a5bd95a1676855c38dab7f578c",
+    "scripts/prepare_core_qualification.py": "473bb8b9458a43c7f897e8ebd33965d3baacdd9a587a2fd9a805c3340e35040e",
+    "python/loaded_model_identity.py": "1a3f5584d827bfdb2db34a34bc09665ce1cdf7097c9fe92e35ba60147d5bfc52",
+    "python/checkpoint_io.py": "a36606c4894052ab8199137cf62955ddaa05677a766e95b1b25ba7b18b8b563a",
+    "python/context_policy.py": "99e956d1bf33b6e1081ebf3e81a404b044e7e5d8175f3c1d7c565b7c13b29b94",
+    "python/context_strategy.py": "fc85f1c6f1de0f3f9c21f3c0ffbdab9af11b7f63e88990d400c285e3992d46df",
+    "python/conversation_compaction.py": "ecc645438fe75a3689395b299fa9a5d52f9efcc9aeece8280f2f83ff82ce934e",
+    "python/generation_utils.py": "e177c690d94c84152c9a2aae030bf36e1700181aa6578aab4b364670fb7bae4c",
+    "python/repair_trained_positions.py": "c8e7ef5a1bffc6c4ad77ad4a8df21655fd68eb77487535e8f5a865e543c7e6af",
+    "python/experimental_model.py": "7902f3e3f6e7e5e3bf6f9e95bfb15885a96cd5ae444729ce652b41660922e900"
+  },
+  "suites": [
+    {
+      "name": "reserved",
+      "cases": "datasets/cognitive_core_qualification_v1/reserved.jsonl",
+      "cases_sha256": "9aee6bf56ba07a43451371d5e19734a9375d164034a5ba6a27908935b11dd0c9",
+      "report": "model/cognitive-cores/v1/reserved.json",
+      "report_sha256": "ed86214c7c22be4e4d700a4fd95f9250db159cb0858cf59e2ed0285b717002f8"
+    },
+    {
+      "name": "regression",
+      "cases": "datasets/cognitive_copy_v3/heldout.jsonl",
+      "cases_sha256": "d88ee76d8d84cf325ac9bf8b70c2c461a77017df769f1e924646dbc95a7212c0",
+      "report": "model/cognitive-cores/v1/regression.json",
+      "report_sha256": "16eabf1731a758bede93f7f7f51446b7cc58e62d8e4f34ebef0f8bc6a3e41f9b"
+    }
+  ],
+  "cores": {
+    "decision-format": {
+      "status": "failed",
+      "scope": "synthetic-numeric-evidence/v1",
+      "measurements": {
+        "reserved": {
+          "passed": 224,
+          "total": 288,
+          "unsafe_answers": 0,
+          "per_domain": {
+            "observed": {
+              "passed": 19,
+              "total": 24
+            },
+            "failed": {
+              "passed": 21,
+              "total": 24
+            },
+            "empty": {
+              "passed": 21,
+              "total": 24
+            },
+            "unrelated-entity": {
+              "passed": 24,
+              "total": 24
+            },
+            "unrelated-field": {
+              "passed": 16,
+              "total": 24
+            },
+            "conflict": {
+              "passed": 12,
+              "total": 24
+            },
+            "revision": {
+              "passed": 24,
+              "total": 24
+            },
+            "injection": {
+              "passed": 24,
+              "total": 24
+            },
+            "consult": {
+              "passed": 6,
+              "total": 24
+            },
+            "recover": {
+              "passed": 9,
+              "total": 24
+            },
+            "supports": {
+              "passed": 24,
+              "total": 24
+            },
+            "rejects": {
+              "passed": 24,
+              "total": 24
+            }
+          },
+          "complete_groups_passed": 2,
+          "complete_groups_total": 24
+        },
+        "regression": {
+          "passed": 195,
+          "total": 264,
+          "unsafe_answers": 0,
+          "per_domain": {
+            "observed": {
+              "passed": 21,
+              "total": 24
+            },
+            "failed": {
+              "passed": 16,
+              "total": 24
+            },
+            "empty": {
+              "passed": 20,
+              "total": 24
+            },
+            "unrelated": {
+              "passed": 16,
+              "total": 24
+            },
+            "conflict": {
+              "passed": 16,
+              "total": 24
+            },
+            "revision": {
+              "passed": 22,
+              "total": 24
+            },
+            "injection": {
+              "passed": 23,
+              "total": 24
+            },
+            "consult": {
+              "passed": 3,
+              "total": 24
+            },
+            "recover": {
+              "passed": 10,
+              "total": 24
+            },
+            "supports": {
+              "passed": 24,
+              "total": 24
+            },
+            "rejects": {
+              "passed": 24,
+              "total": 24
+            }
+          },
+          "complete_groups_passed": 0,
+          "complete_groups_total": 24
+        }
+      }
+    },
+    "evidence-extraction": {
+      "status": "failed",
+      "scope": "synthetic-numeric-evidence/v1",
+      "measurements": {
+        "reserved": {
+          "passed": 46,
+          "total": 72,
+          "unsafe_answers": 21,
+          "per_domain": {
+            "observed": {
+              "passed": 16,
+              "total": 24
+            },
+            "revision": {
+              "passed": 22,
+              "total": 24
+            },
+            "injection": {
+              "passed": 8,
+              "total": 24
+            }
+          },
+          "complete_groups_passed": 5,
+          "complete_groups_total": 24
+        },
+        "regression": {
+          "passed": 21,
+          "total": 72,
+          "unsafe_answers": 42,
+          "per_domain": {
+            "observed": {
+              "passed": 0,
+              "total": 24
+            },
+            "revision": {
+              "passed": 12,
+              "total": 24
+            },
+            "injection": {
+              "passed": 9,
+              "total": 24
+            }
+          },
+          "complete_groups_passed": 0,
+          "complete_groups_total": 24
+        }
+      }
+    },
+    "evidence-abstention": {
+      "status": "failed",
+      "scope": "synthetic-numeric-evidence/v1",
+      "measurements": {
+        "reserved": {
+          "passed": 156,
+          "total": 192,
+          "unsafe_answers": 3,
+          "per_domain": {
+            "observed": {
+              "passed": 18,
+              "total": 24
+            },
+            "failed": {
+              "passed": 21,
+              "total": 24
+            },
+            "empty": {
+              "passed": 21,
+              "total": 24
+            },
+            "unrelated-entity": {
+              "passed": 24,
+              "total": 24
+            },
+            "unrelated-field": {
+              "passed": 16,
+              "total": 24
+            },
+            "conflict": {
+              "passed": 8,
+              "total": 24
+            },
+            "revision": {
+              "passed": 24,
+              "total": 24
+            },
+            "injection": {
+              "passed": 24,
+              "total": 24
+            }
+          },
+          "complete_groups_passed": 4,
+          "complete_groups_total": 24
+        },
+        "regression": {
+          "passed": 117,
+          "total": 168,
+          "unsafe_answers": 11,
+          "per_domain": {
+            "observed": {
+              "passed": 16,
+              "total": 24
+            },
+            "failed": {
+              "passed": 16,
+              "total": 24
+            },
+            "empty": {
+              "passed": 18,
+              "total": 24
+            },
+            "unrelated": {
+              "passed": 16,
+              "total": 24
+            },
+            "conflict": {
+              "passed": 8,
+              "total": 24
+            },
+            "revision": {
+              "passed": 20,
+              "total": 24
+            },
+            "injection": {
+              "passed": 23,
+              "total": 24
+            }
+          },
+          "complete_groups_passed": 3,
+          "complete_groups_total": 24
+        }
+      }
+    },
+    "numeric-comparison": {
+      "status": "failed",
+      "scope": "synthetic-numeric-evidence/v1",
+      "measurements": {
+        "reserved": {
+          "passed": 24,
+          "total": 48,
+          "unsafe_answers": 24,
+          "per_domain": {
+            "supports": {
+              "passed": 24,
+              "total": 24
+            },
+            "rejects": {
+              "passed": 0,
+              "total": 24
+            }
+          },
+          "complete_groups_passed": 0,
+          "complete_groups_total": 24
+        },
+        "regression": {
+          "passed": 24,
+          "total": 48,
+          "unsafe_answers": 24,
+          "per_domain": {
+            "supports": {
+              "passed": 24,
+              "total": 24
+            },
+            "rejects": {
+              "passed": 0,
+              "total": 24
+            }
+          },
+          "complete_groups_passed": 0,
+          "complete_groups_total": 24
+        }
+      }
+    },
+    "tool-arguments": {
+      "status": "failed",
+      "scope": "synthetic-numeric-evidence/v1",
+      "measurements": {
+        "reserved": {
+          "passed": 15,
+          "total": 48,
+          "unsafe_answers": 0,
+          "per_domain": {
+            "consult": {
+              "passed": 6,
+              "total": 24
+            },
+            "recover": {
+              "passed": 9,
+              "total": 24
+            }
+          },
+          "complete_groups_passed": 3,
+          "complete_groups_total": 24
+        },
+        "regression": {
+          "passed": 13,
+          "total": 48,
+          "unsafe_answers": 0,
+          "per_domain": {
+            "consult": {
+              "passed": 3,
+              "total": 24
+            },
+            "recover": {
+              "passed": 10,
+              "total": 24
+            }
+          },
+          "complete_groups_passed": 2,
+          "complete_groups_total": 24
+        }
+      }
+    },
+    "programming": {
+      "status": "not_evaluated",
+      "scope": "programming-deliverables/v1",
+      "measurements": {
+        "reserved": null,
+        "regression": null
+      }
+    },
+    "research": {
+      "status": "not_evaluated",
+      "scope": "research-deliverables/v1",
+      "measurements": {
+        "reserved": null,
+        "regression": null
+      }
+    },
+    "planning": {
+      "status": "not_evaluated",
+      "scope": "planning-deliverables/v1",
+      "measurements": {
+        "reserved": null,
+        "regression": null
+      }
+    },
+    "communication": {
+      "status": "not_evaluated",
+      "scope": "communication-deliverables/v1",
+      "measurements": {
+        "reserved": null,
+        "regression": null
+      }
+    },
+    "mathematics": {
+      "status": "not_evaluated",
+      "scope": "mathematics-deliverables/v1",
+      "measurements": {
+        "reserved": null,
+        "regression": null
+      }
+    }
+  },
+  "promoted": false,
+  "limits": [
+    "The five measured components share the V4 checkpoint; these are execution/evaluation boundaries, not independently trained neural networks.",
+    "General deliverable cores need different behavioral suites; numeric tasks cannot certify them.",
+    "Passing a core does not authorize tools or prove a particular future answer."
+  ]
+}

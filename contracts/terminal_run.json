@@ -1,0 +1,45 @@
+{
+  "name": "terminal_run",
+  "version": "1.0.0",
+  "description": "Executa um perfil fixo de inspeção ou verificação no workspace. Nunca aceita executável, argumentos livres nem shell.",
+  "side_effects": "Verificações do projeto podem executar o código e os scripts de teste definidos pelo próprio projeto; operações git são somente leitura.",
+  "requires_approval": true,
+  "risk": "medium",
+  "capabilities": [
+    "process.exec",
+    "workspace.read"
+  ],
+  "idempotent": false,
+  "timeout_ms": 120000,
+  "arguments": {
+    "type": "object",
+    "properties": {
+      "operation": {
+        "type": "string",
+        "enum": ["git_status", "git_diff_stat", "project_check"]
+      },
+      "check": {
+        "type": "string",
+        "enum": ["auto", "all", "cargo-test", "npm-test", "npm-check", "npm-build", "pytest", "unittest", "node-test", "go-test", "python-syntax", "node-syntax", "cpp-syntax", "c-syntax", "shell-syntax"]
+      }
+    },
+    "required": ["operation"],
+    "additionalProperties": false
+  },
+  "preconditions": [
+    "workspace selecionado",
+    "aprovação explícita para cada execução",
+    "operação pertencente à lista fixa permitida"
+  ],
+  "effects": [
+    "executa apenas git status --short, git diff --stat ou um verificador reconhecido do projeto",
+    "captura stdout/stderr limitados",
+    "registra o início e a conclusão na atividade"
+  ],
+  "rollback": null,
+  "retry_policy": "never_after_ambiguous_timeout",
+  "result": {
+    "type": "object",
+    "required": ["operation", "command", "stdout", "stderr"]
+  }
+}

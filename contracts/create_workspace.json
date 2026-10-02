@@ -1,0 +1,40 @@
+{
+  "name": "create_workspace",
+  "description": "Cria e seleciona um diretório de projeto local; requer aprovação explícita.",
+  "side_effects": true,
+  "requires_approval": true,
+  "risk": "write",
+  "arguments": {
+    "type": "object",
+    "required": [
+      "path"
+    ],
+    "properties": {
+      "path": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Caminho absoluto do novo projeto."
+      }
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": [
+      "workspace",
+      "created",
+      "selected"
+    ],
+    "properties": {
+      "workspace": {
+        "type": "string"
+      },
+      "created": {
+        "type": "boolean"
+      },
+      "selected": {
+        "type": "boolean"
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@ia-local/agent-core",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "check": "tsc --noEmit",
+    "agent-server": "node --experimental-strip-types src/server.ts"
+  },
+  "dependencies": {
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.0",
+    "typescript": "^5.9.3"
+  }
+}

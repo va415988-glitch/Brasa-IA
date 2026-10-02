@@ -1,8 +1,14 @@
 {
   "name":"project_checks",
-  "description":"Lista ou executa verificações reconhecidas do projeto no workspace.",
+  "description":"Lista ou executa verificações locais de Python, Node, Rust, Go, C/C++ e shell; informa o escopo e rejeita sucesso com zero testes.",
   "side_effects":false,
   "requires_approval":false,
-  "arguments":{"type":"object","properties":{"check":{"type":"string","enum":["auto","list","cargo-test","npm-test","pytest","unittest"]},"path":{"type":"string","description":"arquivo alterado, usado para escolher a verificação mais relevante"}},"additionalProperties":false},
-  "result":{"type":"object","required":["passed","elapsed_ms"]}
+  "arguments":{"type":"object","properties":{"check":{"type":"string","enum":["auto","all","list","cargo-test","npm-test","npm-check","npm-build","pytest","unittest","node-test","go-test","python-syntax","node-syntax","cpp-syntax","c-syntax","shell-syntax"]},"path":{"type":"string","description":"arquivo alterado, usado para escolher a verificação mais relevante"}},"additionalProperties":false},
+  "result":{"type":"object","required":["available","locations","workspace"],"properties":{
+    "available":{"type":"array","items":{"type":"string"}},
+    "locations":{"type":"object"},"workspace":{"type":"string"},
+    "executed":{"type":"boolean"},"passed":{"type":"boolean"},"elapsed_ms":{"type":"integer"},
+    "verification_kind":{"enum":["syntax","test","build","typecheck","combined"]},
+    "tests_executed":{"type":["integer","null"]},"behavior_verification_executed":{"type":"boolean"}
+  }}
 }

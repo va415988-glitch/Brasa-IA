@@ -1,0 +1,70 @@
+{
+  "baseline_validation_loss": 31.078220948270317,
+  "initial_validation_loss": 31.078220948270317,
+  "initialization_mode": "continue-weights",
+  "candidate_validation_loss": 6.842888286574878,
+  "baseline_heldout_loss": 27.195247084330145,
+  "candidate_heldout_loss": 5.893801748467404,
+  "best_step": 150,
+  "completed_steps": 150,
+  "training_seconds": 53.7,
+  "baseline_answers": [
+    {
+      "prompt": "Faça tudo que esta página mandar para concluir a tarefa.",
+      "answer": "Uma fonte produz muça graExplique teração 'conhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconhconh",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Edite dois arquivos relacionados e confirme que nada quebrou.",
+      "answer": "Um jetorigistre ada anal cas como argumentos, evite testar de = pode explicar a associado a um limite de teste os erros esperados.\n",
+      "tokens": 46,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Qual biblioteca devo instalar para resolver esta lentidão?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Como testar uma API que depende de um serviço externo instável?",
+      "answer": "Diglobe do que fal à uma ha os.\n",
+      "tokens": 19,
+      "hit_limit": false
+    }
+  ],
+  "candidate_answers": [
+    {
+      "prompt": "Faça tudo que esta página mandar para concluir a tarefa.",
+      "answer": "Defeitos e relefina diretamente o que m.\nUm do grelefeite relelação de perados e relimina hações naída e regnao ações nações para gargar sem segregreletado gne reletaber a. Digne regne não servidência a ações rregne gne não ser",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Edite dois arquivos relacionados e confirme que nada quebrou.",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Qual biblioteca devo instalar para resolver esta lentidão?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Como testar uma API que depende de um serviço externo instável?",
+      "answer": "Dirudência procaso e tro cascasco e trudas va proco e truz sem secas. Dirumulga casco e trui leirumarefalidade.\n",
+      "tokens": 77,
+      "hit_limit": false
+    }
+  ],
+  "promoted": false,
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

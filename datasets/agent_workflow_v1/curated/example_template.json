@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "id": "workflow-0001",
+  "task_type": "repo_navigation",
+  "language": "pt-BR",
+  "source": {
+    "kind": "human_authored",
+    "reference": ""
+  },
+  "split": "unassigned",
+  "request": "Escreva aqui o pedido do usuário.",
+  "context": {
+    "project_facts": [],
+    "constraints": []
+  },
+  "steps": [
+    {
+      "state": "Resumo curto do estado observável da tarefa.",
+      "action": {
+        "kind": "inspect",
+        "tool": null,
+        "arguments": {}
+      },
+      "observation": "Resultado observado, sem inventar saídas."
+    }
+  ],
+  "verification": {
+    "status": "not_run",
+    "checks": []
+  },
+  "final_response": "Resposta final esperada para o usuário.",
+  "quality": {
+    "human_reviewed": false,
+    "safe_to_train": false
+  }
+}

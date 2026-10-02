@@ -1,0 +1,24 @@
+{"goal": "O que é polimorfismo?", "label": "direct"}
+{"goal": "Explique o conceito de uma interface.", "label": "direct"}
+{"goal": "Me ensine sobre uma tupla.", "label": "direct"}
+{"goal": "Dê um exemplo simples de composição.", "label": "direct"}
+{"goal": "Quero entender o funcionamento de um dicionário.", "label": "direct"}
+{"goal": "Defina uma expressão booleana.", "label": "direct"}
+{"goal": "Qual é a versão estável mais recente do Caddy?", "label": "web"}
+{"goal": "Pesquise as novidades do Elixir nesta semana.", "label": "web"}
+{"goal": "Busque documentação oficial atual do Lit.", "label": "web"}
+{"goal": "Quanto custa o serviço Backblaze hoje?", "label": "web"}
+{"goal": "Encontre fontes sobre as mudanças recentes do Bun.", "label": "web"}
+{"goal": "A versão mais nova do Zig já saiu?", "label": "web"}
+{"goal": "Consulte cognicao-teste.txt e informe a versão mínima do Node.", "label": "local"}
+{"goal": "Veja a porta definida em servico.yaml.", "label": "local"}
+{"goal": "O que diz o arquivo compatibilidade.md?", "label": "local"}
+{"goal": "Leia app-config.json antes de responder.", "label": "local"}
+{"goal": "Sem usar a web, confira o arquivo release.txt.", "label": "local"}
+{"goal": "Qual runtime está registrado em ambiente-local.toml?", "label": "local"}
+{"goal": "Isso atende ao que preciso?", "label": "clarify"}
+{"goal": "Qual delas é a certa?", "label": "clarify"}
+{"goal": "Ela suporta isso?", "label": "clarify"}
+{"goal": "Essa versão serve?", "label": "clarify"}
+{"goal": "Como uso aquilo?", "label": "clarify"}
+{"goal": "Qual devo escolher?", "label": "clarify"}

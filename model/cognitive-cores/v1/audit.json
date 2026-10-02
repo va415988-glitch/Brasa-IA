@@ -1,0 +1,55 @@
+{
+  "schema": "cognitive-core-audit/v1",
+  "artifact_verification_passed": true,
+  "checkpoint": "model/training/cognitive-alignment-v4/run-02/snapshots/step-1600.safetensors",
+  "checkpoint_sha256": "eb3298fa15e7079ff6a28715aeb1f2b243d0a5fd0983fd6d185ad3f4a8493fb9",
+  "reserved_rows": 288,
+  "regression_rows": 264,
+  "core_states": {
+    "decision-format": "failed",
+    "evidence-extraction": "failed",
+    "evidence-abstention": "failed",
+    "numeric-comparison": "failed",
+    "tool-arguments": "failed",
+    "programming": "not_evaluated",
+    "research": "not_evaluated",
+    "planning": "not_evaluated",
+    "communication": "not_evaluated",
+    "mathematics": "not_evaluated"
+  },
+  "active_checkpoint_and_state_unchanged": true,
+  "active_checkpoint_sha256": "0aeafd6f3966c8c59548ca1bb386c87483c62eafe21e95d1cb89260741d1fee3",
+  "core_dispatch_attempts_in_smoke": 0,
+  "no_unproved_core_dispatched": true,
+  "promoted": false,
+  "tests": {
+    "passed": 199,
+    "subtests_passed": 211,
+    "environment": {
+      "GOCACHE": "/tmp/ia-local-cores-go-cache",
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "initial_environment_failure": "Go test initially hit a read-only default cache; it passed with GOCACHE in /tmp, followed by all 199 tests."
+  },
+  "sha256": {
+    "model/cognitive-cores/v1/evidence-03.json": "cd48470cfdd833f732721d2798b784b0de7cc6e4b60f2c0a3c16be771f73d504",
+    "model/cognitive-cores/registry.json": "a6b3b03753c032b984adff82719aa163ef18bba6403074ca38d5d82416e54d86",
+    "model/cognitive-cores/v1/status.json": "baefb34ab0e48b6168f90805cb63b3a6bc6c714d7eb27518cc2173618fa19ebc",
+    "datasets/cognitive_core_qualification_v1/protocol.json": "bdfc306d7b3bd1dc3d4558bcc012ca07f878d895856c20a2e3c1b930d016a6a7",
+    "model/cognitive-cores/v1/reserved.json": "ed86214c7c22be4e4d700a4fd95f9250db159cb0858cf59e2ed0285b717002f8",
+    "model/cognitive-cores/v1/regression.json": "16eabf1731a758bede93f7f7f51446b7cc58e62d8e4f34ebef0f8bc6a3e41f9b"
+  },
+  "limits": [
+    "The shared V4 checkpoint was not retrained into independent neural experts.",
+    "The five measured cores failed qualification; other cores remain not evaluated.",
+    "Only explicit core dispatch is gated; existing general conversation is separate.",
+    "No service restart or live HTTP audit was performed."
+  ],
+  "documentation_sha256": {
+    "Documentacoes/NUCLEOS_COMPETENCIA_2026-10-01.md": "ab06142f8c24545558d5d03654f3bf622a96d07d0d26ad52e638ee750410e3da",
+    "Documentacoes/README.md": "29f0751acefb99db3da3cb8f4319e2844d0787dfb830c7e9223b52b6e04cdd61"
+  },
+  "all_report_links_exist": true,
+  "live_registry_route_smoke_passed": true,
+  "software_test_source_sha256": "868686063056578fb331a7e5c90d514fc54effd1a6ee148df0715771597107ac"
+}

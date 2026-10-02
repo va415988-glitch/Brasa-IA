@@ -1,0 +1,39 @@
+{
+  "name": "git_diff",
+  "description": "Mostra o diff Git não preparado do workspace sem executar scripts, paginadores ou diff externo.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "required": [],
+    "properties": {},
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": [
+      "operation",
+      "passed",
+      "stdout",
+      "stderr",
+      "truncated"
+    ],
+    "properties": {
+      "operation": {
+        "type": "string"
+      },
+      "passed": {
+        "type": "boolean"
+      },
+      "stdout": {
+        "type": "string"
+      },
+      "stderr": {
+        "type": "string"
+      },
+      "truncated": {
+        "type": "boolean"
+      }
+    }
+  }
+}

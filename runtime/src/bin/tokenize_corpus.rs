@@ -22,6 +22,17 @@ struct Tokenizer {
     eos: u32,
 }
 
+fn has_declared_provenance(record: &Value) -> bool {
+    let source = record.get("source").and_then(Value::as_str).unwrap_or("").trim();
+    let license = record.get("license").and_then(Value::as_str).unwrap_or("").trim();
+    let normalized_license = license.to_ascii_lowercase();
+    !source.is_empty()
+        && !license.is_empty()
+        && !normalized_license.contains("unknown")
+        && !normalized_license.contains("verify")
+        && !normalized_license.contains("check-per-source")
+}
+
 impl Tokenizer {
     fn load(path: &str) -> Result<Self, Box<dyn std::error::Error>> {
         let data: TokenizerFile = serde_json::from_str(&fs::read_to_string(path)?)?;
@@ -94,6 +105,17 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .filter(|line| !line.trim().is_empty())
         .map(|line| serde_json::from_str(&line))
         .collect::<Result<Vec<_>, _>>()?;
+    let require_provenance = env::var("TOKEN_REQUIRE_PROVENANCE")
+        .map(|value| matches!(value.trim().to_ascii_lowercase().as_str(), "1" | "true" | "yes"))
+        .unwrap_or(false);
+    if require_provenance {
+        let pending = records.iter().filter(|record| !has_declared_provenance(record)).count();
+        if pending > 0 {
+            return Err(format!(
+                "tokenização bloqueada: {pending} registros sem origem e licença declaradas; revise o corpus e execute corpus_audit"
+            ).into());
+        }
+    }
     let split = ((records.len() as f64) * (1.0 - val_fraction)).round() as usize;
     let (train_records, val_records) = records.split_at(split.min(records.len()));
     for _ in 0..repeat {
@@ -126,4 +148,26 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("tokens gravados: {}", tokens.len());
     println!("arquivo: {output}");
     Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::has_declared_provenance;
+    use serde_json::json;
+
+    #[test]
+    fn requires_source_and_a_declared_license() {
+        assert!(has_declared_provenance(&json!({
+            "source": "docs.python.org",
+            "license": "PSF License"
+        })));
+        for record in [
+            json!({"source": "local", "license": "unknown-review-required"}),
+            json!({"source": "local", "license": "CC-BY-SA (verify current terms)"}),
+            json!({"source": "", "license": "MIT"}),
+            json!({"source": "local"}),
+        ] {
+            assert!(!has_declared_provenance(&record));
+        }
+    }
 }

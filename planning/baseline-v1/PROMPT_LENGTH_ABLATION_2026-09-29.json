@@ -1,0 +1,30 @@
+{
+  "schema": "brasa-prompt-length-ablation/v1",
+  "checkpoint": "model/godmode/context-32768-v1/candidate.safetensors",
+  "cases": [
+    {
+      "variant": "full",
+      "prompt_chars": 3481,
+      "prompt_tokens": 882,
+      "trained_context_tokens": 512,
+      "answer_returned": false,
+      "generated_tokens": 31,
+      "stop_reason": "low-entropy-cycle",
+      "quality_stop_reason": null,
+      "quality_gate_result": "rejected",
+      "quality_reason": "structured-plan-too-short"
+    },
+    {
+      "variant": "short",
+      "prompt_chars": 309,
+      "prompt_tokens": 101,
+      "trained_context_tokens": 512,
+      "answer_returned": false,
+      "generated_tokens": 47,
+      "stop_reason": "quality-prefix-stop",
+      "quality_stop_reason": "repeated-fragment",
+      "quality_gate_result": "rejected",
+      "quality_reason": "structured-plan-invalid-json"
+    }
+  ]
+}

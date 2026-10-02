@@ -1,0 +1,60 @@
+{
+  "name": "find_paths",
+  "description": "Encontra arquivos e pastas por padrão de nome (* e ?) em uma subárvore do workspace.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "required": [
+      "pattern"
+    ],
+    "properties": {
+      "pattern": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120
+      },
+      "path": {
+        "type": "string"
+      },
+      "include_hidden": {
+        "type": "boolean"
+      },
+      "max_results": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 200
+      }
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": [
+      "pattern",
+      "path",
+      "matches",
+      "truncated",
+      "scanned"
+    ],
+    "properties": {
+      "pattern": {
+        "type": "string"
+      },
+      "path": {
+        "type": "string"
+      },
+      "matches": {
+        "type": "array"
+      },
+      "truncated": {
+        "type": "boolean"
+      },
+      "scanned": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 20000
+      }
+    }
+  }
+}

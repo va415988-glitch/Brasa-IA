@@ -1,0 +1,18 @@
+{
+  "schema": "local-multimodal-checkpoint-profile/v1",
+  "name": "compact-vision-v1",
+  "kind": "deterministic-vision-adapter",
+  "weights": null,
+  "implementation": "python/multimodal.py",
+  "trained_weights": false,
+  "external_llm": false,
+  "capabilities": [
+    "media-inspection",
+    "png-dimensions",
+    "document-text",
+    "ocr-contract",
+    "evidence-limited-visual-analysis"
+  ],
+  "semantic_policy": "bounded-observations",
+  "limitation": "não é um VLM; não inventa objetos, relações ou texto não observado"
+}

@@ -1,0 +1,5083 @@
+{
+  "schema": "dialogue-evaluation-run/v1",
+  "suite_id": "dialogue-intent-50-v1",
+  "suite_description": "Cinquenta casos em português para avaliar intenção, contexto, opinião, calibração e qualidade conversacional.",
+  "run_id": "20260926T174622977406Z",
+  "created_at": "2026-09-26T17:46:22.977406+00:00",
+  "base_url": "http://127.0.0.1:3000",
+  "provider_mode": "local",
+  "configured_models": [
+    "ollama-local:qwen2.5-coder:3b"
+  ],
+  "provider_status": {
+    "ok": true,
+    "schema": "agent-dialogue-providers/v1",
+    "mode": "local",
+    "configuration_error": null,
+    "provider_order": [
+      "ollama-local"
+    ],
+    "local": {
+      "id": "ollama-local",
+      "configured": true,
+      "model": "qwen2.5-coder:3b"
+    },
+    "external": {
+      "id": "openai-compatible",
+      "configured": false,
+      "model": null,
+      "missing": [
+        "IA_LOCAL_EXTERNAL_API_BASE_URL",
+        "IA_LOCAL_EXTERNAL_API_KEY",
+        "IA_LOCAL_EXTERNAL_MODEL"
+      ],
+      "configuration_error": null
+    },
+    "external_requires_explicit_configuration": true
+  },
+  "summary": {
+    "metrics": {
+      "questions_total": 50,
+      "responses_received": 50,
+      "response_rate_pct": 100.0,
+      "completed_answer_rate_pct": 100.0,
+      "intent_accuracy_pct": 100.0,
+      "speech_act_label_coverage_pct": 100.0,
+      "speech_act_accuracy_pct": 100.0,
+      "content_signal_coverage_pct": 100.0,
+      "specific_answer_rate_pct": 100.0,
+      "generic_answer_count": 0,
+      "average_case_score_pct": 100.0,
+      "latency_ms": {
+        "p50": 14.6,
+        "p95": 19.1,
+        "max": 12996.3
+      },
+      "backend_counts": {
+        "dialogue-ollama-local": 1,
+        "local-conversation-rules": 47,
+        "session-memory": 2
+      },
+      "read_only_research": {
+        "planned": 0,
+        "executed": 0,
+        "synthesized": 0
+      },
+      "composite_observed_score_pct": 100.0
+    },
+    "categories": {
+      "continuidade_de_contexto": {
+        "count": 10,
+        "score_pct": 100.0,
+        "intent_accuracy_pct": 100.0
+      },
+      "discussao_de_propostas": {
+        "count": 10,
+        "score_pct": 100.0,
+        "intent_accuracy_pct": 100.0
+      },
+      "incerteza_e_limites": {
+        "count": 10,
+        "score_pct": 100.0,
+        "intent_accuracy_pct": 100.0
+      },
+      "intencao_e_palavras_tecnicas": {
+        "count": 10,
+        "score_pct": 100.0,
+        "intent_accuracy_pct": 100.0
+      },
+      "qualidade_e_postura": {
+        "count": 10,
+        "score_pct": 100.0,
+        "intent_accuracy_pct": 100.0
+      }
+    },
+    "negative_points": [],
+    "weakest_cases": [
+      {
+        "id": "context-01-e",
+        "category": "continuidade_de_contexto",
+        "score_pct": 100.0,
+        "failed_checks": []
+      },
+      {
+        "id": "context-02-api-ou-dataset",
+        "category": "continuidade_de_contexto",
+        "score_pct": 100.0,
+        "failed_checks": []
+      },
+      {
+        "id": "context-03-por-que",
+        "category": "continuidade_de_contexto",
+        "score_pct": 100.0,
+        "failed_checks": []
+      },
+      {
+        "id": "context-04-resolve",
+        "category": "continuidade_de_contexto",
+        "score_pct": 100.0,
+        "failed_checks": []
+      },
+      {
+        "id": "context-05-primeiro-passo",
+        "category": "continuidade_de_contexto",
+        "score_pct": 100.0,
+        "failed_checks": []
+      },
+      {
+        "id": "context-06-faz-sentido",
+        "category": "continuidade_de_contexto",
+        "score_pct": 100.0,
+        "failed_checks": []
+      },
+      {
+        "id": "context-07-explica-melhor",
+        "category": "continuidade_de_contexto",
+        "score_pct": 100.0,
+        "failed_checks": []
+      },
+      {
+        "id": "context-08-se-falhar",
+        "category": "continuidade_de_contexto",
+        "score_pct": 100.0,
+        "failed_checks": []
+      },
+      {
+        "id": "context-09-decidir",
+        "category": "continuidade_de_contexto",
+        "score_pct": 100.0,
+        "failed_checks": []
+      },
+      {
+        "id": "context-10-pendencias",
+        "category": "continuidade_de_contexto",
+        "score_pct": 100.0,
+        "failed_checks": []
+      }
+    ]
+  },
+  "comparison": {
+    "previous_run_id": "20260926T160728730781Z",
+    "metric_deltas_percentage_points": {
+      "composite_observed_score_pct": 0.0,
+      "intent_accuracy_pct": 0.0,
+      "content_signal_coverage_pct": 0.0,
+      "specific_answer_rate_pct": 0.0,
+      "response_rate_pct": 0.0
+    },
+    "category_deltas_percentage_points": {
+      "continuidade_de_contexto": 0.0,
+      "discussao_de_propostas": 0.0,
+      "incerteza_e_limites": 0.0,
+      "intencao_e_palavras_tecnicas": 0.0,
+      "qualidade_e_postura": 0.0
+    },
+    "recovered_cases": [],
+    "regressed_cases": []
+  },
+  "results": [
+    {
+      "id": "intent-01-api-datasets",
+      "category": "intencao_e_palavras_tecnicas",
+      "question": "O que você acha da ideia de criar uma API para a IA em vez de depender só de datasets?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "O que você acha da ideia de criar uma API para a IA em vez de depender só de datasets?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "opinion_request",
+      "actual_speech_act": "opinion_request",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Eu começaria pela API local como camada de conversa e avaliação, mantendo dataset e datasets como fontes de exemplos e conhecimento. A API ajuda a organizar roteamento, contexto e ferramentas, mas não substitui dados bons nem melhora sozinha o modelo. Primeiro eu mediria esses fluxos sem provedor externo.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 12.9,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "considera a API",
+          "passed": true,
+          "matched": [
+            "api"
+          ]
+        },
+        {
+          "name": "considera dados ou treinamento",
+          "passed": true,
+          "matched": [
+            "dataset"
+          ]
+        },
+        {
+          "name": "assume uma posição",
+          "passed": true,
+          "matched": [
+            "eu começaria"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "considera a API",
+          "passed": true,
+          "matched": [
+            "api"
+          ]
+        },
+        {
+          "name": "considera dados ou treinamento",
+          "passed": true,
+          "matched": [
+            "dataset"
+          ]
+        },
+        {
+          "name": "assume uma posição",
+          "passed": true,
+          "matched": [
+            "eu começaria"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 306,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "intent-02-rust-python",
+      "category": "intencao_e_palavras_tecnicas",
+      "question": "Você concorda que Rust é sempre melhor do que Python para um backend?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Você concorda que Rust é sempre melhor do que Python para um backend?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "opinion_request",
+      "actual_speech_act": "opinion_request",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Não concordo com “sempre”. Rust costuma favorecer desempenho previsível e segurança de memória; Python costuma acelerar protótipos e integrações. A escolha depende do gargalo medido, da equipe e do custo de manter o backend.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 19.4,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "compara as linguagens",
+          "passed": true,
+          "matched": [
+            "rust"
+          ]
+        },
+        {
+          "name": "considera a outra opção",
+          "passed": true,
+          "matched": [
+            "python"
+          ]
+        },
+        {
+          "name": "evita regra absoluta",
+          "passed": true,
+          "matched": [
+            "depende"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "compara as linguagens",
+          "passed": true,
+          "matched": [
+            "rust"
+          ]
+        },
+        {
+          "name": "considera a outra opção",
+          "passed": true,
+          "matched": [
+            "python"
+          ]
+        },
+        {
+          "name": "evita regra absoluta",
+          "passed": true,
+          "matched": [
+            "depende"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 224,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "intent-03-microservices",
+      "category": "intencao_e_palavras_tecnicas",
+      "question": "Na sua opinião, trocar o monólito por microserviços resolveria a lentidão do produto?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Na sua opinião, trocar o monólito por microserviços resolveria a lentidão do produto?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "opinion_request",
+      "actual_speech_act": "opinion_request",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Depende do gargalo e da complexidade: microserviços só ajudam se a lentidão vier de partes que possam escalar ou operar separadamente; antes eu mediria banco, rede, CPU e os endpoints lentos. A divisão também acrescenta custo operacional.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 12.2,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "fala de microserviços",
+          "passed": true,
+          "matched": [
+            "microservicos"
+          ]
+        },
+        {
+          "name": "relaciona a decisão ao desempenho",
+          "passed": true,
+          "matched": [
+            "lentidão",
+            "lentidao",
+            "gargalo"
+          ]
+        },
+        {
+          "name": "avalia custos ou contexto",
+          "passed": true,
+          "matched": [
+            "depende",
+            "complexidade",
+            "gargalo"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "fala de microserviços",
+          "passed": true,
+          "matched": [
+            "microservicos"
+          ]
+        },
+        {
+          "name": "relaciona a decisão ao desempenho",
+          "passed": true,
+          "matched": [
+            "lentidão",
+            "lentidao",
+            "gargalo"
+          ]
+        },
+        {
+          "name": "avalia custos ou contexto",
+          "passed": true,
+          "matched": [
+            "depende",
+            "complexidade",
+            "gargalo"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 238,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "intent-04-treinar-do-zero",
+      "category": "intencao_e_palavras_tecnicas",
+      "question": "O que você acha de treinar um modelo do zero em um notebook comum?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "O que você acha de treinar um modelo do zero em um notebook comum?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "opinion_request",
+      "actual_speech_act": "opinion_request",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Eu não começaria treinando do zero num notebook comum. Isso exige dados, memória e muito processamento; para este projeto, eu avaliaria primeiro um modelo pequeno já treinado e melhoraria contexto, roteamento e exemplos.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 12.0,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "considera treinamento do zero",
+          "passed": true,
+          "matched": [
+            "do zero"
+          ]
+        },
+        {
+          "name": "considera recursos do computador",
+          "passed": true,
+          "matched": [
+            "memória",
+            "memoria",
+            "notebook"
+          ]
+        },
+        {
+          "name": "dá uma avaliação",
+          "passed": true,
+          "matched": [
+            "começaria",
+            "comecaria"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "considera treinamento do zero",
+          "passed": true,
+          "matched": [
+            "do zero"
+          ]
+        },
+        {
+          "name": "considera recursos do computador",
+          "passed": true,
+          "matched": [
+            "memória",
+            "memoria",
+            "notebook"
+          ]
+        },
+        {
+          "name": "dá uma avaliação",
+          "passed": true,
+          "matched": [
+            "começaria",
+            "comecaria"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 220,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "intent-05-rag-memoria",
+      "category": "intencao_e_palavras_tecnicas",
+      "question": "Você acha que RAG substitui a memória da conversa?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Você acha que RAG substitui a memória da conversa?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "opinion_request",
+      "actual_speech_act": "opinion_request",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Não. RAG recupera trechos de uma base externa para responder; memória da conversa mantém informações relevantes dos turnos anteriores. Podem trabalhar juntas, mas uma não substitui a outra.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 11.1,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "distingue RAG de memória",
+          "passed": true,
+          "matched": [
+            "rag"
+          ]
+        },
+        {
+          "name": "considera memória contextual",
+          "passed": true,
+          "matched": [
+            "memória",
+            "memoria"
+          ]
+        },
+        {
+          "name": "explica a relação",
+          "passed": true,
+          "matched": [
+            "não substitui",
+            "nao substitui"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "distingue RAG de memória",
+          "passed": true,
+          "matched": [
+            "rag"
+          ]
+        },
+        {
+          "name": "considera memória contextual",
+          "passed": true,
+          "matched": [
+            "memória",
+            "memoria"
+          ]
+        },
+        {
+          "name": "explica a relação",
+          "passed": true,
+          "matched": [
+            "não substitui",
+            "nao substitui"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 189,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "intent-06-prompt-alucinacao",
+      "category": "intencao_e_palavras_tecnicas",
+      "question": "Concorda comigo que basta escrever 'pense passo a passo' no prompt para eliminar alucinações?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Concorda comigo que basta escrever 'pense passo a passo' no prompt para eliminar alucinações?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "opinion_request",
+      "actual_speech_act": "opinion_request",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Não. O prompt “Pense passo a passo” pode orientar o raciocínio, mas o modelo ainda alucina e pode cometer um erro; essa instrução não elimina o problema. É preciso avaliar casos, exigir evidência para afirmações incertas e permitir que a IA admita quando não sabe.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 13.0,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "avalia o prompt",
+          "passed": true,
+          "matched": [
+            "prompt",
+            "instrução",
+            "instrucao"
+          ]
+        },
+        {
+          "name": "trata de alucinações ou erros",
+          "passed": true,
+          "matched": [
+            "alucina",
+            "erro"
+          ]
+        },
+        {
+          "name": "não promete solução total",
+          "passed": true,
+          "matched": [
+            "não elimina",
+            "nao elimina"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "avalia o prompt",
+          "passed": true,
+          "matched": [
+            "prompt",
+            "instrução",
+            "instrucao"
+          ]
+        },
+        {
+          "name": "trata de alucinações ou erros",
+          "passed": true,
+          "matched": [
+            "alucina",
+            "erro"
+          ]
+        },
+        {
+          "name": "não promete solução total",
+          "passed": true,
+          "matched": [
+            "não elimina",
+            "nao elimina"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 264,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "intent-07-dados-sinteticos",
+      "category": "intencao_e_palavras_tecnicas",
+      "question": "Qual sua opinião sobre usar dados sintéticos para corrigir os erros da nossa IA?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Qual sua opinião sobre usar dados sintéticos para corrigir os erros da nossa IA?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "opinion_request",
+      "actual_speech_act": "opinion_request",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Eu usaria dados sintéticos como complemento: cada dado sintético deve partir de um erro confirmado por exemplos reais, e alguém deve validar cada amostra antes do uso. Eles ajudam a cobrir variações, mas podem repetir um viés ou ensinar uma resposta incorreta se não forem revisados.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 16.7,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "considera dados sintéticos",
+          "passed": true,
+          "matched": [
+            "sintético",
+            "sintetico"
+          ]
+        },
+        {
+          "name": "liga os dados a erros observados",
+          "passed": true,
+          "matched": [
+            "erro"
+          ]
+        },
+        {
+          "name": "aponta uma condição de qualidade",
+          "passed": true,
+          "matched": [
+            "validar"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "considera dados sintéticos",
+          "passed": true,
+          "matched": [
+            "sintético",
+            "sintetico"
+          ]
+        },
+        {
+          "name": "liga os dados a erros observados",
+          "passed": true,
+          "matched": [
+            "erro"
+          ]
+        },
+        {
+          "name": "aponta uma condição de qualidade",
+          "passed": true,
+          "matched": [
+            "validar"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 283,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "intent-08-fallback-remoto",
+      "category": "intencao_e_palavras_tecnicas",
+      "question": "O que pensa sobre chamar um endpoint remoto só quando o modelo local falha?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "O que pensa sobre chamar um endpoint remoto só quando o modelo local falha?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "opinion_request",
+      "actual_speech_act": "opinion_request",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Pode ser um bom fallback se a pessoa souber quando os dados saem da máquina e aceitar o custo. Eu manteria o modo local como padrão, mostraria claramente cada uso remoto e registraria latência e preço.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 14.7,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "considera o modelo local",
+          "passed": true,
+          "matched": [
+            "local"
+          ]
+        },
+        {
+          "name": "considera o fallback remoto",
+          "passed": true,
+          "matched": [
+            "remoto"
+          ]
+        },
+        {
+          "name": "menciona uma implicação",
+          "passed": true,
+          "matched": [
+            "custo",
+            "latência",
+            "latencia",
+            "dados"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "considera o modelo local",
+          "passed": true,
+          "matched": [
+            "local"
+          ]
+        },
+        {
+          "name": "considera o fallback remoto",
+          "passed": true,
+          "matched": [
+            "remoto"
+          ]
+        },
+        {
+          "name": "menciona uma implicação",
+          "passed": true,
+          "matched": [
+            "custo",
+            "latência",
+            "latencia",
+            "dados"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 201,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "intent-09-interface-cpp",
+      "category": "intencao_e_palavras_tecnicas",
+      "question": "Você concorda comigo que uma interface escrita em C++ é horrível?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Você concorda comigo que uma interface escrita em C++ é horrível?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "opinion_request",
+      "actual_speech_act": "opinion_request",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Não chamaria C++ de horrível por si só. Pode ser adequado para um editor nativo, mas a interface fica trabalhosa sem uma biblioteca apropriada; eu julgaria pelo tempo de desenvolvimento, manutenção e experiência que vocês precisam.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 16.9,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "responde sobre a interface",
+          "passed": true,
+          "matched": [
+            "interface",
+            "c++"
+          ]
+        },
+        {
+          "name": "explica a avaliação",
+          "passed": true,
+          "matched": [
+            "experiência",
+            "experiencia"
+          ]
+        },
+        {
+          "name": "não só ecoa a provocação",
+          "passed": true,
+          "matched": [
+            "pode ser"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "responde sobre a interface",
+          "passed": true,
+          "matched": [
+            "interface",
+            "c++"
+          ]
+        },
+        {
+          "name": "explica a avaliação",
+          "passed": true,
+          "matched": [
+            "experiência",
+            "experiencia"
+          ]
+        },
+        {
+          "name": "não só ecoa a provocação",
+          "passed": true,
+          "matched": [
+            "pode ser"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 231,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "intent-10-janela-contexto",
+      "category": "intencao_e_palavras_tecnicas",
+      "question": "O que acha: aumentar o contexto de 4 mil para 32 mil tokens vai automaticamente dar mais discernimento?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "O que acha: aumentar o contexto de 4 mil para 32 mil tokens vai automaticamente dar mais discernimento?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "opinion_request",
+      "actual_speech_act": "opinion_request",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Não automaticamente. Uma janela maior permite manter mais histórico, mas não garante que o modelo escolha o trecho certo ou raciocine melhor. Treino, dados e avaliação também afetam a qualidade; eu mediria a recuperação do contexto antes e depois.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 10.7,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "responde sobre janela de contexto",
+          "passed": true,
+          "matched": [
+            "contexto"
+          ]
+        },
+        {
+          "name": "separa capacidade de contexto e qualidade",
+          "passed": true,
+          "matched": [
+            "não garante",
+            "nao garante",
+            "não automaticamente",
+            "nao automaticamente"
+          ]
+        },
+        {
+          "name": "aponta outro fator de qualidade",
+          "passed": true,
+          "matched": [
+            "treino",
+            "dados",
+            "avaliação",
+            "avaliacao"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "responde sobre janela de contexto",
+          "passed": true,
+          "matched": [
+            "contexto"
+          ]
+        },
+        {
+          "name": "separa capacidade de contexto e qualidade",
+          "passed": true,
+          "matched": [
+            "não garante",
+            "nao garante",
+            "não automaticamente",
+            "nao automaticamente"
+          ]
+        },
+        {
+          "name": "aponta outro fator de qualidade",
+          "passed": true,
+          "matched": [
+            "treino",
+            "dados",
+            "avaliação",
+            "avaliacao"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 247,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "proposal-01-registrar-erros",
+      "category": "discussao_de_propostas",
+      "question": "Tenho uma ideia: registrar as conversas em que a IA entendeu errado e priorizar os erros recorrentes.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Tenho uma ideia: registrar as conversas em que a IA entendeu errado e priorizar os erros recorrentes."
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "proposal_discussion",
+      "actual_speech_act": "proposal_discussion",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Faz sentido registrar cada conversa que falhou e o erro real, priorizando erros recorrentes por frequência e impacto; depois validamos a correção com os mesmos casos.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 10.7,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "avalia a proposta",
+          "passed": true,
+          "matched": [
+            "faz sentido"
+          ]
+        },
+        {
+          "name": "mantém foco em erros reais",
+          "passed": true,
+          "matched": [
+            "erro",
+            "conversa"
+          ]
+        },
+        {
+          "name": "sugere como priorizar ou validar",
+          "passed": true,
+          "matched": [
+            "frequência",
+            "frequencia",
+            "impacto",
+            "casos"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "avalia a proposta",
+          "passed": true,
+          "matched": [
+            "faz sentido"
+          ]
+        },
+        {
+          "name": "mantém foco em erros reais",
+          "passed": true,
+          "matched": [
+            "erro",
+            "conversa"
+          ]
+        },
+        {
+          "name": "sugere como priorizar ou validar",
+          "passed": true,
+          "matched": [
+            "frequência",
+            "frequencia",
+            "impacto",
+            "casos"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 166,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "proposal-02-conversas-como-avaliacao",
+      "category": "discussao_de_propostas",
+      "question": "Podemos guardar exemplos de conversas que deram errado e usá-los para avaliar mudanças?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Podemos guardar exemplos de conversas que deram errado e usá-los para avaliar mudanças?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "proposal_discussion",
+      "actual_speech_act": "proposal_discussion",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Sim, exemplos de conversas que falharam podem formar um conjunto fixo para avaliar mudanças e detectar regressões; convém remover dados pessoais e revisar cada exemplo antes de usá-lo.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 11.5,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "considera exemplos de conversa",
+          "passed": true,
+          "matched": [
+            "exemplo"
+          ]
+        },
+        {
+          "name": "considera avaliação repetível",
+          "passed": true,
+          "matched": [
+            "avaliar",
+            "conjunto fixo"
+          ]
+        },
+        {
+          "name": "propõe cuidado com os exemplos",
+          "passed": true,
+          "matched": [
+            "revisar"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "considera exemplos de conversa",
+          "passed": true,
+          "matched": [
+            "exemplo"
+          ]
+        },
+        {
+          "name": "considera avaliação repetível",
+          "passed": true,
+          "matched": [
+            "avaliar",
+            "conjunto fixo"
+          ]
+        },
+        {
+          "name": "propõe cuidado com os exemplos",
+          "passed": true,
+          "matched": [
+            "revisar"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 184,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "proposal-03-justificativa-curta",
+      "category": "discussao_de_propostas",
+      "question": "E se cada resposta desse minha opinião primeiro e explicasse o motivo em seguida?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "E se cada resposta desse minha opinião primeiro e explicasse o motivo em seguida?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "proposal_discussion",
+      "actual_speech_act": "proposal_discussion",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Acho uma boa ordem: dar a posição primeiro e explicar o motivo em seguida, de forma concisa. Se a pergunta depender de contexto ou houver uma exceção importante, a resposta deve deixar isso claro.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 13.2,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "discute ordem da resposta",
+          "passed": true,
+          "matched": [
+            "posição",
+            "posicao",
+            "resposta"
+          ]
+        },
+        {
+          "name": "valoriza justificativa concisa",
+          "passed": true,
+          "matched": [
+            "motivo",
+            "explicar"
+          ]
+        },
+        {
+          "name": "aponta um limite",
+          "passed": true,
+          "matched": [
+            "pergunta",
+            "contexto",
+            "exceção",
+            "excecao"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "discute ordem da resposta",
+          "passed": true,
+          "matched": [
+            "posição",
+            "posicao",
+            "resposta"
+          ]
+        },
+        {
+          "name": "valoriza justificativa concisa",
+          "passed": true,
+          "matched": [
+            "motivo",
+            "explicar"
+          ]
+        },
+        {
+          "name": "aponta um limite",
+          "passed": true,
+          "matched": [
+            "pergunta",
+            "contexto",
+            "exceção",
+            "excecao"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 196,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "proposal-04-menos-listas",
+      "category": "discussao_de_propostas",
+      "question": "Ao invés de responder tudo com listas, podemos usar texto direto quando eu pedir uma opinião?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Ao invés de responder tudo com listas, podemos usar texto direto quando eu pedir uma opinião?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "proposal_discussion",
+      "actual_speech_act": "proposal_discussion",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Concordo: faz sentido usar texto direto quando você pedir uma opinião, em vez de transformar toda resposta em lista; listas ainda ajudam quando há etapas ou opções para comparar.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 11.1,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "considera o formato da resposta",
+          "passed": true,
+          "matched": [
+            "lista",
+            "texto"
+          ]
+        },
+        {
+          "name": "respeita o pedido de opinião",
+          "passed": true,
+          "matched": [
+            "opinião",
+            "opiniao"
+          ]
+        },
+        {
+          "name": "concorda com contexto ou ressalva",
+          "passed": true,
+          "matched": [
+            "faz sentido",
+            "concordo",
+            "quando"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "considera o formato da resposta",
+          "passed": true,
+          "matched": [
+            "lista",
+            "texto"
+          ]
+        },
+        {
+          "name": "respeita o pedido de opinião",
+          "passed": true,
+          "matched": [
+            "opinião",
+            "opiniao"
+          ]
+        },
+        {
+          "name": "concorda com contexto ou ressalva",
+          "passed": true,
+          "matched": [
+            "faz sentido",
+            "concordo",
+            "quando"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 178,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "proposal-05-separar-fluxos",
+      "category": "discussao_de_propostas",
+      "question": "Poderíamos separar a camada de conversa da camada que escreve código?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Poderíamos separar a camada de conversa da camada que escreve código?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "proposal_discussion",
+      "actual_speech_act": "proposal_discussion",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Separar a camada de conversa da que escreve código pode deixar cada fluxo mais claro e avaliável. Eu manteria o contexto compartilhado entre elas e verificaria se a separação reduz erros sem duplicar lógica.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 16.6,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "considera duas camadas",
+          "passed": true,
+          "matched": [
+            "conversa"
+          ]
+        },
+        {
+          "name": "considera código ou ferramenta",
+          "passed": true,
+          "matched": [
+            "código",
+            "codigo"
+          ]
+        },
+        {
+          "name": "explica benefício ou custo",
+          "passed": true,
+          "matched": [
+            "contexto"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "considera duas camadas",
+          "passed": true,
+          "matched": [
+            "conversa"
+          ]
+        },
+        {
+          "name": "considera código ou ferramenta",
+          "passed": true,
+          "matched": [
+            "código",
+            "codigo"
+          ]
+        },
+        {
+          "name": "explica benefício ou custo",
+          "passed": true,
+          "matched": [
+            "contexto"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 207,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "proposal-06-perguntar-na-ambiguidade",
+      "category": "discussao_de_propostas",
+      "question": "Que tal perguntar antes de agir quando a intenção estiver realmente ambígua?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Que tal perguntar antes de agir quando a intenção estiver realmente ambígua?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "proposal_discussion",
+      "actual_speech_act": "proposal_discussion",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Concordo quando a ambiguidade puder mudar uma ação importante: perguntar esclarece a intenção. Para respostas simples e reversíveis, eu seguiria com uma premissa explícita para não interromper sem necessidade.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 13.4,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "considera ambiguidade",
+          "passed": true,
+          "matched": [
+            "ambiguidade"
+          ]
+        },
+        {
+          "name": "considera esclarecimento",
+          "passed": true,
+          "matched": [
+            "perguntar"
+          ]
+        },
+        {
+          "name": "distingue risco ou custo de interrupção",
+          "passed": true,
+          "matched": [
+            "simples"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "considera ambiguidade",
+          "passed": true,
+          "matched": [
+            "ambiguidade"
+          ]
+        },
+        {
+          "name": "considera esclarecimento",
+          "passed": true,
+          "matched": [
+            "perguntar"
+          ]
+        },
+        {
+          "name": "distingue risco ou custo de interrupção",
+          "passed": true,
+          "matched": [
+            "simples"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 209,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "proposal-07-qualidade-e-latencia",
+      "category": "discussao_de_propostas",
+      "question": "Minha proposta é medir qualidade das respostas e latência na mesma avaliação.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Minha proposta é medir qualidade das respostas e latência na mesma avaliação."
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "proposal_discussion",
+      "actual_speech_act": "proposal_discussion",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "É uma boa ideia medir qualidade e latência na mesma avaliação: qualidade mostra se a resposta atende aos critérios, e latência mostra quanto demora. Também precisamos comparar as métricas em conjunto usando as mesmas perguntas.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 13.1,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "considera qualidade",
+          "passed": true,
+          "matched": [
+            "qualidade",
+            "resposta"
+          ]
+        },
+        {
+          "name": "considera latência",
+          "passed": true,
+          "matched": [
+            "latência",
+            "latencia"
+          ]
+        },
+        {
+          "name": "propõe comparar ou ponderar métricas",
+          "passed": true,
+          "matched": [
+            "comparar"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "considera qualidade",
+          "passed": true,
+          "matched": [
+            "qualidade",
+            "resposta"
+          ]
+        },
+        {
+          "name": "considera latência",
+          "passed": true,
+          "matched": [
+            "latência",
+            "latencia"
+          ]
+        },
+        {
+          "name": "propõe comparar ou ponderar métricas",
+          "passed": true,
+          "matched": [
+            "comparar"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 227,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "proposal-08-pequeno-conjunto",
+      "category": "discussao_de_propostas",
+      "question": "Pensei numa ideia: começar com um conjunto pequeno de perguntas difíceis antes de treinar qualquer coisa.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Pensei numa ideia: começar com um conjunto pequeno de perguntas difíceis antes de treinar qualquer coisa."
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "proposal_discussion",
+      "actual_speech_act": "proposal_discussion",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Faz sentido testar um conjunto pequeno e controlado de perguntas difíceis antes de treinar. As falhas observadas podem orientar quais dados ou mudanças priorizar, sem presumir que mais treino seja a primeira solução.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 14.3,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "considera teste antes do treino",
+          "passed": true,
+          "matched": [
+            "antes de treinar",
+            "testar"
+          ]
+        },
+        {
+          "name": "considera conjunto controlado",
+          "passed": true,
+          "matched": [
+            "conjunto"
+          ]
+        },
+        {
+          "name": "sugere usar falhas para orientar próximos passos",
+          "passed": true,
+          "matched": [
+            "priorizar",
+            "orientar"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "considera teste antes do treino",
+          "passed": true,
+          "matched": [
+            "antes de treinar",
+            "testar"
+          ]
+        },
+        {
+          "name": "considera conjunto controlado",
+          "passed": true,
+          "matched": [
+            "conjunto"
+          ]
+        },
+        {
+          "name": "sugere usar falhas para orientar próximos passos",
+          "passed": true,
+          "matched": [
+            "priorizar",
+            "orientar"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 216,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "proposal-09-comparar-versoes",
+      "category": "discussao_de_propostas",
+      "question": "Em vez de confiar na impressão, poderíamos comparar as respostas antes e depois de cada mudança.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Em vez de confiar na impressão, poderíamos comparar as respostas antes e depois de cada mudança."
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "proposal_discussion",
+      "actual_speech_act": "proposal_discussion",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Concordo: comparar antes e depois com as mesmas perguntas mostra se a mudança ajudou e permite detectar cada regressão; vale guardar respostas e critérios num benchmark fixo.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 16.1,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "considera comparação entre versões",
+          "passed": true,
+          "matched": [
+            "comparar",
+            "antes e depois"
+          ]
+        },
+        {
+          "name": "mantém as mesmas perguntas",
+          "passed": true,
+          "matched": [
+            "mesmas perguntas",
+            "benchmark"
+          ]
+        },
+        {
+          "name": "considera regressões",
+          "passed": true,
+          "matched": [
+            "regressão",
+            "regressao"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "considera comparação entre versões",
+          "passed": true,
+          "matched": [
+            "comparar",
+            "antes e depois"
+          ]
+        },
+        {
+          "name": "mantém as mesmas perguntas",
+          "passed": true,
+          "matched": [
+            "mesmas perguntas",
+            "benchmark"
+          ]
+        },
+        {
+          "name": "considera regressões",
+          "passed": true,
+          "matched": [
+            "regressão",
+            "regressao"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 174,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "proposal-10-primeiro-roteamento",
+      "category": "discussao_de_propostas",
+      "question": "Que tal começar corrigindo o roteamento da conversa antes de trocar o modelo?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Que tal começar corrigindo o roteamento da conversa antes de trocar o modelo?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "proposal_discussion",
+      "actual_speech_act": "proposal_discussion",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Faz sentido corrigir o roteamento antes de trocar o modelo: primeiro medimos se cada pergunta chega ao fluxo certo. Se a resposta continuar ruim depois disso, comparamos modelos usando o mesmo conjunto de casos.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 14.9,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "discute roteamento",
+          "passed": true,
+          "matched": [
+            "roteamento"
+          ]
+        },
+        {
+          "name": "considera troca de modelo",
+          "passed": true,
+          "matched": [
+            "modelo",
+            "trocar"
+          ]
+        },
+        {
+          "name": "dá uma justificativa ou ressalva",
+          "passed": true,
+          "matched": [
+            "faz sentido"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "discute roteamento",
+          "passed": true,
+          "matched": [
+            "roteamento"
+          ]
+        },
+        {
+          "name": "considera troca de modelo",
+          "passed": true,
+          "matched": [
+            "modelo",
+            "trocar"
+          ]
+        },
+        {
+          "name": "dá uma justificativa ou ressalva",
+          "passed": true,
+          "matched": [
+            "faz sentido"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 211,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "context-01-e",
+      "category": "continuidade_de_contexto",
+      "question": "É?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quero que a IA pare de responder como se toda pergunta fosse um pedido de programação."
+        },
+        {
+          "role": "assistant",
+          "content": "Uma forma de medir isso é testar perguntas de opinião que mencionam termos técnicos."
+        },
+        {
+          "role": "user",
+          "content": "É?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "short_follow_up",
+      "actual_speech_act": "short_follow_up",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Sim. Uma pergunta pode mencionar API ou C++ sem pedir código; reconhecer a opinião e o contexto evita que o roteador trate todo termo técnico como tarefa de programação.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 15.4,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "retoma o contexto de opinião e técnica",
+          "passed": true,
+          "matched": [
+            "opinião",
+            "opiniao",
+            "pergunta"
+          ]
+        },
+        {
+          "name": "dá uma razão ou exemplo",
+          "passed": true,
+          "matched": [
+            "termo"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "retoma o contexto de opinião e técnica",
+          "passed": true,
+          "matched": [
+            "opinião",
+            "opiniao",
+            "pergunta"
+          ]
+        },
+        {
+          "name": "dá uma razão ou exemplo",
+          "passed": true,
+          "matched": [
+            "termo"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 169,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "context-02-api-ou-dataset",
+      "category": "continuidade_de_contexto",
+      "question": "Qual deles primeiro?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Estou entre criar uma API de diálogo ou continuar aumentando os datasets."
+        },
+        {
+          "role": "assistant",
+          "content": "A API organiza a interação; exemplos e datasets ajudam a avaliar e orientar o comportamento."
+        },
+        {
+          "role": "user",
+          "content": "Qual deles primeiro?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "short_follow_up",
+      "actual_speech_act": "short_follow_up",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Eu começaria pela API de diálogo, porque permite medir roteamento, contexto e respostas com um fluxo local; manteria o dataset para construir os casos de avaliação e conhecimento.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 15.6,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "retoma as opções",
+          "passed": true,
+          "matched": [
+            "api"
+          ]
+        },
+        {
+          "name": "faz uma recomendação contextual",
+          "passed": true,
+          "matched": [
+            "começaria",
+            "começaria pela"
+          ]
+        },
+        {
+          "name": "explica o critério",
+          "passed": true,
+          "matched": [
+            "medir"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "retoma as opções",
+          "passed": true,
+          "matched": [
+            "api"
+          ]
+        },
+        {
+          "name": "faz uma recomendação contextual",
+          "passed": true,
+          "matched": [
+            "começaria",
+            "começaria pela"
+          ]
+        },
+        {
+          "name": "explica o critério",
+          "passed": true,
+          "matched": [
+            "medir"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 179,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "context-03-por-que",
+      "category": "continuidade_de_contexto",
+      "question": "E por quê?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Uma camada própria de diálogo pode deixar a IA mais coerente."
+        },
+        {
+          "role": "assistant",
+          "content": "Ela pode organizar contexto e provedores, mas a qualidade ainda depende do modelo."
+        },
+        {
+          "role": "user",
+          "content": "E por quê?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "short_follow_up",
+      "actual_speech_act": "short_follow_up",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Porque a API organiza o histórico e encaminha cada pedido ao fluxo adequado, mas não gera a resposta por conta própria. A qualidade ainda depende do modelo e da geração; a camada de diálogo ajuda a fornecer contexto e a escolher o provedor, mas não garante discernimento.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 9.4,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "explica dependência do modelo",
+          "passed": true,
+          "matched": [
+            "modelo",
+            "geração",
+            "geracao",
+            "resposta"
+          ]
+        },
+        {
+          "name": "retoma a camada de diálogo",
+          "passed": true,
+          "matched": [
+            "api",
+            "camada",
+            "contexto",
+            "provedor"
+          ]
+        },
+        {
+          "name": "explica mecanismo ou limite",
+          "passed": true,
+          "matched": [
+            "organiza",
+            "não garante",
+            "nao garante",
+            "depende"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "explica dependência do modelo",
+          "passed": true,
+          "matched": [
+            "modelo",
+            "geração",
+            "geracao",
+            "resposta"
+          ]
+        },
+        {
+          "name": "retoma a camada de diálogo",
+          "passed": true,
+          "matched": [
+            "api",
+            "camada",
+            "contexto",
+            "provedor"
+          ]
+        },
+        {
+          "name": "explica mecanismo ou limite",
+          "passed": true,
+          "matched": [
+            "organiza",
+            "não garante",
+            "nao garante",
+            "depende"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 271,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "context-04-resolve",
+      "category": "continuidade_de_contexto",
+      "question": "E isso resolve?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "A API nova vai ser usada para melhorar as conversas da IA."
+        },
+        {
+          "role": "assistant",
+          "content": "Ela oferece uma estrutura para enviar histórico ao modelo e controlar a resposta."
+        },
+        {
+          "role": "user",
+          "content": "E isso resolve?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "short_follow_up",
+      "actual_speech_act": "short_follow_up",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "A API ajuda a organizar histórico e roteamento, mas não garante a qualidade das respostas por si só; precisamos testar o modelo com perguntas fixas e comparar os resultados.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 14.9,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "não promete solução automática",
+          "passed": true,
+          "matched": [
+            "não garante",
+            "nao garante"
+          ]
+        },
+        {
+          "name": "distingue API de geração",
+          "passed": true,
+          "matched": [
+            "modelo"
+          ]
+        },
+        {
+          "name": "propõe avaliação",
+          "passed": true,
+          "matched": [
+            "testar",
+            "comparar"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "não promete solução automática",
+          "passed": true,
+          "matched": [
+            "não garante",
+            "nao garante"
+          ]
+        },
+        {
+          "name": "distingue API de geração",
+          "passed": true,
+          "matched": [
+            "modelo"
+          ]
+        },
+        {
+          "name": "propõe avaliação",
+          "passed": true,
+          "matched": [
+            "testar",
+            "comparar"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 173,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "context-05-primeiro-passo",
+      "category": "continuidade_de_contexto",
+      "question": "Qual seria o primeiro?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quero começar a melhorar a IA sem trocar de modelo ainda."
+        },
+        {
+          "role": "assistant",
+          "content": "Podemos começar identificando falhas recorrentes e definindo casos de avaliação."
+        },
+        {
+          "role": "user",
+          "content": "Qual seria o primeiro?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "short_follow_up",
+      "actual_speech_act": "short_follow_up",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Eu começaria por registrar perguntas em que a IA desviou do pedido, classificar as falhas de intenção e contexto e repetir esses casos para medir a conversa sem trocar o modelo.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 14.6,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "escolhe uma ação concreta",
+          "passed": true,
+          "matched": [
+            "registrar",
+            "começaria"
+          ]
+        },
+        {
+          "name": "retoma falhas ou casos",
+          "passed": true,
+          "matched": [
+            "falhas",
+            "casos",
+            "perguntas"
+          ]
+        },
+        {
+          "name": "não troca o assunto para modelo",
+          "passed": true,
+          "matched": [
+            "medir",
+            "repetir",
+            "classificar"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "escolhe uma ação concreta",
+          "passed": true,
+          "matched": [
+            "registrar",
+            "começaria"
+          ]
+        },
+        {
+          "name": "retoma falhas ou casos",
+          "passed": true,
+          "matched": [
+            "falhas",
+            "casos",
+            "perguntas"
+          ]
+        },
+        {
+          "name": "não troca o assunto para modelo",
+          "passed": true,
+          "matched": [
+            "medir",
+            "repetir",
+            "classificar"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 177,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "context-06-faz-sentido",
+      "category": "continuidade_de_contexto",
+      "question": "Faz sentido?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quando a pergunta for só uma opinião, a IA deveria responder à ideia antes de listar detalhes técnicos."
+        },
+        {
+          "role": "assistant",
+          "content": "Isso dá prioridade à intenção e ainda permite explicar a parte técnica depois."
+        },
+        {
+          "role": "user",
+          "content": "Faz sentido?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "short_follow_up",
+      "actual_speech_act": "short_follow_up",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Sim, faz sentido responder primeiro à intenção ou à opinião, porque isso mostra que a pergunta foi entendida; depois entram os detalhes técnicos, se forem úteis.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 17.1,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "avalia a ordem proposta",
+          "passed": true,
+          "matched": [
+            "faz sentido",
+            "sim"
+          ]
+        },
+        {
+          "name": "retoma intenção ou opinião",
+          "passed": true,
+          "matched": [
+            "intenção",
+            "intencao",
+            "opinião",
+            "opiniao"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "avalia a ordem proposta",
+          "passed": true,
+          "matched": [
+            "faz sentido",
+            "sim"
+          ]
+        },
+        {
+          "name": "retoma intenção ou opinião",
+          "passed": true,
+          "matched": [
+            "intenção",
+            "intencao",
+            "opinião",
+            "opiniao"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 161,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "context-07-explica-melhor",
+      "category": "continuidade_de_contexto",
+      "question": "Consegue explicar melhor?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Eu disse que a resposta precisa de mais malemolência e discernimento."
+        },
+        {
+          "role": "assistant",
+          "content": "Essas palavras apontam para perceber nuances, pesar contexto e escolher uma resposta adequada."
+        },
+        {
+          "role": "user",
+          "content": "Consegue explicar melhor?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "short_follow_up",
+      "actual_speech_act": "short_follow_up",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Em linguagem simples, discernimento é perceber o que você está pedindo, notar o contexto e escolher uma resposta adequada; aqui, “malemolência” é acompanhar a nuance da conversa, não despejar uma definição técnica.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 15.5,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "explica a ideia em linguagem simples",
+          "passed": true,
+          "matched": [
+            "perceber",
+            "notar",
+            "escolher"
+          ]
+        },
+        {
+          "name": "retoma contexto ou nuance",
+          "passed": true,
+          "matched": [
+            "contexto",
+            "nuance"
+          ]
+        },
+        {
+          "name": "não vira definição técnica isolada",
+          "passed": true,
+          "matched": [
+            "resposta",
+            "conversa"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "explica a ideia em linguagem simples",
+          "passed": true,
+          "matched": [
+            "perceber",
+            "notar",
+            "escolher"
+          ]
+        },
+        {
+          "name": "retoma contexto ou nuance",
+          "passed": true,
+          "matched": [
+            "contexto",
+            "nuance"
+          ]
+        },
+        {
+          "name": "não vira definição técnica isolada",
+          "passed": true,
+          "matched": [
+            "resposta",
+            "conversa"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 214,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "context-08-se-falhar",
+      "category": "continuidade_de_contexto",
+      "question": "E se der errado?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Vamos registrar perguntas em que a IA desviou do que eu realmente pedi."
+        },
+        {
+          "role": "assistant",
+          "content": "Depois podemos classificar cada desvio e usar os mesmos casos em novas versões."
+        },
+        {
+          "role": "user",
+          "content": "E se der errado?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "proposal_discussion",
+      "actual_speech_act": "proposal_discussion",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Se der errado, guardamos a pergunta, a resposta e o contexto como um caso; vamos investigar o desvio, identificar onde a resposta saiu do pedido e repetir o teste depois da correção.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 14.6,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "retoma registro ou avaliação",
+          "passed": true,
+          "matched": [
+            "caso",
+            "repetir"
+          ]
+        },
+        {
+          "name": "propõe análise específica",
+          "passed": true,
+          "matched": [
+            "identificar",
+            "investigar"
+          ]
+        },
+        {
+          "name": "não responde com consolo genérico",
+          "passed": true,
+          "matched": [
+            "desvio",
+            "resposta"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "retoma registro ou avaliação",
+          "passed": true,
+          "matched": [
+            "caso",
+            "repetir"
+          ]
+        },
+        {
+          "name": "propõe análise específica",
+          "passed": true,
+          "matched": [
+            "identificar",
+            "investigar"
+          ]
+        },
+        {
+          "name": "não responde com consolo genérico",
+          "passed": true,
+          "matched": [
+            "desvio",
+            "resposta"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 182,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "context-09-decidir",
+      "category": "continuidade_de_contexto",
+      "question": "Então fechamos assim?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "A primeira versão da API vai ser simples e sem provedor externo."
+        },
+        {
+          "role": "assistant",
+          "content": "Assim o teste inicial mede o fluxo local sem enviar conversa para terceiros."
+        },
+        {
+          "role": "user",
+          "content": "Então fechamos assim?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "short_follow_up",
+      "actual_speech_act": "short_follow_up",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Sim: a primeira versão fica com uma API simples, executada localmente e sem provedor externo. O próximo passo é validar o roteamento e a qualidade das respostas nessa configuração; se algo falhar, registramos o caso antes de ampliar o escopo.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 10.1,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "retoma decisão sobre API",
+          "passed": true,
+          "matched": [
+            "api",
+            "versão",
+            "versao"
+          ]
+        },
+        {
+          "name": "reconhece escolha local",
+          "passed": true,
+          "matched": [
+            "externo"
+          ]
+        },
+        {
+          "name": "mantém ressalva ou próximo passo",
+          "passed": true,
+          "matched": [
+            "validar",
+            "próximo",
+            "proximo"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "retoma decisão sobre API",
+          "passed": true,
+          "matched": [
+            "api",
+            "versão",
+            "versao"
+          ]
+        },
+        {
+          "name": "reconhece escolha local",
+          "passed": true,
+          "matched": [
+            "externo"
+          ]
+        },
+        {
+          "name": "mantém ressalva ou próximo passo",
+          "passed": true,
+          "matched": [
+            "validar",
+            "próximo",
+            "proximo"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 242,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "context-10-pendencias",
+      "category": "continuidade_de_contexto",
+      "question": "O que ficou pendente?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "A API híbrida já tem um contrato, uma rota de diálogo e testes de integração."
+        },
+        {
+          "role": "assistant",
+          "content": "Ainda precisamos avaliar a qualidade das respostas de um provedor real."
+        },
+        {
+          "role": "user",
+          "content": "O que ficou pendente?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "short_follow_up",
+      "actual_speech_act": "short_follow_up",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "A API em discussão é: A API híbrida já tem um contrato, uma rota de diálogo e testes de integração.. Ficou pendente: Ainda precisamos avaliar a qualidade das respostas de um provedor real.",
+      "backend": "session-memory",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 14.7,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "retoma o provedor real",
+          "passed": true,
+          "matched": [
+            "provedor"
+          ]
+        },
+        {
+          "name": "retoma avaliação de qualidade",
+          "passed": true,
+          "matched": [
+            "avaliar",
+            "qualidade"
+          ]
+        },
+        {
+          "name": "não inventa outra pendência",
+          "passed": true,
+          "matched": [
+            "diálogo",
+            "dialogo",
+            "provedor real"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "retoma o provedor real",
+          "passed": true,
+          "matched": [
+            "provedor"
+          ]
+        },
+        {
+          "name": "retoma avaliação de qualidade",
+          "passed": true,
+          "matched": [
+            "avaliar",
+            "qualidade"
+          ]
+        },
+        {
+          "name": "não inventa outra pendência",
+          "passed": true,
+          "matched": [
+            "diálogo",
+            "dialogo",
+            "provedor real"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 188,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "uncertainty-01-dado-atual",
+      "category": "incerteza_e_limites",
+      "question": "Qual foi a inflação anual do Chile neste mês? Se você não souber, diga claramente.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Qual foi a inflação anual do Chile neste mês? Se você não souber, diga claramente."
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Não consigo confirmar o dado atualizado da inflação anual do Chile neste mês e não posso afirmar um número sem verificar. É preciso consultar a publicação mais recente de uma fonte oficial, como o INE ou o Banco Central do Chile.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 15.4,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "declara limite de atualização",
+          "passed": true,
+          "matched": [
+            "não consigo confirmar",
+            "nao consigo confirmar",
+            "preciso consultar"
+          ]
+        },
+        {
+          "name": "não inventa um número",
+          "passed": true,
+          "matched": [
+            "não posso afirmar",
+            "nao posso afirmar"
+          ]
+        },
+        {
+          "name": "indica como verificar",
+          "passed": true,
+          "matched": [
+            "fonte oficial",
+            "consultar",
+            "verificar",
+            "publicação",
+            "publicacao"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "declara limite de atualização",
+          "passed": true,
+          "matched": [
+            "não consigo confirmar",
+            "nao consigo confirmar",
+            "preciso consultar"
+          ]
+        },
+        {
+          "name": "não inventa um número",
+          "passed": true,
+          "matched": [
+            "não posso afirmar",
+            "nao posso afirmar"
+          ]
+        },
+        {
+          "name": "indica como verificar",
+          "passed": true,
+          "matched": [
+            "fonte oficial",
+            "consultar",
+            "verificar",
+            "publicação",
+            "publicacao"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 229,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "uncertainty-02-framework-falso",
+      "category": "incerteza_e_limites",
+      "question": "No framework ZorbitaX 9.4, qual função ativa o modo quântico do compilador?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "No framework ZorbitaX 9.4, qual função ativa o modo quântico do compilador?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Não consigo confirmar a função de compilador do ZorbitaX 9.4 com a informação disponível. Não vou inventar um nome de API; envie a documentação, um link ou o trecho relevante para eu verificar.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 17.4,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "não finge conhecer o framework",
+          "passed": true,
+          "matched": [
+            "não consigo confirmar",
+            "nao consigo confirmar"
+          ]
+        },
+        {
+          "name": "explicita que não vai inventar",
+          "passed": true,
+          "matched": [
+            "não vou inventar",
+            "nao vou inventar"
+          ]
+        },
+        {
+          "name": "pede fonte ou contexto",
+          "passed": true,
+          "matched": [
+            "documentação",
+            "documentacao",
+            "link",
+            "trecho"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "não finge conhecer o framework",
+          "passed": true,
+          "matched": [
+            "não consigo confirmar",
+            "nao consigo confirmar"
+          ]
+        },
+        {
+          "name": "explicita que não vai inventar",
+          "passed": true,
+          "matched": [
+            "não vou inventar",
+            "nao vou inventar"
+          ]
+        },
+        {
+          "name": "pede fonte ou contexto",
+          "passed": true,
+          "matched": [
+            "documentação",
+            "documentacao",
+            "link",
+            "trecho"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 193,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "uncertainty-03-livro-incerto",
+      "category": "incerteza_e_limites",
+      "question": "Quem ganhou o prêmio internacional de 2042 pelo livro 'A Cidade Debaixo do Sal', de Nilo Venturini?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quem ganhou o prêmio internacional de 2042 pelo livro 'A Cidade Debaixo do Sal', de Nilo Venturini?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Não posso confirmar quem ganhou esse prêmio: 2042 ainda é futuro, então não há como confirmar um vencedor nem verificar o resultado. Será preciso consultar uma fonte quando o prêmio for anunciado.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 16.5,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "reconhece limite sobre fato futuro ou não confirmado",
+          "passed": true,
+          "matched": [
+            "não posso confirmar",
+            "nao posso confirmar",
+            "futuro"
+          ]
+        },
+        {
+          "name": "não inventa um vencedor",
+          "passed": true,
+          "matched": [
+            "não há como confirmar",
+            "nao ha como confirmar"
+          ]
+        },
+        {
+          "name": "explica a razão da incerteza",
+          "passed": true,
+          "matched": [
+            "prêmio",
+            "premio",
+            "2042",
+            "fonte",
+            "futuro"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "reconhece limite sobre fato futuro ou não confirmado",
+          "passed": true,
+          "matched": [
+            "não posso confirmar",
+            "nao posso confirmar",
+            "futuro"
+          ]
+        },
+        {
+          "name": "não inventa um vencedor",
+          "passed": true,
+          "matched": [
+            "não há como confirmar",
+            "nao ha como confirmar"
+          ]
+        },
+        {
+          "name": "explica a razão da incerteza",
+          "passed": true,
+          "matched": [
+            "prêmio",
+            "premio",
+            "2042",
+            "fonte",
+            "futuro"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 196,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "uncertainty-04-snippet-incompleto",
+      "category": "incerteza_e_limites",
+      "question": "Com o trecho `x += y`, você consegue garantir que esse código é seguro para várias threads?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Com o trecho `x += y`, você consegue garantir que esse código é seguro para várias threads?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Não dá para garantir segurança entre threads a partir de `x += y` sozinho. Isso depende de onde x e y vivem, do compartilhamento entre cada thread, de sincronização e do restante do código; envie o contexto para uma análise concreta.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 14.6,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "não afirma segurança sem contexto",
+          "passed": true,
+          "matched": [
+            "não dá para garantir",
+            "nao da para garantir",
+            "depende"
+          ]
+        },
+        {
+          "name": "cita sincronização ou compartilhamento",
+          "passed": true,
+          "matched": [
+            "thread"
+          ]
+        },
+        {
+          "name": "pede contexto relevante",
+          "passed": true,
+          "matched": [
+            "contexto"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "não afirma segurança sem contexto",
+          "passed": true,
+          "matched": [
+            "não dá para garantir",
+            "nao da para garantir",
+            "depende"
+          ]
+        },
+        {
+          "name": "cita sincronização ou compartilhamento",
+          "passed": true,
+          "matched": [
+            "thread"
+          ]
+        },
+        {
+          "name": "pede contexto relevante",
+          "passed": true,
+          "matched": [
+            "contexto"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 233,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "uncertainty-05-crash-sem-log",
+      "category": "incerteza_e_limites",
+      "question": "Meu aplicativo é escrito em Rust. Qual é a causa exata de ele fechar sozinho?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Meu aplicativo é escrito em Rust. Qual é a causa exata de ele fechar sozinho?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Não consigo determinar a causa exata só com essa descrição. Envie o panic ou backtrace, o comando usado e o que mudou antes da falha; então podemos investigar e depurar o problema passo a passo.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 17.9,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "não inventa causa exata",
+          "passed": true,
+          "matched": [
+            "não consigo determinar",
+            "nao consigo determinar"
+          ]
+        },
+        {
+          "name": "pede log ou erro",
+          "passed": true,
+          "matched": [
+            "backtrace"
+          ]
+        },
+        {
+          "name": "sugere diagnóstico",
+          "passed": true,
+          "matched": [
+            "depurar",
+            "passo a passo",
+            "investigar"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "não inventa causa exata",
+          "passed": true,
+          "matched": [
+            "não consigo determinar",
+            "nao consigo determinar"
+          ]
+        },
+        {
+          "name": "pede log ou erro",
+          "passed": true,
+          "matched": [
+            "backtrace"
+          ]
+        },
+        {
+          "name": "sugere diagnóstico",
+          "passed": true,
+          "matched": [
+            "depurar",
+            "passo a passo",
+            "investigar"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 194,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "uncertainty-06-teste-falhou",
+      "category": "incerteza_e_limites",
+      "question": "Meu teste falhou. O que deu errado?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Meu teste falhou. O que deu errado?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Ainda não dá para saber a causa sem a saída do teste. Cole a mensagem de erro, o comando executado e o trecho relevante; começo pelo primeiro erro, não pelos sintomas seguintes.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 16.0,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "reconhece falta de informação",
+          "passed": true,
+          "matched": [
+            "sem a saída",
+            "não dá para saber",
+            "nao da para saber"
+          ]
+        },
+        {
+          "name": "pede saída ou mensagem de erro",
+          "passed": true,
+          "matched": [
+            "saída",
+            "saida",
+            "erro"
+          ]
+        },
+        {
+          "name": "pede o teste ou ambiente",
+          "passed": true,
+          "matched": [
+            "comando",
+            "trecho"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "reconhece falta de informação",
+          "passed": true,
+          "matched": [
+            "sem a saída",
+            "não dá para saber",
+            "nao da para saber"
+          ]
+        },
+        {
+          "name": "pede saída ou mensagem de erro",
+          "passed": true,
+          "matched": [
+            "saída",
+            "saida",
+            "erro"
+          ]
+        },
+        {
+          "name": "pede o teste ou ambiente",
+          "passed": true,
+          "matched": [
+            "comando",
+            "trecho"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 177,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "uncertainty-07-custo-remoto",
+      "category": "incerteza_e_limites",
+      "question": "Quanto vai custar usar um modelo remoto por mês? Ainda não escolhi o modelo nem sei quantas perguntas faremos.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quanto vai custar usar um modelo remoto por mês? Ainda não escolhi o modelo nem sei quantas perguntas faremos."
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Ainda não dá para estimar sem o modelo, o volume de perguntas, o tamanho médio de entrada e saída e a tarifa do provedor. Se me passar esses valores, monto uma estimativa mensal.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 13.5,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "não cria preço sem dados",
+          "passed": true,
+          "matched": [
+            "não dá para estimar",
+            "nao da para estimar"
+          ]
+        },
+        {
+          "name": "cita volume ou modelo",
+          "passed": true,
+          "matched": [
+            "volume",
+            "perguntas",
+            "modelo"
+          ]
+        },
+        {
+          "name": "oferece estimativa com entradas",
+          "passed": true,
+          "matched": [
+            "estimar"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "não cria preço sem dados",
+          "passed": true,
+          "matched": [
+            "não dá para estimar",
+            "nao da para estimar"
+          ]
+        },
+        {
+          "name": "cita volume ou modelo",
+          "passed": true,
+          "matched": [
+            "volume",
+            "perguntas",
+            "modelo"
+          ]
+        },
+        {
+          "name": "oferece estimativa com entradas",
+          "passed": true,
+          "matched": [
+            "estimar"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 178,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "uncertainty-08-leu-arquivos",
+      "category": "incerteza_e_limites",
+      "question": "Você leu todos os arquivos do meu projeto?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Você leu todos os arquivos do meu projeto?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Não. Nesta conversa ainda não li arquivos do projeto. Posso ler ou inspecionar os arquivos se você selecionar o workspace ou indicar quais devo abrir.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 13.8,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "não alega inspeção sem evidência",
+          "passed": true,
+          "matched": [
+            "não li",
+            "nao li"
+          ]
+        },
+        {
+          "name": "delimita o que consegue afirmar",
+          "passed": true,
+          "matched": [
+            "nesta conversa"
+          ]
+        },
+        {
+          "name": "indica próximo passo",
+          "passed": true,
+          "matched": [
+            "posso ler"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "não alega inspeção sem evidência",
+          "passed": true,
+          "matched": [
+            "não li",
+            "nao li"
+          ]
+        },
+        {
+          "name": "delimita o que consegue afirmar",
+          "passed": true,
+          "matched": [
+            "nesta conversa"
+          ]
+        },
+        {
+          "name": "indica próximo passo",
+          "passed": true,
+          "matched": [
+            "posso ler"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 150,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "uncertainty-09-melhor-opcao-sem-objetivo",
+      "category": "incerteza_e_limites",
+      "question": "Qual é a melhor opção para mim, sem você saber meu objetivo nem minhas restrições?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Qual é a melhor opção para mim, sem você saber meu objetivo nem minhas restrições?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Sem conhecer seu objetivo e suas restrições, não consigo escolher ou recomendar uma opção responsável. Qual é seu objetivo e o que você prioriza: custo, velocidade, privacidade ou esforço de manutenção?",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 14.0,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "reconhece que falta critério",
+          "passed": true,
+          "matched": [
+            "objetivo"
+          ]
+        },
+        {
+          "name": "não inventa preferência",
+          "passed": true,
+          "matched": [
+            "não consigo escolher",
+            "nao consigo escolher"
+          ]
+        },
+        {
+          "name": "faz pergunta de esclarecimento",
+          "passed": true,
+          "matched": [
+            "qual é seu objetivo",
+            "qual e seu objetivo",
+            "o que você prioriza",
+            "o que voce prioriza"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "reconhece que falta critério",
+          "passed": true,
+          "matched": [
+            "objetivo"
+          ]
+        },
+        {
+          "name": "não inventa preferência",
+          "passed": true,
+          "matched": [
+            "não consigo escolher",
+            "nao consigo escolher"
+          ]
+        },
+        {
+          "name": "faz pergunta de esclarecimento",
+          "passed": true,
+          "matched": [
+            "qual é seu objetivo",
+            "qual e seu objetivo",
+            "o que você prioriza",
+            "o que voce prioriza"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 202,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "uncertainty-10-resposta-de-ontem",
+      "category": "incerteza_e_limites",
+      "question": "A resposta que você me deu ontem estava correta?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "A resposta que você me deu ontem estava correta?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Não consigo ver a conversa de ontem neste histórico, então não consigo confirmar se a resposta estava correta. Cole a pergunta e minha resposta para eu verificar.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 13.6,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "não finge lembrar conversa ausente",
+          "passed": true,
+          "matched": [
+            "não consigo confirmar",
+            "nao consigo confirmar"
+          ]
+        },
+        {
+          "name": "explica a limitação de contexto",
+          "passed": true,
+          "matched": [
+            "histórico",
+            "historico",
+            "conversa",
+            "ontem"
+          ]
+        },
+        {
+          "name": "pede a resposta para verificar",
+          "passed": true,
+          "matched": [
+            "cole",
+            "verificar"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "não finge lembrar conversa ausente",
+          "passed": true,
+          "matched": [
+            "não consigo confirmar",
+            "nao consigo confirmar"
+          ]
+        },
+        {
+          "name": "explica a limitação de contexto",
+          "passed": true,
+          "matched": [
+            "histórico",
+            "historico",
+            "conversa",
+            "ontem"
+          ]
+        },
+        {
+          "name": "pede a resposta para verificar",
+          "passed": true,
+          "matched": [
+            "cole",
+            "verificar"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 162,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "quality-01-frustracao-com-respostas",
+      "category": "qualidade_e_postura",
+      "question": "Falta alma nessa IA. Ela parece um algoritmo de respostas prontas e não entende o que eu realmente pergunto.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Falta alma nessa IA. Ela parece um algoritmo de respostas prontas e não entende o que eu realmente pergunto."
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Você tem razão em apontar isso: se eu respondo com um texto genérico ou ignoro o que acabamos de decidir, pareço estar encaixando frases em vez de acompanhar a conversa. Aqui, o próximo passo é medir essas falhas de contexto e corrigir cada padrão com exemplos reproduzíveis.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 16.7,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "reconhece a crítica sem fórmula de atendimento",
+          "passed": true,
+          "matched": [
+            "você tem razão",
+            "voce tem razao"
+          ]
+        },
+        {
+          "name": "retoma o problema concreto",
+          "passed": true,
+          "matched": [
+            "contexto"
+          ]
+        },
+        {
+          "name": "propõe um passo concreto",
+          "passed": true,
+          "matched": [
+            "medir"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "reconhece a crítica sem fórmula de atendimento",
+          "passed": true,
+          "matched": [
+            "você tem razão",
+            "voce tem razao"
+          ]
+        },
+        {
+          "name": "retoma o problema concreto",
+          "passed": true,
+          "matched": [
+            "contexto"
+          ]
+        },
+        {
+          "name": "propõe um passo concreto",
+          "passed": true,
+          "matched": [
+            "medir"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 275,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "quality-02-prompt-nao-resolve-tudo",
+      "category": "qualidade_e_postura",
+      "question": "Você concorda que aumentar o prompt para cinco mil palavras definitivamente vai resolver os erros de entendimento?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Você concorda que aumentar o prompt para cinco mil palavras definitivamente vai resolver os erros de entendimento?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "opinion_request",
+      "actual_speech_act": "opinion_request",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Não concordo definitivamente: um prompt de cinco mil palavras não corrige sozinho erros de entendimento e pode até acrescentar ruído. O entendimento também depende do modelo, do roteamento e da qualidade dos dados; eu avaliaria exemplos reais para localizar o gargalo.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 14.7,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "assume posição sem agradar",
+          "passed": true,
+          "matched": [
+            "não concordo",
+            "nao concordo"
+          ]
+        },
+        {
+          "name": "fala dos limites de tamanho",
+          "passed": true,
+          "matched": [
+            "prompt"
+          ]
+        },
+        {
+          "name": "aponta outra causa ou medida",
+          "passed": true,
+          "matched": [
+            "roteamento",
+            "modelo"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "assume posição sem agradar",
+          "passed": true,
+          "matched": [
+            "não concordo",
+            "nao concordo"
+          ]
+        },
+        {
+          "name": "fala dos limites de tamanho",
+          "passed": true,
+          "matched": [
+            "prompt"
+          ]
+        },
+        {
+          "name": "aponta outra causa ou medida",
+          "passed": true,
+          "matched": [
+            "roteamento",
+            "modelo"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 268,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "quality-03-uma-frase",
+      "category": "qualidade_e_postura",
+      "question": "Sem lista e em uma frase: qual a diferença entre testar o roteamento e avaliar a qualidade da resposta?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Sem lista e em uma frase: qual a diferença entre testar o roteamento e avaliar a qualidade da resposta?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Testar o roteamento verifica se o sistema redireciona as solicitações para os locais corretos, enquanto avaliar a qualidade da resposta verifica se as informações fornecidas são precisas, relevantes e adequadas para o usuário.",
+      "backend": "dialogue-ollama-local",
+      "provider": "ollama-local",
+      "model": "qwen2.5-coder:3b",
+      "generation": {
+        "provider": "ollama-local",
+        "model": "qwen2.5-coder:3b",
+        "quality_gate_result": "accepted",
+        "fallback_used": false,
+        "attempts": [
+          {
+            "provider": "ollama-local",
+            "status": "accepted"
+          }
+        ]
+      },
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 12996.3,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "distingue roteamento",
+          "passed": true,
+          "matched": [
+            "roteamento"
+          ]
+        },
+        {
+          "name": "distingue qualidade da resposta",
+          "passed": true,
+          "matched": [
+            "qualidade",
+            "resposta"
+          ]
+        },
+        {
+          "name": "segue pedido de concisão",
+          "passed": true,
+          "matched": [
+            "verifica"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "distingue roteamento",
+          "passed": true,
+          "matched": [
+            "roteamento"
+          ]
+        },
+        {
+          "name": "distingue qualidade da resposta",
+          "passed": true,
+          "matched": [
+            "qualidade",
+            "resposta"
+          ]
+        },
+        {
+          "name": "segue pedido de concisão",
+          "passed": true,
+          "matched": [
+            "verifica"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 226,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "quality-04-melhorar-sem-custo",
+      "category": "qualidade_e_postura",
+      "question": "Quero melhorar a conversa agora sem pagar por um modelo externo. Qual caminho tentaria primeiro?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Quero melhorar a conversa agora sem pagar por um modelo externo. Qual caminho tentaria primeiro?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Eu começaria local, montando um conjunto fixo de perguntas para testar roteamento e histórico. Assim medimos as falhas antes de mexer no prompt ou trocar o modelo, sem pagar por um serviço externo.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 18.2,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "respeita a restrição de custo",
+          "passed": true,
+          "matched": [
+            "local",
+            "sem pagar"
+          ]
+        },
+        {
+          "name": "dá um primeiro passo concreto",
+          "passed": true,
+          "matched": [
+            "começaria",
+            "testar"
+          ]
+        },
+        {
+          "name": "não empurra serviço externo",
+          "passed": true,
+          "matched": [
+            "roteamento",
+            "prompt",
+            "histórico",
+            "historico",
+            "perguntas"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "respeita a restrição de custo",
+          "passed": true,
+          "matched": [
+            "local",
+            "sem pagar"
+          ]
+        },
+        {
+          "name": "dá um primeiro passo concreto",
+          "passed": true,
+          "matched": [
+            "começaria",
+            "testar"
+          ]
+        },
+        {
+          "name": "não empurra serviço externo",
+          "passed": true,
+          "matched": [
+            "roteamento",
+            "prompt",
+            "histórico",
+            "historico",
+            "perguntas"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 197,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "quality-05-admitir-correcao",
+      "category": "qualidade_e_postura",
+      "question": "Você confundiu avaliar um modelo com treinar um modelo. Reconhece que são coisas diferentes?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Você confundiu avaliar um modelo com treinar um modelo. Reconhece que são coisas diferentes?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Sim, você tem razão: avaliar mede como o modelo responde em casos definidos; treinar altera seus parâmetros com dados e um processo de otimização. Eu confundi duas etapas diferentes.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 13.2,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "reconhece a correção",
+          "passed": true,
+          "matched": [
+            "sim",
+            "você tem razão",
+            "voce tem razao"
+          ]
+        },
+        {
+          "name": "distingue avaliação",
+          "passed": true,
+          "matched": [
+            "avaliar"
+          ]
+        },
+        {
+          "name": "distingue treinamento",
+          "passed": true,
+          "matched": [
+            "treinar"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "reconhece a correção",
+          "passed": true,
+          "matched": [
+            "sim",
+            "você tem razão",
+            "voce tem razao"
+          ]
+        },
+        {
+          "name": "distingue avaliação",
+          "passed": true,
+          "matched": [
+            "avaliar"
+          ]
+        },
+        {
+          "name": "distingue treinamento",
+          "passed": true,
+          "matched": [
+            "treinar"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 182,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "quality-06-isso-sem-contexto",
+      "category": "qualidade_e_postura",
+      "question": "Me ajuda com isso?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Me ajuda com isso?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Claro. Posso ajudar; com o que você precisa de ajuda?",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 11.7,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "pede esclarecimento em vez de adivinhar",
+          "passed": true,
+          "matched": [
+            "com o quê",
+            "com o que",
+            "o que você precisa",
+            "o que voce precisa"
+          ]
+        },
+        {
+          "name": "mantém tom conversacional",
+          "passed": true,
+          "matched": [
+            "claro",
+            "posso ajudar"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "pede esclarecimento em vez de adivinhar",
+          "passed": true,
+          "matched": [
+            "com o quê",
+            "com o que",
+            "o que você precisa",
+            "o que voce precisa"
+          ]
+        },
+        {
+          "name": "mantém tom conversacional",
+          "passed": true,
+          "matched": [
+            "claro",
+            "posso ajudar"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 53,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "quality-07-duas-opcoes",
+      "category": "qualidade_e_postura",
+      "question": "Tenho duas opções: reduzir o escopo ou escolher um modelo mais rápido. Qual escolheria para começar?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Tenho duas opções: reduzir o escopo ou escolher um modelo mais rápido. Qual escolheria para começar?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Eu começaria por reduzir o escopo, porque isso deixa o comportamento mais simples de medir; escolheria um modelo mais rápido depois de comparar a latência e a qualidade nas mesmas perguntas.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 13.1,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "escolhe ou ordena as opções",
+          "passed": true,
+          "matched": [
+            "reduzir o escopo",
+            "modelo mais rápido",
+            "modelo mais rapido",
+            "eu começaria",
+            "eu comecaria"
+          ]
+        },
+        {
+          "name": "considera velocidade ou escopo",
+          "passed": true,
+          "matched": [
+            "latência",
+            "latencia",
+            "escopo",
+            "rápido",
+            "rapido"
+          ]
+        },
+        {
+          "name": "justifica a escolha",
+          "passed": true,
+          "matched": [
+            "porque",
+            "medir"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "escolhe ou ordena as opções",
+          "passed": true,
+          "matched": [
+            "reduzir o escopo",
+            "modelo mais rápido",
+            "modelo mais rapido",
+            "eu começaria",
+            "eu comecaria"
+          ]
+        },
+        {
+          "name": "considera velocidade ou escopo",
+          "passed": true,
+          "matched": [
+            "latência",
+            "latencia",
+            "escopo",
+            "rápido",
+            "rapido"
+          ]
+        },
+        {
+          "name": "justifica a escolha",
+          "passed": true,
+          "matched": [
+            "porque",
+            "medir"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 190,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "quality-08-resposta-estruturada",
+      "category": "qualidade_e_postura",
+      "question": "Responda primeiro sim ou não: você acha que uma API própria é um bom começo para melhorar o diálogo da IA? Depois dê uma ressalva.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Responda primeiro sim ou não: você acha que uma API própria é um bom começo para melhorar o diálogo da IA? Depois dê uma ressalva."
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "opinion_request",
+      "actual_speech_act": "opinion_request",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Sim. Uma API própria é um bom começo para organizar histórico e roteamento. Ressalva: ela não garante respostas melhores por si só; isso ainda depende do modelo e de avaliar casos reais.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 13.4,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "dá uma resposta direta",
+          "passed": true,
+          "matched": [
+            "sim",
+            "não",
+            "nao"
+          ]
+        },
+        {
+          "name": "responde sobre a API",
+          "passed": true,
+          "matched": [
+            "api"
+          ]
+        },
+        {
+          "name": "inclui uma ressalva",
+          "passed": true,
+          "matched": [
+            "não garante",
+            "nao garante",
+            "ressalva"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "dá uma resposta direta",
+          "passed": true,
+          "matched": [
+            "sim",
+            "não",
+            "nao"
+          ]
+        },
+        {
+          "name": "responde sobre a API",
+          "passed": true,
+          "matched": [
+            "api"
+          ]
+        },
+        {
+          "name": "inclui uma ressalva",
+          "passed": true,
+          "matched": [
+            "não garante",
+            "nao garante",
+            "ressalva"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 186,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "quality-09-discordar-com-argumento",
+      "category": "qualidade_e_postura",
+      "question": "Não concorde só para me agradar: dataset não serve para nada. Qual sua opinião?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Não concorde só para me agradar: dataset não serve para nada. Qual sua opinião?"
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "opinion_request",
+      "actual_speech_act": "opinion_request",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Discordo: um dataset não é inútil; exemplos podem orientar treino e avaliação. O limite é que dados ruins ou sem critérios não corrigem o modelo sozinhos.",
+      "backend": "local-conversation-rules",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 15.5,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "assume posição",
+          "passed": true,
+          "matched": [
+            "discordo"
+          ]
+        },
+        {
+          "name": "explica uso possível de dados",
+          "passed": true,
+          "matched": [
+            "dataset",
+            "treino",
+            "avaliação",
+            "avaliacao"
+          ]
+        },
+        {
+          "name": "distingue limite de inutilidade",
+          "passed": true,
+          "matched": [
+            "não é inútil",
+            "nao e inutil"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "assume posição",
+          "passed": true,
+          "matched": [
+            "discordo"
+          ]
+        },
+        {
+          "name": "explica uso possível de dados",
+          "passed": true,
+          "matched": [
+            "dataset",
+            "treino",
+            "avaliação",
+            "avaliacao"
+          ]
+        },
+        {
+          "name": "distingue limite de inutilidade",
+          "passed": true,
+          "matched": [
+            "não é inútil",
+            "nao e inutil"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 154,
+      "score_pct": 100.0,
+      "tool_execution": null
+    },
+    {
+      "id": "quality-10-resumo-da-decisao",
+      "category": "qualidade_e_postura",
+      "question": "Faça um resumo do que decidimos e do que falta testar.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Vamos criar uma API própria para melhorar as conversas da IA local."
+        },
+        {
+          "role": "assistant",
+          "content": "Primeiro vamos testar intenção e contexto em perguntas fixas, depois comparar as respostas."
+        },
+        {
+          "role": "user",
+          "content": "Faça um resumo do que decidimos e do que falta testar."
+        }
+      ],
+      "expected_intent": "conversation",
+      "actual_intent": "conversation",
+      "expected_speech_act": "conversation",
+      "actual_speech_act": "conversation",
+      "speech_act_match": true,
+      "http_status": 200,
+      "response_ok": true,
+      "answer": "Decidimos criar uma API própria para melhorar o diálogo local, testar intenção e contexto com perguntas fixas e comparar as respostas. Ainda falta avaliar a qualidade das respostas geradas pelo modelo real.",
+      "backend": "session-memory",
+      "provider": null,
+      "model": null,
+      "generation": null,
+      "tool_call": null,
+      "tool_calls": null,
+      "error": null,
+      "error_code": null,
+      "elapsed_ms": 19.1,
+      "checks": [
+        {
+          "name": "resposta recebida",
+          "passed": true
+        },
+        {
+          "name": "rota: conversation",
+          "passed": true
+        },
+        {
+          "name": "retoma a API própria",
+          "passed": true,
+          "matched": [
+            "api"
+          ]
+        },
+        {
+          "name": "retoma intenção ou contexto",
+          "passed": true,
+          "matched": [
+            "intenção",
+            "intencao",
+            "contexto"
+          ]
+        },
+        {
+          "name": "retoma comparação de respostas",
+          "passed": true,
+          "matched": [
+            "comparar",
+            "respostas"
+          ]
+        },
+        {
+          "name": "diz que falta testar geração real",
+          "passed": true,
+          "matched": [
+            "modelo real",
+            "qualidade"
+          ]
+        },
+        {
+          "name": "resposta específica e não excessivamente curta",
+          "passed": true
+        }
+      ],
+      "signals": [
+        {
+          "name": "retoma a API própria",
+          "passed": true,
+          "matched": [
+            "api"
+          ]
+        },
+        {
+          "name": "retoma intenção ou contexto",
+          "passed": true,
+          "matched": [
+            "intenção",
+            "intencao",
+            "contexto"
+          ]
+        },
+        {
+          "name": "retoma comparação de respostas",
+          "passed": true,
+          "matched": [
+            "comparar",
+            "respostas"
+          ]
+        },
+        {
+          "name": "diz que falta testar geração real",
+          "passed": true,
+          "matched": [
+            "modelo real",
+            "qualidade"
+          ]
+        }
+      ],
+      "generic_phrases": [],
+      "answer_chars": 206,
+      "score_pct": 100.0,
+      "tool_execution": null
+    }
+  ],
+  "scoring_note": "Critérios automáticos por caso e heurística de resposta específica; revisar manualmente nuance, correção factual e naturalidade.",
+  "json_file": "/home/victor/Documentos/IA Local do Zero/logs/dialogue-evaluations/run-20260926T174622977406Z.json"
+}

@@ -1,0 +1,118 @@
+{
+  "baseline_validation_loss": 4.255420112032129,
+  "initial_validation_loss": 4.255420112032129,
+  "initialization_mode": "continue-weights",
+  "candidate_validation_loss": 4.195741515611478,
+  "baseline_heldout_loss": 4.060284614562988,
+  "candidate_heldout_loss": 3.891258478164673,
+  "best_step": 300,
+  "completed_steps": 300,
+  "training_seconds": 206.24,
+  "baseline_answers": [
+    {
+      "prompt": "Meu treino tem loss 0,08 e validação 0,91 depois de muitas épocas. Qual hipótese devo testar primeiro?",
+      "answer": "```\n                                                                                                                                                                                                                                                            ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "A sequência fica instável e aparecem NaNs quando aumento o comprimento. Como investigaria isso?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Preciso classificar imagens pequenas com poucos exemplos. Que comparação inicial faria entre uma CNN e uma rede densa?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Quando um Transformer causal pode consultar tokens que ainda não foram gerados?",
+      "answer": "Parquiffinha o e a e a e sterve stervivabifinalização de cefffinha e a proja e uma produza proproduza e mança o de cava produzir a e mesperada proce a e a produzir o de suir mório e a e rega uma linha pria, fffinha e a e a e ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Meu agente de reforço aumenta a recompensa no treino, mas falha em estados nunca vistos. O que isso sugere?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Um gerador produz imagens quase iguais e o discriminador fica muito confiante. Como nomear e medir esse problema?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Como testar se a augmentação preserva o rótulo antes de incluí-la no pipeline?",
+      "answer": "Meção e manho e a e a e pode stestes que foi foi confirme a e trórimeterve a passe a e a e a e a a procas, valvalvalicio e a e a e a o e a a e a o de cenha o que foi foi mo e a e a e a a cendo o e a e a e uma mute a e a e uma dadaso cendo e a a e a e a caminalização e ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Quero comparar BERT e GPT em uma tarefa, mas o conjunto de teste contém textos usados no pré-treino. Qual é o risco?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    }
+  ],
+  "candidate_answers": [
+    {
+      "prompt": "Meu treino tem loss 0,08 e validação 0,91 depois de muitas épocas. Qual hipótese devo testar primeiro?",
+      "answer": "```\n          retura exiver uma mutra e a a a passerada primeirua pra projetos e a produzir a de cam s de valorestadada de ca: de dada nivao procria a a e a uma linha pria e a a pria procrimeirutar a proprojefinha propropass",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "A sequência fica instável e aparecem NaNs quando aumento o comprimento. Como investigaria isso?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Preciso classificar imagens pequenas com poucos exemplos. Que comparação inicial faria entre uma CNN e uma rede densa?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Quando um Transformer causal pode consultar tokens que ainda não foram gerados?",
+      "answer": "Cone uma le. Re, procaça e a e a o de co de cabirório e nia problimancações procabicionizações da mais de caminhordem serar o e a e a o e a de registre o cabice mais ou ou ou ou a e a e uma dadas.\n",
+      "tokens": 115,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Meu agente de reforço aumenta a recompensa no treino, mas falha em estados nunca vistos. O que isso sugere?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Um gerador produz imagens quase iguais e o discriminador fica muito confiante. Como nomear e medir esse problema?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Como testar se a augmentação preserva o rótulo antes de incluí-la no pipeline?",
+      "answer": "Mecamados e a cas, mancaminaltestrótervo e a e registras e mantendo e a e a e com `por cações que a e a e e e registrórimetestescolhipótestesperado, mudados, mescolha e a com o e mutestes da e a e a e uma registre o que foi tura e registre a e relei",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Quero comparar BERT e GPT em uma tarefa, mas o conjunto de teste contém textos usados no pré-treino. Qual é o risco?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    }
+  ],
+  "promoted": false,
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

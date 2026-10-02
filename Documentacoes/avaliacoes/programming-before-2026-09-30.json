@@ -1,0 +1,866 @@
+{
+  "schema": "programming-workflows-audit/v1",
+  "cases": [
+    {
+      "case": "inspect-python-file",
+      "passed": false,
+      "observed": {
+        "workspace": "/tmp/ia-programming-audit-02q2q2ag/python",
+        "path": "logic.py",
+        "files_scanned": 0,
+        "symbols": [],
+        "imports": [],
+        "symbol_count": 0,
+        "import_count": 0,
+        "truncated": false
+      },
+      "seconds": 0.001
+    },
+    {
+      "case": "agent-explains-python-file",
+      "passed": false,
+      "observed": {
+        "ok": true,
+        "report": {
+          "schema": "agent-report/v2",
+          "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+          "status": "blocked",
+          "requirements": {
+            "prompt": "Leia logic.py e explique as funções existentes, sem alterar arquivos.",
+            "objective": "analyze",
+            "summary": "Leia logic.py e explique as funções existentes, sem alterar arquivos.",
+            "interpretations": [
+              {
+                "id": "interpretation-primary",
+                "summary": "Leia logic.py e explique as funções existentes, sem alterar arquivos.",
+                "assumptions": [],
+                "missing": [],
+                "plausibility": 0.9
+              }
+            ],
+            "constraints": [],
+            "acceptanceCriteria": [
+              {
+                "id": "acceptance-clarity",
+                "text": "A entrega deve responder ao objetivo declarado sem inventar premissas.",
+                "verifiable": true,
+                "source": "derived"
+              },
+              {
+                "id": "acceptance-project-evidence",
+                "text": "A explicação do projeto deve citar arquivos lidos e separar fatos observados de inferências.",
+                "verifiable": true,
+                "source": "derived"
+              }
+            ],
+            "missingInformation": [],
+            "questions": [],
+            "ambiguityScore": 0,
+            "requiresClarification": false,
+            "confidence": {
+              "score": 0.86,
+              "basis": "derived",
+              "reasons": [
+                "O pedido contém intenção e contexto suficientes para iniciar um plano."
+              ],
+              "calibrated": false
+            }
+          },
+          "inspection": {
+            "workspace": "/tmp/ia-programming-audit-02q2q2ag/python",
+            "files": [
+              "logic.py",
+              "test_logic.py"
+            ],
+            "directories": [],
+            "truncated": false,
+            "manifests": [],
+            "testFiles": [
+              "test_logic.py"
+            ],
+            "entrypoints": []
+          },
+          "plan": {
+            "objective": "Leia logic.py e explique as funções existentes, sem alterar arquivos.",
+            "steps": [
+              {
+                "id": "select-workspace",
+                "phase": "observe",
+                "description": "Selecionar e delimitar o workspace autorizado.",
+                "requiresApproval": false
+              },
+              {
+                "id": "inspect-project",
+                "phase": "observe",
+                "description": "Inspecionar manifestos, entradas e testes antes de decidir.",
+                "requiresApproval": false
+              },
+              {
+                "id": "local-planner-loop",
+                "phase": "plan",
+                "description": "Propor uma ação local, validá-la e observar o resultado.",
+                "requiresApproval": false
+              },
+              {
+                "id": "verify",
+                "phase": "verify",
+                "description": "Conferir se a conclusão está sustentada pelos arquivos lidos e separar fatos de inferências.",
+                "requiresApproval": false
+              }
+            ]
+          },
+          "evidence": [],
+          "artifacts": [],
+          "events": [
+            {
+              "seq": 1,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "observe",
+              "status": "running",
+              "kind": "task.started",
+              "title": "Tarefa iniciada",
+              "detail": "Leia logic.py e explique as funções existentes, sem alterar arquivos."
+            },
+            {
+              "seq": 2,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "objective.selected",
+              "title": "Objetivo operacional selecionado",
+              "detail": "analyze",
+              "payload": {
+                "objective": "analyze",
+                "requestedObjective": "analyze"
+              }
+            },
+            {
+              "seq": 3,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "cognition.summary",
+              "title": "Thinking: rota e próximo passo",
+              "detail": "A rota foi escolhida pelo objetivo classificado e seguirá as restrições e lacunas detectadas no pedido. Próxima etapa: Inspecionar o workspace e apoiar a resposta em evidências observadas.",
+              "payload": {
+                "route": "workspace_read",
+                "personalityMode": "analysis",
+                "uncertainties": [],
+                "confidence": 0.86,
+                "confidenceBasis": "derived"
+              }
+            },
+            {
+              "seq": 4,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "learn",
+              "status": "completed",
+              "kind": "workflow.dataset.checked",
+              "title": "Precedentes procedurais consultados",
+              "detail": "Nenhum precedente revisado compatível; usando política operacional padrão.",
+              "payload": {
+                "trustedRecords": 0,
+                "rejectedRecords": 0,
+                "matchedRecords": []
+              }
+            },
+            {
+              "seq": 5,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "completed",
+              "kind": "operational.policy.selected",
+              "title": "Política de execução definida",
+              "detail": "Ler ao menos um arquivo selecionado e citar o caminho na síntese.",
+              "payload": {
+                "mode": "read_only",
+                "allowedTools": [
+                  "inspect_project",
+                  "inspect_code",
+                  "list_tools",
+                  "list_files",
+                  "path_info",
+                  "find_paths",
+                  "list_tree",
+                  "compare_files",
+                  "git_diff",
+                  "read_file",
+                  "extract_document_text",
+                  "inspect_media",
+                  "search_files",
+                  "diagnose_project"
+                ],
+                "maxActions": 12
+              }
+            },
+            {
+              "seq": 6,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "observe",
+              "status": "completed",
+              "kind": "requirements.analyzed",
+              "title": "Requisitos analisados",
+              "detail": "Ambiguidade 0.00",
+              "payload": {
+                "questions": [],
+                "missing": [],
+                "ambiguityScore": 0
+              }
+            },
+            {
+              "seq": 7,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "observe",
+              "status": "completed",
+              "kind": "runtime.capabilities.observed",
+              "title": "Ferramentas do runtime observadas",
+              "detail": "34 ferramenta(s) registrada(s) e disponíveis para esta tarefa.",
+              "payload": {
+                "availableTools": [
+                  "inspect_code",
+                  "search_web",
+                  "open_page",
+                  "research_web",
+                  "list_tools",
+                  "apply_batch",
+                  "undo_batch",
+                  "list_sources",
+                  "cite_sources",
+                  "list_files",
+                  "path_info",
+                  "find_paths",
+                  "list_tree",
+                  "compare_files",
+                  "git_diff",
+                  "read_file",
+                  "search_files",
+                  "inspect_project",
+                  "diagnose_project",
+                  "propose_repair",
+                  "apply_repair",
+                  "project_checks",
+                  "terminal_run",
+                  "process_start",
+                  "process_status",
+                  "process_stop",
+                  "set_workspace",
+                  "create_workspace",
+                  "create_directory",
+                  "create_file",
+                  "create_web_page",
+                  "edit_file",
+                  "inspect_media",
+                  "extract_document_text"
+                ],
+                "allowedTools": [
+                  "inspect_code",
+                  "list_tools",
+                  "list_files",
+                  "path_info",
+                  "find_paths",
+                  "list_tree",
+                  "compare_files",
+                  "git_diff",
+                  "read_file",
+                  "search_files",
+                  "inspect_project",
+                  "diagnose_project",
+                  "inspect_media",
+                  "extract_document_text"
+                ]
+              }
+            },
+            {
+              "seq": 8,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "observe",
+              "status": "running",
+              "kind": "workspace.selected",
+              "title": "Workspace selecionado",
+              "detail": "/tmp/ia-programming-audit-02q2q2ag/python"
+            },
+            {
+              "seq": 9,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "observe",
+              "status": "running",
+              "kind": "memory.updated",
+              "title": "Workspace registrado na memória",
+              "detail": "/tmp/ia-programming-audit-02q2q2ag/python"
+            },
+            {
+              "seq": 10,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "observe",
+              "status": "running",
+              "kind": "workspace.inspected",
+              "title": "Estrutura inspecionada",
+              "detail": "Base existente detectada.",
+              "payload": {
+                "workspace": "/tmp/ia-programming-audit-02q2q2ag/python",
+                "initialProject": false
+              }
+            },
+            {
+              "seq": 11,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "plan.created",
+              "title": "Plano criado",
+              "detail": "4 etapa(s)"
+            },
+            {
+              "seq": 12,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "analysis.scope.selected",
+              "title": "Selecionando arquivos centrais",
+              "detail": "1 arquivo(s) candidato(s); leitura limitada a 120 linhas e 8 KiB por arquivo.",
+              "payload": {
+                "files": [
+                  "logic.py"
+                ],
+                "maxFiles": 4,
+                "maxLines": 120,
+                "maxBytes": 8192
+              }
+            },
+            {
+              "seq": 13,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "completed",
+              "kind": "objective.action.selected",
+              "title": "Próxima ação escolhida pelo núcleo",
+              "detail": "inspect_code",
+              "payload": {
+                "tool": "inspect_code",
+                "objective": "analyze",
+                "reason": "Ler arquivo central selecionado na inspeção antes de sintetizar a análise."
+              }
+            },
+            {
+              "seq": 14,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "action.resuming",
+              "title": "Retomando a ação planejada",
+              "detail": "inspect_code",
+              "payload": {
+                "tool": "inspect_code"
+              }
+            },
+            {
+              "seq": 15,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "brain.action.validated",
+              "title": "Próxima ação validada pelo núcleo",
+              "detail": "Ler arquivo central selecionado na inspeção antes de sintetizar a análise.",
+              "payload": {
+                "planId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7-plan-1",
+                "actionId": "action-741f4983-242f-46c8-8d40-06d23d846296",
+                "state": "planning",
+                "capability": "inspect_code",
+                "group": "read",
+                "effect": "none",
+                "retryStrategy": "safe_read",
+                "risk": "low",
+                "reversible": true
+              }
+            },
+            {
+              "seq": 16,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "act",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Executando ferramenta local",
+              "detail": "Executando a ação autorizada.",
+              "payload": {
+                "planId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7-plan-1",
+                "actionId": "action-741f4983-242f-46c8-8d40-06d23d846296",
+                "tool": "inspect_code",
+                "attempt": 1,
+                "expectedEffect": "Ler arquivo central selecionado na inspeção antes de sintetizar a análise.",
+                "state": "executing",
+                "transition": {
+                  "from": "planning",
+                  "to": "executing"
+                }
+              }
+            },
+            {
+              "seq": 17,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "verify",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Conferindo resultado da ferramenta",
+              "detail": "Resultado bruto recebido; iniciando verificação.",
+              "payload": {
+                "planId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7-plan-1",
+                "actionId": "action-741f4983-242f-46c8-8d40-06d23d846296",
+                "tool": "inspect_code",
+                "ok": true,
+                "summary": "logic.py",
+                "evidence": [
+                  "inspect_code: logic.py"
+                ],
+                "state": "verifying",
+                "transition": {
+                  "from": "executing",
+                  "to": "verifying"
+                }
+              }
+            },
+            {
+              "seq": 18,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Planejando próxima ação",
+              "detail": "A ação foi verificada; o núcleo decidirá o próximo passo da tarefa.",
+              "payload": {
+                "planId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7-plan-1",
+                "state": "planning",
+                "transition": {
+                  "from": "verifying",
+                  "to": "planning"
+                }
+              }
+            },
+            {
+              "seq": 19,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.requested",
+              "title": "Consultando o planejador local",
+              "detail": "Ciclo 2 de 12.",
+              "payload": {
+                "step": 2,
+                "limit": 12
+              }
+            },
+            {
+              "seq": 20,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.finished",
+              "title": "Planejador encerrou o ciclo",
+              "detail": "Inspecionei 0 arquivos. Encontrei 0 símbolos e 0 imports.\n{\n  \"symbols\": [],\n  \"imports\": []\n}",
+              "payload": {
+                "backend": "agent-loop",
+                "traceId": "trace-9c9aa9114def453b802e19a2601fc0cc"
+              }
+            },
+            {
+              "seq": 21,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.recovery.requested",
+              "title": "Reavaliando método do planejador",
+              "detail": "O planejador não propôs uma ferramenta, mas ainda há critérios pendentes: analysis.references: A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido.",
+              "payload": {
+                "attempt": 1,
+                "limit": 2
+              }
+            },
+            {
+              "seq": 22,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "act",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Preparando recuperação",
+              "detail": "O planejador não propôs uma ferramenta, mas ainda há critérios pendentes: analysis.references: A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido.",
+              "payload": {
+                "error": "O planejador não propôs uma ferramenta, mas ainda há critérios pendentes: analysis.references: A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido.",
+                "recoveryAttempt": 1,
+                "state": "recovering",
+                "transition": {
+                  "from": "planning",
+                  "to": "recovering"
+                }
+              }
+            },
+            {
+              "seq": 23,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Planejando próxima ação",
+              "detail": "Observação disponível; escolhendo a próxima ação.",
+              "payload": {
+                "planId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7-plan-2",
+                "state": "planning",
+                "transition": {
+                  "from": "recovering",
+                  "to": "planning"
+                }
+              }
+            },
+            {
+              "seq": 24,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.requested",
+              "title": "Consultando o planejador local",
+              "detail": "Ciclo 2 de 12.",
+              "payload": {
+                "step": 2,
+                "limit": 12
+              }
+            },
+            {
+              "seq": 25,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.finished",
+              "title": "Planejador encerrou o ciclo",
+              "detail": "Inspecionei 0 arquivos. Encontrei 0 símbolos e 0 imports.\n{\n  \"symbols\": [],\n  \"imports\": []\n}",
+              "payload": {
+                "backend": "agent-loop",
+                "traceId": "trace-6f0b287a0a704f73b98904a4e68c7faf"
+              }
+            },
+            {
+              "seq": 26,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.recovery.requested",
+              "title": "Reavaliando método do planejador",
+              "detail": "O planejador não propôs uma ferramenta, mas ainda há critérios pendentes: analysis.references: A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido.",
+              "payload": {
+                "attempt": 2,
+                "limit": 2
+              }
+            },
+            {
+              "seq": 27,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "act",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Preparando recuperação",
+              "detail": "O planejador não propôs uma ferramenta, mas ainda há critérios pendentes: analysis.references: A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido.",
+              "payload": {
+                "error": "O planejador não propôs uma ferramenta, mas ainda há critérios pendentes: analysis.references: A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido.",
+                "recoveryAttempt": 2,
+                "state": "recovering",
+                "transition": {
+                  "from": "planning",
+                  "to": "recovering"
+                }
+              }
+            },
+            {
+              "seq": 28,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Planejando próxima ação",
+              "detail": "Observação disponível; escolhendo a próxima ação.",
+              "payload": {
+                "planId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7-plan-2",
+                "state": "planning",
+                "transition": {
+                  "from": "recovering",
+                  "to": "planning"
+                }
+              }
+            },
+            {
+              "seq": 29,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.requested",
+              "title": "Consultando o planejador local",
+              "detail": "Ciclo 2 de 12.",
+              "payload": {
+                "step": 2,
+                "limit": 12
+              }
+            },
+            {
+              "seq": 30,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.finished",
+              "title": "Planejador encerrou o ciclo",
+              "detail": "Inspecionei 0 arquivos. Encontrei 0 símbolos e 0 imports.\n{\n  \"symbols\": [],\n  \"imports\": []\n}",
+              "payload": {
+                "backend": "agent-loop",
+                "traceId": "trace-7711a7973b624b338812b6ecea5807c5"
+              }
+            },
+            {
+              "seq": 31,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "verify",
+              "status": "blocked",
+              "kind": "acceptance.evaluated",
+              "title": "Critérios de aceite pendentes",
+              "detail": "✓ delivery.summary: A tarefa precisa de uma síntese final baseada nos resultados observados.\n✓ analysis.answer: A análise precisa entregar uma conclusão, não apenas repetir que está pendente.\n✓ analysis.read: A análise precisa ler pelo menos um arquivo pertinente do workspace.\n• analysis.references: A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido.\n✓ analysis.coverage: Todos os arquivos centrais selecionados foram lidos.",
+              "payload": {
+                "checks": [
+                  {
+                    "id": "delivery.summary",
+                    "passed": true,
+                    "detail": "A tarefa precisa de uma síntese final baseada nos resultados observados."
+                  },
+                  {
+                    "id": "analysis.answer",
+                    "passed": true,
+                    "detail": "A análise precisa entregar uma conclusão, não apenas repetir que está pendente."
+                  },
+                  {
+                    "id": "analysis.read",
+                    "passed": true,
+                    "detail": "A análise precisa ler pelo menos um arquivo pertinente do workspace."
+                  },
+                  {
+                    "id": "analysis.references",
+                    "passed": false,
+                    "detail": "A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido."
+                  },
+                  {
+                    "id": "analysis.coverage",
+                    "passed": true,
+                    "detail": "Todos os arquivos centrais selecionados foram lidos."
+                  }
+                ]
+              }
+            },
+            {
+              "seq": 32,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "complete",
+              "status": "blocked",
+              "kind": "brain.state",
+              "title": "Etapa pausada",
+              "detail": "analysis.references: A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido.",
+              "payload": {
+                "error": "analysis.references: A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido.",
+                "state": "abstaining",
+                "transition": {
+                  "from": "planning",
+                  "to": "abstaining"
+                }
+              }
+            },
+            {
+              "seq": 33,
+              "taskId": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+              "phase": "complete",
+              "status": "blocked",
+              "kind": "acceptance.failed",
+              "title": "Tarefa pendente",
+              "detail": "analysis.references: A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido.",
+              "payload": {
+                "pendingCriteria": [
+                  "analysis.references"
+                ]
+              }
+            }
+          ],
+          "finalText": "Inspecionei 0 arquivos. Encontrei 0 símbolos e 0 imports.\n{\n  \"symbols\": [],\n  \"imports\": []\n}\n\nArquivos consultados: `logic.py`.",
+          "error": "analysis.references: A síntese da análise precisa citar ao menos um dos arquivos cujo conteúdo foi lido."
+        },
+        "cognition": {
+          "schema": "agent-understanding/v1",
+          "task_id": "task-395e4189-9dc0-4482-9918-9d94c337a2e7",
+          "preparation_id": "prep-332eba14-64e9-4ccc-b89d-7a6426a34ed7",
+          "status": "ready",
+          "objective": "analyze",
+          "interpretation": "Leia logic.py e explique as funções existentes, sem alterar arquivos.",
+          "personality": {
+            "mode": "analysis",
+            "version": "local-personality/v1"
+          },
+          "assumptions": [],
+          "constraints": [],
+          "acceptance_criteria": [
+            "A entrega deve responder ao objetivo declarado sem inventar premissas.",
+            "A explicação do projeto deve citar arquivos lidos e separar fatos observados de inferências."
+          ],
+          "questions": [],
+          "next_step": "Inspecionar o workspace e apoiar a resposta em evidências observadas.",
+          "workspace": {
+            "root": "/tmp/ia-programming-audit-02q2q2ag/python",
+            "manifests": [],
+            "test_files": [
+              "test_logic.py"
+            ],
+            "truncated": false
+          },
+          "capabilities": {
+            "available": [
+              "inspect_project",
+              "inspect_code",
+              "list_tools",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "extract_document_text",
+              "inspect_media",
+              "search_files",
+              "diagnose_project"
+            ],
+            "approval_required_for_writes": true
+          },
+          "context": {
+            "schema": "agent-context/v2",
+            "memory_items": 0,
+            "skills": 0,
+            "evidence": 0
+          }
+        },
+        "taskStorage": {
+          "saved": true,
+          "directory": "/home/victor/Documentos/IA Local do Zero/.agent-state/tasks"
+        },
+        "preparation": {
+          "id": "prep-332eba14-64e9-4ccc-b89d-7a6426a34ed7",
+          "reused": false
+        },
+        "awaitingApproval": false
+      },
+      "seconds": 0.557
+    },
+    {
+      "case": "inspect-typescript-declarations",
+      "passed": false,
+      "observed": {
+        "workspace": "/tmp/ia-programming-audit-02q2q2ag/typescript",
+        "path": "logic.ts",
+        "files_scanned": 0,
+        "symbols": [],
+        "imports": [],
+        "symbol_count": 0,
+        "import_count": 0,
+        "truncated": false
+      },
+      "seconds": 0.002
+    },
+    {
+      "case": "node-tests-without-manifest",
+      "passed": false,
+      "observed": {
+        "check": "unittest",
+        "command": "python3 -m unittest discover -s tests -p test*.py -v",
+        "passed": false,
+        "executed": true,
+        "exit_code": 5,
+        "elapsed_ms": 101,
+        "stdout": "",
+        "stderr": "\n----------------------------------------------------------------------\nRan 0 tests in 0.000s\n\nNO TESTS RAN\n",
+        "truncated": false,
+        "locations": {
+          "unittest": [
+            "."
+          ]
+        }
+      },
+      "seconds": 0.104
+    },
+    {
+      "case": "zero-tests-is-not-success",
+      "passed": false,
+      "observed": {
+        "check": "unittest",
+        "command": "python3 -m unittest discover -s tests -p test*.py -v",
+        "passed": false,
+        "executed": true,
+        "exit_code": 5,
+        "elapsed_ms": 101,
+        "stdout": "",
+        "stderr": "\n----------------------------------------------------------------------\nRan 0 tests in 0.000s\n\nNO TESTS RAN\n",
+        "truncated": false,
+        "locations": {
+          "unittest": [
+            "."
+          ]
+        }
+      },
+      "seconds": 0.104
+    },
+    {
+      "case": "large-output-does-not-deadlock",
+      "passed": false,
+      "observed": {
+        "check": "unittest",
+        "command": "python3 -m unittest discover -s . -p test*.py -v",
+        "passed": false,
+        "executed": true,
+        "timed_out": true,
+        "elapsed_ms": 9009,
+        "stdout": "",
+        "stderr": "test_stream (test_output.Output.test_stream) ... xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "locations": {
+          "unittest": [
+            "."
+          ]
+        },
+        "message": "a verificação excedeu 9 segundos e foi interrompida"
+      },
+      "seconds": 9.014
+    },
+    {
+      "case": "go-tests",
+      "passed": false,
+      "observed": {
+        "available": [],
+        "locations": {},
+        "executed": false,
+        "passed": true,
+        "message": "nenhum verificador reconhecido no workspace; a conclusão foi registrada sem teste executável"
+      },
+      "seconds": 0.003
+    },
+    {
+      "case": "cpp-compiler-check",
+      "passed": false,
+      "observed": {
+        "available": [],
+        "locations": {},
+        "executed": false,
+        "passed": true,
+        "message": "nenhum verificador reconhecido no workspace; a conclusão foi registrada sem teste executável"
+      },
+      "seconds": 0.003
+    },
+    {
+      "case": "novel-python-implementation",
+      "passed": false,
+      "error": "HTTP Error 400: Bad Request",
+      "seconds": 0.009
+    }
+  ],
+  "passed": 0,
+  "total": 9,
+  "general_programming_mastery": false,
+  "limitations": [
+    "Ferramentas e geração são avaliadas separadamente; os casos não cobrem qualquer cenário.",
+    "A implementação nova exige avaliação funcional independente antes de afirmar qualidade geral."
+  ]
+}

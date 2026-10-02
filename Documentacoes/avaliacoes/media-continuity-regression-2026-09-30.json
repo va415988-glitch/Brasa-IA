@@ -1,0 +1,31 @@
+{
+  "schema": "task-continuity-smoke/v1",
+  "checks": [
+    {
+      "id": "persist_before_effect",
+      "passed": true
+    },
+    {
+      "id": "goal_survives_restart",
+      "passed": true
+    },
+    {
+      "id": "same_task_without_client_history",
+      "passed": true
+    },
+    {
+      "id": "verified_source_delivered",
+      "passed": true
+    },
+    {
+      "id": "receipt_persisted",
+      "passed": true
+    }
+  ],
+  "task_id": "task-93e3a201-62bf-4275-a050-269301b54829",
+  "restart_process_id": 59217,
+  "status": "completed",
+  "final_text": "Evidências recebidas dos anexos:\n\ncontext.txt:\n\n> Controlled continuity test fixture.\n\nAnexo:\n\n> The verified marker is CONTINUITY-42.\n\nFontes consultadas: context.txt, http://127.0.0.1:37181/document",
+  "error": null,
+  "passed": true
+}

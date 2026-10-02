@@ -1,0 +1,288 @@
+{
+  "schema": "own-printed-ocr-evaluation/v1",
+  "method": "local-font-prototypes",
+  "checkpoint_sha256": "943e8fe2b731b4c5cdb47aa4343d462655b891d58dc97d71a1976eb58d6386f6",
+  "external_weights": false,
+  "evaluation_fonts_excluded_from_fit": true,
+  "cases": [
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 20,
+      "expected": "42 731",
+      "actual": "42 731",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 20,
+      "expected": "TOTAL 128",
+      "actual": "TOTAL 128",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 20,
+      "expected": "Pedido 42",
+      "actual": "Pedído 42",
+      "edit_distance": 1,
+      "exact": false,
+      "status": "ok"
+    },
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 20,
+      "expected": "São 23",
+      "actual": "S□o 23",
+      "edit_distance": 1,
+      "exact": false,
+      "status": "partial"
+    },
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 20,
+      "expected": "MEDIA 2026",
+      "actual": "□ED□A 2O2ó",
+      "edit_distance": 4,
+      "exact": false,
+      "status": "partial"
+    },
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 28,
+      "expected": "42 731",
+      "actual": "42 731",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 28,
+      "expected": "TOTAL 128",
+      "actual": "TOTAL 128",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 28,
+      "expected": "Pedido 42",
+      "actual": "Pedido 42",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 28,
+      "expected": "São 23",
+      "actual": "São 23",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 28,
+      "expected": "MEDIA 2026",
+      "actual": "□ED□A 202ó",
+      "edit_distance": 3,
+      "exact": false,
+      "status": "partial"
+    },
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 34,
+      "expected": "42 731",
+      "actual": "42 731",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 34,
+      "expected": "TOTAL 128",
+      "actual": "TOTAL 128",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 34,
+      "expected": "Pedido 42",
+      "actual": "Pedido 42",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 34,
+      "expected": "São 23",
+      "actual": "São 23",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "Lato-Regular.ttf",
+      "size": 34,
+      "expected": "MEDIA 2026",
+      "actual": "□ED□A 202ó",
+      "edit_distance": 3,
+      "exact": false,
+      "status": "partial"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 20,
+      "expected": "42 731",
+      "actual": "42 73 □",
+      "edit_distance": 2,
+      "exact": false,
+      "status": "partial"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 20,
+      "expected": "TOTAL 128",
+      "actual": "TOTAL □ 28",
+      "edit_distance": 2,
+      "exact": false,
+      "status": "partial"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 20,
+      "expected": "Pedido 42",
+      "actual": "Pedido 42",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 20,
+      "expected": "São 23",
+      "actual": "Sáo 23",
+      "edit_distance": 1,
+      "exact": false,
+      "status": "ok"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 20,
+      "expected": "MEDIA 2026",
+      "actual": "MED□A 2026",
+      "edit_distance": 1,
+      "exact": false,
+      "status": "partial"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 28,
+      "expected": "42 731",
+      "actual": "42 73 □",
+      "edit_distance": 2,
+      "exact": false,
+      "status": "partial"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 28,
+      "expected": "TOTAL 128",
+      "actual": "TOTAL □ 28",
+      "edit_distance": 2,
+      "exact": false,
+      "status": "partial"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 28,
+      "expected": "Pedido 42",
+      "actual": "Pedido 42",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 28,
+      "expected": "São 23",
+      "actual": "São 23",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 28,
+      "expected": "MEDIA 2026",
+      "actual": "MED□A 2026",
+      "edit_distance": 1,
+      "exact": false,
+      "status": "partial"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 34,
+      "expected": "42 731",
+      "actual": "42 73□",
+      "edit_distance": 1,
+      "exact": false,
+      "status": "partial"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 34,
+      "expected": "TOTAL 128",
+      "actual": "TOTAL □ 28",
+      "edit_distance": 2,
+      "exact": false,
+      "status": "partial"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 34,
+      "expected": "Pedido 42",
+      "actual": "Pedido 42",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 34,
+      "expected": "São 23",
+      "actual": "São 23",
+      "edit_distance": 0,
+      "exact": true,
+      "status": "ok"
+    },
+    {
+      "font": "UbuntuSans[wdth,wght].ttf",
+      "size": 34,
+      "expected": "MEDIA 2026",
+      "actual": "□EDIA 2026",
+      "edit_distance": 1,
+      "exact": false,
+      "status": "partial"
+    }
+  ],
+  "exact_cases": 15,
+  "total_cases": 30,
+  "character_error_rate": 0.1125,
+  "production_eligible": false,
+  "scope": "synthetic-upright-printed-text-only",
+  "limitations": [
+    "Não mede fotos, manuscritos, rotação, layouts reais ou compreensão de cenas.",
+    "Resultados experimentais exigem conferência do original."
+  ]
+}

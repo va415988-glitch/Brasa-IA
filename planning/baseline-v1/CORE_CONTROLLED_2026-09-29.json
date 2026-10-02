@@ -1,0 +1,47 @@
+{
+  "schema": "brasa-core-controlled/v1",
+  "date": "2026-09-29",
+  "method": "Explicit user-provided app.py and test_app.py; no autonomous code generation. Approved only inspected apply_batch and project_checks in disposable workspace.",
+  "steps": [
+    {
+      "step": "proposal",
+      "task_id": "task-ce278c25-9008-4f0c-829c-6a0c25450088",
+      "status": "blocked",
+      "awaiting_approval": true,
+      "approval_required": true,
+      "mutation_observed": false,
+      "verification": null
+    },
+    {
+      "step": "write",
+      "task_id": "task-ce278c25-9008-4f0c-829c-6a0c25450088",
+      "status": "blocked",
+      "awaiting_approval": true,
+      "approval_required": true,
+      "mutation_observed": true,
+      "verification": null
+    },
+    {
+      "step": "verification",
+      "task_id": "task-ce278c25-9008-4f0c-829c-6a0c25450088",
+      "status": "completed",
+      "awaiting_approval": false,
+      "approval_required": true,
+      "mutation_observed": false,
+      "verification": {
+        "passed": true,
+        "executed": true,
+        "check": "unittest",
+        "stdout": "",
+        "stderr": "test_sum (test_app.AddTests.test_sum) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+        "summary": "Verificação aprovada.",
+        "evidence": []
+      }
+    }
+  ],
+  "files": {
+    "test_app.py": "0890417b12c7cca967f604232b059eb17ac2086efbe2334378689d46f2e67945",
+    "app.py": "8f75a68646c879fd0cff5c02708c010fb1c01d67ef9930d4e419106feb7897aa"
+  },
+  "result": "completed_with_unittest_passed"
+}

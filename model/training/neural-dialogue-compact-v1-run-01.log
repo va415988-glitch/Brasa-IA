@@ -1,0 +1,57 @@
+{"encoding_rows": 500, "total_rows": 1603}
+{"encoding_rows": 1000, "total_rows": 1603}
+{"encoding_rows": 1500, "total_rows": 1603}
+{"encoding_rows": 1603, "total_rows": 1603}
+{"encoding_rows": 113, "total_rows": 113}
+/home/victor/Documentos/IA Local do Zero/python/model.py:57: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  self.blocks = nn.TransformerEncoder(block, num_layers=layers)
+{"records": {"train": 1603, "training_views": 1603, "validation": 113, "heldout": 20}, "training_windows": 1609, "parameters": 3487232}
+{"step": 0, "validation_loss": 4.086318476007565}
+{"step": 100, "train_loss": 3.4892122745513916, "validation_loss": 3.8473561344965606, "best_step": 100, "elapsed_seconds": 115.64}
+{"step": 200, "train_loss": 3.49589204788208, "validation_loss": 3.799325771866877, "best_step": 200, "elapsed_seconds": 251.14}
+{"step": 300, "train_loss": 3.3619368076324463, "validation_loss": 3.7638423981563562, "best_step": 300, "elapsed_seconds": 369.06}
+{"step": 400, "train_loss": 3.17501163482666, "validation_loss": 3.7506185738301205, "best_step": 400, "elapsed_seconds": 472.49}
+{"step": 500, "train_loss": 3.3147785663604736, "validation_loss": 3.742179409026074, "best_step": 500, "elapsed_seconds": 574.55}
+Traceback (most recent call last):
+  File "/home/victor/Documentos/IA Local do Zero/python/finetune_assistant.py", line 346, in <module>
+    main()
+    ~~~~^^
+  File "/home/victor/Documentos/IA Local do Zero/python/finetune_assistant.py", line 332, in main
+    candidate_answers = sample_answers(model, tokenizer, config, heldout)
+  File "/home/victor/Documentos/IA Local do Zero/python/finetune_assistant.py", line 171, in sample_answers
+    logits = model(torch.tensor([ids[-config['context_length']:]]))[0, -1]
+             ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/victor/Documentos/IA Local do Zero/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/victor/Documentos/IA Local do Zero/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/victor/Documentos/IA Local do Zero/python/model.py", line 123, in forward
+    hidden = self.blocks(hidden, mask=causal_mask)
+  File "/home/victor/Documentos/IA Local do Zero/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/victor/Documentos/IA Local do Zero/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/victor/Documentos/IA Local do Zero/.venv/lib/python3.14/site-packages/torch/nn/modules/transformer.py", line 542, in forward
+    output = mod(
+        output,
+    ...<2 lines>...
+        src_key_padding_mask=src_key_padding_mask_for_layers,
+    )
+  File "/home/victor/Documentos/IA Local do Zero/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1783, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/victor/Documentos/IA Local do Zero/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1794, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/victor/Documentos/IA Local do Zero/.venv/lib/python3.14/site-packages/torch/nn/modules/transformer.py", line 921, in forward
+    return torch._transformer_encoder_layer_fwd(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        src,
+        ^^^^
+    ...<18 lines>...
+        mask_type,
+        ^^^^^^^^^^
+    )
+    ^
+KeyboardInterrupt

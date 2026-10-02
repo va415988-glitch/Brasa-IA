@@ -1,0 +1,29 @@
+{
+  "name": "process_stop",
+  "version": "1.0.0",
+  "description": "Encerra um processo iniciado pelo runtime e restrito ao workspace selecionado.",
+  "side_effects": "Envia encerramento ao grupo de processos isolado no início; força o encerramento após até um segundo.",
+  "requires_approval": true,
+  "risk": "medium",
+  "capabilities": ["process.control", "workspace.read"],
+  "idempotent": false,
+  "timeout_ms": 3000,
+  "arguments": {
+    "type": "object",
+    "properties": {
+      "process_id": {"type": "string", "maxLength": 64}
+    },
+    "additionalProperties": false
+  },
+  "preconditions": [
+    "process_id pertence ao workspace selecionado; quando omitido, usa o processo mais recente deste workspace",
+    "aprovação explícita para cada encerramento"
+  ],
+  "effects": ["encerra apenas o processo registrado pelo runtime e os filhos do grupo isolado"],
+  "rollback": null,
+  "retry_policy": "never_after_ambiguous_timeout",
+  "result": {
+    "type": "object",
+    "required": ["process_id", "state", "exit_code"]
+  }
+}

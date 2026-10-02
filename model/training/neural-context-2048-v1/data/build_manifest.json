@@ -1,0 +1,42 @@
+{
+  "schema": "neural-long-context-curriculum/v1",
+  "seed": 20260926,
+  "tokenizer": "model/godmode/godmode-tokenizer-v1.json",
+  "tokenizer_vocab_entries": 8188,
+  "target_training_context": 2048,
+  "sequence_length_includes_profile_and_answer": true,
+  "sequence_length_policy": {
+    "min": 1200,
+    "max": 1950
+  },
+  "training_rows": 96,
+  "validation_rows_selected_by_training_split_hash": 16,
+  "small_post_selection_heldout_rows": 8,
+  "direct_neural_eval_rows": 24,
+  "families": {
+    "planning": {
+      "train": 24,
+      "validation_by_hash": 4
+    },
+    "incident": {
+      "train": 24,
+      "validation_by_hash": 4
+    },
+    "support": {
+      "train": 24,
+      "validation_by_hash": 4
+    },
+    "research": {
+      "train": 24,
+      "validation_by_hash": 4
+    }
+  },
+  "lengths_tokens": {
+    "min": 1556,
+    "median": 1695,
+    "p95": 1749,
+    "max": 1787
+  },
+  "policy": "authored synthetic examples; no external model or private user data",
+  "split_rule": "training script selects rows with normalized-question SHA-256 bucket 1..9; bucket 0 is reserved for validation"
+}

@@ -1,0 +1,876 @@
+{
+  "schema": "local-api-metadata/v1",
+  "provider_default": "runtime-rust",
+  "capabilities": [
+    {"id":"computation.expression.evaluate","tool":"calculate","domain_tags":["computation","mathematics","data"],"network_policy":"offline"},
+    {"id":"computation.python-function.evaluate","tool":"evaluate_function","domain_tags":["computation","programming","workspace"],"network_policy":"offline"},
+    {
+      "id": "workspace.file.repair.apply",
+      "tool": "apply_repair",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "research.citations.create",
+      "tool": "cite_sources",
+      "domain_tags": [
+        "research",
+        "writing"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "workspace.directory.create",
+      "tool": "create_directory",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "workspace.batch.apply",
+      "tool": "apply_batch",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "workspace.batch.undo",
+      "tool": "undo_batch",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "workspace.file.create",
+      "tool": "create_file",
+      "domain_tags": [
+        "programming",
+        "workspace",
+        "writing"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "ui.prototype.create",
+      "tool": "create_web_page",
+      "domain_tags": [
+        "programming",
+        "design"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "project.failure.diagnose",
+      "tool": "diagnose_project",
+      "domain_tags": [
+        "programming",
+        "debugging"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "workspace.file.edit",
+      "tool": "edit_file",
+      "domain_tags": [
+        "programming",
+        "workspace",
+        "writing"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "document.text.extract",
+      "tool": "extract_document_text",
+      "domain_tags": [
+        "documents",
+        "research"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "media.inspect",
+      "tool": "inspect_media",
+      "domain_tags": [
+        "media",
+        "documents"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "project.inspect",
+      "tool": "inspect_project",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "workspace.files.list",
+      "tool": "list_files",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "research.sources.list",
+      "tool": "list_sources",
+      "domain_tags": [
+        "research"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "research.page.open",
+      "tool": "open_page",
+      "domain_tags": [
+        "research"
+      ],
+      "network_policy": "external-optional"
+    },
+    {
+      "id": "project.verify",
+      "tool": "project_checks",
+      "domain_tags": [
+        "programming",
+        "testing"
+      ],
+      "network_policy": "workspace-inherited"
+    },
+    {
+      "id": "project.repair.propose",
+      "tool": "propose_repair",
+      "domain_tags": [
+        "programming",
+        "debugging"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "workspace.file.read",
+      "tool": "read_file",
+      "description": "Prefira ler um intervalo de linhas localizado por busca; leia o arquivo completo apenas quando ele for curto ou a tarefa exigir.",
+      "domain_tags": [
+        "programming",
+        "workspace",
+        "documents"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "research.web.deep",
+      "tool": "research_web",
+      "domain_tags": [
+        "research"
+      ],
+      "network_policy": "external-optional"
+    },
+    {
+      "id": "workspace.code.search",
+      "tool": "search_files",
+      "description": "Localiza ocorrências no workspace e devolve caminho, linha e trechos compactos para leitura direcionada.",
+      "domain_tags": [
+        "programming",
+        "workspace",
+        "debugging"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "research.web.search",
+      "tool": "search_web",
+      "domain_tags": [
+        "research"
+      ],
+      "network_policy": "external-optional"
+    },
+    {
+      "id": "workspace.select",
+      "tool": "set_workspace",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "process.profile.run",
+      "tool": "terminal_run",
+      "domain_tags": [
+        "programming",
+        "testing",
+        "workspace"
+      ],
+      "network_policy": "workspace-inherited"
+    },
+    {
+      "id": "process.start",
+      "tool": "process_start",
+      "domain_tags": [
+        "programming",
+        "process-control"
+      ],
+      "network_policy": "workspace-inherited"
+    },
+    {
+      "id": "process.status",
+      "tool": "process_status",
+      "domain_tags": [
+        "programming",
+        "process-control"
+      ],
+      "network_policy": "workspace-inherited"
+    },
+    {
+      "id": "process.stop",
+      "tool": "process_stop",
+      "domain_tags": [
+        "programming",
+        "process-control"
+      ],
+      "network_policy": "workspace-inherited"
+    },
+    {
+      "id": "workspace.path.info",
+      "tool": "path_info",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "workspace.paths.find",
+      "tool": "find_paths",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "workspace.tree.list",
+      "tool": "list_tree",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "workspace.files.compare",
+      "tool": "compare_files",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "workspace.git.diff",
+      "tool": "git_diff",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "workspace.code.inspect",
+      "tool": "inspect_code",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "agent.tools.list",
+      "tool": "list_tools",
+      "domain_tags": [
+        "workspace"
+      ],
+      "network_policy": "offline"
+    },
+    {
+      "id": "workspace.create",
+      "tool": "create_workspace",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "network_policy": "offline"
+    }
+  ],
+  "service_apis": [
+    {
+      "id": "research.pipeline.run",
+      "method": "POST",
+      "path": "/api/v1/research",
+      "description": "Pesquisa na web, abre páginas relevantes, sintetiza com citações e pode preparar conteúdo para o acervo local.",
+      "domain_tags": [
+        "research",
+        "learning"
+      ],
+      "provider": "local-research-runtime",
+      "network_policy": "external-optional",
+      "side_effects": "optional-corpus-write",
+      "requires_approval": false,
+      "risk": "external-read",
+      "idempotent": false,
+      "timeout_ms": 45000,
+      "async": false,
+      "request_schema": {
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "topic": {
+            "type": "string",
+            "maxLength": 100
+          },
+          "max_results": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "save_to_corpus": {
+            "type": "boolean"
+          },
+          "category": {
+            "type": "string"
+          },
+          "output": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "response_schema": {
+        "type": "object",
+        "required": [
+          "answer",
+          "pages",
+          "citation_ids",
+          "grounded"
+        ],
+        "properties": {
+          "answer": {
+            "type": "string"
+          },
+          "pages": {
+            "type": "array"
+          },
+          "citation_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "grounded": {
+            "type": "boolean"
+          },
+          "saved_to_corpus": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "saved_count": {
+            "type": "integer"
+          }
+        }
+      }
+    },
+    {
+      "id": "learning.topic.start",
+      "method": "POST",
+      "path": "/api/learn",
+      "description": "Inicia job local que pesquisa fontes, avalia evidências, constrói currículo e práticas, e atualiza o ledger de competências.",
+      "domain_tags": [
+        "research",
+        "learning",
+        "programming"
+      ],
+      "provider": "local-learning-worker",
+      "network_policy": "external-optional",
+      "side_effects": "knowledge-and-skill-ledger-write",
+      "requires_approval": false,
+      "risk": "local-learning-write",
+      "idempotent": false,
+      "timeout_ms": 5000,
+      "async": true,
+      "request_schema": {
+        "type": "object",
+        "required": [
+          "topic"
+        ],
+        "properties": {
+          "topic": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          }
+        },
+        "additionalProperties": false
+      },
+      "response_schema": {
+        "type": "object",
+        "required": [
+          "job"
+        ],
+        "properties": {
+          "job": {
+            "type": "object",
+            "required": [
+              "id",
+              "topic",
+              "status",
+              "progress",
+              "logs"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "topic": {
+                "type": "string"
+              },
+              "status": {
+                "enum": [
+                  "running",
+                  "completed",
+                  "failed"
+                ]
+              },
+              "progress": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              "logs": {
+                "type": "array"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "learning.topic.status",
+      "method": "GET",
+      "path": "/api/learn/{job_id}",
+      "description": "Consulta progresso, fontes, avaliação e prática de um job de aprendizado local.",
+      "domain_tags": [
+        "learning",
+        "observability"
+      ],
+      "provider": "local-learning-worker",
+      "network_policy": "offline",
+      "side_effects": false,
+      "requires_approval": false,
+      "risk": "read",
+      "idempotent": true,
+      "timeout_ms": 5000,
+      "async": false,
+      "request_schema": {
+        "type": "object",
+        "required": [
+          "job_id"
+        ],
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "pattern": "^[a-fA-F0-9]{32}$"
+          }
+        },
+        "additionalProperties": false
+      },
+      "response_schema": {
+        "type": "object",
+        "required": [
+          "ok",
+          "job"
+        ],
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "job": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "topic": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "progress": {
+                "type": "integer"
+              },
+              "sources": {
+                "type": "array"
+              },
+              "evidence": {
+                "type": "object"
+              },
+              "laboratory": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "learning.autonomous.status",
+      "method": "GET",
+      "path": "/api/v1/learning/autonomous",
+      "description": "Consulta próxima trilha, ciclos recentes, orçamento e auditoria do aprendizado autônomo.",
+      "domain_tags": [
+        "learning",
+        "observability"
+      ],
+      "provider": "local-learning-worker",
+      "network_policy": "offline",
+      "side_effects": false,
+      "requires_approval": false,
+      "risk": "read",
+      "idempotent": true,
+      "timeout_ms": 5000,
+      "async": false,
+      "request_schema": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "response_schema": {
+        "type": "object",
+        "required": [
+          "schema",
+          "next",
+          "audit"
+        ],
+        "properties": {
+          "schema": {
+            "const": "autonomous-learning-status/v1"
+          },
+          "next": {
+            "type": "object"
+          },
+          "control": {
+            "type": "object"
+          },
+          "audit": {
+            "type": "array"
+          }
+        }
+      }
+    },
+    {
+      "id": "learning.autonomous.tick",
+      "method": "POST",
+      "path": "/api/v1/learning/autonomous/tick",
+      "description": "Observa o estado e inicia no máximo um ciclo de aprendizado limitado quando a política permite.",
+      "domain_tags": [
+        "learning",
+        "research"
+      ],
+      "provider": "local-learning-worker",
+      "network_policy": "external-optional",
+      "side_effects": "knowledge-and-skill-ledger-write",
+      "requires_approval": true,
+      "risk": "local-learning-write",
+      "idempotent": false,
+      "timeout_ms": 10000,
+      "async": true,
+      "request_schema": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "response_schema": {
+        "type": "object",
+        "required": [
+          "ok",
+          "status"
+        ],
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "started",
+              "running",
+              "finished",
+              "interrupted",
+              "cooldown",
+              "failed"
+            ]
+          },
+          "plan": {
+            "type": "object"
+          },
+          "job": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    {
+      "id": "knowledge.index.search",
+      "method": "POST",
+      "path": "/api/v1/knowledge/search",
+      "description": "Busca evidências já aprovadas no acervo local sem consultar a internet.",
+      "domain_tags": [
+        "knowledge",
+        "research"
+      ],
+      "provider": "local-knowledge-index",
+      "network_policy": "offline",
+      "side_effects": false,
+      "requires_approval": false,
+      "risk": "read",
+      "idempotent": true,
+      "timeout_ms": 5000,
+      "async": false,
+      "request_schema": {
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "properties": {
+          "query": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 20
+          }
+        },
+        "additionalProperties": false
+      },
+      "response_schema": {
+        "type": "object",
+        "required": [
+          "ok"
+        ],
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "schema": {
+            "const": "agent-evidence/v1"
+          },
+          "evidence": {
+            "type": "array"
+          },
+          "status": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "id": "dialogue.turn.generate",
+      "method": "POST",
+      "path": "/api/v1/dialogue/turn",
+      "description": "Gera uma resposta contextual usando exclusivamente o checkpoint neural próprio, com histórico, evidências e gate de qualidade.",
+      "domain_tags": [
+        "dialogue",
+        "reasoning",
+        "conversation"
+      ],
+      "provider": "project-neural-checkpoint",
+      "network_policy": "offline",
+      "side_effects": "local-neural-inference",
+      "requires_approval": false,
+      "risk": "local-inference",
+      "idempotent": false,
+      "timeout_ms": 300000,
+      "async": false,
+      "request_schema": {
+        "type": "object",
+        "required": [
+          "schema",
+          "messages"
+        ],
+        "properties": {
+          "schema": {
+            "const": "agent-dialogue-request/v1"
+          },
+          "request_id": {
+            "type": "string",
+            "maxLength": 160
+          },
+          "provider": {
+            "enum": [
+              "local",
+              "own-checkpoint"
+            ]
+          },
+          "messages": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 80,
+            "items": {
+              "type": "object",
+              "required": [
+                "role",
+                "content"
+              ],
+              "properties": {
+                "role": {
+                  "enum": [
+                    "user",
+                    "assistant",
+                    "tool"
+                  ]
+                },
+                "content": {
+                  "type": "string",
+                  "maxLength": 12000
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "maxItems": 8,
+            "items": {
+              "type": "object",
+              "required": [
+                "source",
+                "text"
+              ],
+              "properties": {
+                "source": {
+                  "type": "string",
+                  "maxLength": 240
+                },
+                "text": {
+                  "type": "string",
+                  "maxLength": 4000
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "response_schema": {
+        "type": "object",
+        "required": [
+          "schema",
+          "ok",
+          "request_id"
+        ],
+        "properties": {
+          "schema": {
+            "const": "agent-dialogue-response/v1"
+          },
+          "ok": {
+            "type": "boolean"
+          },
+          "request_id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "backend": {
+            "type": "string"
+          },
+          "intent": {
+            "type": "string"
+          },
+          "dialogue": {
+            "type": "object"
+          },
+          "generation": {
+            "type": "object"
+          },
+          "error": {
+            "type": "string"
+          },
+          "error_code": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "id": "dialogue.providers.status",
+      "method": "GET",
+      "path": "/api/v1/dialogue/providers",
+      "description": "Informa se o checkpoint neural próprio está carregado; a rota não seleciona modelos de terceiros.",
+      "domain_tags": [
+        "dialogue",
+        "configuration"
+      ],
+      "provider": "project-neural-checkpoint",
+      "network_policy": "offline",
+      "side_effects": false,
+      "requires_approval": false,
+      "risk": "configuration-read",
+      "idempotent": true,
+      "timeout_ms": 5000,
+      "async": false,
+      "request_schema": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
+      "response_schema": {
+        "type": "object",
+        "required": [
+          "schema",
+          "mode",
+          "provider_order",
+          "own_checkpoint"
+        ],
+        "properties": {
+          "schema": {
+            "const": "agent-dialogue-providers/v1"
+          },
+          "mode": {
+            "const": "own-checkpoint"
+          },
+          "provider_order": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "own_checkpoint": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  ]
+}

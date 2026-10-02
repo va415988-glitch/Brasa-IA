@@ -1,0 +1,46 @@
+{
+  "baseline_validation_loss": 29.990348653590427,
+  "initial_validation_loss": 29.990348653590427,
+  "initialization_mode": "continue-weights",
+  "candidate_validation_loss": 5.598965908618683,
+  "baseline_heldout_loss": 21.855825966282893,
+  "candidate_heldout_loss": 5.1155540064761515,
+  "best_step": 80,
+  "completed_steps": 200,
+  "training_seconds": 121.55,
+  "baseline_answers": [
+    {
+      "prompt": "<|user|>\nComo avaliar um endpoint de API antes de publicá-lo?\n<|assistant|>\n",
+      "answer": "Digavaliga claramente que não tem certeza, separe o que sabe do que falta verificar e não inventar fatos, fontes ou resultados. Proponha pesquisar, pedir contexto ou formular uma hip",
+      "tokens": 64,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nQuais critérios indicam que uma decisão está bem fundamentada?\n<|assistant|>\n",
+      "answer": "Diga claramente que não tem certeza, separe o que sabe do que falta verificar e não inventar fatos, fontes ou resultados. P\",\"url\":\"https:/a ponha pesquisar, pedir contexto ou formular uma hipótes",
+      "tokens": 64,
+      "hit_limit": true
+    }
+  ],
+  "candidate_answers": [
+    {
+      "prompt": "<|user|>\nComo avaliar um endpoint de API antes de publicá-lo?\n<|assistant|>\n",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nQuais critérios indicam que uma decisão está bem fundamentada?\n<|assistant|>\n",
+      "answer": "Procrimária pesquisa por e sos e erros e esperada pesquisa pesquisa pesquisa pesquisa pesquisa pesquisa pesquisa pesquisa pesquisa conco co cria concria de ",
+      "tokens": 64,
+      "hit_limit": true
+    }
+  ],
+  "promoted": false,
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

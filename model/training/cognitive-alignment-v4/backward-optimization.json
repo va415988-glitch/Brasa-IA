@@ -1,0 +1,19 @@
+{
+  "batch": 8,
+  "length": 400,
+  "equivalent_logits_loss_and_all_gradients": true,
+  "max_gradient_absolute_error": 0.0,
+  "timings": [
+    {
+      "implementation": "before",
+      "seconds": 2.06101821700031,
+      "loss": 7.515734672546387
+    },
+    {
+      "implementation": "after",
+      "seconds": 0.5430907699992531,
+      "loss": 7.515734672546387
+    }
+  ],
+  "speedup": 3.794979275753746
+}

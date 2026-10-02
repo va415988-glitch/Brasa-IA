@@ -1,0 +1,262 @@
+{
+  "baseline_validation_loss": 9.302563568381025,
+  "initial_validation_loss": 9.302563568381025,
+  "initialization_mode": "continue-weights",
+  "candidate_validation_loss": 8.17648032725282,
+  "baseline_heldout_loss": 9.3347900390625,
+  "candidate_heldout_loss": 7.889387161539208,
+  "best_step": 400,
+  "completed_steps": 400,
+  "training_seconds": 159.12,
+  "baseline_answers": [
+    {
+      "prompt": "<|user|>\nAcho que devemos priorizar o chat antes de adicionar mais ferramentas.\n<|assistant|>\nFaz sentido. Se a conversa entende melhor a intenção e mantém o contexto, as ferramentas ficam mais fáceis de descobrir e usar.\n<|user|>\nComo eu saberia que essa prioridade trouxe resultado?\n<|assistant|>\n",
+      "answer": " cococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococoaltrutrutrutrutrutrutrutrutrutrut",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nQuero que as respostas sejam geradas pela IA própria do projeto.\n<|assistant|>\nEntendido. A geração deve permanecer no modelo próprio; pesquisa pode fornecer fontes quando for solicitada.\n<|user|>\nEntão como a web entraria sem escrever a resposta por nós?\n<|assistant|>\n",
+      "answer": " a\",\"content\":\"õicveldurcocococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococoalsutrutrutrutrutrutrutrutrutrutrutr",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nPrefiro que você seja direta e não use listas em toda resposta.\n<|assistant|>\nVou responder de forma direta e reservar listas para etapas ou comparações que realmente precisem delas.\n<|user|>\nO que você sugere para eu começar um diário de leitura?\n<|assistant|>\n",
+      "answer": " cococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococopchcioncauscopchcioncauscoalsutrutrut",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nA tela está organizada, mas não transmite acolhimento.\n<|assistant|>\nVamos preservar a estrutura e procurar mudanças de linguagem, cor e exemplos que aproximem a experiência.\n<|user|>\nQual ajuste pequeno eu poderia testar primeiro?\n<|assistant|>\n",
+      "answer": " butrutrutrutrudurcococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococoaltrutrutrutrutrutrutrutr",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nQuero revisar minha apresentação sem perder meu estilo.\n<|assistant|>\nPosso melhorar clareza mantendo seu vocabulário e ritmo, e mostrar mudanças maiores para você decidir.\n<|user|>\nA abertura parece longa. O que você faria?\n<|assistant|>\n",
+      "answer": "pchcioncauscococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococoaltrutrutrutrutrut",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nQuero terminar um projeto pessoal, mas tenho pouco tempo livre.\n<|assistant|>\nPodemos reduzir a entrega e definir um bloco pequeno de trabalho que caiba na sua semana.\n<|user|>\nO que seria uma meta realista para os próximos dias?\n<|assistant|>\n",
+      "answer": " a\",\"content\":\"õicpchcioncauscococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococopchcioncauscopchcioncauscoaltrutrutrutrutr",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nNão tenho certeza se as pessoas vão gostar dessa proposta.\n<|assistant|>\nAinda não dá para saber sem observar o público. Podemos preparar uma forma simples de colher reação.\n<|user|>\nQue pergunta eu deveria fazer a três pessoas?\n<|assistant|>\n",
+      "answer": " butrutrutrutrudurcopchcioncauscocococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococopchcioncauscopchcioncauscoaltrutrutrutrutrutrut",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nAcho que devemos incluir todos os recursos já na primeira versão.\n<|assistant|>\nEu teria cautela porque isso aumenta custo antes de sabermos quais recursos resolvem o problema central.\n<|user|>\nMas se eu deixar algo de fora, não vai parecer incompleto?\n<|assistant|>\n",
+      "answer": " cocococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococopchcioncauscoaltrutrutrutrutru",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nVocê disse para testar uma hipótese em pequena escala.\n<|assistant|>\nIsso permite observar a reação sem investir no formato completo.\n<|user|>\nPor que isso ajuda a decidir?\n<|assistant|>\n",
+      "answer": "pchjcocococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococoaltr",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nVocê presumiu que eu queria publicar a página.\n<|assistant|>\nVocê tem razão. Eu confundi criar uma prévia com publicar; vou manter o escopo no rascunho local.\n<|user|>\nEntão me ajude apenas a definir o conteúdo principal.\n<|assistant|>\n",
+      "answer": " cocococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococopchcioncauscoaltrutrutrutrut",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nPensei em organizar encontros mensais de desenho.\n<|assistant|>\nA frequência mensal pode criar continuidade sem exigir encontros toda semana. O formato pode ser leve e aberto a iniciantes.\n<|user|>\nComo eu poderia convidar pessoas que acham que não sabem desenhar?\n<|assistant|>\n",
+      "answer": " cocococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococopchcioncauscopchcioncauscoalsutrutrutrutrutrutru",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nVamos fazer um boletim cultural curto, uma vez por mês.\n<|assistant|>\nUma edição com agenda, um destaque local e uma recomendação pode manter a curadoria simples.\n<|user|>\nQual parte eu preparo primeiro?\n<|assistant|>\n",
+      "answer": " butrudurcocococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococopchcioncauscopchcioncauscoaltrutrutrutrutru",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nQuero uma resposta menos formal e mais natural.\n<|assistant|>\nVou usar frases mais simples e conversar diretamente, sem abandonar precisão.\n<|user|>\nMe explica o que é uma metáfora.\n<|assistant|>\n",
+      "answer": " butrutrutrutrutrutrutrutrutrutrutrutrudurcococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococoalsutrutrutrutrutrutr",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nQuero fazer um material visual para uma campanha.\n<|assistant|>\nPosso ajudar com conceito, composição e texto. Para definir a direção, preciso entender público e objetivo.\n<|user|>\nÉ para incentivar doação de livros a uma escola.\n<|assistant|>\n",
+      "answer": " ts vivivivivivcocococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococopchje\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"cont",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nPreciso escrever uma recusa educada para uma proposta.\n<|assistant|>\nVamos agradecer, recusar com clareza e evitar justificativas inventadas.\n<|user|>\nQuero manter a porta aberta para conversar no futuro.\n<|assistant|>\n",
+      "answer": " a\",\"content\":\"õicpchcioncauscococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococoaltrutrutrutru",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nEstou comparando duas ideias de oficina.\n<|assistant|>\nPodemos comparar pelo público, pelo tempo de preparo e pelo que cada pessoa leva da atividade.\n<|user|>\nUma é mais divertida; a outra ensina algo mais prático.\n<|assistant|>\n",
+      "answer": ".\n",
+      "tokens": 2,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nLi duas recomendações diferentes sobre estudar de manhã.\n<|assistant|>\nElas podem se referir a pessoas ou rotinas diferentes; a recomendação não vale igualmente para todos.\n<|user|>\nQual delas é a correta?\n<|assistant|>\n",
+      "answer": " a\",\"content\":\"õicpchcioncauscocococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococoaltrutrutrutrutrutrutrutrut",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nQuero apresentar meu projeto para possíveis colaboradores.\n<|assistant|>\nUma apresentação curta deve deixar claro o problema, a proposta e o tipo de ajuda que você procura.\n<|user|>\nComo termino sem pressionar ninguém?\n<|assistant|>\n",
+      "answer": " butrutrutrutrutrutrutrutrutrutrutrutrutrutrutrutrutrutrutrucocococococococococococococococococococococococococococococococococococococopchcioncauscoalsutrutrutrutrutrutrutrut",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nQuero uma explicação curta, porque estou começando a aprender.\n<|assistant|>\nVou começar pela ideia principal e só acrescentar detalhes se forem úteis.\n<|user|>\nO que é hierarquia visual?\n<|assistant|>\n",
+      "answer": "pch\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"contRe\",\"content\":\"õicpchcioncauscocococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococopchcioncausco",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "<|user|>\nQuero que o chat sirva também para ideias, documentos e planejamento.\n<|assistant|>\nIsso amplia o uso sem exigir que todo pedido vire código. A conversa deve identificar o resultado e encaminhar a ferramenta local adequada quando houver uma ação.\n<|user|>\nQual seria um sinal de que estamos exagerando no escopo?\n<|assistant|>\n",
+      "answer": " cocococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococococoalsutrutrutrutrutrutrutrutrutrutrutr",
+      "tokens": 128,
+      "hit_limit": true
+    }
+  ],
+  "candidate_answers": [
+    {
+      "prompt": "<|user|>\nAcho que devemos priorizar o chat antes de adicionar mais ferramentas.\n<|assistant|>\nFaz sentido. Se a conversa entende melhor a intenção e mantém o contexto, as ferramentas ficam mais fáceis de descobrir e usar.\n<|user|>\nComo eu saberia que essa prioridade trouxe resultado?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nQuero que as respostas sejam geradas pela IA própria do projeto.\n<|assistant|>\nEntendido. A geração deve permanecer no modelo próprio; pesquisa pode fornecer fontes quando for solicitada.\n<|user|>\nEntão como a web entraria sem escrever a resposta por nós?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nPrefiro que você seja direta e não use listas em toda resposta.\n<|assistant|>\nVou responder de forma direta e reservar listas para etapas ou comparações que realmente precisem delas.\n<|user|>\nO que você sugere para eu começar um diário de leitura?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nA tela está organizada, mas não transmite acolhimento.\n<|assistant|>\nVamos preservar a estrutura e procurar mudanças de linguagem, cor e exemplos que aproximem a experiência.\n<|user|>\nQual ajuste pequeno eu poderia testar primeiro?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nQuero revisar minha apresentação sem perder meu estilo.\n<|assistant|>\nPosso melhorar clareza mantendo seu vocabulário e ritmo, e mostrar mudanças maiores para você decidir.\n<|user|>\nA abertura parece longa. O que você faria?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nQuero terminar um projeto pessoal, mas tenho pouco tempo livre.\n<|assistant|>\nPodemos reduzir a entrega e definir um bloco pequeno de trabalho que caiba na sua semana.\n<|user|>\nO que seria uma meta realista para os próximos dias?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nNão tenho certeza se as pessoas vão gostar dessa proposta.\n<|assistant|>\nAinda não dá para saber sem observar o público. Podemos preparar uma forma simples de colher reação.\n<|user|>\nQue pergunta eu deveria fazer a três pessoas?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nAcho que devemos incluir todos os recursos já na primeira versão.\n<|assistant|>\nEu teria cautela porque isso aumenta custo antes de sabermos quais recursos resolvem o problema central.\n<|user|>\nMas se eu deixar algo de fora, não vai parecer incompleto?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nVocê disse para testar uma hipótese em pequena escala.\n<|assistant|>\nIsso permite observar a reação sem investir no formato completo.\n<|user|>\nPor que isso ajuda a decidir?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nVocê presumiu que eu queria publicar a página.\n<|assistant|>\nVocê tem razão. Eu confundi criar uma prévia com publicar; vou manter o escopo no rascunho local.\n<|user|>\nEntão me ajude apenas a definir o conteúdo principal.\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nPensei em organizar encontros mensais de desenho.\n<|assistant|>\nA frequência mensal pode criar continuidade sem exigir encontros toda semana. O formato pode ser leve e aberto a iniciantes.\n<|user|>\nComo eu poderia convidar pessoas que acham que não sabem desenhar?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nVamos fazer um boletim cultural curto, uma vez por mês.\n<|assistant|>\nUma edição com agenda, um destaque local e uma recomendação pode manter a curadoria simples.\n<|user|>\nQual parte eu preparo primeiro?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nQuero uma resposta menos formal e mais natural.\n<|assistant|>\nVou usar frases mais simples e conversar diretamente, sem abandonar precisão.\n<|user|>\nMe explica o que é uma metáfora.\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nQuero fazer um material visual para uma campanha.\n<|assistant|>\nPosso ajudar com conceito, composição e texto. Para definir a direção, preciso entender público e objetivo.\n<|user|>\nÉ para incentivar doação de livros a uma escola.\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nPreciso escrever uma recusa educada para uma proposta.\n<|assistant|>\nVamos agradecer, recusar com clareza e evitar justificativas inventadas.\n<|user|>\nQuero manter a porta aberta para conversar no futuro.\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nEstou comparando duas ideias de oficina.\n<|assistant|>\nPodemos comparar pelo público, pelo tempo de preparo e pelo que cada pessoa leva da atividade.\n<|user|>\nUma é mais divertida; a outra ensina algo mais prático.\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nLi duas recomendações diferentes sobre estudar de manhã.\n<|assistant|>\nElas podem se referir a pessoas ou rotinas diferentes; a recomendação não vale igualmente para todos.\n<|user|>\nQual delas é a correta?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nQuero apresentar meu projeto para possíveis colaboradores.\n<|assistant|>\nUma apresentação curta deve deixar claro o problema, a proposta e o tipo de ajuda que você procura.\n<|user|>\nComo termino sem pressionar ninguém?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nQuero uma explicação curta, porque estou começando a aprender.\n<|assistant|>\nVou começar pela ideia principal e só acrescentar detalhes se forem úteis.\n<|user|>\nO que é hierarquia visual?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    },
+    {
+      "prompt": "<|user|>\nQuero que o chat sirva também para ideias, documentos e planejamento.\n<|assistant|>\nIsso amplia o uso sem exigir que todo pedido vire código. A conversa deve identificar o resultado e encaminhar a ferramenta local adequada quando houver uma ação.\n<|user|>\nQual seria um sinal de que estamos exagerando no escopo?\n<|assistant|>\n",
+      "answer": "\n",
+      "tokens": 1,
+      "hit_limit": false
+    }
+  ],
+  "promoted": false,
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

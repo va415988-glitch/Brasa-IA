@@ -1,0 +1,328 @@
+{
+  "schema": "brasa-implementation-quality-selection/v1",
+  "validation_cases": 4,
+  "max_tokens": 384,
+  "selected": "model/training/implementation-sft-v1/quality-selection-01/snapshots/step-0400.safetensors",
+  "selected_score": [
+    0,
+    1,
+    1
+  ],
+  "records": [
+    {
+      "checkpoint": "model/training/implementation-sft-v1/compact-01/candidate.safetensors",
+      "step": 200,
+      "validation_loss": 5.012570091985887,
+      "score": [
+        0,
+        0,
+        0
+      ],
+      "cases": [
+        {
+          "id": "palindrome",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 130,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "rectangle_area",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 384,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "last_word",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 130,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "vowel_count",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 126,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        }
+      ]
+    },
+    {
+      "checkpoint": "model/training/implementation-sft-v1/quality-selection-01/snapshots/step-0080.safetensors",
+      "step": 80,
+      "validation_loss": 3.471813221807065,
+      "score": [
+        0,
+        0,
+        0
+      ],
+      "cases": [
+        {
+          "id": "palindrome",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 130,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "rectangle_area",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 101,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "last_word",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 148,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "vowel_count",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 123,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        }
+      ]
+    },
+    {
+      "checkpoint": "model/training/implementation-sft-v1/quality-selection-01/snapshots/step-0160.safetensors",
+      "step": 160,
+      "validation_loss": 3.3739998726222824,
+      "score": [
+        0,
+        1,
+        1
+      ],
+      "cases": [
+        {
+          "id": "palindrome",
+          "json_valid": true,
+          "contract_valid": true,
+          "reference_tests_pass": false,
+          "generated_tokens": 128,
+          "quality_reason": "accepted",
+          "quality_stop_reason": null,
+          "answer_excerpt": "{\"assumptions\":[],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"app.py\",\"content\":\"def count_words(text):\\n    return len(text.split())\\n\"}},{\"tool\":\"create_file\",\"arguments\":{\"path\":\"test_app.py\",\"content\":\"import unittest\\nfrom app import count_words(unittest.TestCase):\\n    def test_conversao(self):\\n        self.assertEqual(count_words(unittest.TestCase):\\n    def test_conversao(self):\\n        self.assertEqual(ds(unittest.TestCase):\\n    def test_or(self):\\n        self.assertEqu",
+          "verification_excerpt": "t test module: test_app\nTraceback (most recent call last):\n  File \"/usr/lib/python3.14/unittest/loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"/usr/lib/python3.14/unittest/loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"/tmp/tmpwot3xp8t/test_app.py\", line 2, in <module>\n    from app import is_palindrome\nImportError: cannot import name 'is_palindrome' from 'app' (/tmp/tmpwot3xp8t/app.py)\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+        },
+        {
+          "id": "rectangle_area",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 104,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "last_word",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 179,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "vowel_count",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 31,
+          "quality_reason": "repeated-words",
+          "quality_stop_reason": "repeated-words",
+          "answer_excerpt": ""
+        }
+      ]
+    },
+    {
+      "checkpoint": "model/training/implementation-sft-v1/quality-selection-01/snapshots/step-0240.safetensors",
+      "step": 240,
+      "validation_loss": 3.3336756963315217,
+      "score": [
+        0,
+        0,
+        0
+      ],
+      "cases": [
+        {
+          "id": "palindrome",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 127,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "rectangle_area",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 121,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "last_word",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 171,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "vowel_count",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 142,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        }
+      ]
+    },
+    {
+      "checkpoint": "model/training/implementation-sft-v1/quality-selection-01/snapshots/step-0320.safetensors",
+      "step": 320,
+      "validation_loss": 3.338346000339674,
+      "score": [
+        0,
+        0,
+        0
+      ],
+      "cases": [
+        {
+          "id": "palindrome",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 111,
+          "quality_reason": "repeated-words",
+          "quality_stop_reason": "repeated-words",
+          "answer_excerpt": ""
+        },
+        {
+          "id": "rectangle_area",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 137,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "last_word",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 185,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "vowel_count",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 106,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        }
+      ]
+    },
+    {
+      "checkpoint": "model/training/implementation-sft-v1/quality-selection-01/snapshots/step-0400.safetensors",
+      "step": 400,
+      "validation_loss": 3.332991253396739,
+      "score": [
+        0,
+        1,
+        1
+      ],
+      "cases": [
+        {
+          "id": "palindrome",
+          "json_valid": true,
+          "contract_valid": true,
+          "reference_tests_pass": false,
+          "generated_tokens": 103,
+          "quality_reason": "accepted",
+          "quality_stop_reason": null,
+          "answer_excerpt": "{\"assumptions\":[],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"app.py\",\"content\":\"def count_words(text.join(text.join(word.split())\\n\"}},{\"tool\":\"create_file\",\"arguments\":{\"path\":\"test_app.py\",\"content\":\"import count_to_words\\n\\nclass GeneratedTests(unittest.TestCase):\\n    def test_behavior(self):\\n        self.assertEqual(unittest\\n\"}}]}",
+          "verification_excerpt": "e \"/usr/lib/python3.14/unittest/loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"/usr/lib/python3.14/unittest/loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"/tmp/tmp3dbcvopd/test_app.py\", line 2, in <module>\n    from app import is_palindrome\n  File \"/tmp/tmp3dbcvopd/app.py\", line 1\n    def count_words(text.join(text.join(word.split())\n                        ^\nSyntaxError: invalid syntax\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+        },
+        {
+          "id": "rectangle_area",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 162,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "last_word",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 130,
+          "quality_reason": "structured-plan-invalid-json",
+          "quality_stop_reason": null,
+          "answer_excerpt": ""
+        },
+        {
+          "id": "vowel_count",
+          "json_valid": false,
+          "contract_valid": false,
+          "reference_tests_pass": false,
+          "generated_tokens": 95,
+          "quality_reason": "repeated-words",
+          "quality_stop_reason": "repeated-words",
+          "answer_excerpt": ""
+        }
+      ]
+    }
+  ],
+  "heldout_consulted": false
+}

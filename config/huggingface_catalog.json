@@ -7,13 +7,96 @@
     "requires_license_review": true
   },
   "datasets": [
-    {"id": "neulab/agent-data-collection", "priority": 1, "focus": ["software-engineering", "tool-use", "multi-turn"], "expected_size": "590MB"},
-    {"id": "Toprak1yu/agent-tool-use-trajectories", "priority": 1, "focus": ["function-calling", "self-correction", "software-engineering"], "expected_size": "6MB"},
-    {"id": "nphearum/Code-Reasoning-4k", "priority": 1, "focus": ["code-generation", "debugging", "reasoning"], "expected_size": "231MB"},
-    {"id": "cx-cmu/agent_trajectories", "priority": 1, "focus": ["swe-bench", "terminal", "mcp", "evaluation"], "expected_size": "to-audit"},
-    {"id": "kosiasuzu/agenticml-agent-trajectory-dataset", "priority": 2, "focus": ["tool-use", "function-calling", "planning"], "expected_size": "to-audit"},
-    {"id": "pyromind/agentic-tool-call-dataset-12k", "priority": 2, "focus": ["tool-calling", "sft", "agentic-reasoning"], "expected_size": "to-audit"},
-    {"id": "diogoneno/desktop-agent-trajectories-sample", "priority": 2, "focus": ["desktop", "terminal", "filesystem"], "expected_size": "78KB"},
-    {"id": "ToolGym/short-horizon-traj", "priority": 2, "focus": ["tool-use", "multi-turn"], "expected_size": "to-audit"}
+    {
+      "id": "neulab/agent-data-collection",
+      "priority": 1,
+      "focus": [
+        "software-engineering",
+        "tool-use",
+        "multi-turn"
+      ],
+      "expected_size": "590MB"
+    },
+    {
+      "id": "Toprak1yu/agent-tool-use-trajectories",
+      "priority": 1,
+      "focus": [
+        "function-calling",
+        "self-correction",
+        "software-engineering"
+      ],
+      "expected_size": "6MB"
+    },
+    {
+      "id": "nphearum/Code-Reasoning-4k",
+      "priority": 1,
+      "focus": [
+        "code-generation",
+        "debugging",
+        "reasoning"
+      ],
+      "expected_size": "231MB"
+    },
+    {
+      "id": "cx-cmu/agent_trajectories",
+      "priority": 1,
+      "focus": [
+        "swe-bench",
+        "terminal",
+        "mcp",
+        "evaluation"
+      ],
+      "expected_size": "to-audit"
+    },
+    {
+      "id": "kosiasuzu/agenticml-agent-trajectory-dataset",
+      "priority": 2,
+      "focus": [
+        "tool-use",
+        "function-calling",
+        "planning"
+      ],
+      "expected_size": "to-audit"
+    },
+    {
+      "id": "pyromind/agentic-tool-call-dataset-12k",
+      "priority": 2,
+      "focus": [
+        "tool-calling",
+        "sft",
+        "agentic-reasoning"
+      ],
+      "expected_size": "to-audit"
+    },
+    {
+      "id": "diogoneno/desktop-agent-trajectories-sample",
+      "priority": 2,
+      "focus": [
+        "desktop",
+        "terminal",
+        "filesystem"
+      ],
+      "expected_size": "78KB"
+    },
+    {
+      "id": "ToolGym/short-horizon-traj",
+      "priority": 2,
+      "focus": [
+        "tool-use",
+        "multi-turn"
+      ],
+      "expected_size": "to-audit"
+    },
+    {
+      "id": "nphearum/grpo-4k-reasoning-tools",
+      "priority": 1,
+      "focus": [
+        "reasoning",
+        "tool-use",
+        "math",
+        "code-generation"
+      ],
+      "expected_size": "41MB"
+    }
   ]
 }

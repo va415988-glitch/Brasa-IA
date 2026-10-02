@@ -1,0 +1,15 @@
+{
+  "name":"evaluate_function","version":"1.0.0",
+  "description":"Avalia uma função Python pura do workspace com argumentos novos, interpretando um subconjunto explícito de AST. Não importa nem executa o módulo; informa fonte, resultado, limites e construções não suportadas.",
+  "side_effects":false,"requires_approval":false,"risk":"read","idempotent":true,
+  "capabilities":["computation.python-function"],"timeout_ms":5000,
+  "arguments":{"type":"object","required":["path","function"],"properties":{
+    "path":{"type":"string","minLength":1,"maxLength":1024},
+    "function":{"type":"string","minLength":1,"maxLength":120},
+    "args":{"type":"array","maxItems":1000},"kwargs":{"type":"object"}},"additionalProperties":false},
+  "result":{"type":"object","required":["schema","engine","request","executed","passed","result","error","steps"],"properties":{
+    "schema":{"const":"execution-engine/v1"},"engine":{"type":"string"},"request":{"type":"object"},
+    "executed":{"type":"boolean"},"passed":{"type":"boolean"},"result":{},
+    "error":{"type":["object","null"]},"steps":{"type":"integer"},
+    "path":{"type":"string"},"function":{"type":"string"},"source_sha256":{"type":"string"}}}
+}

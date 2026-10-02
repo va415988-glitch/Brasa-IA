@@ -1,0 +1,42 @@
+{
+  "schema": "cognitive-core-protocol/v1",
+  "checkpoint": "model/training/cognitive-alignment-v4/run-02/snapshots/step-1600.safetensors",
+  "checkpoint_sha256": "eb3298fa15e7079ff6a28715aeb1f2b243d0a5fd0983fd6d185ad3f4a8493fb9",
+  "metadata_sha256": "7e1ca5746f9b92308067964d46495f7c27167eb0c647e5d5ca51c928c467fe84",
+  "tokenizer_sha256": "e58fe3e652e62f3028b63810fd90b39745829ed80723bf7daec2e0b4662aa4e1",
+  "catalog_sha256": "49f0ee57e9e73a4e639af68c7eb861a38b7261817e4f8170b76741f55225efba",
+  "training_manifest": "model/training/cognitive-alignment-v4/run-02/manifest.json",
+  "training_manifest_sha256": "061a0068e2ae7e6bbbd52529c4f41a1f5891224276f7e2c90b7c4617b9bf82fb",
+  "selection_report": "model/training/cognitive-alignment-v4/run-02/semantic-selection.json",
+  "selection_report_sha256": "3004e086ea3cc692ff0f1fe44c3297e6c47ba4f57e3524169addacd15f24be04",
+  "cases": {
+    "reserved": "datasets/cognitive_core_qualification_v1/reserved.jsonl",
+    "regression": "datasets/cognitive_copy_v3/heldout.jsonl"
+  },
+  "cases_sha256": {
+    "reserved": "9aee6bf56ba07a43451371d5e19734a9375d164034a5ba6a27908935b11dd0c9",
+    "regression": "d88ee76d8d84cf325ac9bf8b70c2c461a77017df769f1e924646dbc95a7212c0"
+  },
+  "used_for_training": false,
+  "used_for_selection": false,
+  "selected_before_qualification": true,
+  "attempts_per_case": 1,
+  "source_sha256": {
+    "scripts/prepare_core_qualification.py": "473bb8b9458a43c7f897e8ebd33965d3baacdd9a587a2fd9a805c3340e35040e"
+  },
+  "reserved_entities": [
+    "AraticP",
+    "MangabaD",
+    "BuritiE",
+    "CopaibaL",
+    "PitangaS",
+    "JenipapZ"
+  ],
+  "reserved_rows": 288,
+  "policy": "Each core must pass reserved and regression suites, per-family thresholds and counterpart states. Missing proof is not evaluated.",
+  "limits": [
+    "Synthetic task templates are familiar; entities and numeric range are new.",
+    "Regression cases are historical and cannot independently prove unseen transfer.",
+    "No retraining, nucleus-specific weights or general competency are claimed."
+  ]
+}

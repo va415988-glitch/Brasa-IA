@@ -1,0 +1,595 @@
+{"goal": "Explique o conceito de recursão.", "label": "direct"}
+{"goal": "Explique o conceito de uma variável.", "label": "direct"}
+{"goal": "Explique o conceito de uma função.", "label": "direct"}
+{"goal": "Explique o conceito de uma fila.", "label": "direct"}
+{"goal": "Explique o conceito de cache.", "label": "direct"}
+{"goal": "Explique o conceito de uma lista.", "label": "direct"}
+{"goal": "Explique o conceito de uma árvore.", "label": "direct"}
+{"goal": "Explique o conceito de uma pilha.", "label": "direct"}
+{"goal": "Explique o conceito de uma classe.", "label": "direct"}
+{"goal": "Explique o conceito de uma condição.", "label": "direct"}
+{"goal": "Explique o conceito de um laço.", "label": "direct"}
+{"goal": "Explique o conceito de uma matriz.", "label": "direct"}
+{"goal": "O que significa recursão?", "label": "direct"}
+{"goal": "O que significa uma variável?", "label": "direct"}
+{"goal": "O que significa uma função?", "label": "direct"}
+{"goal": "O que significa uma fila?", "label": "direct"}
+{"goal": "O que significa cache?", "label": "direct"}
+{"goal": "O que significa uma lista?", "label": "direct"}
+{"goal": "O que significa uma árvore?", "label": "direct"}
+{"goal": "O que significa uma pilha?", "label": "direct"}
+{"goal": "O que significa uma classe?", "label": "direct"}
+{"goal": "O que significa uma condição?", "label": "direct"}
+{"goal": "O que significa um laço?", "label": "direct"}
+{"goal": "O que significa uma matriz?", "label": "direct"}
+{"goal": "Me ensine sobre recursão.", "label": "direct"}
+{"goal": "Me ensine sobre uma variável.", "label": "direct"}
+{"goal": "Me ensine sobre uma função.", "label": "direct"}
+{"goal": "Me ensine sobre uma fila.", "label": "direct"}
+{"goal": "Me ensine sobre cache.", "label": "direct"}
+{"goal": "Me ensine sobre uma lista.", "label": "direct"}
+{"goal": "Me ensine sobre uma árvore.", "label": "direct"}
+{"goal": "Me ensine sobre uma pilha.", "label": "direct"}
+{"goal": "Me ensine sobre uma classe.", "label": "direct"}
+{"goal": "Me ensine sobre uma condição.", "label": "direct"}
+{"goal": "Me ensine sobre um laço.", "label": "direct"}
+{"goal": "Me ensine sobre uma matriz.", "label": "direct"}
+{"goal": "Dê um exemplo simples de recursão.", "label": "direct"}
+{"goal": "Dê um exemplo simples de uma variável.", "label": "direct"}
+{"goal": "Dê um exemplo simples de uma função.", "label": "direct"}
+{"goal": "Dê um exemplo simples de uma fila.", "label": "direct"}
+{"goal": "Dê um exemplo simples de cache.", "label": "direct"}
+{"goal": "Dê um exemplo simples de uma lista.", "label": "direct"}
+{"goal": "Dê um exemplo simples de uma árvore.", "label": "direct"}
+{"goal": "Dê um exemplo simples de uma pilha.", "label": "direct"}
+{"goal": "Dê um exemplo simples de uma classe.", "label": "direct"}
+{"goal": "Dê um exemplo simples de uma condição.", "label": "direct"}
+{"goal": "Dê um exemplo simples de um laço.", "label": "direct"}
+{"goal": "Dê um exemplo simples de uma matriz.", "label": "direct"}
+{"goal": "Como funciona recursão?", "label": "direct"}
+{"goal": "Como funciona uma variável?", "label": "direct"}
+{"goal": "Como funciona uma função?", "label": "direct"}
+{"goal": "Como funciona uma fila?", "label": "direct"}
+{"goal": "Como funciona cache?", "label": "direct"}
+{"goal": "Como funciona uma lista?", "label": "direct"}
+{"goal": "Como funciona uma árvore?", "label": "direct"}
+{"goal": "Como funciona uma pilha?", "label": "direct"}
+{"goal": "Como funciona uma classe?", "label": "direct"}
+{"goal": "Como funciona uma condição?", "label": "direct"}
+{"goal": "Como funciona um laço?", "label": "direct"}
+{"goal": "Como funciona uma matriz?", "label": "direct"}
+{"goal": "Qual a diferença entre recursão e uma alternativa?", "label": "direct"}
+{"goal": "Qual a diferença entre uma variável e uma alternativa?", "label": "direct"}
+{"goal": "Qual a diferença entre uma função e uma alternativa?", "label": "direct"}
+{"goal": "Qual a diferença entre uma fila e uma alternativa?", "label": "direct"}
+{"goal": "Qual a diferença entre cache e uma alternativa?", "label": "direct"}
+{"goal": "Qual a diferença entre uma lista e uma alternativa?", "label": "direct"}
+{"goal": "Qual a diferença entre uma árvore e uma alternativa?", "label": "direct"}
+{"goal": "Qual a diferença entre uma pilha e uma alternativa?", "label": "direct"}
+{"goal": "Qual a diferença entre uma classe e uma alternativa?", "label": "direct"}
+{"goal": "Qual a diferença entre uma condição e uma alternativa?", "label": "direct"}
+{"goal": "Qual a diferença entre um laço e uma alternativa?", "label": "direct"}
+{"goal": "Qual a diferença entre uma matriz e uma alternativa?", "label": "direct"}
+{"goal": "Faça um resumo sobre recursão.", "label": "direct"}
+{"goal": "Faça um resumo sobre uma variável.", "label": "direct"}
+{"goal": "Faça um resumo sobre uma função.", "label": "direct"}
+{"goal": "Faça um resumo sobre uma fila.", "label": "direct"}
+{"goal": "Faça um resumo sobre cache.", "label": "direct"}
+{"goal": "Faça um resumo sobre uma lista.", "label": "direct"}
+{"goal": "Faça um resumo sobre uma árvore.", "label": "direct"}
+{"goal": "Faça um resumo sobre uma pilha.", "label": "direct"}
+{"goal": "Faça um resumo sobre uma classe.", "label": "direct"}
+{"goal": "Faça um resumo sobre uma condição.", "label": "direct"}
+{"goal": "Faça um resumo sobre um laço.", "label": "direct"}
+{"goal": "Faça um resumo sobre uma matriz.", "label": "direct"}
+{"goal": "Me ajude a entender recursão.", "label": "direct"}
+{"goal": "Me ajude a entender uma variável.", "label": "direct"}
+{"goal": "Me ajude a entender uma função.", "label": "direct"}
+{"goal": "Me ajude a entender uma fila.", "label": "direct"}
+{"goal": "Me ajude a entender cache.", "label": "direct"}
+{"goal": "Me ajude a entender uma lista.", "label": "direct"}
+{"goal": "Me ajude a entender uma árvore.", "label": "direct"}
+{"goal": "Me ajude a entender uma pilha.", "label": "direct"}
+{"goal": "Me ajude a entender uma classe.", "label": "direct"}
+{"goal": "Me ajude a entender uma condição.", "label": "direct"}
+{"goal": "Me ajude a entender um laço.", "label": "direct"}
+{"goal": "Me ajude a entender uma matriz.", "label": "direct"}
+{"goal": "Defina recursão.", "label": "direct"}
+{"goal": "Defina uma variável.", "label": "direct"}
+{"goal": "Defina uma função.", "label": "direct"}
+{"goal": "Defina uma fila.", "label": "direct"}
+{"goal": "Defina cache.", "label": "direct"}
+{"goal": "Defina uma lista.", "label": "direct"}
+{"goal": "Defina uma árvore.", "label": "direct"}
+{"goal": "Defina uma pilha.", "label": "direct"}
+{"goal": "Defina uma classe.", "label": "direct"}
+{"goal": "Defina uma condição.", "label": "direct"}
+{"goal": "Defina um laço.", "label": "direct"}
+{"goal": "Defina uma matriz.", "label": "direct"}
+{"goal": "Descreva recursão.", "label": "direct"}
+{"goal": "Descreva uma variável.", "label": "direct"}
+{"goal": "Descreva uma função.", "label": "direct"}
+{"goal": "Descreva uma fila.", "label": "direct"}
+{"goal": "Descreva cache.", "label": "direct"}
+{"goal": "Descreva uma lista.", "label": "direct"}
+{"goal": "Descreva uma árvore.", "label": "direct"}
+{"goal": "Descreva uma pilha.", "label": "direct"}
+{"goal": "Descreva uma classe.", "label": "direct"}
+{"goal": "Descreva uma condição.", "label": "direct"}
+{"goal": "Descreva um laço.", "label": "direct"}
+{"goal": "Descreva uma matriz.", "label": "direct"}
+{"goal": "Quero entender recursão.", "label": "direct"}
+{"goal": "Quero entender uma variável.", "label": "direct"}
+{"goal": "Quero entender uma função.", "label": "direct"}
+{"goal": "Quero entender uma fila.", "label": "direct"}
+{"goal": "Quero entender cache.", "label": "direct"}
+{"goal": "Quero entender uma lista.", "label": "direct"}
+{"goal": "Quero entender uma árvore.", "label": "direct"}
+{"goal": "Quero entender uma pilha.", "label": "direct"}
+{"goal": "Quero entender uma classe.", "label": "direct"}
+{"goal": "Quero entender uma condição.", "label": "direct"}
+{"goal": "Quero entender um laço.", "label": "direct"}
+{"goal": "Quero entender uma matriz.", "label": "direct"}
+{"goal": "Me explique recursão com um exemplo.", "label": "direct"}
+{"goal": "Me explique uma variável com um exemplo.", "label": "direct"}
+{"goal": "Me explique uma função com um exemplo.", "label": "direct"}
+{"goal": "Me explique uma fila com um exemplo.", "label": "direct"}
+{"goal": "Me explique cache com um exemplo.", "label": "direct"}
+{"goal": "Me explique uma lista com um exemplo.", "label": "direct"}
+{"goal": "Me explique uma árvore com um exemplo.", "label": "direct"}
+{"goal": "Me explique uma pilha com um exemplo.", "label": "direct"}
+{"goal": "Me explique uma classe com um exemplo.", "label": "direct"}
+{"goal": "Me explique uma condição com um exemplo.", "label": "direct"}
+{"goal": "Me explique um laço com um exemplo.", "label": "direct"}
+{"goal": "Me explique uma matriz com um exemplo.", "label": "direct"}
+{"goal": "Para que serve recursão?", "label": "direct"}
+{"goal": "Para que serve uma variável?", "label": "direct"}
+{"goal": "Para que serve uma função?", "label": "direct"}
+{"goal": "Para que serve uma fila?", "label": "direct"}
+{"goal": "Para que serve cache?", "label": "direct"}
+{"goal": "Para que serve uma lista?", "label": "direct"}
+{"goal": "Para que serve uma árvore?", "label": "direct"}
+{"goal": "Para que serve uma pilha?", "label": "direct"}
+{"goal": "Para que serve uma classe?", "label": "direct"}
+{"goal": "Para que serve uma condição?", "label": "direct"}
+{"goal": "Para que serve um laço?", "label": "direct"}
+{"goal": "Para que serve uma matriz?", "label": "direct"}
+{"goal": "Qual a ideia de recursão?", "label": "direct"}
+{"goal": "Qual a ideia de uma variável?", "label": "direct"}
+{"goal": "Qual a ideia de uma função?", "label": "direct"}
+{"goal": "Qual a ideia de uma fila?", "label": "direct"}
+{"goal": "Qual a ideia de cache?", "label": "direct"}
+{"goal": "Qual a ideia de uma lista?", "label": "direct"}
+{"goal": "Qual a ideia de uma árvore?", "label": "direct"}
+{"goal": "Qual a ideia de uma pilha?", "label": "direct"}
+{"goal": "Qual a ideia de uma classe?", "label": "direct"}
+{"goal": "Qual a ideia de uma condição?", "label": "direct"}
+{"goal": "Qual a ideia de um laço?", "label": "direct"}
+{"goal": "Qual a ideia de uma matriz?", "label": "direct"}
+{"goal": "O que é recursão?", "label": "direct"}
+{"goal": "O que é uma variável?", "label": "direct"}
+{"goal": "O que é uma função?", "label": "direct"}
+{"goal": "O que é uma fila?", "label": "direct"}
+{"goal": "O que é cache?", "label": "direct"}
+{"goal": "O que é uma lista?", "label": "direct"}
+{"goal": "O que é uma árvore?", "label": "direct"}
+{"goal": "O que é uma pilha?", "label": "direct"}
+{"goal": "O que é uma classe?", "label": "direct"}
+{"goal": "O que é uma condição?", "label": "direct"}
+{"goal": "O que é um laço?", "label": "direct"}
+{"goal": "O que é uma matriz?", "label": "direct"}
+{"goal": "Ensine os fundamentos de recursão.", "label": "direct"}
+{"goal": "Ensine os fundamentos de uma variável.", "label": "direct"}
+{"goal": "Ensine os fundamentos de uma função.", "label": "direct"}
+{"goal": "Ensine os fundamentos de uma fila.", "label": "direct"}
+{"goal": "Ensine os fundamentos de cache.", "label": "direct"}
+{"goal": "Ensine os fundamentos de uma lista.", "label": "direct"}
+{"goal": "Ensine os fundamentos de uma árvore.", "label": "direct"}
+{"goal": "Ensine os fundamentos de uma pilha.", "label": "direct"}
+{"goal": "Ensine os fundamentos de uma classe.", "label": "direct"}
+{"goal": "Ensine os fundamentos de uma condição.", "label": "direct"}
+{"goal": "Ensine os fundamentos de um laço.", "label": "direct"}
+{"goal": "Ensine os fundamentos de uma matriz.", "label": "direct"}
+{"goal": "Qual é a versão mais recente de Python?", "label": "web"}
+{"goal": "Qual é a versão mais recente de TypeScript?", "label": "web"}
+{"goal": "Qual é a versão mais recente de Node.js?", "label": "web"}
+{"goal": "Qual é a versão mais recente de Rust?", "label": "web"}
+{"goal": "Qual é a versão mais recente de Django?", "label": "web"}
+{"goal": "Qual é a versão mais recente de React?", "label": "web"}
+{"goal": "Qual é a versão mais recente de Go?", "label": "web"}
+{"goal": "Qual é a versão mais recente de Vue?", "label": "web"}
+{"goal": "Qual é a versão mais recente de SQLite?", "label": "web"}
+{"goal": "Qual é a versão mais recente de FastAPI?", "label": "web"}
+{"goal": "Qual é a versão mais recente de Ubuntu?", "label": "web"}
+{"goal": "Qual é a versão mais recente de PostgreSQL?", "label": "web"}
+{"goal": "Consulte a documentação oficial de Python.", "label": "web"}
+{"goal": "Consulte a documentação oficial de TypeScript.", "label": "web"}
+{"goal": "Consulte a documentação oficial de Node.js.", "label": "web"}
+{"goal": "Consulte a documentação oficial de Rust.", "label": "web"}
+{"goal": "Consulte a documentação oficial de Django.", "label": "web"}
+{"goal": "Consulte a documentação oficial de React.", "label": "web"}
+{"goal": "Consulte a documentação oficial de Go.", "label": "web"}
+{"goal": "Consulte a documentação oficial de Vue.", "label": "web"}
+{"goal": "Consulte a documentação oficial de SQLite.", "label": "web"}
+{"goal": "Consulte a documentação oficial de FastAPI.", "label": "web"}
+{"goal": "Consulte a documentação oficial de Ubuntu.", "label": "web"}
+{"goal": "Consulte a documentação oficial de PostgreSQL.", "label": "web"}
+{"goal": "Busque informações atuais sobre Python.", "label": "web"}
+{"goal": "Busque informações atuais sobre TypeScript.", "label": "web"}
+{"goal": "Busque informações atuais sobre Node.js.", "label": "web"}
+{"goal": "Busque informações atuais sobre Rust.", "label": "web"}
+{"goal": "Busque informações atuais sobre Django.", "label": "web"}
+{"goal": "Busque informações atuais sobre React.", "label": "web"}
+{"goal": "Busque informações atuais sobre Go.", "label": "web"}
+{"goal": "Busque informações atuais sobre Vue.", "label": "web"}
+{"goal": "Busque informações atuais sobre SQLite.", "label": "web"}
+{"goal": "Busque informações atuais sobre FastAPI.", "label": "web"}
+{"goal": "Busque informações atuais sobre Ubuntu.", "label": "web"}
+{"goal": "Busque informações atuais sobre PostgreSQL.", "label": "web"}
+{"goal": "Qual o preço de Python hoje?", "label": "web"}
+{"goal": "Qual o preço de TypeScript hoje?", "label": "web"}
+{"goal": "Qual o preço de Node.js hoje?", "label": "web"}
+{"goal": "Qual o preço de Rust hoje?", "label": "web"}
+{"goal": "Qual o preço de Django hoje?", "label": "web"}
+{"goal": "Qual o preço de React hoje?", "label": "web"}
+{"goal": "Qual o preço de Go hoje?", "label": "web"}
+{"goal": "Qual o preço de Vue hoje?", "label": "web"}
+{"goal": "Qual o preço de SQLite hoje?", "label": "web"}
+{"goal": "Qual o preço de FastAPI hoje?", "label": "web"}
+{"goal": "Qual o preço de Ubuntu hoje?", "label": "web"}
+{"goal": "Qual o preço de PostgreSQL hoje?", "label": "web"}
+{"goal": "O que mudou em Python nesta semana?", "label": "web"}
+{"goal": "O que mudou em TypeScript nesta semana?", "label": "web"}
+{"goal": "O que mudou em Node.js nesta semana?", "label": "web"}
+{"goal": "O que mudou em Rust nesta semana?", "label": "web"}
+{"goal": "O que mudou em Django nesta semana?", "label": "web"}
+{"goal": "O que mudou em React nesta semana?", "label": "web"}
+{"goal": "O que mudou em Go nesta semana?", "label": "web"}
+{"goal": "O que mudou em Vue nesta semana?", "label": "web"}
+{"goal": "O que mudou em SQLite nesta semana?", "label": "web"}
+{"goal": "O que mudou em FastAPI nesta semana?", "label": "web"}
+{"goal": "O que mudou em Ubuntu nesta semana?", "label": "web"}
+{"goal": "O que mudou em PostgreSQL nesta semana?", "label": "web"}
+{"goal": "Verifique na internet se Python ainda é suportado.", "label": "web"}
+{"goal": "Verifique na internet se TypeScript ainda é suportado.", "label": "web"}
+{"goal": "Verifique na internet se Node.js ainda é suportado.", "label": "web"}
+{"goal": "Verifique na internet se Rust ainda é suportado.", "label": "web"}
+{"goal": "Verifique na internet se Django ainda é suportado.", "label": "web"}
+{"goal": "Verifique na internet se React ainda é suportado.", "label": "web"}
+{"goal": "Verifique na internet se Go ainda é suportado.", "label": "web"}
+{"goal": "Verifique na internet se Vue ainda é suportado.", "label": "web"}
+{"goal": "Verifique na internet se SQLite ainda é suportado.", "label": "web"}
+{"goal": "Verifique na internet se FastAPI ainda é suportado.", "label": "web"}
+{"goal": "Verifique na internet se Ubuntu ainda é suportado.", "label": "web"}
+{"goal": "Verifique na internet se PostgreSQL ainda é suportado.", "label": "web"}
+{"goal": "Preciso das últimas notícias sobre Python.", "label": "web"}
+{"goal": "Preciso das últimas notícias sobre TypeScript.", "label": "web"}
+{"goal": "Preciso das últimas notícias sobre Node.js.", "label": "web"}
+{"goal": "Preciso das últimas notícias sobre Rust.", "label": "web"}
+{"goal": "Preciso das últimas notícias sobre Django.", "label": "web"}
+{"goal": "Preciso das últimas notícias sobre React.", "label": "web"}
+{"goal": "Preciso das últimas notícias sobre Go.", "label": "web"}
+{"goal": "Preciso das últimas notícias sobre Vue.", "label": "web"}
+{"goal": "Preciso das últimas notícias sobre SQLite.", "label": "web"}
+{"goal": "Preciso das últimas notícias sobre FastAPI.", "label": "web"}
+{"goal": "Preciso das últimas notícias sobre Ubuntu.", "label": "web"}
+{"goal": "Preciso das últimas notícias sobre PostgreSQL.", "label": "web"}
+{"goal": "Encontre fontes confiáveis sobre Python.", "label": "web"}
+{"goal": "Encontre fontes confiáveis sobre TypeScript.", "label": "web"}
+{"goal": "Encontre fontes confiáveis sobre Node.js.", "label": "web"}
+{"goal": "Encontre fontes confiáveis sobre Rust.", "label": "web"}
+{"goal": "Encontre fontes confiáveis sobre Django.", "label": "web"}
+{"goal": "Encontre fontes confiáveis sobre React.", "label": "web"}
+{"goal": "Encontre fontes confiáveis sobre Go.", "label": "web"}
+{"goal": "Encontre fontes confiáveis sobre Vue.", "label": "web"}
+{"goal": "Encontre fontes confiáveis sobre SQLite.", "label": "web"}
+{"goal": "Encontre fontes confiáveis sobre FastAPI.", "label": "web"}
+{"goal": "Encontre fontes confiáveis sobre Ubuntu.", "label": "web"}
+{"goal": "Encontre fontes confiáveis sobre PostgreSQL.", "label": "web"}
+{"goal": "Qual foi o lançamento mais novo de Python?", "label": "web"}
+{"goal": "Qual foi o lançamento mais novo de TypeScript?", "label": "web"}
+{"goal": "Qual foi o lançamento mais novo de Node.js?", "label": "web"}
+{"goal": "Qual foi o lançamento mais novo de Rust?", "label": "web"}
+{"goal": "Qual foi o lançamento mais novo de Django?", "label": "web"}
+{"goal": "Qual foi o lançamento mais novo de React?", "label": "web"}
+{"goal": "Qual foi o lançamento mais novo de Go?", "label": "web"}
+{"goal": "Qual foi o lançamento mais novo de Vue?", "label": "web"}
+{"goal": "Qual foi o lançamento mais novo de SQLite?", "label": "web"}
+{"goal": "Qual foi o lançamento mais novo de FastAPI?", "label": "web"}
+{"goal": "Qual foi o lançamento mais novo de Ubuntu?", "label": "web"}
+{"goal": "Qual foi o lançamento mais novo de PostgreSQL?", "label": "web"}
+{"goal": "Confira nas fontes oficiais o suporte atual de Python.", "label": "web"}
+{"goal": "Confira nas fontes oficiais o suporte atual de TypeScript.", "label": "web"}
+{"goal": "Confira nas fontes oficiais o suporte atual de Node.js.", "label": "web"}
+{"goal": "Confira nas fontes oficiais o suporte atual de Rust.", "label": "web"}
+{"goal": "Confira nas fontes oficiais o suporte atual de Django.", "label": "web"}
+{"goal": "Confira nas fontes oficiais o suporte atual de React.", "label": "web"}
+{"goal": "Confira nas fontes oficiais o suporte atual de Go.", "label": "web"}
+{"goal": "Confira nas fontes oficiais o suporte atual de Vue.", "label": "web"}
+{"goal": "Confira nas fontes oficiais o suporte atual de SQLite.", "label": "web"}
+{"goal": "Confira nas fontes oficiais o suporte atual de FastAPI.", "label": "web"}
+{"goal": "Confira nas fontes oficiais o suporte atual de Ubuntu.", "label": "web"}
+{"goal": "Confira nas fontes oficiais o suporte atual de PostgreSQL.", "label": "web"}
+{"goal": "Pesquise a versão estável de Python.", "label": "web"}
+{"goal": "Pesquise a versão estável de TypeScript.", "label": "web"}
+{"goal": "Pesquise a versão estável de Node.js.", "label": "web"}
+{"goal": "Pesquise a versão estável de Rust.", "label": "web"}
+{"goal": "Pesquise a versão estável de Django.", "label": "web"}
+{"goal": "Pesquise a versão estável de React.", "label": "web"}
+{"goal": "Pesquise a versão estável de Go.", "label": "web"}
+{"goal": "Pesquise a versão estável de Vue.", "label": "web"}
+{"goal": "Pesquise a versão estável de SQLite.", "label": "web"}
+{"goal": "Pesquise a versão estável de FastAPI.", "label": "web"}
+{"goal": "Pesquise a versão estável de Ubuntu.", "label": "web"}
+{"goal": "Pesquise a versão estável de PostgreSQL.", "label": "web"}
+{"goal": "Quanto custa Python atualmente?", "label": "web"}
+{"goal": "Quanto custa TypeScript atualmente?", "label": "web"}
+{"goal": "Quanto custa Node.js atualmente?", "label": "web"}
+{"goal": "Quanto custa Rust atualmente?", "label": "web"}
+{"goal": "Quanto custa Django atualmente?", "label": "web"}
+{"goal": "Quanto custa React atualmente?", "label": "web"}
+{"goal": "Quanto custa Go atualmente?", "label": "web"}
+{"goal": "Quanto custa Vue atualmente?", "label": "web"}
+{"goal": "Quanto custa SQLite atualmente?", "label": "web"}
+{"goal": "Quanto custa FastAPI atualmente?", "label": "web"}
+{"goal": "Quanto custa Ubuntu atualmente?", "label": "web"}
+{"goal": "Quanto custa PostgreSQL atualmente?", "label": "web"}
+{"goal": "A última versão de Python já saiu?", "label": "web"}
+{"goal": "A última versão de TypeScript já saiu?", "label": "web"}
+{"goal": "A última versão de Node.js já saiu?", "label": "web"}
+{"goal": "A última versão de Rust já saiu?", "label": "web"}
+{"goal": "A última versão de Django já saiu?", "label": "web"}
+{"goal": "A última versão de React já saiu?", "label": "web"}
+{"goal": "A última versão de Go já saiu?", "label": "web"}
+{"goal": "A última versão de Vue já saiu?", "label": "web"}
+{"goal": "A última versão de SQLite já saiu?", "label": "web"}
+{"goal": "A última versão de FastAPI já saiu?", "label": "web"}
+{"goal": "A última versão de Ubuntu já saiu?", "label": "web"}
+{"goal": "A última versão de PostgreSQL já saiu?", "label": "web"}
+{"goal": "Verifique as mudanças recentes de Python.", "label": "web"}
+{"goal": "Verifique as mudanças recentes de TypeScript.", "label": "web"}
+{"goal": "Verifique as mudanças recentes de Node.js.", "label": "web"}
+{"goal": "Verifique as mudanças recentes de Rust.", "label": "web"}
+{"goal": "Verifique as mudanças recentes de Django.", "label": "web"}
+{"goal": "Verifique as mudanças recentes de React.", "label": "web"}
+{"goal": "Verifique as mudanças recentes de Go.", "label": "web"}
+{"goal": "Verifique as mudanças recentes de Vue.", "label": "web"}
+{"goal": "Verifique as mudanças recentes de SQLite.", "label": "web"}
+{"goal": "Verifique as mudanças recentes de FastAPI.", "label": "web"}
+{"goal": "Verifique as mudanças recentes de Ubuntu.", "label": "web"}
+{"goal": "Verifique as mudanças recentes de PostgreSQL.", "label": "web"}
+{"goal": "Há novidades sobre Python hoje?", "label": "web"}
+{"goal": "Há novidades sobre TypeScript hoje?", "label": "web"}
+{"goal": "Há novidades sobre Node.js hoje?", "label": "web"}
+{"goal": "Há novidades sobre Rust hoje?", "label": "web"}
+{"goal": "Há novidades sobre Django hoje?", "label": "web"}
+{"goal": "Há novidades sobre React hoje?", "label": "web"}
+{"goal": "Há novidades sobre Go hoje?", "label": "web"}
+{"goal": "Há novidades sobre Vue hoje?", "label": "web"}
+{"goal": "Há novidades sobre SQLite hoje?", "label": "web"}
+{"goal": "Há novidades sobre FastAPI hoje?", "label": "web"}
+{"goal": "Há novidades sobre Ubuntu hoje?", "label": "web"}
+{"goal": "Há novidades sobre PostgreSQL hoje?", "label": "web"}
+{"goal": "Busque documentação atual de Python.", "label": "web"}
+{"goal": "Busque documentação atual de TypeScript.", "label": "web"}
+{"goal": "Busque documentação atual de Node.js.", "label": "web"}
+{"goal": "Busque documentação atual de Rust.", "label": "web"}
+{"goal": "Busque documentação atual de Django.", "label": "web"}
+{"goal": "Busque documentação atual de React.", "label": "web"}
+{"goal": "Busque documentação atual de Go.", "label": "web"}
+{"goal": "Busque documentação atual de Vue.", "label": "web"}
+{"goal": "Busque documentação atual de SQLite.", "label": "web"}
+{"goal": "Busque documentação atual de FastAPI.", "label": "web"}
+{"goal": "Busque documentação atual de Ubuntu.", "label": "web"}
+{"goal": "Busque documentação atual de PostgreSQL.", "label": "web"}
+{"goal": "Qual versão está no arquivo README.md?", "label": "local"}
+{"goal": "Qual versão está no arquivo package.json?", "label": "local"}
+{"goal": "Qual versão está no arquivo config.json?", "label": "local"}
+{"goal": "Qual versão está no arquivo requirements.txt?", "label": "local"}
+{"goal": "Qual versão está no arquivo Cargo.toml?", "label": "local"}
+{"goal": "Qual versão está no arquivo runtime.txt?", "label": "local"}
+{"goal": "Qual versão está no arquivo settings.yaml?", "label": "local"}
+{"goal": "Qual versão está no arquivo pyproject.toml?", "label": "local"}
+{"goal": "Qual versão está no arquivo versao.txt?", "label": "local"}
+{"goal": "Qual versão está no arquivo manifest.json?", "label": "local"}
+{"goal": "Qual versão está no arquivo ambiente.md?", "label": "local"}
+{"goal": "Qual versão está no arquivo dados.csv?", "label": "local"}
+{"goal": "Leia README.md e explique seu conteúdo.", "label": "local"}
+{"goal": "Leia package.json e explique seu conteúdo.", "label": "local"}
+{"goal": "Leia config.json e explique seu conteúdo.", "label": "local"}
+{"goal": "Leia requirements.txt e explique seu conteúdo.", "label": "local"}
+{"goal": "Leia Cargo.toml e explique seu conteúdo.", "label": "local"}
+{"goal": "Leia runtime.txt e explique seu conteúdo.", "label": "local"}
+{"goal": "Leia settings.yaml e explique seu conteúdo.", "label": "local"}
+{"goal": "Leia pyproject.toml e explique seu conteúdo.", "label": "local"}
+{"goal": "Leia versao.txt e explique seu conteúdo.", "label": "local"}
+{"goal": "Leia manifest.json e explique seu conteúdo.", "label": "local"}
+{"goal": "Leia ambiente.md e explique seu conteúdo.", "label": "local"}
+{"goal": "Leia dados.csv e explique seu conteúdo.", "label": "local"}
+{"goal": "O que está configurado em README.md neste projeto?", "label": "local"}
+{"goal": "O que está configurado em package.json neste projeto?", "label": "local"}
+{"goal": "O que está configurado em config.json neste projeto?", "label": "local"}
+{"goal": "O que está configurado em requirements.txt neste projeto?", "label": "local"}
+{"goal": "O que está configurado em Cargo.toml neste projeto?", "label": "local"}
+{"goal": "O que está configurado em runtime.txt neste projeto?", "label": "local"}
+{"goal": "O que está configurado em settings.yaml neste projeto?", "label": "local"}
+{"goal": "O que está configurado em pyproject.toml neste projeto?", "label": "local"}
+{"goal": "O que está configurado em versao.txt neste projeto?", "label": "local"}
+{"goal": "O que está configurado em manifest.json neste projeto?", "label": "local"}
+{"goal": "O que está configurado em ambiente.md neste projeto?", "label": "local"}
+{"goal": "O que está configurado em dados.csv neste projeto?", "label": "local"}
+{"goal": "Confira README.md no workspace.", "label": "local"}
+{"goal": "Confira package.json no workspace.", "label": "local"}
+{"goal": "Confira config.json no workspace.", "label": "local"}
+{"goal": "Confira requirements.txt no workspace.", "label": "local"}
+{"goal": "Confira Cargo.toml no workspace.", "label": "local"}
+{"goal": "Confira runtime.txt no workspace.", "label": "local"}
+{"goal": "Confira settings.yaml no workspace.", "label": "local"}
+{"goal": "Confira pyproject.toml no workspace.", "label": "local"}
+{"goal": "Confira versao.txt no workspace.", "label": "local"}
+{"goal": "Confira manifest.json no workspace.", "label": "local"}
+{"goal": "Confira ambiente.md no workspace.", "label": "local"}
+{"goal": "Confira dados.csv no workspace.", "label": "local"}
+{"goal": "Procure o requisito de runtime em README.md.", "label": "local"}
+{"goal": "Procure o requisito de runtime em package.json.", "label": "local"}
+{"goal": "Procure o requisito de runtime em config.json.", "label": "local"}
+{"goal": "Procure o requisito de runtime em requirements.txt.", "label": "local"}
+{"goal": "Procure o requisito de runtime em Cargo.toml.", "label": "local"}
+{"goal": "Procure o requisito de runtime em runtime.txt.", "label": "local"}
+{"goal": "Procure o requisito de runtime em settings.yaml.", "label": "local"}
+{"goal": "Procure o requisito de runtime em pyproject.toml.", "label": "local"}
+{"goal": "Procure o requisito de runtime em versao.txt.", "label": "local"}
+{"goal": "Procure o requisito de runtime em manifest.json.", "label": "local"}
+{"goal": "Procure o requisito de runtime em ambiente.md.", "label": "local"}
+{"goal": "Procure o requisito de runtime em dados.csv.", "label": "local"}
+{"goal": "Consulte o arquivo README.md antes de responder.", "label": "local"}
+{"goal": "Consulte o arquivo package.json antes de responder.", "label": "local"}
+{"goal": "Consulte o arquivo config.json antes de responder.", "label": "local"}
+{"goal": "Consulte o arquivo requirements.txt antes de responder.", "label": "local"}
+{"goal": "Consulte o arquivo Cargo.toml antes de responder.", "label": "local"}
+{"goal": "Consulte o arquivo runtime.txt antes de responder.", "label": "local"}
+{"goal": "Consulte o arquivo settings.yaml antes de responder.", "label": "local"}
+{"goal": "Consulte o arquivo pyproject.toml antes de responder.", "label": "local"}
+{"goal": "Consulte o arquivo versao.txt antes de responder.", "label": "local"}
+{"goal": "Consulte o arquivo manifest.json antes de responder.", "label": "local"}
+{"goal": "Consulte o arquivo ambiente.md antes de responder.", "label": "local"}
+{"goal": "Consulte o arquivo dados.csv antes de responder.", "label": "local"}
+{"goal": "Qual é o valor salvo em README.md?", "label": "local"}
+{"goal": "Qual é o valor salvo em package.json?", "label": "local"}
+{"goal": "Qual é o valor salvo em config.json?", "label": "local"}
+{"goal": "Qual é o valor salvo em requirements.txt?", "label": "local"}
+{"goal": "Qual é o valor salvo em Cargo.toml?", "label": "local"}
+{"goal": "Qual é o valor salvo em runtime.txt?", "label": "local"}
+{"goal": "Qual é o valor salvo em settings.yaml?", "label": "local"}
+{"goal": "Qual é o valor salvo em pyproject.toml?", "label": "local"}
+{"goal": "Qual é o valor salvo em versao.txt?", "label": "local"}
+{"goal": "Qual é o valor salvo em manifest.json?", "label": "local"}
+{"goal": "Qual é o valor salvo em ambiente.md?", "label": "local"}
+{"goal": "Qual é o valor salvo em dados.csv?", "label": "local"}
+{"goal": "Sem pesquisar na internet, consulte README.md.", "label": "local"}
+{"goal": "Sem pesquisar na internet, consulte package.json.", "label": "local"}
+{"goal": "Sem pesquisar na internet, consulte config.json.", "label": "local"}
+{"goal": "Sem pesquisar na internet, consulte requirements.txt.", "label": "local"}
+{"goal": "Sem pesquisar na internet, consulte Cargo.toml.", "label": "local"}
+{"goal": "Sem pesquisar na internet, consulte runtime.txt.", "label": "local"}
+{"goal": "Sem pesquisar na internet, consulte settings.yaml.", "label": "local"}
+{"goal": "Sem pesquisar na internet, consulte pyproject.toml.", "label": "local"}
+{"goal": "Sem pesquisar na internet, consulte versao.txt.", "label": "local"}
+{"goal": "Sem pesquisar na internet, consulte manifest.json.", "label": "local"}
+{"goal": "Sem pesquisar na internet, consulte ambiente.md.", "label": "local"}
+{"goal": "Sem pesquisar na internet, consulte dados.csv.", "label": "local"}
+{"goal": "Veja em README.md qual runtime utilizamos.", "label": "local"}
+{"goal": "Veja em package.json qual runtime utilizamos.", "label": "local"}
+{"goal": "Veja em config.json qual runtime utilizamos.", "label": "local"}
+{"goal": "Veja em requirements.txt qual runtime utilizamos.", "label": "local"}
+{"goal": "Veja em Cargo.toml qual runtime utilizamos.", "label": "local"}
+{"goal": "Veja em runtime.txt qual runtime utilizamos.", "label": "local"}
+{"goal": "Veja em settings.yaml qual runtime utilizamos.", "label": "local"}
+{"goal": "Veja em pyproject.toml qual runtime utilizamos.", "label": "local"}
+{"goal": "Veja em versao.txt qual runtime utilizamos.", "label": "local"}
+{"goal": "Veja em manifest.json qual runtime utilizamos.", "label": "local"}
+{"goal": "Veja em ambiente.md qual runtime utilizamos.", "label": "local"}
+{"goal": "Veja em dados.csv qual runtime utilizamos.", "label": "local"}
+{"goal": "Me diga o conteúdo de README.md.", "label": "local"}
+{"goal": "Me diga o conteúdo de package.json.", "label": "local"}
+{"goal": "Me diga o conteúdo de config.json.", "label": "local"}
+{"goal": "Me diga o conteúdo de requirements.txt.", "label": "local"}
+{"goal": "Me diga o conteúdo de Cargo.toml.", "label": "local"}
+{"goal": "Me diga o conteúdo de runtime.txt.", "label": "local"}
+{"goal": "Me diga o conteúdo de settings.yaml.", "label": "local"}
+{"goal": "Me diga o conteúdo de pyproject.toml.", "label": "local"}
+{"goal": "Me diga o conteúdo de versao.txt.", "label": "local"}
+{"goal": "Me diga o conteúdo de manifest.json.", "label": "local"}
+{"goal": "Me diga o conteúdo de ambiente.md.", "label": "local"}
+{"goal": "Me diga o conteúdo de dados.csv.", "label": "local"}
+{"goal": "Abra README.md e confira os requisitos.", "label": "local"}
+{"goal": "Abra package.json e confira os requisitos.", "label": "local"}
+{"goal": "Abra config.json e confira os requisitos.", "label": "local"}
+{"goal": "Abra requirements.txt e confira os requisitos.", "label": "local"}
+{"goal": "Abra Cargo.toml e confira os requisitos.", "label": "local"}
+{"goal": "Abra runtime.txt e confira os requisitos.", "label": "local"}
+{"goal": "Abra settings.yaml e confira os requisitos.", "label": "local"}
+{"goal": "Abra pyproject.toml e confira os requisitos.", "label": "local"}
+{"goal": "Abra versao.txt e confira os requisitos.", "label": "local"}
+{"goal": "Abra manifest.json e confira os requisitos.", "label": "local"}
+{"goal": "Abra ambiente.md e confira os requisitos.", "label": "local"}
+{"goal": "Abra dados.csv e confira os requisitos.", "label": "local"}
+{"goal": "O que consta em README.md?", "label": "local"}
+{"goal": "O que consta em package.json?", "label": "local"}
+{"goal": "O que consta em config.json?", "label": "local"}
+{"goal": "O que consta em requirements.txt?", "label": "local"}
+{"goal": "O que consta em Cargo.toml?", "label": "local"}
+{"goal": "O que consta em runtime.txt?", "label": "local"}
+{"goal": "O que consta em settings.yaml?", "label": "local"}
+{"goal": "O que consta em pyproject.toml?", "label": "local"}
+{"goal": "O que consta em versao.txt?", "label": "local"}
+{"goal": "O que consta em manifest.json?", "label": "local"}
+{"goal": "O que consta em ambiente.md?", "label": "local"}
+{"goal": "O que consta em dados.csv?", "label": "local"}
+{"goal": "Verifique a porta definida em README.md.", "label": "local"}
+{"goal": "Verifique a porta definida em package.json.", "label": "local"}
+{"goal": "Verifique a porta definida em config.json.", "label": "local"}
+{"goal": "Verifique a porta definida em requirements.txt.", "label": "local"}
+{"goal": "Verifique a porta definida em Cargo.toml.", "label": "local"}
+{"goal": "Verifique a porta definida em runtime.txt.", "label": "local"}
+{"goal": "Verifique a porta definida em settings.yaml.", "label": "local"}
+{"goal": "Verifique a porta definida em pyproject.toml.", "label": "local"}
+{"goal": "Verifique a porta definida em versao.txt.", "label": "local"}
+{"goal": "Verifique a porta definida em manifest.json.", "label": "local"}
+{"goal": "Verifique a porta definida em ambiente.md.", "label": "local"}
+{"goal": "Verifique a porta definida em dados.csv.", "label": "local"}
+{"goal": "Qual runtime está registrado em README.md?", "label": "local"}
+{"goal": "Qual runtime está registrado em package.json?", "label": "local"}
+{"goal": "Qual runtime está registrado em config.json?", "label": "local"}
+{"goal": "Qual runtime está registrado em requirements.txt?", "label": "local"}
+{"goal": "Qual runtime está registrado em Cargo.toml?", "label": "local"}
+{"goal": "Qual runtime está registrado em runtime.txt?", "label": "local"}
+{"goal": "Qual runtime está registrado em settings.yaml?", "label": "local"}
+{"goal": "Qual runtime está registrado em pyproject.toml?", "label": "local"}
+{"goal": "Qual runtime está registrado em versao.txt?", "label": "local"}
+{"goal": "Qual runtime está registrado em manifest.json?", "label": "local"}
+{"goal": "Qual runtime está registrado em ambiente.md?", "label": "local"}
+{"goal": "Qual runtime está registrado em dados.csv?", "label": "local"}
+{"goal": "Sem usar a web, confira o arquivo README.md.", "label": "local"}
+{"goal": "Sem usar a web, confira o arquivo package.json.", "label": "local"}
+{"goal": "Sem usar a web, confira o arquivo config.json.", "label": "local"}
+{"goal": "Sem usar a web, confira o arquivo requirements.txt.", "label": "local"}
+{"goal": "Sem usar a web, confira o arquivo Cargo.toml.", "label": "local"}
+{"goal": "Sem usar a web, confira o arquivo runtime.txt.", "label": "local"}
+{"goal": "Sem usar a web, confira o arquivo settings.yaml.", "label": "local"}
+{"goal": "Sem usar a web, confira o arquivo pyproject.toml.", "label": "local"}
+{"goal": "Sem usar a web, confira o arquivo versao.txt.", "label": "local"}
+{"goal": "Sem usar a web, confira o arquivo manifest.json.", "label": "local"}
+{"goal": "Sem usar a web, confira o arquivo ambiente.md.", "label": "local"}
+{"goal": "Sem usar a web, confira o arquivo dados.csv.", "label": "local"}
+{"goal": "O que diz o arquivo README.md?", "label": "local"}
+{"goal": "O que diz o arquivo package.json?", "label": "local"}
+{"goal": "O que diz o arquivo config.json?", "label": "local"}
+{"goal": "O que diz o arquivo requirements.txt?", "label": "local"}
+{"goal": "O que diz o arquivo Cargo.toml?", "label": "local"}
+{"goal": "O que diz o arquivo runtime.txt?", "label": "local"}
+{"goal": "O que diz o arquivo settings.yaml?", "label": "local"}
+{"goal": "O que diz o arquivo pyproject.toml?", "label": "local"}
+{"goal": "O que diz o arquivo versao.txt?", "label": "local"}
+{"goal": "O que diz o arquivo manifest.json?", "label": "local"}
+{"goal": "O que diz o arquivo ambiente.md?", "label": "local"}
+{"goal": "O que diz o arquivo dados.csv?", "label": "local"}
+{"goal": "Essa coisa funciona?", "label": "clarify"}
+{"goal": "Qual deles devo usar?", "label": "clarify"}
+{"goal": "Ela serve para isso?", "label": "clarify"}
+{"goal": "Qual é o nome daquilo?", "label": "clarify"}
+{"goal": "Esse serve?", "label": "clarify"}
+{"goal": "O que você acha disso?", "label": "clarify"}
+{"goal": "Qual versão ela exige?", "label": "clarify"}
+{"goal": "Pode me explicar aquilo?", "label": "clarify"}
+{"goal": "Isso atende?", "label": "clarify"}
+{"goal": "Qual opção?", "label": "clarify"}
+{"goal": "Aquilo está correto?", "label": "clarify"}
+{"goal": "Aquela funciona?", "label": "clarify"}
+{"goal": "Qual delas serve?", "label": "clarify"}
+{"goal": "Qual é a melhor escolha?", "label": "clarify"}
+{"goal": "Como uso isso?", "label": "clarify"}
+{"goal": "Preciso escolher entre essas opções, qual é adequada?", "label": "clarify"}
+{"goal": "Pode dizer se isso atende ao que preciso?", "label": "clarify"}
+{"goal": "Essa opção é compatível?", "label": "clarify"}
+{"goal": "O que faço com aquilo?", "label": "clarify"}

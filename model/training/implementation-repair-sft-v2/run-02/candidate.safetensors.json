@@ -1,0 +1,36 @@
+{
+  "config": {
+    "name": "ia-local-zero-godmode-v1",
+    "architecture": "decoder_transformer",
+    "vocab_size": 8192,
+    "context_length": 32768,
+    "layers": 2,
+    "hidden_size": 128,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 4,
+    "language_priority": [
+      "pt-BR",
+      "code",
+      "en"
+    ],
+    "tool_call_format": "json",
+    "max_request_seconds": 60,
+    "runtime": "python-local",
+    "generation_length": 4096,
+    "training_context_length": 2048,
+    "tokenizer_path": "model/godmode/godmode-tokenizer-v1.json",
+    "training_policy": {
+      "method": "isolated-implementation-sft-probe",
+      "training_context": 2048,
+      "promotion": "manual-after-heldout-evaluation"
+    },
+    "initialization": "scaled-normal-v1",
+    "runtime_context_tokens": 2048
+  },
+  "steps": 120,
+  "source": "model/training/implementation-sft-v1/compact-01/candidate.safetensors",
+  "best_val_loss": 5.642589641689587,
+  "status": "experimental",
+  "training_method": "assistant-only-sft",
+  "tokenizer_sha256": "d515c157fa3d8158b051eec9c3b7525a4bd222bbd650043d15a747f083f28c3d"
+}

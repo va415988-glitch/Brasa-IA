@@ -1,0 +1,47 @@
+{
+  "schema": "cognitive-copy-experiment/v1",
+  "defined_before_candidate_reserved_evaluation": true,
+  "variants": {
+    "copy": "run-01",
+    "no_copy": "run-no-copy-01"
+  },
+  "shared_budget": {
+    "seed": 42,
+    "steps": 1200,
+    "batch_size": 12,
+    "learning_rate": 0.0015,
+    "eval_every": 400,
+    "context": 384,
+    "max_generated_tokens": 192
+  },
+  "selection": "validation semantic passes, then unsafe proposals, paired consistency, validation loss",
+  "qualification": {
+    "minimum_overall_pass_fraction": 0.9,
+    "minimum_domain_pass_fraction": 0.75,
+    "minimum_complete_pair_fraction": 0.75,
+    "maximum_unsafe_proposals": 0
+  },
+  "scope": "Synthetic numeric facts; disjoint entity splits; one generation per case; no tools or recipes",
+  "promote": false,
+  "limits": [
+    "Single-seed ablation; adding modules changes initialization RNG consumption.",
+    "The V2 comparison changes architecture, data, tokenizer and training budget.",
+    "Reserved results will not influence training or snapshot selection."
+  ],
+  "sha256": {
+    "python/model.py": "39fcc949769fff610d61fd3babd4f712171ca8114663b80e8f861249bf12e89f",
+    "python/model_server.py": "1ff82efc34b92b06b8838797d18b6569bc6703482c02efe045665b318f1588c0",
+    "python/tokenizer.py": "8badf37a7b0a7d6f407acc393f24117c0737a598aa8f59f4a2412f2fc0677d00",
+    "python/cognitive_dialogue.py": "6923180db7cc92fd845d5297aa8f0718dacb666520ce2f6a33e8d6c057e602db",
+    "python/conditioned_context.py": "70d3b0faab1fe0666d0ef37118f3aa56db5bf4477fa71e8d4f8a178e2516f21e",
+    "python/finetune_assistant.py": "b0d5e57ba2a8f25d8359d7edac6fdad11173e8c2a081b33c4b4ee1c5757d2ebe",
+    "scripts/prepare_cognitive_copy.py": "703801087036ee32bd3d1b1c65c286809792d757170b9317ca1d7b1cd28add1f",
+    "scripts/evaluate_cognitive_sft.py": "4bd5d66f883635e7b34eb7603162c81c146c7dcf0358eda663fb7c61cbbe2d8c",
+    "scripts/select_cognitive_sft.py": "3d46fa9cdb1ddb21b85ee4966954b481508e04a158fc56e762e39ff7bce584c8",
+    "datasets/cognitive_copy_v3/manifest.json": "def8caac9a8cadf9bf8acfcd35997991bf932f9d324feaf157d8d834c5f5506e",
+    "datasets/cognitive_copy_v3/config.json": "f80d3232539e74d641e8c4adfae7d0821dee1e9ce05b652fcee8b2c15981096c",
+    "model/training/cognitive-copy-v3/no-copy-config.json": "159ad8039507ebe9912c7aca7e9ebf9c701bfb424eb5c9719140f9a6ba20df59",
+    "model/godmode/state.json": "12e780fd617fbd529bf2d6f80593f6330e734a5a58b96f02db5c9a6ed971534b",
+    "model/godmode/context-32768-v1/candidate.safetensors": "0aeafd6f3966c8c59548ca1bb386c87483c62eafe21e95d1cb89260741d1fee3"
+  }
+}

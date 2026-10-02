@@ -14,6 +14,7 @@ for candidate in (str(ROOT), str(ROOT / "python")):
     if candidate not in sys.path:
         sys.path.insert(0, candidate)
 from model_server import ModelService
+from active_checkpoint import selected_checkpoint
 
 
 def load_cases(path: Path) -> list[dict]:
@@ -22,11 +23,17 @@ def load_cases(path: Path) -> list[dict]:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Avalia o workflow real do assistente local")
+    parser.add_argument(
+        "--checkpoint",
+        type=Path,
+        default=selected_checkpoint(),
+        help="checkpoint real usado pelo serviço",
+    )
     parser.add_argument("--eval", type=Path, default=ROOT / "model" / "eval_generation.jsonl")
     parser.add_argument("--report", type=Path, default=ROOT / "model" / "workflow_gate_report.json")
     args = parser.parse_args()
 
-    service = ModelService("workflow-gate")
+    service = ModelService(args.checkpoint, trace_path=None)
     rows = []
     for case in load_cases(args.eval):
         started = time.perf_counter()
@@ -57,6 +64,14 @@ def main() -> None:
     passed = sum(row["ok"] for row in rows)
     report = {
         "version": "workflow-gate/v1",
+        "model": {
+            "checkpoint": str(args.checkpoint),
+            "local_model_loaded": service.local_model is not None,
+            "local_model_error": service.local_model_error,
+            "context_length": (service.local_config or {}).get("context_length"),
+            "memory_entries": len(service.memory),
+            "mode": "workflow-with-fallbacks",
+        },
         "passed": passed,
         "total": len(rows),
         "pass_rate": round(passed / len(rows), 3) if rows else 0.0,

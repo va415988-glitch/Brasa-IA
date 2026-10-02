@@ -1,0 +1,189 @@
+{
+  "case_count": 15,
+  "tool_accuracy": 1.0,
+  "answer_quality_avg": 0.544,
+  "latency_ms": {
+    "p50": 15.42,
+    "p95": 27.12,
+    "max": 27.12
+  },
+  "categories": {
+    "creativity": {
+      "count": 2,
+      "tool_accuracy": 1.0,
+      "answer_quality_avg": 1.0
+    },
+    "general-knowledge": {
+      "count": 2,
+      "tool_accuracy": 1.0,
+      "answer_quality_avg": 1.0
+    },
+    "programming": {
+      "count": 2,
+      "tool_accuracy": 1.0,
+      "answer_quality_avg": 1.0
+    },
+    "qa": {
+      "count": 2,
+      "tool_accuracy": 1.0,
+      "answer_quality_avg": 0.583
+    },
+    "tool-routing": {
+      "count": 7,
+      "tool_accuracy": 1.0,
+      "answer_quality_avg": 0.143
+    }
+  },
+  "cases": [
+    {
+      "id": "tool-select-01",
+      "category": "tool-routing",
+      "question": "Liste os arquivos do workspace",
+      "expected_tool": "list_files",
+      "actual_tool": "list_files",
+      "tool_ok": true,
+      "answer_score": 0.0,
+      "elapsed_ms": 15.89
+    },
+    {
+      "id": "tool-select-02",
+      "category": "tool-routing",
+      "question": "Leia o arquivo README.md",
+      "expected_tool": "read_file",
+      "actual_tool": "read_file",
+      "tool_ok": true,
+      "answer_score": 0.0,
+      "elapsed_ms": 11.38
+    },
+    {
+      "id": "tool-select-03",
+      "category": "tool-routing",
+      "question": "Pesquise no código por create_web_page",
+      "expected_tool": "search_files",
+      "actual_tool": "search_files",
+      "tool_ok": true,
+      "answer_score": 0.0,
+      "elapsed_ms": 9.6
+    },
+    {
+      "id": "tool-select-04",
+      "category": "tool-routing",
+      "question": "Cria uma tela de login e rode os testes",
+      "expected_tool": "create_web_page",
+      "actual_tool": "create_web_page",
+      "tool_ok": true,
+      "answer_score": 0.0,
+      "elapsed_ms": 12.71
+    },
+    {
+      "id": "tool-select-05",
+      "category": "tool-routing",
+      "question": "O que é ownership em Rust?",
+      "expected_tool": null,
+      "actual_tool": null,
+      "tool_ok": true,
+      "answer_score": 1.0,
+      "elapsed_ms": 19.27
+    },
+    {
+      "id": "tool-select-06",
+      "category": "qa",
+      "question": "Explique variáveis em Python.",
+      "expected_tool": null,
+      "actual_tool": null,
+      "tool_ok": true,
+      "answer_score": 0.5,
+      "elapsed_ms": 27.12
+    },
+    {
+      "id": "tool-select-07",
+      "category": "qa",
+      "question": "Qual é a diferença entre GET e POST?",
+      "expected_tool": null,
+      "actual_tool": null,
+      "tool_ok": true,
+      "answer_score": 0.6666666666666666,
+      "elapsed_ms": 15.77
+    },
+    {
+      "id": "tool-select-08",
+      "category": "programming",
+      "question": "Como projetar uma função Python fácil de testar?",
+      "expected_tool": null,
+      "actual_tool": null,
+      "tool_ok": true,
+      "answer_score": 1.0,
+      "elapsed_ms": 19.14
+    },
+    {
+      "id": "tool-select-09",
+      "category": "programming",
+      "question": "Como tratar erros em uma API?",
+      "expected_tool": null,
+      "actual_tool": null,
+      "tool_ok": true,
+      "answer_score": 1.0,
+      "elapsed_ms": 6.95
+    },
+    {
+      "id": "tool-select-10",
+      "category": "creativity",
+      "question": "Como sair de um bloqueio criativo?",
+      "expected_tool": null,
+      "actual_tool": null,
+      "tool_ok": true,
+      "answer_score": 1.0,
+      "elapsed_ms": 14.76
+    },
+    {
+      "id": "tool-select-11",
+      "category": "creativity",
+      "question": "Crie três conceitos de jogo com uma mecânica incomum.",
+      "expected_tool": null,
+      "actual_tool": null,
+      "tool_ok": true,
+      "answer_score": 1.0,
+      "elapsed_ms": 18.74
+    },
+    {
+      "id": "tool-select-12",
+      "category": "general-knowledge",
+      "question": "Como avaliar se uma afirmação científica é confiável?",
+      "expected_tool": null,
+      "actual_tool": null,
+      "tool_ok": true,
+      "answer_score": 1.0,
+      "elapsed_ms": 15.42
+    },
+    {
+      "id": "tool-select-13",
+      "category": "general-knowledge",
+      "question": "Explique correlação e causalidade.",
+      "expected_tool": null,
+      "actual_tool": null,
+      "tool_ok": true,
+      "answer_score": 1.0,
+      "elapsed_ms": 15.53
+    },
+    {
+      "id": "tool-select-14",
+      "category": "tool-routing",
+      "question": "Inspecione a imagem logo.png",
+      "expected_tool": "inspect_media",
+      "actual_tool": "inspect_media",
+      "tool_ok": true,
+      "answer_score": 0.0,
+      "elapsed_ms": 10.35
+    },
+    {
+      "id": "tool-select-15",
+      "category": "tool-routing",
+      "question": "Extraia o texto do documento manual.pdf",
+      "expected_tool": "extract_document_text",
+      "actual_tool": "extract_document_text",
+      "tool_ok": true,
+      "answer_score": 0.0,
+      "elapsed_ms": 11.08
+    }
+  ]
+}

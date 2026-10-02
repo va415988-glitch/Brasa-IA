@@ -1,0 +1,78 @@
+{
+  "seed": 42,
+  "arguments": {
+    "checkpoint": "model/training/implementation-sft-v1/compact-01/candidate.safetensors",
+    "config_path": "datasets/implementation_sft_v1/training_config_2048.json",
+    "tokenizer_path": "model/godmode/godmode-tokenizer-v1.json",
+    "output_dir": "model/training/implementation-repair-sft-v2/run-02",
+    "heldout": "datasets/implementation_repair_sft_v2/heldout.jsonl",
+    "steps": 120,
+    "max_answer_tokens": 1150,
+    "multi_turn_repeat": 1,
+    "additional_jsonl": [],
+    "only_jsonl": [
+      "datasets/implementation_repair_sft_v2/train.jsonl"
+    ],
+    "validation_jsonl": "datasets/implementation_repair_sft_v2/validation.jsonl",
+    "sample_tokens": 0,
+    "snapshot_every_eval": true,
+    "eval_every": 40,
+    "patience": 3,
+    "batch_size": 2,
+    "threads": 4,
+    "learning_rate": 0.00015,
+    "without_profile": true,
+    "from_scratch": false
+  },
+  "config": {
+    "name": "ia-local-zero-godmode-v1",
+    "architecture": "decoder_transformer",
+    "vocab_size": 8192,
+    "context_length": 32768,
+    "layers": 2,
+    "hidden_size": 128,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 4,
+    "language_priority": [
+      "pt-BR",
+      "code",
+      "en"
+    ],
+    "tool_call_format": "json",
+    "max_request_seconds": 60,
+    "runtime": "python-local",
+    "generation_length": 4096,
+    "training_context_length": 2048,
+    "tokenizer_path": "model/godmode/godmode-tokenizer-v1.json",
+    "training_policy": {
+      "method": "isolated-implementation-sft-probe",
+      "training_context": 2048,
+      "promotion": "manual-after-heldout-evaluation"
+    },
+    "initialization": "scaled-normal-v1",
+    "runtime_context_tokens": 2048
+  },
+  "source_sha256": "8e06c07892baefa5f7124f705ecdb0c6e1990af3856fefb54a0367149ed24db6",
+  "tokenizer_sha256": "d515c157fa3d8158b051eec9c3b7525a4bd222bbd650043d15a747f083f28c3d",
+  "inputs": {
+    "datasets/implementation_repair_sft_v2/train.jsonl": "f82b34c645cb402a828f37404e808722797abdd42e2203cf0dedd3fe94bbebbb",
+    "datasets/implementation_repair_sft_v2/heldout.jsonl": "e51bffe952ed3acb65d0100b1065bd4635feaea2f35966c35437fecb318d72fd",
+    "datasets/implementation_repair_sft_v2/validation.jsonl": "eb6c7dbc2609669d43c5c0bf74fe5ff503b0ae1322a9cf6e6eeea90e7d385ec6"
+  },
+  "records": {
+    "train": 753,
+    "training_views": 753,
+    "validation": 72,
+    "heldout": 85
+  },
+  "rejected": {},
+  "domains": {
+    "replay": 753
+  },
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

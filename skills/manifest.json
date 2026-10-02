@@ -1,0 +1,628 @@
+{
+  "schema": "local-skills/v1",
+  "version": 2,
+  "skills": [
+    {
+      "id": "workspace-inspection",
+      "label": "Inspeção de workspace",
+      "description": "Descobre estrutura, arquivos, stack e pontos de entrada sem alterar o projeto.",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "triggers": [
+        "inspecione o projeto",
+        "analise o projeto",
+        "analisa o projeto",
+        "analise o workspace",
+        "analisa o workspace",
+        "checa o repositorio",
+        "cheque o repositorio",
+        "checa o repo",
+        "veja o repositorio",
+        "estrutura do projeto",
+        "arquivos do projeto",
+        "workspace",
+        "repositório"
+      ],
+      "required_capabilities": [
+        "project.inspect"
+      ],
+      "optional_capabilities": [
+        "workspace.files.list",
+        "workspace.code.search",
+        "workspace.file.read",
+        "workspace.select",
+        "project.verify"
+      ]
+    },
+    {
+      "id": "implementation",
+      "label": "Implementação de software",
+      "description": "Planeja e executa mudanças de software limitadas ao workspace e verificáveis.",
+      "domain_tags": [
+        "programming",
+        "workspace"
+      ],
+      "triggers": [
+        "implemente",
+        "crie um aplicativo",
+        "corrija o código",
+        "adicione uma função",
+        "desenvolva",
+        "refatore",
+        "construa",
+        "corrija o erro",
+        "corrigir o erro",
+        "mude o código",
+        "implemente em"
+      ],
+      "required_capabilities": [
+        "project.inspect"
+      ],
+      "optional_capabilities": [
+        "workspace.code.search",
+        "workspace.file.read",
+        "workspace.file.create",
+        "workspace.file.edit",
+        "workspace.directory.create",
+        "workspace.batch.apply",
+        "workspace.batch.undo",
+        "project.verify",
+        "project.failure.diagnose",
+        "process.profile.run",
+        "process.start",
+        "process.status",
+        "process.stop"
+      ]
+    },
+    {
+      "id": "process-control",
+      "label": "Execução de processos locais",
+      "description": "Inicia, acompanha e encerra servidores de desenvolvimento locais usando perfis tipados e limites do runtime.",
+      "domain_tags": [
+        "programming",
+        "process-control"
+      ],
+      "triggers": [
+        "inicie o servidor",
+        "iniciar o servidor",
+        "inicie servidor",
+        "iniciar servidor",
+        "suba o servidor",
+        "subir o servidor",
+        "rode o servidor",
+        "rodar o servidor",
+        "inicie a aplicação",
+        "inicie a aplicacao",
+        "rode a aplicação",
+        "rode a aplicacao",
+        "status do servidor",
+        "estado do servidor",
+        "como está o servidor",
+        "como esta o servidor",
+        "servidor está rodando",
+        "servidor esta rodando",
+        "mostre os logs do servidor",
+        "pare o servidor",
+        "parar o servidor",
+        "encerre o servidor",
+        "desligue o servidor",
+        "pare a aplicação",
+        "pare a aplicacao"
+      ],
+      "required_capabilities": [],
+      "optional_capabilities": [
+        "process.start",
+        "process.status",
+        "process.stop"
+      ],
+      "action_rules": [
+        {
+          "capability": "process.status",
+          "priority": 30,
+          "triggers": [
+            "status do servidor",
+            "estado do servidor",
+            "como está o servidor",
+            "como esta o servidor",
+            "servidor está ativo",
+            "servidor esta ativo",
+            "servidor está rodando",
+            "servidor esta rodando",
+            "mostre os logs do servidor",
+            "logs do processo"
+          ]
+        },
+        {
+          "capability": "process.stop",
+          "priority": 20,
+          "triggers": [
+            "pare o servidor",
+            "parar o servidor",
+            "pare servidor",
+            "encerre o servidor",
+            "desligue o servidor",
+            "pare a aplicação",
+            "pare a aplicacao",
+            "encerre a aplicação",
+            "encerre a aplicacao"
+          ]
+        },
+        {
+          "capability": "process.start",
+          "priority": 10,
+          "triggers": [
+            "inicie o servidor",
+            "iniciar o servidor",
+            "inicie servidor",
+            "iniciar servidor",
+            "suba o servidor",
+            "subir o servidor",
+            "rode o servidor",
+            "rodar o servidor",
+            "inicie a aplicação",
+            "inicie a aplicacao",
+            "rode a aplicação",
+            "rode a aplicacao"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "multi-file-changes",
+      "label": "Alterações coordenadas em vários arquivos",
+      "description": "Revisa e aplica mudanças em vários caminhos como um lote, mostra o diff de cada arquivo e permite desfazer sem sobrescrever edições posteriores.",
+      "domain_tags": [
+        "programming",
+        "workspace",
+        "change-management"
+      ],
+      "triggers": [
+        "altere vários arquivos",
+        "altere varios arquivos",
+        "edite vários arquivos",
+        "edite varios arquivos",
+        "mudanças em vários arquivos",
+        "mudancas em varios arquivos",
+        "alterações em múltiplos arquivos",
+        "alteracoes em multiplos arquivos",
+        "aplique estas mudanças em conjunto",
+        "aplique estas mudancas em conjunto",
+        "aplique o lote de alterações",
+        "aplique o lote de alteracoes",
+        "desfaça o lote",
+        "desfaca o lote"
+      ],
+      "required_capabilities": [
+        "project.inspect"
+      ],
+      "optional_capabilities": [
+        "workspace.file.read",
+        "workspace.batch.apply",
+        "workspace.batch.undo",
+        "project.verify"
+      ]
+    },
+    {
+      "id": "test-debugging",
+      "label": "Testes e depuração",
+      "description": "Interpreta falhas, localiza causas, propõe correções e repete verificações.",
+      "domain_tags": [
+        "programming",
+        "testing",
+        "debugging"
+      ],
+      "triggers": [
+        "teste falhou",
+        "testes falharam",
+        "erro no teste",
+        "depure",
+        "debugue",
+        "por que falha",
+        "corrija a falha",
+        "stack trace",
+        "testes",
+        "pytest",
+        "falha",
+        "depurar",
+        "debug",
+        "erro de compilação"
+      ],
+      "required_capabilities": [
+        "project.verify"
+      ],
+      "optional_capabilities": [
+        "project.inspect",
+        "workspace.code.search",
+        "workspace.file.read",
+        "project.failure.diagnose",
+        "project.repair.propose",
+        "workspace.file.repair.apply",
+        "process.profile.run"
+      ]
+    },
+    {
+      "id": "ui-design",
+      "label": "Interface e acessibilidade",
+      "description": "Constrói interfaces locais com hierarquia visual, estados claros e requisitos de acessibilidade.",
+      "domain_tags": [
+        "programming",
+        "design"
+      ],
+      "triggers": [
+        "interface",
+        "tela",
+        "dashboard",
+        "página web",
+        "acessibilidade",
+        "formulário",
+        "design de produto"
+      ],
+      "required_capabilities": [
+        "ui.prototype.create"
+      ],
+      "optional_capabilities": [
+        "workspace.file.create",
+        "workspace.file.edit",
+        "project.verify"
+      ]
+    },
+    {
+      "id": "local-document-analysis",
+      "label": "Análise de documentos locais",
+      "description": "Extrai e sintetiza conteúdo de documentos e arquivos do workspace com referência ao material consultado.",
+      "domain_tags": [
+        "documents",
+        "research"
+      ],
+      "triggers": [
+        "pdf",
+        "documento anexado",
+        "resuma o arquivo",
+        "extraia o texto",
+        "analise este documento",
+        "leia o documento"
+      ],
+      "required_capabilities": [
+        "document.text.extract"
+      ],
+      "optional_capabilities": [
+        "workspace.file.read",
+        "media.inspect",
+        "research.citations.create"
+      ]
+    },
+    {
+      "id": "technical-writing",
+      "label": "Redação técnica",
+      "description": "Produz ou revisa documentação técnica no formato e para o público solicitados.",
+      "domain_tags": [
+        "writing",
+        "programming"
+      ],
+      "triggers": [
+        "documente",
+        "escreva documentação",
+        "crie um readme",
+        "redija o guia",
+        "escreva uma especificação",
+        "revise o texto"
+      ],
+      "required_capabilities": [],
+      "optional_capabilities": [
+        "workspace.file.read",
+        "workspace.file.create",
+        "workspace.file.edit",
+        "research.citations.create"
+      ]
+    },
+    {
+      "id": "offline-first-research",
+      "label": "Pesquisa priorizando o acervo local",
+      "description": "Procura primeiro em arquivos, fontes e conhecimento já armazenados; recomenda rede somente quando explicitamente solicitada.",
+      "domain_tags": [
+        "research",
+        "workspace"
+      ],
+      "triggers": [
+        "pesquise no projeto",
+        "pesquise no código",
+        "pesquise localmente",
+        "pesquise no acervo local",
+        "encontre informações no projeto",
+        "compare fontes locais",
+        "pesquise no código do projeto"
+      ],
+      "required_capabilities": [
+        "workspace.code.search"
+      ],
+      "optional_capabilities": [
+        "workspace.file.read",
+        "research.sources.list",
+        "research.web.search",
+        "research.web.deep",
+        "research.page.open"
+      ]
+    },
+    {
+      "id": "task-planning",
+      "label": "Planejamento de tarefas",
+      "description": "Decompõe objetivos em etapas, dependências, riscos e critérios de conclusão, inclusive fora da programação.",
+      "domain_tags": [
+        "planning",
+        "general"
+      ],
+      "triggers": [
+        "planeje",
+        "roadmap",
+        "cronograma",
+        "estratégia",
+        "decomponha",
+        "organize as etapas",
+        "plano de ação"
+      ],
+      "required_capabilities": [],
+      "optional_capabilities": [
+        "project.inspect",
+        "workspace.files.list"
+      ]
+    },
+    {
+      "id": "knowledge-learning",
+      "label": "Pesquisa e aprendizado verificável",
+      "description": "Pesquisa fontes externas sob solicitação explícita, avalia evidências, transforma lacunas em prática local e registra competência sem confundir leitura com domínio.",
+      "domain_tags": [
+        "research",
+        "learning",
+        "programming"
+      ],
+      "triggers": [
+        "aprenda",
+        "estude",
+        "quero aprender",
+        "me ensine",
+        "aprenda sobre",
+        "estude sobre"
+      ],
+      "required_capabilities": [
+        "learning.topic.start"
+      ],
+      "optional_capabilities": [
+        "research.pipeline.run",
+        "learning.topic.status",
+        "learning.autonomous.status",
+        "knowledge.index.search"
+      ],
+      "external_only_when_requested": true,
+      "acceptance_criteria": [
+        "fontes relevantes e confiáveis foram avaliadas antes de persistir conhecimento",
+        "conteúdo novo foi separado de competência demonstrada",
+        "prática foi verificada ou bloqueios foram registrados",
+        "a resposta informa lacunas e não declara domínio sem evidência"
+      ]
+    },
+    {
+      "id": "autonomous-learning-cycle",
+      "label": "Ciclo autônomo de aprendizado",
+      "description": "Continua uma trilha limitada: consulta o ledger, pesquisa apenas lacunas, pratica em ambiente local seguro e registra evidência verificável.",
+      "domain_tags": [
+        "learning",
+        "research",
+        "testing"
+      ],
+      "triggers": [
+        "execute o próximo ciclo de aprendizado",
+        "próximo ciclo de aprendizado",
+        "aprendizado autônomo",
+        "continue o professor autônomo"
+      ],
+      "required_capabilities": [
+        "learning.autonomous.status"
+      ],
+      "optional_capabilities": [
+        "learning.autonomous.tick",
+        "learning.topic.status",
+        "research.pipeline.run",
+        "knowledge.index.search"
+      ],
+      "external_only_when_requested": true,
+      "acceptance_criteria": [
+        "respeitar orçamento e cooldown do ciclo",
+        "reutilizar fontes e práticas já verificadas",
+        "não promover competência só por recuperar ou ler conteúdo",
+        "registrar conclusão, bloqueio ou falha no ledger"
+      ],
+      "action_rules": [
+        {
+          "capability": "learning.autonomous.tick",
+          "priority": 20,
+          "triggers": [
+            "execute o próximo ciclo de aprendizado",
+            "próximo ciclo de aprendizado",
+            "inicie o aprendizado autônomo",
+            "execute o aprendizado autônomo",
+            "continue o professor autônomo"
+          ]
+        },
+        {
+          "capability": "learning.autonomous.status",
+          "priority": 10,
+          "triggers": [
+            "mostre o estado do aprendizado autônomo",
+            "status do aprendizado autônomo",
+            "consulte o estado do professor autônomo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "external-research",
+      "label": "Pesquisa externa sob solicitação",
+      "description": "Consulta fontes externas somente quando a tarefa pede informações atuais, internet ou web, registrando evidências e limites.",
+      "domain_tags": [
+        "research"
+      ],
+      "triggers": [
+        "na internet",
+        "na web",
+        "fontes recentes",
+        "fontes atuais",
+        "pesquise online",
+        "search the web",
+        "look up current"
+      ],
+      "required_capabilities": [
+        "research.web.search"
+      ],
+      "optional_capabilities": [
+        "research.web.deep",
+        "research.page.open",
+        "research.citations.create"
+      ],
+      "external_only_when_requested": true
+    },
+    {
+      "id": "workspace-status",
+      "label": "Estado do projeto ativo",
+      "description": "Resume o estado do workspace selecionado a partir de estrutura, processo local e verificações disponíveis; distingue evidência observada de inferência.",
+      "domain_tags": [
+        "workspace",
+        "operations"
+      ],
+      "triggers": [
+        "estado atual do sistema",
+        "estado atual desse sistema",
+        "estado atual do projeto",
+        "estado do projeto",
+        "status do projeto",
+        "status do workspace",
+        "como está o projeto",
+        "como esta o projeto",
+        "como está o sistema",
+        "como esta o sistema",
+        "resumo do projeto ativo"
+      ],
+      "excluded_triggers": [
+        "sistema político",
+        "sistema politico",
+        "estado brasileiro",
+        "estado da bahia",
+        "estado de saúde",
+        "estado de saude",
+        "governo",
+        "instituições",
+        "instituicoes",
+        "política",
+        "politica",
+        "político",
+        "politico"
+      ],
+      "required_context": [
+        "workspace_selected"
+      ],
+      "required_capabilities": [
+        "project.inspect"
+      ],
+      "optional_capabilities": [
+        "process.status",
+        "project.verify",
+        "workspace.git.diff"
+      ]
+    },
+    {
+      "id": "change-review",
+      "label": "Revisão de alterações locais",
+      "description": "Inspeciona diferenças e arquivos alterados no workspace, aponta riscos e pode encaminhar verificações explícitas.",
+      "domain_tags": [
+        "programming",
+        "workspace",
+        "review"
+      ],
+      "triggers": [
+        "revise minhas alterações",
+        "revise minhas alteracoes",
+        "o que mudou no projeto",
+        "o que mudou no código",
+        "o que mudou no codigo",
+        "resuma as alterações locais",
+        "resuma as alteracoes locais",
+        "revise o diff",
+        "analise o diff",
+        "análise do diff",
+        "mudanças pendentes no git",
+        "mudancas pendentes no git"
+      ],
+      "required_capabilities": [
+        "workspace.git.diff"
+      ],
+      "optional_capabilities": [
+        "workspace.files.compare",
+        "workspace.file.read",
+        "project.verify",
+        "project.inspect"
+      ]
+    },
+    {
+      "id": "environment-diagnostics",
+      "label": "Diagnóstico do ambiente local",
+      "description": "Investiga dependências, configuração, inicialização e processos locais usando diagnósticos e verificadores do projeto.",
+      "domain_tags": [
+        "programming",
+        "operations",
+        "debugging"
+      ],
+      "triggers": [
+        "dependência ausente",
+        "dependencias ausentes",
+        "dependência faltando",
+        "dependencias faltando",
+        "problema de configuração local",
+        "diagnostique o ambiente",
+        "diagnosticar o ambiente",
+        "aplicação não inicia",
+        "aplicacao nao inicia",
+        "servidor não sobe",
+        "servidor nao sobe",
+        "porta já está ocupada",
+        "porta ja esta ocupada"
+      ],
+      "required_capabilities": [
+        "project.inspect"
+      ],
+      "optional_capabilities": [
+        "project.failure.diagnose",
+        "project.verify",
+        "process.status",
+        "workspace.code.search"
+      ]
+    },
+    {
+      "id": "local-knowledge-retrieval",
+      "label": "Recuperação do acervo local",
+      "description": "Busca fatos e fontes já registrados no acervo local sem iniciar pesquisa externa ou criar conhecimento novo.",
+      "domain_tags": [
+        "research",
+        "knowledge",
+        "offline"
+      ],
+      "triggers": [
+        "o que já aprendemos",
+        "o que ja aprendemos",
+        "conhecimento registrado",
+        "consulte o acervo local",
+        "consulte nosso acervo",
+        "recupere conhecimento local",
+        "busque no conhecimento local",
+        "fontes já consultadas",
+        "fontes ja consultadas"
+      ],
+      "required_capabilities": [
+        "knowledge.index.search"
+      ],
+      "optional_capabilities": [
+        "research.sources.list"
+      ]
+    }
+  ]
+}

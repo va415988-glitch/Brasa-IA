@@ -1,0 +1,43 @@
+{
+  "config": {
+    "name": "own-programming-studio-v1",
+    "architecture": "decoder_transformer",
+    "vocab_size": 768,
+    "context_length": 512,
+    "layers": 3,
+    "hidden_size": 192,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 3,
+    "language_priority": [
+      "pt-BR",
+      "code",
+      "en"
+    ],
+    "tool_call_format": "json",
+    "max_request_seconds": 60,
+    "runtime": "python-local",
+    "generation_length": 2048,
+    "training_context_length": 512,
+    "tokenizer_path": "datasets/programming_studio_v1/tokenizer.json",
+    "training_policy": {
+      "method": "local-sft-from-scratch",
+      "external_llm": false,
+      "ollama": false,
+      "gpu_required": false,
+      "training_context": 512,
+      "production_context": 16384
+    },
+    "initialization": "scaled-normal-v1",
+    "runtime_context_tokens": 512,
+    "forward_chunk_length": 512,
+    "system_prompt_trained": false,
+    "programming_prompt_style": "compact-v1",
+    "training_window_mode": "prompt-anchor-v1",
+    "prompt_anchor_tokens": 170
+  },
+  "steps": 300,
+  "source": "model/godmode/context-32768-v1/candidate.safetensors",
+  "validation_loss": 1.228674009412744,
+  "status": "experimental-validation-snapshot",
+  "tokenizer_sha256": "a25d685894fb6adfdf360048b86b8a44a7bf072e1a56be9ed8e0ec3bf177f675"
+}

@@ -1,13 +1,19 @@
 {
   "name": "read_file",
-  "description": "Lê um arquivo textual pequeno dentro do workspace autorizado.",
+  "description": "Lê um trecho de arquivo textual do workspace. Prefira start_line/end_line obtidos por busca; sem intervalo, a leitura mantém paginação por bytes.",
   "side_effects": false,
   "requires_approval": false,
   "arguments": {
     "type": "object",
     "required": ["path"],
-    "properties": {"path": {"type": "string", "description": "Caminho relativo do arquivo."}},
+    "properties": {
+      "path": {"type": "string", "description": "Caminho relativo do arquivo."},
+      "offset": {"type": "integer", "minimum": 0, "description": "Byte inicial opcional para continuar uma leitura truncada; não pode ser combinado com intervalo de linhas."},
+      "max_bytes": {"type": "integer", "minimum": 1, "maximum": 131072, "description": "Limite opcional do trecho retornado; padrão 8 KiB para intervalos de linhas."},
+      "start_line": {"type": "integer", "minimum": 1, "description": "Primeira linha a ler, inclusiva. Use a posição retornada por search_files."},
+      "end_line": {"type": "integer", "minimum": 1, "description": "Última linha a ler, inclusiva. Intervalos são limitados a 400 linhas por chamada."}
+    },
     "additionalProperties": false
   },
-  "result": {"type": "object", "required": ["path", "content"], "properties": {"path": {"type": "string"}, "content": {"type": "string"}}}
+  "result": {"type": "object", "required": ["path", "content", "bytes", "offset", "truncated"], "properties": {"path": {"type": "string"}, "content": {"type": "string"}, "bytes": {"type": "integer"}, "offset": {"type": ["integer", "null"]}, "content_bytes": {"type": "integer"}, "truncated": {"type": "boolean"}, "next_offset": {"type": ["integer", "null"]}, "start_line": {"type": "integer"}, "end_line": {"type": "integer"}, "total_lines": {"type": "integer"}, "next_start_line": {"type": ["integer", "null"]}}}
 }

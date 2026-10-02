@@ -1,0 +1,15 @@
+{
+  "schema": "context-window-runtime-verification/v1",
+  "checkpoint": "model/godmode/context-32768-v1/candidate.safetensors",
+  "checkpoint_sha256": "0aeafd6f3966c8c59548ca1bb386c87483c62eafe21e95d1cb89260741d1fee3",
+  "requested_context_tokens": 32768,
+  "prompt_tokens": 32764,
+  "generated_tokens": 4,
+  "total_tokens_exercised": 32768,
+  "target_fully_exercised": true,
+  "output_logits_finite": true,
+  "elapsed_seconds": 20.943,
+  "peak_rss_mb": 747.4,
+  "trained_context_tokens": 512,
+  "semantic_quality_evaluated": false
+}

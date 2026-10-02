@@ -1,0 +1,39 @@
+{
+  "config": {
+    "name": "ia-local-zero-godmode-v1",
+    "architecture": "decoder_transformer",
+    "vocab_size": 8192,
+    "context_length": 16384,
+    "layers": 2,
+    "hidden_size": 128,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 4,
+    "language_priority": [
+      "pt-BR",
+      "code",
+      "en"
+    ],
+    "tool_call_format": "json",
+    "max_request_seconds": 60,
+    "runtime": "python-local",
+    "generation_length": 4096,
+    "training_context_length": 512,
+    "tokenizer_path": "model/godmode/godmode-tokenizer-v1.json",
+    "training_policy": {
+      "method": "local-sft-from-scratch",
+      "external_llm": false,
+      "ollama": false,
+      "gpu_required": false,
+      "training_context": 512,
+      "production_context": 16384
+    },
+    "initialization": "scaled-normal-v1",
+    "runtime_context_tokens": 32768
+  },
+  "steps": 1500,
+  "source": "model/checkpoints/compact-08-gate-focus.pt",
+  "best_val_loss": 3.9019025016083084,
+  "status": "experimental",
+  "training_method": "assistant-only-from-scratch",
+  "tokenizer_sha256": "79b3f86851c97d39f8405e3f263eb463e447b542d73e817bc18193150c61550d"
+}

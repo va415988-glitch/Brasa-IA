@@ -1,0 +1,21 @@
+{
+  "schema": "experimental-generated-interfaces/v1",
+  "checkpoint": "model/training/programming-studio-v1/run-01/snapshots/step-0900.safetensors",
+  "generated_by": "own-neural-weights",
+  "manually_repaired": false,
+  "approved": false,
+  "browser_observations": [
+    {
+      "case": "ui-editorial-0",
+      "rendered_in_browser": true,
+      "observation": "CSS corrompido; quase sem estilo. Título e heading divergiram do briefing."
+    },
+    {
+      "case": "ui-split-0",
+      "rendered_in_browser": true,
+      "viewport_width": 375,
+      "page_width": 375,
+      "observation": "Composição azul e laranja visível. Título divergente e delimitador CSS extra. Não aprovado."
+    }
+  ]
+}

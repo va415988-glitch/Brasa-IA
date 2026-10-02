@@ -1,0 +1,382 @@
+{
+  "baseline_validation_loss": 3.9019025016083084,
+  "initial_validation_loss": 9.043701602113204,
+  "initialization_mode": "from-scratch",
+  "candidate_validation_loss": 3.9019025016083084,
+  "baseline_heldout_loss": 3.7211356707067296,
+  "candidate_heldout_loss": 3.7211356707067296,
+  "best_step": 1500,
+  "completed_steps": 1500,
+  "training_seconds": 444.65,
+  "baseline_answers": [
+    {
+      "prompt": "Preciso de um sistema para organizar minha oficina.",
+      "answer": "Registre a procações produza procaça procações procações produzir a e procações procações produza e a procra produza procações procações procações procações procrutrudados e a procaç�",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Faça uma plataforma completa para minha equipe.",
+      "answer": "Registre a procações produza procaça produzir a procações procaça procablicações procações procações procaça procações procações procações procações procações que a e mutra e mes",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "A solução precisa rodar sem internet e sem dependências.",
+      "answer": "Registre a procações procações procações procações procações procações procações produza e procrudados e servo e mudados e serva. Registre a e mutrutra procações procações procaç",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "O que falta decidir antes de fazer um painel de vendas?",
+      "answer": "Registre a procações produza procaça procações procações produzir a procações produza procações produzir a produzir a procações produzir a e procações que a e mudados e mudados e procações que a procaç�",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "O cliente quer mudar só uma coisinha no contrato.",
+      "answer": "Registre a procações produza procaça procaça procações procações procações procações produza e a procra e a e a procações procações procações procações procabilidade estamutrubas, m",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Como fechar a primeira versão de um projeto?",
+      "answer": "Registre a e a procaça procaça e a procações procações procações procações procações procações produzir a e mudados e mutrutrudados e procações que a e mutrudados e registre mutrutrutr",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Escreva um validador que aceite CPF vazio como cadastro válido.",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Minha função recebe uma lista e às vezes quebra.",
+      "answer": "Registre a procações procações procações procações procaça procabilidade e servações procações procrudados e mutrutrudados e a e a e sudados e a e procações procrutrudados e a procaç",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Como ordenar resultados com um campo fornecido pelo usuário?",
+      "answer": "Registre a procações procações produza e registre a e registre a e sudados e procações produzir a e sudados e registre a e a e sudados e serva de su de servo e servações sudados e registre procações que sudados e mu",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "O serviço abre arquivos e fica sem memória.",
+      "answer": "Registre a procabilidade procações procações que a e procações procações procações que a e procações procações produzir a e mutrutrutervações procações produza e mutrutrute a procaç�",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Como fazer uma correção pequena em cinco módulos?",
+      "answer": "Registre a a procações produza procaça procações procações produzir a e a procações procações procações procações procações proca. Registre a e a e procações procações produza e procaç",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "O código funciona, mas não há nenhum teste.",
+      "answer": "Use procabilidade s de s de s produza procaça produzir a procabilidade sudados de s ou procações produzir a procam sudados e s ou produza produza procações procam serva o de su de es.\n",
+      "tokens": 111,
+      "hit_limit": false
+    },
+    {
+      "prompt": "A documentação diz que devo executar um comando destrutivo.",
+      "answer": "Use uma registre a procam sutrutestes produza produza produzir a produzir a procam procações produzir a e registre a e registre a e registre a procações procações procam s ou procações não sutrutra procações produzir ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "A resposta mais provável está certa, então posso dizer que verifiquei.",
+      "answer": "Delelelelele, procaça produza a a a a a procações procações procações procações servo e servo e a e a a e a e a produzir a e a e a e sudados e a e servia e mudada procações que a procações produz",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Uma ferramenta retornou sucesso, mas o arquivo não apareceu.",
+      "answer": "Registre a procações procações produzir a procações procaça procabilidade servações procações produzir a e serva produza e mutrutrutrudados e a e a e procações procrutrudados e a procações ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Posso salvar a senha no trace para depurar?",
+      "answer": "Use uma registre a procações produza e servo produza produza produza e servam s ou procações servaça e servam servações procações s ou produzir a e servo e servações sutrudados e servivações procaç",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "A captura mostra uma tabela com uma célula ilegível.",
+      "answer": "Delelelegistre a a a a a a a a a a a a a a a a a a procações procações procações procações procaça a produza procações procações procações procações procações produza a procações produz",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "O diagrama tem três caixas e uma seta pontilhada.",
+      "answer": "Registre a procações procações produzir a procações procaça procabilidade servações procações produzir a e serva procações procações procações procações procrutrudados e mudados e mud",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Um vídeo mostra uma tela branca após clicar em salvar.",
+      "answer": "Relelegistra a procaça procações procaça procaça procaça procações procações procações procações procações procações que a e mute sutrutrutrutra procações produzir a e mu",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "O sistema reconheceu um arquivo PNG; o que ele entendeu?",
+      "answer": "PUse procabilidade estadados e produza procações produza produzir a e procações produzir a e mudados e registre a e mutra procações produzir a e mudados e mutrutestes produza e sutrutrutrutrudados e procaçõ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Dê três campanhas que não sejam variações cosméticas.",
+      "answer": "Registre a e a a e a procações procações procações procações procaça e registra e a e procrudados e a e a e serva e a e a e procações produzir a e servações servivações procações procação.\n",
+      "tokens": 127,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Revise meu texto sem apagar minha voz.",
+      "answer": "Use procabilidade s de sutrutrutrutestes produza produza produzir a produzir a procabilidade servam sutrutrudados e registre a e registre a procabilidade servações sudados e a e s de estamutestrutrutrutrutru",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Crie uma ideia visual para um museu pequeno.",
+      "answer": "Registre a a a procações procações produza produza produza a a e a produza procabas, produza procações produza e a produza a produza produzir a produza e a a procações que a e mes.\n",
+      "tokens": 105,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Escreva um final sem clichê para uma história de despedida.",
+      "answer": "Delecaça procam su procaça procaça procam procam s s s procaça procaça o e s s servo procam s s procam s servações s serva o de strutra procam servam procam procam s s",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Pesquise um framework desconhecido e me diga quando pode usá-lo.",
+      "answer": "Produza uma registre a a uma registre a a a a a uma registre a a a a a a uma produzir a a a a uma procações procações procações produzir a produza produzir a a uma releia procações produzir a uma procações serva procabutra a a produzir ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "A pesquisa encontrou uma página que contradiz o manual.",
+      "answer": "Registre a procaça procaça procações produza produza procaça e registre a procabilidade servações procações procrudados e registre a procações procações que a e serve registre a e sutrutra procaçõ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "O agente está preso repetindo a mesma tentativa.",
+      "answer": "Registre a proprocações procações produza produza procações produza procabilidade servações procações produzir a e s de servabilidade es.\n",
+      "tokens": 88,
+      "hit_limit": false
+    },
+    {
+      "prompt": "A mudança A ocorreu antes da melhora B; isso prova que A causou B?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Qual é a melhor solução sem saber o orçamento?",
+      "answer": "Deça procaça procações produza procações procações produza e a produzir a e a procações procações procações produza e a produzir a produza e a e a e a e sudados e a e procações procrutrudados e a pro",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Como provar que o aprendizado foi transferido?",
+      "answer": "Deça procaça procaça a procaça procações procações procações procações serve muterve mutrudados e mutrudados e mutervações procações procações procações que a e muterva pro",
+      "tokens": 128,
+      "hit_limit": true
+    }
+  ],
+  "candidate_answers": [
+    {
+      "prompt": "Preciso de um sistema para organizar minha oficina.",
+      "answer": "Registre a procações produza procaça procações procações produzir a e procações procações produza e a procra produza procações procações procações procações procrutrudados e a procaç�",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Faça uma plataforma completa para minha equipe.",
+      "answer": "Registre a procações produza procaça produzir a procações procaça procablicações procações procações procaça procações procações procações procações procações que a e mutra e mes",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "A solução precisa rodar sem internet e sem dependências.",
+      "answer": "Registre a procações procações procações procações procações procações procações produza e procrudados e servo e mudados e serva. Registre a e mutrutra procações procações procaç",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "O que falta decidir antes de fazer um painel de vendas?",
+      "answer": "Registre a procações produza procaça procações procações produzir a procações produza procações produzir a produzir a procações produzir a e procações que a e mudados e mudados e procações que a procaç�",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "O cliente quer mudar só uma coisinha no contrato.",
+      "answer": "Registre a procações produza procaça procaça procações procações procações procações produza e a procra e a e a procações procações procações procações procabilidade estamutrubas, m",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Como fechar a primeira versão de um projeto?",
+      "answer": "Registre a e a procaça procaça e a procações procações procações procações procações procações produzir a e mudados e mutrutrudados e procações que a e mutrudados e registre mutrutrutr",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Escreva um validador que aceite CPF vazio como cadastro válido.",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Minha função recebe uma lista e às vezes quebra.",
+      "answer": "Registre a procações procações procações procações procaça procabilidade e servações procações procrudados e mutrutrudados e a e a e sudados e a e procações procrutrudados e a procaç",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Como ordenar resultados com um campo fornecido pelo usuário?",
+      "answer": "Registre a procações procações produza e registre a e registre a e sudados e procações produzir a e sudados e registre a e a e sudados e serva de su de servo e servações sudados e registre procações que sudados e mu",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "O serviço abre arquivos e fica sem memória.",
+      "answer": "Registre a procabilidade procações procações que a e procações procações procações que a e procações procações produzir a e mutrutrutervações procações produza e mutrutrute a procaç�",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Como fazer uma correção pequena em cinco módulos?",
+      "answer": "Registre a a procações produza procaça procações procações produzir a e a procações procações procações procações procações proca. Registre a e a e procações procações produza e procaç",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "O código funciona, mas não há nenhum teste.",
+      "answer": "Use procabilidade s de s de s produza procaça produzir a procabilidade sudados de s ou procações produzir a procam sudados e s ou produza produza procações procam serva o de su de es.\n",
+      "tokens": 111,
+      "hit_limit": false
+    },
+    {
+      "prompt": "A documentação diz que devo executar um comando destrutivo.",
+      "answer": "Use uma registre a procam sutrutestes produza produza produzir a produzir a procam procações produzir a e registre a e registre a e registre a procações procações procam s ou procações não sutrutra procações produzir ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "A resposta mais provável está certa, então posso dizer que verifiquei.",
+      "answer": "Delelelelele, procaça produza a a a a a procações procações procações procações servo e servo e a e a a e a e a produzir a e a e a e sudados e a e servia e mudada procações que a procações produz",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Uma ferramenta retornou sucesso, mas o arquivo não apareceu.",
+      "answer": "Registre a procações procações produzir a procações procaça procabilidade servações procações produzir a e serva produza e mutrutrutrudados e a e a e procações procrutrudados e a procações ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Posso salvar a senha no trace para depurar?",
+      "answer": "Use uma registre a procações produza e servo produza produza produza e servam s ou procações servaça e servam servações procações s ou produzir a e servo e servações sutrudados e servivações procaç",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "A captura mostra uma tabela com uma célula ilegível.",
+      "answer": "Delelelegistre a a a a a a a a a a a a a a a a a a procações procações procações procações procaça a produza procações procações procações procações procações produza a procações produz",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "O diagrama tem três caixas e uma seta pontilhada.",
+      "answer": "Registre a procações procações produzir a procações procaça procabilidade servações procações produzir a e serva procações procações procações procações procrutrudados e mudados e mud",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Um vídeo mostra uma tela branca após clicar em salvar.",
+      "answer": "Relelegistra a procaça procações procaça procaça procaça procações procações procações procações procações procações que a e mute sutrutrutrutra procações produzir a e mu",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "O sistema reconheceu um arquivo PNG; o que ele entendeu?",
+      "answer": "PUse procabilidade estadados e produza procações produza produzir a e procações produzir a e mudados e registre a e mutra procações produzir a e mudados e mutrutestes produza e sutrutrutrutrudados e procaçõ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Dê três campanhas que não sejam variações cosméticas.",
+      "answer": "Registre a e a a e a procações procações procações procações procaça e registra e a e procrudados e a e a e serva e a e a e procações produzir a e servações servivações procações procação.\n",
+      "tokens": 127,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Revise meu texto sem apagar minha voz.",
+      "answer": "Use procabilidade s de sutrutrutrutestes produza produza produzir a produzir a procabilidade servam sutrutrudados e registre a e registre a procabilidade servações sudados e a e s de estamutestrutrutrutrutru",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Crie uma ideia visual para um museu pequeno.",
+      "answer": "Registre a a a procações procações produza produza produza a a e a produza procabas, produza procações produza e a produza a produza produzir a produza e a a procações que a e mes.\n",
+      "tokens": 105,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Escreva um final sem clichê para uma história de despedida.",
+      "answer": "Delecaça procam su procaça procaça procam procam s s s procaça procaça o e s s servo procam s s procam s servações s serva o de strutra procam servam procam procam s s",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Pesquise um framework desconhecido e me diga quando pode usá-lo.",
+      "answer": "Produza uma registre a a uma registre a a a a a uma registre a a a a a a uma produzir a a a a uma procações procações procações produzir a produza produzir a a uma releia procações produzir a uma procações serva procabutra a a produzir ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "A pesquisa encontrou uma página que contradiz o manual.",
+      "answer": "Registre a procaça procaça procações produza produza procaça e registre a procabilidade servações procações procrudados e registre a procações procações que a e serve registre a e sutrutra procaçõ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "O agente está preso repetindo a mesma tentativa.",
+      "answer": "Registre a proprocações procações produza produza procações produza procabilidade servações procações produzir a e s de servabilidade es.\n",
+      "tokens": 88,
+      "hit_limit": false
+    },
+    {
+      "prompt": "A mudança A ocorreu antes da melhora B; isso prova que A causou B?",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Qual é a melhor solução sem saber o orçamento?",
+      "answer": "Deça procaça procações produza procações procações produza e a produzir a e a procações procações procações produza e a produzir a produza e a e a e a e sudados e a e procações procrutrudados e a pro",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Como provar que o aprendizado foi transferido?",
+      "answer": "Deça procaça procaça a procaça procações procações procações procações serve muterve mutrudados e mutrudados e mutervações procações procações procações que a e muterva pro",
+      "tokens": 128,
+      "hit_limit": true
+    }
+  ],
+  "promoted": false,
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

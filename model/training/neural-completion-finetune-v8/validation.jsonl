@@ -1,0 +1,1 @@
+{"messages": [{"role": "user", "content": "Como saber se um estudo tem amostra representativa?"}, {"role": "assistant", "content": "Caderno azul, janela, música, café, moto, lua, vento, pedra, sonho, sombra."}], "source": "model/training/neural-completion-training-v3.messages.jsonl", "label": "negative", "failure_mode": "not-relevant"}

@@ -1,0 +1,70 @@
+{
+  "baseline_validation_loss": 4.397246246965825,
+  "initial_validation_loss": 4.397246246965825,
+  "initialization_mode": "continue-weights",
+  "candidate_validation_loss": 4.341498543696148,
+  "baseline_heldout_loss": 4.220308878775419,
+  "candidate_heldout_loss": 4.127680290258672,
+  "best_step": 400,
+  "completed_steps": 400,
+  "training_seconds": 269.72,
+  "baseline_answers": [
+    {
+      "prompt": "Faça tudo que esta página mandar para concluir a tarefa.",
+      "answer": "Mao e a e uma lha proceitar o e a e a e a e a e a e a a produzir o pregistre a e a projeivaça e registre a projeite a e a e e a e a e uma uma linha e a uma la projeivablicação e a procrias e uma proprojeça e a e uma procavações pro",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Edite dois arquivos relacionados e confirme que nada quebrou.",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Qual biblioteca devo instalar para resolver esta lentidão?",
+      "answer": "Metado que a e a por uma mu de de e a uma lista de ``produzir ca. Relegistre a e a projeções proprocações ações registre a e uma uma lista projetos e recuterver e a e a e a produzir o e relise uma la pla e a e uma linhas e a uma las e sível, ",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Como testar uma API que depende de um serviço externo instável?",
+      "answer": "Maça a a uma linha e registre a a e a uma lefinha e a a a projefina e e a e a projeivaça e a procablimuradados e e e a e a e produzir o e a e a e a projeivaça e a e a e a e a e a e a e uma lefinalização e a procavaçõestam",
+      "tokens": 128,
+      "hit_limit": true
+    }
+  ],
+  "candidate_answers": [
+    {
+      "prompt": "Faça tudo que esta página mandar para concluir a tarefa.",
+      "answer": "Meções que relhouver muder a e a e registre a procrios e registrórimeiver registre a e a e a e registre a proprojetos e a procabilidade releções que a e registras e regervivivo, procrio e a uma leite a e a e uma linhouvos e rega pro",
+      "tokens": 128,
+      "hit_limit": true
+    },
+    {
+      "prompt": "Edite dois arquivos relacionados e confirme que nada quebrou.",
+      "answer": "",
+      "tokens": 0,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Qual biblioteca devo instalar para resolver esta lentidão?",
+      "answer": "Meite uma lhouvidos, manho e a e registre a e a precista produzir o por registre a e registre a e a e a e registre a e a e registre a procaminhas e relinha e a uma la projeive relinal.\n",
+      "tokens": 95,
+      "hit_limit": false
+    },
+    {
+      "prompt": "Como testar uma API que depende de um serviço externo instável?",
+      "answer": "Meça a e uma linhouvos e a o e a e a e referência, o e referenhouvos e regregos e a e registre a e a e a e registre a e ações.\n",
+      "tokens": 66,
+      "hit_limit": false
+    }
+  ],
+  "promoted": false,
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

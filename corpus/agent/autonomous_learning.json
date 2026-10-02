@@ -1,0 +1,1210 @@
+{
+  "schema": "autonomous-learning-control/v1",
+  "active": null,
+  "history": [
+    {
+      "cycle_id": "cycle-50420f1a9f15",
+      "outcome": {
+        "status": "unknown",
+        "job_id": "615e03334b5947079664f7ceea5ee9c7"
+      },
+      "finished_at": "2026-09-22T01:15:44.925361+00:00"
+    },
+    {
+      "cycle_id": "cycle-81a61c82617f",
+      "outcome": {
+        "id": "66c72ed19bc0499b98204906bf77cc7e",
+        "topic": "Bash",
+        "status": "completed",
+        "progress": 100,
+        "logs": [
+          {
+            "at": 1790039754,
+            "message": "Preparando pesquisa."
+          },
+          {
+            "at": 1790039754,
+            "message": "Pesquisando fontes para: Bash official documentation"
+          },
+          {
+            "at": 1790039760,
+            "message": "Pesquisa 1/4: 3 página(s) abertas; 10 resultado(s) encontrados."
+          },
+          {
+            "at": 1790039760,
+            "message": "Fonte failed: https://bash.cyberciti.biz/bash-reference-manual/index.html · falha na pesquisa: HTTP status client error (403 Forbidden) for url (https://bash.cyberciti.biz/bash-reference-manual/in"
+          },
+          {
+            "at": 1790039760,
+            "message": "Fonte opened: https://www.gnu.org/software/bash/manual/bash.html"
+          },
+          {
+            "at": 1790039760,
+            "message": "Fonte opened: https://www.gnu.org.cach3.com/software/bash/manual/bash.pdf"
+          },
+          {
+            "at": 1790039760,
+            "message": "Fonte opened: https://ftp.gnu.org/old-gnu/Manuals/bash/html_chapter/bashref_1.html"
+          },
+          {
+            "at": 1790039760,
+            "message": "Pesquisando fontes para: Bash official project site documentation"
+          },
+          {
+            "at": 1790039762,
+            "message": "Pesquisa 2/4: 1 página(s) abertas; 10 resultado(s) encontrados."
+          },
+          {
+            "at": 1790039762,
+            "message": "Fonte empty: https://www.bing.com/ck/a?!&&p=000f5120492fed9b96fd1c29cabe86c18da2d696cd9125b3dd5858ad7df9ccf8JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=15e672aa"
+          },
+          {
+            "at": 1790039762,
+            "message": "Fonte opened: https://www.bing.com/ck/a?!&&p=9f5838c848700c815f05a437a985d861af9d3e20f4fc724956915ddfd6ce264aJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=15e672aa"
+          },
+          {
+            "at": 1790039762,
+            "message": "Pesquisando fontes para: Bash official project site documentation"
+          },
+          {
+            "at": 1790039765,
+            "message": "Pesquisa 3/4: 1 página(s) abertas; 10 resultado(s) encontrados."
+          },
+          {
+            "at": 1790039765,
+            "message": "Fonte empty: https://www.bing.com/ck/a?!&&p=aac0cf37f839d0e5502bd8ae3dc7b4f2e60c3abd6e8ca4858364d18d89ecbac3JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=1f6a1622"
+          },
+          {
+            "at": 1790039765,
+            "message": "Fonte opened: https://www.bing.com/ck/a?!&&p=735d0e739a145fda393685e103f52cb013a153b6ebb537214c7536dc32e2b177JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=1f6a1622"
+          },
+          {
+            "at": 1790039765,
+            "message": "Pesquisando fontes para: Bash reference guide bash.org"
+          },
+          {
+            "at": 1790039767,
+            "message": "Pesquisa 4/4: 1 página(s) abertas; 10 resultado(s) encontrados."
+          },
+          {
+            "at": 1790039767,
+            "message": "Fonte opened: https://www.bing.com/ck/a?!&&p=01df8028ce6b964799e6d20c92b0a61a6af573978dc1dccdd5850eed2dacac67JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=1a4da8e4"
+          },
+          {
+            "at": 1790039767,
+            "message": "Contexto limitado ao orçamento do ciclo: aproximadamente 24000 token(s)."
+          },
+          {
+            "at": 1790039767,
+            "message": "Validando conteúdo, origem e removendo duplicatas."
+          },
+          {
+            "at": 1790039767,
+            "message": "3 fonte(s) passaram na validação; 2 origem(ns) distinta(s)."
+          },
+          {
+            "at": 1790039767,
+            "message": "Iniciando laboratório prático isolado; nenhum código baixado será executado."
+          },
+          {
+            "at": 1790039767,
+            "message": "Pesquisa e avaliação concluídas; competência registrada como partially_known (não dominada)."
+          }
+        ],
+        "source_url": null,
+        "sources": [
+          {
+            "title": "Bash Reference Manual",
+            "url": "https://www.gnu.org/software/bash/manual/bash.html"
+          },
+          {
+            "title": "Bash Reference Manual: Introduction",
+            "url": "https://ftp.gnu.org/old-gnu/Manuals/bash/html_chapter/bashref_1.html"
+          },
+          {
+            "title": "",
+            "url": "https://www.gnu.org.cach3.com/software/bash/manual/bash.pdf"
+          }
+        ],
+        "documents_added": 3,
+        "evidence": {
+          "status": "corroborated",
+          "sources": [
+            {
+              "title": "Bash Reference Manual",
+              "url": "https://www.gnu.org/software/bash/manual/bash.html",
+              "host": "gnu.org",
+              "priority": 5
+            },
+            {
+              "title": "Bash Reference Manual: Introduction",
+              "url": "https://ftp.gnu.org/old-gnu/Manuals/bash/html_chapter/bashref_1.html",
+              "host": "ftp.gnu.org",
+              "priority": 5
+            },
+            {
+              "title": "",
+              "url": "https://www.gnu.org.cach3.com/software/bash/manual/bash.pdf",
+              "host": "gnu.org.cach3.com",
+              "priority": 1
+            }
+          ],
+          "independent_hosts": 2,
+          "fiction_warnings": []
+        },
+        "skill": {
+          "topic": "Bash",
+          "status": "partially_known",
+          "confidence": 0.4,
+          "version": null,
+          "concepts": {
+            "covered": [],
+            "gaps": [
+              "fundamentos",
+              "dados-e-controle",
+              "erros-e-testes",
+              "composicao",
+              "problema-novo",
+              "quoting",
+              "processes",
+              "pipelines",
+              "permissions",
+              "shellcheck"
+            ]
+          },
+          "curriculum": {
+            "schema": "curriculum/v2",
+            "topic": "Bash",
+            "levels": [
+              {
+                "id": "foundation",
+                "title": "Fundamentos",
+                "concepts": [
+                  {
+                    "id": "fundamentos",
+                    "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "dados-e-controle",
+                    "objective": "usar dados, funções e controle de fluxo",
+                    "status": "pending"
+                  }
+                ]
+              },
+              {
+                "id": "practice",
+                "title": "Prática guiada",
+                "concepts": [
+                  {
+                    "id": "erros-e-testes",
+                    "objective": "tratar erros e escrever testes",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "composicao",
+                    "objective": "compor módulos ou componentes",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "problema-novo",
+                    "objective": "resolver uma variação inédita sem copiar o exemplo",
+                    "status": "pending"
+                  }
+                ]
+              },
+              {
+                "id": "transfer",
+                "title": "Transferência",
+                "concepts": [
+                  {
+                    "id": "quoting",
+                    "objective": "demonstrar quoting",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "processes",
+                    "objective": "demonstrar processes",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "pipelines",
+                    "objective": "demonstrar pipelines",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "permissions",
+                    "objective": "demonstrar permissions",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "shellcheck",
+                    "objective": "demonstrar shellcheck",
+                    "status": "pending"
+                  }
+                ]
+              }
+            ],
+            "completion": {
+              "required_levels": 3,
+              "required_pass_rate": 0.9,
+              "required_independent_hosts": 2,
+              "minimum_document_count": 8,
+              "minimum_practice_tasks": 12,
+              "minimum_transfer_tasks": 2,
+              "required_covered_ratio": 1.0,
+              "requires_unseen_task": true,
+              "requires_integration_task": true
+            }
+          },
+          "evidence": {
+            "sources": [
+              {
+                "title": "Bash Reference Manual",
+                "url": "https://www.gnu.org/software/bash/manual/bash.html"
+              },
+              {
+                "title": "Bash Reference Manual: Introduction",
+                "url": "https://ftp.gnu.org/old-gnu/Manuals/bash/html_chapter/bashref_1.html"
+              },
+              {
+                "title": "",
+                "url": "https://www.gnu.org.cach3.com/software/bash/manual/bash.pdf"
+              }
+            ],
+            "independent_hosts": 2,
+            "documents": 3
+          },
+          "source_repository": null,
+          "technologies": [],
+          "practice": {
+            "tasks": 0,
+            "passed": 0,
+            "failed": 0,
+            "verified": [],
+            "failed_tasks": []
+          },
+          "learning_contract": {
+            "schema": "learning-contract/v1",
+            "topic": "Bash",
+            "domain": "programming",
+            "research": {
+              "query": "Bash official documentation standards and tested examples",
+              "requires_primary_sources": true,
+              "minimum_independent_hosts": 2
+            },
+            "practice": {
+              "tasks": [
+                {
+                  "id": "foundation-fundamentos",
+                  "level": "foundation",
+                  "objective": "fundamentos",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "foundation-dados-e-controle",
+                  "level": "foundation",
+                  "objective": "dados-e-controle",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "practice-erros-e-testes",
+                  "level": "practice",
+                  "objective": "erros-e-testes",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "practice-composicao",
+                  "level": "practice",
+                  "objective": "composicao",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "transfer-problema-novo",
+                  "level": "transfer",
+                  "objective": "problema-novo",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "transfer-integracao",
+                  "level": "transfer",
+                  "objective": "integracao",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "unseen-transfer",
+                  "level": "transfer",
+                  "objective": "resolver uma variação inédita",
+                  "mode": "model-review",
+                  "verification": "unseen-case"
+                },
+                {
+                  "id": "integration-deliverable",
+                  "level": "integration",
+                  "objective": "entregar um resultado completo e verificável",
+                  "mode": "model-review",
+                  "verification": "acceptance-criteria"
+                }
+              ],
+              "requires_unseen_task": true,
+              "requires_integration": true
+            },
+            "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+          },
+          "decisions": [],
+          "updated_at": 1790039767.002291,
+          "evaluation": {
+            "progress": 0.1375,
+            "ready": false,
+            "criteria": {
+              "sources": false,
+              "levels": true,
+              "coverage": false,
+              "practice": false,
+              "transfer": false,
+              "integration": false
+            },
+            "requirements": {
+              "required_levels": 3,
+              "required_pass_rate": 0.9,
+              "required_independent_hosts": 2,
+              "minimum_document_count": 8,
+              "minimum_practice_tasks": 12,
+              "minimum_transfer_tasks": 2,
+              "required_covered_ratio": 1.0,
+              "requires_integration_task": true
+            },
+            "coverage": {
+              "covered": 0,
+              "total": 10,
+              "ratio": 0.0
+            },
+            "practice": {
+              "tasks": 0,
+              "passed": 0,
+              "failed": 0,
+              "pass_rate": 0.0,
+              "transfer": 0,
+              "integration": false
+            }
+          }
+        },
+        "learning_contract": {
+          "schema": "learning-contract/v1",
+          "topic": "Bash",
+          "domain": "programming",
+          "research": {
+            "query": "Bash official documentation standards and tested examples",
+            "requires_primary_sources": true,
+            "minimum_independent_hosts": 2
+          },
+          "practice": {
+            "tasks": [
+              {
+                "id": "foundation-fundamentos",
+                "level": "foundation",
+                "objective": "fundamentos",
+                "mode": "bounded-rubric",
+                "verification": "isolated-test-or-rubric"
+              },
+              {
+                "id": "foundation-dados-e-controle",
+                "level": "foundation",
+                "objective": "dados-e-controle",
+                "mode": "bounded-rubric",
+                "verification": "isolated-test-or-rubric"
+              },
+              {
+                "id": "practice-erros-e-testes",
+                "level": "practice",
+                "objective": "erros-e-testes",
+                "mode": "bounded-rubric",
+                "verification": "isolated-test-or-rubric"
+              },
+              {
+                "id": "practice-composicao",
+                "level": "practice",
+                "objective": "composicao",
+                "mode": "bounded-rubric",
+                "verification": "isolated-test-or-rubric"
+              },
+              {
+                "id": "transfer-problema-novo",
+                "level": "transfer",
+                "objective": "problema-novo",
+                "mode": "bounded-rubric",
+                "verification": "isolated-test-or-rubric"
+              },
+              {
+                "id": "transfer-integracao",
+                "level": "transfer",
+                "objective": "integracao",
+                "mode": "bounded-rubric",
+                "verification": "isolated-test-or-rubric"
+              },
+              {
+                "id": "unseen-transfer",
+                "level": "transfer",
+                "objective": "resolver uma variação inédita",
+                "mode": "model-review",
+                "verification": "unseen-case"
+              },
+              {
+                "id": "integration-deliverable",
+                "level": "integration",
+                "objective": "entregar um resultado completo e verificável",
+                "mode": "model-review",
+                "verification": "acceptance-criteria"
+              }
+            ],
+            "requires_unseen_task": true,
+            "requires_integration": true
+          },
+          "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+        },
+        "laboratory": {
+          "status": "practice_unavailable",
+          "topic": "Bash",
+          "skills": [
+            "Bash"
+          ],
+          "laboratories": {
+            "Bash": {
+              "status": "practice_unavailable",
+              "topic": "Bash",
+              "tasks": [],
+              "practice_plan": [
+                {
+                  "id": "foundation-fundamentos",
+                  "level": "foundation",
+                  "objective": "fundamentos",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "foundation-dados-e-controle",
+                  "level": "foundation",
+                  "objective": "dados-e-controle",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "practice-erros-e-testes",
+                  "level": "practice",
+                  "objective": "erros-e-testes",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "practice-composicao",
+                  "level": "practice",
+                  "objective": "composicao",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "transfer-problema-novo",
+                  "level": "transfer",
+                  "objective": "problema-novo",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "transfer-integracao",
+                  "level": "transfer",
+                  "objective": "integracao",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "unseen-transfer",
+                  "level": "transfer",
+                  "objective": "resolver uma variação inédita",
+                  "mode": "model-review",
+                  "verification": "unseen-case"
+                },
+                {
+                  "id": "integration-deliverable",
+                  "level": "integration",
+                  "objective": "entregar um resultado completo e verificável",
+                  "mode": "model-review",
+                  "verification": "acceptance-criteria"
+                }
+              ],
+              "learning_contract": {
+                "schema": "learning-contract/v1",
+                "topic": "Bash",
+                "domain": "programming",
+                "research": {
+                  "query": "Bash official documentation standards and tested examples",
+                  "requires_primary_sources": true,
+                  "minimum_independent_hosts": 2
+                },
+                "practice": {
+                  "tasks": [
+                    {
+                      "id": "foundation-fundamentos",
+                      "level": "foundation",
+                      "objective": "fundamentos",
+                      "mode": "bounded-rubric",
+                      "verification": "isolated-test-or-rubric"
+                    },
+                    {
+                      "id": "foundation-dados-e-controle",
+                      "level": "foundation",
+                      "objective": "dados-e-controle",
+                      "mode": "bounded-rubric",
+                      "verification": "isolated-test-or-rubric"
+                    },
+                    {
+                      "id": "practice-erros-e-testes",
+                      "level": "practice",
+                      "objective": "erros-e-testes",
+                      "mode": "bounded-rubric",
+                      "verification": "isolated-test-or-rubric"
+                    },
+                    {
+                      "id": "practice-composicao",
+                      "level": "practice",
+                      "objective": "composicao",
+                      "mode": "bounded-rubric",
+                      "verification": "isolated-test-or-rubric"
+                    },
+                    {
+                      "id": "transfer-problema-novo",
+                      "level": "transfer",
+                      "objective": "problema-novo",
+                      "mode": "bounded-rubric",
+                      "verification": "isolated-test-or-rubric"
+                    },
+                    {
+                      "id": "transfer-integracao",
+                      "level": "transfer",
+                      "objective": "integracao",
+                      "mode": "bounded-rubric",
+                      "verification": "isolated-test-or-rubric"
+                    },
+                    {
+                      "id": "unseen-transfer",
+                      "level": "transfer",
+                      "objective": "resolver uma variação inédita",
+                      "mode": "model-review",
+                      "verification": "unseen-case"
+                    },
+                    {
+                      "id": "integration-deliverable",
+                      "level": "integration",
+                      "objective": "entregar um resultado completo e verificável",
+                      "mode": "model-review",
+                      "verification": "acceptance-criteria"
+                    }
+                  ],
+                  "requires_unseen_task": true,
+                  "requires_integration": true
+                },
+                "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+              },
+              "message": "Não há executor local seguro; a competência recebeu uma trilha de prática revisável."
+            }
+          },
+          "total": 0,
+          "passed": 0
+        },
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "quoting",
+          "processes",
+          "pipelines",
+          "permissions",
+          "shellcheck",
+          "executor local seguro para prática"
+        ]
+      },
+      "finished_at": "2026-09-22T01:16:07.190496+00:00"
+    },
+    {
+      "cycle_id": "cycle-678fcdce4c4f",
+      "outcome": {
+        "id": "72b1567097b0475ea82decc4101e06af",
+        "topic": "Go",
+        "status": "completed",
+        "progress": 100,
+        "logs": [
+          {
+            "at": 1790039851,
+            "message": "Preparando pesquisa."
+          },
+          {
+            "at": 1790039851,
+            "message": "Pesquisando fontes para: Go official documentation"
+          },
+          {
+            "at": 1790039852,
+            "message": "Pesquisa 1/4: 1 página(s) abertas; 7 resultado(s) encontrados."
+          },
+          {
+            "at": 1790039852,
+            "message": "Fonte opened: https://www.bing.com/ck/a?!&&p=735c62c7f70412abf007ec7c2d8ed84ce079f179eaf60dfd6ffeac65a0a65c9fJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=291ca040"
+          },
+          {
+            "at": 1790039852,
+            "message": "Pesquisando fontes para: Go official project site documentation"
+          },
+          {
+            "at": 1790039853,
+            "message": "Pesquisa 2/4: 1 página(s) abertas; 7 resultado(s) encontrados."
+          },
+          {
+            "at": 1790039853,
+            "message": "Fonte opened: https://www.bing.com/ck/a?!&&p=1af1026bdfc130001171890ab743650f570908f06acc91402f5cb729ae7b6207JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=0c2407e7"
+          },
+          {
+            "at": 1790039853,
+            "message": "Pesquisando fontes para: Go official project site documentation"
+          },
+          {
+            "at": 1790039854,
+            "message": "Pesquisa 3/4: 1 página(s) abertas; 7 resultado(s) encontrados."
+          },
+          {
+            "at": 1790039854,
+            "message": "Fonte opened: https://www.bing.com/ck/a?!&&p=2207c9ad3b9b280d0b640745074122d40c301473206c8a79352d8b2293fa6c0aJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=1e7d3ead"
+          },
+          {
+            "at": 1790039854,
+            "message": "Pesquisando fontes para: Go reference guide go.org"
+          },
+          {
+            "at": 1790039856,
+            "message": "Pesquisa 4/4: 1 página(s) abertas; 7 resultado(s) encontrados."
+          },
+          {
+            "at": 1790039856,
+            "message": "Fonte opened: https://www.bing.com/ck/a?!&&p=d0848c57e6171e2d121af729a39d491075ba163dac20506b5b629967c7783578JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=212d6644"
+          },
+          {
+            "at": 1790039856,
+            "message": "Contexto limitado ao orçamento do ciclo: aproximadamente 2485 token(s)."
+          },
+          {
+            "at": 1790039856,
+            "message": "Validando conteúdo, origem e removendo duplicatas."
+          },
+          {
+            "at": 1790039856,
+            "message": "1 fonte(s) passaram na validação; 1 origem(ns) distinta(s)."
+          },
+          {
+            "at": 1790039856,
+            "message": "Iniciando laboratório prático isolado; nenhum código baixado será executado."
+          },
+          {
+            "at": 1790039856,
+            "message": "Pesquisa e avaliação concluídas; competência registrada como partially_known (não dominada)."
+          }
+        ],
+        "source_url": null,
+        "sources": [
+          {
+            "title": "Google Go – Apps no Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.searchlite&hl=pt-BR"
+          }
+        ],
+        "documents_added": 1,
+        "evidence": {
+          "status": "provisional",
+          "sources": [
+            {
+              "title": "Google Go – Apps no Google Play",
+              "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.searchlite&hl=pt-BR",
+              "host": "play.google.com",
+              "priority": 21
+            }
+          ],
+          "independent_hosts": 1,
+          "fiction_warnings": []
+        },
+        "skill": {
+          "topic": "Go",
+          "status": "partially_known",
+          "confidence": 0.26,
+          "version": null,
+          "concepts": {
+            "covered": [],
+            "gaps": [
+              "fundamentos",
+              "dados-e-controle",
+              "erros-e-testes",
+              "composicao",
+              "problema-novo",
+              "goroutines",
+              "channels",
+              "interfaces",
+              "errors",
+              "modules"
+            ]
+          },
+          "curriculum": {
+            "schema": "curriculum/v2",
+            "topic": "Go",
+            "levels": [
+              {
+                "id": "foundation",
+                "title": "Fundamentos",
+                "concepts": [
+                  {
+                    "id": "fundamentos",
+                    "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "dados-e-controle",
+                    "objective": "usar dados, funções e controle de fluxo",
+                    "status": "pending"
+                  }
+                ]
+              },
+              {
+                "id": "practice",
+                "title": "Prática guiada",
+                "concepts": [
+                  {
+                    "id": "erros-e-testes",
+                    "objective": "tratar erros e escrever testes",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "composicao",
+                    "objective": "compor módulos ou componentes",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "problema-novo",
+                    "objective": "resolver uma variação inédita sem copiar o exemplo",
+                    "status": "pending"
+                  }
+                ]
+              },
+              {
+                "id": "transfer",
+                "title": "Transferência",
+                "concepts": [
+                  {
+                    "id": "goroutines",
+                    "objective": "demonstrar goroutines",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "channels",
+                    "objective": "demonstrar channels",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "interfaces",
+                    "objective": "demonstrar interfaces",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "errors",
+                    "objective": "demonstrar errors",
+                    "status": "pending"
+                  },
+                  {
+                    "id": "modules",
+                    "objective": "demonstrar modules",
+                    "status": "pending"
+                  }
+                ]
+              }
+            ],
+            "completion": {
+              "required_levels": 3,
+              "required_pass_rate": 0.9,
+              "required_independent_hosts": 2,
+              "minimum_document_count": 8,
+              "minimum_practice_tasks": 12,
+              "minimum_transfer_tasks": 2,
+              "required_covered_ratio": 1.0,
+              "requires_unseen_task": true,
+              "requires_integration_task": true
+            }
+          },
+          "evidence": {
+            "sources": [
+              {
+                "title": "Google Go – Apps no Google Play",
+                "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.searchlite&hl=pt-BR"
+              }
+            ],
+            "independent_hosts": 1,
+            "documents": 1
+          },
+          "source_repository": null,
+          "technologies": [],
+          "practice": {
+            "tasks": 0,
+            "passed": 0,
+            "failed": 0,
+            "verified": [],
+            "failed_tasks": []
+          },
+          "learning_contract": {
+            "schema": "learning-contract/v1",
+            "topic": "Go",
+            "domain": "programming",
+            "research": {
+              "query": "Go official documentation standards and tested examples",
+              "requires_primary_sources": true,
+              "minimum_independent_hosts": 2
+            },
+            "practice": {
+              "tasks": [
+                {
+                  "id": "foundation-fundamentos",
+                  "level": "foundation",
+                  "objective": "fundamentos",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "foundation-dados-e-controle",
+                  "level": "foundation",
+                  "objective": "dados-e-controle",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "practice-erros-e-testes",
+                  "level": "practice",
+                  "objective": "erros-e-testes",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "practice-composicao",
+                  "level": "practice",
+                  "objective": "composicao",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "transfer-problema-novo",
+                  "level": "transfer",
+                  "objective": "problema-novo",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "transfer-integracao",
+                  "level": "transfer",
+                  "objective": "integracao",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "unseen-transfer",
+                  "level": "transfer",
+                  "objective": "resolver uma variação inédita",
+                  "mode": "model-review",
+                  "verification": "unseen-case"
+                },
+                {
+                  "id": "integration-deliverable",
+                  "level": "integration",
+                  "objective": "entregar um resultado completo e verificável",
+                  "mode": "model-review",
+                  "verification": "acceptance-criteria"
+                }
+              ],
+              "requires_unseen_task": true,
+              "requires_integration": true
+            },
+            "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+          },
+          "decisions": [],
+          "updated_at": 1790039855.7041013,
+          "evaluation": {
+            "progress": 0.0625,
+            "ready": false,
+            "criteria": {
+              "sources": false,
+              "levels": true,
+              "coverage": false,
+              "practice": false,
+              "transfer": false,
+              "integration": false
+            },
+            "requirements": {
+              "required_levels": 3,
+              "required_pass_rate": 0.9,
+              "required_independent_hosts": 2,
+              "minimum_document_count": 8,
+              "minimum_practice_tasks": 12,
+              "minimum_transfer_tasks": 2,
+              "required_covered_ratio": 1.0,
+              "requires_integration_task": true
+            },
+            "coverage": {
+              "covered": 0,
+              "total": 10,
+              "ratio": 0.0
+            },
+            "practice": {
+              "tasks": 0,
+              "passed": 0,
+              "failed": 0,
+              "pass_rate": 0.0,
+              "transfer": 0,
+              "integration": false
+            }
+          }
+        },
+        "learning_contract": {
+          "schema": "learning-contract/v1",
+          "topic": "Go",
+          "domain": "programming",
+          "research": {
+            "query": "Go official documentation standards and tested examples",
+            "requires_primary_sources": true,
+            "minimum_independent_hosts": 2
+          },
+          "practice": {
+            "tasks": [
+              {
+                "id": "foundation-fundamentos",
+                "level": "foundation",
+                "objective": "fundamentos",
+                "mode": "bounded-rubric",
+                "verification": "isolated-test-or-rubric"
+              },
+              {
+                "id": "foundation-dados-e-controle",
+                "level": "foundation",
+                "objective": "dados-e-controle",
+                "mode": "bounded-rubric",
+                "verification": "isolated-test-or-rubric"
+              },
+              {
+                "id": "practice-erros-e-testes",
+                "level": "practice",
+                "objective": "erros-e-testes",
+                "mode": "bounded-rubric",
+                "verification": "isolated-test-or-rubric"
+              },
+              {
+                "id": "practice-composicao",
+                "level": "practice",
+                "objective": "composicao",
+                "mode": "bounded-rubric",
+                "verification": "isolated-test-or-rubric"
+              },
+              {
+                "id": "transfer-problema-novo",
+                "level": "transfer",
+                "objective": "problema-novo",
+                "mode": "bounded-rubric",
+                "verification": "isolated-test-or-rubric"
+              },
+              {
+                "id": "transfer-integracao",
+                "level": "transfer",
+                "objective": "integracao",
+                "mode": "bounded-rubric",
+                "verification": "isolated-test-or-rubric"
+              },
+              {
+                "id": "unseen-transfer",
+                "level": "transfer",
+                "objective": "resolver uma variação inédita",
+                "mode": "model-review",
+                "verification": "unseen-case"
+              },
+              {
+                "id": "integration-deliverable",
+                "level": "integration",
+                "objective": "entregar um resultado completo e verificável",
+                "mode": "model-review",
+                "verification": "acceptance-criteria"
+              }
+            ],
+            "requires_unseen_task": true,
+            "requires_integration": true
+          },
+          "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+        },
+        "laboratory": {
+          "status": "practice_unavailable",
+          "topic": "Go",
+          "skills": [
+            "Go"
+          ],
+          "laboratories": {
+            "Go": {
+              "status": "practice_unavailable",
+              "topic": "Go",
+              "tasks": [],
+              "practice_plan": [
+                {
+                  "id": "foundation-fundamentos",
+                  "level": "foundation",
+                  "objective": "fundamentos",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "foundation-dados-e-controle",
+                  "level": "foundation",
+                  "objective": "dados-e-controle",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "practice-erros-e-testes",
+                  "level": "practice",
+                  "objective": "erros-e-testes",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "practice-composicao",
+                  "level": "practice",
+                  "objective": "composicao",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "transfer-problema-novo",
+                  "level": "transfer",
+                  "objective": "problema-novo",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "transfer-integracao",
+                  "level": "transfer",
+                  "objective": "integracao",
+                  "mode": "bounded-rubric",
+                  "verification": "isolated-test-or-rubric"
+                },
+                {
+                  "id": "unseen-transfer",
+                  "level": "transfer",
+                  "objective": "resolver uma variação inédita",
+                  "mode": "model-review",
+                  "verification": "unseen-case"
+                },
+                {
+                  "id": "integration-deliverable",
+                  "level": "integration",
+                  "objective": "entregar um resultado completo e verificável",
+                  "mode": "model-review",
+                  "verification": "acceptance-criteria"
+                }
+              ],
+              "learning_contract": {
+                "schema": "learning-contract/v1",
+                "topic": "Go",
+                "domain": "programming",
+                "research": {
+                  "query": "Go official documentation standards and tested examples",
+                  "requires_primary_sources": true,
+                  "minimum_independent_hosts": 2
+                },
+                "practice": {
+                  "tasks": [
+                    {
+                      "id": "foundation-fundamentos",
+                      "level": "foundation",
+                      "objective": "fundamentos",
+                      "mode": "bounded-rubric",
+                      "verification": "isolated-test-or-rubric"
+                    },
+                    {
+                      "id": "foundation-dados-e-controle",
+                      "level": "foundation",
+                      "objective": "dados-e-controle",
+                      "mode": "bounded-rubric",
+                      "verification": "isolated-test-or-rubric"
+                    },
+                    {
+                      "id": "practice-erros-e-testes",
+                      "level": "practice",
+                      "objective": "erros-e-testes",
+                      "mode": "bounded-rubric",
+                      "verification": "isolated-test-or-rubric"
+                    },
+                    {
+                      "id": "practice-composicao",
+                      "level": "practice",
+                      "objective": "composicao",
+                      "mode": "bounded-rubric",
+                      "verification": "isolated-test-or-rubric"
+                    },
+                    {
+                      "id": "transfer-problema-novo",
+                      "level": "transfer",
+                      "objective": "problema-novo",
+                      "mode": "bounded-rubric",
+                      "verification": "isolated-test-or-rubric"
+                    },
+                    {
+                      "id": "transfer-integracao",
+                      "level": "transfer",
+                      "objective": "integracao",
+                      "mode": "bounded-rubric",
+                      "verification": "isolated-test-or-rubric"
+                    },
+                    {
+                      "id": "unseen-transfer",
+                      "level": "transfer",
+                      "objective": "resolver uma variação inédita",
+                      "mode": "model-review",
+                      "verification": "unseen-case"
+                    },
+                    {
+                      "id": "integration-deliverable",
+                      "level": "integration",
+                      "objective": "entregar um resultado completo e verificável",
+                      "mode": "model-review",
+                      "verification": "acceptance-criteria"
+                    }
+                  ],
+                  "requires_unseen_task": true,
+                  "requires_integration": true
+                },
+                "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+              },
+              "message": "Não há executor local seguro; a competência recebeu uma trilha de prática revisável."
+            }
+          },
+          "total": 0,
+          "passed": 0
+        },
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "goroutines",
+          "channels",
+          "interfaces",
+          "errors",
+          "modules",
+          "executor local seguro para prática"
+        ]
+      },
+      "finished_at": "2026-09-22T01:17:36.205922+00:00"
+    }
+  ]
+}

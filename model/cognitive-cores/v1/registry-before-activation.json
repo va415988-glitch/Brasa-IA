@@ -1,0 +1,9 @@
+{
+  "schema": "cognitive-core-registry/v1",
+  "certificates": [
+    {
+      "path": "model/cognitive-cores/v1/evidence-03.json",
+      "sha256": "cd48470cfdd833f732721d2798b784b0de7cc6e4b60f2c0a3c16be771f73d504"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "process_status",
+  "version": "1.0.0",
+  "description": "Consulta estado, prontidão e saída incremental de um processo iniciado pelo runtime.",
+  "requires_approval": false,
+  "risk": "low",
+  "capabilities": ["process.read", "workspace.read"],
+  "idempotent": true,
+  "timeout_ms": 2000,
+  "arguments": {
+    "type": "object",
+    "properties": {
+      "process_id": {"type": "string", "maxLength": 64},
+      "stdout_cursor": {"type": "integer", "minimum": 0},
+      "stderr_cursor": {"type": "integer", "minimum": 0},
+      "wait_ms": {"type": "integer", "minimum": 0, "maximum": 1500}
+    },
+    "additionalProperties": false
+  },
+  "preconditions": [
+    "process_id pertence ao workspace selecionado; quando omitido, usa o processo mais recente deste workspace"
+  ],
+  "effects": ["lê estado e saída mantida em buffers limitados; não altera nem inicia processos"],
+  "rollback": null,
+  "retry_policy": "safe_read",
+  "limits": {"max_wait_ms": 1500},
+  "result": {
+    "type": "object",
+    "required": ["process_id", "state", "readiness", "stdout", "stderr"]
+  }
+}

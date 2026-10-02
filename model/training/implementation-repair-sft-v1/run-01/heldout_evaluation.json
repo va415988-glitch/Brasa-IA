@@ -1,0 +1,268 @@
+{
+  "schema": "brasa-repair-heldout/v1",
+  "heldout": "datasets/implementation_repair_sft_v1/heldout.jsonl",
+  "cases": 12,
+  "max_tokens": 1150,
+  "baseline_checkpoint": "model/godmode/context-32768-v1/candidate.safetensors",
+  "candidate_checkpoint": "model/training/implementation-repair-sft-v1/run-01/candidate.safetensors",
+  "baseline": [
+    {
+      "id": "Code_Agent_000043",
+      "group": "ipykernel",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 111,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_000091",
+      "group": "ipykernel",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 15,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_000109",
+      "group": "lib",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 31,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001307",
+      "group": ".flake8",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 143,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001337",
+      "group": "social_core",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 31,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001342",
+      "group": "social_core",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 63,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001940",
+      "group": "ipykernel",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 15,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001977",
+      "group": "pymilvus",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 127,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002079",
+      "group": "plugin",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 47,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002271",
+      "group": "ipykernel",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 63,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002307",
+      "group": "pelita",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 15,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002319",
+      "group": "azure",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 15,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    }
+  ],
+  "candidate": [
+    {
+      "id": "Code_Agent_000043",
+      "group": "ipykernel",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 12,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_000091",
+      "group": "ipykernel",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 12,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_000109",
+      "group": "lib",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 12,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001307",
+      "group": ".flake8",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 12,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001337",
+      "group": "social_core",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 12,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001342",
+      "group": "social_core",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 12,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001940",
+      "group": "ipykernel",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 12,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001977",
+      "group": "pymilvus",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 12,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002079",
+      "group": "plugin",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 12,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002271",
+      "group": "ipykernel",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 12,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002307",
+      "group": "pelita",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 12,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002319",
+      "group": "azure",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 12,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    }
+  ],
+  "totals": {
+    "baseline": {
+      "json_valid": 0,
+      "contract_valid": 0,
+      "target_edit_exact": 0
+    },
+    "candidate": {
+      "json_valid": 0,
+      "contract_valid": 0,
+      "target_edit_exact": 0
+    }
+  },
+  "promoted": false,
+  "limits": [
+    "Edição exata contra o patch de referência; não reproduz testes nos repositórios originais."
+  ]
+}

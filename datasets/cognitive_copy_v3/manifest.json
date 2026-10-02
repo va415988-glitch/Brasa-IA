@@ -1,0 +1,75 @@
+{
+  "schema": "cognitive-copy-data/v1",
+  "splits": {
+    "train": {
+      "rows": 2112,
+      "max_prompt_tokens": 75,
+      "max_sequence_tokens": 95,
+      "domains": {
+        "observed": 192,
+        "failed": 192,
+        "empty": 192,
+        "unrelated": 192,
+        "conflict": 192,
+        "revision": 192,
+        "injection": 192,
+        "consult": 192,
+        "recover": 192,
+        "supports": 192,
+        "rejects": 192
+      }
+    },
+    "validation": {
+      "rows": 132,
+      "max_prompt_tokens": 72,
+      "max_sequence_tokens": 92,
+      "domains": {
+        "observed": 12,
+        "failed": 12,
+        "empty": 12,
+        "unrelated": 12,
+        "conflict": 12,
+        "revision": 12,
+        "injection": 12,
+        "consult": 12,
+        "recover": 12,
+        "supports": 12,
+        "rejects": 12
+      }
+    },
+    "heldout": {
+      "rows": 264,
+      "max_prompt_tokens": 77,
+      "max_sequence_tokens": 97,
+      "domains": {
+        "observed": 24,
+        "failed": 24,
+        "empty": 24,
+        "unrelated": 24,
+        "conflict": 24,
+        "revision": 24,
+        "injection": 24,
+        "consult": 24,
+        "recover": 24,
+        "supports": 24,
+        "rejects": 24
+      }
+    }
+  },
+  "seed": "61001/61002/61003",
+  "tokenizer_training": "train-only; numeric/name parameters and role boundaries isolated",
+  "split_policy": "entity-disjoint; validation and reserved numeric ranges outside train",
+  "source_sha256": "703801087036ee32bd3d1b1c65c286809792d757170b9317ca1d7b1cd28add1f",
+  "sha256": {
+    "heldout.jsonl": "d88ee76d8d84cf325ac9bf8b70c2c461a77017df769f1e924646dbc95a7212c0",
+    "validation.jsonl": "109ec9396ffb18ed8deca8b6ed127eb275a5bd795adeea92ec5e5a5e939ef370",
+    "tokenizer.json": "9149b0783d4e41441a9c1bca17ab42df023dc3c2d10c4b5aad246929f44803cc",
+    "train.jsonl": "2ae7c80a89bc664fedb60e0937d8fe5f81f77339b8fcf395370644a24d274f7c",
+    "config.json": "f80d3232539e74d641e8c4adfae7d0821dee1e9ce05b652fcee8b2c15981096c"
+  },
+  "limits": [
+    "Synthetic numeric facts, two read tools and explicit revision markers.",
+    "All decision families appear in training; not general reasoning.",
+    "Copying source tokens does not itself prove relevance or truth."
+  ]
+}

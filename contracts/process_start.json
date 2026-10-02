@@ -1,0 +1,44 @@
+{
+  "name": "process_start",
+  "version": "1.0.0",
+  "description": "Inicia um servidor local usando somente um perfil de desenvolvimento reconhecido no workspace.",
+  "side_effects": "Executa código declarado pelo projeto por meio de um perfil fixo. O processo continua ativo até parar ou terminar.",
+  "requires_approval": true,
+  "risk": "high",
+  "capabilities": ["process.exec", "workspace.read"],
+  "idempotent": false,
+  "timeout_ms": 10000,
+  "arguments": {
+    "type": "object",
+    "properties": {
+      "profile": {
+        "type": "string",
+        "enum": ["auto-dev"]
+      }
+    },
+    "required": ["profile"],
+    "additionalProperties": false
+  },
+  "preconditions": [
+    "workspace selecionado",
+    "aprovação explícita para cada início",
+    "manifesto package.json com script dev/start ou Cargo.toml reconhecido",
+    "limite de processos simultâneos não excedido"
+  ],
+  "effects": [
+    "executa npm run dev, npm run start ou cargo run como argumentos fixos; scripts do projeto podem executar código",
+    "associa o processo ao workspace canônico e captura saída com limite",
+    "registra início e saída na atividade local"
+  ],
+  "rollback": "process_stop com o identificador devolvido",
+  "retry_policy": "never_after_ambiguous_timeout",
+  "limits": {
+    "max_active_processes": 3,
+    "max_retained_output_bytes_per_stream": 32768,
+    "shell_string_arguments": false
+  },
+  "result": {
+    "type": "object",
+    "required": ["process_id", "state", "profile", "command", "stdout", "stderr"]
+  }
+}

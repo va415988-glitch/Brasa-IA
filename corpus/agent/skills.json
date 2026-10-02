@@ -287,7 +287,9 @@
         "passed": 0,
         "failed": 0,
         "verified": [],
-        "failed_tasks": []
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
       "updated_at": 1789865792.9484413,
@@ -415,7 +417,87 @@
       },
       "source_repositories": [
         "https://github.com/freeCodeCamp/freeCodeCamp.git"
-      ]
+      ],
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "freeCodeCamp",
+        "domain": "general",
+        "research": {
+          "query": "freeCodeCamp authoritative sources practical examples and common pitfalls",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-definicao-do-problema",
+              "level": "foundation",
+              "objective": "definicao-do-problema",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "foundation-decomposicao",
+              "level": "foundation",
+              "objective": "decomposicao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-opcoes-e-tradeoffs",
+              "level": "practice",
+              "objective": "opcoes-e-tradeoffs",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-verificacao",
+              "level": "practice",
+              "objective": "verificacao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-transferencia",
+              "level": "transfer",
+              "objective": "transferencia",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      }
     },
     "TypeScript": {
       "topic": "TypeScript",
@@ -425,6 +507,19 @@
       "concepts": {
         "covered": [],
         "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "modules",
+          "module",
+          "promises",
+          "async",
+          "closures",
+          "closure"
+        ],
+        "legacy_reference_lab_coverage": [
           "fundamentos",
           "dados-e-controle",
           "erros-e-testes",
@@ -720,10 +815,25 @@
         "passed": 0,
         "failed": 0,
         "verified": [],
-        "failed_tasks": []
+        "failed_tasks": [],
+        "legacy_unclassified_counts": {
+          "tasks": 1,
+          "passed": 1,
+          "failed": 0
+        },
+        "provenance_migration_version": 1,
+        "unclassified_legacy": [
+          {
+            "task": "module-composition",
+            "level": "practice",
+            "evidence": "node --experimental-strip-types task_module.ts",
+            "at": 1790038180.4042218,
+            "provenance": "unclassified_legacy"
+          }
+        ]
       },
       "decisions": [],
-      "updated_at": 1789915981.9280796,
+      "updated_at": 1790038180.4043171,
       "technology_evidence": {
         "TypeScript": {
           "score": 100,
@@ -791,7 +901,186 @@
       "source_repositories": [
         "https://github.com/freeCodeCamp/freeCodeCamp.git",
         "https://www.typescriptlang.org/docs/handbook/intro.html"
-      ]
+      ],
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "TypeScript",
+        "domain": "programming",
+        "research": {
+          "query": "TypeScript official documentation standards and tested examples",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-fundamentos",
+              "level": "foundation",
+              "objective": "fundamentos",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "foundation-dados-e-controle",
+              "level": "foundation",
+              "objective": "dados-e-controle",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-erros-e-testes",
+              "level": "practice",
+              "objective": "erros-e-testes",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-composicao",
+              "level": "practice",
+              "objective": "composicao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-problema-novo",
+              "level": "transfer",
+              "objective": "problema-novo",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 14,
+        "passed": 14,
+        "failed": 0,
+        "verified": [
+          {
+            "task": "foundation-control-flow",
+            "level": "foundation",
+            "evidence": "node --experimental-strip-types task.ts; aprovado",
+            "at": 1790038165.0157924,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "type-boundaries",
+            "level": "foundation",
+            "evidence": "node --experimental-strip-types task_types.ts; aprovado",
+            "at": 1790038165.0230892,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "error-handling",
+            "level": "practice",
+            "evidence": "node --experimental-strip-types task_errors.ts; aprovado",
+            "at": 1790038165.0280032,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "generic-contract",
+            "level": "practice",
+            "evidence": "node --experimental-strip-types task_generics.ts; aprovado",
+            "at": 1790038165.0372524,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "async-await",
+            "level": "practice",
+            "evidence": "node --experimental-strip-types task_async.ts; aprovado",
+            "at": 1790038165.0419831,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "union-narrowing",
+            "level": "practice",
+            "evidence": "node --experimental-strip-types task_unions.ts; aprovado",
+            "at": 1790038165.046834,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "closure-scope",
+            "level": "practice",
+            "evidence": "node --experimental-strip-types task_closure.ts; aprovado",
+            "at": 1790038165.0513806,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "promise-contract",
+            "level": "practice",
+            "evidence": "node --experimental-strip-types task_promise.ts; aprovado",
+            "at": 1790038165.0560362,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "event-loop-order",
+            "level": "transfer",
+            "evidence": "node --experimental-strip-types task_event_loop.ts; aprovado",
+            "at": 1790038165.0610895,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "unseen-inputs",
+            "level": "transfer",
+            "evidence": "node --experimental-strip-types task_tests.ts; aprovado",
+            "at": 1790038165.066005,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "integration-project",
+            "level": "integration",
+            "evidence": "node --experimental-strip-types task_integration.ts; aprovado",
+            "at": 1790038165.0707235,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "transfer-boundary-cases",
+            "level": "transfer",
+            "evidence": "node --experimental-strip-types task_boundary.ts; aprovado",
+            "at": 1790038165.0760834,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "resource-safety",
+            "level": "integration",
+            "evidence": "node --experimental-strip-types task_resources.ts; aprovado",
+            "at": 1790038165.0810957,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "unseen-type-contract",
+            "level": "transfer",
+            "evidence": "node --experimental-strip-types -e const f = (v: unknown): string => typeof v === 'string' ? v : 'invalid'; if (f('ok') !== 'ok' || f(3) !== 'invalid') process.exit(1); aprovado",
+            "at": 1790038165.0858731,
+            "provenance": "reference_lab"
+          }
+        ],
+        "failed_tasks": []
+      }
     },
     "C#": {
       "topic": "C#",
@@ -979,7 +1268,9 @@
         "passed": 0,
         "failed": 0,
         "verified": [],
-        "failed_tasks": []
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
       "updated_at": 1789863221.683465,
@@ -1029,6 +1320,86 @@
           "transfer": 0,
           "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "C#",
+        "domain": "programming",
+        "research": {
+          "query": "C# official documentation standards and tested examples",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-fundamentos",
+              "level": "foundation",
+              "objective": "fundamentos",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "foundation-dados-e-controle",
+              "level": "foundation",
+              "objective": "dados-e-controle",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-erros-e-testes",
+              "level": "practice",
+              "objective": "erros-e-testes",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-composicao",
+              "level": "practice",
+              "objective": "composicao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-problema-novo",
+              "level": "transfer",
+              "objective": "problema-novo",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
       }
     },
     "Java": {
@@ -1043,7 +1414,12 @@
           "dados-e-controle",
           "erros-e-testes",
           "composicao",
-          "problema-novo"
+          "problema-novo",
+          "classes",
+          "generics",
+          "exceptions",
+          "concurrency",
+          "jvm"
         ]
       },
       "curriculum": {
@@ -1090,7 +1466,33 @@
           {
             "id": "transfer",
             "title": "Transferência",
-            "concepts": []
+            "concepts": [
+              {
+                "id": "classes",
+                "objective": "demonstrar classes",
+                "status": "pending"
+              },
+              {
+                "id": "generics",
+                "objective": "demonstrar generics",
+                "status": "pending"
+              },
+              {
+                "id": "exceptions",
+                "objective": "demonstrar exceptions",
+                "status": "pending"
+              },
+              {
+                "id": "concurrency",
+                "objective": "demonstrar concurrency",
+                "status": "pending"
+              },
+              {
+                "id": "jvm",
+                "objective": "demonstrar jvm",
+                "status": "pending"
+              }
+            ]
           }
         ],
         "completion": {
@@ -1122,16 +1524,18 @@
         "passed": 0,
         "failed": 0,
         "verified": [],
-        "failed_tasks": []
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
-      "updated_at": 1789922729.0993013,
+      "updated_at": 1790692902.8927317,
       "evaluation": {
         "progress": 0.0625,
         "ready": false,
         "criteria": {
           "sources": false,
-          "levels": false,
+          "levels": true,
           "coverage": false,
           "practice": false,
           "transfer": false,
@@ -1149,7 +1553,7 @@
         },
         "coverage": {
           "covered": 0,
-          "total": 5,
+          "total": 10,
           "ratio": 0.0
         },
         "practice": {
@@ -1160,6 +1564,86 @@
           "transfer": 0,
           "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "Java",
+        "domain": "programming",
+        "research": {
+          "query": "Java official documentation standards and tested examples",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-fundamentos",
+              "level": "foundation",
+              "objective": "fundamentos",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "foundation-dados-e-controle",
+              "level": "foundation",
+              "objective": "dados-e-controle",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "practice-erros-e-testes",
+              "level": "practice",
+              "objective": "erros-e-testes",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "practice-composicao",
+              "level": "practice",
+              "objective": "composicao",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "transfer-problema-novo",
+              "level": "transfer",
+              "objective": "problema-novo",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
       }
     },
     "Zig": {
@@ -1172,9 +1656,14 @@
         "gaps": [
           "fundamentos",
           "dados-e-controle",
+          "definicao-do-problema",
+          "decomposicao",
           "erros-e-testes",
           "composicao",
           "problema-novo",
+          "opcoes-e-tradeoffs",
+          "verificacao",
+          "transferencia",
           "comptime",
           "allocators",
           "error-unions",
@@ -1200,6 +1689,16 @@
                 "id": "dados-e-controle",
                 "objective": "usar dados, funções e controle de fluxo",
                 "status": "pending"
+              },
+              {
+                "id": "definicao-do-problema",
+                "objective": "demonstrar definicao do problema",
+                "status": "pending"
+              },
+              {
+                "id": "decomposicao",
+                "objective": "demonstrar decomposicao",
+                "status": "pending"
               }
             ]
           },
@@ -1220,6 +1719,21 @@
               {
                 "id": "problema-novo",
                 "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              },
+              {
+                "id": "opcoes-e-tradeoffs",
+                "objective": "demonstrar opcoes e tradeoffs",
+                "status": "pending"
+              },
+              {
+                "id": "verificacao",
+                "objective": "demonstrar verificacao",
+                "status": "pending"
+              },
+              {
+                "id": "transferencia",
+                "objective": "demonstrar transferencia",
                 "status": "pending"
               }
             ]
@@ -1298,10 +1812,12 @@
         "passed": 0,
         "failed": 0,
         "verified": [],
-        "failed_tasks": []
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
-      "updated_at": 1789922729.1291876,
+      "updated_at": 1790692902.9539495,
       "evaluation": {
         "progress": 0.125,
         "ready": false,
@@ -1325,7 +1841,7 @@
         },
         "coverage": {
           "covered": 0,
-          "total": 11,
+          "total": 16,
           "ratio": 0.0
         },
         "practice": {
@@ -1340,24 +1856,95 @@
       "source_repositories": [
         "https://ziglang.org/learn/",
         "https://ziglang.org/documentation/master/"
-      ]
+      ],
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "Zig",
+        "domain": "general",
+        "research": {
+          "query": "Zig authoritative sources practical examples and common pitfalls",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-definicao-do-problema",
+              "level": "foundation",
+              "objective": "definicao-do-problema",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "foundation-decomposicao",
+              "level": "foundation",
+              "objective": "decomposicao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-opcoes-e-tradeoffs",
+              "level": "practice",
+              "objective": "opcoes-e-tradeoffs",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-verificacao",
+              "level": "practice",
+              "objective": "verificacao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-transferencia",
+              "level": "transfer",
+              "objective": "transferencia",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      }
     },
     "Rust": {
       "topic": "Rust",
       "status": "partially_known",
-      "confidence": 0.78,
+      "confidence": 0.46,
       "version": null,
       "concepts": {
-        "covered": [
-          "ownership",
-          "borrowing",
-          "result-option",
-          "cargo",
-          "iterators",
-          "traits",
-          "pattern-matching",
-          "modules"
-        ],
+        "covered": [],
         "gaps": [
           "fundamentos",
           "dados-e-controle",
@@ -1370,7 +1957,25 @@
           "component",
           "error-handling",
           "memory",
-          "state"
+          "state",
+          "ownership",
+          "borrowing",
+          "result-option",
+          "cargo",
+          "iterators",
+          "traits",
+          "pattern-matching",
+          "modules"
+        ],
+        "legacy_reference_lab_coverage": [
+          "ownership",
+          "borrowing",
+          "result-option",
+          "cargo",
+          "iterators",
+          "traits",
+          "pattern-matching",
+          "modules"
         ]
       },
       "curriculum": {
@@ -1421,42 +2026,42 @@
               {
                 "id": "ownership",
                 "objective": "demonstrar ownership",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "borrowing",
                 "objective": "demonstrar borrowing",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "result-option",
                 "objective": "demonstrar result-option",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "cargo",
                 "objective": "demonstrar cargo",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "iterators",
                 "objective": "demonstrar iterators",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "traits",
                 "objective": "demonstrar traits",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "pattern-matching",
                 "objective": "demonstrar pattern-matching",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "modules",
                 "objective": "demonstrar modules",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "testing",
@@ -1711,84 +2316,13 @@
         "Rust"
       ],
       "practice": {
-        "tasks": 12,
-        "passed": 12,
+        "tasks": 0,
+        "passed": 0,
         "failed": 0,
-        "verified": [
-          {
-            "task": "ownership",
-            "level": "foundation",
-            "evidence": "cargo test ownership; aprovado",
-            "at": 1789915951.8519938
-          },
-          {
-            "task": "borrowing",
-            "level": "foundation",
-            "evidence": "cargo test borrowing; aprovado",
-            "at": 1789915951.8620288
-          },
-          {
-            "task": "result-option",
-            "level": "practice",
-            "evidence": "cargo test result_option; aprovado",
-            "at": 1789915951.8697631
-          },
-          {
-            "task": "cargo",
-            "level": "practice",
-            "evidence": "cargo test cargo_builds; aprovado",
-            "at": 1789915951.879079
-          },
-          {
-            "task": "error-boundary",
-            "level": "practice",
-            "evidence": "cargo test error_boundary; aprovado",
-            "at": 1789915951.8853762
-          },
-          {
-            "task": "iterators",
-            "level": "practice",
-            "evidence": "cargo test iterators; aprovado",
-            "at": 1789915951.8926427
-          },
-          {
-            "task": "traits",
-            "level": "transfer",
-            "evidence": "cargo test traits; aprovado",
-            "at": 1789915951.8984458
-          },
-          {
-            "task": "pattern-matching",
-            "level": "transfer",
-            "evidence": "cargo test pattern_matching; aprovado",
-            "at": 1789915951.9033964
-          },
-          {
-            "task": "modules",
-            "level": "transfer",
-            "evidence": "cargo test modules; aprovado",
-            "at": 1789915951.9092662
-          },
-          {
-            "task": "unseen-values",
-            "level": "transfer",
-            "evidence": "cargo test unseen_values; aprovado",
-            "at": 1789915951.913828
-          },
-          {
-            "task": "integration-project",
-            "level": "integration",
-            "evidence": "cargo test integration_project; aprovado",
-            "at": 1789915951.917733
-          },
-          {
-            "task": "resource-safety",
-            "level": "integration",
-            "evidence": "cargo test resource_safety; aprovado",
-            "at": 1789915951.923632
-          }
-        ],
-        "failed_tasks": []
+        "verified": [],
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
       "updated_at": 1789915951.9238343,
@@ -1847,15 +2381,15 @@
         }
       },
       "evaluation": {
-        "progress": 0.85,
+        "progress": 0.2,
         "ready": false,
         "criteria": {
           "sources": true,
           "levels": true,
           "coverage": false,
-          "practice": true,
-          "transfer": true,
-          "integration": true
+          "practice": false,
+          "transfer": false,
+          "integration": false
         },
         "requirements": {
           "required_levels": 3,
@@ -1868,18 +2402,183 @@
           "requires_integration_task": true
         },
         "coverage": {
-          "covered": 8,
+          "covered": 0,
           "total": 20,
-          "ratio": 0.4
+          "ratio": 0.0
         },
         "practice": {
-          "tasks": 12,
-          "passed": 12,
+          "tasks": 0,
+          "passed": 0,
           "failed": 0,
-          "pass_rate": 1.0,
-          "transfer": 4,
-          "integration": true
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "Rust",
+        "domain": "programming",
+        "research": {
+          "query": "Rust official documentation standards and tested examples",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-fundamentos",
+              "level": "foundation",
+              "objective": "fundamentos",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "foundation-dados-e-controle",
+              "level": "foundation",
+              "objective": "dados-e-controle",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-erros-e-testes",
+              "level": "practice",
+              "objective": "erros-e-testes",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-composicao",
+              "level": "practice",
+              "objective": "composicao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-problema-novo",
+              "level": "transfer",
+              "objective": "problema-novo",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 12,
+        "passed": 12,
+        "failed": 0,
+        "verified": [
+          {
+            "task": "ownership",
+            "level": "foundation",
+            "evidence": "cargo test ownership; aprovado",
+            "at": 1789915951.8519938,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "borrowing",
+            "level": "foundation",
+            "evidence": "cargo test borrowing; aprovado",
+            "at": 1789915951.8620288,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "result-option",
+            "level": "practice",
+            "evidence": "cargo test result_option; aprovado",
+            "at": 1789915951.8697631,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "cargo",
+            "level": "practice",
+            "evidence": "cargo test cargo_builds; aprovado",
+            "at": 1789915951.879079,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "error-boundary",
+            "level": "practice",
+            "evidence": "cargo test error_boundary; aprovado",
+            "at": 1789915951.8853762,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "iterators",
+            "level": "practice",
+            "evidence": "cargo test iterators; aprovado",
+            "at": 1789915951.8926427,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "traits",
+            "level": "transfer",
+            "evidence": "cargo test traits; aprovado",
+            "at": 1789915951.8984458,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "pattern-matching",
+            "level": "transfer",
+            "evidence": "cargo test pattern_matching; aprovado",
+            "at": 1789915951.9033964,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "modules",
+            "level": "transfer",
+            "evidence": "cargo test modules; aprovado",
+            "at": 1789915951.9092662,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "unseen-values",
+            "level": "transfer",
+            "evidence": "cargo test unseen_values; aprovado",
+            "at": 1789915951.913828,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "integration-project",
+            "level": "integration",
+            "evidence": "cargo test integration_project; aprovado",
+            "at": 1789915951.917733,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "resource-safety",
+            "level": "integration",
+            "evidence": "cargo test resource_safety; aprovado",
+            "at": 1789915951.923632,
+            "provenance": "reference_lab"
+          }
+        ],
+        "failed_tasks": []
       }
     },
     "rustlings": {
@@ -2138,7 +2837,9 @@
         "passed": 0,
         "failed": 0,
         "verified": [],
-        "failed_tasks": []
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
       "updated_at": 1789913499.1860082,
@@ -2200,15 +2901,97 @@
           "transfer": 0,
           "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "rustlings",
+        "domain": "general",
+        "research": {
+          "query": "rustlings authoritative sources practical examples and common pitfalls",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-definicao-do-problema",
+              "level": "foundation",
+              "objective": "definicao-do-problema",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "foundation-decomposicao",
+              "level": "foundation",
+              "objective": "decomposicao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-opcoes-e-tradeoffs",
+              "level": "practice",
+              "objective": "opcoes-e-tradeoffs",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-verificacao",
+              "level": "practice",
+              "objective": "verificacao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-transferencia",
+              "level": "transfer",
+              "objective": "transferencia",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
       }
     },
     "JavaScript": {
       "topic": "JavaScript",
       "status": "partially_known",
-      "confidence": 0.78,
+      "confidence": 0.46,
       "version": null,
       "concepts": {
-        "covered": [
+        "covered": [],
+        "gaps": [
+          "module",
           "fundamentos",
           "dados-e-controle",
           "erros-e-testes",
@@ -2220,8 +3003,17 @@
           "event-loop",
           "async"
         ],
-        "gaps": [
-          "module"
+        "legacy_reference_lab_coverage": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "closures",
+          "promises",
+          "modules",
+          "event-loop",
+          "async"
         ]
       },
       "curriculum": {
@@ -2235,12 +3027,12 @@
               {
                 "id": "fundamentos",
                 "objective": "identificar conceitos fundamentais e a sintaxe básica",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "dados-e-controle",
                 "objective": "usar dados, funções e controle de fluxo",
-                "status": "covered"
+                "status": "pending"
               }
             ]
           },
@@ -2251,17 +3043,17 @@
               {
                 "id": "erros-e-testes",
                 "objective": "tratar erros e escrever testes",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "composicao",
                 "objective": "compor módulos ou componentes",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "problema-novo",
                 "objective": "resolver uma variação inédita sem copiar o exemplo",
-                "status": "covered"
+                "status": "pending"
               }
             ]
           },
@@ -2272,22 +3064,22 @@
               {
                 "id": "closures",
                 "objective": "demonstrar closures",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "promises",
                 "objective": "demonstrar promises",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "modules",
                 "objective": "demonstrar modules",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "event-loop",
                 "objective": "demonstrar event-loop",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "module",
@@ -2297,7 +3089,7 @@
               {
                 "id": "async",
                 "objective": "demonstrar async",
-                "status": "covered"
+                "status": "pending"
               }
             ]
           }
@@ -2497,84 +3289,13 @@
         "JavaScript"
       ],
       "practice": {
-        "tasks": 12,
-        "passed": 12,
+        "tasks": 0,
+        "passed": 0,
         "failed": 0,
-        "verified": [
-          {
-            "task": "foundation-control-flow",
-            "level": "foundation",
-            "evidence": "node task.js; aprovado",
-            "at": 1789865817.8451633
-          },
-          {
-            "task": "error-handling",
-            "level": "practice",
-            "evidence": "node task_errors.js; aprovado",
-            "at": 1789865817.8531938
-          },
-          {
-            "task": "module-composition",
-            "level": "practice",
-            "evidence": "node task_module.js; aprovado",
-            "at": 1789865817.8612864
-          },
-          {
-            "task": "unseen-inputs",
-            "level": "transfer",
-            "evidence": "node task_tests.js; aprovado",
-            "at": 1789865817.8685613
-          },
-          {
-            "task": "transfer-boundary-cases",
-            "level": "transfer",
-            "evidence": "node -e const f=v=>v<0?'negative':v===0?'zero':'positive'; if(f(-999)!=='negative'||f(999)!=='positive')process.exit(1); aprovado",
-            "at": 1789865817.8751233
-          },
-          {
-            "task": "closure-scope",
-            "level": "practice",
-            "evidence": "node task_closure.js; aprovado",
-            "at": 1789865817.883186
-          },
-          {
-            "task": "promise-contract",
-            "level": "practice",
-            "evidence": "node task_promise.js; aprovado",
-            "at": 1789865817.889617
-          },
-          {
-            "task": "event-loop-order",
-            "level": "transfer",
-            "evidence": "node task_event_loop.js; aprovado",
-            "at": 1789865817.8951466
-          },
-          {
-            "task": "serialization-boundary",
-            "level": "practice",
-            "evidence": "node task_serialization.js; aprovado",
-            "at": 1789865817.9005382
-          },
-          {
-            "task": "integration-project",
-            "level": "integration",
-            "evidence": "node task_integration.js; aprovado",
-            "at": 1789865817.9062257
-          },
-          {
-            "task": "async-error-boundary",
-            "level": "transfer",
-            "evidence": "node task_async_errors.js; aprovado",
-            "at": 1789865817.911515
-          },
-          {
-            "task": "module-boundary",
-            "level": "practice",
-            "evidence": "node task_module_boundary.js; aprovado",
-            "at": 1789865817.917034
-          }
-        ],
-        "failed_tasks": []
+        "verified": [],
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
       "updated_at": 1789865817.917203,
@@ -2604,15 +3325,15 @@
         }
       },
       "evaluation": {
-        "progress": 0.9773,
+        "progress": 0.2,
         "ready": false,
         "criteria": {
           "sources": true,
           "levels": true,
           "coverage": false,
-          "practice": true,
-          "transfer": true,
-          "integration": true
+          "practice": false,
+          "transfer": false,
+          "integration": false
         },
         "requirements": {
           "required_levels": 3,
@@ -2625,18 +3346,183 @@
           "requires_integration_task": true
         },
         "coverage": {
-          "covered": 10,
+          "covered": 0,
           "total": 11,
-          "ratio": 0.9091
+          "ratio": 0.0
         },
         "practice": {
-          "tasks": 12,
-          "passed": 12,
+          "tasks": 0,
+          "passed": 0,
           "failed": 0,
-          "pass_rate": 1.0,
-          "transfer": 4,
-          "integration": true
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "JavaScript",
+        "domain": "programming",
+        "research": {
+          "query": "JavaScript official documentation standards and tested examples",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-fundamentos",
+              "level": "foundation",
+              "objective": "fundamentos",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "foundation-dados-e-controle",
+              "level": "foundation",
+              "objective": "dados-e-controle",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-erros-e-testes",
+              "level": "practice",
+              "objective": "erros-e-testes",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-composicao",
+              "level": "practice",
+              "objective": "composicao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-problema-novo",
+              "level": "transfer",
+              "objective": "problema-novo",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 12,
+        "passed": 12,
+        "failed": 0,
+        "verified": [
+          {
+            "task": "foundation-control-flow",
+            "level": "foundation",
+            "evidence": "node task.js; aprovado",
+            "at": 1789865817.8451633,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "error-handling",
+            "level": "practice",
+            "evidence": "node task_errors.js; aprovado",
+            "at": 1789865817.8531938,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "module-composition",
+            "level": "practice",
+            "evidence": "node task_module.js; aprovado",
+            "at": 1789865817.8612864,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "unseen-inputs",
+            "level": "transfer",
+            "evidence": "node task_tests.js; aprovado",
+            "at": 1789865817.8685613,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "transfer-boundary-cases",
+            "level": "transfer",
+            "evidence": "node -e const f=v=>v<0?'negative':v===0?'zero':'positive'; if(f(-999)!=='negative'||f(999)!=='positive')process.exit(1); aprovado",
+            "at": 1789865817.8751233,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "closure-scope",
+            "level": "practice",
+            "evidence": "node task_closure.js; aprovado",
+            "at": 1789865817.883186,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "promise-contract",
+            "level": "practice",
+            "evidence": "node task_promise.js; aprovado",
+            "at": 1789865817.889617,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "event-loop-order",
+            "level": "transfer",
+            "evidence": "node task_event_loop.js; aprovado",
+            "at": 1789865817.8951466,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "serialization-boundary",
+            "level": "practice",
+            "evidence": "node task_serialization.js; aprovado",
+            "at": 1789865817.9005382,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "integration-project",
+            "level": "integration",
+            "evidence": "node task_integration.js; aprovado",
+            "at": 1789865817.9062257,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "async-error-boundary",
+            "level": "transfer",
+            "evidence": "node task_async_errors.js; aprovado",
+            "at": 1789865817.911515,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "module-boundary",
+            "level": "practice",
+            "evidence": "node task_module_boundary.js; aprovado",
+            "at": 1789865817.917034,
+            "provenance": "reference_lab"
+          }
+        ],
+        "failed_tasks": []
       }
     },
     "C++": {
@@ -2651,7 +3537,12 @@
           "dados-e-controle",
           "erros-e-testes",
           "composicao",
-          "problema-novo"
+          "problema-novo",
+          "raii",
+          "templates",
+          "stl",
+          "move-semantics",
+          "concurrency"
         ]
       },
       "curriculum": {
@@ -2698,7 +3589,33 @@
           {
             "id": "transfer",
             "title": "Transferência",
-            "concepts": []
+            "concepts": [
+              {
+                "id": "raii",
+                "objective": "demonstrar raii",
+                "status": "pending"
+              },
+              {
+                "id": "templates",
+                "objective": "demonstrar templates",
+                "status": "pending"
+              },
+              {
+                "id": "stl",
+                "objective": "demonstrar stl",
+                "status": "pending"
+              },
+              {
+                "id": "move-semantics",
+                "objective": "demonstrar move-semantics",
+                "status": "pending"
+              },
+              {
+                "id": "concurrency",
+                "objective": "demonstrar concurrency",
+                "status": "pending"
+              }
+            ]
           }
         ],
         "completion": {
@@ -2730,16 +3647,18 @@
         "passed": 0,
         "failed": 0,
         "verified": [],
-        "failed_tasks": []
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
-      "updated_at": 1789922729.056695,
+      "updated_at": 1790692902.8310153,
       "evaluation": {
         "progress": 0.0625,
         "ready": false,
         "criteria": {
           "sources": false,
-          "levels": false,
+          "levels": true,
           "coverage": false,
           "practice": false,
           "transfer": false,
@@ -2757,7 +3676,7 @@
         },
         "coverage": {
           "covered": 0,
-          "total": 5,
+          "total": 10,
           "ratio": 0.0
         },
         "practice": {
@@ -2768,6 +3687,86 @@
           "transfer": 0,
           "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "C++",
+        "domain": "programming",
+        "research": {
+          "query": "C++ official documentation standards and tested examples",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-fundamentos",
+              "level": "foundation",
+              "objective": "fundamentos",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "foundation-dados-e-controle",
+              "level": "foundation",
+              "objective": "dados-e-controle",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "practice-erros-e-testes",
+              "level": "practice",
+              "objective": "erros-e-testes",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "practice-composicao",
+              "level": "practice",
+              "objective": "composicao",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "transfer-problema-novo",
+              "level": "transfer",
+              "objective": "problema-novo",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
       }
     },
     "Axum": {
@@ -3012,7 +4011,9 @@
         "passed": 0,
         "failed": 0,
         "verified": [],
-        "failed_tasks": []
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
       "updated_at": 1789915949.8463945,
@@ -3075,15 +4076,97 @@
           "transfer": 0,
           "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "Axum",
+        "domain": "general",
+        "research": {
+          "query": "Axum authoritative sources practical examples and common pitfalls",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-definicao-do-problema",
+              "level": "foundation",
+              "objective": "definicao-do-problema",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "foundation-decomposicao",
+              "level": "foundation",
+              "objective": "decomposicao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-opcoes-e-tradeoffs",
+              "level": "practice",
+              "objective": "opcoes-e-tradeoffs",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-verificacao",
+              "level": "practice",
+              "objective": "verificacao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-transferencia",
+              "level": "transfer",
+              "objective": "transferencia",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
       }
     },
     "Node.js": {
       "topic": "Node.js",
       "status": "partially_known",
-      "confidence": 0.7,
+      "confidence": 0.38,
       "version": null,
       "concepts": {
-        "covered": [
+        "covered": [],
+        "gaps": [
+          "module",
           "fundamentos",
           "dados-e-controle",
           "erros-e-testes",
@@ -3093,8 +4176,15 @@
           "promises",
           "async"
         ],
-        "gaps": [
-          "module"
+        "legacy_reference_lab_coverage": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "modules",
+          "promises",
+          "async"
         ]
       },
       "curriculum": {
@@ -3108,12 +4198,12 @@
               {
                 "id": "fundamentos",
                 "objective": "identificar conceitos fundamentais e a sintaxe básica",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "dados-e-controle",
                 "objective": "usar dados, funções e controle de fluxo",
-                "status": "covered"
+                "status": "pending"
               }
             ]
           },
@@ -3124,17 +4214,17 @@
               {
                 "id": "erros-e-testes",
                 "objective": "tratar erros e escrever testes",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "composicao",
                 "objective": "compor módulos ou componentes",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "problema-novo",
                 "objective": "resolver uma variação inédita sem copiar o exemplo",
-                "status": "covered"
+                "status": "pending"
               }
             ]
           },
@@ -3145,7 +4235,7 @@
               {
                 "id": "modules",
                 "objective": "demonstrar modules",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "module",
@@ -3155,12 +4245,12 @@
               {
                 "id": "promises",
                 "objective": "demonstrar promises",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "async",
                 "objective": "demonstrar async",
-                "status": "covered"
+                "status": "pending"
               }
             ]
           }
@@ -3356,102 +4446,13 @@
         "Node.js"
       ],
       "practice": {
-        "tasks": 15,
-        "passed": 15,
+        "tasks": 0,
+        "passed": 0,
         "failed": 0,
-        "verified": [
-          {
-            "task": "foundation-control-flow",
-            "level": "foundation",
-            "evidence": "node task.js; aprovado",
-            "at": 1789915988.0986576
-          },
-          {
-            "task": "error-handling",
-            "level": "practice",
-            "evidence": "node task_errors.js; aprovado",
-            "at": 1789915988.1044858
-          },
-          {
-            "task": "module-composition",
-            "level": "practice",
-            "evidence": "node task_module.js; aprovado",
-            "at": 1789915988.112662
-          },
-          {
-            "task": "unseen-inputs",
-            "level": "transfer",
-            "evidence": "node task_tests.js; aprovado",
-            "at": 1789915988.1169124
-          },
-          {
-            "task": "transfer-boundary-cases",
-            "level": "transfer",
-            "evidence": "node -e const f=v=>v<0?'negative':v===0?'zero':'positive'; if(f(-999)!=='negative'||f(999)!=='positive')process.exit(1); aprovado",
-            "at": 1789915988.121218
-          },
-          {
-            "task": "closure-scope",
-            "level": "practice",
-            "evidence": "node task_closure.js; aprovado",
-            "at": 1789915988.126632
-          },
-          {
-            "task": "promise-contract",
-            "level": "practice",
-            "evidence": "node task_promise.js; aprovado",
-            "at": 1789915988.133893
-          },
-          {
-            "task": "event-loop-order",
-            "level": "transfer",
-            "evidence": "node task_event_loop.js; aprovado",
-            "at": 1789915988.1386287
-          },
-          {
-            "task": "serialization-boundary",
-            "level": "practice",
-            "evidence": "node task_serialization.js; aprovado",
-            "at": 1789915988.1448245
-          },
-          {
-            "task": "integration-project",
-            "level": "integration",
-            "evidence": "node task_integration.js; aprovado",
-            "at": 1789915988.1499913
-          },
-          {
-            "task": "async-error-boundary",
-            "level": "transfer",
-            "evidence": "node task_async_errors.js; aprovado",
-            "at": 1789915988.1555035
-          },
-          {
-            "task": "module-boundary",
-            "level": "practice",
-            "evidence": "node task_module_boundary.js; aprovado",
-            "at": 1789915988.1621943
-          },
-          {
-            "task": "node-http-server",
-            "level": "practice",
-            "evidence": "node task_http_server.js; aprovado",
-            "at": 1789915988.1668308
-          },
-          {
-            "task": "node-streams",
-            "level": "transfer",
-            "evidence": "node task_streams.js; aprovado",
-            "at": 1789915988.1734905
-          },
-          {
-            "task": "node-observability",
-            "level": "integration",
-            "evidence": "node task_observability.js; aprovado",
-            "at": 1789915988.178924
-          }
-        ],
-        "failed_tasks": []
+        "verified": [],
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
       "updated_at": 1789915988.1791215,
@@ -3481,15 +4482,15 @@
         }
       },
       "evaluation": {
-        "progress": 0.9222,
+        "progress": 0.15,
         "ready": false,
         "criteria": {
           "sources": false,
           "levels": true,
           "coverage": false,
-          "practice": true,
-          "transfer": true,
-          "integration": true
+          "practice": false,
+          "transfer": false,
+          "integration": false
         },
         "requirements": {
           "required_levels": 3,
@@ -3502,18 +4503,204 @@
           "requires_integration_task": true
         },
         "coverage": {
-          "covered": 8,
+          "covered": 0,
           "total": 9,
-          "ratio": 0.8889
+          "ratio": 0.0
         },
         "practice": {
-          "tasks": 15,
-          "passed": 15,
+          "tasks": 0,
+          "passed": 0,
           "failed": 0,
-          "pass_rate": 1.0,
-          "transfer": 5,
-          "integration": true
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "Node.js",
+        "domain": "programming",
+        "research": {
+          "query": "Node.js official documentation standards and tested examples",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-fundamentos",
+              "level": "foundation",
+              "objective": "fundamentos",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "foundation-dados-e-controle",
+              "level": "foundation",
+              "objective": "dados-e-controle",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-erros-e-testes",
+              "level": "practice",
+              "objective": "erros-e-testes",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-composicao",
+              "level": "practice",
+              "objective": "composicao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-problema-novo",
+              "level": "transfer",
+              "objective": "problema-novo",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 15,
+        "passed": 15,
+        "failed": 0,
+        "verified": [
+          {
+            "task": "foundation-control-flow",
+            "level": "foundation",
+            "evidence": "node task.js; aprovado",
+            "at": 1789915988.0986576,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "error-handling",
+            "level": "practice",
+            "evidence": "node task_errors.js; aprovado",
+            "at": 1789915988.1044858,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "module-composition",
+            "level": "practice",
+            "evidence": "node task_module.js; aprovado",
+            "at": 1789915988.112662,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "unseen-inputs",
+            "level": "transfer",
+            "evidence": "node task_tests.js; aprovado",
+            "at": 1789915988.1169124,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "transfer-boundary-cases",
+            "level": "transfer",
+            "evidence": "node -e const f=v=>v<0?'negative':v===0?'zero':'positive'; if(f(-999)!=='negative'||f(999)!=='positive')process.exit(1); aprovado",
+            "at": 1789915988.121218,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "closure-scope",
+            "level": "practice",
+            "evidence": "node task_closure.js; aprovado",
+            "at": 1789915988.126632,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "promise-contract",
+            "level": "practice",
+            "evidence": "node task_promise.js; aprovado",
+            "at": 1789915988.133893,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "event-loop-order",
+            "level": "transfer",
+            "evidence": "node task_event_loop.js; aprovado",
+            "at": 1789915988.1386287,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "serialization-boundary",
+            "level": "practice",
+            "evidence": "node task_serialization.js; aprovado",
+            "at": 1789915988.1448245,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "integration-project",
+            "level": "integration",
+            "evidence": "node task_integration.js; aprovado",
+            "at": 1789915988.1499913,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "async-error-boundary",
+            "level": "transfer",
+            "evidence": "node task_async_errors.js; aprovado",
+            "at": 1789915988.1555035,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "module-boundary",
+            "level": "practice",
+            "evidence": "node task_module_boundary.js; aprovado",
+            "at": 1789915988.1621943,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "node-http-server",
+            "level": "practice",
+            "evidence": "node task_http_server.js; aprovado",
+            "at": 1789915988.1668308,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "node-streams",
+            "level": "transfer",
+            "evidence": "node task_streams.js; aprovado",
+            "at": 1789915988.1734905,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "node-observability",
+            "level": "integration",
+            "evidence": "node task_observability.js; aprovado",
+            "at": 1789915988.178924,
+            "provenance": "reference_lab"
+          }
+        ],
+        "failed_tasks": []
       }
     },
     "SQL": {
@@ -3818,7 +5005,9 @@
         "passed": 0,
         "failed": 0,
         "verified": [],
-        "failed_tasks": []
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
       "updated_at": 1789865817.0251086,
@@ -3873,28 +5062,119 @@
           "transfer": 0,
           "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "SQL",
+        "domain": "programming",
+        "research": {
+          "query": "SQL official documentation standards and tested examples",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-fundamentos",
+              "level": "foundation",
+              "objective": "fundamentos",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "foundation-dados-e-controle",
+              "level": "foundation",
+              "objective": "dados-e-controle",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-erros-e-testes",
+              "level": "practice",
+              "objective": "erros-e-testes",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-composicao",
+              "level": "practice",
+              "objective": "composicao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-problema-novo",
+              "level": "transfer",
+              "objective": "problema-novo",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
       }
     },
     "Python": {
       "topic": "Python",
       "status": "partially_known",
-      "confidence": 0.7,
+      "confidence": 0.38,
       "version": null,
       "concepts": {
-        "covered": [
+        "covered": [],
+        "gaps": [
+          "module",
           "fundamentos",
           "dados-e-controle",
           "erros-e-testes",
           "composicao",
-          "modules",
           "problema-novo",
-          "testing",
           "iterators",
           "exceptions",
+          "modules",
+          "testing",
           "async"
         ],
-        "gaps": [
-          "module"
+        "legacy_reference_lab_coverage": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "iterators",
+          "exceptions",
+          "modules",
+          "testing",
+          "async"
         ]
       },
       "curriculum": {
@@ -3908,12 +5188,12 @@
               {
                 "id": "fundamentos",
                 "objective": "identificar conceitos fundamentais e a sintaxe básica",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "dados-e-controle",
                 "objective": "usar dados, funções e controle de fluxo",
-                "status": "covered"
+                "status": "pending"
               }
             ]
           },
@@ -3924,17 +5204,17 @@
               {
                 "id": "erros-e-testes",
                 "objective": "tratar erros e escrever testes",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "composicao",
                 "objective": "compor módulos ou componentes",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "problema-novo",
                 "objective": "resolver uma variação inédita sem copiar o exemplo",
-                "status": "covered"
+                "status": "pending"
               }
             ]
           },
@@ -3945,22 +5225,22 @@
               {
                 "id": "iterators",
                 "objective": "demonstrar iterators",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "exceptions",
                 "objective": "demonstrar exceptions",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "modules",
                 "objective": "demonstrar modules",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "testing",
                 "objective": "demonstrar testing",
-                "status": "covered"
+                "status": "pending"
               },
               {
                 "id": "module",
@@ -3970,7 +5250,7 @@
               {
                 "id": "async",
                 "objective": "demonstrar async",
-                "status": "covered"
+                "status": "pending"
               }
             ]
           }
@@ -4158,84 +5438,13 @@
         "Python"
       ],
       "practice": {
-        "tasks": 12,
-        "passed": 12,
+        "tasks": 0,
+        "passed": 0,
         "failed": 0,
-        "verified": [
-          {
-            "task": "foundation-control-flow",
-            "level": "foundation",
-            "evidence": "python3 task.py; aprovado",
-            "at": 1789866547.7104387
-          },
-          {
-            "task": "error-handling",
-            "level": "practice",
-            "evidence": "python3 task_errors.py; aprovado",
-            "at": 1789866547.712255
-          },
-          {
-            "task": "module-composition",
-            "level": "practice",
-            "evidence": "python3 task_module.py; aprovado",
-            "at": 1789866547.7150092
-          },
-          {
-            "task": "unseen-inputs",
-            "level": "transfer",
-            "evidence": "python3 task_tests.py; aprovado",
-            "at": 1789866547.716601
-          },
-          {
-            "task": "transfer-boundary-cases",
-            "level": "transfer",
-            "evidence": "python3 -c from task import classify; assert classify(-999)=='negative'; assert classify(999)=='positive'; aprovado",
-            "at": 1789866547.7182562
-          },
-          {
-            "task": "iterator-generator",
-            "level": "practice",
-            "evidence": "python3 task_iterator.py; aprovado",
-            "at": 1789866547.7198575
-          },
-          {
-            "task": "exceptions-contract",
-            "level": "practice",
-            "evidence": "python3 task_exceptions.py; aprovado",
-            "at": 1789866547.7214022
-          },
-          {
-            "task": "serialization-boundary",
-            "level": "practice",
-            "evidence": "python3 task_serialization.py; aprovado",
-            "at": 1789866547.7229187
-          },
-          {
-            "task": "async-await",
-            "level": "transfer",
-            "evidence": "python3 task_async.py; aprovado",
-            "at": 1789866547.7245903
-          },
-          {
-            "task": "integration-project",
-            "level": "integration",
-            "evidence": "python3 task_integration.py; aprovado",
-            "at": 1789866547.7261775
-          },
-          {
-            "task": "type-boundaries",
-            "level": "transfer",
-            "evidence": "python3 task_types.py; aprovado",
-            "at": 1789866547.7277412
-          },
-          {
-            "task": "resource-safety",
-            "level": "integration",
-            "evidence": "python3 task_resources.py; aprovado",
-            "at": 1789866547.7292929
-          }
-        ],
-        "failed_tasks": []
+        "verified": [],
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
       "updated_at": 1789866547.7293386,
@@ -4264,15 +5473,15 @@
         }
       },
       "evaluation": {
-        "progress": 0.9273,
+        "progress": 0.15,
         "ready": false,
         "criteria": {
           "sources": false,
           "levels": true,
           "coverage": false,
-          "practice": true,
-          "transfer": true,
-          "integration": true
+          "practice": false,
+          "transfer": false,
+          "integration": false
         },
         "requirements": {
           "required_levels": 3,
@@ -4285,18 +5494,183 @@
           "requires_integration_task": true
         },
         "coverage": {
-          "covered": 10,
+          "covered": 0,
           "total": 11,
-          "ratio": 0.9091
+          "ratio": 0.0
         },
         "practice": {
-          "tasks": 12,
-          "passed": 12,
+          "tasks": 0,
+          "passed": 0,
           "failed": 0,
-          "pass_rate": 1.0,
-          "transfer": 4,
-          "integration": true
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "Python",
+        "domain": "programming",
+        "research": {
+          "query": "Python official documentation standards and tested examples",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-fundamentos",
+              "level": "foundation",
+              "objective": "fundamentos",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "foundation-dados-e-controle",
+              "level": "foundation",
+              "objective": "dados-e-controle",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-erros-e-testes",
+              "level": "practice",
+              "objective": "erros-e-testes",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-composicao",
+              "level": "practice",
+              "objective": "composicao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-problema-novo",
+              "level": "transfer",
+              "objective": "problema-novo",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 12,
+        "passed": 12,
+        "failed": 0,
+        "verified": [
+          {
+            "task": "foundation-control-flow",
+            "level": "foundation",
+            "evidence": "python3 task.py; aprovado",
+            "at": 1789866547.7104387,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "error-handling",
+            "level": "practice",
+            "evidence": "python3 task_errors.py; aprovado",
+            "at": 1789866547.712255,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "module-composition",
+            "level": "practice",
+            "evidence": "python3 task_module.py; aprovado",
+            "at": 1789866547.7150092,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "unseen-inputs",
+            "level": "transfer",
+            "evidence": "python3 task_tests.py; aprovado",
+            "at": 1789866547.716601,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "transfer-boundary-cases",
+            "level": "transfer",
+            "evidence": "python3 -c from task import classify; assert classify(-999)=='negative'; assert classify(999)=='positive'; aprovado",
+            "at": 1789866547.7182562,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "iterator-generator",
+            "level": "practice",
+            "evidence": "python3 task_iterator.py; aprovado",
+            "at": 1789866547.7198575,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "exceptions-contract",
+            "level": "practice",
+            "evidence": "python3 task_exceptions.py; aprovado",
+            "at": 1789866547.7214022,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "serialization-boundary",
+            "level": "practice",
+            "evidence": "python3 task_serialization.py; aprovado",
+            "at": 1789866547.7229187,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "async-await",
+            "level": "transfer",
+            "evidence": "python3 task_async.py; aprovado",
+            "at": 1789866547.7245903,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "integration-project",
+            "level": "integration",
+            "evidence": "python3 task_integration.py; aprovado",
+            "at": 1789866547.7261775,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "type-boundaries",
+            "level": "transfer",
+            "evidence": "python3 task_types.py; aprovado",
+            "at": 1789866547.7277412,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "resource-safety",
+            "level": "integration",
+            "evidence": "python3 task_resources.py; aprovado",
+            "at": 1789866547.7292929,
+            "provenance": "reference_lab"
+          }
+        ],
+        "failed_tasks": []
       }
     },
     "CheatSheetSeries": {
@@ -4575,7 +5949,9 @@
         "passed": 0,
         "failed": 0,
         "verified": [],
-        "failed_tasks": []
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
       "updated_at": 1789866630.722499,
@@ -4616,6 +5992,86 @@
           "transfer": 0,
           "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "CheatSheetSeries",
+        "domain": "general",
+        "research": {
+          "query": "CheatSheetSeries authoritative sources practical examples and common pitfalls",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-definicao-do-problema",
+              "level": "foundation",
+              "objective": "definicao-do-problema",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "foundation-decomposicao",
+              "level": "foundation",
+              "objective": "decomposicao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-opcoes-e-tradeoffs",
+              "level": "practice",
+              "objective": "opcoes-e-tradeoffs",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-verificacao",
+              "level": "practice",
+              "objective": "verificacao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-transferencia",
+              "level": "transfer",
+              "objective": "transferencia",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
       }
     },
     "https://ziglang.org/documentation/master/": {
@@ -4728,7 +6184,9 @@
         "passed": 0,
         "failed": 0,
         "verified": [],
-        "failed_tasks": []
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
       "updated_at": 1789914005.9138958,
@@ -4769,6 +6227,86 @@
           "transfer": 0,
           "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "https://ziglang.org/documentation/master/",
+        "domain": "general",
+        "research": {
+          "query": "https://ziglang.org/documentation/master/ authoritative sources practical examples and common pitfalls",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-definicao-do-problema",
+              "level": "foundation",
+              "objective": "definicao-do-problema",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "foundation-decomposicao",
+              "level": "foundation",
+              "objective": "decomposicao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-opcoes-e-tradeoffs",
+              "level": "practice",
+              "objective": "opcoes-e-tradeoffs",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-verificacao",
+              "level": "practice",
+              "objective": "verificacao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-transferencia",
+              "level": "transfer",
+              "objective": "transferencia",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
       }
     },
     "https://www.typescriptlang.org/docs/handbook/intro.html": {
@@ -4877,7 +6415,9 @@
         "passed": 0,
         "failed": 0,
         "verified": [],
-        "failed_tasks": []
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
       "updated_at": 1789914008.7257147,
@@ -4928,6 +6468,86 @@
           "transfer": 0,
           "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "https://www.typescriptlang.org/docs/handbook/intro.html",
+        "domain": "general",
+        "research": {
+          "query": "https://www.typescriptlang.org/docs/handbook/intro.html authoritative sources practical examples and common pitfalls",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-definicao-do-problema",
+              "level": "foundation",
+              "objective": "definicao-do-problema",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "foundation-decomposicao",
+              "level": "foundation",
+              "objective": "decomposicao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-opcoes-e-tradeoffs",
+              "level": "practice",
+              "objective": "opcoes-e-tradeoffs",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-verificacao",
+              "level": "practice",
+              "objective": "verificacao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-transferencia",
+              "level": "transfer",
+              "objective": "transferencia",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
       }
     },
     "HTML/CSS": {
@@ -5086,7 +6706,9 @@
         "passed": 0,
         "failed": 0,
         "verified": [],
-        "failed_tasks": []
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
       "updated_at": 1789915983.067626,
@@ -5137,6 +6759,86 @@
           "transfer": 0,
           "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "HTML/CSS",
+        "domain": "general",
+        "research": {
+          "query": "HTML/CSS authoritative sources practical examples and common pitfalls",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-definicao-do-problema",
+              "level": "foundation",
+              "objective": "definicao-do-problema",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "foundation-decomposicao",
+              "level": "foundation",
+              "objective": "decomposicao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-opcoes-e-tradeoffs",
+              "level": "practice",
+              "objective": "opcoes-e-tradeoffs",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-verificacao",
+              "level": "practice",
+              "objective": "verificacao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-transferencia",
+              "level": "transfer",
+              "objective": "transferencia",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
       }
     },
     "axum": {
@@ -5382,7 +7084,9 @@
         "passed": 0,
         "failed": 0,
         "verified": [],
-        "failed_tasks": []
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
       },
       "decisions": [],
       "updated_at": 1789915947.278602,
@@ -5463,6 +7167,1094 @@
           "transfer": 0,
           "integration": false
         }
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "axum",
+        "domain": "general",
+        "research": {
+          "query": "axum authoritative sources practical examples and common pitfalls",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-definicao-do-problema",
+              "level": "foundation",
+              "objective": "definicao-do-problema",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "foundation-decomposicao",
+              "level": "foundation",
+              "objective": "decomposicao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-opcoes-e-tradeoffs",
+              "level": "practice",
+              "objective": "opcoes-e-tradeoffs",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-verificacao",
+              "level": "practice",
+              "objective": "verificacao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-transferencia",
+              "level": "transfer",
+              "objective": "transferencia",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      }
+    },
+    "ZirconFable999": {
+      "topic": "ZirconFable999",
+      "status": "partially_known",
+      "confidence": 0.26,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "ZirconFable999",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": []
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "ZirconFable999 docs",
+            "url": "https://alpha.test/docs"
+          }
+        ],
+        "independent_hosts": 1,
+        "documents": 1
+      },
+      "source_repository": null,
+      "technologies": [],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "ZirconFable999",
+        "domain": "programming",
+        "research": {
+          "query": "ZirconFable999 authoritative sources practical examples and common pitfalls",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-fundamentos",
+              "level": "foundation",
+              "objective": "fundamentos",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "foundation-dados-e-controle",
+              "level": "foundation",
+              "objective": "dados-e-controle",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "practice-erros-e-testes",
+              "level": "practice",
+              "objective": "erros-e-testes",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "practice-composicao",
+              "level": "practice",
+              "objective": "composicao",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "transfer-problema-novo",
+              "level": "transfer",
+              "objective": "problema-novo",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "decisions": [],
+      "updated_at": 1790386431.755182,
+      "evaluation": {
+        "progress": 0.0625,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": false,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 5,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      }
+    },
+    "NovaFlux": {
+      "topic": "NovaFlux",
+      "status": "partially_known",
+      "confidence": 0.26,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "definicao-do-problema",
+          "decomposicao",
+          "opcoes-e-tradeoffs",
+          "verificacao",
+          "transferencia"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "NovaFlux",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "definicao-do-problema",
+                "objective": "demonstrar definicao do problema",
+                "status": "pending"
+              },
+              {
+                "id": "decomposicao",
+                "objective": "demonstrar decomposicao",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "opcoes-e-tradeoffs",
+                "objective": "demonstrar opcoes e tradeoffs",
+                "status": "pending"
+              },
+              {
+                "id": "verificacao",
+                "objective": "demonstrar verificacao",
+                "status": "pending"
+              },
+              {
+                "id": "transferencia",
+                "objective": "demonstrar transferencia",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": []
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "NovaFlux docs",
+            "url": "https://example.org/novaflux"
+          }
+        ],
+        "independent_hosts": 1,
+        "documents": 1
+      },
+      "source_repository": null,
+      "technologies": [],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "NovaFlux",
+        "domain": "general",
+        "research": {
+          "query": "NovaFlux authoritative sources practical examples and common pitfalls",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-definicao-do-problema",
+              "level": "foundation",
+              "objective": "definicao-do-problema",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "foundation-decomposicao",
+              "level": "foundation",
+              "objective": "decomposicao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-opcoes-e-tradeoffs",
+              "level": "practice",
+              "objective": "opcoes-e-tradeoffs",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "practice-verificacao",
+              "level": "practice",
+              "objective": "verificacao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-transferencia",
+              "level": "transfer",
+              "objective": "transferencia",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "model-review",
+              "verification": "rubric-and-evidence"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "decisions": [],
+      "updated_at": 1790386431.8852093,
+      "evaluation": {
+        "progress": 0.0625,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": false,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 5,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      },
+      "laboratory_checks": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": []
+      }
+    },
+    "Bash": {
+      "topic": "Bash",
+      "status": "partially_known",
+      "confidence": 0.4,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "quoting",
+          "processes",
+          "pipelines",
+          "permissions",
+          "shellcheck"
+        ],
+        "legacy_reference_lab_coverage": [
+          "fundamentos",
+          "dados-e-controle",
+          "erros-e-testes",
+          "composicao",
+          "problema-novo",
+          "quoting",
+          "processes",
+          "pipelines",
+          "permissions",
+          "shellcheck"
+        ]
+      },
+      "curriculum": {
+        "schema": "curriculum/v2",
+        "topic": "Bash",
+        "levels": [
+          {
+            "id": "foundation",
+            "title": "Fundamentos",
+            "concepts": [
+              {
+                "id": "fundamentos",
+                "objective": "identificar conceitos fundamentais e a sintaxe básica",
+                "status": "pending"
+              },
+              {
+                "id": "dados-e-controle",
+                "objective": "usar dados, funções e controle de fluxo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "practice",
+            "title": "Prática guiada",
+            "concepts": [
+              {
+                "id": "erros-e-testes",
+                "objective": "tratar erros e escrever testes",
+                "status": "pending"
+              },
+              {
+                "id": "composicao",
+                "objective": "compor módulos ou componentes",
+                "status": "pending"
+              },
+              {
+                "id": "problema-novo",
+                "objective": "resolver uma variação inédita sem copiar o exemplo",
+                "status": "pending"
+              }
+            ]
+          },
+          {
+            "id": "transfer",
+            "title": "Transferência",
+            "concepts": [
+              {
+                "id": "quoting",
+                "objective": "demonstrar quoting",
+                "status": "pending"
+              },
+              {
+                "id": "processes",
+                "objective": "demonstrar processes",
+                "status": "pending"
+              },
+              {
+                "id": "pipelines",
+                "objective": "demonstrar pipelines",
+                "status": "pending"
+              },
+              {
+                "id": "permissions",
+                "objective": "demonstrar permissions",
+                "status": "pending"
+              },
+              {
+                "id": "shellcheck",
+                "objective": "demonstrar shellcheck",
+                "status": "pending"
+              }
+            ]
+          }
+        ],
+        "completion": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_unseen_task": true,
+          "requires_integration_task": true
+        }
+      },
+      "evidence": {
+        "sources": [
+          {
+            "title": "Bash Reference Manual",
+            "url": "https://www.gnu.org/software/bash/manual/bash.html"
+          },
+          {
+            "title": "Bash Reference Manual: Introduction",
+            "url": "https://ftp.gnu.org/old-gnu/Manuals/bash/html_chapter/bashref_1.html"
+          },
+          {
+            "title": "",
+            "url": "https://www.gnu.org.cach3.com/software/bash/manual/bash.pdf"
+          }
+        ],
+        "independent_hosts": 2,
+        "documents": 3
+      },
+      "source_repository": null,
+      "technologies": [],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "Bash",
+        "domain": "programming",
+        "research": {
+          "query": "Bash official documentation standards and tested examples",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-fundamentos",
+              "level": "foundation",
+              "objective": "fundamentos",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "foundation-dados-e-controle",
+              "level": "foundation",
+              "objective": "dados-e-controle",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-erros-e-testes",
+              "level": "practice",
+              "objective": "erros-e-testes",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "practice-composicao",
+              "level": "practice",
+              "objective": "composicao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-problema-novo",
+              "level": "transfer",
+              "objective": "problema-novo",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "local-executor",
+              "verification": "isolated-test"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "decisions": [],
+      "updated_at": 1790041976.3861463,
+      "evaluation": {
+        "progress": 0.1375,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": true,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 10,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      },
+      "laboratory_checks": {
+        "tasks": 12,
+        "passed": 12,
+        "failed": 0,
+        "verified": [
+          {
+            "task": "foundation-control-flow",
+            "level": "foundation",
+            "evidence": "bash task.sh; aprovado; laboratório temporário isolado",
+            "at": 1790041976.3488073,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "error-handling",
+            "level": "practice",
+            "evidence": "bash task_errors.sh; aprovado; laboratório temporário isolado",
+            "at": 1790041976.3535793,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "module-composition",
+            "level": "practice",
+            "evidence": "bash task_module.sh; aprovado; laboratório temporário isolado",
+            "at": 1790041976.3571212,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "quoting",
+            "level": "practice",
+            "evidence": "bash task_quoting.sh; aprovado; laboratório temporário isolado",
+            "at": 1790041976.360393,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "processes",
+            "level": "practice",
+            "evidence": "bash task_processes.sh; aprovado; laboratório temporário isolado",
+            "at": 1790041976.363563,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "pipelines",
+            "level": "transfer",
+            "evidence": "bash task_pipelines.sh; aprovado; laboratório temporário isolado",
+            "at": 1790041976.3667536,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "permissions",
+            "level": "transfer",
+            "evidence": "bash task_permissions.sh; aprovado; laboratório temporário isolado",
+            "at": 1790041976.369903,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "unseen-values",
+            "level": "transfer",
+            "evidence": "bash -c source task.sh; [[ $(classify -999) == negative ]] && [[ $(classify 999) == positive ]]; aprovado; laboratório temporário isolado",
+            "at": 1790041976.3732228,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "syntax-check",
+            "level": "transfer",
+            "evidence": "bash -n task.sh; aprovado; laboratório temporário isolado",
+            "at": 1790041976.3764374,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "integration-project",
+            "level": "integration",
+            "evidence": "bash task_integration.sh; aprovado; laboratório temporário isolado",
+            "at": 1790041976.3796675,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "shellcheck",
+            "level": "integration",
+            "evidence": "shellcheck -x task.sh task_errors.sh task_module.sh task_trap.sh lib.sh; aprovado; laboratório temporário isolado",
+            "at": 1790041976.3860936,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "trap-cleanup",
+            "level": "practice",
+            "evidence": "bash task_trap.sh; aprovado; laboratório temporário isolado",
+            "at": 1790041976.3828995,
+            "provenance": "reference_lab"
+          }
+        ],
+        "failed_tasks": []
+      }
+    },
+    "Go": {
+      "topic": "Go",
+      "status": "partially_known",
+      "confidence": 0.15,
+      "version": null,
+      "concepts": {
+        "covered": [],
+        "gaps": []
+      },
+      "curriculum": {
+        "schema": "curriculum/v1",
+        "levels": [],
+        "completion": {}
+      },
+      "evidence": {
+        "sources": [],
+        "independent_hosts": 0,
+        "documents": 0
+      },
+      "source_repository": null,
+      "technologies": [],
+      "practice": {
+        "tasks": 0,
+        "passed": 0,
+        "failed": 0,
+        "verified": [],
+        "failed_tasks": [],
+        "provenance_migration_version": 1,
+        "unclassified_legacy": []
+      },
+      "learning_contract": {
+        "schema": "learning-contract/v1",
+        "topic": "Go",
+        "domain": "programming",
+        "research": {
+          "query": "Go official documentation standards and tested examples",
+          "requires_primary_sources": true,
+          "minimum_independent_hosts": 2
+        },
+        "practice": {
+          "tasks": [
+            {
+              "id": "foundation-fundamentos",
+              "level": "foundation",
+              "objective": "fundamentos",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "foundation-dados-e-controle",
+              "level": "foundation",
+              "objective": "dados-e-controle",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "practice-erros-e-testes",
+              "level": "practice",
+              "objective": "erros-e-testes",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "practice-composicao",
+              "level": "practice",
+              "objective": "composicao",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "transfer-problema-novo",
+              "level": "transfer",
+              "objective": "problema-novo",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "transfer-integracao",
+              "level": "transfer",
+              "objective": "integracao",
+              "mode": "bounded-rubric",
+              "verification": "isolated-test-or-rubric"
+            },
+            {
+              "id": "unseen-transfer",
+              "level": "transfer",
+              "objective": "resolver uma variação inédita",
+              "mode": "model-review",
+              "verification": "unseen-case"
+            },
+            {
+              "id": "integration-deliverable",
+              "level": "integration",
+              "objective": "entregar um resultado completo e verificável",
+              "mode": "model-review",
+              "verification": "acceptance-criteria"
+            }
+          ],
+          "requires_unseen_task": true,
+          "requires_integration": true
+        },
+        "policy": "fontes orientam a prática; somente resultados verificados atualizam a competência"
+      },
+      "decisions": [],
+      "updated_at": 1790041843.4852662,
+      "evaluation": {
+        "progress": 0.0,
+        "ready": false,
+        "criteria": {
+          "sources": false,
+          "levels": false,
+          "coverage": false,
+          "practice": false,
+          "transfer": false,
+          "integration": false
+        },
+        "requirements": {
+          "required_levels": 3,
+          "required_pass_rate": 0.9,
+          "required_independent_hosts": 2,
+          "minimum_document_count": 8,
+          "minimum_practice_tasks": 12,
+          "minimum_transfer_tasks": 2,
+          "required_covered_ratio": 1.0,
+          "requires_integration_task": true
+        },
+        "coverage": {
+          "covered": 0,
+          "total": 0,
+          "ratio": 0.0
+        },
+        "practice": {
+          "tasks": 0,
+          "passed": 0,
+          "failed": 0,
+          "pass_rate": 0.0,
+          "transfer": 0,
+          "integration": false
+        }
+      },
+      "laboratory_checks": {
+        "tasks": 12,
+        "passed": 12,
+        "failed": 0,
+        "verified": [
+          {
+            "task": "foundation-control-flow",
+            "level": "foundation",
+            "evidence": "go test -run ^TestFoundation$; aprovado; laboratório temporário isolado",
+            "at": 1790041843.4205213,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "error-handling",
+            "level": "practice",
+            "evidence": "go test -run ^TestErrorHandling$; aprovado; laboratório temporário isolado",
+            "at": 1790041843.4273324,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "module-composition",
+            "level": "practice",
+            "evidence": "go test -run ^TestModuleComposition$; aprovado; laboratório temporário isolado",
+            "at": 1790041843.4485703,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "goroutines",
+            "level": "practice",
+            "evidence": "go test -run ^TestGoroutines$; aprovado; laboratório temporário isolado",
+            "at": 1790041843.4538429,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "channels",
+            "level": "practice",
+            "evidence": "go test -run ^TestChannels$; aprovado; laboratório temporário isolado",
+            "at": 1790041843.45744,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "interfaces",
+            "level": "transfer",
+            "evidence": "go test -run ^TestInterfaces$; aprovado; laboratório temporário isolado",
+            "at": 1790041843.4656358,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "errors",
+            "level": "transfer",
+            "evidence": "go test -run ^TestErrors$; aprovado; laboratório temporário isolado",
+            "at": 1790041843.4689043,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "modules",
+            "level": "transfer",
+            "evidence": "go test -run ^TestModules$; aprovado; laboratório temporário isolado",
+            "at": 1790041843.4719925,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "unseen-values",
+            "level": "transfer",
+            "evidence": "go test -run ^TestUnseen$; aprovado; laboratório temporário isolado",
+            "at": 1790041843.475214,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "integration-project",
+            "level": "integration",
+            "evidence": "go test -run ^TestIntegration$; aprovado; laboratório temporário isolado",
+            "at": 1790041843.4786172,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "type-boundaries",
+            "level": "transfer",
+            "evidence": "go test -run ^TestTypeBoundary$; aprovado; laboratório temporário isolado",
+            "at": 1790041843.4817426,
+            "provenance": "reference_lab"
+          },
+          {
+            "task": "resource-safety",
+            "level": "integration",
+            "evidence": "go test -run ^TestResourceSafety$; aprovado; laboratório temporário isolado",
+            "at": 1790041843.4852195,
+            "provenance": "reference_lab"
+          }
+        ],
+        "failed_tasks": []
       }
     }
   }

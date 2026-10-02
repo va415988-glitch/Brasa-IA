@@ -44,6 +44,13 @@ O ingestador, indexador, misturador e tokenizador Rust são o caminho padrão
 porque fazem a parte repetitiva com baixo uso de memória. Os scripts Python
 continuam disponíveis como referência de validação e comparação.
 
+O misturador preserva origem, licença, idioma, hash e arquivo de entrada quando
+esses campos existem. Ele não aprova licenças. Antes de preparar tokens, use
+`corpus_audit` para conferir a distribuição e os registros pendentes. Para
+recusar registros sem origem/licença declaradas na tokenização, defina
+`TOKEN_REQUIRE_PROVENANCE=1`; esse gate é de rastreabilidade, não substitui a
+revisão das condições de uso.
+
 Para um arquivo individual, o mesmo comando aceita `--input arquivo.txt`. Os
 formatos aceitos inicialmente são `.txt`, `.md`, `.html`, `.json` e `.jsonl`.
 

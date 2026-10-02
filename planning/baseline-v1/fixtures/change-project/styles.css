@@ -1,0 +1,8 @@
+body { font: 16px system-ui, sans-serif; background: #f4f5f7; color: #20242a; margin: 0; padding: 3rem 1rem; }
+main { max-width: 36rem; margin: auto; background: white; padding: 2rem; border-radius: 1rem; }
+form { display: flex; gap: .5rem; align-items: end; }
+label { display: grid; gap: .3rem; flex: 1; }
+input, button { font: inherit; padding: .65rem; }
+ul { padding: 0; list-style: none; }
+li { display: flex; align-items: center; gap: .6rem; padding: .75rem; border-bottom: 1px solid #ddd; }
+li span { flex: 1; }

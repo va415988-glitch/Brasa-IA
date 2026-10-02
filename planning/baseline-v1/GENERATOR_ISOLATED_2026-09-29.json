@@ -1,0 +1,28 @@
+{
+  "schema": "brasa-generator-isolated/v1",
+  "checkpoint": "model/godmode/context-32768-v1/candidate.safetensors",
+  "cases": [
+    {
+      "case": "water-build",
+      "tool": null,
+      "stop_reason": "implementation_proposal_unavailable",
+      "validation_error": null,
+      "generation": {
+        "quality_stop_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "text": "O checkpoint local interrompeu a geração de código por repetição. Não há receita determinística compatível com este pedido. Nenhum arquivo foi alterado. Se você já tiver o código, envie dois ou mais arquivos como títulos `### caminho` seguidos de blocos de código; o agente poderá propor a criação desses arquivos para aprovação e depois verificar o projeto."
+    },
+    {
+      "case": "reading-build",
+      "tool": null,
+      "stop_reason": "implementation_proposal_unavailable",
+      "validation_error": null,
+      "generation": {
+        "quality_stop_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "text": "O checkpoint local interrompeu a geração de código por repetição. Não há receita determinística compatível com este pedido. Nenhum arquivo foi alterado. Se você já tiver o código, envie dois ou mais arquivos como títulos `### caminho` seguidos de blocos de código; o agente poderá propor a criação desses arquivos para aprovação e depois verificar o projeto."
+    }
+  ]
+}

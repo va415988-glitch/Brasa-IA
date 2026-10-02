@@ -1,0 +1,464 @@
+{
+  "schema": "cognitive-alignment-audit/v1",
+  "passed": true,
+  "report_cases_regraded": 1920,
+  "validation_cases_regraded": 576,
+  "verified_reports": {
+    "model/training/cognitive-alignment-v4/baseline-v3-heldout-cached.json": {
+      "sha256": "7dbdf474a515271e98537118565d02dcd2a4a5a80c958dae252b15984aa0d16a",
+      "cases_regraded": 288,
+      "summary": {
+        "passed": 91,
+        "total": 288,
+        "contract_valid": 237,
+        "input_preserved": 288,
+        "unsafe_answers": 78,
+        "per_domain": {
+          "observed": {
+            "passed": 0,
+            "total": 24
+          },
+          "failed": {
+            "passed": 24,
+            "total": 24
+          },
+          "empty": {
+            "passed": 24,
+            "total": 24
+          },
+          "unrelated": {
+            "passed": 0,
+            "total": 48
+          },
+          "conflict": {
+            "passed": 18,
+            "total": 24
+          },
+          "revision": {
+            "passed": 0,
+            "total": 24
+          },
+          "injection": {
+            "passed": 0,
+            "total": 24
+          },
+          "consult": {
+            "passed": 0,
+            "total": 24
+          },
+          "recover": {
+            "passed": 0,
+            "total": 24
+          },
+          "supports": {
+            "passed": 13,
+            "total": 24
+          },
+          "rejects": {
+            "passed": 12,
+            "total": 24
+          }
+        },
+        "paired_groups_passed": 0,
+        "paired_groups_total": 24
+      }
+    },
+    "model/training/cognitive-alignment-v4/baseline-v3-heldout.json": {
+      "sha256": "96569351e889bda886da0de70b806cf4fb119f520e3aed66f1fd824de7aabed1",
+      "cases_regraded": 288,
+      "summary": {
+        "passed": 91,
+        "total": 288,
+        "contract_valid": 237,
+        "input_preserved": 288,
+        "unsafe_answers": 78,
+        "per_domain": {
+          "observed": {
+            "passed": 0,
+            "total": 24
+          },
+          "failed": {
+            "passed": 24,
+            "total": 24
+          },
+          "empty": {
+            "passed": 24,
+            "total": 24
+          },
+          "unrelated": {
+            "passed": 0,
+            "total": 48
+          },
+          "conflict": {
+            "passed": 18,
+            "total": 24
+          },
+          "revision": {
+            "passed": 0,
+            "total": 24
+          },
+          "injection": {
+            "passed": 0,
+            "total": 24
+          },
+          "consult": {
+            "passed": 0,
+            "total": 24
+          },
+          "recover": {
+            "passed": 0,
+            "total": 24
+          },
+          "supports": {
+            "passed": 13,
+            "total": 24
+          },
+          "rejects": {
+            "passed": 12,
+            "total": 24
+          }
+        },
+        "paired_groups_passed": 0,
+        "paired_groups_total": 24
+      }
+    },
+    "model/training/cognitive-alignment-v4/run-02/semantic-selection.json": {
+      "sha256": "3004e086ea3cc692ff0f1fe44c3297e6c47ba4f57e3524169addacd15f24be04",
+      "cases_regraded": 288,
+      "summary": {
+        "passed": 168,
+        "total": 288,
+        "contract_valid": 212,
+        "input_preserved": 288,
+        "unsafe_answers": 40,
+        "per_domain": {
+          "observed": {
+            "passed": 8,
+            "total": 24
+          },
+          "failed": {
+            "passed": 24,
+            "total": 24
+          },
+          "empty": {
+            "passed": 24,
+            "total": 24
+          },
+          "unrelated": {
+            "passed": 28,
+            "total": 48
+          },
+          "conflict": {
+            "passed": 6,
+            "total": 24
+          },
+          "revision": {
+            "passed": 19,
+            "total": 24
+          },
+          "injection": {
+            "passed": 16,
+            "total": 24
+          },
+          "consult": {
+            "passed": 6,
+            "total": 24
+          },
+          "recover": {
+            "passed": 13,
+            "total": 24
+          },
+          "supports": {
+            "passed": 24,
+            "total": 24
+          },
+          "rejects": {
+            "passed": 0,
+            "total": 24
+          }
+        },
+        "paired_groups_passed": 0,
+        "paired_groups_total": 24
+      }
+    },
+    "model/training/cognitive-alignment-v4/regression-v3-original-heldout.json": {
+      "sha256": "42a542192853697f868ad12ccbebcff274c2518a7bb963c528a32c8c3161e9fb",
+      "cases_regraded": 264,
+      "summary": {
+        "passed": 122,
+        "total": 264,
+        "contract_valid": 244,
+        "input_preserved": 264,
+        "unsafe_answers": 79,
+        "per_domain": {
+          "observed": {
+            "passed": 1,
+            "total": 24
+          },
+          "failed": {
+            "passed": 24,
+            "total": 24
+          },
+          "empty": {
+            "passed": 24,
+            "total": 24
+          },
+          "unrelated": {
+            "passed": 23,
+            "total": 24
+          },
+          "conflict": {
+            "passed": 15,
+            "total": 24
+          },
+          "revision": {
+            "passed": 5,
+            "total": 24
+          },
+          "injection": {
+            "passed": 7,
+            "total": 24
+          },
+          "consult": {
+            "passed": 1,
+            "total": 24
+          },
+          "recover": {
+            "passed": 0,
+            "total": 24
+          },
+          "supports": {
+            "passed": 16,
+            "total": 24
+          },
+          "rejects": {
+            "passed": 6,
+            "total": 24
+          }
+        },
+        "paired_groups_passed": 0,
+        "paired_groups_total": 24
+      }
+    },
+    "model/training/cognitive-copy-v3/regression-copy-on-v2-heldout.json": {
+      "sha256": "b1238df0dffe2ad1e8dbd34ae5315266b9d7196a3d70eee0359d8af681b5bc32",
+      "cases_regraded": 264,
+      "summary": {
+        "passed": 115,
+        "total": 264,
+        "contract_valid": 220,
+        "input_preserved": 264,
+        "unsafe_answers": 58,
+        "per_domain": {
+          "observed": {
+            "passed": 0,
+            "total": 24
+          },
+          "failed": {
+            "passed": 24,
+            "total": 24
+          },
+          "empty": {
+            "passed": 24,
+            "total": 24
+          },
+          "unrelated": {
+            "passed": 1,
+            "total": 24
+          },
+          "conflict": {
+            "passed": 16,
+            "total": 24
+          },
+          "revision": {
+            "passed": 14,
+            "total": 24
+          },
+          "injection": {
+            "passed": 14,
+            "total": 24
+          },
+          "consult": {
+            "passed": 0,
+            "total": 24
+          },
+          "recover": {
+            "passed": 0,
+            "total": 24
+          },
+          "supports": {
+            "passed": 10,
+            "total": 24
+          },
+          "rejects": {
+            "passed": 12,
+            "total": 24
+          }
+        },
+        "paired_groups_passed": 0,
+        "paired_groups_total": 24
+      }
+    },
+    "model/training/cognitive-alignment-v4/regression-v4-on-v2-heldout.json": {
+      "sha256": "86079ed6bf6345ba7637b8c573507355cd64f13cc10f0ee7d8f64cb4e6eca880",
+      "cases_regraded": 264,
+      "summary": {
+        "passed": 124,
+        "total": 264,
+        "contract_valid": 210,
+        "input_preserved": 264,
+        "unsafe_answers": 40,
+        "per_domain": {
+          "observed": {
+            "passed": 0,
+            "total": 24
+          },
+          "failed": {
+            "passed": 24,
+            "total": 24
+          },
+          "empty": {
+            "passed": 18,
+            "total": 24
+          },
+          "unrelated": {
+            "passed": 4,
+            "total": 24
+          },
+          "conflict": {
+            "passed": 4,
+            "total": 24
+          },
+          "revision": {
+            "passed": 24,
+            "total": 24
+          },
+          "injection": {
+            "passed": 15,
+            "total": 24
+          },
+          "consult": {
+            "passed": 3,
+            "total": 24
+          },
+          "recover": {
+            "passed": 8,
+            "total": 24
+          },
+          "supports": {
+            "passed": 24,
+            "total": 24
+          },
+          "rejects": {
+            "passed": 0,
+            "total": 24
+          }
+        },
+        "paired_groups_passed": 0,
+        "paired_groups_total": 24
+      }
+    },
+    "model/training/cognitive-alignment-v4/regression-v4-on-v3-heldout.json": {
+      "sha256": "3e3830cc1553ec8207694b144f8c5b1dc790216fd6d589f663a0e7b2dc7e60b4",
+      "cases_regraded": 264,
+      "summary": {
+        "passed": 116,
+        "total": 264,
+        "contract_valid": 195,
+        "input_preserved": 264,
+        "unsafe_answers": 77,
+        "per_domain": {
+          "observed": {
+            "passed": 0,
+            "total": 24
+          },
+          "failed": {
+            "passed": 16,
+            "total": 24
+          },
+          "empty": {
+            "passed": 18,
+            "total": 24
+          },
+          "unrelated": {
+            "passed": 16,
+            "total": 24
+          },
+          "conflict": {
+            "passed": 8,
+            "total": 24
+          },
+          "revision": {
+            "passed": 12,
+            "total": 24
+          },
+          "injection": {
+            "passed": 9,
+            "total": 24
+          },
+          "consult": {
+            "passed": 3,
+            "total": 24
+          },
+          "recover": {
+            "passed": 10,
+            "total": 24
+          },
+          "supports": {
+            "passed": 24,
+            "total": 24
+          },
+          "rejects": {
+            "passed": 0,
+            "total": 24
+          }
+        },
+        "paired_groups_passed": 0,
+        "paired_groups_total": 24
+      }
+    }
+  },
+  "validation_only_selection_reproduced": true,
+  "selected_checkpoint": "model/training/cognitive-alignment-v4/run-02/snapshots/step-1600.safetensors",
+  "checkpoint_sha256": "eb3298fa15e7079ff6a28715aeb1f2b243d0a5fd0983fd6d185ad3f4a8493fb9",
+  "metadata_sha256": "7e1ca5746f9b92308067964d46495f7c27167eb0c647e5d5ca51c928c467fe84",
+  "tokenizer_sha256": "e58fe3e652e62f3028b63810fd90b39745829ed80723bf7daec2e0b4662aa4e1",
+  "data_sha256_verified": {
+    "heldout.jsonl": "d6058c93efb94787ee52ae7ec2cf234441184e31088a45f4b2122875a5c0b41a",
+    "validation.jsonl": "192b251eb012a5e06b81a81117ddedf8b502c4dd1808b042e0bb4bd8184d1d9d",
+    "tokenizer.json": "e58fe3e652e62f3028b63810fd90b39745829ed80723bf7daec2e0b4662aa4e1",
+    "train.jsonl": "b62d716442f38e24c9b7ab901a6193d2d957c81ebb5093084dbf548cc04969b8",
+    "config.json": "a57608950ae4f72014c87e15784c76d083f95e838b32d45909cc62aa993c7d67"
+  },
+  "entity_splits_disjoint": true,
+  "current_inference_source_hashes_verified": true,
+  "historical_model_source_hashes_verified": {
+    "run-01/model-before-unbind.py": "162e61d9fb72c3d7b4a5e9be9c22358892132d79074dcfb4a64937353d1580a7",
+    "run-02/model-before-copy-cache.py": "42bcd4959583fe3ffce9c043b55e4b9fd83466e8b32b32b4e0bfc959284e9327"
+  },
+  "historical_source_limits": "Protocol records include historical trainer hashes; only the two saved historical model source copies are verified against archived code here. Current inference source hashes are independently verified.",
+  "active_checkpoint_and_state_unchanged": true,
+  "qualified_for_review": false,
+  "promoted": false,
+  "reports_sha256": {
+    "comparison.json": "3c3ebfd2ff934ecf55fbbef243fed88c6336555e5be08140f521d29c9279e09a",
+    "interruption-audit.json": "5697866ca2c16b4071957261a5eb26f2301d5fbca900d7b65a9729e19c5db010",
+    "protocol.json": "fc5cd123edcbb895d378c83695e8ea303135afb5b0ff305ab0f333fcc2742cbc",
+    "protocol-resume.json": "b7b17a8be3e0ab17466e2531a14c741f694c020848d08d638671814a2cd94786",
+    "protocol-inference.json": "fccd395339b980d8994cf74ed405cf8c27780bd74c26b7ab197931d79fbecf77",
+    "backward-optimization.json": "137a9a8889ca079c90351962c797054e897db7fddc1d690c2839b590eccb2451",
+    "cache-evidence.json": "5c4b758664767674ad30e64456ba4563351cf7830db0ea3990314deb6ef946d0",
+    "run-02/semantic-selection.json": "3004e086ea3cc692ff0f1fe44c3297e6c47ba4f57e3524169addacd15f24be04"
+  },
+  "limits": [
+    "Regrading recorded outputs does not repeat neural generation.",
+    "Passing artifact and software audits is not passing behavioral qualification.",
+    "Process interruption record discrepancy is preserved in interruption-audit.json.",
+    "No service restart or live HTTP audit."
+  ],
+  "documentation_verified": {
+    "Documentacoes/COGNICAO_ALINHAMENTO_2026-10-01.md": "096e98e441fd7bfc52f26249175c029de9216d8bd8dbbfadd4819dd79cdf5c7c",
+    "Documentacoes/README.md": "ef4e95334505ab079fb8965c2d37a403dfa0466a5ee2a9631f463428c4a88028"
+  },
+  "all_current_report_links_exist": true
+}

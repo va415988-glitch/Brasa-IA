@@ -1,0 +1,91 @@
+{
+  "schema": "brasa-implementation-heldout/v1",
+  "cases": 4,
+  "max_tokens": 384,
+  "baseline": [
+    {
+      "id": "clamp",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 15,
+      "quality_reason": "structured-plan-too-short",
+      "quality_stop_reason": "repeated-fragment",
+      "answer_excerpt": ""
+    },
+    {
+      "id": "word_count",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 15,
+      "quality_reason": "structured-plan-too-short",
+      "quality_stop_reason": "repeated-fragment",
+      "answer_excerpt": ""
+    },
+    {
+      "id": "deduplicate",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 36,
+      "quality_reason": "structured-plan-too-short",
+      "quality_stop_reason": null,
+      "answer_excerpt": ""
+    },
+    {
+      "id": "temperature",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 79,
+      "quality_reason": "repeated-fragment",
+      "quality_stop_reason": "repeated-fragment",
+      "answer_excerpt": ""
+    }
+  ],
+  "candidate": [
+    {
+      "id": "clamp",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 128,
+      "quality_reason": "structured-plan-invalid-json",
+      "quality_stop_reason": null,
+      "answer_excerpt": ""
+    },
+    {
+      "id": "word_count",
+      "json_valid": true,
+      "contract_valid": true,
+      "reference_tests_pass": true,
+      "generated_tokens": 130,
+      "quality_reason": "accepted",
+      "quality_stop_reason": null,
+      "answer_excerpt": "{\"assumptions\":[],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"app.py\",\"content\":\"def count_words(text):\\n    return len(text.split())\\n\"}},{\"tool\":\"create_file\",\"arguments\":{\"path\":\"test_app.py\",\"content\":\"import unittest\\nfrom app import count_words\\n\\nclass WordCountTests(unittest.TestCase):\\n    def test_texto(self):\\n        self.assertEqual(count_words('um  dois\\\\ntrês'), 3)\\n        self.assertEqual(count_words('  '), 0)\\n\"}}]}"
+    },
+    {
+      "id": "deduplicate",
+      "json_valid": false,
+      "contract_valid": false,
+      "reference_tests_pass": false,
+      "generated_tokens": 130,
+      "quality_reason": "structured-plan-invalid-json",
+      "quality_stop_reason": null,
+      "answer_excerpt": ""
+    },
+    {
+      "id": "temperature",
+      "json_valid": true,
+      "contract_valid": true,
+      "reference_tests_pass": false,
+      "generated_tokens": 156,
+      "quality_reason": "accepted",
+      "quality_stop_reason": null,
+      "answer_excerpt": "{\"assumptions\":[],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"app.py\",\"content\":\"def celsius_to_fahrenheit(value):\\n    return value * 9 / 5 import unittest\\n\"}},{\"tool\":\"create_file\",\"arguments\":{\"path\":\"test_app.py\",\"content\":\"import unittest\\nfrom app import celsius_to_fahrenheit\\n\\nclass TemperatureTests(unittest.TestCase):\\n    def test_conversao(self):\\n        self.assertEqual(celsius_to_fahrenheit(0), 32)\\n        self.assertEqual(celsius_to_fahrenheit(100), 212)\\n\"}}]}",
+      "verification_excerpt": " \"/usr/lib/python3.14/unittest/loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"/usr/lib/python3.14/unittest/loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"/tmp/tmpxq7l3n5n/test_app.py\", line 2, in <module>\n    from app import celsius_to_fahrenheit\n  File \"/tmp/tmpxq7l3n5n/app.py\", line 2\n    return value * 9 / 5 import unittest\n                         ^^^^^^\nSyntaxError: invalid syntax\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+    }
+  ],
+  "promoted": false
+}

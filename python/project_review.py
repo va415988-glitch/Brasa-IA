@@ -15,8 +15,8 @@ def review_attachments(question, attachments):
     if not files:
         names = ', '.join(item.get('name', 'anexo') for item in attachments)
         return {'text': f'Recebi {names}, mas nenhum conteúdo de texto legível chegou nesta mensagem. '
-                'Imagens, áudio, vídeo e PDF ainda precisam de um leitor próprio neste fluxo. '
-                'Para analisar um projeto, anexe a pasta com arquivos de código ou documentos de texto.',
+                'O compositor aceita texto/código. Para PDF e formatos Office, deixe o documento no workspace ativo e peça a leitura pelo nome; imagens precisam de OCR local. '
+                'Para analisar um projeto anexado, inclua arquivos de código ou documentos de texto.',
                 'findings': [], 'coverage': {'files_read': 0, 'omitted': omitted}}
 
     findings = []

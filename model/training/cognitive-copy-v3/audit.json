@@ -1,0 +1,22 @@
+{
+  "schema": "cognitive-copy-audit/v1",
+  "protocol_sources_and_active_weights_preserved": true,
+  "data_manifest_verified": true,
+  "checkpoint_and_tokenizer_identity_verified": true,
+  "all_reserved_outputs_regraded_from_actual_inputs": true,
+  "snapshot_selection_verified": true,
+  "new_documentation_links_verified": true,
+  "tests_passed": 161,
+  "subtests_passed": 338,
+  "semantic_scores": {
+    "run-01": 122,
+    "run-no-copy-01": 98
+  },
+  "qualified_for_review": false,
+  "promoted": false,
+  "comparison_sha256": "a752844dbcd93def71796801b6e6898e0702ad36beff6e63d346329a11a0ab27",
+  "limitations": [
+    "No HTTP audit or service restart.",
+    "Finite synthetic benchmark, one seed, short actual sequences."
+  ]
+}

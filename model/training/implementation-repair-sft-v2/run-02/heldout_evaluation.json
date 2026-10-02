@@ -1,0 +1,1728 @@
+{
+  "schema": "brasa-repair-heldout/v1",
+  "heldout": "datasets/implementation_repair_sft_v2/heldout.jsonl",
+  "cases": 85,
+  "max_tokens": 1150,
+  "baseline_checkpoint": "model/training/implementation-sft-v1/compact-01/candidate.safetensors",
+  "candidate_checkpoint": "model/training/implementation-repair-sft-v2/run-02/snapshots/step-0120.safetensors",
+  "baseline": [
+    {
+      "id": "Code_Agent_000043",
+      "group": "ipykernel",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 495,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_000091",
+      "group": "ipykernel",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 462,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_000109",
+      "group": "lib",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 118,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001307",
+      "group": ".flake8",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 479,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001337",
+      "group": "social_core",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 70,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001342",
+      "group": "social_core",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 12,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001940",
+      "group": "ipykernel",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 473,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001977",
+      "group": "pymilvus",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 463,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002079",
+      "group": "plugin",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 456,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002271",
+      "group": "ipykernel",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 462,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002307",
+      "group": "pelita",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 140,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002319",
+      "group": "azure",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 33,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002507",
+      "group": "kinto_http",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 375,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002869",
+      "group": "rtree",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 455,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002956",
+      "group": "simplemma",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 94,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002974",
+      "group": "apscheduler",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 180,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003110",
+      "group": "sqlparse",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 439,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003122",
+      "group": "proxy",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 495,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003348",
+      "group": "mutmut",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 367,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003540",
+      "group": "icalendar",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 406,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003578",
+      "group": "gabbi",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 479,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003580",
+      "group": "gabbi",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 12,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003741",
+      "group": "pykoop",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 447,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003935",
+      "group": "starlette",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 145,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003943",
+      "group": "starlette",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 102,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003948",
+      "group": "starlette",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 52,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003952",
+      "group": "starlette",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 475,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003998",
+      "group": "dependency_injector",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 475,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_004069",
+      "group": "fitbenchmarking",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 440,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_004108",
+      "group": "dissect",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 92,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_004307",
+      "group": "graphene",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 447,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_004550",
+      "group": "keyring",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 471,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_004617",
+      "group": "jwt",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 41,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_004913",
+      "group": "mesonbuild",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 108,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_004976",
+      "group": "mkdocs",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 17,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005201",
+      "group": "nltk",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 474,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005509",
+      "group": "black",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 479,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005579",
+      "group": "pip",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 440,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005582",
+      "group": "pip",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 126,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005607",
+      "group": "pip",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 166,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005672",
+      "group": "cherry_picker",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 463,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005964",
+      "group": "scippnexus",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 81,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005980",
+      "group": "scitokens",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 110,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_006026",
+      "group": "sendgrid",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 80,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_006209",
+      "group": "fparser",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 116,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_006925",
+      "group": "xonsh",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 463,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_006926",
+      "group": "yamlpath",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 180,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_007004",
+      "group": "xonsh",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 422,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008635",
+      "group": "stackprinter",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 479,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008636",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 460,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008646",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 73,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008652",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 430,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008656",
+      "group": "stackprinter",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 463,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008660",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 32,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008661",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 65,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008663",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 81,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008665",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 36,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008667",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 438,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008670",
+      "group": "stackprinter",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 495,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008671",
+      "group": "stackprinter",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 458,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008672",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 40,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008675",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 116,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008679",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 461,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008685",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 84,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008695",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 455,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008703",
+      "group": "stackprinter",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 379,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013569",
+      "group": "sqlparse",
+      "quality_reason": "repeated-fragment",
+      "generated_tokens": 463,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013576",
+      "group": "sqlparse",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 479,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013578",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 454,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013579",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 72,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013612",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 439,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013649",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 57,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013656",
+      "group": "sqlparse",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 431,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013659",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 423,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013672",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 8,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013677",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 462,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013681",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 67,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013688",
+      "group": "sqlparse",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 463,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013700",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 68,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013719",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 427,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013731",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 500,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013735",
+      "group": "sqlparse",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 475,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013736",
+      "group": "sqlparse",
+      "quality_reason": "repeated-words",
+      "generated_tokens": 479,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013755",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 172,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013763",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 455,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    }
+  ],
+  "candidate": [
+    {
+      "id": "Code_Agent_000043",
+      "group": "ipykernel",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_000091",
+      "group": "ipykernel",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 26,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_000109",
+      "group": "lib",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001307",
+      "group": ".flake8",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 80,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001337",
+      "group": "social_core",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001342",
+      "group": "social_core",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001940",
+      "group": "ipykernel",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_001977",
+      "group": "pymilvus",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 50,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002079",
+      "group": "plugin",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002271",
+      "group": "ipykernel",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002307",
+      "group": "pelita",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002319",
+      "group": "azure",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 20,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002507",
+      "group": "kinto_http",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002869",
+      "group": "rtree",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 62,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002956",
+      "group": "simplemma",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_002974",
+      "group": "apscheduler",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003110",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003122",
+      "group": "proxy",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003348",
+      "group": "mutmut",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003540",
+      "group": "icalendar",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 25,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003578",
+      "group": "gabbi",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003580",
+      "group": "gabbi",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003741",
+      "group": "pykoop",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003935",
+      "group": "starlette",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003943",
+      "group": "starlette",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003948",
+      "group": "starlette",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003952",
+      "group": "starlette",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_003998",
+      "group": "dependency_injector",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 68,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_004069",
+      "group": "fitbenchmarking",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_004108",
+      "group": "dissect",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_004307",
+      "group": "graphene",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_004550",
+      "group": "keyring",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 37,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_004617",
+      "group": "jwt",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 38,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_004913",
+      "group": "mesonbuild",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_004976",
+      "group": "mkdocs",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005201",
+      "group": "nltk",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005509",
+      "group": "black",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005579",
+      "group": "pip",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005582",
+      "group": "pip",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005607",
+      "group": "pip",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005672",
+      "group": "cherry_picker",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005964",
+      "group": "scippnexus",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_005980",
+      "group": "scitokens",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_006026",
+      "group": "sendgrid",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_006209",
+      "group": "fparser",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_006925",
+      "group": "xonsh",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_006926",
+      "group": "yamlpath",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_007004",
+      "group": "xonsh",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 68,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008635",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008636",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 32,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008646",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008652",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 62,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008656",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 44,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008660",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008661",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 98,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008663",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008665",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 32,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008667",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008670",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008671",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 68,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008672",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008675",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008679",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008685",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008695",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_008703",
+      "group": "stackprinter",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013569",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013576",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 38,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013578",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 26,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013579",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013612",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013649",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 74,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013656",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 98,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013659",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 44,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013672",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013677",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 50,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013681",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013688",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013700",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-invalid-json",
+      "generated_tokens": 104,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013719",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013731",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013735",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013736",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013755",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    },
+    {
+      "id": "Code_Agent_013763",
+      "group": "sqlparse",
+      "quality_reason": "structured-plan-too-short",
+      "generated_tokens": 14,
+      "answer_excerpt": "",
+      "json_valid": false,
+      "contract_valid": false,
+      "target_edit_exact": false
+    }
+  ],
+  "totals": {
+    "baseline": {
+      "json_valid": 0,
+      "contract_valid": 0,
+      "target_edit_exact": 0
+    },
+    "candidate": {
+      "json_valid": 0,
+      "contract_valid": 0,
+      "target_edit_exact": 0
+    }
+  },
+  "promoted": false,
+  "limits": [
+    "Edição exata contra o patch de referência; não reproduz testes nos repositórios originais."
+  ]
+}

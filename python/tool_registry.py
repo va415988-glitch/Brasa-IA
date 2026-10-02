@@ -105,66 +105,102 @@ class ToolRegistry:
     def validate_arguments(self, name: str, arguments: dict) -> tuple[bool, str]:
         if not self.has(name):
             return False, f"ferramenta não registrada: {name}"
-        if not isinstance(arguments, dict):
-            return False, "argumentos devem ser um objeto JSON"
-        schema = self.tools[name].get("arguments") or {}
-        required = schema.get("required", []) if isinstance(schema, dict) else []
-        missing = [key for key in required if key not in arguments]
-        if missing:
-            return False, f"argumentos obrigatórios ausentes: {', '.join(missing)}"
-        if isinstance(schema, dict) and schema.get("additionalProperties") is False:
+        return self._validate_schema(arguments, self.tools[name].get("arguments") or {}, "arguments")
+
+    def validate_result(self, name: str, result: Any) -> tuple[bool, str]:
+        """Valida o payload de saída antes de tratá-lo como evidência confiável."""
+        if not self.has(name):
+            return False, f"ferramenta não registrada: {name}"
+        schema = self.tools[name].get("result") or {}
+        if not schema:
+            return True, ""
+        return self._validate_schema(result, schema, "result")
+
+    @classmethod
+    def _validate_schema(cls, value: Any, schema: Any, path: str) -> tuple[bool, str]:
+        if not isinstance(schema, dict):
+            return True, ""
+
+        if isinstance(schema.get("oneOf"), list):
+            outcomes = [
+                cls._validate_schema(value, candidate, path)
+                for candidate in schema["oneOf"]
+            ]
+            matches = sum(valid for valid, _ in outcomes)
+            if matches == 1:
+                return True, ""
+            return False, f"{path} não corresponde a exatamente uma forma permitida"
+
+        if "const" in schema and value != schema["const"]:
+            return False, f"{path} deve ser {schema['const']!r}"
+
+        expected = schema.get("type")
+        expected_types = expected if isinstance(expected, list) else [expected]
+        expected_types = [item for item in expected_types if item]
+        if expected_types and not any(cls._matches_type(value, item) for item in expected_types):
+            return False, f"{path} deve ser do tipo {' ou '.join(expected_types)}"
+
+        if "enum" in schema and value not in schema["enum"]:
+            return False, f"{path} tem valor fora do conjunto permitido"
+
+        if isinstance(value, str):
+            if "minLength" in schema and len(value) < int(schema["minLength"]):
+                return False, f"{path} é curto demais"
+            if "maxLength" in schema and len(value) > int(schema["maxLength"]):
+                return False, f"{path} excede o limite de tamanho"
+
+        if isinstance(value, (int, float)) and not isinstance(value, bool):
+            if "minimum" in schema and value < schema["minimum"]:
+                return False, f"{path} está abaixo do mínimo permitido"
+            if "maximum" in schema and value > schema["maximum"]:
+                return False, f"{path} excede o máximo permitido"
+
+        if isinstance(value, list):
+            if "minItems" in schema and len(value) < int(schema["minItems"]):
+                return False, f"{path} contém menos itens que o mínimo permitido"
+            if "maxItems" in schema and len(value) > int(schema["maxItems"]):
+                return False, f"{path} excede o máximo de itens permitido"
+            item_schema = schema.get("items")
+            if isinstance(item_schema, dict):
+                for index, item in enumerate(value):
+                    valid, error = cls._validate_schema(item, item_schema, f"{path}[{index}]")
+                    if not valid:
+                        return valid, error
+
+        if isinstance(value, dict):
+            required = schema.get("required", [])
+            if isinstance(required, list):
+                missing = [key for key in required if key not in value]
+                if missing:
+                    return False, f"{path} sem campos obrigatórios: {', '.join(missing)}"
             properties = schema.get("properties", {})
-            unknown = sorted(set(arguments) - set(properties))
-            if unknown:
-                return False, f"argumentos não permitidos: {', '.join(unknown)}"
-        for key, spec in (schema.get("properties", {}) if isinstance(schema, dict) else {}).items():
-            if key not in arguments or not isinstance(spec, dict):
-                continue
-            expected = spec.get("type")
-            value = arguments[key]
-            expected_types = expected if isinstance(expected, list) else [expected]
-            valid = {
-                "string": isinstance(value, str),
-                "boolean": isinstance(value, bool),
-                "number": isinstance(value, (int, float)) and not isinstance(value, bool),
-                "integer": isinstance(value, int) and not isinstance(value, bool),
-                "array": isinstance(value, list),
-                "object": isinstance(value, dict),
-                "null": value is None,
-            }
-            type_valid = any(valid.get(item, True) for item in expected_types)
-            if not type_valid:
-                return False, f"argumento `{key}` deve ser do tipo {expected}"
-            if "enum" in spec and value not in spec["enum"]:
-                return False, f"argumento `{key}` tem valor inválido"
-            if isinstance(value, str):
-                if "minLength" in spec and len(value) < int(spec["minLength"]):
-                    return False, f"argumento `{key}` é curto demais"
-                if "maxLength" in spec and len(value) > int(spec["maxLength"]):
-                    return False, f"argumento `{key}` excede o limite de tamanho"
-            if isinstance(value, (int, float)) and not isinstance(value, bool):
-                if "minimum" in spec and value < spec["minimum"]:
-                    return False, f"argumento `{key}` abaixo do mínimo permitido"
-                if "maximum" in spec and value > spec["maximum"]:
-                    return False, f"argumento `{key}` acima do máximo permitido"
-            if isinstance(value, list) and isinstance(spec.get("items"), dict):
-                item_type = spec["items"].get("type")
-                if item_type and any(not self._matches_type(item, item_type) for item in value):
-                    return False, f"argumento `{key}` contém item de tipo inválido"
+            if not isinstance(properties, dict):
+                properties = {}
+            if schema.get("additionalProperties") is False:
+                unknown = sorted(set(value) - set(properties))
+                if unknown:
+                    return False, f"{path} contém campos não permitidos: {', '.join(unknown)}"
+            for key, child_schema in properties.items():
+                if key not in value:
+                    continue
+                valid, error = cls._validate_schema(value[key], child_schema, f"{path}.{key}")
+                if not valid:
+                    return valid, error
         return True, ""
 
     @staticmethod
     def _matches_type(value: Any, expected: str | list[str]) -> bool:
         expected_types = expected if isinstance(expected, list) else [expected]
-        return any({
-            "string": isinstance(value, str),
-            "boolean": isinstance(value, bool),
-            "number": isinstance(value, (int, float)) and not isinstance(value, bool),
-            "integer": isinstance(value, int) and not isinstance(value, bool),
-            "array": isinstance(value, list),
-            "object": isinstance(value, dict),
-            "null": value is None,
-        }.get(item, True) for item in expected_types)
+        checks = {
+            "string": lambda item: isinstance(item, str),
+            "boolean": lambda item: isinstance(item, bool),
+            "number": lambda item: isinstance(item, (int, float)) and not isinstance(item, bool),
+            "integer": lambda item: isinstance(item, int) and not isinstance(item, bool),
+            "array": lambda item: isinstance(item, list),
+            "object": lambda item: isinstance(item, dict),
+            "null": lambda item: item is None,
+        }
+        return any(checks.get(item, lambda _value: True)(value) for item in expected_types)
 
 
 def make_tool_call(
@@ -182,6 +218,17 @@ def make_tool_call(
     if not valid:
         raise ValueError(f"chamada inválida para {name}: {error}")
     description = registry.describe(name)
+    if name == "research_web":
+        if arguments.get("save_to_corpus") is True:
+            description = {**description, "requires_approval": True}
+        else:
+            description = {
+                **description,
+                "side_effects": False,
+                "capabilities": ["network.read"],
+                "risk": "read",
+                "idempotent": True,
+            }
     return {
         "id": f"call-{uuid.uuid4().hex}",
         "tool": name,

@@ -1,0 +1,177 @@
+{
+  "passed": 15,
+  "total": 24,
+  "cases": [
+    {
+      "goal": "O que é polimorfismo?",
+      "label": "direct",
+      "predicted": "local",
+      "score": 0.7590321898460388,
+      "passed": false
+    },
+    {
+      "goal": "Explique o conceito de uma interface.",
+      "label": "direct",
+      "predicted": "direct",
+      "score": 0.9245002865791321,
+      "passed": true
+    },
+    {
+      "goal": "Me ensine sobre uma tupla.",
+      "label": "direct",
+      "predicted": "direct",
+      "score": 0.9953780174255371,
+      "passed": true
+    },
+    {
+      "goal": "Dê um exemplo simples de composição.",
+      "label": "direct",
+      "predicted": "direct",
+      "score": 0.9917140007019043,
+      "passed": true
+    },
+    {
+      "goal": "Quero entender o funcionamento de um dicionário.",
+      "label": "direct",
+      "predicted": "direct",
+      "score": 0.8014436364173889,
+      "passed": true
+    },
+    {
+      "goal": "Defina uma expressão booleana.",
+      "label": "direct",
+      "predicted": "direct",
+      "score": 0.9886214137077332,
+      "passed": true
+    },
+    {
+      "goal": "Qual é a versão estável mais recente do Caddy?",
+      "label": "web",
+      "predicted": "local",
+      "score": 0.7462832927703857,
+      "passed": false
+    },
+    {
+      "goal": "Pesquise as novidades do Elixir nesta semana.",
+      "label": "web",
+      "predicted": "direct",
+      "score": 0.9293399453163147,
+      "passed": false
+    },
+    {
+      "goal": "Busque documentação oficial atual do Lit.",
+      "label": "web",
+      "predicted": "web",
+      "score": 0.9943296909332275,
+      "passed": true
+    },
+    {
+      "goal": "Quanto custa o serviço Backblaze hoje?",
+      "label": "web",
+      "predicted": "local",
+      "score": 0.9503265023231506,
+      "passed": false
+    },
+    {
+      "goal": "Encontre fontes sobre as mudanças recentes do Bun.",
+      "label": "web",
+      "predicted": "web",
+      "score": 0.9936459064483643,
+      "passed": true
+    },
+    {
+      "goal": "A versão mais nova do Zig já saiu?",
+      "label": "web",
+      "predicted": "local",
+      "score": 0.9257997870445251,
+      "passed": false
+    },
+    {
+      "goal": "Consulte cognicao-teste.txt e informe a versão mínima do Node.",
+      "label": "local",
+      "predicted": "local",
+      "score": 0.7023053765296936,
+      "passed": true
+    },
+    {
+      "goal": "Veja a porta definida em servico.yaml.",
+      "label": "local",
+      "predicted": "local",
+      "score": 0.9709404706954956,
+      "passed": true
+    },
+    {
+      "goal": "O que diz o arquivo compatibilidade.md?",
+      "label": "local",
+      "predicted": "local",
+      "score": 0.9617661237716675,
+      "passed": true
+    },
+    {
+      "goal": "Leia app-config.json antes de responder.",
+      "label": "local",
+      "predicted": "local",
+      "score": 0.8696597814559937,
+      "passed": true
+    },
+    {
+      "goal": "Sem usar a web, confira o arquivo release.txt.",
+      "label": "local",
+      "predicted": "local",
+      "score": 0.9838903546333313,
+      "passed": true
+    },
+    {
+      "goal": "Qual runtime está registrado em ambiente-local.toml?",
+      "label": "local",
+      "predicted": "local",
+      "score": 0.9432006478309631,
+      "passed": true
+    },
+    {
+      "goal": "Isso atende ao que preciso?",
+      "label": "clarify",
+      "predicted": "local",
+      "score": 0.7683355212211609,
+      "passed": false
+    },
+    {
+      "goal": "Qual delas é a certa?",
+      "label": "clarify",
+      "predicted": "direct",
+      "score": 0.6918754577636719,
+      "passed": false
+    },
+    {
+      "goal": "Ela suporta isso?",
+      "label": "clarify",
+      "predicted": "clarify",
+      "score": 0.6459595561027527,
+      "passed": true
+    },
+    {
+      "goal": "Essa versão serve?",
+      "label": "clarify",
+      "predicted": "local",
+      "score": 0.8955553770065308,
+      "passed": false
+    },
+    {
+      "goal": "Como uso aquilo?",
+      "label": "clarify",
+      "predicted": "direct",
+      "score": 0.5859358906745911,
+      "passed": false
+    },
+    {
+      "goal": "Qual devo escolher?",
+      "label": "clarify",
+      "predicted": "clarify",
+      "score": 0.5992187857627869,
+      "passed": true
+    }
+  ],
+  "selection": "minimum validation loss; heldout evaluated only after selection",
+  "validation_loss": 1.8545411825180054,
+  "mode": "learned-action-selection-only"
+}

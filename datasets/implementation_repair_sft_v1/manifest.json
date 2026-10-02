@@ -1,0 +1,36 @@
+{
+  "schema": "brasa-implementation-repair-sft/v1",
+  "source_shards": [
+    "data-00000-of-00030.arrow"
+  ],
+  "counts": {
+    "trajectories": 2330,
+    "accepted": 119,
+    "no_confirmed_test": 39,
+    "unsupported_patch": 280,
+    "multiple_or_ambiguous_patches": 1883,
+    "over_training_context": 4,
+    "patch_not_confirmed": 5
+  },
+  "splits": {
+    "train": 98,
+    "validation": 9,
+    "heldout": 12
+  },
+  "groups": {
+    "train": 40,
+    "validation": 7,
+    "heldout": 8
+  },
+  "max_prompt_plus_answer_tokens": 2048,
+  "sha256": {
+    "train": "acf0a45a49222e1e6beb10285748bdfc9483cd9ae38dcbf25b01f69456722b6f",
+    "validation": "324e6d2d59b69714153d1de30dad1f5c27d8fec988a20940b648ed14fd85cfb7",
+    "heldout": "9f562b2bdbb444c1fb4cfbe4c9d8281a31f681443b438fb13166cf2cb009e17a"
+  },
+  "limits": [
+    "Critério de teste vem da trajetória; a verificação não foi reproduzida no repositório original.",
+    "Trechos de entrada são reconstruídos do patch e não substituem observações reais do workspace.",
+    "Conjunto experimental de reparos; não demonstra criação de projetos do zero."
+  ]
+}

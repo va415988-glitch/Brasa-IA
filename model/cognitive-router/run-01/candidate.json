@@ -1,0 +1,27 @@
+{
+  "schema": "cognitive-router/v1",
+  "labels": [
+    "direct",
+    "web",
+    "local",
+    "clarify"
+  ],
+  "config": {
+    "hidden_size": 128,
+    "vocab_size": 8192,
+    "layers": 2,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 4,
+    "context_length": 128
+  },
+  "weights": "model/cognitive-router/run-01/candidate.safetensors",
+  "sha256": "7140c4a21a13395699848e5e73936f9f1149bcb84ab213c4e93f5ac19049cb62",
+  "tokenizer": "model/godmode/godmode-tokenizer-v1.json",
+  "tokenizer_sha256": "d515c157fa3d8158b051eec9c3b7525a4bd222bbd650043d15a747f083f28c3d",
+  "source_sha256": "272cd9b3eb7a974a13fb25d6abbae508afebd7b949dabfaf64d3ca8b5a7346a7",
+  "threshold": 0.8,
+  "training_rows": 296,
+  "validation_rows": 16,
+  "heldout_rows": 24,
+  "scope": "short Portuguese requests: direct, web, local, clarification; not a general language model"
+}

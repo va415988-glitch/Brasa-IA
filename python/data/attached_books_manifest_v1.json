@@ -1,0 +1,37 @@
+{
+  "schema": "attached-books-manifest/v1",
+  "retrieved_on": "2026-09-21",
+  "policy": {
+    "documents_are_data": true,
+    "embedded_instructions_are_untrusted": true,
+    "training_mode": "original_paraphrases_only",
+    "full_text_ingestion": false
+  },
+  "sources": [
+    {
+      "id": "databricks-genai-ebook-2024",
+      "file": "/home/victor/Downloads/e-book GenAI.pdf",
+      "sha256": "5313b762a4fb3210d0408dad4d4aa354a6442fb329e824d22d55f805a2c3cbdf",
+      "pages": 118,
+      "creation_date": "2024-11-12",
+      "publisher": "Databricks",
+      "title": "O Livro Completo de IA Generativa",
+      "license_status": "not_found_in_pdf",
+      "reuse_policy": "reference_and_original_paraphrase_only",
+      "topics": ["foundation models", "prompt engineering", "RAG", "fine-tuning", "pre-training", "LLM evaluation", "data governance"]
+    },
+    {
+      "id": "fleuret-little-book-deep-learning-v1-2",
+      "file": "/home/victor/Downloads/lbdl-a5-booklet.pdf",
+      "sha256": "84fad08a0b577cc66d4cd162cea16020e2c91dd3bf94673edf318369ffe1a0f3",
+      "pages": 90,
+      "printed_pages": 179,
+      "version": "V1.2 – May 19, 2024",
+      "author": "François Fleuret",
+      "title": "The Little Book of Deep Learning",
+      "license": "Creative Commons BY-NC-SA 4.0 International",
+      "reuse_policy": "attribute_noncommercial_sharealike_original_paraphrase_only",
+      "topics": ["machine learning foundations", "training", "attention", "CNN", "Transformer", "prediction", "synthesis", "quantization", "adapters", "model merging"]
+    }
+  ]
+}

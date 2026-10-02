@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent Workflow Example",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "task_type",
+    "language",
+    "source",
+    "split",
+    "request",
+    "context",
+    "steps",
+    "verification",
+    "final_response",
+    "quality"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "task_type": {
+      "type": "string",
+      "enum": [
+        "repo_navigation",
+        "code_edit",
+        "debug",
+        "testing",
+        "explanation",
+        "clarification",
+        "research",
+        "learning",
+        "operation"
+      ]
+    },
+    "language": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "kind",
+        "reference"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "human_authored",
+            "observed",
+            "synthetic"
+          ]
+        },
+        "reference": {
+          "type": "string"
+        }
+      }
+    },
+    "split": {
+      "type": "string",
+      "enum": [
+        "train",
+        "validation",
+        "test",
+        "unassigned"
+      ]
+    },
+    "request": {
+      "type": "string",
+      "minLength": 1
+    },
+    "context": {
+      "type": "object"
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "state",
+          "action",
+          "observation"
+        ],
+        "properties": {
+          "state": {
+            "type": "string"
+          },
+          "action": {
+            "type": "object",
+            "required": [
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "inspect",
+                  "search",
+                  "terminal",
+                  "edit",
+                  "ask_user",
+                  "respond"
+                ]
+              },
+              "tool": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "arguments": {
+                "type": "object"
+              }
+            }
+          },
+          "observation": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "required": [
+        "status",
+        "checks"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "passed",
+            "failed",
+            "not_run"
+          ]
+        },
+        "checks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "final_response": {
+      "type": "string"
+    },
+    "quality": {
+      "type": "object",
+      "required": [
+        "human_reviewed",
+        "safe_to_train"
+      ],
+      "properties": {
+        "human_reviewed": {
+          "type": "boolean"
+        },
+        "safe_to_train": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

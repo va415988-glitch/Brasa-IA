@@ -10,8 +10,8 @@ RUNTIME = os.environ.get("IA_LOCAL_RUNTIME", "http://127.0.0.1:3000")
 
 TOOLS = [
     ("list_files", "Lista arquivos dentro do workspace autorizado.", {"type":"object","properties":{"path":{"type":"string"}}}),
-    ("read_file", "Lê um arquivo pequeno do workspace.", {"type":"object","required":["path"],"properties":{"path":{"type":"string"}}}),
-    ("search_files", "Busca texto nos arquivos do workspace.", {"type":"object","required":["query"],"properties":{"query":{"type":"string"}}}),
+    ("read_file", "Lê apenas um intervalo de linhas do workspace; use o caminho e a linha retornados pela busca.", {"type":"object","required":["path"],"properties":{"path":{"type":"string"},"start_line":{"type":"integer","minimum":1},"end_line":{"type":"integer","minimum":1},"max_bytes":{"type":"integer","minimum":1,"maximum":131072},"offset":{"type":"integer","minimum":0}}}),
+    ("search_files", "Busca texto ou símbolo e devolve caminho e linha para leitura direcionada.", {"type":"object","required":["query"],"properties":{"query":{"type":"string","maxLength":1000},"max_results":{"type":"integer","minimum":1,"maximum":100},"context_lines":{"type":"integer","minimum":0,"maximum":5}}}),
     ("project_checks", "Lista ou executa testes reconhecidos do projeto.", {"type":"object","required":["check"],"properties":{"check":{"type":"string","enum":["list","auto","cargo-test","npm-test","pytest","unittest"]}}}),
     ("create_directory", "Cria uma pasta dentro do workspace.", {"type":"object","required":["path"],"properties":{"path":{"type":"string"}}}),
     ("create_file", "Cria um arquivo novo dentro do workspace.", {"type":"object","required":["path","content"],"properties":{"path":{"type":"string"},"content":{"type":"string"}}}),

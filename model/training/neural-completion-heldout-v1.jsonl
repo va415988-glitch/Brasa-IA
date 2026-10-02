@@ -1,0 +1,2 @@
+{"messages": [{"role": "user", "content": "Qual a diferença entre lista e tupla em Python?"}, {"role": "assistant", "content": "Uma lista é mutável e pode mudar depois de criada; uma tupla é imutável e serve para representar um conjunto fixo de valores."}]}
+{"messages": [{"role": "user", "content": "Como validar uma idade em Python?"}, {"role": "assistant", "content": "Valide o tipo e o intervalo, por exemplo: confirme que o valor é inteiro e que ele está entre 0 e 130 antes de aceitar ou rejeitar."}]}

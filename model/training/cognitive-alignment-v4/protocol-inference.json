@@ -1,0 +1,16 @@
+{
+  "schema": "cognitive-alignment-inference/v1",
+  "copy_cache": "KV plus source keys, source token ids, completed boundary and prior copy alignment/gate. No gold annotations.",
+  "training_source_snapshot": "run-02/model-before-copy-cache.py",
+  "inference_implementation_changed_for_cache_only": true,
+  "sha256": {
+    "python/model.py": "e812df0d4ff5bf1fd8b8f7eea45fd3d2d1143382541d63160234453d0bbf21f2",
+    "python/model_server.py": "1ff82efc34b92b06b8838797d18b6569bc6703482c02efe045665b318f1588c0",
+    "scripts/evaluate_cognitive_sft.py": "4bd5d66f883635e7b34eb7603162c81c146c7dcf0358eda663fb7c61cbbe2d8c",
+    "python/tokenizer.py": "8badf37a7b0a7d6f407acc393f24117c0737a598aa8f59f4a2412f2fc0677d00",
+    "python/cognitive_dialogue.py": "6923180db7cc92fd845d5297aa8f0718dacb666520ce2f6a33e8d6c057e602db",
+    "python/conditioned_context.py": "70d3b0faab1fe0666d0ef37118f3aa56db5bf4477fa71e8d4f8a178e2516f21e",
+    "model/godmode/state.json": "12e780fd617fbd529bf2d6f80593f6330e734a5a58b96f02db5c9a6ed971534b",
+    "model/godmode/context-32768-v1/candidate.safetensors": "0aeafd6f3966c8c59548ca1bb386c87483c62eafe21e95d1cb89260741d1fee3"
+  }
+}

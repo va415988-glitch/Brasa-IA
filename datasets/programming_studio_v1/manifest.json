@@ -1,0 +1,19 @@
+{
+  "schema": "programming-studio-curriculum/v1",
+  "train": 112,
+  "validation": 3,
+  "heldout": 3,
+  "maximum_answer_tokens": 1389,
+  "tokenizer_fitted_on": "train-only",
+  "runtime_recipes_installed": false,
+  "limits": [
+    "Autoral e sintético; não estabelece programação geral.",
+    "Interfaces reservadas variam briefing e conteúdo dentro de famílias visuais vistas.",
+    "Funções reservadas não são utilizadas no otimizador."
+  ],
+  "sha256": {
+    "heldout.jsonl": "c5d05ac5f294731192efd6c161895704d9bda02327cea30214d3f20070589654",
+    "validation.jsonl": "fd95c9d795123087a4272b63a1cf8677e1a2dfbb595f63a4f483800e5d591941",
+    "train.jsonl": "6fedaf3308210c6bba010517b778a302117bc38a0f331ec3f5fcbe06b18bda85"
+  }
+}

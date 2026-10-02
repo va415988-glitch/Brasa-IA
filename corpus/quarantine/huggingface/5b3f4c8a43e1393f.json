@@ -1,0 +1,49 @@
+{
+  "schema": "huggingface-dataset-audit/v1",
+  "dataset": "microsoft/ProgramDistill",
+  "source": "https://huggingface.co/datasets/microsoft/ProgramDistill",
+  "retrieved_at": "2026-09-25T00:20:41.452266+00:00",
+  "license": {
+    "value": "mit",
+    "known": true,
+    "requires_review": false
+  },
+  "metadata": {
+    "downloads": 0,
+    "likes": 9,
+    "last_modified": "2026-09-24T15:04:33.000Z",
+    "tags": [
+      "task_categories:text-generation",
+      "language:en",
+      "license:mit",
+      "size_categories:1K<n<10K",
+      "library:harbor",
+      "arxiv:2609.18805",
+      "region:us",
+      "code",
+      "software-engineering",
+      "coding-agents",
+      "web-agents",
+      "web-applications",
+      "harbor",
+      "browser-agents",
+      "benchmark",
+      "executable-evaluation"
+    ],
+    "candidate_files": [],
+    "file_count": null,
+    "total_bytes": 29174274129
+  },
+  "classification": {
+    "code": true,
+    "agent": true,
+    "evaluation": true
+  },
+  "policy": {
+    "status": "quarantine",
+    "training_eligible": false,
+    "evaluation_eligible": true,
+    "reason": "revisão de licença, duplicatas e contaminação ainda necessária"
+  },
+  "quarantine_manifest": "corpus/quarantine/huggingface/5b3f4c8a43e1393f.json"
+}

@@ -1,0 +1,231 @@
+{
+  "schema": "own-programming-studio-eval/v1",
+  "checkpoint": "model/training/programming-studio-v1/run-01/snapshots/step-0900.safetensors",
+  "cases_source": "datasets/programming_studio_v1/validation.jsonl",
+  "passed": 0,
+  "total": 3,
+  "cases": [
+    {
+      "id": "absolute",
+      "domain": "function",
+      "accepted_by_decoder": true,
+      "contract_valid": true,
+      "behavior_passed": false,
+      "generated_tests_passed": false,
+      "generation": {
+        "input_tokens": 50,
+        "max_tokens": 2048,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 512,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 512,
+          "forward_context_tokens": 512,
+          "effective_source_history_tokens": 768,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 512,
+            "forward_chunk": 512,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 4.0,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conditioned-prompt/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 789,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 50,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 384,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 768,
+          "compression_ratio_upper_bound": 15.78,
+          "bounded": true,
+          "mode": "prompt-anchor-v1",
+          "bounded_by": "decoder-anchor"
+        },
+        "conditioning": "prompt-anchor-v1",
+        "first_forward_input_tokens": 50,
+        "generated_tokens": 77,
+        "generation_elapsed_ms": 121.12,
+        "tokens_per_second": 635.75,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "accepted",
+        "quality_gate_result": "accepted"
+      },
+      "answer_preview": "{\"assumptions\":[],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"app.py\",\"content\":\"def cube(value):\\n    return value ** 3\\n\"}},{\"tool\":\"create_file\",\"arguments\":{\"path\":\"test_app.py\",\"content\":\"import unittest\\nfrom app import cube\\n\\nclass Behavior(unittest.TestCase):\\n    def test_result(self):\\n        self.assertEqual(cube(3,)), 9)\\n\"}}]}",
+      "verification_excerpt": "======================================================================\nERROR: test_independent (unittest.loader._FailedTest.test_independent)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_independent\nTraceback (most recent call last):\n  File \"/usr/lib/python3.14/unittest/loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"/usr/lib/python3.14/unittest/loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"/tmp/own-code-eval-z71iq9m2/test_independent.py\", line 2, in <module>\n    from app import absolute\nImportError: cannot import name 'absolute' from 'app' (/tmp/own-code-eval-z71iq9m2/app.py)\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n",
+      "passed": false,
+      "seconds": 0.4
+    },
+    {
+      "id": "first",
+      "domain": "function",
+      "accepted_by_decoder": true,
+      "contract_valid": true,
+      "behavior_passed": false,
+      "generated_tests_passed": false,
+      "generation": {
+        "input_tokens": 61,
+        "max_tokens": 2048,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 512,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 512,
+          "forward_context_tokens": 512,
+          "effective_source_history_tokens": 768,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 512,
+            "forward_chunk": 512,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 4.0,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conditioned-prompt/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 810,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 61,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 384,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 768,
+          "compression_ratio_upper_bound": 13.28,
+          "bounded": true,
+          "mode": "prompt-anchor-v1",
+          "bounded_by": "decoder-anchor"
+        },
+        "conditioning": "prompt-anchor-v1",
+        "first_forward_input_tokens": 61,
+        "generated_tokens": 69,
+        "generation_elapsed_ms": 177.3,
+        "tokens_per_second": 389.16,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "accepted",
+        "quality_gate_result": "accepted"
+      },
+      "answer_preview": "{\"assumptions\":[],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"app.py\",\"content\":\"def stancube\\n\\nclass Behavior(unittest.TestCase):\\n    def test_result(self):\\n        self.assertEqual(strigth(*([1, 2, 1, 2],)), 'ABC')\\n\"}}]}",
+      "verification_excerpt": "======================================================================\nERROR: test_independent (unittest.loader._FailedTest.test_independent)\n----------------------------------------------------------------------\nImportError: Failed to import test module: test_independent\nTraceback (most recent call last):\n  File \"/usr/lib/python3.14/unittest/loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"/usr/lib/python3.14/unittest/loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"/tmp/own-code-eval-j8as0iyr/test_independent.py\", line 2, in <module>\n    from app import first\n  File \"/tmp/own-code-eval-j8as0iyr/app.py\", line 1\n    def stancube\n                ^\nSyntaxError: expected '('\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n",
+      "passed": false,
+      "seconds": 0.49
+    },
+    {
+      "id": "ui-editorial-100",
+      "domain": "interface",
+      "accepted_by_decoder": true,
+      "contract_valid": true,
+      "behavior_passed": false,
+      "generated_tests_passed": false,
+      "generation": {
+        "input_tokens": 195,
+        "max_tokens": 2048,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 512,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 512,
+          "forward_context_tokens": 512,
+          "effective_source_history_tokens": 768,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 512,
+            "forward_chunk": 512,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 4.0,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conditioned-prompt/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 968,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 195,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 384,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 768,
+          "compression_ratio_upper_bound": 4.96,
+          "bounded": true,
+          "mode": "prompt-anchor-v1",
+          "bounded_by": "decoder-anchor"
+        },
+        "conditioning": "prompt-anchor-v1",
+        "first_forward_input_tokens": 170,
+        "generated_tokens": 1302,
+        "generation_elapsed_ms": 4939.05,
+        "tokens_per_second": 263.61,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "accepted",
+        "quality_gate_result": "accepted"
+      },
+      "answer_preview": "{\"assumptions\":[\"Direção visual: tipografia monoespaçada, fundo escuro, verde, composição de terminal.\"],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"index.html\",\"content\":\"<!doctype html>\\n<html lang=\\\"pt-BR\\\"><meta charset=\\\"utf-8\\\"><meta name=\\\"viewport\\\" content=\\\"width=device-width,initial-scale=1\\\">\\n<title>Ideias</title><style>*{box-sizing:border-box}body{margin:0;padding:clamp(24px,6vw,72px)}main{margin:auto}button{font:inherit;padding:14px 20px;min-height:44px;cursor:pointer}button:focus-visible{outline:3px solid currentColor;outline-offset:4px}set:4px}section{display:flex",
+      "interface": {
+        "checks": {
+          "html": true,
+          "language": true,
+          "viewport": true,
+          "semantic_buttons": true,
+          "announced_output": true,
+          "focus_style": true,
+          "responsive_css": true,
+          "local_scripts": true
+        },
+        "scope": "counter-interactions-in-simulated-dom",
+        "rendered_in_browser": false,
+        "visual_quality_confirmed": false,
+        "css_fingerprint": {
+          "grid": false,
+          "serif": false,
+          "monospace": true,
+          "lined_paper": false,
+          "colors": [
+            "#101916",
+            "#abecb0"
+          ]
+        },
+        "behavior": {
+          "executed": true,
+          "passed": false,
+          "error": "SyntaxError: Unexpected token ')'"
+        },
+        "passed": false
+      },
+      "passed": false,
+      "seconds": 5.1
+    }
+  ],
+  "runtime_recipes_used": false,
+  "general_programming_mastery": false,
+  "browser_visual_quality_confirmed": false
+}

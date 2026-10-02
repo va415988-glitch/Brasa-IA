@@ -1,6 +1,59 @@
 # Dados e treinamento
 
+## Pipeline de aprendizado do agente
+
+`ensinar_ia.sh` agora orquestra o aprendizado do planejador local. Ele lê os
+datasets de `corpus/training/`, aproveita somente traces concluídos com
+resultados positivos, separa treino e validação, gera um índice candidato e
+executa as baterias de regressão. O índice ativo não é alterado por padrão.
+
+```bash
+./ensinar_ia.sh report
+./ensinar_ia.sh run
+./ensinar_ia.sh run --promote
+```
+
+Cada rodada fica em `model/planner/runs/<id>/`, com manifesto, datasets
+efetivamente usados, candidato, validação, logs das baterias e relatório. A
+promoção só ocorre quando o candidato é íntegro, não regride na validação e
+todas as baterias passam. `--skip-batteries` serve apenas para desenvolvimento
+e nunca torna uma rodada elegível para promoção.
+
+O dataset separado de trajetórias do agente fica em
+`datasets/agent_workflow_v1/`. Audite seu schema, distribuição de ações e
+revisão humana sem treinar com:
+
+```bash
+./.venv/bin/python python/audit_agent_workflow.py
+```
+
+O auditor não exporta exemplos nem altera flags de revisão. Os candidatos só
+entram num experimento depois de aprovados e atribuídos a um split explícito.
+
 ## Ajuste supervisionado de engenharia e criatividade
+
+### Motor criativo local
+
+Pedidos classificados como criativos passam por `python/creative_engine.py`.
+Essa camada preserva o briefing e escolhe entre os perfis `focused`, `balanced`
+e `divergent`. Cada perfil define tentativas, orçamento, temperatura, `top_p`
+e pesos de avaliação. Um seletor mede diversidade, repetição, requisitos e
+restrições explícitas antes de escolher a saída. As notas ficam na telemetria
+da geração para permitir ajuste com dados reais.
+O motor continua usando exclusivamente o checkpoint local; ele não consulta
+serviços externos nem transforma uma ideia em tarefa de código sem solicitação.
+
+Pedidos de interface também passam pela trilha `interface_design_guidance`:
+a implementação precisa justificar a direção visual e cobrir hierarquia,
+estados, responsividade, acessibilidade e componentes. A criatividade fica
+ligada a decisões de produto e engenharia, em vez de produzir apenas uma
+aparência diferente.
+
+Quando o pedido envolve frontend e backend, a trilha full-stack exige um
+contrato único entre domínio, API, persistência e interface. Ela inclui estados
+de rede, validação no servidor, separação de camadas e testes dos fluxos
+críticos, evitando protótipos com dados hardcoded ou APIs que não alimentam a
+experiência real.
 
 `build_senior_curriculum.py` gera 54 exemplos autorais sintéticos e 12 pedidos
 reservados. `finetune_assistant.py` continua os pesos existentes, preservando
@@ -121,7 +174,71 @@ Cada resposta informa uma estratégia e fases públicas do workflow, como
 estável é recuperado antes de ferramentas; pesquisa, workspace e alterações
 seguem o planner contratual e a validação de argumentos.
 
+O `RunEngine` persiste um ledger `agent-goal-state/v1` junto de cada execução:
+objetivo original, critérios de aceite, evidências, bloqueios, progresso e
+próxima ação. Uma continuação como “tente novamente” conserva o objetivo
+operacional anterior em vez de substituí-lo pela frase curta. Se o planejador
+bloquear sem selecionar uma ferramenta, o motor
+faz uma única reconsideração com esse contexto antes de encerrar. A repetição é
+limitada; uma nova escrita continua sujeita à aprovação e mudanças continuam
+exigindo verificação.
+
 Chamadas de ferramenta passam por `python/tool_registry.py`, que valida campos
 obrigatórios, campos extras, tipos básicos e valores enumerados antes da
-execução. O planner também registra candidatos, margem e confiança para que
-uma decisão local explícita tenha precedência sobre um professor auxiliar.
+execução. O planner registra candidatos, margem e confiança para tornar a
+seleção local auditável e comparável com exemplos de treino.
+
+### Propostas quando o gerador local não responde
+
+Se o checkpoint não gerar um plano JSON válido, `python/implementation_recipes.py`
+pode fornecer uma proposta determinística para padrões explicitamente cobertos.
+A receita inicial cobre uma CLI Python de tarefas com persistência JSON,
+marcação de conclusão e rejeição de entradas vazias, em workspace vazio ou com
+documentação básica. Há também uma continuação estreita para o pedido de uma UI
+que organize essa CLI: ela só é ativada quando a inspeção encontra e lê o
+`todo_cli.py` esperado com a classe `TaskStore`. Nesse caso, propõe `todo_ui.py`
+e testes HTTP, reutiliza o mesmo JSON e serve uma página web somente em
+`127.0.0.1:8765`, sem dependências externas. A UI permite adicionar tarefas,
+ver pendentes e concluídas e marcar conclusão. Funcionalidades fora desse escopo
+fazem a receita se abster.
+
+A proposta gerada passa pelo mesmo validador de caminhos e limites e chega ao
+runtime como `apply_batch`, que exige aprovação antes de escrever. Após as
+verificações, a resposta lista os caminhos observados no resultado do lote, o
+comando, o código de saída e linhas de evidência da execução. Se a verificação
+falhar ou não puder rodar, o relatório conserva os arquivos alterados e os dados
+da falha; um pedido sem receita compatível continua pendente e informa por quê.
+
+## Leitura local de documentos
+
+`extract_document_text` lê arquivos que estejam dentro do workspace ativo. O
+leitor local suporta texto e código, PDF, HTML/XML, RTF, e-mail `.eml`, notebooks
+Jupyter, DOCX/XLSX/PPTX, ODT/ODS/ODP e EPUB. Documentos Office modernos e ODF são
+extraídos com a biblioteca padrão; PDF usa `pdftotext`; `.doc/.xls/.ppt` usam
+LibreOffice quando instalado. OCR de imagem requer Tesseract. A extração tem
+limites de tamanho e saída, não executa macros e marca o conteúdo como dado não
+confiável para evitar que texto dentro de documentos vire instrução ao agente.
+Áudio e vídeo ainda têm inspeção de tipo/tamanho, sem transcrição.
+
+### Geração somente com o checkpoint próprio
+
+O runtime iniciado por `start.sh` usa o checkpoint local indicado por
+`IA_LOCAL_CHECKPOINT` ou pelo estado ativo em `model/godmode/state.json`. A
+geração de respostas e propostas de código não consulta Ollama, Qwen ou outro
+modelo de terceiros. A chave `IA_LOCAL_BRAVE_SEARCH_API_KEY`, quando
+configurada, habilita somente a pesquisa web; ela não substitui nem gera texto
+no lugar do checkpoint. Sem a chave, o runtime usa o mecanismo de busca local
+disponível.
+
+Em pedidos de construção sem receita local compatível, o agente inspeciona o
+workspace e consulta a Brave antes de gerar a proposta: uma busca pelo produto,
+outras pela tecnologia e pelas formas de testar quando a stack é identificável.
+Até três páginas abertas, com URL e texto, entram como evidência transitória no
+planejador e são citadas na proposta e na entrega. A API Brave é exigida nesse
+fluxo; se a chave faltar ou a consulta falhar, a tarefa mostra o bloqueio. O
+resultado bruto não é gravado no acervo de aprendizado do modelo. A pesquisa
+fornece contexto transitório e exemplos; o checkpoint local ainda
+precisa produzir código válido e a verificação do projeto continua obrigatória.
+
+O fluxo atual de execução e treinamento não inclui geradores externos. Exemplos
+de treino exigem seleção explícita, validação de procedência e revisão.

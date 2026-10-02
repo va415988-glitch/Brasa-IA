@@ -1,0 +1,20 @@
+{
+  "baseline_validation_loss": 8.855482532132056,
+  "initial_validation_loss": 8.855482532132056,
+  "initialization_mode": "continue-weights",
+  "candidate_validation_loss": 5.392284762474798,
+  "baseline_heldout_loss": 9.012289454794338,
+  "candidate_heldout_loss": 4.710690229366987,
+  "best_step": 300,
+  "completed_steps": 500,
+  "training_seconds": 372.27,
+  "baseline_answers": [],
+  "candidate_answers": [],
+  "promoted": false,
+  "limits": [
+    "Validação do replay pode ter sido vista no treino original.",
+    "Heldout autoral novo não entra no otimizador nem na seleção do checkpoint.",
+    "Loss não comprova competência sênior; geração exige revisão.",
+    "Checkpoint mantém janela original e não é promovido automaticamente."
+  ]
+}

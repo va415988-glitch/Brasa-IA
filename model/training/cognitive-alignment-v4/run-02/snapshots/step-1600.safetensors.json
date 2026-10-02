@@ -1,0 +1,40 @@
+{
+  "config": {
+    "name": "own-cognitive-alignment-v4",
+    "vocab_size": 768,
+    "context_length": 512,
+    "training_context_length": 512,
+    "runtime_context_tokens": 512,
+    "forward_chunk_length": 512,
+    "layers": 2,
+    "hidden_size": 128,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 3,
+    "system_prompt_trained": false,
+    "cognitive_prompt_style": "compact-v1",
+    "generation_length": 192,
+    "copy_attention_size": 64,
+    "copy_boundary_ids": [
+      426
+    ],
+    "copy_transition": true,
+    "initialization": "scaled-normal-v1",
+    "training_policy": {
+      "method": "local-sft-copy-alignment-from-scratch",
+      "external_llm": false,
+      "gpu_required": false,
+      "actual_max_sequence_tokens": 431
+    },
+    "tokenizer_path": "/home/victor/Documentos/IA Local do Zero/datasets/cognitive_alignment_v4/tokenizer.json"
+  },
+  "steps": 1600,
+  "validation_loss": 0.09150605986370403,
+  "validation_alignment": {
+    "generation": 0.09150605986370403,
+    "alignment": 0.5202701828069984,
+    "gate": 0.09280233584379381,
+    "transition": 0.0178031455131425
+  },
+  "status": "experimental-validation-snapshot",
+  "tokenizer_sha256": "e58fe3e652e62f3028b63810fd90b39745829ed80723bf7daec2e0b4662aa4e1"
+}

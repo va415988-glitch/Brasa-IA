@@ -1,0 +1,45 @@
+{
+  "config": {
+    "name": "own-cognitive-copy-v3",
+    "architecture": "decoder_transformer",
+    "vocab_size": 768,
+    "context_length": 384,
+    "layers": 2,
+    "hidden_size": 128,
+    "attention_heads": 4,
+    "feed_forward_multiplier": 3,
+    "language_priority": [
+      "pt-BR",
+      "code",
+      "en"
+    ],
+    "tool_call_format": "json",
+    "max_request_seconds": 60,
+    "runtime": "python-local",
+    "generation_length": 192,
+    "training_context_length": 384,
+    "tokenizer_path": "datasets/cognitive_copy_v3/tokenizer.json",
+    "training_policy": {
+      "method": "local-sft-from-scratch",
+      "external_llm": false,
+      "ollama": false,
+      "gpu_required": false,
+      "training_context": 384,
+      "production_context": 384
+    },
+    "initialization": "scaled-normal-v1",
+    "runtime_context_tokens": 384,
+    "forward_chunk_length": 384,
+    "system_prompt_trained": false,
+    "cognitive_prompt_style": "compact-v1",
+    "copy_attention_size": 64,
+    "copy_boundary_ids": [
+      533
+    ]
+  },
+  "steps": 1200,
+  "source": "model/godmode/context-32768-v1/candidate.safetensors",
+  "validation_loss": 0.5107535904104059,
+  "status": "experimental-validation-snapshot",
+  "tokenizer_sha256": "9149b0783d4e41441a9c1bca17ab42df023dc3c2d10c4b5aad246929f44803cc"
+}

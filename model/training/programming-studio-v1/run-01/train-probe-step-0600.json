@@ -1,0 +1,318 @@
+{
+  "schema": "own-programming-studio-eval/v1",
+  "checkpoint": "model/training/programming-studio-v1/run-01/snapshots/step-0600.safetensors",
+  "cases_source": "/tmp/own-programming-training-probe.jsonl",
+  "passed": 2,
+  "total": 4,
+  "cases": [
+    {
+      "id": "add",
+      "domain": "function",
+      "accepted_by_decoder": true,
+      "contract_valid": true,
+      "behavior_passed": true,
+      "generated_tests_passed": true,
+      "generation": {
+        "input_tokens": 45,
+        "max_tokens": 2048,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 512,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 512,
+          "forward_context_tokens": 512,
+          "effective_source_history_tokens": 768,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 512,
+            "forward_chunk": 512,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 4.0,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 786,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 45,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 384,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 768,
+          "compression_ratio_upper_bound": 17.47,
+          "bounded": true
+        },
+        "conditioning": "prompt-anchor-v1",
+        "first_forward_input_tokens": 45,
+        "generated_tokens": 78,
+        "generation_elapsed_ms": 158.45,
+        "tokens_per_second": 492.28,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "accepted",
+        "quality_gate_result": "accepted"
+      },
+      "answer_preview": "{\"assumptions\":[],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"app.py\",\"content\":\"def add(left, right):\\n    return left + right\\n\"}},{\"tool\":\"create_file\",\"arguments\":{\"path\":\"test_app.py\",\"content\":\"import unittest\\nfrom app import add\\n\\nclass Behavior(unittest.TestCase):\\n    def test_result(self):\\n        self.assertEqual(add(*(3, 4)), 7)\\n\"}}]}",
+      "verification_excerpt": "----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+      "passed": true,
+      "seconds": 0.51
+    },
+    {
+      "id": "minimum",
+      "domain": "function",
+      "accepted_by_decoder": true,
+      "contract_valid": true,
+      "behavior_passed": true,
+      "generated_tests_passed": true,
+      "generation": {
+        "input_tokens": 49,
+        "max_tokens": 2048,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 512,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 512,
+          "forward_context_tokens": 512,
+          "effective_source_history_tokens": 768,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 512,
+            "forward_chunk": 512,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 4.0,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 791,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 49,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 384,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 768,
+          "compression_ratio_upper_bound": 16.14,
+          "bounded": true
+        },
+        "conditioning": "prompt-anchor-v1",
+        "first_forward_input_tokens": 49,
+        "generated_tokens": 92,
+        "generation_elapsed_ms": 186.88,
+        "tokens_per_second": 492.31,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "accepted",
+        "quality_gate_result": "accepted"
+      },
+      "answer_preview": "{\"assumptions\":[],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"app.py\",\"content\":\"def minimum(left, right):\\n    return min(left, right)\\n\"}},{\"tool\":\"create_file\",\"arguments\":{\"path\":\"test_app.py\",\"content\":\"import unittest\\nfrom app import minimum\\n\\nclass Behavior(unittest.TestCase):\\n    def test_result(self):\\n        self.assertEqual(minimum(*(9, 2)), 2)\\n\"}}]}",
+      "verification_excerpt": "----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nOK\n",
+      "passed": true,
+      "seconds": 0.51
+    },
+    {
+      "id": "ui-editorial-0",
+      "domain": "interface",
+      "accepted_by_decoder": true,
+      "contract_valid": true,
+      "behavior_passed": false,
+      "generated_tests_passed": false,
+      "generation": {
+        "input_tokens": 197,
+        "max_tokens": 2048,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 512,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 512,
+          "forward_context_tokens": 512,
+          "effective_source_history_tokens": 768,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 512,
+            "forward_chunk": 512,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 4.0,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 966,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 197,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 384,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 768,
+          "compression_ratio_upper_bound": 4.9,
+          "bounded": true
+        },
+        "conditioning": "prompt-anchor-v1",
+        "first_forward_input_tokens": 170,
+        "generated_tokens": 1267,
+        "generation_elapsed_ms": 4757.11,
+        "tokens_per_second": 266.34,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "accepted",
+        "quality_gate_result": "accepted"
+      },
+      "answer_preview": "{\"assumptions\":[\"Direção visual: tipografia monoespaçada, fundo escuro, verde, composição de terminal.\"],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"index.html\",\"content\":\"<!doctype html>\\n<html lang=\\\"pt-BR\\\"><meta charset=\\\"utf-8\\\"><meta name=\\\"viewport\\\" content=\\\"width=device-width,initial-scale=1\\\">\\n<title>Leituras</title><style>*{box-sizing:border-box}border-box}border-box}body{margin:0;padding:auto}box}bor:inherit;padding:14px 20px;padding:14px 20px;min-height:pointer}button:pointer}button:focus-visible{outline:3px solid currentColor;outline-offset:4px}set:ffset:4px}sectio",
+      "interface": {
+        "checks": {
+          "html": true,
+          "language": true,
+          "viewport": true,
+          "semantic_buttons": false,
+          "announced_output": false,
+          "focus_style": true,
+          "responsive_css": true,
+          "local_scripts": false
+        },
+        "scope": "counter-interactions-in-simulated-dom",
+        "rendered_in_browser": false,
+        "visual_quality_confirmed": false,
+        "css_fingerprint": {
+          "grid": false,
+          "serif": false,
+          "monospace": false,
+          "lined_paper": false,
+          "colors": [
+            "#1916",
+            "#abecb0",
+            "#f6f1"
+          ]
+        },
+        "behavior": {
+          "passed": false,
+          "executed": false,
+          "missing_script_paths": []
+        },
+        "passed": false
+      },
+      "passed": false,
+      "seconds": 4.79
+    },
+    {
+      "id": "ui-split-0",
+      "domain": "interface",
+      "accepted_by_decoder": true,
+      "contract_valid": true,
+      "behavior_passed": false,
+      "generated_tests_passed": false,
+      "generation": {
+        "input_tokens": 212,
+        "max_tokens": 2048,
+        "budget_mode": "adaptive",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 512,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 512,
+          "forward_context_tokens": 512,
+          "effective_source_history_tokens": 768,
+          "context_extension": false,
+          "context_policy": "checkpoint-native-window",
+          "strategy": {
+            "mode": "direct-attention",
+            "effective_context": 512,
+            "forward_chunk": 512,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 4.0,
+            "safe": true
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 1,
+          "source_token_upper_bound": 979,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 1,
+          "prompt_token_upper_bound": 212,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 384,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 768,
+          "compression_ratio_upper_bound": 4.62,
+          "bounded": true
+        },
+        "conditioning": "prompt-anchor-v1",
+        "first_forward_input_tokens": 170,
+        "generated_tokens": 1337,
+        "generation_elapsed_ms": 4138.57,
+        "tokens_per_second": 323.06,
+        "stop_reason": "eos",
+        "decoding": "greedy",
+        "repetition_penalty": 1.0,
+        "quality_reason": "accepted",
+        "quality_gate_result": "accepted"
+      },
+      "answer_preview": "{\"assumptions\":[\"Direção visual: tipografia monoespa, azul e laranja, painel dividido, números grandes.\"],\"operations\":[{\"tool\":\"create_file\",\"arguments\":{\"path\":\"index.html\",\"content\":\"<!doctype html>\\n<html lang=\\\"pt-BR\\\"><meta charset=\\\"utf-8\\\"><meta name=\\\"viewport\\\" content=\\\"width=device-width,initial-scale=1\\\">\\n<title>Leu progresso</title><style>*{box}border-box}border-box}body{margin:0;padding:clamp(24px,6vw,72px)}button{font:inherit;padding:14px 20px;min-height:44px;cursor:pointer}button:focus-visible{outline:3px solid currentColor;outline-offset:4px}set:ffset:4px}section{display:12p",
+      "interface": {
+        "checks": {
+          "html": true,
+          "language": true,
+          "viewport": true,
+          "semantic_buttons": false,
+          "announced_output": true,
+          "focus_style": true,
+          "responsive_css": true,
+          "local_scripts": false
+        },
+        "scope": "counter-interactions-in-simulated-dom",
+        "rendered_in_browser": false,
+        "visual_quality_confirmed": false,
+        "css_fingerprint": {
+          "grid": false,
+          "serif": false,
+          "monospace": false,
+          "lined_paper": false,
+          "colors": [
+            "#1952919",
+            "#2956",
+            "#f6f1e7"
+          ]
+        },
+        "behavior": {
+          "passed": false,
+          "executed": false,
+          "missing_script_paths": []
+        },
+        "passed": false
+      },
+      "passed": false,
+      "seconds": 4.17
+    }
+  ],
+  "runtime_recipes_used": false,
+  "general_programming_mastery": false,
+  "browser_visual_quality_confirmed": false
+}

@@ -1,21 +1,145 @@
 {
   "name": "ia-local-do-zero",
-  "displayName": "IA Local do Zero",
+  "displayName": "Brasa",
   "description": "Assistente local para explicar, revisar e testar código com o runtime Rust.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "ia-local-do-zero",
-  "engines": {"vscode": "^1.85.0"},
-  "categories": ["Other", "Programming Languages"],
-  "activationEvents": ["onCommand:iaLocal.explicarSelecao", "onCommand:iaLocal.revisarArquivo", "onCommand:iaLocal.proporAlteracao", "onCommand:iaLocal.abrirChat"],
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "extension.js",
   "contributes": {
-    "commands": [
-      {"command":"iaLocal.explicarSelecao","title":"IA Local: explicar seleção"},
-      {"command":"iaLocal.revisarArquivo","title":"IA Local: revisar arquivo"},
-      {"command":"iaLocal.proporAlteracao","title":"IA Local: propor alteração"},
-      {"command":"iaLocal.abrirChat","title":"IA Local: abrir chat"}
+    "chatParticipants": [
+      {
+        "id": "ia-local-do-zero.chat",
+        "name": "brasa",
+        "fullName": "Brasa",
+        "description": "Assistente local para entender, alterar e verificar o seu workspace.",
+        "isSticky": true,
+        "disambiguation": [
+          {
+            "category": "ia_local_workspace_tasks",
+            "description": "O usuário quer executar uma tarefa de programação no workspace local: entender código, revisar riscos, criar testes ou alterar arquivos com confirmação.",
+            "examples": [
+              "Revise este arquivo e encontre bugs",
+              "Explique este código e crie testes",
+              "Inspecione o projeto e implemente esta tarefa"
+            ]
+          }
+        ],
+        "commands": [
+          {
+            "name": "explain",
+            "description": "Explique o código e indique como testá-lo."
+          },
+          {
+            "name": "review",
+            "description": "Revise o código procurando bugs e riscos."
+          },
+          {
+            "name": "test",
+            "description": "Crie ou avalie testes para o código."
+          },
+          {
+            "name": "workspace",
+            "description": "Inspecione o workspace e execute a tarefa."
+          }
+        ]
+      }
     ],
-    "menus": {"editor/context": [{"command":"iaLocal.explicarSelecao","when":"editorHasSelection"}]}
+    "languageModelChatProviders": [
+      {
+        "vendor": "ia-local",
+        "displayName": "Brasa"
+      }
+    ],
+    "languageModelTools": [
+      {
+        "name": "iaLocal_inspectWorkspace",
+        "tags": [
+          "workspace",
+          "ia-local"
+        ],
+        "toolReferenceName": "ia-local-workspace",
+        "displayName": "Inspecionar workspace local",
+        "modelDescription": "Inspeciona a estrutura do workspace local, manifestos, pontos de entrada, testes e verificações disponíveis sem alterar arquivos. Use quando a tarefa exigir entendimento do projeto antes de editar ou executar algo. Não use para escrever arquivos.",
+        "userDescription": "Lê a estrutura e os sinais principais do workspace local sem fazer alterações.",
+        "canBeReferencedInPrompt": true,
+        "icon": "$(folder-opened)",
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "max_depth": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6,
+              "default": 4,
+              "description": "Profundidade máxima da árvore de arquivos a inspecionar."
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    ],
+    "viewsContainers": {
+      "secondarySidebar": [
+        {
+          "id": "ia-local-container",
+          "title": "Brasa",
+          "icon": "media/ia-local.svg"
+        }
+      ]
+    },
+    "views": {
+      "ia-local-container": [
+        {
+          "type": "webview",
+          "id": "ia-local.sidebar",
+          "name": "Brasa"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "iaLocal.explicarSelecao",
+        "title": "Brasa: explicar seleção"
+      },
+      {
+        "command": "iaLocal.revisarArquivo",
+        "title": "Brasa: revisar arquivo"
+      },
+      {
+        "command": "iaLocal.proporAlteracao",
+        "title": "Brasa: propor alteração"
+      },
+      {
+        "command": "iaLocal.abrirChat",
+        "title": "Brasa: abrir chat"
+      },
+      {
+        "command": "iaLocal.novaConversa",
+        "title": "Brasa: nova conversa"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "iaLocal.explicarSelecao",
+          "when": "editorHasSelection"
+        }
+      ]
+    }
   },
-  "scripts": {"test": "node --check extension.js"}
+  "scripts": {
+    "test": "node --check extension.js && node test-activation.js && node test-webview.js && node test-sidebar-agent-core.js",
+    "test:webview": "node test-webview.js --browser",
+    "smoke": "node smoke-test.js"
+  }
 }

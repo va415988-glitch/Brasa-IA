@@ -1,0 +1,14 @@
+{
+  "schema": "brasa-markdown-implementation-probe/v1",
+  "source": "datasets/implementation_sft_compact_extended_v1",
+  "splits": {
+    "train": 20,
+    "validation": 1,
+    "heldout": 2
+  },
+  "sha256": {
+    "train": "605d24d560dee63d2053d3bfff34cedb4814c90dbf65e17e154cf5814175dbc1",
+    "validation": "48572ad989a20156f38cb9bded04aea216f8d6a2821073894d9a12fe3d3ff077",
+    "heldout": "1f80c34aad3c95cd937325647501f9df1b8448c6632d8bacd8aae56366a00f9c"
+  }
+}

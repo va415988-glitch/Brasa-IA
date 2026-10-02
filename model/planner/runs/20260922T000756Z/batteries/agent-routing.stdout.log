@@ -1,0 +1,107 @@
+{
+  "cases": 12,
+  "selection_accuracy": 1.0,
+  "planning_avg_ms": 20.18,
+  "multi_step": {
+    "first": "create_web_page",
+    "second": "project_checks",
+    "final_status": "completed",
+    "trace_continuity": true
+  },
+  "recovery": {
+    "failed_check_next": "diagnose_project",
+    "failed_check_phase": "diagnose",
+    "web_fallback": "https://two.invalid",
+    "web_fallback_phase": "recover"
+  },
+  "rows": [
+    {
+      "question": "Cria uma tela de login com animações",
+      "expected": "create_web_page",
+      "actual": "create_web_page",
+      "ok": true,
+      "elapsed_ms": 30.86
+    },
+    {
+      "question": "Cria uma tela de login e rode os testes",
+      "expected": "create_web_page",
+      "actual": "create_web_page",
+      "ok": true,
+      "elapsed_ms": 19.47
+    },
+    {
+      "question": "Pesquise na internet as novidades do Rust",
+      "expected": "research_web",
+      "actual": "research_web",
+      "ok": true,
+      "elapsed_ms": 24.19
+    },
+    {
+      "question": "Abra https://www.rust-lang.org/",
+      "expected": "open_page",
+      "actual": "open_page",
+      "ok": true,
+      "elapsed_ms": 15.66
+    },
+    {
+      "question": "Liste os arquivos do workspace",
+      "expected": "list_files",
+      "actual": "list_files",
+      "ok": true,
+      "elapsed_ms": 18.02
+    },
+    {
+      "question": "Leia o arquivo README.md",
+      "expected": "read_file",
+      "actual": "read_file",
+      "ok": true,
+      "elapsed_ms": 16.62
+    },
+    {
+      "question": "Busque no código por create_web_page",
+      "expected": "search_files",
+      "actual": "search_files",
+      "ok": true,
+      "elapsed_ms": 16.03
+    },
+    {
+      "question": "Rode os testes do projeto",
+      "expected": "project_checks",
+      "actual": "project_checks",
+      "ok": true,
+      "elapsed_ms": 15.99
+    },
+    {
+      "question": "Analise este projeto",
+      "expected": "inspect_project",
+      "actual": "inspect_project",
+      "ok": true,
+      "elapsed_ms": 15.95
+    },
+    {
+      "question": "Crie o arquivo notas/ideias.md:\nconteúdo",
+      "expected": "create_file",
+      "actual": "create_file",
+      "ok": true,
+      "elapsed_ms": 20.48
+    },
+    {
+      "question": "Crie a pasta notas/rascunhos",
+      "expected": "create_directory",
+      "actual": "create_directory",
+      "ok": true,
+      "elapsed_ms": 19.08
+    },
+    {
+      "question": "O que é ownership em Rust?",
+      "expected": null,
+      "actual": null,
+      "ok": true,
+      "elapsed_ms": 29.82
+    }
+  ],
+  "reference": {
+    "gpt_6_astra": "Responses tool loop, strict schemas, tool search, async calls, steering and parallel calls",
+    "claude_fable_5": "tool_use/tool_result loop, explicit action guidance, adaptive reasoning and parallel calls"
+  }
+}

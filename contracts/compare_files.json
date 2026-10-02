@@ -1,0 +1,62 @@
+{
+  "name": "compare_files",
+  "description": "Compara dois arquivos textuais locais e aponta a primeira linha diferente sem alterá-los.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "required": [
+      "left",
+      "right"
+    ],
+    "properties": {
+      "left": {
+        "type": "string",
+        "minLength": 1
+      },
+      "right": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": [
+      "left",
+      "right",
+      "identical",
+      "first_difference_line",
+      "left_excerpt",
+      "right_excerpt",
+      "truncated"
+    ],
+    "properties": {
+      "left": {
+        "type": "string"
+      },
+      "right": {
+        "type": "string"
+      },
+      "identical": {
+        "type": "boolean"
+      },
+      "first_difference_line": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "left_excerpt": {
+        "type": "string"
+      },
+      "right_excerpt": {
+        "type": "string"
+      },
+      "truncated": {
+        "type": "boolean"
+      }
+    }
+  }
+}

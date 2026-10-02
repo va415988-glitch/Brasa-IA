@@ -1,0 +1,1634 @@
+{
+  "version": "neural-generation/v1",
+  "mode": "neural-only",
+  "source": "local-checkpoint-weights",
+  "checkpoint": "model/godmode/context-32768-v1/candidate.safetensors",
+  "local_model_loaded": true,
+  "local_model_error": null,
+  "context_length": 32768,
+  "memory_entries_loaded_but_not_used": 393,
+  "passed": 0,
+  "total": 20,
+  "pass_rate": 0.0,
+  "cases": [
+    {
+      "id": "dialogue-context-01",
+      "prompt": "Como eu saberia que essa prioridade trouxe resultado?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Acho que devemos priorizar o chat antes de adicionar mais ferramentas."
+        },
+        {
+          "role": "assistant",
+          "content": "Faz sentido. Se a conversa entende melhor a intenção e mantém o contexto, as ferramentas ficam mais fáceis de descobrir e usar."
+        },
+        {
+          "role": "user",
+          "content": "Como eu saberia que essa prioridade trouxe resultado?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "not-relevant",
+      "generation": {
+        "input_tokens": 77,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 254,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 77,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.3,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-words",
+        "generated_tokens": 31,
+        "generation_elapsed_ms": 166.59,
+        "tokens_per_second": 186.09,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "not-relevant",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 245.02,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-02",
+      "prompt": "Então como a web entraria sem escrever a resposta por nós?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Quero que as respostas sejam geradas pela IA própria do projeto."
+        },
+        {
+          "role": "assistant",
+          "content": "Entendido. A geração deve permanecer no modelo próprio; pesquisa pode fornecer fontes quando for solicitada."
+        },
+        {
+          "role": "user",
+          "content": "Então como a web entraria sem escrever a resposta por nós?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 74,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 236,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 74,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.19,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 15,
+        "generation_elapsed_ms": 94.43,
+        "tokens_per_second": 158.86,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 168.21,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-03",
+      "prompt": "O que você sugere para eu começar um diário de leitura?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Prefiro que você seja direta e não use listas em toda resposta."
+        },
+        {
+          "role": "assistant",
+          "content": "Vou responder de forma direta e reservar listas para etapas ou comparações que realmente precisem delas."
+        },
+        {
+          "role": "user",
+          "content": "O que você sugere para eu começar um diário de leitura?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 61,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 229,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 61,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.75,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 31,
+        "generation_elapsed_ms": 172.72,
+        "tokens_per_second": 179.48,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 275.08,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-04",
+      "prompt": "Qual ajuste pequeno eu poderia testar primeiro?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "A tela está organizada, mas não transmite acolhimento."
+        },
+        {
+          "role": "assistant",
+          "content": "Vamos preservar a estrutura e procurar mudanças de linguagem, cor e exemplos que aproximem a experiência."
+        },
+        {
+          "role": "user",
+          "content": "Qual ajuste pequeno eu poderia testar primeiro?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 61,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 210,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 61,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.44,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 15,
+        "generation_elapsed_ms": 74.53,
+        "tokens_per_second": 201.25,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 138.58,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-05",
+      "prompt": "A abertura parece longa. O que você faria?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Quero revisar minha apresentação sem perder meu estilo."
+        },
+        {
+          "role": "assistant",
+          "content": "Posso melhorar clareza mantendo seu vocabulário e ritmo, e mostrar mudanças maiores para você decidir."
+        },
+        {
+          "role": "user",
+          "content": "A abertura parece longa. O que você faria?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 61,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 205,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 61,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.36,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 15,
+        "generation_elapsed_ms": 40.88,
+        "tokens_per_second": 366.92,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 101.59,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-06",
+      "prompt": "O que seria uma meta realista para os próximos dias?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Quero terminar um projeto pessoal, mas tenho pouco tempo livre."
+        },
+        {
+          "role": "assistant",
+          "content": "Podemos reduzir a entrega e definir um bloco pequeno de trabalho que caiba na sua semana."
+        },
+        {
+          "role": "user",
+          "content": "O que seria uma meta realista para os próximos dias?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 62,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 205,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 62,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.31,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 15,
+        "generation_elapsed_ms": 64.54,
+        "tokens_per_second": 232.41,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 133.44,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-07",
+      "prompt": "Que pergunta eu deveria fazer a três pessoas?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Não tenho certeza se as pessoas vão gostar dessa proposta."
+        },
+        {
+          "role": "assistant",
+          "content": "Ainda não dá para saber sem observar o público. Podemos preparar uma forma simples de colher reação."
+        },
+        {
+          "role": "user",
+          "content": "Que pergunta eu deveria fazer a três pessoas?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 63,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 211,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 63,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.35,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 15,
+        "generation_elapsed_ms": 44.77,
+        "tokens_per_second": 335.01,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 99.56,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-08",
+      "prompt": "Mas se eu deixar algo de fora, não vai parecer incompleto?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Acho que devemos incluir todos os recursos já na primeira versão."
+        },
+        {
+          "role": "assistant",
+          "content": "Eu teria cautela porque isso aumenta custo antes de sabermos quais recursos resolvem o problema central."
+        },
+        {
+          "role": "user",
+          "content": "Mas se eu deixar algo de fora, não vai parecer incompleto?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 70,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 230,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 70,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.29,
+          "bounded": true
+        },
+        "generated_tokens": 29,
+        "generation_elapsed_ms": 121.35,
+        "tokens_per_second": 238.97,
+        "stop_reason": "low-entropy-cycle",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 184.98,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-09",
+      "prompt": "Por que isso ajuda a decidir?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Você disse para testar uma hipótese em pequena escala."
+        },
+        {
+          "role": "assistant",
+          "content": "Isso permite observar a reação sem investir no formato completo."
+        },
+        {
+          "role": "user",
+          "content": "Por que isso ajuda a decidir?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 44,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 151,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 44,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.43,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 15,
+        "generation_elapsed_ms": 87.05,
+        "tokens_per_second": 172.32,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 148.96,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-10",
+      "prompt": "Então me ajude apenas a definir o conteúdo principal.",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Você presumiu que eu queria publicar a página."
+        },
+        {
+          "role": "assistant",
+          "content": "Você tem razão. Eu confundi criar uma prévia com publicar; vou manter o escopo no rascunho local."
+        },
+        {
+          "role": "user",
+          "content": "Então me ajude apenas a definir o conteúdo principal."
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 64,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 203,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 64,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.17,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 15,
+        "generation_elapsed_ms": 76.58,
+        "tokens_per_second": 195.87,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 147.75,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-11",
+      "prompt": "Como eu poderia convidar pessoas que acham que não sabem desenhar?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Pensei em organizar encontros mensais de desenho."
+        },
+        {
+          "role": "assistant",
+          "content": "A frequência mensal pode criar continuidade sem exigir encontros toda semana. O formato pode ser leve e aberto a iniciantes."
+        },
+        {
+          "role": "user",
+          "content": "Como eu poderia convidar pessoas que acham que não sabem desenhar?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 77,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 241,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 77,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.13,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 31,
+        "generation_elapsed_ms": 142.73,
+        "tokens_per_second": 217.19,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 205.04,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-12",
+      "prompt": "Qual parte eu preparo primeiro?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Vamos fazer um boletim cultural curto, uma vez por mês."
+        },
+        {
+          "role": "assistant",
+          "content": "Uma edição com agenda, um destaque local e uma recomendação pode manter a curadoria simples."
+        },
+        {
+          "role": "user",
+          "content": "Qual parte eu preparo primeiro?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 68,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 183,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 68,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 2.69,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 15,
+        "generation_elapsed_ms": 61.3,
+        "tokens_per_second": 244.69,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 124.24,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-13",
+      "prompt": "Me explica o que é uma metáfora.",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Quero uma resposta menos formal e mais natural."
+        },
+        {
+          "role": "assistant",
+          "content": "Vou usar frases mais simples e conversar diretamente, sem abandonar precisão."
+        },
+        {
+          "role": "user",
+          "content": "Me explica o que é uma metáfora."
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 50,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 159,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 50,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.18,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 31,
+        "generation_elapsed_ms": 159.08,
+        "tokens_per_second": 194.87,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 243.39,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-14",
+      "prompt": "É para incentivar doação de livros a uma escola.",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Quero fazer um material visual para uma campanha."
+        },
+        {
+          "role": "assistant",
+          "content": "Posso ajudar com conceito, composição e texto. Para definir a direção, preciso entender público e objetivo."
+        },
+        {
+          "role": "user",
+          "content": "É para incentivar doação de livros a uma escola."
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 57,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 212,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 57,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.72,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 63,
+        "generation_elapsed_ms": 290.84,
+        "tokens_per_second": 216.61,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 402.67,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-15",
+      "prompt": "Quero manter a porta aberta para conversar no futuro.",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Preciso escrever uma recusa educada para uma proposta."
+        },
+        {
+          "role": "assistant",
+          "content": "Vamos agradecer, recusar com clareza e evitar justificativas inventadas."
+        },
+        {
+          "role": "user",
+          "content": "Quero manter a porta aberta para conversar no futuro."
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 59,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 179,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 59,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.03,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 15,
+        "generation_elapsed_ms": 117.37,
+        "tokens_per_second": 127.8,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 220.26,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-16",
+      "prompt": "Uma é mais divertida; a outra ensina algo mais prático.",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Estou comparando duas ideias de oficina."
+        },
+        {
+          "role": "assistant",
+          "content": "Podemos comparar pelo público, pelo tempo de preparo e pelo que cada pessoa leva da atividade."
+        },
+        {
+          "role": "user",
+          "content": "Uma é mais divertida; a outra ensina algo mais prático."
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 62,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 192,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 62,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.1,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 31,
+        "generation_elapsed_ms": 179.03,
+        "tokens_per_second": 173.16,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 299.06,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-17",
+      "prompt": "Qual delas é a correta?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Li duas recomendações diferentes sobre estudar de manhã."
+        },
+        {
+          "role": "assistant",
+          "content": "Elas podem se referir a pessoas ou rotinas diferentes; a recomendação não vale igualmente para todos."
+        },
+        {
+          "role": "user",
+          "content": "Qual delas é a correta?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 61,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 187,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 61,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.07,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 31,
+        "generation_elapsed_ms": 214.79,
+        "tokens_per_second": 144.33,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 328.7,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-18",
+      "prompt": "Como termino sem pressionar ninguém?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Quero apresentar meu projeto para possíveis colaboradores."
+        },
+        {
+          "role": "assistant",
+          "content": "Uma apresentação curta deve deixar claro o problema, a proposta e o tipo de ajuda que você procura."
+        },
+        {
+          "role": "user",
+          "content": "Como termino sem pressionar ninguém?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 55,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 198,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 55,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.6,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 15,
+        "generation_elapsed_ms": 87.47,
+        "tokens_per_second": 171.49,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 200.72,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-19",
+      "prompt": "O que é hierarquia visual?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Quero uma explicação curta, porque estou começando a aprender."
+        },
+        {
+          "role": "assistant",
+          "content": "Vou começar pela ideia principal e só acrescentar detalhes se forem úteis."
+        },
+        {
+          "role": "user",
+          "content": "O que é hierarquia visual?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 48,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 169,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 48,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.52,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 47,
+        "generation_elapsed_ms": 234.52,
+        "tokens_per_second": 200.41,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 350.29,
+      "ok": false
+    },
+    {
+      "id": "dialogue-context-20",
+      "prompt": "Qual seria um sinal de que estamos exagerando no escopo?",
+      "input_messages": [
+        {
+          "role": "user",
+          "content": "Quero que o chat sirva também para ideias, documentos e planejamento."
+        },
+        {
+          "role": "assistant",
+          "content": "Isso amplia o uso sem exigir que todo pedido vire código. A conversa deve identificar o resultado e encaminhar a ferramenta local adequada quando houver uma ação."
+        },
+        {
+          "role": "user",
+          "content": "Qual seria um sinal de que estamos exagerando no escopo?"
+        }
+      ],
+      "answer": null,
+      "backend": "raw-local-checkpoint",
+      "checks": {
+        "nonempty": false,
+        "no_control_markers": true,
+        "no_protocol_fragment": true,
+        "no_replacement_character": true,
+        "no_control_characters": true,
+        "not_obviously_repetitive": true,
+        "enough_vocabulary": false,
+        "relevant_terms": false,
+        "runtime_quality_gate": false
+      },
+      "quality_reason": "repeated-fragment",
+      "generation": {
+        "input_tokens": 79,
+        "max_tokens": 128,
+        "budget_mode": "override-bounded",
+        "system_prompt_included": false,
+        "context": {
+          "native_context_tokens": 32768,
+          "trained_context_tokens": 512,
+          "runtime_context_tokens": 32768,
+          "forward_context_tokens": 32768,
+          "effective_source_history_tokens": 65280,
+          "context_extension": true,
+          "context_policy": "configured-runtime-verified-extension",
+          "strategy": {
+            "mode": "chunked-attention",
+            "effective_context": 32768,
+            "forward_chunk": 32768,
+            "attention_chunk": 512,
+            "estimated_peak_mb": 3712.0,
+            "safe": true,
+            "mechanism": "causal-query-blocks"
+          }
+        },
+        "context_compaction": {
+          "schema": "conversation-compaction/v1",
+          "source_messages": 3,
+          "source_token_upper_bound": 291,
+          "summarized_messages": 0,
+          "summary_items": 0,
+          "summary_tokens": 0,
+          "recent_messages_kept": 3,
+          "prompt_token_upper_bound": 79,
+          "token_count_mode": "bpe-exact",
+          "prompt_budget_tokens": 32640,
+          "source_context_multiplier": 2,
+          "effective_source_history_tokens": 65280,
+          "compression_ratio_upper_bound": 3.68,
+          "bounded": true
+        },
+        "quality_stop_reason": "repeated-fragment",
+        "generated_tokens": 15,
+        "generation_elapsed_ms": 93.47,
+        "tokens_per_second": 160.47,
+        "stop_reason": "quality-prefix-stop",
+        "quality_reason": "repeated-fragment",
+        "quality_gate_result": "rejected"
+      },
+      "elapsed_ms": 202.53,
+      "ok": false
+    }
+  ]
+}

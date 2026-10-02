@@ -1,0 +1,482 @@
+{
+  "schema": "example-programming-audit/v1",
+  "passed": true,
+  "successful": 4,
+  "total": 4,
+  "cases": [
+    {
+      "case": "converter",
+      "passed": true,
+      "status": "completed",
+      "approvals": 2,
+      "baseline": [
+        {
+          "passed": false,
+          "executed": true,
+          "kind": "test",
+          "testsExecuted": 3,
+          "behaviorExecuted": true,
+          "check": "unittest",
+          "stdout": "",
+          "stderr": "test_example_1 (test_converter.ExplicitExamples.test_example_1) ... FAIL\ntest_example_2 (test_converter.ExplicitExamples.test_example_2) ... FAIL\ntest_example_3 (test_converter.ExplicitExamples.test_example_3) ... FAIL\n\n======================================================================\nFAIL: test_example_1 (test_converter.ExplicitExamples.test_example_1)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/converter/tests/test_converter.py\", line 14, in test_example_1\n    self.assertEqual(actual, 32)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: 30.0 != 32\n\n======================================================================\nFAIL: test_example_2 (test_converter.ExplicitExamples.test_example_2)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/converter/tests/test_converter.py\", line 19, in test_example_2\n    self.assertEqual(actual, 212)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\nAssertionError: 210.0 != 212\n\n======================================================================\nFAIL: test_example_3 (test_converter.ExplicitExamples.test_example_3)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/converter/tests/test_converter.py\", line 24, in test_example_3\n    self.assertEqual(actual, -40)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\nAssertionError: -42.0 != -40\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nFAILED (failures=3)\n",
+          "summary": "Verificação falhou ou não pôde ser executada.",
+          "evidence": [
+            "/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s tests -p test*.py -v",
+            "Verificação falhou ou não pôde ser executada."
+          ]
+        }
+      ],
+      "verification": {
+        "passed": true,
+        "executed": true,
+        "kind": "test",
+        "testsExecuted": 3,
+        "behaviorExecuted": true,
+        "check": "unittest",
+        "stdout": "",
+        "stderr": "test_example_1 (test_converter.ExplicitExamples.test_example_1) ... ok\ntest_example_2 (test_converter.ExplicitExamples.test_example_2) ... ok\ntest_example_3 (test_converter.ExplicitExamples.test_example_3) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n",
+        "summary": "Verificação aprovada.",
+        "evidence": [
+          "/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s tests -p test*.py -v",
+          "Verificação aprovada."
+        ]
+      },
+      "test_oracle_unchanged": true,
+      "baseline_workflows": [
+        "failed"
+      ],
+      "workflow": {
+        "schema": "agent-workflow/v1",
+        "taskId": "task-e134989a-3c74-469b-a079-c0edc1bef555",
+        "status": "completed",
+        "objective": "auto",
+        "workspaceRoot": "/tmp/ia-example-programming-audit-15a33d33/converter",
+        "updatedAt": "2026-10-01T01:26:27.988Z",
+        "eventCount": 113,
+        "currentStage": "complete",
+        "lastObservation": {
+          "seq": 39,
+          "kind": "task.completed",
+          "title": "Tarefa concluída"
+        },
+        "verification": "passed",
+        "pendingCriteria": [],
+        "pendingChecks": [],
+        "recoveryAttempts": 0,
+        "next": {
+          "action": "review_delivery",
+          "reason": "A execução foi encerrada; consulte a entrega e suas evidências.",
+          "advisory": true,
+          "authorized": false
+        }
+      },
+      "approval_previews": [
+        {
+          "path": "converter.py",
+          "diff": {
+            "path": "converter.py",
+            "oldText": "def celsius_para_fahrenheit(c):\n    return c * 9 / 5 + 30\n",
+            "newText": "def celsius_para_fahrenheit(c):\n    return c * 9 / 5 + 32\n"
+          }
+        }
+      ],
+      "files": {
+        "converter.py": "def celsius_para_fahrenheit(c):\n    return c * 9 / 5 + 32\n",
+        "tests/test_converter.py": "import importlib.util\nfrom pathlib import Path\nimport unittest\n\n_path = Path(__file__).resolve().parents[1] / 'converter.py'\n_spec = importlib.util.spec_from_file_location(\"example_subject\", _path)\n_subject = importlib.util.module_from_spec(_spec)\n_spec.loader.exec_module(_subject)\n\nclass ExplicitExamples(unittest.TestCase):\n    def test_example_1(self):\n        actual = _subject.celsius_para_fahrenheit(*[0], **{})\n        self.assertNotIsInstance(actual, bool)\n        self.assertEqual(actual, 32)\n\n    def test_example_2(self):\n        actual = _subject.celsius_para_fahrenheit(*[100], **{})\n        self.assertNotIsInstance(actual, bool)\n        self.assertEqual(actual, 212)\n\n    def test_example_3(self):\n        actual = _subject.celsius_para_fahrenheit(*[-40], **{})\n        self.assertNotIsInstance(actual, bool)\n        self.assertEqual(actual, -40)\n\n"
+      },
+      "independent": [
+        {
+          "schema": "execution-engine/v1",
+          "engine": "bounded-python-ast/v1",
+          "tool": "evaluate_function",
+          "request": {
+            "path": "converter.py",
+            "function": "celsius_para_fahrenheit",
+            "args": [
+              37.5
+            ],
+            "kwargs": {}
+          },
+          "executed": true,
+          "passed": true,
+          "top_level_executed": false,
+          "general_python_execution": false,
+          "result": 99.5,
+          "error": null,
+          "limits": {
+            "max_steps": 20000,
+            "max_seconds": 1,
+            "max_items": 1000,
+            "max_call_depth": 24
+          },
+          "path": "converter.py",
+          "function": "celsius_para_fahrenheit",
+          "source_sha256": "9464983b2166a02c97cd35da65558034cc7230a34dedba03ffec707024fc9772",
+          "source_line": 1,
+          "result_type": "float",
+          "encoding": "json-with-tagged-large-integers",
+          "steps": 9,
+          "calls": [
+            {
+              "function": "celsius_para_fahrenheit",
+              "line": 1
+            }
+          ],
+          "elapsed_ms": 1.87
+        }
+      ],
+      "final_text": "A alteração solicitada foi aplicada no workspace e a verificação passou (unittest).\n\nExecuções observadas:\nPrimeira execução: falhou · 3 teste(s).\n```text\n/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s tests -p test*.py -v\ntest_example_1 (test_converter.ExplicitExamples.test_example_1) ... FAIL\ntest_example_2 (test_converter.ExplicitExamples.test_example_2) ... FAIL\ntest_example_3 (test_converter.ExplicitExamples.test_example_3) ... FAIL\n\n======================================================================\nFAIL: test_example_1 (test_converter.ExplicitExamples.test_example_1)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/converter/tests/test_converter.py\", line 14, in test_example_1\n    self.assertEqual(actual, 32)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: 30.0 != 32\n\n======================================================================\nFAIL: test_example_2 (test_converter.ExplicitExamples.test_example_2)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/converter/tests/test_converter.py\", line 19, in test_example_2\n    self.assertEqual(actual, 212)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\nAssertionError: 210.0 != 212\n\n======================================================================\nFAIL: test_example_3 (test_converter.ExplicitExamples.test_example_3)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/converter/tests/test_converter.py\", line 24, in test_example_3\n    self.assertEqual(actual, -40)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^\nAssertionError: -42.0 != -40\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nFAILED (failures=3)\n\n```\n\nÚltima execução: aprovada · 3 teste(s).\n```text\n/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s tests -p test*.py -v\ntest_example_1 (test_converter.ExplicitExamples.test_example_1) ... ok\ntest_example_2 (test_converter.ExplicitExamples.test_example_2) ... ok\ntest_example_3 (test_converter.ExplicitExamples.test_example_3) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n\n```",
+      "error": null
+    },
+    {
+      "case": "keywords",
+      "passed": true,
+      "status": "completed",
+      "approvals": 2,
+      "baseline": [
+        {
+          "passed": false,
+          "executed": true,
+          "kind": "test",
+          "testsExecuted": 3,
+          "behaviorExecuted": true,
+          "check": "unittest",
+          "stdout": "",
+          "stderr": "test_example_1 (test_prices.ExplicitExamples.test_example_1) ... FAIL\ntest_example_2 (test_prices.ExplicitExamples.test_example_2) ... FAIL\ntest_example_3 (test_prices.ExplicitExamples.test_example_3) ... FAIL\n\n======================================================================\nFAIL: test_example_1 (test_prices.ExplicitExamples.test_example_1)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/keywords/tests/test_prices.py\", line 14, in test_example_1\n    self.assertEqual(actual, 28)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: 19 != 28\n\n======================================================================\nFAIL: test_example_2 (test_prices.ExplicitExamples.test_example_2)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/keywords/tests/test_prices.py\", line 19, in test_example_2\n    self.assertEqual(actual, 16)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: 12 != 16\n\n======================================================================\nFAIL: test_example_3 (test_prices.ExplicitExamples.test_example_3)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/keywords/tests/test_prices.py\", line 24, in test_example_3\n    self.assertEqual(actual, 9)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^\nAssertionError: 5 != 9\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nFAILED (failures=3)\n",
+          "summary": "Verificação falhou ou não pôde ser executada.",
+          "evidence": [
+            "/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s tests -p test*.py -v",
+            "Verificação falhou ou não pôde ser executada."
+          ]
+        }
+      ],
+      "verification": {
+        "passed": true,
+        "executed": true,
+        "kind": "test",
+        "testsExecuted": 3,
+        "behaviorExecuted": true,
+        "check": "unittest",
+        "stdout": "",
+        "stderr": "test_example_1 (test_prices.ExplicitExamples.test_example_1) ... ok\ntest_example_2 (test_prices.ExplicitExamples.test_example_2) ... ok\ntest_example_3 (test_prices.ExplicitExamples.test_example_3) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n",
+        "summary": "Verificação aprovada.",
+        "evidence": [
+          "/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s tests -p test*.py -v",
+          "Verificação aprovada."
+        ]
+      },
+      "test_oracle_unchanged": true,
+      "baseline_workflows": [
+        "failed"
+      ],
+      "workflow": {
+        "schema": "agent-workflow/v1",
+        "taskId": "task-fd66d665-192a-461f-b404-f1afd2526b5d",
+        "status": "completed",
+        "objective": "auto",
+        "workspaceRoot": "/tmp/ia-example-programming-audit-15a33d33/keywords",
+        "updatedAt": "2026-10-01T01:26:32.251Z",
+        "eventCount": 113,
+        "currentStage": "complete",
+        "lastObservation": {
+          "seq": 39,
+          "kind": "task.completed",
+          "title": "Tarefa concluída"
+        },
+        "verification": "passed",
+        "pendingCriteria": [],
+        "pendingChecks": [],
+        "recoveryAttempts": 0,
+        "next": {
+          "action": "review_delivery",
+          "reason": "A execução foi encerrada; consulte a entrega e suas evidências.",
+          "advisory": true,
+          "authorized": false
+        }
+      },
+      "approval_previews": [
+        {
+          "path": "src/prices.py",
+          "diff": {
+            "path": "src/prices.py",
+            "oldText": "def subtotal(values, bonus=0):\n    return sum(values) * 2 + bonus\n",
+            "newText": "def subtotal(values, bonus=0):\n    return sum(values) * 3 + bonus\n"
+          }
+        }
+      ],
+      "files": {
+        "tests/test_prices.py": "import importlib.util\nfrom pathlib import Path\nimport unittest\n\n_path = Path(__file__).resolve().parents[1] / 'src/prices.py'\n_spec = importlib.util.spec_from_file_location(\"example_subject\", _path)\n_subject = importlib.util.module_from_spec(_spec)\n_spec.loader.exec_module(_subject)\n\nclass ExplicitExamples(unittest.TestCase):\n    def test_example_1(self):\n        actual = _subject.subtotal(*[[2, 7]], **{'bonus': 1})\n        self.assertNotIsInstance(actual, bool)\n        self.assertEqual(actual, 28)\n\n    def test_example_2(self):\n        actual = _subject.subtotal(*[[5, -1]], **{'bonus': 4})\n        self.assertNotIsInstance(actual, bool)\n        self.assertEqual(actual, 16)\n\n    def test_example_3(self):\n        actual = _subject.subtotal(*[[0, 4]], **{'bonus': -3})\n        self.assertNotIsInstance(actual, bool)\n        self.assertEqual(actual, 9)\n\n",
+        "src/prices.py": "def subtotal(values, bonus=0):\n    return sum(values) * 3 + bonus\n"
+      },
+      "independent": [
+        {
+          "schema": "execution-engine/v1",
+          "engine": "bounded-python-ast/v1",
+          "tool": "evaluate_function",
+          "request": {
+            "path": "src/prices.py",
+            "function": "subtotal",
+            "args": [
+              [
+                13,
+                2
+              ]
+            ],
+            "kwargs": {
+              "bonus": -4
+            }
+          },
+          "executed": true,
+          "passed": true,
+          "top_level_executed": false,
+          "general_python_execution": false,
+          "result": 41,
+          "error": null,
+          "limits": {
+            "max_steps": 20000,
+            "max_seconds": 1,
+            "max_items": 1000,
+            "max_call_depth": 24
+          },
+          "path": "src/prices.py",
+          "function": "subtotal",
+          "source_sha256": "de986a64b0ada3e4edba210cb583f66e474c5fa913d48a42ba06f26d520c4e4d",
+          "source_line": 1,
+          "result_type": "int",
+          "encoding": "json-with-tagged-large-integers",
+          "steps": 10,
+          "calls": [
+            {
+              "function": "subtotal",
+              "line": 1
+            }
+          ],
+          "elapsed_ms": 0.72
+        }
+      ],
+      "final_text": "A alteração solicitada foi aplicada no workspace e a verificação passou (unittest).\n\nExecuções observadas:\nPrimeira execução: falhou · 3 teste(s).\n```text\n/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s tests -p test*.py -v\ntest_example_1 (test_prices.ExplicitExamples.test_example_1) ... FAIL\ntest_example_2 (test_prices.ExplicitExamples.test_example_2) ... FAIL\ntest_example_3 (test_prices.ExplicitExamples.test_example_3) ... FAIL\n\n======================================================================\nFAIL: test_example_1 (test_prices.ExplicitExamples.test_example_1)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/keywords/tests/test_prices.py\", line 14, in test_example_1\n    self.assertEqual(actual, 28)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: 19 != 28\n\n======================================================================\nFAIL: test_example_2 (test_prices.ExplicitExamples.test_example_2)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/keywords/tests/test_prices.py\", line 19, in test_example_2\n    self.assertEqual(actual, 16)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: 12 != 16\n\n======================================================================\nFAIL: test_example_3 (test_prices.ExplicitExamples.test_example_3)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/keywords/tests/test_prices.py\", line 24, in test_example_3\n    self.assertEqual(actual, 9)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^\nAssertionError: 5 != 9\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nFAILED (failures=3)\n\n```\n\nÚltima execução: aprovada · 3 teste(s).\n```text\n/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s tests -p test*.py -v\ntest_example_1 (test_prices.ExplicitExamples.test_example_1) ... ok\ntest_example_2 (test_prices.ExplicitExamples.test_example_2) ... ok\ntest_example_3 (test_prices.ExplicitExamples.test_example_3) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n\n```",
+      "error": null
+    },
+    {
+      "case": "comparison",
+      "passed": true,
+      "status": "completed",
+      "approvals": 2,
+      "baseline": [
+        {
+          "passed": false,
+          "executed": true,
+          "kind": "test",
+          "testsExecuted": 3,
+          "behaviorExecuted": true,
+          "check": "unittest",
+          "stdout": "",
+          "stderr": "test_example_1 (test_boundary.ExplicitExamples.test_example_1) ... ok\ntest_example_2 (test_boundary.ExplicitExamples.test_example_2) ... FAIL\ntest_example_3 (test_boundary.ExplicitExamples.test_example_3) ... ok\n\n======================================================================\nFAIL: test_example_2 (test_boundary.ExplicitExamples.test_example_2)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/comparison/test_boundary.py\", line 19, in test_example_2\n    self.assertEqual(actual, True)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nAssertionError: False != True\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nFAILED (failures=1)\n",
+          "summary": "Verificação falhou ou não pôde ser executada.",
+          "evidence": [
+            "/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s . -p test*.py -v",
+            "Verificação falhou ou não pôde ser executada."
+          ]
+        }
+      ],
+      "verification": {
+        "passed": true,
+        "executed": true,
+        "kind": "test",
+        "testsExecuted": 3,
+        "behaviorExecuted": true,
+        "check": "unittest",
+        "stdout": "",
+        "stderr": "test_example_1 (test_boundary.ExplicitExamples.test_example_1) ... ok\ntest_example_2 (test_boundary.ExplicitExamples.test_example_2) ... ok\ntest_example_3 (test_boundary.ExplicitExamples.test_example_3) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n",
+        "summary": "Verificação aprovada.",
+        "evidence": [
+          "/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s . -p test*.py -v",
+          "Verificação aprovada."
+        ]
+      },
+      "test_oracle_unchanged": true,
+      "baseline_workflows": [
+        "failed"
+      ],
+      "workflow": {
+        "schema": "agent-workflow/v1",
+        "taskId": "task-0db4265d-736d-464d-b84e-948d50eece4f",
+        "status": "completed",
+        "objective": "auto",
+        "workspaceRoot": "/tmp/ia-example-programming-audit-15a33d33/comparison",
+        "updatedAt": "2026-10-01T01:26:36.409Z",
+        "eventCount": 113,
+        "currentStage": "complete",
+        "lastObservation": {
+          "seq": 39,
+          "kind": "task.completed",
+          "title": "Tarefa concluída"
+        },
+        "verification": "passed",
+        "pendingCriteria": [],
+        "pendingChecks": [],
+        "recoveryAttempts": 0,
+        "next": {
+          "action": "review_delivery",
+          "reason": "A execução foi encerrada; consulte a entrega e suas evidências.",
+          "advisory": true,
+          "authorized": false
+        }
+      },
+      "approval_previews": [
+        {
+          "path": "boundary.py",
+          "diff": {
+            "path": "boundary.py",
+            "oldText": "def accepted(x):\n    return x < 0\n",
+            "newText": "def accepted(x):\n    return x <= 0\n"
+          }
+        }
+      ],
+      "files": {
+        "boundary.py": "def accepted(x):\n    return x <= 0\n",
+        "test_boundary.py": "import importlib.util\nfrom pathlib import Path\nimport unittest\n\n_path = Path(__file__).resolve().parents[0] / 'boundary.py'\n_spec = importlib.util.spec_from_file_location(\"example_subject\", _path)\n_subject = importlib.util.module_from_spec(_spec)\n_spec.loader.exec_module(_subject)\n\nclass ExplicitExamples(unittest.TestCase):\n    def test_example_1(self):\n        actual = _subject.accepted(*[-0.1], **{})\n        self.assertIsInstance(actual, bool)\n        self.assertEqual(actual, True)\n\n    def test_example_2(self):\n        actual = _subject.accepted(*[0], **{})\n        self.assertIsInstance(actual, bool)\n        self.assertEqual(actual, True)\n\n    def test_example_3(self):\n        actual = _subject.accepted(*[0.1], **{})\n        self.assertIsInstance(actual, bool)\n        self.assertEqual(actual, False)\n\n"
+      },
+      "independent": [
+        {
+          "schema": "execution-engine/v1",
+          "engine": "bounded-python-ast/v1",
+          "tool": "evaluate_function",
+          "request": {
+            "path": "boundary.py",
+            "function": "accepted",
+            "args": [
+              -1e-06
+            ],
+            "kwargs": {}
+          },
+          "executed": true,
+          "passed": true,
+          "top_level_executed": false,
+          "general_python_execution": false,
+          "result": true,
+          "error": null,
+          "limits": {
+            "max_steps": 20000,
+            "max_seconds": 1,
+            "max_items": 1000,
+            "max_call_depth": 24
+          },
+          "path": "boundary.py",
+          "function": "accepted",
+          "source_sha256": "85f0e39d4182b98bb97d91759e1bcb470cc509efcea30e7ddedab5c34199cf8c",
+          "source_line": 1,
+          "result_type": "bool",
+          "encoding": "json-with-tagged-large-integers",
+          "steps": 5,
+          "calls": [
+            {
+              "function": "accepted",
+              "line": 1
+            }
+          ],
+          "elapsed_ms": 0.87
+        },
+        {
+          "schema": "execution-engine/v1",
+          "engine": "bounded-python-ast/v1",
+          "tool": "evaluate_function",
+          "request": {
+            "path": "boundary.py",
+            "function": "accepted",
+            "args": [
+              1e-06
+            ],
+            "kwargs": {}
+          },
+          "executed": true,
+          "passed": true,
+          "top_level_executed": false,
+          "general_python_execution": false,
+          "result": false,
+          "error": null,
+          "limits": {
+            "max_steps": 20000,
+            "max_seconds": 1,
+            "max_items": 1000,
+            "max_call_depth": 24
+          },
+          "path": "boundary.py",
+          "function": "accepted",
+          "source_sha256": "85f0e39d4182b98bb97d91759e1bcb470cc509efcea30e7ddedab5c34199cf8c",
+          "source_line": 1,
+          "result_type": "bool",
+          "encoding": "json-with-tagged-large-integers",
+          "steps": 5,
+          "calls": [
+            {
+              "function": "accepted",
+              "line": 1
+            }
+          ],
+          "elapsed_ms": 0.53
+        }
+      ],
+      "final_text": "A alteração solicitada foi aplicada no workspace e a verificação passou (unittest).\n\nExecuções observadas:\nPrimeira execução: falhou · 3 teste(s).\n```text\n/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s . -p test*.py -v\ntest_example_1 (test_boundary.ExplicitExamples.test_example_1) ... ok\ntest_example_2 (test_boundary.ExplicitExamples.test_example_2) ... FAIL\ntest_example_3 (test_boundary.ExplicitExamples.test_example_3) ... ok\n\n======================================================================\nFAIL: test_example_2 (test_boundary.ExplicitExamples.test_example_2)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/comparison/test_boundary.py\", line 19, in test_example_2\n    self.assertEqual(actual, True)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^\nAssertionError: False != True\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nFAILED (failures=1)\n\n```\n\nÚltima execução: aprovada · 3 teste(s).\n```text\n/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s . -p test*.py -v\ntest_example_1 (test_boundary.ExplicitExamples.test_example_1) ... ok\ntest_example_2 (test_boundary.ExplicitExamples.test_example_2) ... ok\ntest_example_3 (test_boundary.ExplicitExamples.test_example_3) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n\n```",
+      "error": null
+    },
+    {
+      "case": "ambiguous",
+      "passed": true,
+      "status": "blocked",
+      "approvals": 1,
+      "baseline": [],
+      "verification": {
+        "passed": false,
+        "executed": true,
+        "kind": "test",
+        "testsExecuted": 3,
+        "behaviorExecuted": true,
+        "check": "unittest",
+        "stdout": "",
+        "stderr": "test_example_1 (test_ambiguous.ExplicitExamples.test_example_1) ... FAIL\ntest_example_2 (test_ambiguous.ExplicitExamples.test_example_2) ... FAIL\ntest_example_3 (test_ambiguous.ExplicitExamples.test_example_3) ... FAIL\n\n======================================================================\nFAIL: test_example_1 (test_ambiguous.ExplicitExamples.test_example_1)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/ambiguous/test_ambiguous.py\", line 14, in test_example_1\n    self.assertEqual(actual, 5)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^\nAssertionError: 4 != 5\n\n======================================================================\nFAIL: test_example_2 (test_ambiguous.ExplicitExamples.test_example_2)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/ambiguous/test_ambiguous.py\", line 19, in test_example_2\n    self.assertEqual(actual, 10)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: 8 != 10\n\n======================================================================\nFAIL: test_example_3 (test_ambiguous.ExplicitExamples.test_example_3)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/ia-example-programming-audit-15a33d33/ambiguous/test_ambiguous.py\", line 24, in test_example_3\n    self.assertEqual(actual, 15)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^\nAssertionError: 12 != 15\n\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nFAILED (failures=3)\n",
+        "summary": "Verificação falhou ou não pôde ser executada.",
+        "evidence": [
+          "/home/victor/Documentos/IA Local do Zero/.venv/bin/python -m unittest discover -s . -p test*.py -v",
+          "Verificação falhou ou não pôde ser executada."
+        ]
+      },
+      "test_oracle_unchanged": false,
+      "baseline_workflows": [],
+      "workflow": {
+        "schema": "agent-workflow/v1",
+        "taskId": "task-40041b12-1ff6-485a-a079-37c42e53bcb7",
+        "status": "blocked",
+        "objective": "auto",
+        "workspaceRoot": "/tmp/ia-example-programming-audit-15a33d33/ambiguous",
+        "updatedAt": "2026-10-01T01:26:40.636Z",
+        "eventCount": 76,
+        "currentStage": "complete",
+        "lastObservation": {
+          "seq": 64,
+          "kind": "brain.state",
+          "title": "Etapa pausada",
+          "detail": "Esta escrita já foi confirmada nesta tarefa. Use o resultado registrado e escolha a próxima pendência."
+        },
+        "verification": "failed",
+        "pendingCriteria": [],
+        "pendingChecks": [],
+        "recoveryAttempts": 2,
+        "next": {
+          "action": "inspect_blocker",
+          "reason": "Esta escrita já foi confirmada nesta tarefa. Use o resultado registrado e escolha a próxima pendência.",
+          "advisory": true,
+          "authorized": false
+        }
+      },
+      "approval_previews": [],
+      "files": {
+        "test_ambiguous.py": "import importlib.util\nfrom pathlib import Path\nimport unittest\n\n_path = Path(__file__).resolve().parents[0] / 'ambiguous.py'\n_spec = importlib.util.spec_from_file_location(\"example_subject\", _path)\n_subject = importlib.util.module_from_spec(_spec)\n_spec.loader.exec_module(_subject)\n\nclass ExplicitExamples(unittest.TestCase):\n    def test_example_1(self):\n        actual = _subject.answer(*[1], **{})\n        self.assertNotIsInstance(actual, bool)\n        self.assertEqual(actual, 5)\n\n    def test_example_2(self):\n        actual = _subject.answer(*[2], **{})\n        self.assertNotIsInstance(actual, bool)\n        self.assertEqual(actual, 10)\n\n    def test_example_3(self):\n        actual = _subject.answer(*[3], **{})\n        self.assertNotIsInstance(actual, bool)\n        self.assertEqual(actual, 15)\n\n",
+        "ambiguous.py": "def answer(x):\n    return x * 2 + x * 2\n"
+      },
+      "independent": [],
+      "final_text": "Concluí a análise e preparei uma proposta concreta para `ambiguous.py`, `test_ambiguous.py`.\n\nPremissas adotadas:\n- Preservar a função fornecida até executar a primeira suíte.\n- Gerar 3 testes separados a partir dos resultados esperados do pedido.\n\nPreparei os arquivos a partir do código e dos exemplos fornecidos no pedido.\n\nA escrita ainda depende da aprovação desta proposta; depois dela, continuo o ciclo e verifico o resultado.",
+      "error": "Esta escrita já foi confirmada nesta tarefa. Use o resultado registrado e escolha a próxima pendência."
+    }
+  ]
+}

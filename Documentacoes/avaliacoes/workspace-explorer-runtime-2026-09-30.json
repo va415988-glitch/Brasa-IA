@@ -1,0 +1,925 @@
+{
+  "schema": "workspace-explorer-audit/v1",
+  "passed": true,
+  "cases": [
+    {
+      "case": "create-directory",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "data": {
+          "path": "dados",
+          "created": true,
+          "kind": "directory"
+        },
+        "elapsed_ms": 0
+      }
+    },
+    {
+      "case": "create-empty-file",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "data": {
+          "path": "dados/vazio.txt",
+          "created": true,
+          "bytes": 0,
+          "diff": {
+            "format": "line-v1",
+            "changed": 0,
+            "lines": [
+              {
+                "kind": "context",
+                "old_line": 1,
+                "new_line": 1,
+                "text": ""
+              }
+            ],
+            "truncated": false
+          },
+          "artifact": {
+            "kind": "code",
+            "path": "dados/vazio.txt",
+            "language": "text",
+            "status": "created",
+            "bytes_before": 0,
+            "bytes_after": 0,
+            "lines_after": 1,
+            "base_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "result_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "diff": {
+              "format": "line-v1",
+              "changed": 0,
+              "lines": [
+                {
+                  "kind": "context",
+                  "old_line": 1,
+                  "new_line": 1,
+                  "text": ""
+                }
+              ],
+              "truncated": false
+            }
+          }
+        },
+        "elapsed_ms": 0
+      }
+    },
+    {
+      "case": "save-initial-empty-file",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "data": {
+          "path": "dados/vazio.txt",
+          "updated": true,
+          "bytes": 5,
+          "backup": ".ia-local-backups/1790815208602366783__dados__vazio.txt",
+          "backup_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "diff": {
+            "format": "line-v1",
+            "changed": 3,
+            "lines": [
+              {
+                "kind": "remove",
+                "old_line": 1,
+                "new_line": null,
+                "text": ""
+              },
+              {
+                "kind": "add",
+                "old_line": null,
+                "new_line": 1,
+                "text": "olá"
+              },
+              {
+                "kind": "add",
+                "old_line": null,
+                "new_line": 2,
+                "text": ""
+              }
+            ],
+            "truncated": false
+          },
+          "artifact": {
+            "kind": "code",
+            "path": "dados/vazio.txt",
+            "language": "text",
+            "status": "applied",
+            "bytes_before": 0,
+            "bytes_after": 5,
+            "lines_after": 2,
+            "base_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "result_hash": "sha256:97bc03074ee52a8e760b5ce321cd57fb0c312df23388a480b5a035a1279539d9",
+            "diff": {
+              "format": "line-v1",
+              "changed": 3,
+              "lines": [
+                {
+                  "kind": "remove",
+                  "old_line": 1,
+                  "new_line": null,
+                  "text": ""
+                },
+                {
+                  "kind": "add",
+                  "old_line": null,
+                  "new_line": 1,
+                  "text": "olá"
+                },
+                {
+                  "kind": "add",
+                  "old_line": null,
+                  "new_line": 2,
+                  "text": ""
+                }
+              ],
+              "truncated": false
+            }
+          }
+        },
+        "elapsed_ms": 0
+      }
+    },
+    {
+      "case": "refuse-overwrite",
+      "passed": true,
+      "observed": {
+        "ok": false,
+        "error": "falha no workspace: este arquivo já existe; abra-o no editor para alterá-lo"
+      }
+    },
+    {
+      "case": "refuse-stale-save",
+      "passed": true,
+      "observed": {
+        "ok": false,
+        "error": "falha no workspace: o arquivo mudou ou foi aberto parcialmente; abra-o novamente antes de salvar"
+      }
+    },
+    {
+      "case": "trash-directory-with-binary",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "data": {
+          "path": "dados",
+          "trashed": true,
+          "kind": "directory",
+          "trash_id": "1790815208608681963-112443"
+        },
+        "elapsed_ms": 0
+      }
+    },
+    {
+      "case": "list-recoverable-directory",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "data": {
+          "entries": [
+            {
+              "schema": "workspace-trash/v1",
+              "path": "dados",
+              "kind": "directory",
+              "trash_id": "1790815208608681963-112443"
+            }
+          ]
+        },
+        "elapsed_ms": 0
+      }
+    },
+    {
+      "case": "restore-entire-directory",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "data": {
+          "path": "dados",
+          "restored": true,
+          "trash_id": "1790815208608681963-112443"
+        },
+        "elapsed_ms": 0
+      }
+    },
+    {
+      "case": "restored-entry-leaves-list",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "data": {
+          "entries": []
+        },
+        "elapsed_ms": 0
+      }
+    },
+    {
+      "case": "refuse-parent-traversal",
+      "passed": true,
+      "observed": {
+        "ok": false,
+        "error": "argumento inválido: informe um caminho relativo de arquivo ou pasta"
+      }
+    },
+    {
+      "case": "protect-recovery-history",
+      "passed": true,
+      "observed": {
+        "ok": false,
+        "error": "argumento inválido: pasta interna reservada para histórico e recuperação"
+      }
+    },
+    {
+      "case": "refuse-wrong-workspace",
+      "passed": true,
+      "observed": {
+        "ok": false,
+        "error": "falha no workspace: o projeto ativo mudou; nenhuma alteração foi realizada"
+      }
+    },
+    {
+      "case": "refuse-external-origin",
+      "passed": true,
+      "observed": {
+        "ok": false,
+        "error": "origem não autorizada"
+      }
+    },
+    {
+      "case": "create-function-fixture",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "data": {
+          "path": "teste_motor.py",
+          "created": true,
+          "bytes": 130,
+          "diff": {
+            "format": "line-v1",
+            "changed": 4,
+            "lines": [
+              {
+                "kind": "remove",
+                "old_line": 1,
+                "new_line": null,
+                "text": ""
+              },
+              {
+                "kind": "add",
+                "old_line": null,
+                "new_line": 1,
+                "text": "def total_pedido(itens, desconto=0):"
+              },
+              {
+                "kind": "add",
+                "old_line": null,
+                "new_line": 2,
+                "text": "    return round(sum(preco * quantidade for preco, quantidade in itens) * (1 - desconto), 2)"
+              },
+              {
+                "kind": "add",
+                "old_line": null,
+                "new_line": 3,
+                "text": ""
+              }
+            ],
+            "truncated": false
+          },
+          "artifact": {
+            "kind": "code",
+            "path": "teste_motor.py",
+            "language": "python",
+            "status": "created",
+            "bytes_before": 0,
+            "bytes_after": 130,
+            "lines_after": 3,
+            "base_hash": "sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "result_hash": "sha256:349bddb5ffafdd5fd17a1d5943c541fcc9564a14189122a374e1959cfb8f6a93",
+            "diff": {
+              "format": "line-v1",
+              "changed": 4,
+              "lines": [
+                {
+                  "kind": "remove",
+                  "old_line": 1,
+                  "new_line": null,
+                  "text": ""
+                },
+                {
+                  "kind": "add",
+                  "old_line": null,
+                  "new_line": 1,
+                  "text": "def total_pedido(itens, desconto=0):"
+                },
+                {
+                  "kind": "add",
+                  "old_line": null,
+                  "new_line": 2,
+                  "text": "    return round(sum(preco * quantidade for preco, quantidade in itens) * (1 - desconto), 2)"
+                },
+                {
+                  "kind": "add",
+                  "old_line": null,
+                  "new_line": 3,
+                  "text": ""
+                }
+              ],
+              "truncated": false
+            }
+          }
+        },
+        "elapsed_ms": 1
+      }
+    },
+    {
+      "case": "new-chat-executes-workspace-function",
+      "passed": true,
+      "observed": {
+        "ok": true,
+        "report": {
+          "schema": "agent-report/v2",
+          "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+          "status": "completed",
+          "requirements": {
+            "prompt": "Execute total_pedido([[19.9, 3], [8.5, 2]], desconto=0.1) em teste_motor.py",
+            "objective": "operate",
+            "summary": "Execute total_pedido([[19.9, 3], [8.5, 2]], desconto=0.1) em teste_motor.py",
+            "interpretations": [
+              {
+                "id": "interpretation-primary",
+                "summary": "Execute total_pedido([[19.9, 3], [8.5, 2]], desconto=0.1) em teste_motor.py",
+                "assumptions": [],
+                "missing": [],
+                "plausibility": 0.9
+              }
+            ],
+            "constraints": [],
+            "acceptanceCriteria": [
+              {
+                "id": "acceptance-clarity",
+                "text": "A entrega deve responder ao objetivo declarado sem inventar premissas.",
+                "verifiable": true,
+                "source": "derived"
+              }
+            ],
+            "missingInformation": [],
+            "questions": [],
+            "ambiguityScore": 0,
+            "requiresClarification": false,
+            "confidence": {
+              "score": 0.86,
+              "basis": "derived",
+              "reasons": [
+                "O pedido contém intenção e contexto suficientes para iniciar um plano."
+              ],
+              "calibrated": false
+            }
+          },
+          "inspection": {
+            "workspace": "/tmp/ia-explorer-audit-ky86tm8l",
+            "files": [
+              "dados/bytes.bin",
+              "dados/vazio.txt",
+              "teste_motor.py"
+            ],
+            "directories": [
+              ".ia-local-backups",
+              "dados"
+            ],
+            "truncated": false,
+            "manifests": [],
+            "testFiles": [
+              "teste_motor.py"
+            ],
+            "entrypoints": []
+          },
+          "plan": {
+            "objective": "Execute total_pedido([[19.9, 3], [8.5, 2]], desconto=0.1) em teste_motor.py",
+            "steps": [
+              {
+                "id": "select-workspace",
+                "phase": "observe",
+                "description": "Selecionar e delimitar o workspace autorizado.",
+                "requiresApproval": false
+              },
+              {
+                "id": "inspect-project",
+                "phase": "observe",
+                "description": "Inspecionar manifestos, entradas e testes antes de decidir.",
+                "requiresApproval": false
+              },
+              {
+                "id": "local-planner-loop",
+                "phase": "plan",
+                "description": "Propor uma ação local, validá-la e observar o resultado.",
+                "requiresApproval": false
+              },
+              {
+                "id": "verify",
+                "phase": "verify",
+                "description": "Executar verificações e registrar evidências.",
+                "requiresApproval": false
+              }
+            ]
+          },
+          "evidence": [],
+          "artifacts": [],
+          "events": [
+            {
+              "seq": 1,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "observe",
+              "status": "running",
+              "kind": "task.started",
+              "title": "Tarefa iniciada",
+              "detail": "Execute total_pedido([[19.9, 3], [8.5, 2]], desconto=0.1) em teste_motor.py"
+            },
+            {
+              "seq": 2,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "plan",
+              "status": "running",
+              "kind": "objective.selected",
+              "title": "Objetivo operacional selecionado",
+              "detail": "operate",
+              "payload": {
+                "objective": "operate",
+                "requestedObjective": "auto"
+              }
+            },
+            {
+              "seq": 3,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "plan",
+              "status": "running",
+              "kind": "cognition.summary",
+              "title": "Thinking: rota e próximo passo",
+              "detail": "A rota foi escolhida pelo objetivo classificado e seguirá as restrições e lacunas detectadas no pedido. Próxima etapa: Verificar escopo, risco e autorização antes de executar a ação externa.",
+              "payload": {
+                "route": "external_action",
+                "personalityMode": "conversation",
+                "uncertainties": [],
+                "confidence": 0.86,
+                "confidenceBasis": "derived"
+              }
+            },
+            {
+              "seq": 4,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "learn",
+              "status": "completed",
+              "kind": "workflow.dataset.checked",
+              "title": "Precedentes procedurais consultados",
+              "detail": "0 fluxo(s) revisado(s), 1 trilha(s) local(is) observada(s).",
+              "payload": {
+                "trustedRecords": 0,
+                "rejectedRecords": 0,
+                "matchedRecords": []
+              }
+            },
+            {
+              "seq": 5,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "plan",
+              "status": "completed",
+              "kind": "operational.policy.selected",
+              "title": "Política de execução definida",
+              "detail": "Executar e observar uma ação operacional permitida.",
+              "payload": {
+                "mode": "operation",
+                "allowedTools": [
+                  "inspect_project",
+                  "inspect_code",
+                  "evaluate_function",
+                  "list_tools",
+                  "list_files",
+                  "path_info",
+                  "find_paths",
+                  "list_tree",
+                  "compare_files",
+                  "git_diff",
+                  "read_file",
+                  "extract_document_text",
+                  "inspect_media",
+                  "search_files",
+                  "diagnose_project",
+                  "calculate",
+                  "project_checks",
+                  "terminal_run",
+                  "process_start",
+                  "process_status",
+                  "process_stop"
+                ],
+                "maxActions": 12
+              }
+            },
+            {
+              "seq": 6,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "observe",
+              "status": "completed",
+              "kind": "requirements.analyzed",
+              "title": "Requisitos analisados",
+              "detail": "Ambiguidade 0.00",
+              "payload": {
+                "questions": [],
+                "missing": [],
+                "ambiguityScore": 0
+              }
+            },
+            {
+              "seq": 7,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "observe",
+              "status": "completed",
+              "kind": "runtime.capabilities.observed",
+              "title": "Ferramentas do runtime observadas",
+              "detail": "36 ferramenta(s) registrada(s) e disponíveis para esta tarefa.",
+              "payload": {
+                "availableTools": [
+                  "calculate",
+                  "evaluate_function",
+                  "inspect_code",
+                  "search_web",
+                  "open_page",
+                  "research_web",
+                  "list_tools",
+                  "apply_batch",
+                  "undo_batch",
+                  "list_sources",
+                  "cite_sources",
+                  "list_files",
+                  "path_info",
+                  "find_paths",
+                  "list_tree",
+                  "compare_files",
+                  "git_diff",
+                  "read_file",
+                  "search_files",
+                  "inspect_project",
+                  "diagnose_project",
+                  "propose_repair",
+                  "apply_repair",
+                  "project_checks",
+                  "terminal_run",
+                  "process_start",
+                  "process_status",
+                  "process_stop",
+                  "set_workspace",
+                  "create_workspace",
+                  "create_directory",
+                  "create_file",
+                  "create_web_page",
+                  "edit_file",
+                  "inspect_media",
+                  "extract_document_text"
+                ],
+                "allowedTools": [
+                  "calculate",
+                  "evaluate_function",
+                  "inspect_code",
+                  "list_tools",
+                  "list_files",
+                  "path_info",
+                  "find_paths",
+                  "list_tree",
+                  "compare_files",
+                  "git_diff",
+                  "read_file",
+                  "search_files",
+                  "inspect_project",
+                  "diagnose_project",
+                  "project_checks",
+                  "terminal_run",
+                  "process_start",
+                  "process_status",
+                  "process_stop",
+                  "inspect_media",
+                  "extract_document_text"
+                ]
+              }
+            },
+            {
+              "seq": 8,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "observe",
+              "status": "running",
+              "kind": "workspace.selected",
+              "title": "Workspace selecionado",
+              "detail": "/tmp/ia-explorer-audit-ky86tm8l"
+            },
+            {
+              "seq": 9,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "observe",
+              "status": "running",
+              "kind": "memory.updated",
+              "title": "Workspace registrado na memória",
+              "detail": "/tmp/ia-explorer-audit-ky86tm8l"
+            },
+            {
+              "seq": 10,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "observe",
+              "status": "running",
+              "kind": "workspace.inspected",
+              "title": "Estrutura inspecionada",
+              "detail": "Base existente detectada.",
+              "payload": {
+                "workspace": "/tmp/ia-explorer-audit-ky86tm8l",
+                "initialProject": false
+              }
+            },
+            {
+              "seq": 11,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "plan",
+              "status": "running",
+              "kind": "plan.created",
+              "title": "Plano criado",
+              "detail": "4 etapa(s)"
+            },
+            {
+              "seq": 12,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.requested",
+              "title": "Consultando o planejador local",
+              "detail": "Ciclo 1 de 12.",
+              "payload": {
+                "step": 1,
+                "limit": 12
+              }
+            },
+            {
+              "seq": 13,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.proposed",
+              "title": "Próxima ferramenta proposta",
+              "detail": "Vou avaliar a função local com os argumentos informados.",
+              "payload": {
+                "tool": "evaluate_function",
+                "backend": "execution-engine",
+                "traceId": "trace-3c3b1b6267014533a84c5c2e97b9d17a"
+              }
+            },
+            {
+              "seq": 15,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "plan",
+              "status": "running",
+              "kind": "brain.action.validated",
+              "title": "Próxima ação validada pelo núcleo",
+              "detail": "Interpretar a função pura solicitada e observar o resultado.",
+              "payload": {
+                "planId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e-plan-1",
+                "actionId": "call-a94708c74ee44934b3d03f6d6e942014",
+                "state": "planning",
+                "capability": "evaluate_function",
+                "group": "read",
+                "effect": "none",
+                "retryStrategy": "safe_read",
+                "risk": "low",
+                "reversible": true
+              }
+            },
+            {
+              "seq": 16,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "act",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Executando ferramenta local",
+              "detail": "Executando a ação autorizada.",
+              "payload": {
+                "planId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e-plan-1",
+                "actionId": "call-a94708c74ee44934b3d03f6d6e942014",
+                "tool": "evaluate_function",
+                "attempt": 1,
+                "expectedEffect": "Interpretar a função pura solicitada e observar o resultado.",
+                "state": "executing",
+                "transition": {
+                  "from": "planning",
+                  "to": "executing"
+                }
+              }
+            },
+            {
+              "seq": 17,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "verify",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Conferindo resultado da ferramenta",
+              "detail": "Resultado bruto recebido; iniciando verificação.",
+              "payload": {
+                "planId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e-plan-1",
+                "actionId": "call-a94708c74ee44934b3d03f6d6e942014",
+                "tool": "evaluate_function",
+                "ok": true,
+                "summary": "teste_motor.py",
+                "evidence": [
+                  "evaluate_function: teste_motor.py"
+                ],
+                "state": "verifying",
+                "transition": {
+                  "from": "executing",
+                  "to": "verifying"
+                }
+              }
+            },
+            {
+              "seq": 18,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "plan",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Planejando próxima ação",
+              "detail": "A ação foi verificada; o núcleo decidirá o próximo passo da tarefa.",
+              "payload": {
+                "planId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e-plan-1",
+                "state": "planning",
+                "transition": {
+                  "from": "verifying",
+                  "to": "planning"
+                }
+              }
+            },
+            {
+              "seq": 19,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.requested",
+              "title": "Consultando o planejador local",
+              "detail": "Ciclo 2 de 12.",
+              "payload": {
+                "step": 2,
+                "limit": 12
+              }
+            },
+            {
+              "seq": 20,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "plan",
+              "status": "running",
+              "kind": "planner.finished",
+              "title": "Planejador encerrou o ciclo",
+              "detail": "Resultado de `total_pedido` em `teste_motor.py:1`: `69.03`.\n\nAvaliação pelo motor AST local, para os argumentos informados.",
+              "payload": {
+                "backend": "execution-engine",
+                "traceId": "trace-c29ba64a59244359ae7d62a7388aa702"
+              }
+            },
+            {
+              "seq": 21,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "verify",
+              "status": "completed",
+              "kind": "acceptance.evaluated",
+              "title": "Critérios de aceite satisfeitos",
+              "detail": "✓ delivery.summary: A tarefa precisa de uma síntese final baseada nos resultados observados.\n✓ operation.result: A operação precisa produzir ao menos um resultado observado.",
+              "payload": {
+                "checks": [
+                  {
+                    "id": "delivery.summary",
+                    "passed": true,
+                    "detail": "A tarefa precisa de uma síntese final baseada nos resultados observados."
+                  },
+                  {
+                    "id": "operation.result",
+                    "passed": true,
+                    "detail": "A operação precisa produzir ao menos um resultado observado."
+                  }
+                ]
+              }
+            },
+            {
+              "seq": 22,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "complete",
+              "status": "running",
+              "kind": "brain.state",
+              "title": "Preparando resposta",
+              "detail": "Critérios verificados; preparando a entrega.",
+              "payload": {
+                "state": "delivering",
+                "transition": {
+                  "from": "planning",
+                  "to": "delivering"
+                }
+              }
+            },
+            {
+              "seq": 23,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "complete",
+              "status": "completed",
+              "kind": "brain.state",
+              "title": "Etapa concluída",
+              "detail": "Tarefa concluída com evidência.",
+              "payload": {
+                "state": "completed",
+                "transition": {
+                  "from": "delivering",
+                  "to": "completed"
+                }
+              }
+            },
+            {
+              "seq": 24,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "learn",
+              "status": "completed",
+              "kind": "workflow.local.procedure.saved",
+              "title": "Trilha operacional registrada",
+              "detail": "Somente objetivo, sequência de ferramentas e estado de conclusão foram retidos."
+            },
+            {
+              "seq": 25,
+              "taskId": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+              "phase": "complete",
+              "status": "completed",
+              "kind": "task.completed",
+              "title": "Tarefa concluída"
+            }
+          ],
+          "finalText": "Resultado de `total_pedido` em `teste_motor.py:1`: `69.03`.\n\nAvaliação pelo motor AST local, para os argumentos informados."
+        },
+        "cognition": {
+          "schema": "agent-understanding/v1",
+          "task_id": "task-3a54fec2-620d-4e32-830f-e5c6684eb69e",
+          "preparation_id": "prep-b0150e6a-f1e3-46c6-be9e-3a15b839f9af",
+          "status": "ready",
+          "objective": "operate",
+          "interpretation": "Execute total_pedido([[19.9, 3], [8.5, 2]], desconto=0.1) em teste_motor.py",
+          "personality": {
+            "mode": "conversation",
+            "version": "local-personality/v1"
+          },
+          "assumptions": [],
+          "constraints": [],
+          "acceptance_criteria": [
+            "A entrega deve responder ao objetivo declarado sem inventar premissas."
+          ],
+          "questions": [],
+          "next_step": "Verificar escopo, risco e autorização antes de executar a ação externa.",
+          "workspace": {
+            "root": "/tmp/ia-explorer-audit-ky86tm8l",
+            "manifests": [],
+            "test_files": [
+              "teste_motor.py"
+            ],
+            "truncated": false
+          },
+          "capabilities": {
+            "available": [
+              "inspect_project",
+              "inspect_code",
+              "evaluate_function",
+              "list_tools",
+              "list_files",
+              "path_info",
+              "find_paths",
+              "list_tree",
+              "compare_files",
+              "git_diff",
+              "read_file",
+              "extract_document_text",
+              "inspect_media",
+              "search_files",
+              "diagnose_project",
+              "calculate",
+              "project_checks",
+              "terminal_run",
+              "process_start",
+              "process_status",
+              "process_stop"
+            ],
+            "approval_required_for_writes": true
+          },
+          "context": {
+            "schema": "agent-context/v2",
+            "memory_items": 0,
+            "skills": 0,
+            "evidence": 0
+          }
+        },
+        "taskStorage": {
+          "saved": true,
+          "directory": "/home/victor/Documentos/IA Local do Zero/.agent-state/tasks"
+        },
+        "preparation": {
+          "id": "prep-b0150e6a-f1e3-46c6-be9e-3a15b839f9af",
+          "reused": false
+        },
+        "awaitingApproval": false
+      }
+    }
+  ],
+  "total": 15,
+  "successful": 15
+}

@@ -1,0 +1,23 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const source = fs.readFileSync(path.join(__dirname, '../runtime/static/app.js'), 'utf8');
+const states = source.slice(source.indexOf('function isActionTerminal('), source.indexOf('function setLiveStatus('));
+const update = source.slice(source.indexOf('function updateAction('), source.indexOf('function recordWorkflow('));
+const record = {state: 'busy', log: '', steps: []};
+let liveStatus;
+const context = {liveActions: new Map([['task', {record, row: null}]]),
+  setLiveStatus: value => { liveStatus = value; }, actionProgressValue: Number};
+vm.createContext(context);
+vm.runInContext(states + update, context);
+context.updateAction({operation: 'task', task_id: 'task', kind: 'planner.finished', phase: 'plan', status: 'completed', message: 'Planejador encerrou'});
+assert.equal(record.state, 'busy', 'a completed step does not settle the task');
+context.updateAction({operation: 'task', phase: 'blocked', message: 'Tarefa bloqueada'}, true);
+assert.equal(record.state, 'blocked');
+context.updateAction({operation: 'task', task_id: 'task', phase: 'plan', message: 'Evento atrasado'});
+assert.equal(record.state, 'blocked', 'late events cannot reset terminal state');
+assert.equal(record.log, 'Tarefa bloqueada');
+assert.equal(liveStatus.message, 'Tarefa bloqueada');
+assert.equal(record.steps.at(-1), 'Evento atrasado', 'late evidence remains visible');
+console.log('Activity terminal status regression passed.');

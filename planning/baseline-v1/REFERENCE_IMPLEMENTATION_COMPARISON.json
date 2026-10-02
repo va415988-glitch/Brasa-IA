@@ -1,0 +1,54 @@
+{
+  "schema": "brasa-reference-implementation/v1",
+  "model": "qwen2.5-coder-1.5b-instruct-q4_k_m.gguf",
+  "api": "openai",
+  "endpoint": "http://127.0.0.1:3107",
+  "heldout": "datasets/implementation_sft_compact_extended_v2/heldout.jsonl",
+  "max_tokens": 512,
+  "cases": [
+    {
+      "id": "minutes",
+      "prompt_sha256": "c02dbed2c24b7c540f816f23f1c81a967254ade6646f52d5aa2e2c4fc9e1212d",
+      "elapsed_seconds": 20.53,
+      "usage": {
+        "completion_tokens": 128,
+        "prompt_tokens": 228,
+        "total_tokens": 356,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "answer": "```json\n{\n  \"assumptions\": [],\n  \"operations\": [\n    {\n      \"tool\": \"create_directory\",\n      \"arguments\": {\n        \"path\": \"app\"\n      }\n    },\n    {\n      \"tool\": \"create_file\",\n      \"arguments\": {\n        \"path\": \"app/total_minutes.py\",\n        \"content\": \"def total_minutes(hours, minutes):\\n    if hours < 0 or minutes < 0:\\n        raise ValueError('Hours and minutes must be non-negative')\\n    return hours * 60 + minutes\\n\"\n      }\n    }\n  ]\n}\n```",
+      "json_valid": false,
+      "contract_valid": true,
+      "reference_tests_pass": false,
+      "generated_tests_pass": false,
+      "verification_excerpt": "E\n======================================================================\nERROR: test_conversao (test_app.MinutesTests.test_conversao)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/tmp1h_gzvs4/test_app.py\", line 6, in test_conversao\n    self.assertEqual(total_minutes(2, 15), 135)\n                     ~~~~~~~~~~~~~^^^^^^^\nTypeError: 'module' object is not callable\n\n----------------------------------------------------------------------\nRan 1 test in 0.004s\n\nFAILED (errors=1)\n"
+    },
+    {
+      "id": "initials",
+      "prompt_sha256": "c6ae1d7ca9229803ab9e372624a0b00ce7f81573cec225c06aa758383e35b4d6",
+      "elapsed_seconds": 68.14,
+      "usage": {
+        "completion_tokens": 414,
+        "prompt_tokens": 225,
+        "total_tokens": 639,
+        "prompt_tokens_details": {
+          "cached_tokens": 41
+        }
+      },
+      "answer": "```json\n{\n  \"assumptions\": [],\n  \"operations\": [\n    {\n      \"tool\": \"create_directory\",\n      \"arguments\": {\n        \"path\": \"app\"\n      }\n    },\n    {\n      \"tool\": \"create_file\",\n      \"arguments\": {\n        \"path\": \"app/initials.py\",\n        \"content\": \"def initials(name):\\n    words = name.split(' ')  # Split the name into words\\n    initials = ''.join(word[0].upper() for word in words)  # Join the initials\\n    return initials\\n\\n# Test cases\\nassert initials('Alice') == 'AL'\\nassert initials('Bob') == 'BO'\\nassert initials('Charlie') == 'CH'\\nassert initials('David') == 'DA'\\nassert initials('Eve') == 'EV'\\nassert initials('Frank') == 'FR'\\nassert initials('Grace') == 'GR'\\nassert initials('Hannah') == 'HA'\\nassert initials('Ivy') == 'IV'\\nassert initials('Jack') == 'JA'\\nassert initials('Karl') == 'KA'\\nassert initials('Liam') == 'LI'\\nassert initials('Mia') == 'MI'\\nassert initials('Nathan') == 'NA'\\nassert initials('Olivia') == 'OL'\\nassert initials('Peter') == 'PE'\\nassert initials('Quinn') == 'QU'\\nassert initials('Rachel') == 'RA'\\nassert initials('Sam') == 'SA'\\nassert initials('Toby') == 'TO'\\nassert initials('Ursula') == 'UR'\\nassert initials('Victor') == 'VI'\\nassert initials('Wendy') == 'WE'\\nassert initials('Xavier') == 'XV'\\nassert initials('Yasmin') == 'YA'\\nassert initials('Zoe') == 'ZO'\\n\"\n      }\n    }\n  ]\n}\n```",
+      "json_valid": false,
+      "contract_valid": true,
+      "reference_tests_pass": false,
+      "generated_tests_pass": false,
+      "verification_excerpt": "ile \"/usr/lib/python3.14/unittest/loader.py\", line 426, in _find_test_path\n    module = self._get_module_from_name(name)\n  File \"/usr/lib/python3.14/unittest/loader.py\", line 367, in _get_module_from_name\n    __import__(name)\n    ~~~~~~~~~~^^^^^^\n  File \"/tmp/tmp4g_x0i9m/test_app.py\", line 2, in <module>\n    from app import initials\n  File \"/tmp/tmp4g_x0i9m/app/initials.py\", line 7, in <module>\n    assert initials('Alice') == 'AL'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (errors=1)\n"
+    }
+  ],
+  "totals": {
+    "json_valid": 0,
+    "contract_valid": 2,
+    "generated_tests_pass": 0,
+    "reference_tests_pass": 0
+  }
+}

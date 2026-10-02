@@ -1,12 +1,54 @@
 {
   "name": "list_files",
-  "description": "Lista arquivos e diretórios dentro do workspace autorizado.",
+  "description": "Lista itens de uma pasta do workspace, inclusive links simbólicos sem segui-los; pode incluir nomes ocultos e limitar a resposta.",
   "side_effects": false,
   "requires_approval": false,
   "arguments": {
     "type": "object",
-    "properties": {"path": {"type": "string", "description": "Caminho relativo ao workspace; vazio lista a raiz."}},
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "Caminho relativo ao workspace; vazio lista a raiz."
+      },
+      "include_hidden": {
+        "type": "boolean",
+        "description": "Inclui nomes que começam com ponto e diretórios normalmente omitidos; padrão false."
+      },
+      "max_entries": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 1000,
+        "default": 200,
+        "description": "Máximo de itens devolvidos por listagem."
+      }
+    },
     "additionalProperties": false
   },
-  "result": {"type": "object", "required": ["entries"], "properties": {"entries": {"type": "array"}}}
+  "result": {
+    "type": "object",
+    "required": [
+      "workspace",
+      "path",
+      "entries",
+      "total_entries",
+      "truncated"
+    ],
+    "properties": {
+      "workspace": {
+        "type": "string"
+      },
+      "path": {
+        "type": "string"
+      },
+      "entries": {
+        "type": "array"
+      },
+      "total_entries": {
+        "type": "integer"
+      },
+      "truncated": {
+        "type": "boolean"
+      }
+    }
+  }
 }

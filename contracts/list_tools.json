@@ -1,0 +1,22 @@
+{
+  "name": "list_tools",
+  "description": "Lista as ferramentas executáveis oferecidas pelo runtime local.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": [
+      "tools"
+    ],
+    "properties": {
+      "tools": {
+        "type": "array"
+      }
+    }
+  }
+}
