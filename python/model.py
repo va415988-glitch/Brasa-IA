@@ -32,6 +32,9 @@ def extend_position_embeddings(position_weights, target_context, source_context=
 
 
 def build_model(config):
+    if config.get("architecture") == "decoder_transformer_v2":
+        from model_v2 import build_model_v2
+        return build_model_v2(config)
     import torch
     from torch import nn
 

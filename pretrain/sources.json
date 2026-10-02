@@ -1,0 +1,12 @@
+{
+  "_nota": "Só dados abertos, usados para treinar. Nenhum modelo externo entra. 'mb' é o teto de texto baixado por fonte, multiplicado por --scale.",
+  "sources": [
+    {"name": "fineweb2-pt", "kind": "hf", "dataset": "HuggingFaceFW/fineweb-2", "config": "por_Latn", "split": "train", "field": "text", "mb": 3000, "license": "ODC-By"},
+    {"name": "wikipedia-pt", "kind": "hf", "dataset": "wikimedia/wikipedia", "config": "20231101.pt", "split": "train", "field": "text", "mb": 700, "license": "CC-BY-SA 3.0 / GFDL"},
+    {"name": "fineweb-edu-en", "kind": "hf", "dataset": "HuggingFaceFW/fineweb-edu", "config": "sample-10BT", "split": "train", "field": "text", "mb": 1500, "license": "ODC-By"},
+    {"name": "codigo-python", "kind": "hf", "dataset": "codeparrot/codeparrot-clean", "config": null, "split": "train", "field": "content", "mb": 1500, "license": "mista (GitHub; revisar antes de redistribuir os pesos)"},
+    {"name": "matematica", "kind": "hf", "dataset": "open-web-math/open-web-math", "config": null, "split": "train", "field": "text", "mb": 400, "license": "ODC-By"},
+    {"name": "projeto-chat", "kind": "chat", "glob": "python/data/*.jsonl", "mb": 50, "license": "autoral"},
+    {"name": "projeto-docs", "kind": "text", "glob": "Documentacoes/*.md", "mb": 50, "license": "autoral"}
+  ]
+}
