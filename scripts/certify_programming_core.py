@@ -33,7 +33,7 @@ def certify(dataset,reports,output,catalog=ROOT/'config/cognitive_cores.json'):
         suites.append({'name':suite,'report':str(Path(path).resolve().relative_to(ROOT)),'report_sha256':digest(path)})
     passed=all(s['meets_catalog_thresholds'] for s in summaries.values())
     certificate={'schema':'programming-core-evidence/v1','scope':protocol['scope'],
-        'generator':{k:json.loads(Path(reports['reserved']).read_text()).get(k) for k in ('backend','checkpoint','endpoint','model')},
+        'generator':{k:json.loads(Path(reports['reserved']).read_text()).get(k) for k in ('backend','checkpoint')},
         'protocol_sha256':digest(dataset/'protocol.json'),'catalog_sha256':digest(catalog),
         'suites':suites,'measurements':summaries,
         'status':'passed_function_level' if passed else 'failed',

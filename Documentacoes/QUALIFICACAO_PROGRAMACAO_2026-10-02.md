@@ -12,7 +12,7 @@ treinado ou promovido, e o catálogo de núcleos não foi alterado.
 | `python/programming_qualification.py` | Valida a proposta com o contrato do produto (`parse_implementation_plan`), grava os arquivos em diretório descartável, roda os testes da própria proposta e depois os testes independentes ocultos, em subprocesso com limites de CPU, memória e arquivo |
 | `python/programming_qualification_tasks.py` | 192 tarefas Python com pedido preciso, solução de referência e casos ocultos |
 | `scripts/prepare_programming_qualification.py` | Gera a bancada em `datasets/programming_qualification_v1/`, prova que todas as referências passam nos próprios testes e congela hashes em `protocol.json` |
-| `scripts/evaluate_programming_qualification.py` | Gera uma proposta por tarefa. Backends: `checkpoint`, `endpoint` (qualquer servidor compatível com OpenAI, para comparar modelos de referência), `reference` e `null` |
+| `scripts/evaluate_programming_qualification.py` | Gera uma proposta por tarefa. Backends: `checkpoint` (modelo próprio), `reference` e `null` (controles) |
 | `scripts/certify_programming_core.py` | Reexecuta todas as saídas brutas, sem confiar em notas gravadas, e compara com os limiares do catálogo |
 | `tests/test_programming_qualification.py` | 14 testes: formato da bancada, rejeição de comportamento errado, de testes ausentes, de laço infinito, de mutação dos argumentos e de tipos, bloqueio do arquivo reservado e limiares |
 
@@ -70,5 +70,4 @@ Artefatos: `model/qualification/programming-v1/` (relatórios brutos, controles 
 .venv/bin/python scripts/certify_programming_core.py --reserved-report <r> --regression-report <g> --output <certificado>
 ```
 
-Para comparar outro modelo, use `--backend endpoint --endpoint <url> --model <nome>`.
 O certificador recusa sobrescrever relatórios e certificados.
