@@ -196,6 +196,15 @@ def verify_equivalence(path, out, samples=300):
 
 def tokenize(out, val_fraction, tokenizer_path):
     import numpy as np
+    sha = hashlib.sha256(Path(tokenizer_path).read_bytes()).hexdigest()
+    try:
+        done = json.loads((out / "meta.json").read_text())
+    except (OSError, ValueError):
+        done = {}
+    if (done.get("tokenizer_sha256") == sha and (out / "train.bin").exists()
+            and (out / "train.bin").stat().st_size == 2 * done.get("train_tokens", -1)):
+        print(f"[tokens] já tokenizado ({done['train_tokens'] / 1e6:.0f}M tokens), pulando")
+        return
     fast = fast_tokenizer(tokenizer_path)
     eos = 2
     rng = random.Random(3)

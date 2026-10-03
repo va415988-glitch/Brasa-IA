@@ -24,6 +24,13 @@ class EncodeConversationTest(unittest.TestCase):
     def test_drops_examples_longer_than_context(self):
         self.assertIsNone(encode_conversation([("user", "x" * 100), ("assistant", "y")], fake_encode, 50))
 
+    def test_long_conversation_keeps_the_turns_that_fit(self):
+        turns = [("user", "oi"), ("assistant", "ola"), ("user", "x" * 100), ("assistant", "y")]
+        tokens, labels = encode_conversation(turns, fake_encode, 60)
+        expected, _ = encode_conversation(turns[:2], fake_encode, 60)
+        self.assertEqual(tokens, expected)
+        self.assertEqual(labels[-1], EOS)
+
     def test_requires_an_assistant_answer(self):
         self.assertIsNone(encode_conversation([("user", "oi")], fake_encode, 256))
 

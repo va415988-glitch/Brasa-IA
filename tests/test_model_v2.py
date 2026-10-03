@@ -12,9 +12,11 @@ CONFIG = {"architecture": "decoder_transformer_v2", "vocab_size": 97, "context_l
 
 
 class ModelV2Test(unittest.TestCase):
+    config = CONFIG
+
     def setUp(self):
         torch.manual_seed(0)
-        self.model = build_model(CONFIG).eval()
+        self.model = build_model(self.config).eval()
         self.tokens = torch.randint(0, 97, (1, 20))
 
     def test_dispatch_and_tied_head(self):
@@ -42,6 +44,15 @@ class ModelV2Test(unittest.TestCase):
     def test_rejects_invalid_head_layout(self):
         with self.assertRaises(ValueError):
             build_model({**CONFIG, "kv_heads": 3})
+
+
+class ModelV2QKNormTest(ModelV2Test):
+    config = {**CONFIG, "qk_norm": True}
+
+    def test_old_checkpoints_keep_their_layout(self):
+        old = set(build_model(CONFIG).state_dict())
+        new = set(self.model.state_dict())
+        self.assertEqual(new - old, {f"blocks.{i}.{n}_norm.weight" for i in range(3) for n in "qk"})
 
 
 if __name__ == "__main__":

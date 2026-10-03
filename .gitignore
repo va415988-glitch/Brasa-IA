@@ -16,3 +16,4 @@ __pycache__/
 *.pyc
 .venv/
 .pytest_cache/
+/datasets/Dataset_03-10-2026/

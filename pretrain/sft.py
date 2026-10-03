@@ -22,8 +22,10 @@ EOS = 2
 IGNORE = -100
 
 
-def local_conversations(pattern):
-    for path in sorted(glob.glob(str(ROOT / pattern))):
+def local_conversations(patterns):
+    """Globs separados por vírgula, relativos à raiz do projeto ou absolutos."""
+    paths = sorted({path for pattern in patterns.split(",") if pattern for path in glob.glob(str(ROOT / pattern))})
+    for path in paths:
         for line in Path(path).read_text(encoding="utf-8").splitlines():
             try:
                 messages = json.loads(line).get("messages", [])
@@ -60,7 +62,8 @@ def hf_conversations(name):
 
 
 def encode_conversation(turns, encode, context):
-    tokens, labels = [], []
+    """Conversas longas mantêm os turnos iniciais que cabem, terminando numa resposta."""
+    tokens, labels, fits = [], [], 0
     for role, text in turns:
         if role == "user":
             ids = encode(f"<|user|>\n{text.strip()}\n<|assistant|>\n")
@@ -70,7 +73,10 @@ def encode_conversation(turns, encode, context):
             ids = encode(text.strip()) + [EOS]
             tokens += ids
             labels += ids
-    if len(tokens) > context or all(label == IGNORE for label in labels):
+            if len(tokens) <= context:
+                fits = len(tokens)
+    tokens, labels = tokens[:fits], labels[:fits]
+    if not fits or all(label == IGNORE for label in labels):
         return None
     return tokens, labels
 
@@ -206,6 +212,8 @@ def main():
             scaler.update()
             optimizer.zero_grad(set_to_none=True)
             step += 1
+            if step % 10 == 0:
+                print(f"[sft] passo {step}/{total} loss {loss.item():.3f} lr {rate:.2e}", flush=True)
         value = validate()
         print(f"[sft] época {epoch + 1}/{args.epochs}: validação {value:.3f}")
         if value < best:

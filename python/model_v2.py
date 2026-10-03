@@ -1,5 +1,9 @@
 """Arquitetura moderna do projeto: RMSNorm, RoPE, SwiGLU e atenção com grupos de KV.
 
+``qk_norm: true`` normaliza consultas e chaves por cabeça antes do RoPE: evita a
+explosão dos logits de atenção e tolera taxas de aprendizado maiores. Checkpoints
+sem o campo seguem carregando como antes.
+
 Mesma interface de ``model.build_model`` (forward, prefill_with_cache e
 forward_next_with_cache, com cache ``(chave, valor)`` por camada), para o servidor
 local carregar os pesos sem mudanças. Não há tabela de posições: o contexto de
@@ -30,11 +34,12 @@ def build_model_v2(config):
         raise ValueError("hidden_size, attention_heads e kv_heads incompatíveis")
     head_dim = hidden // heads
     ffn = int(config.get("ffn_hidden") or ffn_size(hidden))
+    qk_norm = bool(config.get("qk_norm", False))
 
     class RMSNorm(nn.Module):
-        def __init__(self):
+        def __init__(self, size=hidden):
             super().__init__()
-            self.weight = nn.Parameter(torch.ones(hidden))
+            self.weight = nn.Parameter(torch.ones(size))
 
         def forward(self, x):
             scale = torch.rsqrt(x.float().pow(2).mean(-1, keepdim=True) + 1e-6)
@@ -57,11 +62,17 @@ def build_model_v2(config):
             self.gate = nn.Linear(hidden, ffn, bias=False)
             self.up = nn.Linear(hidden, ffn, bias=False)
             self.down = nn.Linear(ffn, hidden, bias=False)
+            if qk_norm:
+                self.q_norm = RMSNorm(head_dim)
+                self.k_norm = RMSNorm(head_dim)
 
         def project(self, x, cos, sin):
             batch, length, _ = x.shape
-            q = self.q(x).view(batch, length, heads, head_dim).transpose(1, 2)
-            k = self.k(x).view(batch, length, kv_heads, head_dim).transpose(1, 2)
+            q = self.q(x).view(batch, length, heads, head_dim)
+            k = self.k(x).view(batch, length, kv_heads, head_dim)
+            if qk_norm:
+                q, k = self.q_norm(q), self.k_norm(k)
+            q, k = q.transpose(1, 2), k.transpose(1, 2)
             v = self.v(x).view(batch, length, kv_heads, head_dim).transpose(1, 2)
             return rotate(q, cos, sin), rotate(k, cos, sin), v
 
