@@ -15,7 +15,7 @@ O resultado é um `.safetensors` no mesmo formato que o servidor local já lê.
 | `build_code_sft.py` | Converte o MBPP (974 problemas Python escritos por pessoas, CC-BY 4.0) no contrato de plano JSON da bancada; só entram os que passam no parser do produto e nos próprios testes, e ficam fora os que têm o nome de uma tarefa da bancada |
 | `build_agent_sft.py` | Gera `datasets/agent_sft_v1`: decisões no protocolo de `python/cognitive_dialogue.py` (answer/consult/blocked) com ferramentas reais do runtime em Rust sobre 105 repositórios (`agent_sft_repos.txt`), pesquisa com artigos reais da Wikipédia, respostas humanas e diálogos escritos. Todo alvo passa por `validate_decision` |
 | `agent_sft_authored.txt` | Diálogos escritos por LLM (Claude), em texto simples para revisão; entram rotulados `authored-llm-v1` |
-| `eval_agent_sft.py` | Mede um checkpoint no held-out agêntico pelo caminho do servidor: decisões válidas, decisão certa, ferramenta e argumento, evidência e sobreposição da resposta |
+| `eval_agent_sft.py` | Mede um checkpoint no held-out agêntico: decisões válidas, decisão certa, ferramenta e argumento, evidência e sobreposição da resposta. `--backend server` (CPU, caminho do servidor) ou `--backend direct` (GPU no Colab; 37 de 39 saídas idênticas às do servidor) |
 | `brasa_pretrain.ipynb` | Roteiro para o Colab: monta o Drive, clona, prepara dados, treina, continua (`--init`) e faz o SFT |
 
 ## Presets
