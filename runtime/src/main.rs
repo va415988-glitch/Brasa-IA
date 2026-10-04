@@ -4403,15 +4403,17 @@ fn handle_web_request(mut request: tiny_http::Request, state: SharedState, activ
         let _ = request.respond(response);
         return;
     }
-    let script = match request.url() {
-        "/static/app.js" => Some(include_str!("../static/app.js")),
-        "/static/chat-core.js" => Some(include_str!("../static/chat-core.js")),
+    let asset = match request.url() {
+        "/static/app.js" => Some((include_str!("../static/app.js"), "text/javascript; charset=utf-8")),
+        "/static/chat-core.js" => Some((include_str!("../static/chat-core.js"), "text/javascript; charset=utf-8")),
+        "/static/workbench.js" => Some((include_str!("../static/workbench.js"), "text/javascript; charset=utf-8")),
+        "/static/brasa.css" => Some((include_str!("../static/brasa.css"), "text/css; charset=utf-8")),
         _ => None,
     };
     if request.method() == &Method::Get {
-        if let Some(script) = script {
-            let _ = request.respond(Response::from_string(script).with_header(
-                Header::from_bytes("Content-Type", "text/javascript; charset=utf-8").unwrap()
+        if let Some((body, content_type)) = asset {
+            let _ = request.respond(Response::from_string(body).with_header(
+                Header::from_bytes("Content-Type", content_type).unwrap()
             ).with_header(Header::from_bytes("Cache-Control", "no-store").unwrap()));
             return;
         }

@@ -2910,6 +2910,8 @@ async function send() {
   finally { sending=false; refreshControls(); saveConversation(); input.focus(); }
 }
 function welcomeTemplate() {
+  // A tela inicial vive no index.html; reutiliza a marcação guardada antes do app.js rodar.
+  if (window.BRASA_WELCOME) return window.BRASA_WELCOME;
   return `<div class="welcome" id="welcome">
     <div class="welcome-badge">ESTÚDIO BRASA · 01 / 04</div>
     <h1>Acenda uma ideia.<br><span>Construa o próximo passo.</span></h1>

@@ -4,7 +4,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
-const html = fs.readFileSync(path.join(root, 'runtime/static/index.html'), 'utf8');
+const html = fs.readFileSync(path.join(root, 'runtime/static/index.html'), 'utf8')
+  + fs.readFileSync(path.join(root, 'runtime/static/brasa.css'), 'utf8');
 const js = fs.readFileSync(path.join(root, 'runtime/static/app.js'), 'utf8');
 
 test('top-level navigation only exposes Chat and Treinamento', () => {
