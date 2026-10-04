@@ -13,6 +13,9 @@ O resultado é um `.safetensors` no mesmo formato que o servidor local já lê.
 | `sft.py` | Ajuste supervisionado: perda só nas respostas, conversas do projeto + humanas abertas (OpenAssistant, Dolly), mistura de pré-treino contra esquecimento, amostras ao final. Conversas acima do contexto mantêm os turnos iniciais que cabem |
 | `python/model_v2.py` | Arquitetura `decoder_transformer_v2`: RMSNorm, RoPE, SwiGLU, atenção com grupos de KV (SDPA/flash) e QK-norm opcional (`qk_norm`, ligado nos presets). Mesma interface de KV cache do `model.py`; `build_model` despacha pelo campo `architecture`, e checkpoints antigos seguem intactos |
 | `build_code_sft.py` | Converte o MBPP (974 problemas Python escritos por pessoas, CC-BY 4.0) no contrato de plano JSON da bancada; só entram os que passam no parser do produto e nos próprios testes, e ficam fora os que têm o nome de uma tarefa da bancada |
+| `build_agent_sft.py` | Gera `datasets/agent_sft_v1`: decisões no protocolo de `python/cognitive_dialogue.py` (answer/consult/blocked) com ferramentas reais do runtime em Rust sobre 105 repositórios (`agent_sft_repos.txt`), pesquisa com artigos reais da Wikipédia, respostas humanas e diálogos escritos. Todo alvo passa por `validate_decision` |
+| `agent_sft_authored.txt` | Diálogos escritos por LLM (Claude), em texto simples para revisão; entram rotulados `authored-llm-v1` |
+| `eval_agent_sft.py` | Mede um checkpoint no held-out agêntico pelo caminho do servidor: decisões válidas, decisão certa, ferramenta e argumento, evidência e sobreposição da resposta |
 | `brasa_pretrain.ipynb` | Roteiro para o Colab: monta o Drive, clona, prepara dados, treina, continua (`--init`) e faz o SFT |
 
 ## Presets
@@ -85,6 +88,53 @@ Pacote exportado do Drive e verificado em `datasets/Dataset_03-10-2026/` (fora d
   O formato foi aprendido; a lógica não (funções erradas e asserts em laço). Custo:
   perplexidade no `val.bin` 50,5 → 56,2. O próximo salto depende de pré-treino maior na GPU
   (`--init` sobre o resto dos dados, ou o preset `base`), não de mais SFT.
+
+## SFT agêntico (`datasets/agent_sft_v1`)
+
+O modelo aprende a decidir como agente no formato que o servidor já usa: recebe pedido,
+histórico, observações (`obs-N`) e catálogo de ferramentas, e devolve
+`{"decision", "text", "gap", "evidence_ids", "tool_call"}`. Um exemplo por decisão, no estilo
+`compact-v1` (o `sft.py` grava `cognitive_prompt_style` no checkpoint).
+
+| Parte | Origem | Decisões |
+| --- | --- | ---: |
+| Repositórios: visão geral, onde está definido, explicar arquivo, listar, testes, caminho errado, busca vazia, injeção em README, sem ferramentas | runtime real sobre 105 repositórios | ~5,2 mil |
+| Pesquisa: buscar, abrir a fonte, responder citando; sem internet, bloquear | Wikipédia pt real (título, URL, texto) | ~5,6 mil |
+| Responder sem ferramenta | OpenAssistant 2 e Dolly (humanos) | ~3,9 mil |
+| Conversa natural | diálogos escritos por LLM, rotulados | 273 |
+
+Regras que tornam a política aprendível (sem elas o modelo recebia sinais contraditórios):
+pesquisa só quando a pessoa pede ou exige fonte; resposta pelo trecho da busca só quando ela
+pede resposta curta; respostas usam só fatos visíveis nas observações depois do corte do
+`build_frame`; `.env`, chaves e credenciais nunca são lidos. Treino e held-out são separados
+por repositório e por artigo.
+
+Prova de que é aprendível (CPU, `small` de 39 M, ~1 100 exemplos balanceados por tipo,
+2 épocas, `eval_agent_sft.py` no held-out):
+
+| Tipo | 1ª rodada | 2ª rodada (com as regras acima) |
+| --- | ---: | ---: |
+| Decisões válidas (total) | 83% | 84% |
+| Decisão certa (total) | 80% | 80% |
+| Ferramenta e argumento certos | 68% | 79% |
+| Pesquisa web: decisão certa | 25% | 62% |
+| Resposta direta: decisão certa | 38% | 62% |
+| Repositórios: visão geral / onde está | 88% | 100% |
+| Diálogo escrito por LLM: decisão certa | 25% | 0% |
+
+O último caso mostra o risco do conjunto: o modelo pequeno cola frases-modelo repetidas das
+trajetórias em perguntas livres. Por isso a versão final dobra as respostas humanas diretas
+(OpenAssistant 2 e Dolly, variadas) e o SFT completo mistura conversas humanas inteiras.
+Esses testes usam o modelo de 39 M na CPU; o `base` (100 M) treinado na GPU tem mais capacidade para escapar das frases-modelo, e o mesmo avaliador mede isso.
+
+Para regenerar: `cargo build --release` em `runtime/`, depois
+`python pretrain/build_agent_sft.py --clone pretrain/agent_sft_repos.txt --workspaces <pasta>`.
+
+**Integração pendente no produto.** O treino sozinho não muda o chat: (1) o roteador por regex
+de `python/dialogue.py` manda pedidos como "O que consegue me dizer do sistema…" para a rota de
+conversa sem ferramentas; (2) o caminho cognitivo só roda quando o AgentCore envia
+`objective: conversation` com o catálogo; (3) nesse caminho, `model/cognitive-router/active.json`
+(classificador de caracteres, 595 linhas) tem prioridade sobre o checkpoint.
 
 ## Limites honestos
 

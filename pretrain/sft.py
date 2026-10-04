@@ -2,12 +2,15 @@
 
 Formato igual ao do servidor: ``<|user|>\\n...\\n<|assistant|>\\n`` + resposta + <eos>.
 A perda só conta nos tokens da resposta (e do <eos>). Fontes: conversas do projeto
-(python/data/*.jsonl, só turnos de texto) e, opcionalmente, conversas humanas abertas
-(--hf oasst1,dolly). Nenhuma resposta vem de outro modelo de linguagem.
+(python/data/*.jsonl, só turnos de texto), arquivos ``.jsonl``/``.jsonl.gz`` extras em --local
+(por exemplo, datasets/agent_sft_v1) e, opcionalmente, conversas humanas abertas
+(--hf oasst1,oasst2,dolly). Linhas com ``provenance`` "authored-llm*" foram escritas por um
+LLM; quando entram no treino, o checkpoint declara isso em training_policy.
 """
 
 import argparse
 import glob
+import gzip
 import hashlib
 import json
 import math
@@ -20,22 +23,29 @@ sys.path.insert(0, str(ROOT / "python"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 EOS = 2
 IGNORE = -100
+COGNITIVE_MARKER = "Decida answer, consult ou blocked."
 
 
-def local_conversations(patterns):
-    """Globs separados por vírgula, relativos à raiz do projeto ou absolutos."""
+def local_conversations(patterns, provenance=None):
+    """Globs separados por vírgula, relativos à raiz do projeto ou absolutos; .jsonl ou .jsonl.gz.
+    Se ``provenance`` for um Counter, conta a origem declarada de cada conversa usada."""
     paths = sorted({path for pattern in patterns.split(",") if pattern for path in glob.glob(str(ROOT / pattern))})
     for path in paths:
-        for line in Path(path).read_text(encoding="utf-8").splitlines():
-            try:
-                messages = json.loads(line).get("messages", [])
-            except json.JSONDecodeError:
-                continue
-            turns = [(m["role"], m["content"]) for m in messages
-                     if m.get("role") in {"user", "assistant"} and isinstance(m.get("content"), str)]
-            # Traços de ferramenta ficam de fora: sem tool_call/tool_result o diálogo quebraria.
-            if len(turns) == len(messages) and len(turns) >= 2 and turns[0][0] == "user" and turns[-1][0] == "assistant":
-                yield turns
+        opener = gzip.open if path.endswith(".gz") else open
+        with opener(path, "rt", encoding="utf-8") as handle:
+            for line in handle:
+                try:
+                    row = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                messages = row.get("messages", [])
+                turns = [(m["role"], m["content"]) for m in messages
+                         if m.get("role") in {"user", "assistant"} and isinstance(m.get("content"), str)]
+                # Traços de ferramenta ficam de fora: sem tool_call/tool_result o diálogo quebraria.
+                if len(turns) == len(messages) and len(turns) >= 2 and turns[0][0] == "user" and turns[-1][0] == "assistant":
+                    if provenance is not None:
+                        provenance[row.get("provenance", "local")] += 1
+                    yield turns
 
 
 def hf_conversations(name):
@@ -44,8 +54,8 @@ def hf_conversations(name):
         for row in load_dataset("databricks/databricks-dolly-15k", split="train"):
             prompt = row["instruction"] + (f"\n\n{row['context']}" if row["context"] else "")
             yield [("user", prompt), ("assistant", row["response"])]
-    elif name == "oasst1":  # OpenAssistant: conversas humanas, Apache-2.0; pt e en
-        rows = {r["message_id"]: r for r in load_dataset("OpenAssistant/oasst1", split="train")
+    elif name in ("oasst1", "oasst2"):  # OpenAssistant: conversas humanas, Apache-2.0; pt e en
+        rows = {r["message_id"]: r for r in load_dataset(f"OpenAssistant/{name}", split="train")
                 if r["lang"] in {"pt-BR", "pt", "en"} and not r["deleted"]}
         for row in rows.values():
             if row["role"] != "assistant" or (row.get("rank") not in (0, None)):
@@ -87,7 +97,7 @@ def main():
     parser.add_argument("--base", required=True, help="best.safetensors do pré-treino")
     parser.add_argument("--out", default="sft_out")
     parser.add_argument("--local", default="python/data/*.jsonl")
-    parser.add_argument("--hf", default="", help="oasst1,dolly")
+    parser.add_argument("--hf", default="", help="oasst1, oasst2 e/ou dolly, separados por vírgula")
     parser.add_argument("--epochs", type=int, default=3)
     parser.add_argument("--batch-tokens", type=int, default=32768)
     parser.add_argument("--lr", type=float, default=1e-4)
@@ -122,7 +132,12 @@ def main():
     model.load_state_dict(checkpoint["state_dict"])
     model.to(device).train()
 
-    sources = {"local": list(local_conversations(args.local))}
+    from collections import Counter
+    provenance = Counter()
+    sources = {"local": list(local_conversations(args.local, provenance))}
+    print(f"[sft] proveniência local: {dict(provenance)}")
+    authored_llm = sum(n for name, n in provenance.items() if str(name).startswith("authored-llm"))
+    cognitive = any(turns[0][1].startswith(COGNITIVE_MARKER) for turns in sources["local"])
     for name in filter(None, args.hf.split(",")):
         sources[name] = list(hf_conversations(name))
     train, held = [], []
@@ -221,7 +236,14 @@ def main():
             weights = {k: v.detach().float().cpu() for k, v in model.state_dict().items()}
             meta = {key: v for key, v in checkpoint.items() if key not in {"state_dict", "config"}}
             meta.update(sft={"epochs_done": epoch + 1, "val_loss": value, "sources": list(sources), "base": Path(args.base).name})
-            save_checkpoint({"state_dict": weights, "config": {**config, "sft": True}, **meta}, out / "sft.safetensors")
+            saved_config = {**config, "sft": True}
+            if cognitive:  # o servidor monta o prompt de decisão no mesmo formato do treino
+                saved_config["cognitive_prompt_style"] = "compact-v1"
+            if authored_llm:
+                saved_config["training_policy"] = {**config.get("training_policy", {}), "authored_llm_data": True,
+                                                   "authored_llm_conversations": authored_llm}
+            meta["sft"]["provenance"] = dict(provenance)
+            save_checkpoint({"state_dict": weights, "config": saved_config, **meta}, out / "sft.safetensors")
 
     # Amostras: o primeiro sinal real de que o modelo conversa.
     model.eval()
