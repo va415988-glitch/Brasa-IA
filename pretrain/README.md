@@ -136,6 +136,17 @@ conversa sem ferramentas; (2) o caminho cognitivo só roda quando o AgentCore en
 `objective: conversation` com o catálogo; (3) nesse caminho, `model/cognitive-router/active.json`
 (classificador de caracteres, 595 linhas) tem prioridade sobre o checkpoint.
 
+## Segunda rodada no Colab (03/10/2026): `base` com a receita nova
+
+A100-SXM4-80GB, torch 2.11, **~144 mil tokens/s** estável (dados lidos do Drive sem gargalo).
+Perda de validação: passo 250 → 5,327 · 500 → 4,110 · 1000 → 3,746 · 1500 → 3,591 · 2000 → 3,505 ·
+2500 → 3,451 · 2750 → **3,422 (ppl 30,6)**, ainda no platô da WSD (sem o decaimento final). Para comparação,
+o `small` antigo completo terminou em ppl 41,5.
+
+O servidor morreu no passo ~2950, aos 89 min: o Colab encerra sessões após ~90 min sem interação, e rodar
+código pela extensão do VS Code não conta como interação. Último checkpoint salvo: passo 2500. Desde então
+o notebook treina em blocos de 78 min (rodar a célula de novo retoma) e salva a cada 250 passos.
+
 ## Limites honestos
 
 - Pré-treino só ensina a língua, fatos e padrões de código. **Ele não conversa nem
