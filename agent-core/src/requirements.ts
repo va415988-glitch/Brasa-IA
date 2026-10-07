@@ -86,6 +86,7 @@ const objectiveLabels: Array<{objective: BrainObjective; pattern: RegExp}> = [
 /** Perguntas factuais voláteis devem consultar fontes atuais mesmo sem o verbo "pesquisar". */
 export function asksForCurrentInformation(prompt: string): boolean {
   const looksLikeQuestion = /^\s*(?:qual|quais|quanto|quantos|quantas|quem|quando|onde|como|est[aá]|existe|h[aá]|o que (?:mudou|h[aá] de novo))\b/i.test(prompt)
+    || /^\s*(?:(?:me\s+(?:d[eê]|traga|mostre)\s+(?:as\s+)?)?(?:novidades|not[ií]cias|changelog|release notes|lan[cç]amentos?|últimas))\b/i.test(prompt)
     || /\?/.test(prompt);
   const volatileFact = /\b(?:hoje|agora|atual(?:mente)?|mais recente|recentes?|últim[oa]s?|(?:esta|nesta|nessa|na)\s+semana|(?:este|neste|esse|nesse)\s+m[eê]s|(?:este|neste|esse|nesse)\s+ano|últimos?\s+(?:7|30)\s+dias|últimos?\s+12\s+meses|vers[aã]o|pre[cç]o|cust[oa]|cot[aã]ç[aã]o|lançamento|release|presidente|primeiro-ministro|ceo|clima|previs[aã]o do tempo|agenda|resultado|placar|novidades?|not[ií]cias?|lan[cç]ou|lan[cç]ad[oa]s?|changelog|depreciad[oa]|deprecated|descontinuad[oa]|quem (?:ganhou|venceu)|campe[aã]o|elei[cç][aã]o|d[oó]lar|euro|bitcoin|infla[cç][aã]o|selic)\b/i.test(prompt);
   return looksLikeQuestion && volatileFact;

@@ -47,10 +47,11 @@ function fixedClock(): BrainClock {
   return {now: () => "2026-09-22T00:00:0" + number++ + "Z"};
 }
 
-test("o núcleo registra as 36 ferramentas do runtime e aplica políticas por grupo", () => {
+test("o núcleo registra as 41 ferramentas do runtime e aplica políticas por grupo", () => {
   const tools = Object.keys(runtimeCapabilities);
-  assert.equal(tools.length, 36);
-  for (const tool of ["inspect_code", "find_paths", "list_tree", "compare_files", "git_diff", "inspect_media", "calculate", "evaluate_function"]) {
+  assert.equal(tools.length, 41);
+  for (const tool of ["inspect_code", "find_paths", "list_tree", "compare_files", "git_diff", "inspect_media", "calculate", "evaluate_function",
+    "code_references", "change_impact", "discover_tests", "security_scan", "dependency_audit"]) {
     assert.ok(tools.includes(tool), `ferramenta ausente: ${tool}`);
     assert.ok(operationalPolicyFor({taskId: "tool-policy", prompt: "analisar", objective: "analyze"})
       .allowedTools.includes(tool as RuntimeToolName));
@@ -64,6 +65,11 @@ test("o núcleo registra as 36 ferramentas do runtime e aplica políticas por gr
   assert.equal(runtimeCapabilities.create_web_page.risk, "medium");
   assert.equal(operationalPolicyFor({taskId: "conversation-policy", prompt: "responder", objective: "conversation"})
     .allowedTools.includes("terminal_run"), false);
+  // As análises de engenharia são leituras: nunca pedem aprovação nem escrevem.
+  for (const tool of ["code_references", "change_impact", "discover_tests", "security_scan", "dependency_audit"] as const) {
+    assert.equal(runtimeCapabilities[tool].effect, "none");
+    assert.equal(runtimeCapabilities[tool].group, "read");
+  }
 });
 
 test("OperationalBrain não envia orientação procedural sem fonte validada", async () => {

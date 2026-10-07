@@ -1,0 +1,36 @@
+{
+  "name": "discover_tests",
+  "description": "Descobre frameworks de teste, arquivos e casos de teste, checks disponíveis e fontes sem teste correspondente.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": [
+      "frameworks",
+      "test_files",
+      "untested_candidates"
+    ],
+    "properties": {
+      "frameworks": {
+        "type": "array"
+      },
+      "checks": {
+        "type": "array"
+      },
+      "test_files": {
+        "type": "array"
+      },
+      "estimated_test_cases": {
+        "type": "integer"
+      },
+      "untested_candidates": {
+        "type": "array"
+      }
+    }
+  }
+}

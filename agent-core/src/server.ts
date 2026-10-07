@@ -13,12 +13,13 @@ import {
 import type {AgentContextV2, AgentEvent, AgentPorts, AgentResumeContext, Evidence, ProjectInspection} from "./contracts.ts";
 import {checkpointResume, continuationRequested, compatibleTaskContinuation} from "./task-continuity.ts";
 import type {BrainPreparation} from "./brain-contracts.ts";
-import {parseAgentInput, parseAgentResumeInput, type AgentServerInput} from "./server-contract.ts";
+import {parseAgentInput, parseAgentResumeInput, parseTaskRouteRequest, type AgentServerInput} from "./server-contract.ts";
+import {routeTask, taskRouteResponse} from "./task-router.ts";
 import {FileTaskRunStore, type PersistedTaskRequest} from "./task-store.ts";
 import {capabilityFor} from "./capability-registry.ts";
 import type {RuntimeToolName} from "./contracts.ts";
 import {LocalContextHttp} from "./context.ts";
-import {reportedProjectFailure} from "./requirements.ts";
+import {analyzeRequirements, reportedProjectFailure} from "./requirements.ts";
 
 const runtimeBaseUrl = process.env.IA_AGENT_RUNTIME_URL ?? "http://127.0.0.1:3000";
 const defaultPort = Number(process.env.IA_AGENT_PORT ?? 3200);
@@ -636,6 +637,27 @@ const server = createServer(async (request, response) => {
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       send(response, message.includes("não encontrada") ? 404 : 400, {ok: false, error: message});
+    }
+    return;
+  }
+  // Roteamento e requisitos são puros: não leem o workspace nem gravam estado.
+  if (request.method === "POST" && (url.pathname === "/route" || url.pathname === "/requirements")) {
+    try {
+      const input = parseTaskRouteRequest(await readJson(request));
+      if (url.pathname === "/route") {
+        send(response, 200, {ok: true, ...taskRouteResponse(routeTask(input))});
+      } else {
+        const analysis = analyzeRequirements(input.prompt);
+        send(response, 200, {ok: true, schema: "agent-requirements/v1", objective: analysis.objective,
+          summary: analysis.summary, constraints: analysis.constraints.map(({id, text, source, mandatory}) => ({id, text, source, mandatory})),
+          acceptance_criteria: analysis.acceptanceCriteria.map(({id, text, verifiable}) => ({id, text, verifiable})),
+          missing_information: analysis.missingInformation, questions: analysis.questions,
+          ambiguity_score: Number(analysis.ambiguityScore.toFixed(3)), requires_clarification: analysis.requiresClarification,
+          interpretations: analysis.interpretations.map(({id, summary, assumptions, plausibility}) => ({id, summary, assumptions, plausibility})),
+          execution_allowed: false});
+      }
+    } catch (error) {
+      send(response, 400, {ok: false, error: error instanceof Error ? error.message : String(error)});
     }
     return;
   }

@@ -33,6 +33,7 @@ import {validateWorkspaceRelativePath} from "./scope.ts";
 import {evaluateTaskAcceptance} from "./task-acceptance.ts";
 import {capabilityFor, operationalPolicyFor, recoveryRoutes, runtimeCapabilities} from "./capability-registry.ts";
 import {researchQueryFromPrompt, searchFreshnessFromPrompt} from "./research-query.ts";
+import {routeTask} from "./task-router.ts";
 import {contextualBuildPrompt} from "./build-continuity.ts";
 import {callIdentity, planningMessages, taskWorkingState} from "./task-continuity.ts";
 import {ExecutionLedger} from "./execution-ledger.ts";
@@ -1063,17 +1064,27 @@ export class AgentCore {
       const path = analysisCandidates?.values().next().value;
       if (path) return this.analysisReadAction(path, input.prompt);
     }
-    if (input.objective === "research") return {
-      id: "action-" + crypto.randomUUID(), tool: "research_web",
-      arguments: {
-        query: researchQueryFromPrompt(input.prompt),
-        freshness: searchFreshnessFromPrompt(input.prompt),
-        max_results: 3,
-        save_to_corpus: false,
-      },
-      reason: "Buscar fontes verificáveis para a pesquisa solicitada.",
-      requiresApproval: false, risk: "low",
-    };
+    if (input.objective === "research") {
+      // O roteador escolhe fontes estruturadas (registro de pacotes, Wikipedia,
+      // GitHub) quando elas respondem melhor que a busca web genérica.
+      const research = routeTask({prompt: input.prompt}).research;
+      const structured = research.sources.some((source) => source !== "web");
+      return {
+        id: "action-" + crypto.randomUUID(), tool: "research_web",
+        arguments: {
+          query: researchQueryFromPrompt(input.prompt),
+          freshness: searchFreshnessFromPrompt(input.prompt),
+          max_results: 3,
+          save_to_corpus: false,
+          ...(structured ? {sources: research.sources, language: research.language,
+            ...(research.package ? {package: research.package} : {})} : {}),
+        },
+        reason: structured
+          ? "Consultar " + research.sources.join(", ") + " e sintetizar fontes verificáveis: " + research.reason + "."
+          : "Buscar fontes verificáveis para a pesquisa solicitada.",
+        requiresApproval: false, risk: "low",
+      };
+    }
     if (input.objective === "testing" && !testCreationRequested(input.prompt)) return {
       id: "action-" + crypto.randomUUID(), tool: "project_checks",
       arguments: {check: "auto"},

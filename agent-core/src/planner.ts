@@ -79,6 +79,21 @@ const argumentSchemas: Record<PlannerToolName, z.ZodType> = {
     max_results: z.number().int().min(1).max(100).optional(),
     context_lines: z.number().int().min(0).max(5).optional(),
   }).strict(),
+  code_references: z.object({
+    symbol: z.string().min(1).max(120).regex(/^[A-Za-z_$][\w$]*(?:(?:\.|::)[A-Za-z_$][\w$]*)*$/),
+    path: z.string().max(1024).optional(),
+    limit: z.number().int().min(1).max(500).optional(),
+  }).strict(),
+  change_impact: z.object({
+    path: z.string().min(1).max(1024).optional(),
+    symbol: z.string().min(1).max(120).regex(/^[A-Za-z_$][\w$]*(?:(?:\.|::)[A-Za-z_$][\w$]*)*$/).optional(),
+  }).strict().refine((value) => value.path !== undefined || value.symbol !== undefined, "Informe path ou symbol."),
+  discover_tests: z.object({}).strict(),
+  security_scan: z.object({
+    path: z.string().max(1024).optional(),
+    min_severity: z.enum(["critical", "high", "medium", "low", "info"]).optional(),
+  }).strict(),
+  dependency_audit: z.object({}).strict(),
   search_web: z.object({
     query: z.string().min(1).max(2000),
     source_id: z.string().max(160).optional(),
@@ -98,7 +113,14 @@ const argumentSchemas: Record<PlannerToolName, z.ZodType> = {
     max_results: z.number().int().min(1).max(3).optional(),
     save_to_corpus: z.literal(false).optional(),
     category: z.string().max(80).optional(),
-  }).strict(),
+    sources: z.array(z.enum(["web", "package-registry", "wikipedia", "github"])).min(1).max(4).optional(),
+    package: z.object({
+      name: z.string().min(1).max(214).regex(/^@?[A-Za-z0-9][A-Za-z0-9._-]*(?:\/[A-Za-z0-9._-]+)?$/),
+      ecosystems: z.array(z.enum(["npm", "pypi", "crates"])).min(1).max(3),
+    }).strict().optional(),
+    language: z.enum(["pt", "en"]).optional(),
+  }).strict().refine((value) => !value.sources?.includes("package-registry") || value.package !== undefined,
+    "package-registry exige o pacote consultado."),
   project_checks: z.object({
     check: checkName.optional(),
     path: z.string().max(1024).optional(),

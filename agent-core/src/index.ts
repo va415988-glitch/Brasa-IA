@@ -14,7 +14,9 @@ export {capabilityFor, operationalPolicyFor, runtimeCapabilities} from "./capabi
 export type {CapabilityEffect, CapabilityGroup, OperationalPolicy, RetryStrategy, RuntimeCapability} from "./capability-registry.ts";
 export {evaluateTaskAcceptance} from "./task-acceptance.ts";
 export type {TaskAcceptanceCheck, TaskAcceptanceInput, TaskAcceptanceReport} from "./task-acceptance.ts";
-export {analyzeRequirements, classifyObjective, explicitCorrectionRequest} from "./requirements.ts";
+export {analyzeRequirements, classifyObjective, explicitCorrectionRequest, isCreativeWritingRequest} from "./requirements.ts";
+export {packageLookupFromPrompt, routeTask, taskRouteResponse} from "./task-router.ts";
+export type {CreativeRoute, PackageLookupRoute, ResearchRoute, TaskBrain, TaskRoute, TaskRouteInput} from "./task-router.ts";
 export {RuntimeHttpPorts} from "./runtime-http.ts";
 export type {Fetcher, HttpResponse, RuntimeHttpOptions} from "./runtime-http.ts";
 export {LocalPlannerHttp} from "./planner.ts";

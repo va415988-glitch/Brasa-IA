@@ -295,6 +295,11 @@
       ],
       "network_policy": "offline"
     },
+    {"id": "workspace.code.references", "tool": "code_references", "domain_tags": ["programming", "workspace"], "network_policy": "offline"},
+    {"id": "project.change.impact", "tool": "change_impact", "domain_tags": ["programming", "workspace", "verification"], "network_policy": "offline"},
+    {"id": "project.tests.discover", "tool": "discover_tests", "domain_tags": ["programming", "testing", "workspace"], "network_policy": "offline"},
+    {"id": "project.security.review", "tool": "security_scan", "domain_tags": ["programming", "security", "workspace"], "network_policy": "offline"},
+    {"id": "project.dependencies.audit", "tool": "dependency_audit", "domain_tags": ["programming", "security", "workspace"], "network_policy": "offline"},
     {
       "id": "agent.tools.list",
       "tool": "list_tools",
@@ -318,7 +323,7 @@
       "id": "research.pipeline.run",
       "method": "POST",
       "path": "/api/v1/research",
-      "description": "Pesquisa na web, abre páginas relevantes, sintetiza com citações e pode preparar conteúdo para o acervo local.",
+      "description": "Pesquisa na web, em registros de pacotes, na Wikipedia e no GitHub, abre páginas relevantes, sintetiza com citações e pode preparar conteúdo para o acervo local.",
       "domain_tags": [
         "research",
         "learning"
@@ -346,6 +351,10 @@
             "type": "string",
             "maxLength": 100
           },
+          "freshness": {"type": "string", "enum": ["pd", "pw", "pm", "py"]},
+          "sources": {"type": "array", "items": {"type": "string", "enum": ["web", "package-registry", "wikipedia", "github"]}, "minItems": 1, "maxItems": 4},
+          "package": {"type": "object", "required": ["name", "ecosystems"], "properties": {"name": {"type": "string", "maxLength": 214}, "ecosystems": {"type": "array", "items": {"type": "string", "enum": ["npm", "pypi", "crates"]}, "minItems": 1, "maxItems": 3}}, "additionalProperties": false},
+          "language": {"type": "string", "enum": ["pt", "en"]},
           "max_results": {
             "type": "integer",
             "minimum": 1,

@@ -1,6 +1,6 @@
 {
   "name": "research_web",
-  "description": "Pesquisa fontes, abre páginas selecionadas, sintetiza trechos fundamentados e opcionalmente prepara um lote local para o corpus.",
+  "description": "Pesquisa fontes (web, registros de pacotes, Wikipedia e GitHub), abre páginas selecionadas, sintetiza trechos fundamentados e opcionalmente prepara um lote local para o corpus.",
   "side_effects": "save_to_corpus=true grava um JSONL local; caso contrário, somente a sessão é atualizada",
   "requires_approval": false,
   "timeout_ms": 105000,
@@ -12,6 +12,10 @@
       "queries": {"type": "array", "items": {"type": "string"}, "minItems": 1, "maxItems": 3},
       "provider": {"type": "string", "enum": ["auto", "brave"], "default": "auto"},
       "topic": {"type": "string"},
+      "freshness": {"type": "string", "enum": ["pd", "pw", "pm", "py"]},
+      "sources": {"type": "array", "items": {"type": "string", "enum": ["web", "package-registry", "wikipedia", "github"]}, "minItems": 1, "maxItems": 4, "description": "Fontes consultadas. Sem este campo, somente a web. package-registry exige package."},
+      "package": {"type": "object", "required": ["name", "ecosystems"], "properties": {"name": {"type": "string", "maxLength": 214}, "ecosystems": {"type": "array", "items": {"type": "string", "enum": ["npm", "pypi", "crates"]}, "minItems": 1, "maxItems": 3}}, "additionalProperties": false},
+      "language": {"type": "string", "enum": ["pt", "en"], "default": "pt"},
       "max_results": {"type": "integer", "minimum": 1, "maximum": 3, "default": 2},
       "save_to_corpus": {"type": "boolean", "default": false},
       "category": {"type": "string", "default": "web-research"},

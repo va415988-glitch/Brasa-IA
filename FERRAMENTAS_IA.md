@@ -40,3 +40,35 @@ O catálogo passa a ter **34 ferramentas**: 26 anteriores, cinco novas e três q
 - “Compare os arquivos `a.py` e `b.py`.” → `compare_files`
 - “Mostre o git diff.” → `git_diff`
 - “Quais ferramentas você possui?” → `list_tools`
+
+## Atualização de 07/10/2026: 41 ferramentas e fontes estruturadas
+
+Cinco análises estáticas de engenharia entraram no catálogo. Todas são somente
+leitura, não executam código do workspace e devolvem caminho e linha.
+
+| Ferramenta | API HTTP | Uso |
+| --- | --- | --- |
+| `code_references` | `POST /api/v1/engineering/code/references` | Definição, imports, chamadas e testes que citam um símbolo. |
+| `change_impact` | `POST /api/v1/engineering/code/change-impact` | Dependentes, testes afetados, checks recomendados e risco antes de alterar um arquivo ou símbolo. |
+| `discover_tests` | `POST /api/v1/engineering/tests/discover` | Frameworks, arquivos e casos de teste, e fontes sem teste correspondente. |
+| `security_scan` | `POST /api/v1/security/code-review` | Segredos (mascarados), injeção, desserialização insegura, TLS desativado, XSS e configuração. |
+| `dependency_audit` | `POST /api/v1/engineering/dependencies/audit` | Versões sem fixação, origens fora do registro, lockfiles ausentes e divergências (offline). |
+
+`research_web` e `POST /api/v1/research` aceitam `sources` (`web`,
+`package-registry`, `wikipedia`, `github`), `package` (`name` e `ecosystems`:
+`npm`, `pypi`, `crates`) e `language`. As fontes estruturadas entram como
+páginas citáveis antes da busca web e não consomem o limite `max_results`.
+
+O roteador unificado `POST /api/v1/agent/route` indica, para cada pedido, o
+cérebro, a personalidade, as ferramentas permitidas e as fontes de pesquisa.
+Detalhes e achados da revisão em
+[`Documentacoes/REVISAO_GERAL_2026-10-07.md`](Documentacoes/REVISAO_GERAL_2026-10-07.md).
+
+Exemplos de pedidos:
+
+- “Onde a função `parse_config` é usada?” → `code_references`
+- “Qual o impacto de mudar `app/billing.py`?” → `change_impact`
+- “Quais testes existem no projeto?” → `discover_tests`
+- “Faça uma revisão de segurança do projeto.” → `security_scan`
+- “Audite as dependências.” → `dependency_audit`
+- “Qual a versão mais nova do React?” → `research_web` com `package-registry`

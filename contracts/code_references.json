@@ -1,0 +1,63 @@
+{
+  "name": "code_references",
+  "description": "Encontra definições, imports, chamadas e testes que citam um símbolo no workspace, com caminho e linha; análise estática sem executar código.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "required": [
+      "symbol"
+    ],
+    "properties": {
+      "symbol": {
+        "type": "string",
+        "maxLength": 120,
+        "description": "Identificador, por exemplo parse_config, Router.handle ou crate::app."
+      },
+      "path": {
+        "type": "string",
+        "description": "Pasta relativa para restringir a busca; padrão raiz."
+      },
+      "limit": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 500,
+        "default": 200
+      }
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": [
+      "symbol",
+      "definitions",
+      "references",
+      "counts",
+      "files"
+    ],
+    "properties": {
+      "symbol": {
+        "type": "string"
+      },
+      "definitions": {
+        "type": "array"
+      },
+      "references": {
+        "type": "array"
+      },
+      "counts": {
+        "type": "object"
+      },
+      "files": {
+        "type": "array"
+      },
+      "test_files": {
+        "type": "array"
+      },
+      "truncated": {
+        "type": "boolean"
+      }
+    }
+  }
+}

@@ -98,7 +98,9 @@ class CoreMetricsTests(unittest.TestCase):
 
     def test_catalog_covers_skills_and_orders_dependencies(self):
         skills=json.loads((ROOT/'skills/manifest.json').read_text())['skills']
-        self.assertEqual({s['id'] for s in skills},set(self.registry.catalog['skill_cores']))
+        # Skills determinísticas (análise estática) não passam por núcleos neurais.
+        self.assertEqual({s['id'] for s in skills if s.get('execution') != 'deterministic'},
+                         set(self.registry.catalog['skill_cores']))
         plan=self.registry.plan(['implementation'])
         ids=[s['core'] for s in plan['stages']]
         self.assertLess(ids.index('decision-format'),ids.index('programming'))

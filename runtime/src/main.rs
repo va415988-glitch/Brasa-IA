@@ -1,5 +1,7 @@
 #![recursion_limit = "256"]
 
+mod sources;
+
 use base64::engine::general_purpose::URL_SAFE_NO_PAD;
 use base64::Engine;
 use serde::{Deserialize, Serialize};
@@ -1973,6 +1975,35 @@ fn inspect_code(args: &Value, root: &Path) -> Result<Value, RuntimeError> {
     local_programming_operation("code_intelligence.py", &[("--path", requested)], root)
 }
 
+/// Análises estáticas de engenharia (referências, impacto, testes, segurança
+/// e dependências). Nunca executam código do workspace.
+const ENGINEERING_INSIGHT_TOOLS: [&str; 5] = ["code_references", "change_impact", "discover_tests", "security_scan", "dependency_audit"];
+
+fn engineering_insight(operation: &str, args: &Value, root: &Path) -> Result<Value, RuntimeError> {
+    if !ENGINEERING_INSIGHT_TOOLS.contains(&operation) {
+        return Err(RuntimeError::InvalidArgument("análise de engenharia desconhecida".into()));
+    }
+    let args = if args.is_null() { json!({}) } else { args.clone() };
+    if !args.is_object() { return Err(RuntimeError::InvalidArgument("argumentos devem ser um objeto".into())); }
+    if let Some(path) = args.get("path").and_then(Value::as_str).filter(|path| !path.is_empty()) {
+        workspace_path(root, path)?;
+    }
+    let encoded = serde_json::to_string(&args).map_err(|error| RuntimeError::InvalidArgument(error.to_string()))?;
+    if encoded.len() > 16_384 { return Err(RuntimeError::InvalidArgument("argumentos de análise acima de 16 KiB".into())); }
+    local_programming_operation("engineering_insights.py", &[("--operation", operation), ("--arguments", &encoded)], root)
+}
+
+fn engineering_insight_route(url: &str) -> Option<&'static str> {
+    match url {
+        "/api/v1/engineering/code/references" => Some("code_references"),
+        "/api/v1/engineering/code/change-impact" => Some("change_impact"),
+        "/api/v1/engineering/tests/discover" => Some("discover_tests"),
+        "/api/v1/security/code-review" => Some("security_scan"),
+        "/api/v1/engineering/dependencies/audit" => Some("dependency_audit"),
+        _ => None,
+    }
+}
+
 fn project_checks(args: &Value, root: &Path) -> Result<Value, RuntimeError> {
     let requested = args.get("check").and_then(Value::as_str).unwrap_or("auto");
     let changed_path = args.get("path").and_then(Value::as_str).unwrap_or("");
@@ -3312,6 +3343,8 @@ fn research_web(
             "o armazenamento de conteúdo da Brave está desabilitado; habilite IA_LOCAL_BRAVE_ALLOW_STORAGE=true somente se seu plano conceder direitos explícitos de armazenamento".into(),
         ));
     }
+    let specialized = sources::parse_request(args, &query).map_err(RuntimeError::InvalidArgument)?;
+    let web_enabled = specialized.as_ref().map_or(true, |request| request.sources.iter().any(|name| name == "web"));
     let started = Instant::now();
     let mut pages = Vec::new();
     let mut results = Vec::new();
@@ -3320,11 +3353,31 @@ fn research_web(
     let mut freshness_applied = false;
     let mut opened_urls = HashSet::new();
     let mut opened_hosts = HashSet::new();
+    // Fontes estruturadas (registros de pacotes, Wikipedia, GitHub) entram
+    // como páginas citáveis antes da web; elas não consomem o limite de
+    // páginas web pedido em max_results.
+    if let Some(request) = &specialized {
+        let fetch = sources::http_json_fetcher(RESEARCH_PAGE_TIMEOUT);
+        let (found, source_attempts) = sources::collect(request, &fetch);
+        attempts.extend(source_attempts);
+        for page in found {
+            let source_id = next_source_id(next_id);
+            sources.insert(source_id.clone(), SourceRecord {
+                source_id: source_id.clone(), title: page.title.clone(), url: page.url.clone(),
+                snippet: page.text.chars().take(240).collect(), text: Some(page.text.clone()),
+            });
+            opened_urls.insert(page.url.clone());
+            providers_used.insert(page.provider.to_string());
+            pages.push(json!({"source_id": source_id, "url": page.url, "title": page.title, "text": page.text,
+                "structured_source": page.provider, "primary_verified": true}));
+        }
+    }
+    let structured_pages = pages.len();
     // Um link de repositório já é uma fonte primária identificada. Não
     // desperdice o orçamento tentando o buscador antes de abrir README,
     // árvore seletiva e arquivos educacionais do próprio GitHub; a pesquisa
     // web continua sendo usada para complementar competências depois.
-    let searches = if source_url.is_some() {
+    let searches = if source_url.is_some() || !web_enabled {
         Vec::new()
     } else if let Some(items) = args.get("queries") {
         let list = items.as_array().ok_or_else(|| RuntimeError::InvalidArgument("queries deve ser uma lista".into()))?;
@@ -3355,7 +3408,7 @@ fn research_web(
         let remaining = RESEARCH_TOTAL_TIMEOUT.saturating_sub(started.elapsed());
         let search = match search_web_with_timeout(&json!({"query": search_query, "freshness": freshness, "provider": provider}), sources, next_id, remaining.min(RESEARCH_SEARCH_TIMEOUT)) {
             Ok(search) => search,
-            Err(error) if searches.len() == 1 => return Err(error),
+            Err(error) if searches.len() == 1 && structured_pages == 0 => return Err(error),
             Err(error) => {
                 attempts.push(json!({"query": search_query, "status": "search-failed", "error": error.to_string()}));
                 continue;
@@ -3378,7 +3431,7 @@ fn research_web(
         let per_search = if searches.len() == 1 { requested } else { 1 };
         let mut opened_here = 0;
         for (_, result) in ranked {
-            if started.elapsed() >= RESEARCH_TOTAL_TIMEOUT || pages.len() >= requested || opened_here >= per_search {
+            if started.elapsed() >= RESEARCH_TOTAL_TIMEOUT || pages.len() - structured_pages >= requested || opened_here >= per_search {
                 break;
             }
             let Some(url) = result.get("url").and_then(Value::as_str) else { continue; };
@@ -3643,6 +3696,8 @@ fn execute(
         "inspect_media" => inspect_media(&call.arguments, workspace),
         "extract_document_text" => extract_document_text(&call.arguments, workspace),
         "inspect_code" => inspect_code(&call.arguments, workspace),
+        "code_references" | "change_impact" | "discover_tests" | "security_scan" | "dependency_audit" =>
+            engineering_insight(&call.tool, &call.arguments, workspace),
         "calculate" | "evaluate_function" => computation_operation(&call.tool, &call.arguments, workspace),
         "list_tools" => Ok(json!({
             "tools": [
@@ -3655,6 +3710,14 @@ fn execute(
                     "description": "Inspeciona definições de funções, classes, structs e imports no workspace.",
                     "arguments": {"path": "caminho relativo opcional"}
                 },
+                {"name":"code_references","description":"Encontra definição, imports, chamadas e testes que citam um símbolo.",
+                 "arguments":{"symbol":"identificador obrigatório","path":"pasta relativa opcional","limit":"1 a 500"}},
+                {"name":"change_impact","description":"Estima arquivos dependentes, testes afetados e risco antes de alterar um arquivo ou símbolo.",
+                 "arguments":{"path":"arquivo relativo","symbol":"identificador opcional"}},
+                {"name":"discover_tests","description":"Descobre frameworks, arquivos de teste, checks e fontes sem teste correspondente.","arguments":{}},
+                {"name":"security_scan","description":"Revisão estática de segurança: segredos, injeção, desserialização, TLS, XSS e configuração.",
+                 "arguments":{"path":"pasta relativa opcional","min_severity":"critical, high, medium, low ou info"}},
+                {"name":"dependency_audit","description":"Audita manifests: versões sem fixação, origens fora do registro, lockfiles e divergências.","arguments":{}},
                 {
                     "name": "search_web",
                     "description": "Pesquisa informações atuais na internet.",
@@ -4121,7 +4184,15 @@ fn api_openapi() -> Value {
             "/api/v1/engineering/project/plan": {"post": {"summary": "Gera plano técnico seguro antes de qualquer alteração", "requestBody": {"required": false}, "responses": {"200": {"description": "Contrato engineering-project-plan/v1"}, "409": {"description": "Workspace ocupado"}}}},
             "/api/v1/engineering/project/verify": {"post": {"summary": "Executa uma verificação de projeto permitida e registra o resultado", "requestBody": {"required": true}, "responses": {"200": {"description": "Resultado de verificação", "content": {"application/json": {}}}, "400": {"description": "Check inválido"}}}},
             "/api/v1/engineering/project/dependencies": {"post": {"summary": "Mapeia referências de módulos e imports do projeto ativo", "requestBody": {"required": false}, "responses": {"200": {"description": "Contrato engineering-project-dependencies/v1"}}}},
-            "/api/v1/research": {"post": {"summary": "Pesquisa, abre fontes e sintetiza conteúdo", "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "object", "required": ["query"], "properties": {"query": {"type": "string"}, "topic": {"type": "string"}, "max_results": {"type": "integer", "minimum": 1, "maximum": 3}, "save_to_corpus": {"type": "boolean"}, "category": {"type": "string"}, "output": {"type": "string"}}}}}}, "responses": {"200": {"description": "Resposta sintetizada com fontes"}}}},
+            "/api/v1/agent/route": {"post": {"summary": "Roteia um pedido para cérebro, personalidade, ferramentas e fontes de pesquisa; não executa nada", "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "object", "required": ["prompt"], "properties": {"schema": {"const": "task-route-request/v1"}, "prompt": {"type": "string", "maxLength": 24000}, "workspace_selected": {"type": "boolean"}}, "additionalProperties": false}}}}, "responses": {"200": {"description": "Contrato task-route/v1"}, "400": {"description": "Pedido inválido"}, "503": {"description": "AgentCore indisponível"}}}},
+            "/api/v1/engineering/requirements/extract": {"post": {"summary": "Extrai objetivo, restrições, critérios de aceite, lacunas e perguntas de um pedido", "requestBody": {"required": true}, "responses": {"200": {"description": "Contrato agent-requirements/v1"}, "400": {"description": "Pedido inválido"}, "503": {"description": "AgentCore indisponível"}}}},
+            "/api/v1/engineering/code/references": {"post": {"summary": "Definições, imports, chamadas e testes que citam um símbolo no workspace ativo", "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "object", "required": ["symbol"], "properties": {"symbol": {"type": "string", "maxLength": 120}, "path": {"type": "string"}, "limit": {"type": "integer", "minimum": 1, "maximum": 500}}}}}}, "responses": {"200": {"description": "Contrato engineering-code-references/v1"}, "409": {"description": "Workspace ocupado"}, "422": {"description": "Argumentos inválidos"}}}},
+            "/api/v1/engineering/code/change-impact": {"post": {"summary": "Dependentes, testes afetados, checks recomendados e risco antes de alterar um arquivo ou símbolo", "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "object", "properties": {"path": {"type": "string"}, "symbol": {"type": "string"}}}}}}, "responses": {"200": {"description": "Contrato engineering-change-impact/v1"}, "409": {"description": "Workspace ocupado"}, "422": {"description": "Argumentos inválidos"}}}},
+            "/api/v1/engineering/tests/discover": {"post": {"summary": "Frameworks, arquivos e casos de teste, checks e fontes sem teste correspondente", "requestBody": {"required": false}, "responses": {"200": {"description": "Contrato engineering-tests-discovery/v1"}, "409": {"description": "Workspace ocupado"}}}},
+            "/api/v1/security/code-review": {"post": {"summary": "Revisão estática de segurança com caminho, linha, severidade e correção sugerida; segredos mascarados", "requestBody": {"required": false, "content": {"application/json": {"schema": {"type": "object", "properties": {"path": {"type": "string"}, "min_severity": {"enum": ["critical", "high", "medium", "low", "info"]}}}}}}, "responses": {"200": {"description": "Contrato security-code-review/v1"}, "409": {"description": "Workspace ocupado"}, "422": {"description": "Argumentos inválidos"}}}},
+            "/api/v1/engineering/dependencies/audit": {"post": {"summary": "Audita manifests (npm, PyPI, crates, Go): versões sem fixação, origens fora do registro, lockfiles e divergências; offline", "requestBody": {"required": false}, "responses": {"200": {"description": "Contrato engineering-dependency-audit/v1"}, "409": {"description": "Workspace ocupado"}}}},
+            "/v1/chat/completions": {"post": {"summary": "Adaptador compatível com OpenAI Chat Completions servido pelo checkpoint local", "requestBody": {"required": true}, "responses": {"200": {"description": "chat.completion"}, "400": {"description": "Pedido inválido"}, "413": {"description": "Corpo acima de 2 MiB"}}}},
+            "/api/v1/research": {"post": {"summary": "Pesquisa, abre fontes e sintetiza conteúdo", "requestBody": {"required": true, "content": {"application/json": {"schema": {"type": "object", "required": ["query"], "properties": {"query": {"type": "string"}, "topic": {"type": "string"}, "max_results": {"type": "integer", "minimum": 1, "maximum": 3}, "save_to_corpus": {"type": "boolean"}, "category": {"type": "string"}, "output": {"type": "string"}, "freshness": {"enum": ["pd", "pw", "pm", "py"]}, "sources": {"type": "array", "items": {"enum": ["web", "package-registry", "wikipedia", "github"]}, "maxItems": 4}, "package": {"type": "object", "required": ["name", "ecosystems"], "properties": {"name": {"type": "string"}, "ecosystems": {"type": "array", "items": {"enum": ["npm", "pypi", "crates"]}}}}, "language": {"enum": ["pt", "en"]}}}}}}, "responses": {"200": {"description": "Resposta sintetizada com fontes"}}}},
             "/api/v1/tools/call": {"post": {"summary": "Executa uma ferramenta local", "requestBody": {"required": true}, "responses": {"200": {"description": "Resultado da ferramenta"}}}}
         }
     })
@@ -4768,6 +4839,61 @@ fn handle_web_request(mut request: tiny_http::Request, state: SharedState, activ
         let _ = request.respond(response.with_header(Header::from_bytes("Content-Type", "application/json; charset=utf-8").unwrap()).with_header(Header::from_bytes("Cache-Control", "no-store").unwrap()));
         return;
     }
+    if request.method() == &Method::Post {
+        if let Some(operation) = engineering_insight_route(request.url()) {
+            let mut body = String::new();
+            let response = match request.as_reader().take(65537).read_to_string(&mut body) {
+                Ok(_) if body.len() > 65536 => Response::from_string(json!({"ok":false,"error":"argumentos acima do limite"}).to_string()).with_status_code(StatusCode(413)),
+                Ok(_) => {
+                    let args = if body.trim().is_empty() { json!({}) } else { serde_json::from_str::<Value>(&body).unwrap_or(Value::Null) };
+                    if !args.is_object() {
+                        Response::from_string(json!({"ok":false,"error":"JSON inválido; esperava-se um objeto"}).to_string()).with_status_code(StatusCode(400))
+                    } else {
+                        let started = Instant::now();
+                        let outcome = state.try_lock()
+                            .map_err(|_| RuntimeError::Workspace("há uma ferramenta em execução; aguarde sua conclusão".into()))
+                            .and_then(|guard| engineering_insight(operation, &args, &guard.2));
+                        match outcome {
+                            Ok(mut result) => {
+                                result["ok"] = json!(true);
+                                result["elapsed_ms"] = json!(started.elapsed().as_millis() as u64);
+                                Response::from_string(result.to_string())
+                            }
+                            Err(RuntimeError::Workspace(message)) if message.contains("ferramenta em execução") => Response::from_string(json!({"ok":false,"error":message}).to_string()).with_status_code(StatusCode(409)),
+                            Err(error) => Response::from_string(json!({"ok":false,"error":error.to_string()}).to_string()).with_status_code(StatusCode(422)),
+                        }
+                    }
+                }
+                Err(error) => Response::from_string(json!({"ok":false,"error":error.to_string()}).to_string()).with_status_code(StatusCode(400)),
+            };
+            let _ = request.respond(response.with_header(Header::from_bytes("Content-Type", "application/json; charset=utf-8").unwrap()).with_header(Header::from_bytes("Cache-Control", "no-store").unwrap()));
+            return;
+        }
+        // Roteamento e requisitos são calculados pelo AgentCore, sem efeitos.
+        let agent_core_path = match request.url() {
+            "/api/v1/agent/route" => Some("/route"),
+            "/api/v1/engineering/requirements/extract" => Some("/requirements"),
+            _ => None,
+        };
+        if let Some(path) = agent_core_path {
+            let mut body = String::new();
+            let response = match request.as_reader().take(65537).read_to_string(&mut body) {
+                Ok(_) if body.len() > 65536 => Response::from_string(json!({"ok":false,"error":"pedido acima de 64 KiB"}).to_string()).with_status_code(StatusCode(413)),
+                Ok(_) => reqwest::blocking::Client::builder().timeout(Duration::from_secs(10)).build()
+                    .and_then(|client| client.post(format!("http://127.0.0.1:3200{path}"))
+                        .header("content-type", "application/json").body(body).send())
+                    .map(|upstream| {
+                        let status = upstream.status().as_u16();
+                        let body = upstream.text().unwrap_or_else(|error| json!({"ok":false,"error":error.to_string()}).to_string());
+                        Response::from_string(body).with_status_code(StatusCode(status))
+                    })
+                    .unwrap_or_else(|error| Response::from_string(json!({"ok":false,"error":format!("AgentCore TypeScript indisponível: {error}")}).to_string()).with_status_code(StatusCode(503))),
+                Err(error) => Response::from_string(json!({"ok":false,"error":error.to_string()}).to_string()).with_status_code(StatusCode(400)),
+            };
+            let _ = request.respond(response.with_header(Header::from_bytes("Content-Type", "application/json; charset=utf-8").unwrap()).with_header(Header::from_bytes("Cache-Control", "no-store").unwrap()));
+            return;
+        }
+    }
     if request.method() == &Method::Post && request.url() == "/api/v1/engineering/project/dependencies" {
         let mut body = String::new();
         let response = match request.as_reader().take(65537).read_to_string(&mut body) {
@@ -5353,6 +5479,12 @@ mod tests {
         assert!(spec["paths"]["/api/v1/dialogue/turn"]["post"].is_object());
         assert!(spec["paths"]["/api/v1/dialogue/providers"]["get"].is_object());
         assert!(spec["paths"]["/api/v1/agent/understand"]["post"].is_object());
+        for path in ["/api/v1/agent/route", "/api/v1/engineering/requirements/extract", "/api/v1/engineering/code/references",
+                     "/api/v1/engineering/code/change-impact", "/api/v1/engineering/tests/discover", "/api/v1/security/code-review",
+                     "/api/v1/engineering/dependencies/audit", "/v1/chat/completions"] {
+            assert!(spec["paths"][path]["post"].is_object(), "{path}");
+        }
+        assert_eq!(spec["paths"]["/api/v1/research"]["post"]["requestBody"]["content"]["application/json"]["schema"]["properties"]["sources"]["maxItems"], 4);
         assert!(spec["paths"]["/api/v1/agent/pursue"]["post"].is_object());
         assert!(spec["paths"]["/api/v1/agent/tasks/{task_id}/resume"]["post"].is_object());
     }
@@ -5912,6 +6044,42 @@ mod tests {
         assert_eq!(result["check"], "unittest");
         assert_eq!(result["passed"], true);
         assert_eq!(result["executed"], true);
+    }
+
+    #[test]
+    fn analises_de_engenharia_rodam_pelo_runtime_sem_sair_do_workspace() {
+        let dir = TestDirectory::new();
+        fs::write(dir.0.join("app.py"), "import subprocess\n\ndef run(cmd):\n    return subprocess.run(cmd, shell=True)\n").unwrap();
+        fs::write(dir.0.join("main.py"), "from app import run\nrun('ls')\n").unwrap();
+        let scan = engineering_insight("security_scan", &json!({}), &dir.0).unwrap();
+        assert_eq!(scan["schema"], "security-code-review/v1");
+        assert_eq!(scan["findings"][0]["rule_id"], "py-shell-true");
+        let references = engineering_insight("code_references", &json!({"symbol": "run"}), &dir.0).unwrap();
+        assert_eq!(references["counts"]["definition"], 1);
+        assert!(references["files"].as_array().unwrap().iter().any(|item| item == "main.py"));
+        let impact = engineering_insight("change_impact", &Value::Null, &dir.0);
+        assert!(matches!(impact, Err(RuntimeError::InvalidArgument(_))));
+        assert!(engineering_insight("change_impact", &json!({"path": "../fora.py"}), &dir.0).is_err());
+        assert!(engineering_insight("terminal_run", &json!({}), &dir.0).is_err());
+        assert_eq!(engineering_insight_route("/api/v1/security/code-review"), Some("security_scan"));
+        assert_eq!(engineering_insight_route("/api/v1/security/code-review/../x"), None);
+    }
+
+    #[test]
+    fn pagina_de_registro_fundamenta_a_sintese_e_research_web_valida_fontes() {
+        let page = sources::npm_page("react", &json!({"name":"react","version":"19.3.0",
+            "description":"React is a JavaScript library for building user interfaces."})).unwrap();
+        let synthesis = synthesize_research("versão mais nova React", &[json!({"source_id":"web-1","text":page.text})]);
+        assert_eq!(synthesis["grounded"], true);
+        let answer = synthesis["answer"].as_str().unwrap();
+        assert!(answer.contains("registro npm é 19.3.0") && answer.contains("[web-1]"), "{answer}");
+        let dir = TestDirectory::new();
+        let mut known = HashMap::new();
+        let mut next = 1;
+        let invalid = research_web(&json!({"query":"x","sources":["telepatia"]}), &mut known, &mut next, &dir.0);
+        assert!(matches!(invalid, Err(RuntimeError::InvalidArgument(_))));
+        let missing = research_web(&json!({"query":"x","sources":["package-registry"]}), &mut known, &mut next, &dir.0);
+        assert!(matches!(missing, Err(RuntimeError::InvalidArgument(_))));
     }
 
     #[test]

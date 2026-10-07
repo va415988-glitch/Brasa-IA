@@ -2682,6 +2682,45 @@ Remova o override no `finally`, não dependa de dados de produção e confirme q
         )
 
     @staticmethod
+    def extractive_research_answer(question, research_data, evidence_items):
+        """Citação literal das fontes quando o checkpoint não sintetiza.
+
+        Antes, só perguntas sobre CMake tinham fallback e toda outra pesquisa
+        bem-sucedida era descartada. Aqui nada é gerado: as frases vêm das
+        páginas abertas e cada uma aponta sua URL.
+        """
+        urls_by_id = {str(page.get('source_id')): str(page.get('url'))
+                      for page in (research_data.get('pages') or []) if isinstance(page, dict) and page.get('url')}
+        bullets = []
+        runtime_answer = str(research_data.get('answer') or '')
+        if research_data.get('grounded') is True and runtime_answer:
+            for line in runtime_answer.splitlines():
+                match = re.match(r'^\s*-\s+(.+?)\s*\[([\w-]+)\]\s*$', line)
+                if match and urls_by_id.get(match[2]):
+                    bullets.append(f'{match[1].strip()} ({urls_by_id[match[2]]})')
+        if not bullets:
+            stop = {'qual', 'quais', 'como', 'para', 'sobre', 'mais', 'esta', 'este', 'essa', 'esse', 'que', 'uma', 'com', 'dos', 'das'}
+            terms = {word for word in re.findall(r'[a-z0-9.+#-]{3,}', normalize(question)) if word not in stop}
+            scored = []
+            for item in evidence_items:
+                for sentence in re.split(r'(?<=[.!?])\s+', str(item.get('text') or '')):
+                    sentence = ' '.join(sentence.split())
+                    if not 40 <= len(sentence) <= 400:
+                        continue
+                    overlap = len(terms & set(re.findall(r'[a-z0-9.+#-]{3,}', normalize(sentence))))
+                    if overlap >= min(2, len(terms)):
+                        scored.append((overlap, sentence, item['source']))
+            seen = set()
+            for _, sentence, source in sorted(scored, key=lambda row: -row[0]):
+                if sentence.lower() not in seen and len(bullets) < 4:
+                    seen.add(sentence.lower())
+                    bullets.append(f'{sentence} ({source})')
+        if not bullets:
+            return None
+        return ('Trechos das fontes consultadas (citação literal; o modelo local não redigiu uma síntese própria):\n\n- '
+                + '\n- '.join(bullets[:5]))
+
+    @staticmethod
     def diagnostic_reasoning_fallback(question, messages=()):
         """Produce a bounded, evidence-led check when the small model fails validation."""
         normalized = normalize(str(question or ''))
@@ -6116,7 +6155,8 @@ Remova o override no `finally`, não dependa de dados de produção e confirme q
                     if synthesis.get('ok') is True:
                         answer = str(synthesis.get('text') or '').strip()
                     if not answer:
-                        answer = self.grounded_research_fallback(question, evidence_items) or ''
+                        answer = (self.grounded_research_fallback(question, evidence_items)
+                                  or self.extractive_research_answer(question, research_data, evidence_items) or '')
                         synthesis_backend = 'research-evidence-fallback'
                     if answer:
                         references = '\n'.join(

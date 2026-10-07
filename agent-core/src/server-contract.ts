@@ -138,3 +138,27 @@ export function parseAgentInput(value: unknown, options: {allowMissingWorkspace?
     ...(payload.schema === "agent-request/v2" ? {schema: "agent-request/v2" as const} : {}),
   };
 }
+
+export interface TaskRouteRequest {
+  schema: "task-route-request/v1";
+  prompt: string;
+  workspaceSelected: boolean;
+}
+
+/** Pedido de roteamento ou de extração de requisitos; nunca executa ferramentas. */
+export function parseTaskRouteRequest(value: unknown): TaskRouteRequest {
+  if (!value || typeof value !== "object" || Array.isArray(value)) throw new Error("O pedido de roteamento deve ser um objeto.");
+  const row = value as Record<string, unknown>;
+  if (row.schema !== undefined && row.schema !== "task-route-request/v1") {
+    throw new Error("Contrato de roteamento inválido; use task-route-request/v1.");
+  }
+  if (typeof row.prompt !== "string" || !row.prompt.trim() || row.prompt.length > 24000) {
+    throw new Error("O pedido deve ter entre 1 e 24000 caracteres.");
+  }
+  if (row.workspace_selected !== undefined && typeof row.workspace_selected !== "boolean") {
+    throw new Error("workspace_selected deve ser booleano.");
+  }
+  const unknown = Object.keys(row).filter((key) => !["schema", "prompt", "workspace_selected"].includes(key));
+  if (unknown.length) throw new Error("Campos inválidos no roteamento: " + unknown.join(", ") + ".");
+  return {schema: "task-route-request/v1", prompt: row.prompt.trim(), workspaceSelected: row.workspace_selected === true};
+}

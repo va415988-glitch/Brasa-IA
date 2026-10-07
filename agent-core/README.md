@@ -47,6 +47,17 @@ ação.
   `request_id` e conteúdo devolve a resposta já registrada, sem executar a
   ferramenta novamente.
 
+- `POST /route` (no runtime: `/api/v1/agent/route`) aceita
+  `task-route-request/v1` e devolve `task-route/v1`: objetivo, cérebro
+  (`conversation`, `creative`, `engineering`, `interface`, `research`,
+  `analysis`, `computation`, `learning` ou `operations`), personalidade,
+  ferramentas permitidas e fontes de pesquisa (`web`, `package-registry`,
+  `wikipedia`, `github`). É uma prévia pura: não lê o workspace nem grava
+  estado. A ação inicial de pesquisa do AgentCore usa a mesma decisão.
+- `POST /requirements` (no runtime: `/api/v1/engineering/requirements/extract`)
+  devolve `agent-requirements/v1` com restrições, critérios de aceite, lacunas
+  e perguntas, sem executar nada.
+
 Os validadores públicos ficam em `server-contract.ts`, a preparação e o resumo
 em `AgentCore.understand`, e o contrato de recuperação/planejamento local em
 `context.ts` e `planner.ts`. `/generate` permanece como adaptador legado.

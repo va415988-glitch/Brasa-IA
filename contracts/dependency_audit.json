@@ -1,0 +1,33 @@
+{
+  "name": "dependency_audit",
+  "description": "Audita manifests npm, PyPI, crates e Go: versões sem fixação, origens fora do registro, lockfiles ausentes e divergências; não usa a rede.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": [
+      "manifests",
+      "summary",
+      "findings"
+    ],
+    "properties": {
+      "manifests": {
+        "type": "array"
+      },
+      "summary": {
+        "type": "object"
+      },
+      "findings": {
+        "type": "array"
+      },
+      "truncated": {
+        "type": "boolean"
+      }
+    }
+  }
+}

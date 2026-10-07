@@ -1,0 +1,55 @@
+{
+  "name": "change_impact",
+  "description": "Estima arquivos dependentes, testes afetados, checks recomendados e risco antes de alterar um arquivo ou símbolo.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "Arquivo relativo ao workspace."
+      },
+      "symbol": {
+        "type": "string",
+        "maxLength": 120,
+        "description": "Identificador a avaliar; use path, symbol ou ambos."
+      }
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": [
+      "target",
+      "risk",
+      "dependents",
+      "affected_tests"
+    ],
+    "properties": {
+      "target": {
+        "type": "object"
+      },
+      "risk": {
+        "type": "string",
+        "enum": [
+          "low",
+          "medium",
+          "high"
+        ]
+      },
+      "dependents": {
+        "type": "array"
+      },
+      "affected_tests": {
+        "type": "array"
+      },
+      "recommended_checks": {
+        "type": "array"
+      },
+      "truncated": {
+        "type": "boolean"
+      }
+    }
+  }
+}

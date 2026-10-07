@@ -33,7 +33,9 @@
         "workspace.code.search",
         "workspace.file.read",
         "workspace.select",
-        "project.verify"
+        "project.verify",
+        "workspace.code.references",
+        "project.tests.discover"
       ]
     },
     {
@@ -239,7 +241,8 @@
         "project.failure.diagnose",
         "project.repair.propose",
         "workspace.file.repair.apply",
-        "process.profile.run"
+        "process.profile.run",
+        "project.tests.discover"
       ]
     },
     {
@@ -560,7 +563,9 @@
         "workspace.files.compare",
         "workspace.file.read",
         "project.verify",
-        "project.inspect"
+        "project.inspect",
+        "project.change.impact",
+        "project.security.review"
       ]
     },
     {
@@ -623,6 +628,119 @@
       "optional_capabilities": [
         "research.sources.list"
       ]
+    },
+    {
+      "id": "security-review",
+      "label": "Revisão de segurança do código",
+      "description": "Procura segredos, injeção, desserialização insegura, TLS desativado, XSS e configurações perigosas por análise estática, com caminho, linha e correção sugerida.",
+      "domain_tags": [
+        "programming",
+        "workspace",
+        "security",
+        "review"
+      ],
+      "triggers": [
+        "revisão de segurança",
+        "revisao de seguranca",
+        "revise a segurança",
+        "revise a seguranca",
+        "audite a segurança",
+        "audite a seguranca",
+        "vulnerabilidades no código",
+        "vulnerabilidades no codigo",
+        "segredos no código",
+        "segredos no codigo",
+        "chaves expostas",
+        "senhas no código",
+        "senhas no codigo",
+        "security review",
+        "falhas de segurança no projeto",
+        "falhas de seguranca no projeto"
+      ],
+      "required_capabilities": [
+        "project.security.review"
+      ],
+      "optional_capabilities": [
+        "workspace.file.read",
+        "project.dependencies.audit",
+        "workspace.code.references"
+      ],
+      "required_context": [
+        "workspace_selected"
+      ],
+      "execution": "deterministic"
+    },
+    {
+      "id": "dependency-review",
+      "label": "Auditoria de dependências",
+      "description": "Audita manifests e lockfiles: versões sem fixação, origens fora do registro e divergências; consulta registros oficiais quando a pessoa pede versões atuais.",
+      "domain_tags": [
+        "programming",
+        "workspace",
+        "security"
+      ],
+      "triggers": [
+        "audite as dependências",
+        "audite as dependencias",
+        "auditoria de dependências",
+        "auditoria de dependencias",
+        "dependências desatualizadas",
+        "dependencias desatualizadas",
+        "versões das dependências",
+        "versoes das dependencias",
+        "dependências sem versão",
+        "dependencias sem versao",
+        "verifique o lockfile",
+        "confira o lockfile"
+      ],
+      "required_capabilities": [
+        "project.dependencies.audit"
+      ],
+      "optional_capabilities": [
+        "workspace.file.read",
+        "research.web.deep"
+      ],
+      "required_context": [
+        "workspace_selected"
+      ],
+      "execution": "deterministic"
+    },
+    {
+      "id": "change-impact-analysis",
+      "label": "Impacto de uma alteração",
+      "description": "Antes de mudar um arquivo ou símbolo, encontra quem depende dele, os testes afetados e os checks recomendados.",
+      "domain_tags": [
+        "programming",
+        "workspace",
+        "review"
+      ],
+      "triggers": [
+        "impacto da mudança",
+        "impacto da mudanca",
+        "impacto da alteração",
+        "impacto da alteracao",
+        "quem usa essa função",
+        "quem usa essa funcao",
+        "onde essa função é usada",
+        "onde essa funcao e usada",
+        "quem chama",
+        "referências de",
+        "referencias de",
+        "o que quebra se eu mudar",
+        "o que pode quebrar"
+      ],
+      "required_capabilities": [
+        "workspace.code.references"
+      ],
+      "optional_capabilities": [
+        "project.change.impact",
+        "project.tests.discover",
+        "workspace.file.read"
+      ],
+      "required_context": [
+        "workspace_selected"
+      ],
+      "execution": "deterministic"
     }
   ]
 }

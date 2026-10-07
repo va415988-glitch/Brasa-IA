@@ -56,6 +56,7 @@ class SkillRouter:
             raise ValueError("manifesto de skills inválido")
         self.skills = payload["skills"]
         self._validate_skills()
+        self.deterministic_skill_ids = {skill["id"] for skill in self.skills if skill.get("execution") == "deterministic"}
 
     def _validate_skills(self) -> None:
         seen: set[str] = set()
@@ -73,6 +74,8 @@ class SkillRouter:
             for key in ("excluded_triggers",):
                 if key in skill and (not isinstance(skill[key], list) or any(not isinstance(item, str) for item in skill[key])):
                     raise ValueError(f"{key} deve ser uma lista de strings em {skill_id}")
+            if skill.get("execution", "neural") not in {"neural", "deterministic"}:
+                raise ValueError(f"execution deve ser neural ou deterministic em {skill_id}")
             required_context = skill.get("required_context", [])
             if not isinstance(required_context, list) or any(not isinstance(item, str) for item in required_context):
                 raise ValueError(f"required_context deve ser uma lista de strings em {skill_id}")
@@ -353,7 +356,11 @@ class SkillRouter:
                 "nenhuma skill atingiu o limiar de roteamento"
             ),
             "execution_note": "O roteador entrega a decisão; AgentCore valida argumentos e aplica as travas do contrato antes de executar.",
+            # Skills determinísticas são executadas por ferramentas estáticas e
+            # não dependem de núcleos neurais; só as demais entram no plano.
+            "deterministic_skills": [item['id'] for item in selected if item['id'] in self.deterministic_skill_ids],
             "core_plan": self.core_registry.plan(
-                [item['id'] for item in selected], infer_domain(question=task), self.checkpoint_path,
+                [item['id'] for item in selected if item['id'] not in self.deterministic_skill_ids],
+                infer_domain(question=task), self.checkpoint_path,
             ),
         }

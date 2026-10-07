@@ -68,6 +68,11 @@ class AgentPlanner:
         "compare_files": ("compare os arquivos", "comparar arquivos", "compare dois arquivos"),
         "git_diff": ("git diff", "diff do git", "diff das alteracoes"),
         "inspect_code": ("inspecione o codigo", "inspecione os simbolos", "liste as funcoes", "mostre as classes"),
+        "code_references": ("onde e usada", "onde e usado", "quem chama", "quem usa", "referencias de", "usos de"),
+        "change_impact": ("impacto da mudanca", "impacto da alteracao", "o que pode quebrar", "o que quebra se"),
+        "discover_tests": ("quais testes existem", "descubra os testes", "liste os testes", "arquivos sem teste", "o que nao tem teste"),
+        "security_scan": ("revisao de seguranca", "audite a seguranca", "vulnerabilidades no codigo", "falhas de seguranca no codigo", "segredos no codigo"),
+        "dependency_audit": ("audite as dependencias", "auditoria de dependencias", "dependencias sem versao", "revise as dependencias"),
         "list_tools": ("quais ferramentas", "liste as ferramentas", "ferramentas disponiveis"),
         "create_workspace": ("crie um workspace", "crie novo workspace", "crie um projeto em"),
         "read_file": ("leia o arquivo", "ler arquivo", "abra o arquivo", "mostre o arquivo"),
@@ -257,6 +262,25 @@ class AgentPlanner:
             quoted = re.findall(r"`([^`\n]+)`", question)
             paths = quoted or mentioned_document_paths(question)
             return 'inspect_code', {'path': paths[0] if paths else ''}
+        if re.search(r"\b(?:revisao\s+de\s+seguranca|audite\s+a\s+seguranca|"
+                     r"(?:vulnerabilidades|falhas\s+de\s+seguranca)\s+(?:no|do|neste|nesse|deste|desse)\s+(?:codigo|projeto|repositorio|workspace)|"
+                     r"segredos\s+(?:no|nos|expostos)|chaves\s+expostas|senhas\s+no\s+codigo)\b", text):
+            return 'security_scan', {'path': AgentPlanner.relative_folder(question) or '', 'min_severity': 'low'}
+        if re.search(r"\b(?:audite|auditoria|revise|verifique)\b.{0,30}\b(?:dependencias|lockfiles?)\b", text):
+            return 'dependency_audit', {}
+        if re.search(r"\b(?:quais|liste|mostre|descubra|encontre)\b.{0,30}\btestes\b|\b(?:sem|nao\s+tem)\s+testes?\b", text) \
+                and not re.search(r"\b(?:rode|rodar|execute|executar|passe|passar|falh\w*|quebr\w*|erros?)\b", text):
+            return 'discover_tests', {}
+        symbol = re.search(r"`([A-Za-z_$][\w$]*(?:(?:\.|::)[A-Za-z_$][\w$]*)*)`", question) or re.search(
+            r"\b(?:fun[cç][aã]o|m[eé]todo|classe|s[ií]mbolo|vari[aá]vel)\s+([A-Za-z_$][\w$]*(?:\.[A-Za-z_$][\w$]*)*)", question)
+        if re.search(r"\b(?:impacto|o\s+que\s+(?:pode\s+)?quebra[r]?)\b", text):
+            quoted = re.findall(r"`([^`\n]+\.[A-Za-z0-9]+)`", question) or re.findall(
+                r"(?<![\w./-])[\w.-]+(?:/[\w.-]+)*\.(?:py|[cm]?[jt]sx?|rs|go|java|kt|rb|php|c|cc|cpp|h|hpp|cs|swift)\b", question)
+            if quoted or symbol:
+                return 'change_impact', {**({'path': quoted[0]} if quoted else {}),
+                                         **({'symbol': symbol.group(1)} if symbol and not quoted else {})}
+        if symbol and re.search(r"\b(?:onde|quem)\b.{0,30}\b(?:usa|usad[oa]|chama|chamad[oa]|referencia)\b|\b(?:referencias|usos)\s+(?:de|da|do)\b", text):
+            return 'code_references', {'symbol': symbol.group(1)}
         if re.search(r"\b(?:git\s+diff|diff\s+do\s+git|diff\s+das\s+alteracoes)\b", text):
             return 'git_diff', {}
         if re.search(r"\bcompar(?:e|ar)\b", text) and re.search(r"\barquivos?\b", text):
@@ -307,7 +331,8 @@ class AgentPlanner:
         if tool == "research_web":
             query = re.sub(r"^(?:pesquise|pesquisar|busque|procure)(?:\s+na internet|\s+na web|\s+fontes?)?\s*", "", original, flags=re.I).strip(" :")
             return {"query": query, "max_results": 2, "save_to_corpus": bool(re.search(r"\b(?:salve|salvar|acervo|corpus|aprenda)\b", text))} if query else None
-        if tool in {"path_info", "find_paths", "list_tree", "compare_files", "git_diff", "inspect_code", "list_tools"}:
+        if tool in {"path_info", "find_paths", "list_tree", "compare_files", "git_diff", "inspect_code", "list_tools",
+                    "code_references", "change_impact", "discover_tests", "security_scan", "dependency_audit"}:
             request = self.workspace_read_request(question)
             return request[1] if request and request[0] == tool else None
         if tool == "list_files":

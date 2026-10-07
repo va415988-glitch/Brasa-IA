@@ -1,0 +1,53 @@
+{
+  "name": "security_scan",
+  "description": "Revisão estática de segurança: segredos, injeção, desserialização insegura, TLS desativado, XSS e configuração; mascara segredos encontrados.",
+  "side_effects": false,
+  "requires_approval": false,
+  "arguments": {
+    "type": "object",
+    "properties": {
+      "path": {
+        "type": "string",
+        "description": "Pasta relativa para restringir a revisão; padrão raiz."
+      },
+      "min_severity": {
+        "type": "string",
+        "enum": [
+          "critical",
+          "high",
+          "medium",
+          "low",
+          "info"
+        ],
+        "default": "low"
+      }
+    },
+    "additionalProperties": false
+  },
+  "result": {
+    "type": "object",
+    "required": [
+      "summary",
+      "findings",
+      "status"
+    ],
+    "properties": {
+      "summary": {
+        "type": "object"
+      },
+      "findings": {
+        "type": "array"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "clean",
+          "findings"
+        ]
+      },
+      "truncated": {
+        "type": "boolean"
+      }
+    }
+  }
+}

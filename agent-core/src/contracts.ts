@@ -9,6 +9,10 @@ export type AgentObjective = BrainObjective;
 export type ProjectCheckName = "auto" | "all" | "cargo-test" | "npm-test" | "npm-check" | "npm-build"
   | "pytest" | "unittest" | "node-test" | "go-test" | "python-syntax" | "node-syntax" | "cpp-syntax" | "c-syntax" | "shell-syntax";
 
+/** Fontes que `research_web` aceita além da busca web. */
+export type ResearchSourceName = "web" | "package-registry" | "wikipedia" | "github";
+export type PackageEcosystem = "npm" | "pypi" | "crates";
+
 export interface AgentInput {
   prompt: string;
   objective: AgentObjective | "auto";
@@ -91,6 +95,11 @@ export interface RuntimeToolArguments {
   extract_document_text: {path: string; max_chars?: number};
   inspect_media: {path: string};
   search_files: {query: string; max_results?: number; context_lines?: number};
+  code_references: {symbol: string; path?: string; limit?: number};
+  change_impact: {path?: string; symbol?: string};
+  discover_tests: Record<string, never>;
+  security_scan: {path?: string; min_severity?: "critical" | "high" | "medium" | "low" | "info"};
+  dependency_audit: Record<string, never>;
   search_web: {query: string; source_id?: string; freshness?: "pd" | "pw" | "pm" | "py"};
   open_page: {url: string; source_id?: string};
   list_sources: Record<string, never>;
@@ -102,6 +111,9 @@ export interface RuntimeToolArguments {
     max_results?: number;
     save_to_corpus?: false;
     category?: string;
+    sources?: ResearchSourceName[];
+    package?: {name: string; ecosystems: PackageEcosystem[]};
+    language?: "pt" | "en";
   };
   project_checks: {check?: ProjectCheckName | "list"; path?: string};
   diagnose_project: {check?: string; passed?: boolean; executed?: boolean; stdout?: string; stderr?: string};
