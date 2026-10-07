@@ -1,0 +1,5 @@
+[
+  {"name": "etapa1-semente", "preset": "cpu-seed", "tokens": 20e6, "decay_frac": 0.0, "data": "pretrain_data"},
+  {"name": "etapa2-12x384", "grow": {"layers": 12, "hidden_size": 384}, "tokens": 40e6, "decay_frac": 0.0, "data": "pretrain_data_v2"},
+  {"name": "etapa3-12x512", "grow": {"layers": 12, "hidden_size": 512}, "tokens": 56e6, "decay_frac": 0.25, "data": "pretrain_data_v2"}
+]

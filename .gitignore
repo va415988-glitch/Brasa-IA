@@ -17,3 +17,8 @@ __pycache__/
 .venv/
 .pytest_cache/
 /datasets/Dataset_03-10-2026/
+
+# Corpora baixados para pré-treino local (reproduzíveis pelos scripts em pretrain/corpus_fetch/).
+/pretrain_data_raw/
+/pretrain_data/
+/pretrain_out/

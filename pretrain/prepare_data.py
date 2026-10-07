@@ -49,6 +49,12 @@ def iter_text(pattern):
         yield Path(path).read_text(encoding="utf-8")
 
 
+def iter_nul(pattern):
+    """Arquivos locais com documentos já separados por NUL (pretrain/corpus_fetch, data_engine)."""
+    for path in sorted(glob.glob(str(ROOT / pattern))):
+        yield from read_docs(path)
+
+
 def iter_hf(source):
     from datasets import load_dataset
     args = [source["dataset"]] + ([source["config"]] if source.get("config") else [])
@@ -66,7 +72,8 @@ def download(sources, out, scale):
             continue
         budget = int(source["mb"] * scale * 1_000_000)
         iterator = {"hf": iter_hf, "chat": lambda s: iter_chat(s["glob"]),
-                    "text": lambda s: iter_text(s["glob"])}[source["kind"]](source)
+                    "text": lambda s: iter_text(s["glob"]),
+                    "nul": lambda s: iter_nul(s["glob"])}[source["kind"]](source)
         written, docs = 0, 0
         part = target.with_suffix(".part")
         try:

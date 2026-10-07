@@ -105,8 +105,12 @@ def main():
     parser.add_argument("--holdout", type=float, default=0.03)
     parser.add_argument("--device", default="cuda" if __import__("torch").cuda.is_available() else "cpu")
     parser.add_argument("--seed", type=int, default=1337)
+    parser.add_argument("--cpu-bf16", action="store_true", help="autocast bf16 na CPU (AMX/AVX512-BF16)")
+    parser.add_argument("--max-local", type=int, default=0,
+                        help="amostra determinística de até N conversas locais (0 = todas); útil em CPU")
     args = parser.parse_args()
 
+    import os
     import numpy as np
     import torch
     import torch.nn.functional as F
@@ -117,6 +121,8 @@ def main():
 
     rng = random.Random(args.seed)
     torch.manual_seed(args.seed)
+    if args.device == "cpu":
+        torch.set_num_threads(os.cpu_count() or 1)
     data, out = Path(args.data), Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     tokenizer_path = data / "tokenizer.json"
@@ -135,6 +141,8 @@ def main():
     from collections import Counter
     provenance = Counter()
     sources = {"local": list(local_conversations(args.local, provenance))}
+    if args.max_local and len(sources["local"]) > args.max_local:
+        sources["local"] = random.Random(args.seed + 1).sample(sources["local"], args.max_local)
     print(f"[sft] proveniência local: {dict(provenance)}")
     authored_llm = sum(n for name, n in provenance.items() if str(name).startswith("authored-llm"))
     cognitive = any(turns[0][1].startswith(COGNITIVE_MARKER) for turns in sources["local"])
@@ -184,7 +192,8 @@ def main():
         return x[:, :-1].to(device), y[:, 1:].to(device)
 
     use_bf16 = device.type == "cuda" and torch.cuda.is_bf16_supported()
-    dtype = torch.bfloat16 if use_bf16 else torch.float16
+    dtype = torch.bfloat16 if use_bf16 or args.cpu_bf16 else torch.float16
+    amp_enabled = device.type == "cuda" or (device.type == "cpu" and args.cpu_bf16)
     scaler = torch.amp.GradScaler(enabled=device.type == "cuda" and not use_bf16)
     optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr, betas=(0.9, 0.95), weight_decay=0.01)
     steps_per_epoch = sum(1 for _ in batches(train, False))
@@ -192,7 +201,7 @@ def main():
     warmup = max(1, total // 20)
 
     def loss_of(x, y):
-        with torch.autocast(device_type=device.type, dtype=dtype, enabled=device.type == "cuda"):
+        with torch.autocast(device_type=device.type, dtype=dtype, enabled=amp_enabled):
             logits = model(x)
         return F.cross_entropy(logits.float().reshape(-1, logits.shape[-1]), y.reshape(-1), ignore_index=IGNORE)
 

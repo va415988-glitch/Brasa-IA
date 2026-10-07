@@ -33,6 +33,9 @@ PRESETS = {
     "base":  dict(layers=12, hidden_size=768, attention_heads=12, kv_heads=4, context_length=2048),
     # ~300M: só vale com A100 e vários dias; precisa de bem mais dados
     "large": dict(layers=24, hidden_size=1024, attention_heads=16, kv_heads=4, context_length=2048),
+    # Semente do crescimento progressivo em CPU (pretrain/progressive.py): passos
+    # baratos no começo; pretrain/grow.py aumenta os pesos preservando a função.
+    "cpu-seed": dict(layers=6, hidden_size=256, attention_heads=4, kv_heads=2, context_length=512),
 }
 
 
@@ -60,6 +63,8 @@ def main():
     parser.add_argument("--max-hours", type=float, default=0, help="para com segurança após N horas (a sessão do Colab acaba)")
     parser.add_argument("--compile", action="store_true", help="torch.compile: ~1,3x mais rápido na GPU, compila por alguns minutos")
     parser.add_argument("--device", default="cuda" if __import__("torch").cuda.is_available() else "cpu")
+    parser.add_argument("--cpu-bf16", action="store_true",
+                        help="autocast bf16 na CPU (AMX/AVX512-BF16): ~2x mais rápido com --compile em Xeon recentes")
     parser.add_argument("--seed", type=int, default=1337)
     args = parser.parse_args()
 
@@ -70,6 +75,10 @@ def main():
     from model import build_model
 
     torch.manual_seed(args.seed)
+    if args.device == "cpu":
+        # IA_TRAIN_THREADS deixa núcleos livres para outros processos: com OpenMP,
+        # disputar um núcleo atrasa todas as threads nas barreiras de sincronização.
+        torch.set_num_threads(int(os.environ.get("IA_TRAIN_THREADS") or os.cpu_count() or 1))
     if args.optimizer == "muon" and not hasattr(torch.optim, "Muon"):
         raise SystemExit(f"torch {torch.__version__} não tem torch.optim.Muon (exige 2.9+): "
                          "atualize o torch ou use --optimizer adamw")
@@ -143,7 +152,8 @@ def main():
                        {"params": vectors, "weight_decay": 0.0}]
     optimizers.append(torch.optim.AdamW(adam_groups, lr=args.lr, betas=(0.9, 0.95), fused=device.type == "cuda"))
     use_bf16 = device.type == "cuda" and torch.cuda.is_bf16_supported()
-    dtype = torch.bfloat16 if use_bf16 else torch.float16
+    dtype = torch.bfloat16 if use_bf16 or args.cpu_bf16 else torch.float16
+    amp_enabled = device.type == "cuda" or (device.type == "cpu" and args.cpu_bf16)
     scaler = torch.amp.GradScaler(enabled=device.type == "cuda" and not use_bf16)
 
     def lr_at(step):
@@ -179,10 +189,10 @@ def main():
         print(f"retomando do passo {step}")
     generator = torch.Generator().manual_seed(args.seed + step)
 
-    forward = torch.compile(model) if args.compile else model
+    forward = torch.compile(model) if args.compile and scaler.is_enabled() else model
 
     def autocast():
-        return torch.autocast(device_type=device.type, dtype=dtype, enabled=device.type == "cuda")
+        return torch.autocast(device_type=device.type, dtype=dtype, enabled=amp_enabled)
 
     @torch.no_grad()
     def evaluate():
@@ -217,6 +227,17 @@ def main():
             loss = loss + args.z_loss * torch.logsumexp(logits, dim=-1).pow(2).mean()
         return loss
 
+    def micro_step(x, y):
+        with autocast():
+            logits = forward(x)
+        loss = train_loss(logits, y) / accum
+        scaler.scale(loss).backward()
+        return loss.detach()
+
+    # Sem GradScaler (CPU, ou bf16 na GPU), compilar o passo inteiro (forward,
+    # perda e backward) funde mais operações: ~1,4x em CPU com AMX.
+    step_fn = torch.compile(micro_step) if args.compile and not scaler.is_enabled() else micro_step
+
     print(f"otimizador {args.optimizer}, agenda {args.schedule}, lr {args.lr:.1e}, "
           f"qk_norm {config['qk_norm']}, z-loss {args.z_loss}")
     started = tick = time.time()
@@ -229,11 +250,7 @@ def main():
         loss_sum = 0.0
         for _ in range(accum):
             x, y = batch("train", args.micro_batch, generator)
-            with autocast():
-                logits = forward(x)
-            loss = train_loss(logits, y) / accum
-            scaler.scale(loss).backward()
-            loss_sum += loss.item()
+            loss_sum += step_fn(x, y).item()
         for optimizer in optimizers:
             scaler.unscale_(optimizer)
         grad_norm = torch.nn.utils.clip_grad_norm_(model.parameters(), 1.0)
@@ -261,6 +278,10 @@ def main():
             stop = True
     save_state()
     export("final")
+    if step >= total_steps:
+        # Marca a conclusão do orçamento; uma parada por tempo não grava o marcador.
+        (out / "COMPLETE.json").write_text(json.dumps({"steps": step, "total_steps": total_steps,
+                                                       "best_val": best_val}) + "\n")
     print(f"fim no passo {step}; melhor val_loss {best_val:.3f}. Pesos em {out}/best.safetensors")
 
 
