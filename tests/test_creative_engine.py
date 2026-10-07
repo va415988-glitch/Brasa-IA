@@ -96,6 +96,18 @@ class CreativeEngineTests(unittest.TestCase):
         engine.assert_called_once()
         self.assertEqual(result["backend"], "local-creative")
 
+    def test_agentcore_conversation_still_reaches_creative_engine(self):
+        # O AgentCore entrega escrita autoral como conversa; o motor criativo
+        # precisa continuar sendo usado nesse caminho.
+        service = ModelService("benchmark-only", trace_path=None)
+        for prompt in ("Escreva um poema sobre o mar.", "Crie uma campanha para uma padaria."):
+            with self.subTest(prompt=prompt), \
+                    patch.object(service, "creative_reply", return_value="Uma resposta criativa específica.") as engine:
+                result = service.reply([{"role": "user", "content": prompt}], objective="conversation")
+                engine.assert_called_once()
+                self.assertEqual(result["backend"], "local-creative")
+                self.assertEqual(result["intent"], "conversation")
+
 
 if __name__ == "__main__":
     unittest.main()

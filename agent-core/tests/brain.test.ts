@@ -403,3 +403,32 @@ test("política de conversa permite consultas e exige workspace para leitura loc
     assert.equal(policy.maxActions, 6);
   }
 });
+
+test("escrita autoral segue pelo cérebro criativo no chat, sem ferramentas de workspace", async () => {
+  const {personalityLayersFor} = await import("../src/personality.ts");
+  for (const prompt of [
+    "Crie um poema sobre o mar",
+    "Escreva um roteiro de vídeo para o lançamento do produto",
+    "Crie uma campanha de marketing para uma padaria",
+    "Escreva um e-mail para meu chefe pedindo férias",
+    "Me dê 5 ideias de nome para uma cafeteria",
+  ]) {
+    const objective = classifyObjective(prompt);
+    assert.equal(objective, "conversation", prompt);
+    assert.equal(personalityLayersFor(prompt, objective).mode, "creative", prompt);
+    const policy = operationalPolicyFor({prompt, objective} as Parameters<typeof operationalPolicyFor>[0]);
+    assert.ok(!policy.allowedTools.some((tool) => ["create_file", "edit_file", "apply_batch"].includes(tool)), prompt);
+  }
+  // Artefatos de software e roteiros técnicos continuam fora da rota criativa.
+  assert.equal(classifyObjective("Crie uma landing page para a campanha da padaria"), "build");
+  assert.equal(classifyObjective("Crie uma API REST em Python para cadastro de clientes"), "build");
+  assert.equal(classifyObjective("Escreva testes para a função de soma"), "testing");
+});
+
+test("perguntas sobre novidades, lançamentos e resultados consultam fontes atuais", () => {
+  for (const prompt of ["Quais são as novidades do Python 3.14?", "Quem ganhou a copa do mundo de 2022?",
+    "O que mudou no último release do Node.js?", "Qual a cotação do dólar hoje?"]) {
+    assert.equal(classifyObjective(prompt), "research", prompt);
+  }
+  assert.equal(classifyObjective("O que é Rust?"), "conversation");
+});

@@ -84,11 +84,32 @@ const objectiveLabels: Array<{objective: BrainObjective; pattern: RegExp}> = [
 ];
 
 /** Perguntas factuais voláteis devem consultar fontes atuais mesmo sem o verbo "pesquisar". */
-function asksForCurrentInformation(prompt: string): boolean {
-  const looksLikeQuestion = /^\s*(?:qual|quais|quanto|quantos|quantas|quem|quando|onde|como|est[aá]|existe|h[aá])\b/i.test(prompt)
+export function asksForCurrentInformation(prompt: string): boolean {
+  const looksLikeQuestion = /^\s*(?:qual|quais|quanto|quantos|quantas|quem|quando|onde|como|est[aá]|existe|h[aá]|o que (?:mudou|h[aá] de novo))\b/i.test(prompt)
     || /\?/.test(prompt);
-  const volatileFact = /\b(?:hoje|agora|atual(?:mente)?|mais recente|recentes?|últim[oa]s?|(?:esta|nesta|nessa|na)\s+semana|(?:este|neste|esse|nesse)\s+m[eê]s|(?:este|neste|esse|nesse)\s+ano|últimos?\s+(?:7|30)\s+dias|últimos?\s+12\s+meses|vers[aã]o|pre[cç]o|cust[oa]|cot[aã]ç[aã]o|lançamento|release|presidente|primeiro-ministro|ceo|clima|previs[aã]o do tempo|agenda|resultado|placar)\b/i.test(prompt);
+  const volatileFact = /\b(?:hoje|agora|atual(?:mente)?|mais recente|recentes?|últim[oa]s?|(?:esta|nesta|nessa|na)\s+semana|(?:este|neste|esse|nesse)\s+m[eê]s|(?:este|neste|esse|nesse)\s+ano|últimos?\s+(?:7|30)\s+dias|últimos?\s+12\s+meses|vers[aã]o|pre[cç]o|cust[oa]|cot[aã]ç[aã]o|lançamento|release|presidente|primeiro-ministro|ceo|clima|previs[aã]o do tempo|agenda|resultado|placar|novidades?|not[ií]cias?|lan[cç]ou|lan[cç]ad[oa]s?|changelog|depreciad[oa]|deprecated|descontinuad[oa]|quem (?:ganhou|venceu)|campe[aã]o|elei[cç][aã]o|d[oó]lar|euro|bitcoin|infla[cç][aã]o|selic)\b/i.test(prompt);
   return looksLikeQuestion && volatileFact;
+}
+
+// Formatos de texto autoral. Um pedido com estes formatos e sem um artefato
+// de software é escrita/criação no chat, não uma tarefa de build no workspace.
+const creativeFormats = /\b(?:poemas?|poesias?|sonetos?|haicais?|haikus?|versos?|rimas?|contos?|cr[oô]nicas?|hist[oó]rias?|narrativas?|f[aá]bulas?|roteiros?|storyboards?|letras?\s+de\s+m[uú]sica|can[cç][aã]o|can[cç][oõ]es|jingles?|slogans?|taglines?|bord[aã]o|campanhas?|an[uú]ncios?|propagandas?|copys?|legendas?|posts?|tweets?|manchetes?|nomes?\s+(?:para|de|pra)|naming|personagens?|enredos?|piadas?|trocadilhos?|discursos?|cartas?|e-?mails?|convites?|brindes?|homenagens?|resenhas?|sinopses?|pitch|manifesto|identidade\s+visual|logotipos?|logos?|mascotes?|brainstorm(?:ing)?|ideias?\s+criativas?)\b/;
+const creativeVerbs = /\b(?:crie|criar|escreva|escrever|redija|redigir|invente|inventar|componha|compor|elabore|elaborar|fa[cç]a|fazer|gere|gerar|sugira|sugerir|proponha|propor|me\s+d[eê]|d[eê]-me|preciso\s+de|quero|conte|contar|imagine|imaginar|reescreva|reescrever|melhore|melhorar|revise|revisar)\b/;
+const creativeIdeation = /\b(?:ideias?|sugest[oõ]es|op[cç][oõ]es|alternativas)\s+(?:de|para|pra)\s+(?:nomes?|t[ií]tulos?|slogans?|campanhas?|posts?|presentes?|festas?|eventos?|hist[oó]rias?|personagens?|marcas?|neg[oó]cios?|conte[uú]dos?|v[ií]deos?)\b/;
+const softwareArtifactContext = /\b(?:apps?|aplicativos?|aplica[cç](?:ao|oes)|sites?|landing\s*pages?|p[aá]ginas?\s+(?:web|html)|api|apis|endpoints?|sistemas?|softwares?|c[oó]digos?|scripts?|fun[cç](?:ao|oes)|classes?|m[oó]dulos?|arquivos?|html|css|componentes?|bancos?\s+de\s+dados|programas?|bots?|cli|frontend|backend|workspace|reposit[oó]rio|projeto\s+(?:ativo|atual)|commit|pull\s+request|readme|docstrings?)\b/;
+const nonCreativeScripts = /\broteiros?\s+(?:de\s+)?(?:testes?|estudos?|aprendizado|viagem|instala[cç][aã]o|deploy|migra[cç][aã]o)\b|\bplano\s+de\s+testes?\b|\bmensage(?:m|ns)\s+de\s+(?:commit|erro|log)\b|\bhist[oó]rico\b|\ba\s+hist[oó]ria\s+d(?:o|a|os|as)\b/;
+
+/**
+ * Pedido de criação textual (poema, roteiro, campanha, e-mail, nomes...) sem
+ * artefato de software. Ele deve seguir pelo cérebro criativo no chat e nunca
+ * abrir ferramentas de escrita no workspace.
+ */
+export function isCreativeWritingRequest(prompt: string): boolean {
+  const text = normalizedIntent(prompt);
+  if (softwareArtifactContext.test(text) || nonCreativeScripts.test(text)) return false;
+  if (creativeIdeation.test(text)) return true;
+  if (!creativeFormats.test(text)) return false;
+  return creativeVerbs.test(text) || /^\s*(?:um|uma|uns|umas)\b/.test(text) || /\bbrainstorm/.test(text);
 }
 
 export function isCapabilityQuestion(prompt: string): boolean {
@@ -190,6 +211,9 @@ export function classifyObjective(prompt: string): BrainObjective {
   // Questions about capability should be answered conversationally. Without
   // this guard, infinitives such as "construir" are mistaken for commands.
   if (isCapabilityQuestion(prompt)) return "conversation";
+  // Escrita autoral é entregue no chat pelo cérebro criativo; verbos como
+  // "crie" ou "escreva" não a transformam em build de workspace.
+  if (isCreativeWritingRequest(prompt)) return "conversation";
   if (explicitFunctionEvaluation(prompt)) return "operate";
   // Negated implementation verbs often appear in plan-only requests (for
   // example, "planeje, mas não crie arquivos"). Resolve that explicit

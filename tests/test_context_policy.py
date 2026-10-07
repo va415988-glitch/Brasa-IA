@@ -10,14 +10,15 @@ class ContextPolicyTests(unittest.TestCase):
         self.assertFalse(policy["generation_policy"]["production_eligible"])
         self.assertEqual(policy["status"], "experimental")
 
-    def test_orcamento_padrao_de_geracao_e_1024_sem_promover_contexto_curto(self):
+    def test_orcamento_padrao_de_geracao_e_2048_sem_promover_contexto_curto(self):
+        # A política oficial (model/README.md) define 2.048 tokens por rodada.
         policy = inspect_context({"context_length": 256})
-        self.assertEqual(policy["generation_policy"]["configured_tokens"], 1024)
+        self.assertEqual(policy["generation_policy"]["configured_tokens"], 2048)
         self.assertFalse(policy["generation_policy"]["production_eligible"])
         self.assertFalse(policy["production_eligible"])
 
-    def test_orcamento_adaptativo_e_no_minimo_1024_tokens(self):
-        self.assertEqual(resolve_generation_budget(None, requested_tokens=128), 1024)
+    def test_orcamento_adaptativo_e_no_minimo_2048_tokens(self):
+        self.assertEqual(resolve_generation_budget(None, requested_tokens=128), 2048)
         self.assertEqual(resolve_generation_budget(4096, requested_tokens=3072), 3072)
         self.assertEqual(resolve_generation_budget(512, requested_tokens=3072), 512)
         self.assertEqual(resolve_generation_budget(4096, requested_tokens=3072, override="1500"), 1500)

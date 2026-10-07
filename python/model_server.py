@@ -817,7 +817,7 @@ from example_programming import parse_example_program, implementation_from_examp
 from dialogue_api import (CheckpointProvider, DialogueAPI, DialogueAPIError,
                           REQUEST_SCHEMA as DIALOGUE_REQUEST_SCHEMA)
 from implementation_recipes import fallback_implementation_plan
-from build_research import build_research_queries, research_evidence, should_research_build
+from build_research import brave_search_configured, build_research_queries, research_evidence, should_research_build
 from agent_planner import AgentPlanner
 from capability_catalog import CapabilityCatalog
 from skill_router import SkillRouter
@@ -4061,6 +4061,13 @@ Remova o override no `finally`, não dependa de dados de produção e confirme q
                     'Se você já tiver o código, envie dois ou mais arquivos como títulos `### caminho` seguidos de blocos de código; '
                     'o agente poderá propor a criação desses arquivos para aprovação e depois verificar o projeto.'
                 )
+            failed_research = next((item for item in reversed(results)
+                                    if item.get('tool') == 'research_web'), None)
+            if failed_research is not None and failed_research.get('ok') is False:
+                # Sem esta nota, a falha da pesquisa ficava invisível e parecia
+                # que a documentação tinha sido consultada.
+                message += ('\n\nA pesquisa prévia de documentação falhou: '
+                            + str(failed_research.get('error') or 'erro não informado')[:240] + '.')
             return {
                 'text': message,
                 'backend': 'agent-loop', 'intent': 'workspace',
@@ -4858,9 +4865,11 @@ Remova o override no `finally`, não dependa de dados de produção e confirme q
                     self.tools,
                     'research_web',
                     {'query': research_queries[0], 'queries': research_queries, 'max_results': 3,
-                     'provider': 'brave',
+                     # Exigir a Brave sem chave fazia toda pesquisa de build falhar.
+                     # Com a chave, a falha da Brave continua explícita (sem troca silenciosa).
+                     'provider': 'brave' if brave_search_configured() else 'auto',
                      'save_to_corpus': False, 'category': 'build-research'},
-                    'Consultar a Brave para levantar documentação antes de planejar; manter as fontes apenas nesta tarefa.',
+                    'Consultar documentação pública antes de planejar; manter as fontes apenas nesta tarefa.',
                 ),
                 'agent': self._agent('tool_call', 'learn', len(results) + 1, after='inspect_project', next='research_web'),
             }
@@ -4926,8 +4935,11 @@ Remova o override no `finally`, não dependa de dados de produção e confirme q
             if inspection is not None:
                 proposal = self.proactive_implementation_proposal(question, results, inspected)
                 if proposal is not None:
-                    proposal.setdefault('research_warning',
-                                        'A Brave falhou; a proposta usa somente evidências e conhecimento local.')
+                    warning = ('A pesquisa prévia falhou (' + str(last.get('error') or 'erro não informado')[:240]
+                               + '); a proposta usa somente evidências e conhecimento local.')
+                    proposal.setdefault('research_warning', warning)
+                    # A falha precisa aparecer para a pessoa, não só no envelope.
+                    proposal['text'] = str(proposal.get('text') or '').rstrip() + '\n\nAviso: ' + warning
                     return proposal
             return None
         if last.get('ok') is False:
@@ -5598,6 +5610,12 @@ Remova o override no `finally`, não dependa de dados de produção e confirme q
         project_feedback_request = is_project_feedback_request(question, messages)
         project_analysis_request = (objective == 'analyze' or is_project_understanding_request(question) or project_feedback_request) and not requested_document_paths and not has_specific_code_reference(question)
         intent = route_intent(question, bool(attachments))
+        # Escrita autoral continua no motor criativo mesmo quando o AgentCore
+        # a entrega como conversa; antes, o modo criativo nunca era alcançado.
+        creative_requested = intent == 'creative' or (
+            isinstance(cognition, dict)
+            and isinstance(cognition.get('personality'), dict)
+            and cognition['personality'].get('mode') == 'creative')
         # O AgentCore já decidiu que este turno é uma resposta conversacional,
         # sem ações. Preserve essa decisão mesmo quando o texto menciona termos
         # técnicos que o classificador lexical marcaria como programação.
@@ -5759,6 +5777,12 @@ Remova o override no `finally`, não dependa de dados de produção e confirme q
         # Conversa deve ser resolvida antes de ferramentas, pesquisa e geração
         # neural. O modelo de diálogo tenta primeiro; regras locais ficam como
         # fallback se nenhum provedor produzir uma resposta utilizável.
+        if intent == 'conversation' and creative_requested:
+            creative_text = self.creative_reply(messages, question, self.memory_summary(remembered_session)
+                                                if remembered_session else None, on_delta=on_delta)
+            if creative_text:
+                return {'text': creative_text, 'backend': 'local-creative', 'intent': 'conversation',
+                        'memory': remembered_session, 'generation': self.last_generation}
         if intent == 'conversation':
             session_summary = self.memory_summary(remembered_session) if remembered_session else ''
             dialogue = self.dialogue_turn({
@@ -6335,12 +6359,12 @@ Remova o override no `finally`, não dependa de dados de produção e confirme q
             }
         professor = None if (exact_curated and hard_curated) else (
             self.creative_reply(messages, question, knowledge, on_delta=on_delta)
-            if intent == 'creative' else self.local_reply(messages, knowledge)
+            if creative_requested else self.local_reply(messages, knowledge)
         )
         if professor:
             if research_results and named_topic and evidence['status'] == 'provisional':
                 professor += '\n\nNota de verificação: encontrei uma fonte pertinente, mas ainda não há corroboração independente para o tema.'
-            return {"text": professor, "backend": 'local-creative' if intent == 'creative' else 'local-neural', "intent": intent, 'memory': remembered_session,
+            return {"text": professor, "backend": 'local-creative' if creative_requested else 'local-neural', "intent": intent, 'memory': remembered_session,
                     'context': {'schema': context_packet.get('schema'), 'status': context_packet.get('status')},
                     'generation': self.last_generation}
         # Exemplos curados que correspondem exatamente ao pedido têm prioridade

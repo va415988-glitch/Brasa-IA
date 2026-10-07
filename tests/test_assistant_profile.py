@@ -32,7 +32,7 @@ class ProfileTests(unittest.TestCase):
         self.assertIn('Evite dashboards e cartões genéricos', interface)
         self.assertIn('público, intenção, tom e formato', creative)
         self.assertIn('não converta automaticamente', conversation)
-        self.assertIn('não dependa de Ollama', engineering)
+        self.assertIn('checkpoint neural do projeto', engineering)
         self.assertEqual(personality_mode('Como você entende uma interface?'), 'conversation')
 
     def test_technical_writing_routes_to_engineering(self):

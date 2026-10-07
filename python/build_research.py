@@ -1,5 +1,6 @@
 """Bounded web research for unfamiliar implementation requests."""
 
+import os
 import re
 import unicodedata
 
@@ -11,6 +12,11 @@ _NO_WEB = re.compile(r'\b(?:sem|nao)\s+(?:(?:usar|acessar|consultar|acesso\s+a)\
                      r'consultar\s+a\s+web)\b', re.I)
 _PATH = re.compile(r'(?<!\w)(?:/[\w. +~-]+){2,}|\b[A-Za-z]:\\[^\s]+')
 _SECRET = re.compile(r'\b[A-Za-z0-9_-]{32,}\b')
+
+
+def brave_search_configured():
+    """The runtime only reaches Brave when its key is set in the shared environment."""
+    return bool(os.environ.get('IA_LOCAL_BRAVE_SEARCH_API_KEY', '').strip())
 
 
 def should_research_build(question, results, recipe=None):

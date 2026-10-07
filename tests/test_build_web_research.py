@@ -19,6 +19,13 @@ class BuildWebResearchTests(unittest.TestCase):
             'tool': 'inspect_project', 'ok': True, 'data': self.inspection,
         })}]
 
+    def test_build_research_uses_auto_provider_without_brave_key(self):
+        with patch.dict('os.environ', {'IA_LOCAL_BRAVE_SEARCH_API_KEY': ''}):
+            research = self.service.reply(self.messages, objective='build').get('tool_call') or {}
+        self.assertEqual(research.get('tool'), 'research_web')
+        self.assertEqual(research['arguments']['provider'], 'auto')
+
+    @patch.dict('os.environ', {'IA_LOCAL_BRAVE_SEARCH_API_KEY': 'chave-de-teste'})
     def test_build_searches_brave_then_grounds_proposal_in_opened_page(self):
         first = self.service.reply(self.messages, objective='build')
         research = first.get('tool_call') or {}

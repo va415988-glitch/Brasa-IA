@@ -1,4 +1,5 @@
 import type {BrainObjective} from "./brain-contracts.ts";
+import {isCreativeWritingRequest} from "./requirements.ts";
 
 export type PersonalityMode = "conversation" | "creative" | "analysis" | "research" | "engineering" | "interface";
 
@@ -48,7 +49,8 @@ export function personalityLayersFor(prompt: string, objective: BrainObjective):
   const text = normalize(prompt);
   const visual = /\b(interface|tela|pagina|dashboard|visual|design|layout|frontend|front end|ux|ui)\b/.test(text)
     || /\b(?:sistema|aplicativo|app|produto)\s+(?:web|mobile)\b/.test(text);
-  const creative = /\b(conto|historia|roteiro|campanha|identidade visual|brainstorm|poema|marca|ideias criativas)\b/.test(text);
+  const creative = isCreativeWritingRequest(prompt)
+    || /\b(conto|historia|roteiro|campanha|identidade visual|brainstorm|poema|marca|ideias criativas)\b/.test(text);
   const mode: PersonalityMode = objective === "build" || objective === "debug"
     ? visual ? "interface" : "engineering"
     : objective === "analyze" || objective === "testing" ? "analysis"
